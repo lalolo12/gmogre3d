@@ -1,1 +1,4 @@
 #sidebar TOCArticles
+
+* [BasicTutorial1 Basic Tutorial 1]
+* [BasicTutorial2 Basic Tutorial 2]
