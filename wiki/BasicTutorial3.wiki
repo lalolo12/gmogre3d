@@ -1,0 +1,137 @@
+#summary Terrain, Sky, and Fog
+
+In this tutorial we will be exploring how to manipulate terrain, sky, and fog in your Ogre applications. After this tutorial you should understand the differences between Skyboxes, Skyplanes, and Skydomes, and be able to use them. You will also know the difference between the different types of fog, and how to use them.
+
+To start, create a new object called obj_engine with this in the Create event:
+{{{
+InitializeOgre3D();
+StartOgre3DEngine(global.RENDER_DX9);
+
+AddResourceLocation("./media/packs/OgreCore.zip", global.LOC_ZIP);
+AddResourceLocation("./media/materials/programs", global.LOC_FILESYSTEM);
+AddResourceLocation("./media/materials/scripts", global.LOC_FILESYSTEM);
+AddResourceLocation("./media/materials/textures", global.LOC_FILESYSTEM);
+AddResourceLocation("./media/terrain", global.LOC_FILESYSTEM);
+AddResourceLocation("./media/models", global.LOC_FILESYSTEM);
+InitializeAllResourceGroups();
+
+view_id = CreateViewport(0, 0, 0, room_width, room_height);
+}}}
+Next add the following the the obj_engine's Step event:
+{{{
+RenderFrame();
+}}}
+
+Next create an object called obj_camera.  Add the Create event with this code:
+{{{
+SetCameraPosition(cam_id, 0, 500, 10);
+SetCameraLookAt(cam_id, 0, 0, 0);
+
+EnableMouseLook(cam_id, true);
+
+render_type = global.PM_SOLID;
+}}}
+Next add the Step event to the obj_camera object and adding the following line:
+{{{
+UpdateMouseLook();
+}}}
+In the Keyboard A event add:
+{{{
+MoveCameraLeft(cam_id, 1.4);
+}}}
+In the Keyboard D event add:
+{{{
+MoveCameraRight(cam_id, 1.4);
+}}}
+In the Keyboard W event add:
+{{{
+MoveCameraForward(cam_id, 1.4);
+}}}
+In the Keyboard S event add:
+{{{
+MoveCameraBackward(cam_id, 1.4)
+}}}
+In the Keyboard R event add:
+{{{
+if (render_type == global.PM_SOLID)
+   render_type = global.PM_WIREFRAME;
+else
+   render_type = global.PM_SOLID;
+
+SetCameraRenderType(render_type);
+}}}
+
+= SceneManager Creation =
+
+=== Create Scene Manager ===
+In this demo we will be rendering Terrain in GMOgre3D. To do this we need to set the SceneManager to use an exterior scene.  To do this simply add the following line to the end if your Create event:
+{{{
+        CreateSceneManager(global.ST_EXTERIOR_CLOSE);
+}}}
+
+= Terrain =
+
+=== Adding Terrain to the Scene ====
+
+Now that we have the scene manager created, time to actually create Terrain. The function SetSceneManagerWorldGeometry which expects a filename from which to load a terrain configuration. Create a new object called obj_terrain.  Add the Create event and add this line of code to it:
+{{{
+        SetSceneManagerWorldGeometry("terrain.cfg");
+}}}
+Now run your game. It's that easy. You might want to set the Camera to start in a place that's over the terrain if it bothers you that its initial position is under the terrain.
+
+=== The terrain.cfg File ===
+There are many options in the terrain.cfg file, and I am only going to cover the most basic for changing the images used to generate the terrain. A more detailed explanation of the terrain config file can be found at http://www.ogre3d.org/wiki/index.php/Terrain_Scene_Manager.
+
+The TerrainSceneManager uses Heightmaps to generate terrain. You can specify the heightmap you want to use by setting the "Heightmap.image" property. You can set the texture that is used for the terrain by setting the WorldTexture property. The terrain scene manager also allows you to specify a "DetailTexture" property, which is interlaced with the WorldTexture to make the terrain look more realistic. You should find each of the images currently specified by terrain.cfg and take a look at them (they should be in the media/materials/textures folder).
+
+=== Lighting Terrain ===
+
+We just spent the entire previous tutorial going over lights and shadows, but the bad news is it's not easy to get this to work in the TerrainSceneManager. For now, just know that it's much easier to take the detail texture and add lighting effects to it than it is to get standard lighting working. We will also go over a way to do "Fake Darkness" in the Fog section.
+
+= Sky =
+GMOgre3D provides four different types of sky: SkyBoxes, SkyDomes, SkyPlanes, and SkyX. We will take a look at each of these in detail.
+
+=== SkyBoxes ===
+A SkyBox is basically a giant cube that surrounds all of the objects in the scene. The best way to describe it is to just show it to you.  Create a new object called obj_environment and add this line of code to obj_environment's Create event:
+{{{
+        EnableSkyBox(true, "Examples/SpaceSkyBox");
+}}}
+Run the game. Neat huh? (Note the SkyBox is grainy because the actual texture is low resolution; a higher resolution SkyBox would look much better.) There are several useful parameters for SkyBoxes that we can set when calling EnableSkyBox. The first option is whether or not to enable the SkyBox. If you want to later disable the SkyBox simply call 'EnableSkyBox(false, "");'. The second parameter is the material script to use for the SkyBox.
+
+The third parameter and fourth parameters to setSkyBox are fairly important to understand. The third parameter sets the distance that the SkyBox is away from the Camera, and the fourth parameter sets whether or not the SkyBox is drawn before the rest of the scene or afterwards. So, lets see what happens when you change the distance parameter for the SkyBox from the default 5000 units to something very close:
+{{{
+        EnableSkyBox(true, "Examples/SpaceSkyBox", 10);
+}}}
+Nothing changed! This is because the fourth parameter that controls whether to draw the SkyBox last or not is set to false by default. If the SkyBox is not set to draw last, then it is drawn first and anything rendered afterwards (like our Terrain) will be drawn on top of it, thus making the SkyBox always appear in the background. (Note that you shouldn't set the distance above to be closer than the near clip distance on the Camera or it will not be shown!) It is not actually desirable to draw the SkyBox first, because the full thing is rendered. When you draw it last, only the visible portions are drawn, which will provide a modest speed improvement. So, lets try setting our SkyBox to be drawn last:
+{{{
+        EnableSkyBox(true, "Examples/SpaceSkyBox", 5000, true);
+}}}
+Again, this looks just like it did before, but now the parts of the SkyBox that are not visible won't be rendered. There is one thing you have to be careful about when using this technique though. If you set the SkyBox to be too close, you could be cutting part of the scene geometry off. For example, try this:
+{{{
+        EnableSkyBox(true, "Examples/SpaceSkyBox", 100, true);
+}}}
+As you can see now, the terrain "pokes through" the SkyBox. Definitely not what we want. If you use SkyBoxes in your application you will have to decide how you want to use them. The speedup you get from rendering the SkyBox after the terrain is very modest, and you have to be careful not to obscure your geometry (unless that is what you are going for). Generally speaking, leaving everything past the second parameter as default is a very safe choice.
+
+=== SkyDomes ===
+SkyDomes are very similar to SkyBoxes, and you use them by calling EnableSkyDome. A giant cube is created around the Camera and rendered onto, but the biggest difference is that the texture is "projected" onto the SkyBox in a spherical manner. You are still looking at a cube, but it looks as if the texture is wrapped around the surface of a sphere. The primary drawback to this method is that the bottom of the cube will be untextured, so you always need to have some type of terrain that hides the base.
+
+The example texture that Ogre provides for SkyDomes will let you see this clearly. Clear out the setSkyBox call from createScene and add this code instead:
+{{{
+        EnableSkyDome(true, "Examples/CloudySky", 5, 8);
+}}}
+When you run this, move the Camera to the dead center of the terrain and move the Camera so that it's positioned fairly close to the surface of the terrain (this looks the best). After looking at this, hit the R button to switch to the mesh view. As you can see, we are still looking at a cube (without the base), but it looks as if the clouds are wrapped around a sphere at the top. (Also note that the movement of the clouds is a property of the "Examples/CloudySky" material, not of SkyDomes in general.)
+
+The first two paramaters of EnableSkyDome are the same as EnableSkyBox, and you can turn the SkyDome off by calling 'EnableSkyDome(false, "");'. The third parameter is the curvature used for the SkyDome. The API reference suggests using values between 2 and 65; lower for better distance effect, but higher values for less distortion and a smoother effect. Try setting the third paramater to 2 and 65 and look at the difference.  The fourth parameter is the number of times the texture is tiled, which you will need to tweak depending on the size of your texture. Be sure to note that this parameter is a Real value and not an integer. You can tile it 1.234 times, if that's what looks good for your application. The fifth and sixth parameters are distance and draw last, respectively, which we have already covered in the SkyBox section. 
+
+=== SkyPlanes ===
+SkyPlanes are very different from SkyBoxes and SkyDomes. Instead of a cube to render the sky texture on, we use just a single plane. (Note for all of the following SkyPlane configurations you need to be somewhere towards the middle of the terrain and close to the ground.) Clear out all SkyDome code from the Create event. The first thing we are going to do is create a plane, and face it downwards. The EnableSkyPlane method that we will be calling is similar to the other skies. Note that the third parameter is the size of the SkyPlane (in this case 1500x1500 units) and the forth parameter is how many times to tile the texture:
+{{{
+        EnableSkyPlane(true, "Examples/SpaceSkyPlane", 1500, 75);
+}}}
+Run the game. There are two problems with the SkyPlane this creates here. First of all, the texture that is used is too low resolution, and it doesn't tile well. That could be fixed by simply creating a good, high resolution sky texture that tiles well. However, the primary problem with this technique is that if you look towards the horizon, you can see where the SkyPlane ends. Even if you had a good texture, it would not look good at all if you can see to the horizon. This basic use of a SkyPlane is really only useful when you have high walls (or hills) all around the viewpoint. Using a SkyPlane in that situation would be considerably less graphics-intensive than creating a full SkyBox/SkyDome.
+
+Fortunately, that is not all we can do with a SkyPlane. The sixth parameter to the skyplane is the familiar draw last parameter which we have already covered in the SkyBox and SkyDome sections.
+
+One other note, you can clear the SkyPlane by calling 'EnableSkyPlane(false, "");'
+
+= TODO: FINISH ME!!! =
