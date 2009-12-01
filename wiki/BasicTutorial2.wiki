@@ -52,7 +52,7 @@ However, in many cases you want to allow the user to control where the camera fa
 {{{
 EnableMouseLook(cam_id, true);
 }}}
-Finally, in order to update the camera direction you must update the call UpdateMouseLook() each frame.  This can be done by simply adding a Step event to the obj_mouse object and adding the following line:
+Finally, in order to update the camera direction you must update the call UpdateMouseLook() each frame.  This can be done by simply adding a Step event to the obj_camera object and adding the following line:
 {{{
 UpdateMouseLook();
 }}}
