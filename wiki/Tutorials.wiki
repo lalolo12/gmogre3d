@@ -1,0 +1,12 @@
+#summary Various GMOgre3D tutorials.
+
+= Basic Tutorials =
+[BasicTutorial1 Basic Tutorial 1] - Introduction to the basic GMOgre32 constructs: SceneManager, SceneNode, and Entity
+
+[BasicTutorial2 Basic Tutorial 2] - Cameras, Lights, and Shadows
+
+[BasicTutorial3 Basic Tutorial 3] - Coming soon!
+
+
+= Advanced Tutorials =
+Coming soon!
