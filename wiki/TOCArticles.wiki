@@ -1,4 +1,4 @@
   * [Welcome Welcome]
-  * [BasicTutorial1 Basic Tutorial 1]
+  * [Tutorials Tutorials]
     * [BasicTutorial1 Basic Tutorial 1]
     * [BasicTutorial2 Basic Tutorial 2]
