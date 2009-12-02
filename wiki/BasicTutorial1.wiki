@@ -132,7 +132,7 @@ The !GetParentSceneNode function returns the !SceneNode that the Entity is attac
   
 You can get and set the position of a !SceneNode with !GetSceneNodePosition and !SetSceneNodePosition (always relative to the parent !SceneNode). You can move the object relative to its current position by using the !TranslateSceneNode function.
   
-!SceneNodes not only set position, but they also manage the scale and rotation of the object. You can set the scale of an object with the scale function. You can use the !SetSceneNodePitch, !SetSceneNodeYaw, and !SetSceneNodeRoll functions to rotate objects. You can use !ResetSceneNodeOrientation to reset all rotations done to the object. You can also use the !SetSceneNodeOrientation, !GetSceneNodeOrientation, and !RotateSceneNode functions for more advanced rotations.
+!SceneNodes not only set position, but they also manage the scale and rotation of the object. You can set the scale of an object with the scale function. You can use the !PitchSceneNode, !YawSceneNode, and !RollSceneNode functions to rotate objects. You can use !ResetSceneNodeOrientation to reset all rotations done to the object. You can also use the !SetSceneNodeOrientation, !GetSceneNodeOrientation, and !RotateSceneNode functions for more advanced rotations.
 
 Since all positioning and translating is done relative to the parent !SceneNode, we can make two !SceneNodes move together very easily. We currently have this code in the object Create event:
 {{{
