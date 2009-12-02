@@ -5,7 +5,7 @@
 
 [BasicTutorial2 Basic Tutorial 2] - Cameras, Lights, and Shadows
 
-[BasicTutorial3 Basic Tutorial 3] - Coming soon!
+[BasicTutorial3 Basic Tutorial 3] - Terrain, Sky, and Fog!
 
 
 = Advanced Tutorials =
