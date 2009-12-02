@@ -21,7 +21,7 @@
 ===Animation===
     * Sophisticated skeletal animation support
     * Flexible shape animation support
-    * Animation of SceneNodes for camera paths and similar techniques, using spline interpolation where needed
+    * Animation of !SceneNodes for camera paths and similar techniques, using spline interpolation where needed
     * Generic animation tracks can accept pluggable object adaptors to enable you to animate any parameter of any object over time
 
 ===Scene Features===
