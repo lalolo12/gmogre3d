@@ -33,11 +33,11 @@ One major concept to note about !SceneNodes is that a !SceneNode's position is a
 
 To use GMOgre3D your project you first need to import all of the GMOgre3D GM scripts into your existing project, or use a copy of one of the example .gmk project files as the base for a new project.
 
-In your new project create an object and add it to your room.  In the object add a script to the Create event.  All code below will go inside this Create event script.
-
 In order to use GMOgre3D you must first initialize the engine.  Then you can start the engine passing the renderer type you wish to use.  The types of renderers are listed below:
    * RENDER_DX9 - DirectX 9 renderer
    * RENDER_GL - OpenGL renderer
+
+In your new project create an object obj_engine and add it to your room.  In the object add a script to the Create event.  All code below will go inside this Create event script.
 
 The code below shows how this is done:
 {{{
@@ -63,7 +63,7 @@ Now that GMOgre3D has been setup and started, we need a way to view the game wor
 {{{
 view_id = CreateViewport(0, 0, 0, room_width, room_height);
 }}}
-Next you need to add a camera to each of your viewports.  We will explain more in depth how to create and manipulate cameras in the next tutorial, so for now just add the following code:
+Next you need to add a camera to each of your viewports.  We will explain more in depth how to create and manipulate cameras in the next tutorial.  Create a new object obj_camera and add it to your room.  In the Create event add the following code:
 {{{
 camera_id = CreateCamera(room_width / room_height, 5, 10000, 45);
 SetViewportCamera(view_id, camera_id);
@@ -72,11 +72,11 @@ SetCameraPosition(camera_id, 0, 200, 40);
 
 = Your First GMOgre3D Game =
 
-Once you have GMOgre3D setup and running, the first thing we want to do is set the ambient light for the scene so that we can see what we are doing. We do this by calling the !SetAmbientLight function and specifying what color we want. Add this line to to your code:
+Once you have GMOgre3D setup and running, the first thing we want to do is set the ambient light for the scene so that we can see what we are doing. We do this by calling the !SetAmbientLight function and specifying what color we want. Add this line to the end of your obj_engine's Create event:
 {{{
 SetAmbientLight(c_white);
 }}}
-The next thing we need to do is create an Entity. We do this by calling the !CreateEntity function:
+The next thing we need to do is create an Entity. Create another object called obj_entity.  In its Create event add the following line:
 {{{
 ent_id = CreateEntity("Robot.mesh");
 }}}
@@ -90,7 +90,7 @@ Next, we need to attach the Entity to the !SceneNode to give the Robot a render 
 {{{
 AttachEntityToSceneNode(ent_id, node_id);
 }}}
-Finally, we need to tell GMOgre3D to render each frame.  Simply add the following code to the Step event of your object:
+Finally, we need to tell GMOgre3D to render each frame.  Simply add the following code to the Step event of your obj_engine object:
 {{{
 RenderFrame();
 }}}
@@ -108,7 +108,7 @@ GMOgre3D uses the vectors to represent both position and direction. If you are n
 
 = Adding another Object =
 
-Now that you understand how the coordinate systems work, we can go back to our code. In the three lines we wrote, nowhere did we specify the exact location where we wanted our Robot to appear. Some of the functions in GMOgre3D have default parameters for them. For example, the !CreateRootChildSceneNode function in GMOgre3D has six parameters: three for the initial position of the !SceneNode, and three for the initial orientation (rotation) of the !SceneNode. If you do not enter the position and orientation then it will create the !SceneNode at position 0,0,0 with an orientation of 0, 0, 0. Let's create another !SceneNode, but this time we'll specify the starting location to be something other than 0,0,0:
+Now that you understand how the coordinate systems work, we can go back to our code. In the three lines we wrote, nowhere did we specify the exact location where we wanted our Robot to appear. Some of the functions in GMOgre3D have default parameters for them. For example, the !CreateRootChildSceneNode function in GMOgre3D has six parameters: three for the initial position of the !SceneNode, and three for the initial orientation (rotation) of the !SceneNode. If you do not enter the position and orientation then it will create the !SceneNode at position 0,0,0 with an orientation of 0, 0, 0. Let's create another !SceneNode, but this time we'll specify the starting location to be something other than 0,0,0.  Add the following code to the end if your obj_entity's Create event:
 {{{
 ent2_id = CreateEntity("Robot.mesh" );
 node2_id = CreateRootChildSceneNode(50, 0, 0);
@@ -134,7 +134,7 @@ You can get and set the position of a !SceneNode with !GetSceneNodePosition and 
   
 !SceneNodes not only set position, but they also manage the scale and rotation of the object. You can set the scale of an object with the scale function. You can use the !PitchSceneNode, !YawSceneNode, and !RollSceneNode functions to rotate objects. You can use !ResetSceneNodeOrientation to reset all rotations done to the object. You can also use the !SetSceneNodeOrientation, !GetSceneNodeOrientation, and !RotateSceneNode functions for more advanced rotations.
 
-Since all positioning and translating is done relative to the parent !SceneNode, we can make two !SceneNodes move together very easily. We currently have this code in the object Create event:
+Since all positioning and translating is done relative to the parent !SceneNode, we can make two !SceneNodes move together very easily. We currently have this code in the obj_entity's Create event:
 {{{
 ent1_id = CreateEntity("Robot.mesh");
 node1_id = CreateRootChildSceneNode();
@@ -192,19 +192,19 @@ ent1_id = CreateEntity("robot.mesh");
 node1_id = CreateRootChildSceneNode(-100, 0, 0);
 AttachEntityToSceneNode(ent1_id, node1_id);
 
-SetSceneNodeYaw(node1_id, -90);
+YawSceneNode(node1_id, -90);
 
 ent2_id = CreateEntity("robot.mesh");
 node2_id = CreateRootChildSceneNode();
 AttachEntityToSceneNode(ent2_id, node2_id);
 
-SetSceneNodePitch(node2_id, -90);
+PitchSceneNode(node2_id, -90);
 
 ent3_id = CreateEntity("robot.mesh");
 node3_id = CreateRootChildSceneNode(100, 0, 0);
 AttachEntityToSceneNode(ent3_id, node3_id);
 
-SetSceneNodeRoll(node3_id, -90);
+RollSceneNode(node3_id, -90);
 }}}
 
 = Conclusion =
