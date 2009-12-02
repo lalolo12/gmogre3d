@@ -1,6 +1,6 @@
 #summary Cameras, Lights, and Shadows
 
-In the previous tutorial we showed you how to create and view a basic GMOgre3D game world.  In this tutorial we are going to discuss cameras, lights, and shadows.  But first, lets go ahead and create a fresh GMOgre3D project.  Create a new object called obj_engine with this in the Create event:
+In the previous tutorial we showed you how to create and view a basic GMOgre3D game world.  In this tutorial we are going to discuss cameras, lights, and shadows.  But first, lets go ahead and create a fresh GMOgre3D project.  Create a new object called obj_engine and add it to your room.  Add the following code in the Create event:
 
 {{{
 InitializeOgre3D();
@@ -26,13 +26,13 @@ RenderFrame();
 = Cameras =
 
 === GMOgre3D Cameras ===
-While we touched on cameras in the last tutorial, we will be looking at cameras in more depth in this tutorial. A Camera is what we use to view the scene that we have created. A Camera is a special object which works somewhat like a !SceneNode does. The Camera object has !SetCameraPosition, !SetCameraYaw, !SetCameraPitch, and !SetCameraRoll functions, and you can attach it to any !SceneNode. Just like !SceneNodes, a Camera's position is relative to its parents (it's nice to respect one's elders). For all movement and rotation, you can basically consider a Camera a !SceneNode.
+While we touched on cameras in the last tutorial, we will be looking at cameras in more depth in this tutorial. A Camera is what we use to view the scene that we have created. A Camera is a special object which works somewhat like a !SceneNode does. The Camera object has !SetCameraPosition, !YawCamera, !PitchCamera, and !RollCamera functions, and you can attach it to any !SceneNode. Just like !SceneNodes, a Camera's position is relative to its parents (it's nice to respect one's elders). For all movement and rotation, you can basically consider a Camera a !SceneNode.
 
 One thing about GMOgre3D Cameras that is different from what you may expect is that you should only be using one Camera at a time (for now). That is, we do not create a Camera for viewing one portion of a scene, a second camera for viewing another portion of the scene and then enabling or disabling cameras based on what portion of the scene we want to display. Instead the way to accomplish this is to create !SceneNodes which act as "camera holders". These !SceneNodes simply sit in the scene and point at what the Camera might want to look at. When it is time to display a portion of the Scene, the Camera simply attaches itself to the appropriate !SceneNode.
 
 
 ==== Creating a Camera ====
-Create a new object called obj_camera.  In the obj_camera's Create event add the following code:
+Create a new object called obj_camera and add it to your room.  In the obj_camera's Create event add the following code:
 {{{
 cam_id = CreateCamera(room_width / room_height, 5, 0, 45);
 SetViewportCamera(obj_engine.view_id, cam_id);
@@ -91,7 +91,7 @@ GMOgre3D supports 3 types of shadow:
 === Using Shadows in Ogre ===
 Using shadows in Ogre is relatively simple. The !SetShadowTechnique function is used to set the type of Shadows we want. Then whenever you create an Entity, call the !EnableEntityCastShadows function to set whether or not it casts shadows.
 
-We will now set the ambient light to complete darkness, and set the shadow type. Create a new object called obj_environment, then add the following code to the Create event:
+We will now set the ambient light to complete darkness, and set the shadow type. Create a new object called obj_environment and add it to your room.  Then add the following code to the Create event:
 {{{
 SetAmbientLight(c_black);
 SetShadowTechnique(global.SHADOWTYPE_STENCIL_ADDITIVE);
@@ -129,7 +129,7 @@ Lights have a wide range of properties that describes how the light looks. Two o
 === Creating the Lights ===
 To create a Light in GMOgre3D we call the !CreateLight function, very much like how we create an Entity or Camera. After we create a Light, we can either set the position of it manually or attach it to a !SceneNode for movement. Unlike the Camera object, light only has !SetLightPosition and !SetLightDirection (and not the full suite of movement functions like translate, pitch, yaw, roll, etc). So if you need to create a stationary light, you should call the !SetLightPosition member function. If you need the light to move (such as creating a light that follows a character), then you should attach it to a !SceneNode instead.
 
-So, let's start with a basic point Light. The first thing we will do is create a new object called obj_point_light.  Then you'll need to add the Create event, where you will add the following code to create the light, set its type, and set its position:
+So, let's start with a basic point Light. The first thing we will do is create a new object called obj_point_light and add it to your room.  Then you'll need to add the Create event, where you will add the following code to create the light, set its type, and set its position:
 {{{
 light_id = CreateLight();
 SetLightType(light_id, global.LT_POINT);
@@ -142,7 +142,7 @@ SetLightSpecularColor(light_id, c_red);
 }}}
 Now run the game. Success! We can now see the Ninja and he casts a shadow. Be sure to also look at him from the front, a complete silhouette. One thing to notice is that you do not "see" the light source. You see the light it generates but not the actual light object itself. Many of GMOgre3D's tutorials add a simple entity to show where the light is being emitted from. If you are having trouble with lights in your game you should consider creating something similar to what they do so you can see exactly where your light is.
 
-Next, let's try out directional light. Notice how the front of the ninja is pitch black? Let's add a small amount of yellow directional light that is shining towards the front of his body. To do this create a new object called obj_directional_light and add the Create event.  Inside the Create event we will create the light and set the color just like we did for obj_point_light:
+Next, let's try out directional light. Notice how the front of the ninja is pitch black? Let's add a small amount of yellow directional light that is shining towards the front of his body. To do this create a new object called obj_directional_light and add it to your room.  Inside the Create event we will create the light and set the color just like we did for obj_point_light:
 {{{
 light_id = CreateLight();
 SetLightType(light_id, global.LT_DIRECTIONAL);
@@ -153,7 +153,7 @@ Since directional light is supposed to come from a far-off distance, we do not h
 {{{
 SetLightDirection(light_id, 0, 1, -1);
 }}}
-Run the game. We now have two shadows on the screen, though since the directional light is so faint, the shadow is also faint. The last type of light we are going to play with is the spotlight. Create another object called obj_spot_light.  Add the Create event, then add the following code to that event to create a blue spotlight:
+Run the game. We now have two shadows on the screen, though since the directional light is so faint, the shadow is also faint. The last type of light we are going to play with is the spotlight. Create another object called obj_spot_light and add it to your room.  Add the Create event, then add the following code to that event to create a blue spotlight:
 {{{
 light_id = CreateLight();
 SetLightType(light_id, global.LT_SPOTLIGHT);
