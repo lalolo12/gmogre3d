@@ -2,7 +2,7 @@
 
 In this tutorial we will be exploring how to manipulate terrain, sky, and fog in your GMOgre3D games. After this tutorial you should understand the differences between Skyboxes, Skyplanes, and Skydomes, and be able to use them. You will also know the difference between the different types of fog, and how to use them.
 
-To start, create a new object called obj_engine with this in the Create event:
+To start, create a new object called obj_engine and add it to your room.  Add the following code in the Create event:
 {{{
 InitializeOgre3D();
 StartOgre3DEngine(global.RENDER_DX9);
@@ -27,7 +27,7 @@ Notice how we specified ST_EXTERIOR_CLOSE for the !SceneManager type.  This is b
 RenderFrame();
 }}}
 
-Next create an object called obj_camera.  Add the Create event with this code:
+Next create an object called obj_camera and add it to your room.  Add the Create event with this code:
 {{{
 cam_id = CreateCamera(room_width / room_height, 5, 0, 45);
 SetViewportCamera(obj_engine.view_id, cam_id);
@@ -73,7 +73,7 @@ SetCameraRenderType(render_type);
 
 === Adding Terrain to the Scene ====
 
-Now that we have the camera finished, it's time to actually create Terrain. The function !SetWorldGeometry which expects a filename from which to load a terrain configuration. Create a new object called obj_environment.  Add the Create event and add this line of code to it:
+Now that we have the camera finished, it's time to actually create Terrain. The function !SetWorldGeometry which expects a filename from which to load a terrain configuration. Create a new object called obj_environment and add it to your room.  Add the Create event and add this line of code to it:
 {{{
 SetWorldGeometry("terrain.cfg");
 }}}
