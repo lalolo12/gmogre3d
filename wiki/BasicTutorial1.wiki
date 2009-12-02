@@ -76,7 +76,7 @@ Once you have GMOgre3D setup and running, the first thing we want to do is set t
 {{{
 SetAmbientLight(c_white);
 }}}
-The next thing we need to do is create an Entity. Create another object called obj_entity.  In its Create event add the following line:
+The next thing we need to do is create an Entity. Create another object called obj_entity and add it to your room.  In its Create event add the following line:
 {{{
 ent_id = CreateEntity("Robot.mesh");
 }}}
