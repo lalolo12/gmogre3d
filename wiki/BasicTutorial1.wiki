@@ -1,4 +1,4 @@
-#summary Introduction to the basic Ogre constructs: !SceneManager, !SceneNode, and Entity
+#summary Introduction to the basic Ogre constructs: SceneManager, SceneNode, and Entity
 
 = How GMOgre3D Works =
 
