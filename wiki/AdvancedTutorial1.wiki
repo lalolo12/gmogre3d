@@ -1,0 +1,80 @@
+#summary Animation, Walking Between Points, and Basic Quaternions
+
+= Introduction =
+In this tutorial we will be covering how to take an Entity, animate it, and have it walk between predefined points. This will also cover the basics of euler rotations by showing how to keep the Entity facing the direction it is moving. As you go through the demo you should be slowly adding code to your own project and watching the results as we build it.
+
+= Getting Started =
+To start, create a new object called obj_engine and add it to your room. Add the following code in the Create event:
+{{{
+InitializeOgre3D();
+StartOgre3DEngine(global.RENDER_DX9);
+
+AddResourceLocation("./media/packs/OgreCore.zip", global.LOC_ZIP);
+AddResourceLocation("./media/packs/SkyBox.zip", global.LOC_ZIP);
+AddResourceLocation("./media/materials/programs", global.LOC_FILESYSTEM);
+AddResourceLocation("./media/materials/scripts", global.LOC_FILESYSTEM);
+AddResourceLocation("./media/materials/textures", global.LOC_FILESYSTEM);
+AddResourceLocation("./media/terrain", global.LOC_FILESYSTEM);
+AddResourceLocation("./media/models", global.LOC_FILESYSTEM);
+InitializeAllResourceGroups();
+
+CreateSceneManager(global.ST_EXTERIOR_CLOSE);
+
+SetAmbientLight(c_white);
+
+view_id = CreateViewport(0, 0, 0, room_width, room_height);
+}}}
+Next add the following the the obj_engine's Step event:
+{{{
+RenderFrame();
+}}}
+Now create an object called obj_camera and add it to your room. Add the Create event with this code:
+{{{
+cam_id = CreateCamera(room_width / room_height, 5, 0, 45);
+SetViewportCamera(obj_engine.view_id, cam_id);
+
+SetCameraPosition(cam_id, 0, 500, 10);
+SetCameraLookAt(cam_id, 0, 0, 0);
+
+EnableMouseLook(cam_id, true);
+}}}
+Next add the Step event to the obj_camera object and adding the following line:
+{{{
+UpdateMouseLook();
+}}}
+In the Keyboard A event add:
+{{{
+MoveCameraLeft(cam_id, 1.4);
+}}}
+In the Keyboard D event add:
+{{{
+MoveCameraRight(cam_id, 1.4);
+}}}
+In the Keyboard W event add:
+{{{
+MoveCameraForward(cam_id, 1.4);
+}}}
+In the Keyboard S event add:
+{{{
+MoveCameraBackward(cam_id, 1.4)
+}}}
+
+= Setting up the Scene =
+Before we begin, notice that we have already defined 3 variables in MoveDemoApplication. The mEntity will hold the entity we create, mNode will hold the node we create, and mWalkList will contain all the points we wish the object to walk to.
+
+Go to the MoveDemoApplication::createScene function and add the following code to it. First we are going to set the ambient light to full so that we can see objects we put on the screen.
+
+        // Set the default lighting.
+        mSceneMgr->setAmbientLight(ColourValue(1.0f, 1.0f, 1.0f));
+
+Next we will create a Robot on the screen so that we can play with him. To do this we will create the entity for the Robot, then create a SceneNode for him to dangle from.
+
+       // Create the entity
+       mEntity = mSceneMgr->createEntity("Robot", "robot.mesh");
+
+       // Create the scene node
+       mNode = mSceneMgr->getRootSceneNode()->
+           createChildSceneNode("RobotNode", Vector3(0.0f, 0.0f, 25.0f));
+       mNode->attachObject(mEntity);
+
+This all should be very basic, so I will not go into detail about any of it. In the next chunk of code, we are going to tell the robot where he needs to be moved to. For those of you who don't know anything about STL, the deque object is an efficient implementation of a double ended queue. We will only be using a few of its methods. The push_front and push_back methods put items at the front and back of the deque respectively. The front and back methods return the values at the front and back of the deque respectively. The pop_front and pop_back methods remove the items from the front and back of the queue respectively. Finally, the empty method returns whether or not the deque is empty. This code adds two Vectors to the deque, which we will later make the robot move to. 
