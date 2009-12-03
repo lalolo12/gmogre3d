@@ -44,7 +44,7 @@ The code below shows how this is done:
 InitializeOgre3D();
 StartOgre3DEngine(global.RENDER_DX9);
 }}}
-Once GMOgre3D has been initalized and started, you need to tell GMOgre3D where your external resources are and then initialize them.  External resources can be single files or a zip archive.  For our purposes, we'll add the following resources:
+Once GMOgre3D has been initalized and started, you need to tell GMOgre3D where your external resources are and then initialize them.  External resources can be entire directories or a single zip archive.  For our purposes, we'll add the following resources:
 {{{
 AddResourceLocation("./media/packs/OgreCore.zip", global.LOC_ZIP);
 AddResourceLocation("./media/materials/programs", global.LOC_FILESYSTEM);
