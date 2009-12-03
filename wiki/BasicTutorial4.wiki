@@ -18,7 +18,7 @@ InitializeAllResourceGroups();
 }}}
 
 === Creating the !SceneManagers ===
-We have previously covered how to create your !SceneManager, so I will not go into detail about this function. The only thing we have changed is that we are creating two of them. To do this we will create two different SceneManager GM objects.  First, create an object called obj_scenemgr1 but do not add it to your room.  This will be added automatically later.  Add the Create event and add the following code: 
+We have previously covered how to create your !SceneManager, so I will not go into detail about this function. The only thing we have changed is that we are creating two of them. To do this we will create two different !SceneManager GM objects.  First, create an object called obj_scenemgr1 but do not add it to your room.  This will be added automatically later.  Add the Create event and add the following code: 
 {{{
 scenemgr_id = CreateSceneManager(global.ST_GENERIC);
 
