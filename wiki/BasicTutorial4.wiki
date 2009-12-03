@@ -1,0 +1,5 @@
+#summary Using Multiple Scene Managers
+
+= Setting up the game =
+=== Creating the !SceneManagers ===
+We have previously covered how to create your !SceneManager, so I will not go into detail about this function. The only thing we have changed is that we are creating two of them. Add a new script called the chooseSceneManager function and add the following code: 
