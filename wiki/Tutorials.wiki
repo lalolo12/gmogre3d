@@ -1,5 +1,8 @@
 #summary Various GMOgre3D tutorials.
 
+=== Introduction ===
+Welcome to the tutorial section of GMOgre3D.  Below are both basic and advanced tutorials to help you understand how to use GMOgre3D.  Most of these tutorials are taken directly from the OGRE wiki (http://www.ogre3d.org/wiki/index.php/Ogre_Tutorials) and modified as needed in order to fit within GMOgre's interface.
+
 = Basic Tutorials =
 [BasicTutorial1 Basic Tutorial 1] - Introduction to the basic GMOgre32 constructs: !SceneManager, !SceneNode, and Entity
 
