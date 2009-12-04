@@ -1,4 +1,4 @@
-#summary Animation, Walking Between Points, and Basic Quaternions
+#summary Animation, Walking Between Points, and Eulers
 
 = Introduction =
 In this tutorial we will be covering how to take an Entity, animate it, and have it walk between predefined points. This will also cover the basics of euler rotations by showing how to keep the Entity facing the direction it is moving. As you go through the demo you should be slowly adding code to your own project and watching the results as we build it.
@@ -18,7 +18,7 @@ AddResourceLocation("./media/terrain", global.LOC_FILESYSTEM);
 AddResourceLocation("./media/models", global.LOC_FILESYSTEM);
 InitializeAllResourceGroups();
 
-CreateSceneManager(global.ST_EXTERIOR_CLOSE);
+CreateSceneManager(global.ST_GENERIC);
 
 SetAmbientLight(c_white);
 
@@ -62,19 +62,73 @@ MoveCameraBackward(cam_id, 1.4)
 = Setting up the Scene =
 Before we begin, notice that we have already defined 3 variables in MoveDemoApplication. The mEntity will hold the entity we create, mNode will hold the node we create, and mWalkList will contain all the points we wish the object to walk to.
 
-Go to the MoveDemoApplication::createScene function and add the following code to it. First we are going to set the ambient light to full so that we can see objects we put on the screen.
+We will now create a Robot on the screen so that we can play with him. To do this we will create a new obj_robot object for the robot and add it to your room.  Add the Create event to this object with the following code:
+{{{
+// Create the entity
+ent_id = CreateEntity("robot.mesh");
 
-        // Set the default lighting.
-        mSceneMgr->setAmbientLight(ColourValue(1.0f, 1.0f, 1.0f));
+// Create the scene node
+node_id = CreateRootChildSceneNode(0, 25, 0);
+AttachEntityToSceneNode(ent_id, node_id);
+}}}
+This all should be very basic, so I will not go into detail about any of it. In the next chunk of code, we are going to tell the robot where he needs to be moved to. To do this we'll setup use !SimpleSpline.  !SimpleSplines are bendy lines. You define a series of points, and the spline forms a smoother line between the points to eliminate the sharp angles. The code should be added to the end of the obj_robot Create event script.  It simply specifies 3 points in our game world, which we will later make the robot move to.
+{{{
+// Create the walking spline
+spline_id = CreateSimpleSpline();
 
-Next we will create a Robot on the screen so that we can play with him. To do this we will create the entity for the Robot, then create a SceneNode for him to dangle from.
+AddSimpleSplinePoint(spline_id, 0, 25, 0);
+AddSimpleSplinePoint(spline_id, 550, 50, 0);
+AddSimpleSplinePoint(spline_id, -100, -200, 0);
 
-       // Create the entity
-       mEntity = mSceneMgr->createEntity("Robot", "robot.mesh");
+// Close the spline
+GetSimpleSplinePoint(spline_id, 0);
+AddSimpleSplinePoint(spline_id, GetX(),  GetY(), GetZ());
+}}}
+Overall the above code speaks for itself.  We create a new SimpleSpline and add 3 points to it.  I would like to take a closer look at the last two lines, however.  We close our spline simply by adding the starting point to the end of the spline.  The !GetSimpleSplinePoint returns the added point for the index given (in this case first point added).  Since GM cannot return 3 values (x, y, and z) in a single function call, GMOgre3D will store points in temporary GM variables.  These can be retrieved quickly by calling !GetX, !GetY, and !GetZ functions.  These temporary values will continue to exist until another GMOgre3D function requires use of them, at which point they will be overwritten.
 
-       // Create the scene node
-       mNode = mSceneMgr->getRootSceneNode()->
-           createChildSceneNode("RobotNode", Vector3(0.0f, 0.0f, 25.0f));
-       mNode->attachObject(mEntity);
+Next, we want to place some objects on the scene to show where the robot is supposed to be moving to. This will allow us to see the robot moving with respect to other objects on the screen. Notice the negative Z component to their position. This puts the objects under the points where the robot is moving to.  Add the following code to the end of obj_robot's Create event:
+{{{
+// Create objects so we can see movement
+for (i = 0; i < 3; i += 1)
+{
+   knot_id[i] = CreateEntity("knot.mesh");
+   GetSimpleSplinePoint(spline_id, i);
+   knot_node_id[i] = CreateRootChildSceneNode(GetX(), GetY(),  GetZ());
+   AttachEntityToSceneNode(knot_id[i], knot_node_id[i]);
+   SetSceneNodeScale(knot_node_id[i], 0.1, 0.1, 0.1);
+}
+}}}
+Finally, we want to set the camera to a good viewing point to see this from. We will move the camera to get a better position.  Modify the obj_camera's Create event:
+{{{
+// Set the camera to look at our handiwork
+SetCameraPosition(cam_id, 90, 535, 280);
+PitchCamera(cam_id, -30);
+YawCamera(cam_id, 76);
+}}}
+Run the game. You should see the robot standing on the knot mesh, with 2 more knot meshes in view.  This will be the points the robot will walk to.
 
-This all should be very basic, so I will not go into detail about any of it. In the next chunk of code, we are going to tell the robot where he needs to be moved to. For those of you who don't know anything about STL, the deque object is an efficient implementation of a double ended queue. We will only be using a few of its methods. The push_front and push_back methods put items at the front and back of the deque respectively. The front and back methods return the values at the front and back of the deque respectively. The pop_front and pop_back methods remove the items from the front and back of the queue respectively. Finally, the empty method returns whether or not the deque is empty. This code adds two Vectors to the deque, which we will later make the robot move to. 
+= Animation =
+We are now going to setup some basic animation. Animation in GMOgre3D is very simple. To do this, you need to get the AnimationState from the Entity object, set its options, and enable it. This will make the animation active, but you will also need to add time to it after each frame in order for the animation to run. We'll take this one step at a time. First, go to obj_robot's Create event and add the following code:
+{{{
+// Set robot idle animation
+anim_state_id = GetEntityAnimationState(ent_id, "Idle");
+EnableAnimationStateLoop(anim_state_id, true);
+EnableAnimationState(anim_state_id, true);
+}}}
+The second line gets the AnimationState out of the entity. In the third line we make the animation loop continuously. For some animations (like the death animation), we would want to set this to false instead. The fourth line actually enables the Animation. But wait...where did we get “Idle” from? How did this magic constant slip in there? Every mesh has their own set of Animations defined for them. In order to see all of the Animations for the particular mesh you are working on, you need to download the CEGui Mesh Viewer (http://www.ogre3d.org/download/tools) and view the mesh from there.
+
+Now, if we run the game we see... nothing has changed! This is because we need to update the animation state with a time every frame. Add the following the the obj_robot's Create event:
+{{{
+last_time = current_time;
+}}}
+Then add the Step event to obj_robot and add the following code to it:
+{{{
+AddAnimationStateTime(anim_state_id, (current_time - last_time) / 1000);
+last_time = current_time;
+}}}
+Now run the game. You should see a robot performing his idle animation standing in place. 
+
+= Moving the Robot =
+Now we are going to perform the tricky task of making the robot walk from point to point. Before we begin I would like to describe the variables that we are storing in the MoveDemoListener class. We are going to use 4 variables to accomplish the task of moving the robot. First of all, we are going to store the direction the robot is moving in mDirection. We will store the current destination the Robot is traveling to in mDestination. We will store the distance the robot has left to travel in mDistance. Finally, we will store the robot's moving speed in mWalkSpeed.
+
+The first thing we need to do is clear out the MoveDemoListener constructor. We will be replacing that code with something slightly different. The first thing we need to do is to set up the class's variables. We'll set the walk speed to 35 units per second. There is one big thing to note here. We are explicitly setting mDirection to be the ZERO vector because later we will use this to determine if we are moving the Robot or not. 
