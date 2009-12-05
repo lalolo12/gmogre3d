@@ -10,7 +10,7 @@ Welcome to the tutorial section of GMOgre3D.  Below are both basic and advanced 
 
 [BasicTutorial3 Basic Tutorial 3] - Terrain, Sky, and Fog!
 
-[BasicTutorial3 Basic Tutorial 3] - Using Multiple Scene Managers
+[BasicTutorial4 Basic Tutorial 4] - Using Multiple Scene Managers
 
 = Advanced Tutorials =
 [AdvancedTutorial1 Advanced Tutorial 1] - Animation, Walking Between Points, and Eulers
