@@ -4,12 +4,13 @@
 Welcome to the tutorial section of GMOgre3D.  Below are both basic and advanced tutorials to help you understand how to use GMOgre3D.  Most of these tutorials are taken directly from the OGRE wiki (http://www.ogre3d.org/wiki/index.php/Ogre_Tutorials) and modified as needed in order to fit within GMOgre's interface.
 
 = Basic Tutorials =
-[BasicTutorial1 Basic Tutorial 1] - Introduction to the basic GMOgre32 constructs: !SceneManager, !SceneNode, and Entity
+[BasicTutorial1 Basic Tutorial 1] - Introduction to the basic GMOgre3D constructs: !SceneManager, !SceneNode, and Entity
 
 [BasicTutorial2 Basic Tutorial 2] - Cameras, Lights, and Shadows
 
 [BasicTutorial3 Basic Tutorial 3] - Terrain, Sky, and Fog!
 
+[BasicTutorial3 Basic Tutorial 3] - Using Multiple Scene Managers
 
 = Advanced Tutorials =
-Coming soon!
+[AdvancedTutorial1 Advanced Tutorial 1] - Animation, Walking Between Points, and Eulers
