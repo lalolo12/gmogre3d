@@ -5,3 +5,5 @@
     * [BasicTutorial1 Basic Tutorial 1]
     * [BasicTutorial2 Basic Tutorial 2]
     * [BasicTutorial3 Basic Tutorial 3]
+    * [BasicTutorial4 Basic Tutorial 4]
+    * [AdvancedTutorial1 Advanced Tutorial 1]
