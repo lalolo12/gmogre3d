@@ -2,9 +2,8 @@
 
 
 === !SetTransformKeyFrameTranslate(real key_frame_id, real x, real z, real y) ===
-
+----
 === !SetTransformKeyFrameScale(real key_frame_id, real x, real z, real y) ===
-
+----
 === !SetTransformKeyFrameRotation(real key_frame_id, real w, real x, real z, real y) ===
-
-
+----
