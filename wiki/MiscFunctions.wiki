@@ -1,16 +1,15 @@
 #summary Enter description here
 
 
-=== !EnableWaitForVSync(real enable) ===
-
-=== !EnableDisplayFPS(real enable) ===
-
+=== EnableWaitForVSync(real enable) ===
+----
+=== EnableDisplayFPS(real enable) ===
+----
 === !EnableMouseCursor(real enable) ===
-
+----
 === !SetLoggingLevel(real type) ===
-
+----
 === !LogMessage(string error_msg, real level) ===
-
+----
 === !SaveScreenshot(string filename) ===
-
-
+----
