@@ -2,25 +2,24 @@
 
 
 === !SetTextureUnitStateTextureName(real tex_unit_id, string tex_name) ===
-
+----
 === !SetTextureUnitStateCubicTextureNames(real tex_unit_id, string tex_name1, string tex_name2, string tex_name3, string tex_name4, string tex_name5, string tex_name6) ===
-
+----
 === !SetTextureUnitStateTextureCoordSet(real tex_unit_id, real set) ===
-
+----
 === !SetTextureUnitStateScrollAnimation(real tex_unit_id, real uspeed, real vspeed) ===
-
+----
 === !SetTextureUnitStateRotateAnimation(real tex_unit_id, real speed) ===
-
+----
 === !SetTextureUnitStateContentType(real tex_unit_id, real type) ===
-
+----
 === !SetTextureUnitStateColorOperation(real tex_unit_id, real type) ===
-
+----
 === !EnableTextureUnitStateEnvironmentMap(real tex_unit_id, real enable, real type) ===
-
+----
 === !SetTextureUnitStateTextureAddressingMode(real tex_unit_id, real type) ===
-
+----
 === !SetTextureUnitStateTextureBorderColor(real tex_unit_id, real color) ===
-
+----
 === !SetTextureUnitStateTextureFiltering(real tex_unit_id, real type) ===
-
-
+----
