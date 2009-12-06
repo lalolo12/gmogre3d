@@ -1,15 +1,15 @@
 #summary Enter description here
 
 
-CreateCompositionTechniqueTextureDefinition(string name, real technique_id, real width, real height, real pixel_format) ===
-
-GetCompositionTechniqueTextureDefinition(real technique_id, real def_index) ===
-
-GetNumCompositionTechniqueTextureDefinitions(real technique_id) ===
-
-CreateCompositionTechniqueTargetPassreal technique_id) ===
-
-GetCompositionTechniqueTargetPass(real technique_id, real pass_index) ===
-
-GetNumCompositionTechniqueTargetPasses(real technique_id) ===
-
+=== !CreateCompositionTechniqueTextureDefinition(string name, real technique_id, real width, real height, real pixel_format) ===
+----
+=== !GetCompositionTechniqueTextureDefinition(real technique_id, real def_index) ===
+----
+=== !GetNumCompositionTechniqueTextureDefinitions(real technique_id) ===
+----
+=== !CreateCompositionTechniqueTargetPassreal technique_id) ===
+----
+=== !GetCompositionTechniqueTargetPass(real technique_id, real pass_index) ===
+----
+=== !GetNumCompositionTechniqueTargetPasses(real technique_id) ===
+----
