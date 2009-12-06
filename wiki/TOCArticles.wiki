@@ -1,6 +1,7 @@
-  * [Welcome Welcome]
-  * [Features Features]
-  * [License License]
+  * Introduction
+    * [Welcome Welcome]
+    * [Features Features]
+    * [License License]
   * [Tutorials Tutorials]
     * [BasicTutorial1 Basic Tutorial 1]
     * [BasicTutorial2 Basic Tutorial 2]
