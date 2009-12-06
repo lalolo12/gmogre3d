@@ -2,45 +2,44 @@
 
 
 === !CreateParticleSystem(string name) ===
-
+----
 === !SetParticleSystemMaterial(real part_sys_id, string part_sys_name) ===
-
+----
 === !SetParticleSystemQuota(real part_sys_id, real quota) ===
-
+----
 === !EnableParticleSystemIndividualCulling(real part_sys_id, real enable) ===
-
+----
 === !EnableParticleSystemSorting(real part_sys_id, real enable) ===
-
+----
 === !EnableParticleSystemParticlesInLocalSpace(real part_sys_id, real enable) ===
-
+----
 === !SetParticleSystemNonVisibleTimeout(real part_sys_id, real timeout) ===
-
+----
 === !FastForwardParticleSystem(real part_sys_id, real time, real interval) ===
-
+----
 === !SetParticleSystemSpeedFactor(real part_sys_id, real speed) ===
-
+----
 === !SetParticleSystemIterationInterval(real part_sys_id, real interval) ===
-
+----
 === !SetParticleSystemDimensions(real part_sys_id, real width, real height) ===
-
+----
 === !GetParticleSystemDefaultWidth(real part_sys_id) ===
-
+----
 === !GetParticleSystemDefaultHeight(real part_sys_id) ===
-
+----
 === !AttachParticleSystemToSceneNode(real part_sys_id, real scene_node_id) ===
-
+----
 === !DetachParticleSystemFromSceneNode(real part_sys_id, real scene_node_id) ===
-
+----
 === !SetParticleSystemQueryFlags(real part_sys_id, real flags) ===
-
+----
 === !AddParticleSystemEmitter(real part_sys_id, string name) ===
-
+----
 === !GetNumParticleSystemEmitters(real part_sys_id) ===
-
+----
 === !GetParticleSystemEmitter(real part_sys_id, real index) ===
-
+----
 === !RemoveParticleSystemEmitter(real part_sys_id, real index) ===
-
+----
 === !RemoveAllParticleSystemEmitters(real part_sys_id) ===
-
-
+----
