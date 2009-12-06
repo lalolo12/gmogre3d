@@ -2,21 +2,20 @@
 
 
 === !CreateStaticGeometry() ===
-
+----
 === !DestroyStaticGeometry(real static_geo_id) ===
-
+----
 === !SetStaticGeometryRegionRenderingDistance(real static_geo_id, real distance) ===
-
+----
 === !SetStaticGeometryRegionDimensions(real static_geo_id, real sizex, real sizez, real sizey) ===
-
+----
 === !SetStaticGeometryOrigin(real static_geo_id, real sizex, real sizez, real sizey) ===
-
+----
 === !AddStaticGeometryEntity(real static_geo_id, real entity_id, real posx, real posz, real posy, real orientx, real orientz, real orienty, real scalex, real scalez, real scaley) ===
-
+----
 === !BuildStaticGeometry(real static_geo_id) ===
-
+----
 === !ResetStaticGeometry(real static_geo_id) ===
-
+----
 === !EnableStaticGeometryCastShadows(real static_geo_id, real enable) ===
-
-
+----
