@@ -43,7 +43,7 @@
 ----
 === !GetCameraYaw(real camera_id) ===
 ----
-=== !SetCameraFOV(real camera_id, real angle) ===
+=== SetCameraFOV(real camera_id, real angle) ===
 ----
 === !SetCameraProjectionType(real camera_id, real type) ===
 ----
