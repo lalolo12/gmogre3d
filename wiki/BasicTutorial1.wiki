@@ -5,7 +5,7 @@
 A broad topic. We will start with !SceneManagers and work our way to Entities and !SceneNodes. These three classes are the fundamental building blocks of GMOgre3D games.
 
 === !SceneManager Basics ===
-Everything that appears on the screen is managed by the !SceneManager (fancy that). When you place objects in the scene, the !SceneManager keeps track of their locations. When you create Cameras to view the scene (which we will cover in a later tutorial) the !SceneManager keeps track of them. When you create planes, billboards, lights...and so on, the !SceneManager keeps track of them.
+Everything that appears on the screen is managed by the !SceneManager (fancy that). When you place objects in the scene, the !SceneManager keeps track of their locations. When you create Cameras to view the scene (which we will cover in a later tutorial) the !SceneManager keeps track of them. When you create Entities, Billboards, Lights...and so on, the !SceneManager keeps track of them.
 
 There are multiple types of !SceneManagers. You can see the various types of !SceneManagers listed here:
    * ST_GENERIC - Generic scene manager
@@ -17,7 +17,7 @@ There are multiple types of !SceneManagers. You can see the various types of !Sc
 We will cover more about other !SceneManagers as we progress through the tutorials.
 
 === Entity Basics ===
-An Entity is one of the types of object that you can render on a scene. You can think of an Entity as being anything that's represented by a 3D mesh. A robot would be an entity, a fish would be an entity, the terrain your characters walk on would be a very large entity. Things such as Lights, Billboards, Particles, Cameras, etc would not be entities.
+An Entity is one of the types of object that you can render on a scene. You can think of an Entity as being anything that's represented by a 3D mesh. A robot would be an Entity, a fish would be an Entity, the terrain your characters walk on would be a very large Entity. Things such as Lights, Billboards, Particles, Cameras, etc would not be Entities.
 
 One thing to note about GMOgre3D is that it separates renderable objects from their location and orientation. This means that you cannot directly place an Entity in a scene. Instead you must attach the Entity to a !SceneNode object, and this !SceneNode contains the information about location and orientation.
 
