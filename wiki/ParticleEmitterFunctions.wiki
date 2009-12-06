@@ -2,45 +2,44 @@
 
 
 === !SetParticleEmitterPosition(real part_emit_id, real xfrom, real zfrom, real yfrom) ===
-
+----
 === !SetParticleEmitterDirection(real part_emit_id, real xto, real zto, real yto) ===
-
+----
 === !SetParticleEmitterAngle(real part_emit_id, real degrees) ===
-
+----
 === !SetParticleEmitterVelocity(real part_emit_id, real speed) ===
-
+----
 === !SetParticleEmitterMinVelocity(real part_emit_id, real speed) ===
-
+----
 === !SetParticleEmitterMaxVelocity(real part_emit_id, real speed) ===
-
+----
 === !SetParticleEmitterEmissionRate(real part_emit_id, real rate) ===
-
+----
 === !SetParticleEmitterTimeToLive(real part_emit_id, real ttl) ===
-
+----
 === !SetParticleEmitterMinTimeToLive(real part_emit_id, real ttl) ===
-
+----
 === !SetParticleEmitterMaxTimeToLive(real part_emit_id, real ttl) ===
-
+----
 === !SetParticleEmitterColor(real part_emit_id, real color) ===
-
+----
 === !SetParticleEmitterColorRangeStart(real part_emit_id, real color) ===
-
+----
 === !SetParticleEmitterColorRangeEnd(real part_emit_id, real color) ===
-
+----
 === !SetParticleEmitterStartTime(real part_emit_id, real start_time) ===
-
+----
 === !SetParticleEmitterDuration(real part_emit_id, real duration) ===
-
+----
 === !SetParticleEmitterMinDuration(real part_emit_id, real duration) ===
-
+----
 === !SetParticleEmitterMaxDuration(real part_emit_id, real duration) ===
-
+----
 === !SetParticleEmitterRepeatDelay(real part_emit_id, real delay) ===
-
+----
 === !SetParticleEmitterMinRepeatDelay(real part_emit_id, real delay) ===
-
+----
 === !SetParticleEmitterMaxRepeatDelay(real part_emit_id, real delay) ===
-
+----
 === !SetParticleEmitterDimensions(real part_emit_id, real width, real height) ===
-
-
+----
