@@ -2,21 +2,20 @@
 
 
 === !GetTextureByName(string name) ===
-
+----
 === !CreateTexture(string name, string group, real type, real width, real height, real num_mips, real pixel_format, real usage) ===
-
+----
 === !DestroyTexture(string name) ===
-
+----
 === !LoadTexture(string name) ===
-
+----
 === !UnloadTexture(string name) ===
-
+----
 === !CreateTextureViewport(string name) ===
-
+----
 === !GetTextureWidth(string name) ===
-
+----
 === !GetTextureHeight(string name) ===
-
-=== !SetTextureFSAA(string name, real fsaa) ===
-
-
+----
+=== SetTextureFSAA(string name, real fsaa) ===
+----
