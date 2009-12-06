@@ -1,10 +1,9 @@
 #summary Enter description here
 
 
-=== !SetAnimationStateBlendMaskEntry(real anim_id, real bone_handle, real weight);
-
-=== !CreateAnimationStateBlendMask(real anim_id, real size, real weight);
-
-=== !DestroyAnimationStateBlendMask(real anim_id);
-
-
+=== !SetAnimationStateBlendMaskEntry(real anim_id, real bone_handle, real weight) ===
+----
+=== !CreateAnimationStateBlendMask(real anim_id, real size, real weight) ===
+----
+=== !DestroyAnimationStateBlendMask(real anim_id) ===
+----
