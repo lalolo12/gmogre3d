@@ -2,21 +2,20 @@
 
 
 === !GetOverlayByName(string name) ===
-
+----
 === !CreateOverlay() ===
-
+----
 === !DestroyOverlay(real overlay_id) ===
-
+----
 === !ShowOverlay(real overlay_id) ===
-
+----
 === !HideOverlay(real overlay_id) ===
-
+----
 === !RotateOverlay(real overlay_id, real degrees) ===
-
+----
 === !SetOverlayScale(real overlay_id, real x, real y) ===
-
-=== !SetOverlayZOrder(real overlay_id, real index) ===
-
+----
+=== SetOverlayZOrder(real overlay_id, real index) ===
+----
 === !AddOverlayChild(real overlay_id, real overlay_cntr_id) ===
-
-
+----
