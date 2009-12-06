@@ -2,39 +2,38 @@
 
 
 === !SetCompositionPassType(real pass_id, real type) ===
-
+----
 === !SetCompositionPassIdentifier(real pass_id, real id) ===
-
+----
 === !SetCompositionPassMaterial(real pass_id, string mat_name) ===
-
+----
 === !SetCompositionPassFirstRenderQueue(real pass_id, real id) ===
-
+----
 === !SetCompositionPassLastRenderQueue(real pass_id, real id) ===
-
+----
 === !SetCompositionPassClearBuffers(real pass_id, real val) ===
-
+----
 === !SetCompositionPassClearDepth(real pass_id, real depth) ===
-
+----
 === !SetCompositionPassClearColor(real pass_id, real color) ===
-
+----
 === !SetCompositionPassClearStencil(real pass_id, real val) ===
-
+----
 === !EnableCompositionPassStencilCheck(real pass_id, real enable) ===
-
+----
 === !SetCompositionPassStencilFunction(real pass_id, real func) ===
-
+----
 === !SetCompositionPassStencilRefValue(real pass_id, real val) ===
-
+----
 === !SetCompositionPassStencilMask(real pass_id, real val) ===
-
+----
 === !SetCompositionPassStencilFailOperation(real pass_id, real op) ===
-
+----
 === !SetCompositionPassStencilFailDepthOperation(real pass_id, real op) ===
-
+----
 === !SetCompositionPassStencilPassOperation(real pass_id, real op) ===
-
+----
 === !EnableCompositionPassTwoSidedOperation(real pass_id, real enable) ===
-
+----
 === !SetCompositionPassInput(real pass_id, real id, string tex_name) ===
-
-
+----
