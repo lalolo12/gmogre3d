@@ -2,27 +2,26 @@
 
 
 === !CreateBillboardSet(real size) ===
-
+----
 === !DestroyBillboardSet(real bb_set_id) ===
-
+----
 === !SetBillboardSetPoolSize(real bb_set_id, real size) ===
-
+----
 === !GetBillboardSetPoolSize(real bb_set_id) ===
-
+----
 === !SetBillboardSetDefaultDimensions(real bb_set_id, real width, real height) ===
-
+----
 === !GetBillboardSetDefaultWidth(real bb_set_id) ===
-
+----
 === !GetBillboardSetDefaultHeight(real bb_set_id) ===
-
+----
 === !SetBillboardSetMaterial(real bb_set_id, string mat_name) ===
-
+----
 === !EnableBillboardSetPointRendering(real bb_set_id, real enable) ===
-
+----
 === !AttachBillboardSetToSceneNode(real bb_set_id, real scene_node_id) ===
-
-=== !DetachBillboardSetFromSceneNode(real bb_set_id, real scene_node_id) === !     
-
+----
+=== !DetachBillboardSetFromSceneNode(real bb_set_id, real scene_node_id) ===
+----
 === !SetBillboardSetQueryFlags(real bb_set_id, real flags) ===
-
-
+----
