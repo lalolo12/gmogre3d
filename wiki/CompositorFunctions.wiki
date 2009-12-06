@@ -1,26 +1,25 @@
 #summary Enter description here
 
 
-GetCompositorByName(string name) ===
-
-CreateCompositor(string name, string group) ===
-
-DestroyCompositor(string name) ===
-
-LoadCompositor(string name) ===
-
-UnloadCompositor(string name) ===
-
-AddCompositorToViewport(string name, real viewport_id) ===
-
-RemoveCompositorFromViewport(string name, real viewport_id) ===
-
-EnableCompositorInViewport(string name, real viewport_id, real enable) ===
-
-CreateCompositorTechnique(string name) ===
-
-GetCompositorTechnique(string name, real technique_index) ===
-
-GetNumCompositorTechniques(string name) ===
-
-
+=== !GetCompositorByName(string name) ===
+----
+=== !CreateCompositor(string name, string group) ===
+----
+=== !DestroyCompositor(string name) ===
+----
+=== !LoadCompositor(string name) ===
+----
+=== !UnloadCompositor(string name) ===
+----
+=== !AddCompositorToViewport(string name, real viewport_id) ===
+----
+=== !RemoveCompositorFromViewport(string name, real viewport_id) ===
+----
+=== !EnableCompositorInViewport(string name, real viewport_id, real enable) ===
+----
+=== !CreateCompositorTechnique(string name) ===
+----
+=== !GetCompositorTechnique(string name, real technique_index) ===
+----
+=== !GetNumCompositorTechniques(string name) ===
+----
