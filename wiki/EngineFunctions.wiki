@@ -1,6 +1,5 @@
 #summary Engine functions are the base functions use to initialize, start, and stop GMOgre3D.
 <br>
-<br>
 ----
 === InitializeOgre3D(string plugins_cfg, string ogre_cfg, string log_file) ===
 ----
