@@ -2,21 +2,20 @@
 
 
 === !SetBorderPanelOverlayElementSize(real panel_overlay_elem_id, real left, real right, real top, real bottom) ===
-
+----
 === !SetBorderPanelOverlayElementLeftBorderUV(real panel_overlay_elem_id, real u1, real v1, real u2, real v2) ===
-
+----
 === !SetBorderPanelOverlayElementRightBorderUV(real panel_overlay_elem_id, real u1, real v1, real u2, real v2) ===
-
+----
 === !SetBorderPanelOverlayElementTopBorderUV(real panel_overlay_elem_id, real u1, real v1, real u2, real v2) ===
-
+----
 === !SetBorderPanelOverlayElementBottomBorderUV(real panel_overlay_elem_id, real u1, real v1, real u2, real v2) ===
-
+----
 === !SetBorderPanelOverlayElementTopLeftBorderUV(real panel_overlay_elem_id, real u1, real v1, real u2, real v2) ===
-
+----
 === !SetBorderPanelOverlayElementTopRightBorderUV(real panel_overlay_elem_id, real u1, real v1, real u2, real v2) ===
-
+----
 === !SetBorderPanelOverlayElementBottomLeftBorderUV(real panel_overlay_elem_id, real u1, real v1, real u2, real v2) ===
-
+----
 === !SetBorderPanelOverlayElementBottomRightBorderUV(real panel_overlay_elem_id, real u1, real v1, real u2, real v2) ===
-
-
+----
