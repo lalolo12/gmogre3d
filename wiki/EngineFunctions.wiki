@@ -1,30 +1,27 @@
 #summary Engine functions are the base functions use to initialize, start, and stop GMOgre3D.
 <br>
 ----
-=== InitializeOgre3D(string plugins_cfg, string ogre_cfg, string log_file) ===
+=== InitializeOgre3D() ===
 ----
 Initializes the GMOgre3D engine.  This needs to be called before any other GMOgre3D functions are called.
-==== Parameters ====
-  * plugins_cfg - The file location to the plugins.cfg file.  Note this is only needed if you are not using the static version of GMOgre3D.
-  * ogre_cfg - The file location to store the last used OGRE settings
-  * log_file - The file location for the OGRE log file 
+
 <br>
 ----
 === IsOgre3DInitialized() ===
 ----
-Initializes the GMOgre3D engine.  This needs to be called before any other GMOgre3D functions are called.
+Returns true if the GMOgre3D engine has been initialized.
 
 <br>
 ----
-=== StartOgre3DEngine(real render_engine, real hwnd, real window_width, real window_height) ===
+=== StartOgre3DEngine(render_engine) ===
 ----
 Starts the GMOgre3D engine.  After calling this all drawing of the GM window is taken over by the GMOgre3D DLL.
 
 ====Parameters====
-  * render_engine - The type of renderer to use. Can be global.RENDER_DX9 or global.RENDER_GL
-  * hwnd - The window handle
-  * window_width - The width of the window
-  * window_height - The height of the window
+  * render_engine - The type of renderer to use. Possible values are:
+    * global.RENDER_DX9
+    * global.RENDER_GL
+
 <br>
 ----
 === StopOgre3DEngine() ===
