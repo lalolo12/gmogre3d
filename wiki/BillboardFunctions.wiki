@@ -2,15 +2,14 @@
 
 
 === !CreateBillboard(real bb_set_id, real x, real z, real y) ===
-
+----
 === !RemoveBillboard(real bb_set_id, real bb_id) ===
-
+----
 === !SetBillboardPosition(real bb_id, real x, real z, real y) ===
-
+----
 === !SetBillboardDimensions(real bb_id, real width, real height) ===
-
+----
 === !GetBillboardWidth(real bb_id) ===
-
+----
 === !GetBillboardHeight(real bb_id) ===
-
-
+----
