@@ -1,28 +1,27 @@
 #summary Enter description here
 
 
-CreateLight() ===
-
+=== !CreateLight() ===
+----
 === !DestroyLight(real light_id) ===
-
+----
 === !SetLightPosition(real light_id, real x, real z, real y) ===
-
-=== !SetLightDirection(real light_id, real x, real z, real y)
-
+----
+=== !SetLightDirection(real light_id, real x, real z, real y) ===
+----
 === !SetLightType(real light_id, real type) ===
-
+----
 === !SetLightAttenuation(real light_id, real range, real constant, real linear, real quadratic) ===
-
+----
 === !SetLightDiffuseColor(real light_id, real color) ===
-
+----
 === !SetLightSpecularColor(real light_id, real color) ===
-
+----
 === !SetAmbientLight(real color) ===
-
+----
 === !AttachLightToSceneNode(real light_id, real scene_node_id) ===
-
+----
 === !DetachLightFromSceneNode(real light_id, real scene_node_id) ===
-
+----
 === !SetLightQueryFlags(real light_id, real flags) ===
-
-
+----
