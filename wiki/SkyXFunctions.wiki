@@ -1,29 +1,27 @@
 #summary Enter description here
 
 
-=== !CreateSkyX(real camera_id) ===
-
-=== !DestroySkyX(real skyx_id) ===
-
-=== !EnableSkyXStarfield(real skyx_id, real enable) ===
-
-=== !SetSkyXLightingMode(real skyx_id, real type) ===
-
-=== !SetSkyXTime(real skyx_id, real time_seconds) ===
-
-=== !UpdateSkyXTime(real skyx_id, real time_seconds) ===
-
-=== !SetSkyXSunriseHour(real skyx_id, real time_hour) ===
-
-=== !SetSkyXSunsetHour(real skyx_id, real time_hour) ===
-
-=== !AddCloudLayer(real skyx_id, real height, real scale real wind_dirx, real wind_diry, real time_mult, real 
-distance_attenuation, real detail_attenuation, real normal_mult, real height_vol, real vol_displacement) ===
-
+=== CreateSkyX(real camera_id) ===
+----
+=== DestroySkyX(real skyx_id) ===
+----
+=== EnableSkyXStarfield(real skyx_id, real enable) ===
+----
+=== SetSkyXLightingMode(real skyx_id, real type) ===
+----
+=== SetSkyXTime(real skyx_id, real time_seconds) ===
+----
+=== UpdateSkyXTime(real skyx_id, real time_seconds) ===
+----
+=== SetSkyXSunriseHour(real skyx_id, real time_hour) ===
+----
+=== SetSkyXSunsetHour(real skyx_id, real time_hour) ===
+----
+=== !AddCloudLayer(real skyx_id, real height, real scale real wind_dirx, real wind_diry, real time_mult, real distance_attenuation, real detail_attenuation, real normal_mult, real height_vol, real vol_displacement) ===
+----
 === !RemoveCloudLayer(ty_real, ty_real) ===
-
+----
 === !AddVolumetricClouds(real skyx_id) ===
-
+----
 === !RemoveVolumetricClouds(real skyx_id) ===
-
-
+----
