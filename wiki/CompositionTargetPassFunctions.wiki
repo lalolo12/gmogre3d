@@ -9,7 +9,7 @@
 
 === !SetTargetPassVisibilityMask(real pass_id, real mask) ===
 
-=== !SetTargetPassLODBias(real pass_id, real bias) ===
+=== SetTargetPassLODBias(real pass_id, real bias) ===
 
 === !SetTargetPassMaterialScheme(real pass_id, string scheme) ===
 
@@ -20,4 +20,3 @@
 === !GetCompositionPass(real pass_id, real pass_index) ===
 
 === !GetNumCompositionPasses(real pass_id) ===
-
