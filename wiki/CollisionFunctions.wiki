@@ -1,0 +1,9 @@
+#summary Enter description here
+
+
+=== !CollidesWithObject(real fromx, real fromz, real fromy, real tox, real toz, real toy, real collision_radius, real ray_height, real mask) ===
+
+=== !GetZCollisionDistance(real scene_node_id, real check_terrain, real space_width, real mask) ===
+
+=== !DistanceToCollisionWithObject(real fromx, real fromz, real fromy, real tox, real toz, real toy, real collision_radius, real ray_height, real mask) ===
+

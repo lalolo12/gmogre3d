@@ -1,0 +1,20 @@
+#summary Enter description here
+
+
+=== !CreateSprite(string mat_name, real width, real height, real metrics) ===
+
+=== !DestroySprite(real sprite_id) ===
+
+=== !SetSpriteMaterial(real sprite_id, string mat_name) ===
+
+=== !SetSpriteMetrics(real sprite_id, real type) ===
+
+=== !SetSpriteDimensions(real sprite_id, real width, real height) ===
+
+=== !SetSpritePosition(real sprite_id, real x, real y) ===
+
+=== !SetSpriteScale(real sprite_id, real x, real y) ===
+
+=== !RotateSprite(real sprite_id, real degrees) ===
+
+

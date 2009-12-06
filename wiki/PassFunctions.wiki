@@ -1,0 +1,32 @@
+#summary Enter description here
+
+
+=== !SetPassAmbientColor(real pass_id, real color) ===
+
+=== !SetPassDiffuseColor(real pass_id, real color, real alpha) ===
+
+=== !SetPassSpecularColor(real pass_id, real color, real alpha) ===
+
+=== !SetPassSelfIllumination(real pass_id, real color) ===
+
+=== !SetPassShininess(real pass_id, real shininess) ===
+
+=== !EnablePassDepthWrite(real pass_id, real enable) ===
+
+=== !EnablePassDepthCheck(real pass_id, real enable) ===
+
+=== !EnablePassLighting(real pass_id, real enable) ===
+
+=== !EnablePassPointSizeAttenuation(real pass_id, real enable, real constant, real linear, real quadratic) ===
+
+=== !SetPassPointSize(real pass_id, real size) ===
+
+=== !SetPassSceneBlendingType(real pass_id, real type) ===
+
+=== !CreatePassTextureUnitState(real pass_id) ===
+
+=== !GetPassTextureUnitState(real pass_id, real tex_unit_index) ===
+
+=== !GetNumPassTextureUnitStates(real pass_id) ===
+
+

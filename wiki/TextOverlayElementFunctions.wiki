@@ -1,0 +1,12 @@
+#summary Enter description here
+
+
+=== !SetTextOverlayElementTopColor(real ta_overlay_elem_id, real color, real alpha) ===
+
+=== !SetTextOverlayElementBottomColor(real ta_overlay_elem_id, real color, real alpha) ===
+
+=== !SetTextOverlayElementFont(real ta_overlay_elem_id, string font_name) ===
+
+=== !SetTextOverlayElementAlignment(real ta_overlay_elem_id, real type) ===
+
+

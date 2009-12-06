@@ -1,0 +1,40 @@
+#summary Enter description here
+
+
+=== !CreateBillboardChain() ===
+----
+=== !DestroyBillboardChain(real bb_chain_id) ===
+----
+=== !SetBillboardChainMaxChainElements(real bb_chain_id, real max) ===
+----
+=== !SetBillboardChainNumberOfChains(real bb_chain_id, real num) ===
+----
+=== !EnableBillboardChainTextureCoords(real bb_chain_id, real enable) ===
+----
+=== !SetBillboardChainTextureCoordDirection(real bb_chain_id, real type) ===
+----
+=== !SetBillboardChainOtherTextureCoordRange(real bb_chain_id, real start, real end) ===
+----
+=== !EnableBillboardChainVertexColours(real bb_chain_id, real enable) ===
+----
+=== !EnableBillboardChainDynamic(real bb_chain_id, real enable) ===
+----
+=== !AddBillboardChainChainElement(real bb_chain_id, real index, real x, real z, real y, real width, real tex_coord, real color, real alpha) ===
+----
+=== !RemoveBillboardChainChainElement(real bb_chain_id, real index) ===
+----
+=== !UpdateBillboardChainChainElement(real bb_chain_id, real index, real elementindex, real x, real z, real y, real width, real tex_coord, real color, real alpha) ===
+----
+=== !ClearBillboardChainChain(real bb_chain_id, real index) ===
+----
+=== !ClearBillboardChainAllChains(real bb_chain_id) ===
+----
+=== !SetBillboardChainMaterial(real bb_chain_id, string mat_name) ===
+----
+=== !AttachBillboardChainToSceneNode(real bb_chain_id, real scene_node_id) ===
+----
+=== !DetachBillboardChainFromSceneNode(real bb_chain_id, real scene_node_id) ===
+----
+=== !SetBillboardChainQueryFlags(real bb_chain_id, real flags) ===
+----
+

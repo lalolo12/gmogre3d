@@ -1,0 +1,66 @@
+#summary Enter description here
+
+
+=== !CreateCamera(real aspect, real znear, real zfar, real fov) ===
+
+=== !DestroyCamera(real camera_id) ===
+
+=== !SetCameraProjection(real camera_id, real xfrom, real zfrom, real yfrom, real xto, real zto, real yto, real xup, real zup, real yup) ===
+
+=== !SetCameraPosition(real camera_id, real x, real z, real y) ===
+
+=== !SetCameraDirection(real camera_id, real xto, real zto, real yto) ===
+
+=== !MoveCameraForward(real camera_id, real delta) ===
+
+=== !MoveCameraBackward(real camera_id, real delta) ===
+
+=== !MoveCameraLeft(real camera_id, real delta) ===
+
+=== !MoveCameraRight(real camera_id, real delta) ===
+
+=== !MoveCameraUp(real camera_id, real delta) ===
+
+=== !MoveCameraDown(real camera_id, real delta) ===
+
+=== !GetCameraPosition(real camera_id) ===
+
+=== !SetCameraLookAt(real camera_id, real x, real z, real y) ===
+
+=== !SetCameraOrientation(real cam_id, real yaw, real pitch, real roll) ===
+
+=== !GetCameraOrientation(real camera_id) ===
+
+=== !SetCameraRoll(real camera_id, real degrees) ===
+
+=== !GetCameraRoll(real camera_id) ===
+
+=== !SetCameraPitch(real camera_id, real degrees) ===
+
+=== !GetCameraPitch(real camera_id) ===
+
+=== !SetCameraYaw(real camera_id, real degrees) ===
+
+=== !GetCameraYaw(real camera_id) ===
+
+=== !SetCameraFOV(real camera_id, real angle) ===
+
+=== !SetCameraProjectionType(real camera_id, real type) ===
+
+=== !SetCameraRenderType(real camera_id, real type) ===
+
+=== !SetCameraLODBias(real camera_id, real factor) ===
+
+=== !GetCameraLODBias(real camera_id) ===
+
+=== !EnableCameraAutoTracking(real camera_id, real enable, real scene_node_id, real x, real z, real y) ===
+
+=== !EnableCameraFixedYawAxis(real cam_id, real enable, real x, real z, real y) ===
+
+=== !EnableCameraReflection(real cam_id, real enable, real plane_id) ===
+
+=== !AttachCameraToSceneNode(real cam_id, real scene_node_id) ===
+
+=== !DetachCameraFromSceneNode(real cam_id, real scene_node_id) ===
+
+

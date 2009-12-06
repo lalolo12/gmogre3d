@@ -1,0 +1,30 @@
+#summary Enter description here
+
+
+=== !CreateRaySceneQuery() ===
+
+=== !DestroyRaySceneQuery(real ray_scn_qry_id) ===
+
+=== !SetRaySceneQueryRay(real ray_scn_qry_id, real ray_id) ===
+
+=== !EnableSortRaySceneQueryByDistance(real ray_scn_qry_id, real enable) ===
+
+=== !SetRaySceneQueryMask(real ray_scn_qry_id, real mask) ===
+
+=== !ExecuteRaySceneQuery(real ray_scn_qry_id) ===
+
+=== !GetNumRaySceneQueryResults(real ray_scn_qry_id) ===
+
+=== !GetRaySceneQueryResultDistance(real ray_scn_qry_id, real index) ===
+
+=== !GetRaySceneQueryResultObject(real ray_scn_qry_id, real index) ===
+
+=== !GetRaySceneQueryResultWorldFragmentIntersectX(real ray_scn_qry_id, real index) ===
+
+=== !GetRaySceneQueryResultWorldFragmentIntersectY(real ray_scn_qry_id, real index) ===
+
+=== !GetRaySceneQueryResultWorldFragmentIntersectZ(real ray_scn_qry_id, real index) ===
+
+=== !ClearRaySceneQueryResults(real ray_scn_qry_id) ===
+
+

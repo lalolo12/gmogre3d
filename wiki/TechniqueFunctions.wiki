@@ -1,0 +1,22 @@
+#summary Enter description here
+
+
+=== !SetTechniqueAmbientColor(real technique_id, real color) ===
+
+=== !SetTechniqueDiffuseColor(real technique_id, real color, real alpha) ===
+
+=== !SetTechniqueSpecularColor(real technique_id, real color, real alpha) ===
+
+=== !SetTechniqueSelfIllumination(real technique_id, real color) ===
+
+=== !SetTechniqueShininess(real technique_id, real shininess) ===
+
+=== !SetTechniqueLODIndex(real technique_id, real index) ===
+
+=== !CreateTechniquePass(real technique_id) ===
+
+=== !GetTechniquePass(real technique_id, real pass_index) ===
+
+=== !GetNumTechniquePasses(real technique_id) ===
+
+

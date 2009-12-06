@@ -1,0 +1,12 @@
+#summary Enter description here
+
+
+=== !SetEulerDirection(real x, real z, real y) ===
+
+=== !GetYaw() ===
+
+=== !GetPitch() ===
+
+=== !GetRoll() ===
+
+

@@ -1,0 +1,26 @@
+#summary Enter description here
+
+
+=== !GetSkeletonBoneByName(real skel_id, string name) ===
+
+=== !GetSkeletonNumBones(real skel_id) ===
+
+=== !GetSkeletonBone(real skel_id, real index) ===
+
+=== !CreateSkeletonAnimation(real skel_id, string anim_name, real length) ===
+
+=== !GetSkeletonNumAnimation(real skel_id) ===
+
+=== !GetSkeletonAnimation(real skel_id, real index) ===
+
+=== !GetSkeletonAnimationByName(real skel_id, string anim_name) ===
+
+=== !SetSkeletonBindingPose(real skel_id) ===
+
+=== !ResetSkeleton(real skel_id) ===
+
+=== !SetSkeletonEntityAnimationState(real skel_id, real ent_id) ===
+
+=== !SetSkeletonBlendMode(real skel_id, real type) ===
+
+

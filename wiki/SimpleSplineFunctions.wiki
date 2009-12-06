@@ -1,0 +1,26 @@
+#summary Enter description here
+
+
+=== !CreateSimpleSpline() ===
+
+=== !DestroySimpleSpline(real spline_id) ===
+
+=== !AddSimpleSplinePoint(real spline_id, real x, real z, real y) ===
+
+=== !GetSimpleSplineNumPoints(real spline_id) ===
+
+=== !GetSimpleSplinePoint(real spline_id, real index) ===
+
+=== !ClearSimpleSpline(real spline_id) ===
+
+=== !UpdateSimpleSplinePoint(real spline_id, real index, real x, real z, real y) ===
+
+=== !GetSimpleSplineInterpolate(real spline_id, real t) ===
+
+=== !GetSimpleSplineInterpolateFrom(real spline_id, real from_index, real t) ===
+
+=== !EnableSimpleSplineAutoCalculate(real spline_id, real enable) ===
+
+=== !RecalcSimpleSplineTangent(real spline_id) ===
+
+

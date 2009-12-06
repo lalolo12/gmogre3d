@@ -1,0 +1,24 @@
+#summary Enter description here
+
+
+=== !CreateText(string font_name, string txt, real x, real y, real color, real alpha) ===
+
+=== !DestroyText(real text_id) ===
+
+=== !SetTextFont(real text_id, string font_name) ===
+
+=== !SetTextCaption(real text_id, string txt) ===
+
+=== !SetTextMetrics(real text_id, real type) ===
+
+=== !SetTextPosition(real text_id, real x, real y) ===
+
+=== !SetTextColour(real text_id, real color, real alpha) ===
+
+=== !SetTextAlignment(real text_id, real type) ===
+
+=== !GetTextWidth(real text_id) ===
+
+=== !GetTextHeight(real text_id) ===
+
+

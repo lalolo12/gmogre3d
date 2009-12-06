@@ -1,0 +1,22 @@
+#summary Enter description here
+
+
+=== !GetAnimationStateByName(string name) ===
+
+=== !CreateAnimationState(string name) ===
+
+=== !DestroyAnimationState(real anim_id) ===
+
+=== !EnableAnimationState(real anim_id, real enabled) ===
+
+=== !IsAnimationStateEnabled(real anim_id) ===
+
+=== !EnableAnimationStateLoop(real anim_id, real enabled) ===
+
+=== !IsAnimationStateLoopEnabled(real anim_id) ===
+
+=== !AddAnimationStateTime(real anim_id, real time) ===
+
+=== !GetAnimationStateLength(real anim_id) ===
+
+

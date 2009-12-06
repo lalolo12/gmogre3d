@@ -1,0 +1,36 @@
+#summary Enter description here
+
+
+=== !GetMaterialByName(string name) ===
+
+=== !CreateMaterial(string name, string group) ===
+
+=== !DestroyMaterial(string name) ===
+
+=== !LoadMaterial(string name) ===
+
+=== !UnloadMaterial(string name) ===
+
+=== !SetMaterialAmbientColor(string name, real color) ===
+
+=== !SetMaterialDiffuseColor(string name, real color, real alpha) ===
+
+=== !SetMaterialSpecularColor(string name, real color, real alpha) ===
+
+=== !SetMaterialSelfIllumination(string name, real color) ===
+
+=== !SetMaterialShininess(string name, real shininess) ===
+
+=== !SetMaterialReceiveShadows(string name, real enabled) ===
+
+=== !GetMaterialReceiveShadows(string name) ===
+
+=== !SetMaterialLODLevels(string name, real lod1, real lod2, real lod3, real lod4, real lod5, real lod6, real lod7, real lod8, real lod9, real lod10, real lod11, real lod12) ===
+
+=== !CreateMaterialTechnique(string name) ===
+
+=== !GetMaterialTechnique(string name, real technique_index) ===
+
+=== !GetNumMaterialTechniques(string name) ===
+
+

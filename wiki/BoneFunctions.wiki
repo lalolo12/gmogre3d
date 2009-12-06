@@ -1,0 +1,40 @@
+#summary Enter description here
+
+
+=== !GetBoneHandle(real bone_id) ===
+
+=== !SetBoneBindingPose(real bone_id) ===
+
+=== !ResetBone(real bone_id) ===
+
+=== !EnableBoneManualControl(real bone_id, real enable) ===
+
+=== !SetBoneScale(real bone_id, real x, real z, real y) ===
+
+=== !SetBonePosition(real bone_id, real x, real z, real y) ===
+
+=== !GetBonePosition(real bone_id) ===
+
+=== !BoneTranslate(real bone_id, real x, real z, real y, real relative_type) ===
+
+=== !SetBoneOrientation(real bone_id, real yaw, real pitch, real roll) ===
+
+=== !GetBoneOrientation(real bone_id) ===
+
+=== !SetBoneRoll(real bone_id, real degrees, real relative_type) ===
+
+=== !GetBoneRoll(real bone_id) ===
+
+=== !SetBoneYaw(real bone_id, real degrees, real relative_type) ===
+
+=== !GetBoneYaw(real bone_id) ===
+
+=== !SetBonePitch(real bone_id, real degrees, real relative_type) ===
+
+=== !GetBonePitch(real bone_id) ===
+
+=== !SetBoneInitialState(real bone_id) ===
+
+=== !ResetBoneInitialState(real bone_id) ===
+
+

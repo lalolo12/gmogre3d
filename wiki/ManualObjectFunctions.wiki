@@ -1,0 +1,52 @@
+#summary Enter description here
+
+
+=== !CreateManualObject() ===
+
+=== !DestroyManualObject(real man_obj_id) ===
+
+=== !SetManualObjectRenderQueueGroup(real man_obj_id, real type) ===
+
+=== !EnableManualObjectIdentityProjection(real man_obj_id, real enable) ===
+
+=== !EnableManualObjectIdentityView(real man_obj_id, real enable) ===
+
+=== !SetManualObjectQueryFlags(real man_obj_id, real flags) ===
+
+=== !SetManualObjectBoundingBox(real man_obj_id, real mx, real mz, real my, real Mx, real Mz, real My) ===
+
+=== !EnableManualObjectDynamic(real man_obj_id, real enable) ===
+
+=== !EstimateManualObjectVertexCount(real man_obj_id, real size) ===
+
+=== !BeginManualObjectSection(real man_obj_id, string mat_name, real type) ===
+
+=== !AddManualObjectPosition(real man_obj_id, real x, real z, real y) ===
+
+=== !AddManualObjectNormal(real man_obj_id, real x, real z, real y) ===
+
+=== !AddManualObjectTriangle(real man_obj_id, real i1, real i2, real i3) ===
+
+=== !AddManualObjectQuad(real man_obj_id, real i1, real i2, real i3, real i4) ===
+
+=== !AddManualObjectTextureCoord1(real man_obj_id, real u) ===
+
+=== !AddManualObjectTextureCoord2(real man_obj_id, real u, real v) ===
+
+=== !AddManualObjectTextureCoord3(real man_obj_id, real u, real v, real w) ===
+
+=== !AddManualObjectTextureCoord4(real man_obj_id, real x, real z, real y, real w) ===
+
+=== !AddManualObjectColor(real man_obj_id, real color, real alpha) ===
+
+=== !AddManualObjectIndex(real man_obj_id, real index) ===
+
+=== !EndManualObjectSection(real man_obj_id) ===
+
+=== !ClearManualObject(real man_obj_id) ===
+
+=== !SetManualObjectMaterial(real man_obj_id, real index, string mat_name) ===
+
+=== !ConvertManualObjectToMesh(real man_obj_id, string name, string group) ===
+
+

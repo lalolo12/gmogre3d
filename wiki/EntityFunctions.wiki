@@ -1,0 +1,45 @@
+#summary Enter description here
+
+
+=== !CreateEntity(string mesh_name) ===
+
+=== !CreateCubeEntity() ===
+
+=== !CreateSphereEntity() ===
+
+=== !CreateFloorEntity(real width, real height, real xsegments, real ysegments, real hrepeat, real vrepeat) ===
+
+=== !CreateCeilingEntity(real width, real height, real xsegments, real ysegments, real hrepeat, real vrepeat) ===
+
+=== !CreatePlaneEntity(real plane_id, real width, real height, real xsegments, real ysegments, real hrepeat, real 
+vrepeat, real dirx, real dirz, real diry) ===
+
+=== !CreateWallEntity(real width, real height, real xsegments, real ysegments, real hrepeat, real vrepeat) ===
+
+=== !DestroyEntity(real entity_id) ===
+
+=== !SetEntityMaterial(real entity_id, string mat_name) ===
+
+=== !ShowEntity(real entity_id) ===
+
+=== !HideEntity(real entity_id) ===
+
+=== !EnableEntityCastShadows(real entity_id, real enable) ===
+
+=== !GetEntityAnimationState(real entity_id, string state_name) ===
+
+=== !GetEntitySkeleton(real entity_id) ===
+
+=== !SetEntityRenderingDistance(real entity_id, real distance) ===
+
+=== !AttachEntityToSceneNode(real ent_id, real scene_node_id) ===
+
+=== !DetachEntityFromSceneNode(real ent_id, real scene_node_id) ===
+
+=== !GetEntitParentSceneNode(real ent_id) ===
+
+=== !SetEntityQueryFlags(real ent_id, real flags) ===
+
+=== !GetEntityAllAnimationStates(real entity_id) ===
+
+

@@ -1,0 +1,28 @@
+#summary Enter description here
+
+
+=== !GetOverlayElementByName(string name) ===
+
+=== !CreateOverlayElement(real type) ===
+
+=== !DestroyOverlayElement(real overlay_elem_id) ===
+
+=== !ShowOverlayElement(real overlay_elem_id) ===
+
+=== !HideOverlayElement(real overlay_elem_id) ===
+
+=== !SetOverlayElementMetrics(real overlay_elem_id, real type) ===
+
+=== !SetOverlayElementPosition(real overlay_elem_id, real x, real y) ===
+
+=== !SetOverlayElementDimensions(real overlay_elem_id, real width, real height) ===
+
+=== !SetOverlayElementMaterial(real overlay_elem_id, string name) ===
+
+=== !SetOverlayElementCaption(real overlay_elem_id, string txt) ===
+
+=== !SetOverlayElementColor(real overlay_elem_id, real color, real alpha) ===
+
+=== !AddOverlayElementChild(real overlay_cntr_id, real overlay_elem_id) ===
+
+

@@ -1,0 +1,76 @@
+#summary Enter description here
+
+
+=== !GetRootSceneNode() ===
+
+=== !CreateSceneNode() ===
+
+=== !CreateRootChildSceneNode(real x, real z, real y, real yaw, real pitch, real roll) ===
+
+=== !CreateChildSceneNode(real scene_node_id, real x, real z, real y, real yaw, real pitch, real roll) ===
+
+=== !DestroySceneNode(real scene_node_id) ===
+
+=== !AddChildSceneNode(real parent_scene_node_id, real scene_node_id) ===
+
+=== !RemoveChildSceneNode(real parent_scene_node_id, real scene_node_id) ===
+
+=== !SetSceneNodeScale(real scene_node_id, real x, real z, real y) ===
+
+=== !GetSceneNodeScale(real scene_node_id) ===
+
+=== !SetSceneNodePosition(real scene_node_id, real xfrom, real zfrom, real yfrom) ===
+
+=== !GetSceneNodePosition(real scene_node_id) ===
+
+=== !MoveSceneNodeForward(real scene_node_id, real delta) ===
+
+=== !MoveSceneNodeBackward(real scene_node_id, real delta) ===
+
+=== !MoveSceneNodeLeft(real scene_node_id, real delta) ===
+
+=== !MoveSceneNodeRight(real scene_node_id, real delta) ===
+
+=== !MoveSceneNodeUp(real scene_node_id, real delta) ===
+
+=== !MoveSceneNodeDown(real scene_node_id, real delta) ===
+
+=== !SetSceneNodeOrientation(real scene_node_id, real yaw, real pitch, real roll) ===
+
+=== !GetSceneNodeOrientation(real scene_node_id) ===
+
+=== !SetSceneNodeDirection(real scene_node_id, real xto, real zto, real yto, real relative_type) ===
+
+=== !SetSceneNodeLookAt(real scene_node_id, real xup, real zup, real yup, real relative_type) ===
+
+=== !SetSceneNodeRoll(ty_real, ty_real, ty_real) ===
+
+=== !GetSceneNodeRoll(real scene_node_id) ===
+
+=== !SetSceneNodeYaw(ty_real, ty_real, ty_real) ===
+
+=== !GetSceneNodeYaw(real scene_node_id) ===
+
+=== !SetSceneNodePitch(ty_real, ty_real, ty_real) ===
+
+=== !GetSceneNodePitch(real scene_node_id) ===
+
+=== !RotateSceneNode(real scene_node_id, real x, real z, real y, real degrees, real relative_type) ===
+
+=== !ResetSceneNodeOrientation(real scene_node_id) ===
+
+=== !TranslateSceneNode(real scene_node_id, real x, real z, real y, real relative_type) ===
+
+=== !ShowSceneNode(real scene_node_id) ===
+
+=== !HideSceneNode(real scene_node_id) ===
+
+=== !ShowSceneNodeBoundingBox(real scene_node_id) ===
+
+=== !HideSceneNodeBoundingBox(real scene_node_id) ===
+
+=== !AttachSceneNodeToGMInstance(real scene_node_id, real gm_instance_id) ===
+
+=== !DetachSceneNodeFromGMInstance(real scene_node_id, real gm_instance_id) ===
+
+
