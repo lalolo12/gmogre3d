@@ -2,29 +2,28 @@
 
 
 === !GetFontByName(string name) ===
-
-=== !CreateGMFont(string name, string group, string font_source, real size) ===
-
-=== !DestroyGMFont(string name) ===
-
+----
+=== !CreateFont(string name, string group, string font_source, real size) ===
+----
+=== !DestroyFont(string name) ===
+----
 === !LoadFont(string name) ===
-
+----
 === !UnloadFont(string name) ===
-
+----
 === !GetFontStringWidth(string name, string txt) ===
-
+----
 === !GetFontHeight(string name) ===
-
+----
 === !SetFontSource(string name, string font_source) ===
-
+----
 === !GetFontSource(string name) ===
-
+----
 === !SetFontSize(string name, real size) ===
-
+----
 === !GetFontSize(string name) ===
-
+----
 === !SetFontResolution(string name, real resolution) ===
-
+----
 === !GetFontResolution(string name) ===
-
-
+----
