@@ -1,25 +1,23 @@
 #summary Enter description here
 
 
-SetTargetPassInputMode(real pass_id, real mode) ===
+=== !SetTargetPassInputMode(real pass_id, real mode) ===
 
-SetTargetPassOutputName(real pass_id, string name) ===
+=== !SetTargetPassOutputName(real pass_id, string name) ===
 
-EnableTargetPassOnlyInitial(real pass_id, real enabled) ===
+=== !EnableTargetPassOnlyInitial(real pass_id, real enabled) ===
 
-SetTargetPassVisibilityMask(real pass_id, real mask) ===
+=== !SetTargetPassVisibilityMask(real pass_id, real mask) ===
 
-SetTargetPassLODBias(real pass_id, real bias) ===
+=== !SetTargetPassLODBias(real pass_id, real bias) ===
 
-SetTargetPassMaterialScheme(real pass_id, string scheme) ===
+=== !SetTargetPassMaterialScheme(real pass_id, string scheme) ===
 
-EnableTargetPassShadows(real pass_id, real enabled) ===
+=== !EnableTargetPassShadows(real pass_id, real enabled) ===
 
-CreateCompositionPass(real pass_id) ===
+=== !CreateCompositionPass(real pass_id) ===
 
-GetCompositionPass(real pass_id, real pass_index) ===
+=== !GetCompositionPass(real pass_id, real pass_index) ===
 
-GetNumCompositionPasses(real pass_id) ===
-
-
+=== !GetNumCompositionPasses(real pass_id) ===
 
