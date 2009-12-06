@@ -2,7 +2,6 @@
 
 
 === !CreatePlane(real normalx, real normalz, real normaly, real depth) ===
-
+----
 === !DestroyPlane(real plane_id) ===
-
-
+----
