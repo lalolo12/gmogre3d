@@ -1,4 +1,4 @@
-= Engine Functions =
+#summary Engine functions are the base functions use to initialize, start, and stop GMOgre3D.
 Engine functions are the base functions use to initialize, start, and stop GMOgre3D.
 <br>
 <br>
