@@ -1,9 +1,4 @@
-#summary Enter description here
-
-
-#summary Animation functions defines the interface for a sequence of animation, whether that be animation of a mesh, a path along a spline, or possibly more than one type of animation in one. An animation is made up of many 'tracks', which are the more specific types of animation.<BR>
-<BR>
-#summary You should not create these animations directly. They will be created via a parent object which owns the animation, e.g. Skeleton or SceneNode.
+#summary Animation functions defines the interface for a sequence of animation, whether that be animation of a mesh, a path along a spline, or possibly more than one type of animation in one. An animation is made up of many 'tracks', which are the more specific types of animation.  You should not create these animations directly. They will be created via a parent object which owns the animation, e.g. Skeleton or !SceneNode.
 <BR>
 <BR>
 
@@ -26,11 +21,11 @@ Tells the animation how to interpolate between keyframes.  By default, animation
 
 === !CreateAnimationNodeTrack(real anim_id, real handle, real node_id) ===
 ----
-Creates a new AnimationTrack automatically associated with a Node or Bone. This method creates a standard AnimationTrack, but also associates it with a target SceneNode or Bone which will receive all keyframe effects. 
+Creates a new !AnimationTrack automatically associated with a Node or Bone. This method creates a standard !AnimationTrack, but also associates it with a target !SceneNode or Bone which will receive all keyframe effects. 
 ====Parameters====
    * anim_id - The ID of the animation
    * handle - Numeric handle to give the track, used for accessing the track later. Must be unique within this Animation.
-   * node_id - The ID of the SceneNode or Bone.
+   * node_id - The ID of the !SceneNode or Bone.
 <BR>
 <BR>
 
@@ -51,6 +46,4 @@ Returns a node track by it's handle.
    * handle - Numeric handle of the track to return.
 <BR>
 <BR>
-
-
 
