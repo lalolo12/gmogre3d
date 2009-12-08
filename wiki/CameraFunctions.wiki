@@ -19,217 +19,252 @@ Create a camera for the current !SceneManager.
 <BR>
 <BR>
 ====Parameters====
-   * camera_id - The ID of the camera
+   * _camera_id_ - The ID of the camera
 <BR>
 <BR>
 === !DestroyCamera(real camera_id) ===
 ----
 Destroys a camara.
 ====Parameters====
-   * _camera_id_ - The ID of the camera
+   * _camera_id_ - The ID of the camera.
 <BR>
 <BR>
-=== !SetCameraProjection(real camera_id, real xfrom, real zfrom, real yfrom, real xto, real zto, real yto) ===
+=== !SetCameraProjection(real camera_id, real xfrom, real yfrom, real zfrom, real xto, real yto, real zto, real xup, real yup, real zup) ===
 ----
-Sets a cameras position and direction.
+Sets a camera's position to look from, the position to look at, and the up vector.
 ====Parameters====
-   * __camera_id__ - The ID of the camera
+   * __camera_id__ - The ID of the camera.
    * _xfrom_, _yfrom_, _zfrom_ - The coordinates to place the camera at.
-   * _xto_, _yto_, _zto_ - The coordinates to point the camera towards.
+   * _xto_, _yto_, _zto_ - The up vector.
 <BR>
 <BR>
 === !SetCameraPosition(real camera_id, real x, real z, real y) ===
 ----
-Returns the total length of the animation.
+Sets a camera's position.
 ====Parameters====
-   * _camera_id_ - The ID of the camera
+   * _camera_id_ - The ID of the camera.
+   * _x_, _y_, _z_ - The coordinates to place the camera at.
 <BR>
 <BR>
-=== !SetCameraDirection(real camera_id, real xto, real zto, real yto) ===
+=== !SetCameraDirection(real camera_id, real x, real y, real z) ===
 ----
-Returns the total length of the animation.
+Sets a camera's direction vector.
 ====Parameters====
-   * _camera_id_ - The ID of the camera
+   * _camera_id_ - The ID of the camera.
+   * _x_, _y_, _z_ - The up vector.
 <BR>
 <BR>
 === !MoveCameraForward(real camera_id, real delta) ===
 ----
-Returns the total length of the animation.
+Moves a camera forward by the delta amount.
 ====Parameters====
-   * _camera_id_ - The ID of the camera
+   * _camera_id_ - The ID of the camera.
+   * _delta_ - The delta amount to move the camera forward.
 <BR>
 <BR>
 === !MoveCameraBackward(real camera_id, real delta) ===
 ----
-Returns the total length of the animation.
+Moves a camera backward by the delta amount.
 ====Parameters====
-   * _camera_id_ - The ID of the camera
+   * _camera_id_ - The ID of the camera.
+   * _delta_ - The delta amount to move the camera backward.
 <BR>
 <BR>
 === !MoveCameraLeft(real camera_id, real delta) ===
 ----
-Returns the total length of the animation.
+Moves a camera left by the delta amount.
 ====Parameters====
-   * _camera_id_ - The ID of the camera
+   * _camera_id_ - The ID of the camera.
+   * _delta_ - The delta amount to move the camera to the left.
 <BR>
 <BR>
 === !MoveCameraRight(real camera_id, real delta) ===
 ----
-Returns the total length of the animation.
+Moves a camera right by the delta amount.
 ====Parameters====
-   * _camera_id_ - The ID of the camera
+   * _camera_id_ - The ID of the camera.
+   * _delta_ - The delta amount to move the camera to the right.
 <BR>
 <BR>
 === !MoveCameraUp(real camera_id, real delta) ===
 ----
-Returns the total length of the animation.
+Moves a camera upward by the delta amount.
 ====Parameters====
-   * _camera_id_ - The ID of the camera
+   * _camera_id_ - The ID of the camera.
+   * _delta_ - The delta amount to move the camera upward.
 <BR>
 <BR>
 === !MoveCameraDown(real camera_id, real delta) ===
 ----
-Returns the total length of the animation.
+Moves a camera downward by the delta amount.
 ====Parameters====
-   * _camera_id_ - The ID of the camera
+   * _camera_id_ - The ID of the camera.
+   * _delta_ - The delta amount to move the camera downward.
 <BR>
 <BR>
 === !GetCameraPosition(real camera_id) ===
 ----
-Returns the total length of the animation.
+Returns the current position of a camera.
 ====Parameters====
-   * _camera_id_ - The ID of the camera
-<BR>
-<BR>
-Returns the total length of the animation.
-====Parameters====
-   * camera_id - The ID of the camera
+   * _camera_id_ - The ID of the camera.
 <BR>
 <BR>
 === !SetCameraLookAt(real camera_id, real x, real z, real y) ===
-----Returns the total length of the animation.
+----
+Points a camera at the specificied location in world space.
 ====Parameters====
-   * _camera_id_ - The ID of the camera
+   * _camera_id_ - The ID of the camera.
+   * _x_, _y_, _z_ - The position to look at.
 <BR>
 <BR>
 === !SetCameraOrientation(real camera_id, real yaw, real pitch, real roll) ===
 ----
-Returns the total length of the animation.
+Sets a camera's orientation (yaw, pitch, and roll).
 ====Parameters====
-   * _camera_id_ - The ID of the camera
+   * _camera_id_ - The ID of the camera.
+   * _yaw_ - Rotates the camera anti-clockwise around it's local z axis.
+   * _pitch_ - Pitches the camera up/down anti-clockwise around it's local z axis.
+   * _roll_ - Rolls the camera anti-clockwise, around its local x axis.
 <BR>
 <BR>
 === !GetCameraOrientation(real camera_id) ===
 ----
-Returns the total length of the animation.
+Returns a camera's current orientation (yaw, pitch, roll).
 ====Parameters====
-   * _camera_id_ - The ID of the camera
+   * _camera_id_ - The ID of the camera.
 <BR>
 <BR>
-=== !SetCameraRoll(real camera_id, real degrees) ===
+=== !RollCamera(real camera_id, real degrees) ===
 ----
-Returns the total length of the animation.
+Rolls a camera anti-clockwise, around its local x axis.
 ====Parameters====
-   * _camera_id_ - The ID of the camera
+   * _camera_id_ - The ID of the camera.
+   * _degrees_ - The amount to roll the camera.
 <BR>
 <BR>
 === !GetCameraRoll(real camera_id) ===
 ----
-Returns the total length of the animation.
+Returns a camera's current roll in degrees.
 ====Parameters====
-   * _camera_id_ - The ID of the camera
+   * _camera_id_ - The ID of the camera.
 <BR>
 <BR>
-=== !SetCameraPitch(real camera_id, real degrees) ===
+=== !PitchCamera(real camera_id, real degrees) ===
 ----
-Returns the total length of the animation.
+Pitches a camera up/down anti-clockwise around it's local z axis.
 ====Parameters====
-   * _camera_id_ - The ID of the camera
+   * _camera_id_ - The ID of the camera.
+   * _degrees_ - The amount to pitch the camera.
 <BR>
 <BR>
 === !GetCameraPitch(real camera_id) ===
 ----
-Returns the total length of the animation.
+Returns a camera's current pitch in degrees.
 ====Parameters====
-   * _camera_id_ - The ID of the camera
+   * _camera_id_ - The ID of the camera.
 <BR>
 <BR>
-=== !SetCameraYaw(real camera_id, real degrees) ===
+=== !YawCamera(real camera_id, real degrees) ===
 ----
-Returns the total length of the animation.
+Rotates a camera anti-clockwise around it's local z axis.
 ====Parameters====
-   * _camera_id_ - The ID of the camera
+   * _camera_id_ - The ID of the camera.
+   * _degrees_ - The amount to yaw the camera.
 <BR>
 <BR>
 === !GetCameraYaw(real camera_id) ===
-----Returns the total length of the animation.
+----
+Returns a camera's current yaw in degrees.
 ====Parameters====
-   * _camera_id_ - The ID of the camera
+   * _camera_id_ - The ID of the camera.
 <BR>
 <BR>
 === SetCameraFOV(real camera_id, real angle) ===
 ----
+Sets a camera's Field Of View (FOV). Typical values are between 45 and 60. 
 Returns the total length of the animation.
 ====Parameters====
-   * _camera_id_ - The ID of the camera
+   * _camera_id_ - The ID of the camera.
+   * _fov_ - The FOV in degrees.
 <BR>
 <BR>
 === !SetCameraProjectionType(real camera_id, real type) ===
 ----
 Returns the total length of the animation.
 ====Parameters====
-   * _camera_id_ - The ID of the camera
+   * _camera_id_ - The ID of the camera.
 <BR>
 <BR>
 === !SetCameraRenderType(real camera_id, real type) ===
 ----
-Returns the total length of the animation.
+Sets a camera's type of projection to use (orthographic or perspective).  Default is perspective.
 ====Parameters====
-   * _camera_id_ - The ID of the camera
+   * _camera_id_ - The ID of the camera.
+   * _type_ - The projection type.  Can be:
+      * global.PT_ORTHOGRAPHIC,
+      * global.PT_PERSPECTIVE
 <BR>
 <BR>
 === !SetCameraLODBias(real camera_id, real factor) ===
 ----
-Returns the total length of the animation.
+Sets a camera's level-of-detail factor. This method can be used to influence the overall level of detail of the scenes rendered using this camera. Various elements of the scene have level-of-detail reductions to improve rendering speed at distance; this method allows you to hint to those elements that you would like to adjust the level of detail that they would normally use (up or down). 
+
+The most common use for this method is to reduce the overall level of detail used for a secondary camera used for sub viewports like rear-view mirrors etc. Note that scene elements are at liberty to ignore this setting if they choose, this is merely a hint.
 ====Parameters====
-   * _camera_id_ - The ID of the camera
+   * _camera_id_ - The ID of the camera.
+   * _factor_ - The The factor to apply to the usual level of detail calculation. Higher values increase the detail, so 2.0 doubles the normal detail and 0.5 halves it.
 <BR>
 <BR>
 === !GetCameraLODBias(real camera_id) ===
 ----
-Returns the total length of the animation.
+Returns a camera's level-of-detail factor.
 ====Parameters====
-   * _camera_id_ - The ID of the camera
+   * _camera_id_ - The ID of the camera.
 <BR>
 <BR>
 === !EnableCameraAutoTracking(real camera_id, real enable, real scene_node_id, real x, real z, real y) ===
-----Returns the total length of the animation.
+----
+Enables or disables automatic tracking of a !SceneNode. If you enable auto-tracking, this Camera will automatically rotate to look at the target !SceneNode every frame, no matter how it or !SceneNode move. This is handy if you want a Camera to be focused on a single object or group of objects. Note that by default a Camera looks at the origin of the !SceneNode, if you want to tweak this, e.g. if the object which is attached to this target node is quite big and you want to point the camera at a specific point on it, provide a vector in the 'offset' parameter and a camera's target point will be adjusted.
 ====Parameters====
-   * _camera_id_ - The ID of the camera
+   * _camera_id_ - The ID of the camera.
+   * _enabled_ - If true, the Camera will track the SceneNode supplied as the next parameter (cannot be null). If false the camera will cease tracking and will remain in it's current orientation.
+   * _scene_node_id_ - The ID of the scene node to track. Make sure you don't delete this !SceneNode before turning off tracking (e.g. !ClearSceneManager will delete it so be careful of this). Can be left out if the enable param is false.
+   * _x_, _y_, _z_ - If supplied, the camera targets this point in local space of the target node instead of the origin of the target node. Good for fine tuning the look at point.
 <BR>
 <BR>
-=== !EnableCameraFixedYawAxis(real camera_id, real enable, real x, real z, real y) ===
-----Returns the total length of the animation.
+=== !EnableCameraFixedYawAxis(real camera_id, real enable, real x, real y, real z) ===
+----
+Tells a camera whether to yaw around it's own local Z axis or a fixed axis of choice.
+
+By default, the camera yaws around a fixed Z axis. This is often what you want - for example if you're making a first-person shooter, you really don't want the yaw axis to reflect the local camera Z, because this would mean a different yaw axis if the player is looking upwards rather than when they are looking straight ahead. You can change this behavior by calling this method, which you will want to do if you are making a completely free camera like the kind used in a flight simulator. 
 ====Parameters====
-   * _camera_id_ - The ID of the camera
+   * _camera_id_ - The ID of the camera.
+   * _enabled_ - If true, the axis passed in the second parameter will always be the yaw axis no matter what the camera orientation. If false, the camera yaws around the local Z.
+   * _x_, _y_, _z_ - The axis to use if the first parameter is true.
 <BR>
 <BR>
 === !EnableCameraReflection(real camera_id, real enable, real plane_id) ===
-----Returns the total length of the animation.
+----
+Enable or disables a camera's reflection of itself through the plane specified.  This is obviously useful for performing planar reflections. 
 ====Parameters====
-   * _camera_id_ - The ID of the camera
+   * _camera_id_ - The ID of the camera.
+   * _enabled_ - Whether to enable to disable reflections.
+   * _plane_id_ - The ID of the plane that will render the reflection.
 <BR>
 <BR>
 === !AttachCameraToSceneNode(real camera_id, real scene_node_id) ===
-----Returns the total length of the animation.
+----
+Attaches a camera to a !SceneNode.
 ====Parameters====
-   * _camera_id_ - The ID of the camera
+   * _camera_id_ - The ID of the camera.
+   * _scene_node_id_ - The ID of the scene node to attach the camera to.
 <BR>
 <BR>
 === !DetachCameraFromSceneNode(real camera_id, real scene_node_id) ===
 ----
-Returns the total length of the animation.
+Detaches a camera from a !SceneNode.
 ====Parameters====
-   * _camera_id_ - The ID of the camera
+   * _camera_id_ - The ID of the camera.
+   * _scene_node_id_ - The ID of the scene node to detach the camera from.
 <BR>
 <BR>
