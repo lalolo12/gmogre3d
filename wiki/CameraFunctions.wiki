@@ -6,7 +6,8 @@ GMOgre3D renders scenes from a camera viewpoint into a buffer of some sort, norm
 Cameras maintain their own aspect ratios, field of view, and frustum, and project co-ordinates into a space measured from -1 to 1 in x and z, and 0 to 1 in y. At render time, the camera will be rendering to a Viewport which will translate these parametric co-ordinates into real screen co-ordinates. Obviously it is advisable that the viewport has the same aspect ratio as the camera to avoid distortion (unless you want it!). 
 
 Note that a Camera can be attached to a !SceneNode, using the method !AttachCameraToSceneNode. If this is done the Camera will combine it's own position/orientation settings with it's parent !SceneNode. This is useful for implementing more complex Camera / object relationships i.e. having a camera attached to a world object. 
-<br>
+<BR>
+<BR>
 === !CreateCamera(real aspect, real znear, real zfar, real fov) ===
 ----
 === !DestroyCamera(real camera_id) ===
