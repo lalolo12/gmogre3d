@@ -178,7 +178,6 @@ Returns a camera's current yaw in degrees.
 === SetCameraFOV(real camera_id, real angle) ===
 ----
 Sets a camera's Field Of View (FOV). Typical values are between 45 and 60. 
-Returns the total length of the animation.
 ====Parameters====
    * _camera_id_ - The ID of the camera.
    * _fov_ - The FOV in degrees.
@@ -186,19 +185,23 @@ Returns the total length of the animation.
 <BR>
 === !SetCameraProjectionType(real camera_id, real type) ===
 ----
-Returns the total length of the animation.
-====Parameters====
-   * _camera_id_ - The ID of the camera.
-<BR>
-<BR>
-=== !SetCameraRenderType(real camera_id, real type) ===
-----
 Sets a camera's type of projection to use (orthographic or perspective).  Default is perspective.
 ====Parameters====
    * _camera_id_ - The ID of the camera.
    * _type_ - The projection type.  Can be:
-      * global.PT_ORTHOGRAPHIC,
+      * global.PT_ORTHOGRAPHIC
       * global.PT_PERSPECTIVE
+<BR>
+<BR>
+=== !SetCameraRenderType(real camera_id, real type) ===
+----
+Sets a camera's level of rendering detail. Every camera is set to render at full detail by default, that is with full texturing, lighting etc. This method lets you change that behavior, allowing you to make the camera just render a wire-frame view, for example. 
+====Parameters====
+   * _camera_id_ - The ID of the camera.
+   * _type_ - The render type.  Can be:
+      * global.PM_POINTS
+      * global.PM_WIREFRAME
+      * global.PM_SOLID
 <BR>
 <BR>
 === !SetCameraLODBias(real camera_id, real factor) ===
