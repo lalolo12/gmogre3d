@@ -75,7 +75,15 @@ Set the color used to modulate areas in shadow. This is only applicable for shad
    * _color_ - The shadow color.
 <BR>
 <BR>
+=== !EnableShadowUseInfiniteFarPlane(real enable) ===
+----
+Enables or disables whether we should use an inifinite camera far plane when rendering stencil shadows. Stencil shadow coherency is very reliant on the shadow volume not being clipped by the far plane. If this clipping happens, you get a kind of 'negative' shadow effect. The best way to achieve coherency is to move the far plane of the camera out to infinity, thus preventing the far plane from clipping the shadow volumes. When combined with vertex program extrusion of the volume to infinity, which GMOgre3D does when available, this results in very robust shadow volumes. For this reason, when you enable stencil shadows, GMOgre3D automatically changes your camera settings to project to infinity if the card supports it. You can disable this behavior if you like by calling this method; although you can never enable infinite projection if the card does not support it. 
 
+If you disable infinite projection, or it is not available, you need to be far more careful with your light attenuation / directional light extrusion distances to avoid clipping artifacts at the far plane. 
+====Parameters====
+   * _enable_ - Whether to enable or disable infinite camera far plane.
+<BR>
+<BR>
 === !SetFog(real type, real color, real density, real start, real end) ===
 ----
 Sets the fogging mode applied to the scene. This method sets up the scene-wide fogging effect. These settings apply to all geometry rendered, UNLESS the material with which it is rendered has it's own fog settings.
@@ -137,11 +145,17 @@ You can create sky planes yourself using the standard mesh and entity methods, b
    * _xsegments_, _ysegments_ - Determines the number of segments the plane will have to it. This is most important when you are bowing the plane, but may also be useful if you need tessellation on the plane to perform per-vertex effects. 
 <BR>
 <BR>
-
-=== !RenderFrame() ===
-<BR>
-=== !SetShadowTechnique(real type) ===
-<BR>
 === !SetAmbientLight(real color) ===
+----
+Sets the ambient light level to be used for the scene.  This sets the color and intensity of the ambient light in the scene, i.e. the light which is 'sourceless' and illuminates all objects equally. The color of an object is affected by a combination of the light in the scene, and the amount of light that object reflects (in this case based on the ambient property in Materials).
+
+By default the ambient light in the scene is c_black, i.e. no ambient light. This means that any objects rendered with a Material which has lighting enabled (see !EnableMaterialLighting) will not be visible unless you have some dynamic lights in your scene.
+====Parameters====
+   * _color_ - The color to use for ambient lighting.
 <BR>
-=== !EnableShadowUseInfiniteFarPlane(real enable) ===
+<BR>
+=== !RenderFrame() ===
+----
+Renders a single frame.  This should be called every frame.
+<BR>
+<BR>
