@@ -34,7 +34,7 @@ Sets a camera's position to look from, the position to look at, and the up vecto
    * _xto_, _yto_, _zto_ - The up vector.
 <BR>
 <BR>
-=== !SetCameraPosition(real camera_id, real x, real z, real y) ===
+=== !SetCameraPosition(real camera_id, real x, real y, real z) ===
 ----
 Sets a camera's position.
 ====Parameters====
@@ -105,7 +105,7 @@ Returns the current position of a camera.
    * _camera_id_ - The ID of the camera.
 <BR>
 <BR>
-=== !SetCameraLookAt(real camera_id, real x, real z, real y) ===
+=== !SetCameraLookAt(real camera_id, real x, real y, real z) ===
 ----
 Points a camera at the specificied location in world space.
 ====Parameters====
@@ -221,7 +221,7 @@ Returns a camera's level-of-detail factor.
    * _camera_id_ - The ID of the camera.
 <BR>
 <BR>
-=== !EnableCameraAutoTracking(real camera_id, real enable, real scene_node_id, real x, real z, real y) ===
+=== !EnableCameraAutoTracking(real camera_id, real enable, real scene_node_id, real x, real y, real z) ===
 ----
 Enables or disables automatic tracking of a !SceneNode. If you enable auto-tracking, this Camera will automatically rotate to look at the target !SceneNode every frame, no matter how it or !SceneNode move. This is handy if you want a Camera to be focused on a single object or group of objects. Note that by default a Camera looks at the origin of the !SceneNode, if you want to tweak this, e.g. if the object which is attached to this target node is quite big and you want to point the camera at a specific point on it, provide a vector in the 'offset' parameter and a camera's target point will be adjusted.
 ====Parameters====
