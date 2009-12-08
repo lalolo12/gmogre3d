@@ -1,24 +1,40 @@
-#summary Enter description here
+#summary Manages the organization and rendering of a scene.
 
-
-#summary Manages the organisation and rendering of a 'scene' i.e. a collection of objects and potentially world geometry. A SceneManager organises the culling and rendering of the scene.
+=== Overview ===
+A 'scene' i.e. a collection of objects and potentially world geometry. A !SceneManager organises the culling and rendering of that scene.
 <BR>
 <BR>
-
 === !CreateSceneManager(real type) ===
 ----
 Create a SceneManager instance based on scene type support.
 ====Parameters====
-   * type - Contains one or more type of scenes.  Can be global.ST_GENERIC, global.ST_EXTERIOR_CLOSE, global.ST_EXTERIOR_FAR, global.ST_EXTERIOR_REAL_FAR, or global.ST_INTERIOR 
+   * _type_ - Contains one or more type of scenes.  Can be:
+      * global.ST_GENERIC
+      * global.ST_EXTERIOR_CLOSE
+      * global.ST_EXTERIOR_FAR
+      * global.ST_EXTERIOR_REAL_FAR
+      * global.ST_INTERIOR
 <BR>
 <BR>
-
-=== !SetSceneManagerWorldGeometry(string filename) ===
+=== !DestroySceneManager(real scene_mgr_id) ===
 ----
-Sets the source of the 'world' geometry e.g. rooms, landscape, etc.
+Destroys a !SceneManager.
 ====Parameters====
-   * anim_id - The ID of the animation
-   * type - The interpolation mode to use.  Can be IM_LINEAR or IM_SPLINE
+   * _scene_mgr_id_ - The ID of the !SceneManager.
+<BR>
+<BR>
+=== !SetCurrentSceneManager(real scene_mgr_id) ===
+----
+Sets a !SceneManager to be the current !SceneManager.  All subsequent function calls that use a !SceneManager (e.g. adding world objects, enabling fog, etc) will use the specified !SceneManager.
+====Parameters====
+   * _scene_mgr_id_ - The ID of the !SceneManager.
+<BR>
+<BR>
+=== !SetWorldGeometry(string filename) ===
+----
+Sets the source of the 'world' geometry, i.e. the large, mainly static geometry making up the world such as rooms, landscape etc. 
+====Parameters====
+   * _filename_ - The name of the file that contains the world geometry.
 <BR>
 <BR>
 
@@ -32,28 +48,100 @@ Texture-based approaches are good for handling transparency (they can, for examp
 <br>
 We support 2 kinds of stencil shadows, and 2 kinds of texture-based shadows, and one simple decal approach. The 2 stencil approaches differ in the amount of multipass work that is required - the modulative approach simply 'darkens' areas in shadow after the main render, which is the least expensive, whilst the additive approach has to perform a render per light and adds the cumulative effect, whcih is more expensive but more accurate. The texture based shadows both work in roughly the same way, the only difference is that the shadowmap approach is slightly more accurate, but requires a more recent graphics card. Note that because mixing many shadow techniques can cause problems, only one technique is supported at once. Also, you should call this method at the start of the scene setup. 
 ====Parameters====
-   * type - The type of shadow technique to use.
-<P><SPAN class=funcparamtype>global.SHADOWTYPE_NONE
-<P><SPAN class=funcparamtype>global.SHADOWTYPE_STENCIL_MODULATIVE
-<P><SPAN class=funcparamtype>global.SHADOWTYPE_STENCIL_ADDITIVE
-<P><SPAN class=funcparamtype>global.SHADOWTYPE_TEXTURE_MODULATIVE
-<P><SPAN class=funcparamtype>global.SHADOWTYPE_TEXTURE_ADDITIVE
-<P><SPAN class=funcparamtype>global.SHADOWTYPE_TEXTURE_ADDITIVE_INTEGRATED
-<P><SPAN class=funcparamtype>global.SHADOWTYPE_TEXTURE_MODULATIVE_INTEGRATED
+   * _type_ - The type of shadow technique to use.  Can be:
+      * global.SHADOWTYPE_NONE
+      * global.SHADOWTYPE_STENCIL_MODULATIVE
+      * global.SHADOWTYPE_STENCIL_ADDITIVE
+      * global.SHADOWTYPE_TEXTURE_MODULATIVE
+      * global.SHADOWTYPE_TEXTURE_ADDITIVE
+      * global.SHADOWTYPE_TEXTURE_ADDITIVE_INTEGRATED
+      * global.SHADOWTYPE_TEXTURE_MODULATIVE_INTEGRATED
+<BR>
+<BR>
+=== !SetShadowFarDistance(real distance) ===
+----
+Sets the default maximum distance away from the camera that shadows will be visible. You have to call this function before you create lights or the default distance of zero will be used.
+
+Shadow techniques can be expensive, therefore it is a good idea to limit them to being rendered close to the camera if possible, and to skip the expense of rendering shadows for distance objects. This method allows you to set the distance at which shadows will no longer be rendered. 
+====Parameters====
+   * _distance_ - The maximum distance for shadows to be visible.
 <BR>
 <BR>
 
-=== !SetShadowFarDistance(real distance); ===
+=== !SetShadowColor(real color) ===
+----
+Set the color used to modulate areas in shadow. This is only applicable for shadow techniques which involve darkening the area in shadow, as opposed to masking out the light. This color provided is used as a modulative value to darken the areas.
+====Parameters====
+   * _color_ - The shadow color.
+<BR>
+<BR>
 
-=== !SetShadowColor(real color); ===
+=== !SetFog(real type, real color, real density, real start, real end) ===
+----
+Sets the fogging mode applied to the scene. This method sets up the scene-wide fogging effect. These settings apply to all geometry rendered, UNLESS the material with which it is rendered has it's own fog settings.
+====Parameters====
+   * _type_ - The type of fog to use.  Can be:
+      * FOG_NONE
+      * FOG_EXP
+      * FOG_EXP2
+      * FOG_LINEAR
+   * _color_ - The color of the fog. Either set this to the same as your viewport background color, or to blend in with a skydome or skybox.
+   * _density_ - The density of the fog in FOG_EXP or FOG_EXP2 mode, as a value between 0 and 1. The default is 0.001.
+   * _start_ - Distance in world units at which linear fog starts to encroach. Only applicable if mode is FOG_LINEAR.
+   * _end_ - Distance in world units at which linear fog becomes completely opaque. Only applicable if mode is FOG_LINEAR.
+<BR>
+<BR>
+=== !EnableSkyBox(real enable, string material_name, real distance, real drawlast) ===
+----
+Enables or disables a 'sky box'.  A skybox is a 6-sided box at constant distance from the camera representing the sky.
 
-=== !SetFog(real type, real color, real density, real start, real end); ===
+You could create a skybox yourself using the standard mesh and entity methods, but this creates a plane which the camera can never get closer or further away from - it moves with the camera. (NB you could create this effect by creating a world box which was attached to the same SceneNode as the Camera too, but this would only apply to a single camera whereas this skybox applies to any camera using this scene manager). 
 
-=== !EnableSkyBox(real enable, string material_name); ===
+The material you use for the skybox can either contain layers which are single textures, or they can be cubic textures, i.e. made up of 6 images, one for each plane of the cube.
+====Parameters====
+   * _enable_ - True to enable the skybox, false to disable it.
+   * _material_name_ - The name of the material the box will use.
+   * _distance_ - Distance in world coordinates from the camera to each plane of the box. The default is normally OK.
+   * _drawlast_ - If false, the box is drawn before all other geometry in the scene, without updating the depth buffer. This is the safest rendering method since all other objects will always appear in front of the sky. However this is not the most efficient way if most of the sky is often occluded by other objects. If this is the case, you can set this parameter to true meaning it draws after all other geometry which can be an optimization - however you must ensure that the distance value is large enough that no objects will 'poke through' the sky box when it is rendered. 
+<BR>
+<BR>
 
-=== !EnableSkyDome(real enable, string material_name, real curvature, real tiling); ===
+=== !EnableSkyDome(real enable, string material_name, real curvature, real tiling, real distance, real drawlast) ===
+----
+Enables or disables a 'sky dome'. A sky dome is actually formed by 5 sides of a cube, but with texture coordinates generated such that the surface appears curved like a dome. Sky domes are appropriate where you need a realistic looking sky where the scene is not going to be 'fogged', and there is always a 'floor' of some sort to prevent the viewer looking below the horizon (the distortion effect below the horizon can be pretty horrible, and there is never anything directly below the viewer). If you need a complete wrap-around background, use the !EnableSkyBox method instead. You can actually combine a sky box and a sky dome if you want, to give a positional backdrop with an overlayed curved cloud layer.
 
-=== !EnableSkyPlane(real enable, string material_name, real scale, real tiling); ===
+Sky domes work well with 2D repeating textures like clouds. You can change the apparent 'curvature' of the sky depending on how your scene is viewed - lower curvatures are better for 'open' scenes like landscapes, whilst higher curvatures are better for say FPS levels where you don't see a lot of the sky at once and the exaggerated curve looks good. 
+====Parameters====
+   * _enable_ - True to enable the skydome, false to disable it.
+   * _material_name_ - The name of the material the dome will use.
+   * _curvature_ - The curvature of the dome. Good values are between 2 and 65. Higher values are more curved leading to a smoother effect, lower values are less curved meaning more distortion at the horizons but a better distance effect.
+   * _tiling_ - How many times to tile the texture(s) across the dome.
+   * _distance_ - Distance in world coordinates from the camera to each plane of the box the dome is rendered on. The default is normally OK.
+   * _drawlast_ - If false, the dome is drawn before all other geometry in the scene, without updating the depth buffer. This is the safest rendering method since all other objects will always appear in front of the sky. However this is not the most efficient way if most of the sky is often occluded by other objects. If this is the case, you can set this parameter to true meaning it draws after all other geometry which can be an optimization - however you must ensure that the distance value is large enough that no objects will 'poke through' the sky when it is rendered. 
+<BR>
+<BR>
 
+=== !EnableSkyPlane(real enable, string material_name, real scale, real tiling, real distance, real drawlast, real bow, real xsegments, real ysegments) ===
+----
+Enables or disables a 'sky plane'.  A sky plane is a plane at constant distance from the camera representing the sky.
 
+You can create sky planes yourself using the standard mesh and entity methods, but this creates a plane which the camera can never get closer or further away from - it moves with the camera. (NB you could create this effect by creating a world plane which was attached to the same SceneNode as the Camera too, but this would only apply to a single camera whereas this plane applies to any camera using this scene manager). 
+====Parameters====
+   * _enable_ - True to enable the plane, false to disable it.
+   * _material_name_ - The name of the material the plane will use.
+   * _scale_ - The scaling applied to the sky plane - higher values mean a bigger sky plane.
+   * _tiling_ - How many times to tile the texture across the sky. Applies to all texture layers.
+   * _distance_ - Distance in world coordinates from the camera to the plane. The default is normally OK.
+   * _drawlast_ - If false, the dome is drawn before all other geometry in the scene, without updating the depth buffer. This is the safest rendering method since all other objects will always appear in front of the sky. However this is not the most efficient way if most of the sky is often occluded by other objects. If this is the case, you can set this parameter to true meaning it draws after all other geometry which can be an optimization - however you must ensure that the distance value is large enough that no objects will 'poke through' the sky when it is rendered.
+   * _bow_ - If zero, the plane will be completely flat (like previous versions. If above zero, the plane will be curved, allowing the sky to appear below camera level. Curved sky planes are simular to skydomes, but are more compatible with fog.
+   * _xsegments_, _ysegments_ - Determines the number of segments the plane will have to it. This is most important when you are bowing the plane, but may also be useful if you need tessellation on the plane to perform per-vertex effects. 
+<BR>
+<BR>
 
+=== !RenderFrame() ===
+<BR>
+=== !SetShadowTechnique(real type) ===
+<BR>
+=== !SetAmbientLight(real color) ===
+<BR>
+=== !EnableShadowUseInfiniteFarPlane(real enable) ===
