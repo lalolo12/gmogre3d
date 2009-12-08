@@ -227,7 +227,7 @@ Enables or disables automatic tracking of a !SceneNode. If you enable auto-track
 ====Parameters====
    * _camera_id_ - The ID of the camera.
    * _enabled_ - If true, the Camera will track the SceneNode supplied as the next parameter (cannot be null). If false the camera will cease tracking and will remain in it's current orientation.
-   * _scene_node_id_ - The ID of the scene node to track. Make sure you don't delete this !SceneNode before turning off tracking (e.g. !ClearSceneManager will delete it so be careful of this). Can be left out if the enable param is false.
+   * _scene_node_id_ - The ID of the scene node to track. Make sure you don't delete this !SceneNode before turning off tracking (e.g. !ClearScene will delete it so be careful of this). Can be left out if the enable param is false.
    * _x_, _y_, _z_ - If supplied, the camera targets this point in local space of the target node instead of the origin of the target node. Good for fine tuning the look at point.
 <BR>
 <BR>
