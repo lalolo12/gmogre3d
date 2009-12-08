@@ -33,7 +33,7 @@ Destroys a camara.
 ----
 Sets a cameras position and direction.
 ====Parameters====
-   * camera_id - The ID of the camera
+   * _camera_id_ - The ID of the camera
    * xfrom, yfrom, zfrom - The coordinates to place the camera at.
    * xto, yto, zto - The coordinates to point the camera towards.
 <BR>
