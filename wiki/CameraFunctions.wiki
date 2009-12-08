@@ -226,7 +226,7 @@ Returns a camera's level-of-detail factor.
 Enables or disables automatic tracking of a !SceneNode. If you enable auto-tracking, this Camera will automatically rotate to look at the target !SceneNode every frame, no matter how it or !SceneNode move. This is handy if you want a Camera to be focused on a single object or group of objects. Note that by default a Camera looks at the origin of the !SceneNode, if you want to tweak this, e.g. if the object which is attached to this target node is quite big and you want to point the camera at a specific point on it, provide a vector in the 'offset' parameter and a camera's target point will be adjusted.
 ====Parameters====
    * _camera_id_ - The ID of the camera.
-   * _enabled_ - If true, the Camera will track the SceneNode supplied as the next parameter (cannot be null). If false the camera will cease tracking and will remain in it's current orientation.
+   * _enabled_ - If true, the Camera will track the !SceneNode supplied as the next parameter (cannot be null). If false the camera will cease tracking and will remain in it's current orientation.
    * _scene_node_id_ - The ID of the scene node to track. Make sure you don't delete this !SceneNode before turning off tracking (e.g. !ClearScene will delete it so be careful of this). Can be left out if the enable param is false.
    * _x_, _y_, _z_ - If supplied, the camera targets this point in local space of the target node instead of the origin of the target node. Good for fine tuning the look at point.
 <BR>
