@@ -34,8 +34,8 @@ Destroys a camara.
 Sets a cameras position and direction.
 ====Parameters====
    * _camera_id_ - The ID of the camera
-   * xfrom, yfrom, zfrom - The coordinates to place the camera at.
-   * xto, yto, zto - The coordinates to point the camera towards.
+   * _xfrom_, _yfrom_, _zfrom_ - The coordinates to place the camera at.
+   * _xto_, _yto_, _zto_ - The coordinates to point the camera towards.
 <BR>
 <BR>
 === !SetCameraPosition(real camera_id, real x, real z, real y) ===
