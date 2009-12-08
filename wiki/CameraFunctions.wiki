@@ -12,10 +12,10 @@ Note that a Camera can be attached to a !SceneNode, using the method !AttachCame
 ----
 Create a camera for the current !SceneManager.
 ====Parameters====
-   * aspect - The aspect ratio.  This is normally window width / window height.
-   * znear - The position of the near clipping plane in world coordinates.
-   * zfar - The position of the far clipping plane in world coordinates.
-   * fov - The Field Of View (FOV) of the camera. Typical values are between 45 and 60 degrees.
+   * _aspect_ - The aspect ratio.  This is normally window width / window height.
+   * _znear_ - The position of the near clipping plane in world coordinates.
+   * _zfar_ - The position of the far clipping plane in world coordinates.
+   * _fov_ - The Field Of View (FOV) of the camera. Typical values are between 45 and 60 degrees.
 <BR>
 <BR>
 ====Parameters====
@@ -26,14 +26,14 @@ Create a camera for the current !SceneManager.
 ----
 Destroys a camara.
 ====Parameters====
-   * camera_id - The ID of the camera
+   * _camera_id_ - The ID of the camera
 <BR>
 <BR>
 === !SetCameraProjection(real camera_id, real xfrom, real zfrom, real yfrom, real xto, real zto, real yto) ===
 ----
 Sets a cameras position and direction.
 ====Parameters====
-   * _camera_id_ - The ID of the camera
+   * __camera_id__ - The ID of the camera
    * _xfrom_, _yfrom_, _zfrom_ - The coordinates to place the camera at.
    * _xto_, _yto_, _zto_ - The coordinates to point the camera towards.
 <BR>
@@ -42,63 +42,63 @@ Sets a cameras position and direction.
 ----
 Returns the total length of the animation.
 ====Parameters====
-   * camera_id - The ID of the camera
+   * _camera_id_ - The ID of the camera
 <BR>
 <BR>
 === !SetCameraDirection(real camera_id, real xto, real zto, real yto) ===
 ----
 Returns the total length of the animation.
 ====Parameters====
-   * camera_id - The ID of the camera
+   * _camera_id_ - The ID of the camera
 <BR>
 <BR>
 === !MoveCameraForward(real camera_id, real delta) ===
 ----
 Returns the total length of the animation.
 ====Parameters====
-   * camera_id - The ID of the camera
+   * _camera_id_ - The ID of the camera
 <BR>
 <BR>
 === !MoveCameraBackward(real camera_id, real delta) ===
 ----
 Returns the total length of the animation.
 ====Parameters====
-   * camera_id - The ID of the camera
+   * _camera_id_ - The ID of the camera
 <BR>
 <BR>
 === !MoveCameraLeft(real camera_id, real delta) ===
 ----
 Returns the total length of the animation.
 ====Parameters====
-   * camera_id - The ID of the camera
+   * _camera_id_ - The ID of the camera
 <BR>
 <BR>
 === !MoveCameraRight(real camera_id, real delta) ===
 ----
 Returns the total length of the animation.
 ====Parameters====
-   * camera_id - The ID of the camera
+   * _camera_id_ - The ID of the camera
 <BR>
 <BR>
 === !MoveCameraUp(real camera_id, real delta) ===
 ----
 Returns the total length of the animation.
 ====Parameters====
-   * camera_id - The ID of the camera
+   * _camera_id_ - The ID of the camera
 <BR>
 <BR>
 === !MoveCameraDown(real camera_id, real delta) ===
 ----
 Returns the total length of the animation.
 ====Parameters====
-   * camera_id - The ID of the camera
+   * _camera_id_ - The ID of the camera
 <BR>
 <BR>
 === !GetCameraPosition(real camera_id) ===
 ----
 Returns the total length of the animation.
 ====Parameters====
-   * camera_id - The ID of the camera
+   * _camera_id_ - The ID of the camera
 <BR>
 <BR>
 Returns the total length of the animation.
@@ -109,132 +109,127 @@ Returns the total length of the animation.
 === !SetCameraLookAt(real camera_id, real x, real z, real y) ===
 ----Returns the total length of the animation.
 ====Parameters====
-   * camera_id - The ID of the camera
+   * _camera_id_ - The ID of the camera
 <BR>
 <BR>
-=== !SetCameraOrientation(real cam_id, real yaw, real pitch, real roll) ===
+=== !SetCameraOrientation(real camera_id, real yaw, real pitch, real roll) ===
 ----
 Returns the total length of the animation.
 ====Parameters====
-   * camera_id - The ID of the camera
+   * _camera_id_ - The ID of the camera
 <BR>
 <BR>
 === !GetCameraOrientation(real camera_id) ===
 ----
 Returns the total length of the animation.
 ====Parameters====
-   * camera_id - The ID of the camera
+   * _camera_id_ - The ID of the camera
 <BR>
 <BR>
 === !SetCameraRoll(real camera_id, real degrees) ===
 ----
 Returns the total length of the animation.
 ====Parameters====
-   * camera_id - The ID of the camera
+   * _camera_id_ - The ID of the camera
 <BR>
 <BR>
 === !GetCameraRoll(real camera_id) ===
 ----
 Returns the total length of the animation.
 ====Parameters====
-   * camera_id - The ID of the camera
+   * _camera_id_ - The ID of the camera
 <BR>
 <BR>
 === !SetCameraPitch(real camera_id, real degrees) ===
 ----
 Returns the total length of the animation.
 ====Parameters====
-   * camera_id - The ID of the camera
+   * _camera_id_ - The ID of the camera
 <BR>
 <BR>
 === !GetCameraPitch(real camera_id) ===
 ----
 Returns the total length of the animation.
 ====Parameters====
-   * camera_id - The ID of the camera
+   * _camera_id_ - The ID of the camera
 <BR>
 <BR>
 === !SetCameraYaw(real camera_id, real degrees) ===
 ----
 Returns the total length of the animation.
 ====Parameters====
-   * camera_id - The ID of the camera
+   * _camera_id_ - The ID of the camera
 <BR>
 <BR>
 === !GetCameraYaw(real camera_id) ===
 ----Returns the total length of the animation.
 ====Parameters====
-   * camera_id - The ID of the camera
+   * _camera_id_ - The ID of the camera
 <BR>
 <BR>
 === SetCameraFOV(real camera_id, real angle) ===
 ----
 Returns the total length of the animation.
 ====Parameters====
-   * camera_id - The ID of the camera
+   * _camera_id_ - The ID of the camera
 <BR>
 <BR>
 === !SetCameraProjectionType(real camera_id, real type) ===
 ----
 Returns the total length of the animation.
 ====Parameters====
-   * camera_id - The ID of the camera
+   * _camera_id_ - The ID of the camera
 <BR>
 <BR>
 === !SetCameraRenderType(real camera_id, real type) ===
 ----
 Returns the total length of the animation.
 ====Parameters====
-   * camera_id - The ID of the camera
+   * _camera_id_ - The ID of the camera
 <BR>
 <BR>
 === !SetCameraLODBias(real camera_id, real factor) ===
 ----
 Returns the total length of the animation.
 ====Parameters====
-   * camera_id - The ID of the camera
+   * _camera_id_ - The ID of the camera
 <BR>
 <BR>
 === !GetCameraLODBias(real camera_id) ===
 ----
 Returns the total length of the animation.
 ====Parameters====
-   * camera_id - The ID of the camera
+   * _camera_id_ - The ID of the camera
 <BR>
 <BR>
 === !EnableCameraAutoTracking(real camera_id, real enable, real scene_node_id, real x, real z, real y) ===
 ----Returns the total length of the animation.
 ====Parameters====
-   * camera_id - The ID of the camera
+   * _camera_id_ - The ID of the camera
 <BR>
 <BR>
-=== !EnableCameraFixedYawAxis(real cam_id, real enable, real x, real z, real y) ===
+=== !EnableCameraFixedYawAxis(real camera_id, real enable, real x, real z, real y) ===
 ----Returns the total length of the animation.
 ====Parameters====
-   * camera_id - The ID of the camera
+   * _camera_id_ - The ID of the camera
 <BR>
 <BR>
-=== !EnableCameraReflection(real cam_id, real enable, real plane_id) ===
+=== !EnableCameraReflection(real camera_id, real enable, real plane_id) ===
 ----Returns the total length of the animation.
 ====Parameters====
-   * camera_id - The ID of the camera
+   * _camera_id_ - The ID of the camera
 <BR>
 <BR>
-=== !AttachCameraToSceneNode(real cam_id, real scene_node_id) ===
+=== !AttachCameraToSceneNode(real camera_id, real scene_node_id) ===
 ----Returns the total length of the animation.
 ====Parameters====
-   * camera_id - The ID of the camera
+   * _camera_id_ - The ID of the camera
 <BR>
 <BR>
-Returns the total length of the animation.
-====Parameters====
-   * camera_id - The ID of the camera
-<BR>
-<BR>
-=== !DetachCameraFromSceneNode(real cam_id, real scene_node_id) ===
+=== !DetachCameraFromSceneNode(real camera_id, real scene_node_id) ===
 ----
 Returns the total length of the animation.
 ====Parameters====
-   * camera_id - The ID of the camera
+   * _camera_id_ - The ID of the camera
 <BR>
 <BR>
