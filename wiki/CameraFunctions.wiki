@@ -18,10 +18,6 @@ Create a camera for the current !SceneManager.
    * _fov_ - The Field Of View (FOV) of the camera. Typical values are between 45 and 60 degrees.
 <BR>
 <BR>
-====Parameters====
-   * _camera_id_ - The ID of the camera
-<BR>
-<BR>
 === !DestroyCamera(real camera_id) ===
 ----
 Destroys a camara.
