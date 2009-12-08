@@ -10,18 +10,32 @@ Note that a Camera can be attached to a !SceneNode, using the method !AttachCame
 <BR>
 === !CreateCamera(real aspect, real znear, real zfar, real fov) ===
 ----
+Create a camera for the current !SceneManager.
+====Parameters====
+   * aspect - The aspect ratio.  This is normally window width / window height.
+   * znear - The position of the near clipping plane in world coordinates.
+   * zfar - The position of the far clipping plane in world coordinates.
+   * fov - The Field Of View (FOV) of the camera. Typical values are between 45 and 60 degrees.
+<BR>
+<BR>
+====Parameters====
+   * camera_id - The ID of the camera
+<BR>
+<BR>
 === !DestroyCamera(real camera_id) ===
 ----
-Returns the total length of the animation.
+Destroys a camara.
 ====Parameters====
    * camera_id - The ID of the camera
 <BR>
 <BR>
-=== !SetCameraProjection(real camera_id, real xfrom, real zfrom, real yfrom, real xto, real zto, real yto, real xup, real zup, real yup) ===
+=== !SetCameraProjection(real camera_id, real xfrom, real zfrom, real yfrom, real xto, real zto, real yto) ===
 ----
-Returns the total length of the animation.
+Sets a cameras position and direction.
 ====Parameters====
    * camera_id - The ID of the camera
+   * xfrom, yfrom, zfrom - The coordinates to place the camera at.
+   * xto, yto, zto - The coordinates to point the camera towards.
 <BR>
 <BR>
 === !SetCameraPosition(real camera_id, real x, real z, real y) ===
