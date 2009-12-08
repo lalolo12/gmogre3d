@@ -1,12 +1,12 @@
 #summary A viewpoint from which the scene will be rendered.
 
-== Overview ==
+=== Overview ===
 GMOgre3D renders scenes from a camera viewpoint into a buffer of some sort, normally a window or a texture. GMOgre3D cameras support both perspective projection (the default, meaning objects get smaller the further away they are) and orthographic projection (blueprint-style, no decrease in size with distance). Each camera carries with it a style of rendering, e.g. full textured, flat shaded, wireframe), field of view, rendering distances etc, allowing you to use GMOGre3D to create complex multi-window views if required. In addition, more than one camera can point at a single render target if required, each rendering to a subset of the target, allowing split screen and picture-in-picture views. 
 
 Cameras maintain their own aspect ratios, field of view, and frustum, and project co-ordinates into a space measured from -1 to 1 in x and z, and 0 to 1 in y. At render time, the camera will be rendering to a Viewport which will translate these parametric co-ordinates into real screen co-ordinates. Obviously it is advisable that the viewport has the same aspect ratio as the camera to avoid distortion (unless you want it!). 
 
 Note that a Camera can be attached to a !SceneNode, using the method !AttachCameraToSceneNode. If this is done the Camera will combine it's own position/orientation settings with it's parent !SceneNode. This is useful for implementing more complex Camera / object relationships i.e. having a camera attached to a world object. 
-
+<br>
 === !CreateCamera(real aspect, real znear, real zfar, real fov) ===
 ----
 === !DestroyCamera(real camera_id) ===
