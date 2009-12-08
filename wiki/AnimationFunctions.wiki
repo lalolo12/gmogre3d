@@ -9,7 +9,6 @@ Returns the total length of the animation.
    * anim_id - The ID of the animation
 <BR>
 <BR>
-
 === !SetAnimationInterpolationMode(real anim_id, real type) ===
 ----
 Tells the animation how to interpolate between keyframes.  By default, animations normally interpolate linearly between keyframes. This is fast, but when animations include quick changes in direction it can look a little unnatural because directions change instantly at keyframes. An alternative is to tell the animation to interpolate along a spline, which is more expensive in terms of calculation time, but looks smoother because major changes in direction are distributed around the keyframes rather than just at the keyframe.
@@ -46,4 +45,3 @@ Returns a node track by it's handle.
    * handle - Numeric handle of the track to return.
 <BR>
 <BR>
-
