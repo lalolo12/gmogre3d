@@ -204,7 +204,7 @@ Sets a camera's level of rendering detail. Every camera is set to render at full
       * global.PM_SOLID
 <BR>
 <BR>
-=== !SetCameraLODBias(real camera_id, real factor) ===
+=== SetCameraLODBias(real camera_id, real factor) ===
 ----
 Sets a camera's level-of-detail factor. This method can be used to influence the overall level of detail of the scenes rendered using this camera. Various elements of the scene have level-of-detail reductions to improve rendering speed at distance; this method allows you to hint to those elements that you would like to adjust the level of detail that they would normally use (up or down). 
 
@@ -214,7 +214,7 @@ The most common use for this method is to reduce the overall level of detail use
    * _factor_ - The The factor to apply to the usual level of detail calculation. Higher values increase the detail, so 2.0 doubles the normal detail and 0.5 halves it.
 <BR>
 <BR>
-=== !GetCameraLODBias(real camera_id) ===
+=== GetCameraLODBias(real camera_id) ===
 ----
 Returns a camera's level-of-detail factor.
 ====Parameters====
