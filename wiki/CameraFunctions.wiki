@@ -119,7 +119,7 @@ Sets a camera's orientation (yaw, pitch, and roll).
 ====Parameters====
    * _camera_id_ - The ID of the camera.
    * _yaw_ - Rotates the camera anti-clockwise around it's local z axis.
-   * _pitch_ - Pitches the camera up/down anti-clockwise around it's local z axis.
+   * _pitch_ - Pitches the camera up/down anti-clockwise around it's local y axis.
    * _roll_ - Rolls the camera anti-clockwise, around its local x axis.
 <BR>
 <BR>
@@ -147,7 +147,7 @@ Returns a camera's current roll in degrees.
 <BR>
 === !PitchCamera(real camera_id, real degrees) ===
 ----
-Pitches a camera up/down anti-clockwise around it's local z axis.
+Pitches a camera up/down anti-clockwise around it's local y axis.
 ====Parameters====
    * _camera_id_ - The ID of the camera.
    * _degrees_ - The amount to pitch the camera.
