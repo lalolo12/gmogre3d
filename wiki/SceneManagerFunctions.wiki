@@ -6,7 +6,7 @@ A 'scene' i.e. a collection of objects and potentially world geometry. A !SceneM
 <BR>
 === !CreateSceneManager(real type) ===
 ----
-Create a SceneManager instance based on scene type support.
+Create a !SceneManager instance based on scene type support.
 ====Parameters====
    * _type_ - Contains one or more type of scenes.  Can be:
       * global.ST_GENERIC
@@ -95,7 +95,7 @@ Sets the fogging mode applied to the scene. This method sets up the scene-wide f
 ----
 Enables or disables a 'sky box'.  A skybox is a 6-sided box at constant distance from the camera representing the sky.
 
-You could create a skybox yourself using the standard mesh and entity methods, but this creates a plane which the camera can never get closer or further away from - it moves with the camera. (NB you could create this effect by creating a world box which was attached to the same SceneNode as the Camera too, but this would only apply to a single camera whereas this skybox applies to any camera using this scene manager). 
+You could create a skybox yourself using the standard mesh and entity methods, but this creates a plane which the camera can never get closer or further away from - it moves with the camera. (NB you could create this effect by creating a world box which was attached to the same !SceneNode as the Camera too, but this would only apply to a single camera whereas this skybox applies to any camera using this scene manager). 
 
 The material you use for the skybox can either contain layers which are single textures, or they can be cubic textures, i.e. made up of 6 images, one for each plane of the cube.
 ====Parameters====
@@ -125,7 +125,7 @@ Sky domes work well with 2D repeating textures like clouds. You can change the a
 ----
 Enables or disables a 'sky plane'.  A sky plane is a plane at constant distance from the camera representing the sky.
 
-You can create sky planes yourself using the standard mesh and entity methods, but this creates a plane which the camera can never get closer or further away from - it moves with the camera. (NB you could create this effect by creating a world plane which was attached to the same SceneNode as the Camera too, but this would only apply to a single camera whereas this plane applies to any camera using this scene manager). 
+You can create sky planes yourself using the standard mesh and entity methods, but this creates a plane which the camera can never get closer or further away from - it moves with the camera. (NB you could create this effect by creating a world plane which was attached to the same !SceneNode as the Camera too, but this would only apply to a single camera whereas this plane applies to any camera using this scene manager). 
 ====Parameters====
    * _enable_ - True to enable the plane, false to disable it.
    * _material_name_ - The name of the material the plane will use.
