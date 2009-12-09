@@ -3,20 +3,80 @@
 
 === !GetRootSceneNode() ===
 ----
+Gets the !SceneNode at the root of the scene hierarchy.
+
+The entire scene is held as a hierarchy of nodes, which allows things like relative transforms, general changes in rendering state etc. There is only ever one root node of the hierarchy, and this function returns a pointer to it. 
+<BR>
+<BR>
 === !CreateSceneNode() ===
 ----
-=== !CreateRootChildSceneNode(real x, real z, real y, real yaw, real pitch, real roll) ===
+Creates an instance of a !SceneNode and returns the ID.
+
+Note that this does not add the !SceneNode to the scene hierarchy. This function is for convenience, since it allows an instance to be created for which the !SceneManager is responsible for allocating and releasing memory, which is convenient in complex scenes. 
+
+To include the returned !SceneNode in the scene, use the !AddChildSceneNode function to specify a parent. 
+<BR>
+<BR>
+=== !CreateRootChildSceneNode(real x, real y, real z, real yaw, real pitch, real roll) ===
 ----
+Creates a !SceneNode, adds it as a child of the root !SceneNode, and returns the ID.
+====Parameters====
+   * _x_, _y_, _z_ - The world coordinates of the !SceneNode.
+   * _yaw_ - The yaw of the !SceneNode.
+   * _pitch_ - The pitch of the !SceneNode.
+   * _roll_ - The roll of the !SceneNode.
+<BR>
+<BR>
 === !CreateChildSceneNode(real scene_node_id, real x, real z, real y, real yaw, real pitch, real roll) ===
 ----
+Creates a !SceneNode, adds it as a child of the specified !SceneNode, and returns the ID.
+====Parameters====
+   * _scene_node_id_ - The ID of the parent !SceneNode.
+   * _x_, _y_, _z_ - The coordinates of the !SceneNode relative to its parent.
+   * _yaw_ - The yaw of the !SceneNode relative to its parent.
+   * _pitch_ - The pitch of the !SceneNode relative to its parent.
+   * _roll_ - The roll of the !SceneNode relative to its parent.
+<BR>
+<BR>
 === !DestroySceneNode(real scene_node_id) ===
 ----
+Destroys a !SceneNode.
+
+This allows you to physically delete an individual !SceneNode if you want to. Note that this is not normally recommended, it's better to allow GMOgre3D to delete the nodes when the scene is cleared. 
+====Parameters====
+   * _scene_node_id_ - The ID of the !SceneNode.
+<BR>
+<BR>
 === !AddChildSceneNode(real parent_scene_node_id, real scene_node_id) ===
 ----
+Adds a pre-created !SceneNode as a child to the specified !SceneNode.  If it is attached to another node, it must be detached first. 
+====Parameters====
+   * _parent_scene_node_id_ - The ID of the parent !SceneNode.
+   * _scene_node_id_ - The ID of the child !SceneNode.
+<BR>
+<BR>
 === !RemoveChildSceneNode(real parent_scene_node_id, real scene_node_id) ===
 ----
+Drops child !SceneNode from the specified parent !SceneNode.
+
+Does not delete the !SceneNode, just detaches it from this parent, potentially to be reattached elsewhere.
+====Parameters====
+   * _parent_scene_node_id_ - The ID of the parent !SceneNode.
+   * _scene_node_id_ - The ID of the child !SceneNode.
+<BR>
+<BR>
 === !SetSceneNodeScale(real scene_node_id, real x, real z, real y) ===
 ----
+Sets the scaling factor applied to this !SceneNode.
+
+Scaling factors, unlike other transforms, are not always inherited by child nodes. Whether or not scalings affect the size of the child nodes depends on the !EnableSceneNodeInheritScale option of the child. In some cases you want a scaling factor of a parent node to apply to a child node (e.g. where the child node is a part of the same object, so you want it to be the same relative size based on the parent's size), but not in other cases (e.g. where the child node is just for positioning another object, you want it to maintain it's own size). The default is to inherit as with other transforms. 
+
+Note that like rotations, scalings are oriented around the node's origin. 
+====Parameters====
+   * _scene_node_id_ - The ID of the !SceneNode.
+   * _x_, _y_, _z_ - The local coordinates of the !SceneNode.
+<BR>
+<BR>
 === !GetSceneNodeScale(real scene_node_id) ===
 ----
 === !SetSceneNodePosition(real scene_node_id, real xfrom, real zfrom, real yfrom) ===
