@@ -30,6 +30,14 @@ Sets a !SceneManager to be the current !SceneManager.  All subsequent function c
    * _scene_mgr_id_ - The ID of the !SceneManager.
 <BR>
 <BR>
+=== !ClearScene() ===
+----
+Empties the entire scene, inluding all !SceneNodes, Entities, Lights, !BillboardSets etc.
+
+Cameras are not deleted at this stage since they are still referenced by viewports, which are not destroyed during this process. 
+<BR>
+<BR>
+<BR>
 === !SetWorldGeometry(string filename) ===
 ----
 Sets the source of the 'world' geometry, i.e. the large, mainly static geometry making up the world such as rooms, landscape etc. 
