@@ -1,15 +1,51 @@
-#summary Enter description here
-
-
-=== !AddResourceLocation(string name, string type, string group) ===
+#summary Manages the list of resource groups, and notifying the various resource managers of their obligations to load / unload resources in a group.
+<BR>
+<BR>
+=== !AddResourceLocation(string path, string type, string name) ===
 ----
-=== !RemoveResourceLocation(string name, string group) ===
+Adds a resource location to for a given resource group.
+
+Resource locations are places which are searched to load resource files. When you choose to load a file, or to search for valid files to load, the resource locations are used.  The type and name parameters can be left blank if the resource group is a file system directory and you don't use resource group names.
+====Parameters====
+   * _path_ - The relative path to a directory or zip archive.
+   * _type_ - The location type for the resource group.  Can be:
+      * LOC_FILSYSTEM
+      * LOC_ZIP
+   * _name_ - The name of the resource group.
+<BR>
+<BR>
+=== !RemoveResourceLocation(string path, string name) ===
 ----
+Removes a resource location from the search path. 
+====Parameters====
+   * _path_ - The relative path to a directory or zip archive.
+   * _name_ - The name of the resource group.
+<BR>
+<BR>
 === !InitializeAllResourceGroups() ===
 ----
-=== !LoadResourceGroup(string group) ===
+Initializes all resource groups.  This is required before resources can be loaded.
+<BR>
+<BR>
+<BR>
+=== !LoadResourceGroup(string name) ===
 ----
-=== !UnloadResourceGroup(string group) ===
+Manually loads any resources which are part of the named group.
+====Parameters====
+   * _name_ - The name of the resource group.
+<BR>
+<BR>
+=== !UnloadResourceGroup(string name) ===
 ----
-=== !DestroyResourceGroup(string group) ===
+Manually unloads any resources which are part of the named group.
+====Parameters====
+   * _name_ - The name of the resource group.
+<BR>
+<BR>
+=== !DestroyResourceGroup(string name) ===
 ----
+Destroys a resource group.
+====Parameters====
+   * _name_ - The name of the resource group.
+<BR>
+<BR>
