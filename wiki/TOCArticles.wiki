@@ -43,6 +43,7 @@
     * [PlaneFunctions Plane]
     * [RayFunctions Ray]
     * [RaySceneQueryFunctions Ray Scene Query]
+    * [ResourceGroupFunctions Resource Groups]
     * [ResourceFunctions Resource]
     * [SceneManagerFunctions Scene Manager]
     * [SceneNodeFunctions Scene Node]
