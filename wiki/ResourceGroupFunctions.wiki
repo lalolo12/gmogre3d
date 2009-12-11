@@ -1,0 +1,15 @@
+#summary Enter description here
+
+
+=== !AddResourceLocation(string name, string type, string group) ===
+----
+=== !RemoveResourceLocation(string name, string group) ===
+----
+=== !InitializeAllResourceGroups() ===
+----
+=== !LoadResourceGroup(string group) ===
+----
+=== !UnloadResourceGroup(string group) ===
+----
+=== !DestroyResourceGroup(string group) ===
+----
