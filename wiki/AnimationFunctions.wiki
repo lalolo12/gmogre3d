@@ -1,20 +1,24 @@
-#summary Animation functions defines the interface for a sequence of animation, whether that be animation of a mesh, a path along a spline, or possibly more than one type of animation in one. An animation is made up of many 'tracks', which are the more specific types of animation.  You should not create these animations directly. They will be created via a parent object which owns the animation, e.g. Skeleton or !SceneNode.
-<BR>
-<BR>
+#summary An animation sequence.
 
+=== Overview ===
+Animation functions defines the interface for a sequence of animation, whether that be animation of a mesh, a path along a spline, or possibly more than one type of animation in one. An animation is made up of many 'tracks', which are the more specific types of animation.
+
+You should not create these animations directly. They will be created via a parent object which owns the animation, e.g. Skeleton or !SceneNode.
+<BR>
+<BR>
 === !GetAnimationLength(real anim_id) ===
 ----
 Returns the total length of the animation.
 ====Parameters====
-   * anim_id - The ID of the animation
+   * _anim_id_ - The ID of the animation
 <BR>
 <BR>
 === !SetAnimationInterpolationMode(real anim_id, real type) ===
 ----
 Tells the animation how to interpolate between keyframes.  By default, animations normally interpolate linearly between keyframes. This is fast, but when animations include quick changes in direction it can look a little unnatural because directions change instantly at keyframes. An alternative is to tell the animation to interpolate along a spline, which is more expensive in terms of calculation time, but looks smoother because major changes in direction are distributed around the keyframes rather than just at the keyframe.
 ====Parameters====
-   * anim_id - The ID of the animation
-   * type - The interpolation mode to use.  Can be IM_LINEAR or IM_SPLINE
+   * _anim_id_ - The ID of the animation
+   * _type_ - The interpolation mode to use.  Can be IM_LINEAR or IM_SPLINE
 <BR>
 <BR>
 
@@ -22,9 +26,9 @@ Tells the animation how to interpolate between keyframes.  By default, animation
 ----
 Creates a new !AnimationTrack automatically associated with a Node or Bone. This method creates a standard !AnimationTrack, but also associates it with a target !SceneNode or Bone which will receive all keyframe effects. 
 ====Parameters====
-   * anim_id - The ID of the animation
-   * handle - Numeric handle to give the track, used for accessing the track later. Must be unique within this Animation.
-   * node_id - The ID of the !SceneNode or Bone.
+   * _anim_id_ - The ID of the animation
+   * _handle_ - Numeric handle to give the track, used for accessing the track later. Must be unique within this Animation.
+   * _node_id_ - The ID of the !SceneNode or Bone.
 <BR>
 <BR>
 
@@ -32,8 +36,8 @@ Creates a new !AnimationTrack automatically associated with a Node or Bone. This
 ----
 Destroys the node track with the given handle. 
 ====Parameters====
-   * anim_id - The ID of the animation
-   * handle - Numeric handle of the track to destroy.
+   * _anim_id_ - The ID of the animation
+   * _handle_ - Numeric handle of the track to destroy.
 <BR>
 <BR>
 
@@ -41,7 +45,7 @@ Destroys the node track with the given handle.
 ----
 Returns a node track by it's handle. 
 ====Parameters====
-   * anim_id - The ID of the animation
-   * handle - Numeric handle of the track to return.
+   * _anim_id_ - The ID of the animation
+   * _handle_ - Numeric handle of the track to return.
 <BR>
 <BR>
