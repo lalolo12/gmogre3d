@@ -84,6 +84,21 @@ Removes & destroys an Entity from the !SceneManager. Must only be done if the En
    * _entity_id_ - The ID of the entity.
 <BR>
 <BR>
+=== !GetEntityNumSubEntities(real entity_id) ===
+----
+Retrieves the number of the sub entities (e.g. a parts of the entity).
+====Parameters====
+   * _entity_id_ - The ID of the entity.
+<BR>
+<BR>
+=== !GetEntitySubEntity(real entity_id, real index) ===
+----
+Retrieves the ID of the sub entity (e.g. a part of the entity).
+====Parameters====
+   * _entity_id_ - The ID of the entity.
+   * _index_ - The sub entity index.
+<BR>
+<BR>
 === !SetEntityMaterial(real entity_id, string mat_name) ===
 ----
 Sets the material to use for the whole of this entity.
