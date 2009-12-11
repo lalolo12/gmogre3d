@@ -165,10 +165,13 @@ Orientations, unlike other transforms, are not always inherited by child nodes. 
 <BR>
 === !GetSceneNodeOrientation(real scene_node_id) ===
 ----
-----
 Retrieves the orientation of a !SceneNode.
 
-Since GM cannot return 3 values in a single function call these coordinates are stored in temporary variables and can be retrieved by calling the GetYaw, GetPitch, and GetRoll functions.
+Since GM cannot return 3 values in a single function call these coordinates are stored in temporary variables and can be retrieved by calling the !GetYaw(), !GetPitch(), and !GetRoll() functions.
+====Parameters====
+   * _scene_node_id_ - The ID of the !SceneNode.
+<BR>
+<BR>
 === !SetSceneNodeDirection(real scene_node_id, real x, real y, real z, real relative_type) ===
 ----
 Sets the !SceneNode's direction vector.
@@ -205,8 +208,16 @@ Rotate the node around the X-axis.
      * global.TS_LOCAL
      * global.TS_PARENT
      * global.TS_WORLD
+<BR>
+<BR>
 === !GetSceneNodeRoll(real scene_node_id) ===
 ----
+Retrieves the current rotation around the X-axis.
+====Parameters====
+   * _scene_node_id_ - The ID of the !SceneNode.
+<BR>
+<BR>
+
 === !YawSceneNode(real scene_node_id, real degrees, real relative_type) ===
 ----
 Rotate the node around the Z-axis.
@@ -217,8 +228,15 @@ Rotate the node around the Z-axis.
      * global.TS_LOCAL
      * global.TS_PARENT
      * global.TS_WORLD
+<BR>
+<BR>
 === !GetSceneNodeYaw(real scene_node_id) ===
 ----
+Retrieves the current rotation around the Z-axis.
+====Parameters====
+   * _scene_node_id_ - The ID of the !SceneNode.
+<BR>
+<BR>
 === !PitchSetSceneNode(real scene_node_id, real degrees, real relative_type) ===
 ----
 Rotate the node around the Y-axis.
@@ -229,8 +247,15 @@ Rotate the node around the Y-axis.
      * global.TS_LOCAL
      * global.TS_PARENT
      * global.TS_WORLD
+<BR>
+<BR>
 === !GetSceneNodePitch(real scene_node_id) ===
 ----
+Retrieves the current rotation around the Y-axis.
+====Parameters====
+   * _scene_node_id_ - The ID of the !SceneNode.
+<BR>
+<BR>
 === !RotateSceneNode(real scene_node_id, real x, real y, real z, real degrees, real relative_type) ===
 ----
 Rotate the node around an arbitrary axis.
@@ -242,19 +267,78 @@ Rotate the node around an arbitrary axis.
      * global.TS_LOCAL
      * global.TS_PARENT
      * global.TS_WORLD
+<BR>
+<BR>
 === !ResetSceneNodeOrientation(real scene_node_id) ===
 ----
+Resets a !SceneNodes orientation (local axes as world axes, no rotation).
+
+Orientations, unlike other transforms, are not always inherited by child nodes. Whether or not orientations affect the orientation of the child nodes depends on the !SetSceneNodeInheritOrientation option of the child. In some cases you want a orientating of a parent node to apply to a child node (e.g. where the child node is a part of the same object, so you want it to be the same relative orientation based on the parent's orientation), but not in other cases (e.g. where the child node is just for positioning another object, you want it to maintain it's own orientation). The default is to inherit as with other transforms. 
+====Parameters====
+   * _scene_node_id_ - The ID of the !SceneNode.
+<BR>
+<BR>
 === !TranslateSceneNode(real scene_node_id, real x, real y, real z, real relative_type) ===
 ----
+Moves a !SceneNode along the Cartesian axes, i.e. along world x,y,z.
+====Parameters====
+   * _scene_node_id_ - The ID of the !SceneNode.
+   * _x_, _y_, _z_ - The translation values.
+   * _relative_type_ - The space in which the translation is relative to.  Can be:
+     * global.TS_LOCAL
+     * global.TS_PARENT
+     * global.TS_WORLD
+<BR>
+<BR>
 === !ShowSceneNode(real scene_node_id) ===
 ----
+Makes all objects attached to this node become visible.
+
+This is a shortcut to calling the same function on all objects attached to this node, and optionally to all objects attached to child nodes. 
+====Parameters====
+   * _scene_node_id_ - The ID of the !SceneNode.
+<BR>
+<BR>
 === !HideSceneNode(real scene_node_id) ===
 ----
+Makes all objects attached to this node become invisible.
+
+This is a shortcut to calling the same function on all objects attached to this node, and optionally to all objects attached to child nodes.
+====Parameters====
+   * _scene_node_id_ - The ID of the !SceneNode.
+<BR>
+<BR>
 === !ShowSceneNodeBoundingBox(real scene_node_id) ===
 ----
+Makes the bounding box for a !SceneNode visible.
+====Parameters====
+   * _scene_node_id_ - The ID of the !SceneNode.
+<BR>
+<BR>
 === !HideSceneNodeBoundingBox(real scene_node_id) ===
 ----
+Makes the bounding box for a !SceneNode invisible.
+====Parameters====
+   * _scene_node_id_ - The ID of the !SceneNode.
+<BR>
+<BR>
 === AttachSceneNodeToGMInstance(real scene_node_id, real gm_instance_id) ===
 ----
+This attaches a single GM object to a !SceneNode.
+
+When attached the !SceneNode will automatically update it's position and orientation each frame using the values stored in the GM object's x/y/z and direction/pitch/roll variables.  Not only does this ensure you do not need to update the !SceneNode manually every frame, but is actually a much faster way to update !SceneNodes than to make multiple DLL calls each frame.
+
+Note that you absolutely MUST detach the !SceneNode from the GM object before deleting the GM object!
+====Parameters====
+   * _scene_node_id_ - The ID of the !SceneNode.
+   * _gm_instance_id_ - The ID of the GM object.
+<BR>
+<BR>
 === DetachSceneNodeFromGMInstance(real scene_node_id, real gm_instance_id) ===
 ----
+This detaches a single GM object from a !SceneNode.
+====Parameters====
+   * _scene_node_id_ - The ID of the !SceneNode.
+   * _gm_instance_id_ - The ID of the GM object.
+<BR>
+<BR>
