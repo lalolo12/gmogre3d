@@ -165,24 +165,83 @@ Orientations, unlike other transforms, are not always inherited by child nodes. 
 <BR>
 === !GetSceneNodeOrientation(real scene_node_id) ===
 ----
-=== !SetSceneNodeDirection(real scene_node_id, real xto, real yto, real zto, real relative_type) ===
 ----
-=== !SetSceneNodeLookAt(real scene_node_id, real xup, real yup, real zup, real relative_type) ===
+Retrieves the orientation of a !SceneNode.
+
+Since GM cannot return 3 values in a single function call these coordinates are stored in temporary variables and can be retrieved by calling the GetYaw, GetPitch, and GetRoll functions.
+=== !SetSceneNodeDirection(real scene_node_id, real x, real y, real z, real relative_type) ===
 ----
-=== !SetSceneNodeRoll(ty_real, ty_real, ty_real) ===
+Sets the !SceneNode's direction vector.
+
+Note that the 'up' vector for the orientation will automatically be recalculated based on the current 'up' vector (i.e. the roll will remain the same). If you need more control, use !SetSceneNodeOrientation.
+====Parameters====
+   * _scene_node_id_ - The ID of the !SceneNode.
+   * _x_, _y_, _z_ - The components of the direction vector.
+   * _relative_type_ - The space in which this direction vector is expressed.  Can be:
+     * global.TS_LOCAL
+     * global.TS_PARENT
+     * global.TS_WORLD 
+<BR>
+<BR>
+=== !SetSceneNodeLookAt(real scene_node_id, real x, real y, real z, real relative_type) ===
 ----
+Set's the !SceneNode's orientation to look at a point in space.
+====Parameters====
+   * _scene_node_id_ - The ID of the !SceneNode.
+   * _x_, _y_, _z_ - The point to look at.
+   * _relative_type_ - The space in which the point resides.  Can be:
+     * global.TS_LOCAL
+     * global.TS_PARENT
+     * global.TS_WORLD
+<BR>
+<BR>
+=== !RollSceneNode(real scene_node_id, real degrees, real relative_type) ===
+----
+Rotate the node around the X-axis.
+====Parameters====
+   * _scene_node_id_ - The ID of the !SceneNode.
+   * _degrees_ - The number of degrees to roll the !SceneNode.
+   * _relative_type_ - The space in which the rotation should occur.  Can be:
+     * global.TS_LOCAL
+     * global.TS_PARENT
+     * global.TS_WORLD
 === !GetSceneNodeRoll(real scene_node_id) ===
 ----
-=== !SetSceneNodeYaw(ty_real, ty_real, ty_real) ===
+=== !YawSceneNode(real scene_node_id, real degrees, real relative_type) ===
 ----
+Rotate the node around the Z-axis.
+====Parameters====
+   * _scene_node_id_ - The ID of the !SceneNode.
+   * _degrees_ - The number of degrees to yaw the !SceneNode.
+   * _relative_type_ - The space in which the rotation should occur.  Can be:
+     * global.TS_LOCAL
+     * global.TS_PARENT
+     * global.TS_WORLD
 === !GetSceneNodeYaw(real scene_node_id) ===
 ----
-=== !SetSceneNodePitch(ty_real, ty_real, ty_real) ===
+=== !PitchSetSceneNode(real scene_node_id, real degrees, real relative_type) ===
 ----
+Rotate the node around the Y-axis.
+====Parameters====
+   * _scene_node_id_ - The ID of the !SceneNode.
+   * _degrees_ - The number of degrees to pitch the !SceneNode.
+   * _relative_type_ - The space in which the rotation should occur.  Can be:
+     * global.TS_LOCAL
+     * global.TS_PARENT
+     * global.TS_WORLD
 === !GetSceneNodePitch(real scene_node_id) ===
 ----
 === !RotateSceneNode(real scene_node_id, real x, real y, real z, real degrees, real relative_type) ===
 ----
+Rotate the node around an arbitrary axis.
+====Parameters====
+   * _scene_node_id_ - The ID of the !SceneNode.
+   * _x_, _y_, _z_ - The axis to rotate around.
+   * _degrees_ - The number of degrees to rotate the !SceneNode.
+   * _relative_type_ - The space in which the rotation should occur.  Can be:
+     * global.TS_LOCAL
+     * global.TS_PARENT
+     * global.TS_WORLD
 === !ResetSceneNodeOrientation(real scene_node_id) ===
 ----
 === !TranslateSceneNode(real scene_node_id, real x, real y, real z, real relative_type) ===
