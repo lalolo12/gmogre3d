@@ -1,29 +1,28 @@
 #summary Engine functions are the base functions use to initialize, start, and stop GMOgre3D.
 <br>
-----
+<br>
 === InitializeOgre3D() ===
 ----
 Initializes the GMOgre3D engine.  This needs to be called before any other GMOgre3D functions are called.
-
+<br>
 <br>
 ----
 === IsOgre3DInitialized() ===
 ----
 Returns true if the GMOgre3D engine has been initialized.
-
 <br>
-----
+<br>
+<br>
 === StartOgre3DEngine(render_engine) ===
 ----
 Starts the GMOgre3D engine.  After calling this all drawing of the GM window is taken over by the GMOgre3D DLL.
-
 ====Parameters====
   * render_engine - The type of renderer to use. Possible values are:
     * global.RENDER_DX9
     * global.RENDER_GL
-
 <br>
-----
+<br>
 === StopOgre3DEngine() ===
 ----
 Shuts down the GMOgre3D engine.  After calling this GM is again able to draw to the GM window.
+<br>
