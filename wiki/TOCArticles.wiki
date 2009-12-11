@@ -52,7 +52,6 @@
     * [SpriteFunctions Sprite]
     * [StaticGeometryFunctions Static Geometry]
     * [TechniqueFunctions Technique]
-    * [TemplateFunctions Template]
     * [TextFunctions Text]
     * [TextOverlayElementFunctions Text Overlay Element]
     * [TextureFunctions Texture]
