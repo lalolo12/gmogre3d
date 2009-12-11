@@ -6,7 +6,7 @@
 Initializes the GMOgre3D engine.  This needs to be called before any other GMOgre3D functions are called.
 <br>
 <br>
-----
+<br>
 === IsOgre3DInitialized() ===
 ----
 Returns true if the GMOgre3D engine has been initialized.
