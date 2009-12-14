@@ -43,3 +43,14 @@ Returns the height of a billboard.
    * _billboard_id_ - The ID of the billboard.
 <BR>
 <BR>
+=== !SetBillboardColor(real billboard_id, real color, real alpha) ===
+----
+Sets the color of a billboard.
+
+Billboards can be tinted based on a base color. This allows variations in color irrespective of the base color of the material allowing more varied billboards. The default color is white. The tinting is effected using vertex colors. 
+====Parameters====
+   * _billboard_id_ - The ID of the billboard.
+   * _color_ - The color for the billboard.
+   * _alpha_ - The alpha transparency for the billboard.
+<BR>
+<BR>
