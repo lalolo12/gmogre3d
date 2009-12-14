@@ -22,6 +22,32 @@ Must only be done if the billboard set is not attached to a !SceneNode. It may b
    * _billboard_set_id_ - The ID of the billboard set.
 <BR>
 <BR>
+=== !CreateBillboardSetBillboard(real billboard_set_id, real x, real y, real z, real color) ===
+----
+Creates a new billboard and adds it to this set.  Returns the ID if the billboard.
+
+Note that you can create more Billboards than your pool setting specifies.
+====Parameters====
+   * _billboard_set_id_ - The ID of the billboard set.
+   * _x_, _y_, _z_ - The position to place the billboard.
+   * _color_ - The color of the billboard.
+<BR>
+<BR> 
+=== !RemoveBillboardSetBillboard(real billboard_set_id, real billboard_id) ===
+----
+Removes a Billboard from a set and destroys it.
+====Parameters====
+   * _billboard_set_id_ - The ID of the billboard set.
+   * _billboard_id_ - The ID of the billboard.
+<BR>
+<BR> 
+=== !GetNumBillboardSetBillboards(real billboard_set_id) ===
+----
+Returns the current number of Billboards in a set.
+====Parameters====
+   * _billboard_set_id_ - The ID of the billboard set.
+<BR>
+<BR> 
 === !SetBillboardSetPoolSize(real billboard_set_id, real pool_size) ===
 ----
 Adjusts the size of the pool of billboards available in a set.
@@ -39,6 +65,29 @@ Returns the current size of the billboard pool.
    * _billboard_set_id_ - The ID of the billboard set.
 <BR>
 <BR>
+
+
+=== !SetBillboardSetBillboardOrigin(real billboard_set_id, real type) ===
+----
+Sets the point which acts as the origin point for all billboards in this set.
+
+This setting controls the fine tuning of where a billboard appears in relation to it's position. It could be that a billboard's position represents it's center (e.g. for fireballs), it could mean the center of the bottom edge (e.g. a tree which is positioned on the ground), the top-left corner (e.g. a cursor). 
+
+The default setting is BBO_CENTER.
+====Parameters====
+   * _billboard_set_id_ - The ID of the billboard set.
+   * _type_ - The type of origin to use.  Can be:
+      * global.BBO_TOP_LEFT
+      * global.BBO_TOP_CENTER
+      * global.BBO_TOP_RIGHT
+      * global.BBO_CENTER_LEFT
+      * global.BBO_CENTER
+      * global.BBO_CENTER_RIGHT
+      * global.BBO_BOTTOM_LEFT
+      * global.BBO_BOTTOM_CENTER
+      * global.BBO_BOTTOM_RIGHT
+<BR>
+<BR>
 === !SetBillboardSetDefaultDimensions(real billboard_set_id, real width, real height) ===
 ----
 Sets the default dimensions of the billboards in a set.
@@ -54,21 +103,21 @@ All billboards in a set are created with these default dimensions. The set will 
 ----
 Returns the default width for all billboards in a set.
 ====Parameters====
-   * _billboard_id_ - The ID of the billboard.
+   * _billboard_set_id_ - The ID of the billboard set.
 <BR>
 <BR>
 === !GetBillboardSetDefaultHeight(real billboard_set_id) ===
 ----
 Returns the default height for all billboards in a set.
 ====Parameters====
-   * _billboard_id_ - The ID of the billboard.
+   * _billboard_set_id_ - The ID of the billboard set.
 <BR>
 <BR>
 === !SetBillboardSetMaterial(real billboard_set_id, string material_name) ===
 ----
 Sets the name of the material to be used for a billboard set.
 ====Parameters====
-   * _billboard_id_ - The ID of the billboard.
+   * _billboard_set_id_ - The ID of the billboard set.
    * _material_name_ - The name of the material.
 <BR>
 <BR>
@@ -88,17 +137,33 @@ Using point rendering is faster than generating quads manually, but is more rest
 
 You will almost certainly want to enable in your material pass both point attenuation and point sprites if you use this option.
 ====Parameters====
-   * _billboard_id_ - The ID of the billboard.
+   * _billboard_set_id_ - The ID of the billboard set.
    * _enable_ - Whether to enable or disable point rendering.
 <BR>
 <BR> 
-=== !CreateBillboardSetBillboard(real billboard_set_id, real x, real z, real y) ===
-----
-=== !RemoveBillboardSetBillboard(real billboard_set_id, real bb_id) ===
-----
 === !AttachBillboardSetToSceneNode(real billboard_set_id, real scene_node_id) ===
 ----
+Attaches an billboard set to the specified !SceneNode.
+====Parameters====
+   * _billboard_set_id_ - The ID of the billboard set.
+   * _scene_node_id_ - The ID of the !SceneNode.
+<BR>
+<BR>
 === !DetachBillboardSetFromSceneNode(real billboard_set_id, real scene_node_id) ===
 ----
+Detaches an billboard set from the specified !SceneNode.
+====Parameters====
+   * _billboard_set_id_ - The ID of the billboard set.
+   * _scene_node_id_ - The ID of the !SceneNode.
+<BR>
+<BR>
 === !SetBillboardSetQueryFlags(real billboard_set_id, real flags) ===
 ----
+Sets the query flags for this object.
+
+When performing a scene query, this entity will be included or excluded according to flags on the entity and flags on the query. This is a bitwise value, so only when a bit on these flags is set, will it be included in a query asking for that flag. The meaning of the bits is application-specific.
+====Parameters====
+   * _billboard_set_id_ - The ID of the billboard set.
+   * _flags_ - The application specific flags.
+<BR>
+<BR>
