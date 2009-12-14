@@ -1,7 +1,7 @@
 #summary A billboard is a primitive which always faces the camera in every frame.
 
 === Overview ===
-Billboards can be used for special effects or some other trickery which requires the triangles to always facing the camera no matter where it is. GMOgre groups billboards into sets for efficiency, so you cannot create a billboard on it's own (you can create billboards through the @BillboardSet interface though).
+Billboards can be used for special effects or some other trickery which requires the triangles to always facing the camera no matter where it is. GMOgre groups billboards into sets for efficiency, so you cannot create a billboard on it's own (you can create billboards through the !BillboardSet interface though).
 
 Billboards have their geometry generated every frame depending on where the camera is. It is most beneficial for all billboards in a set to be identically sized since GMOgre can take advantage of this and save some calculations - useful when you have sets of hundreds of billboards as is possible with special effects. You can deviate from this if you wish (example: a smoke effect would probably have smoke puffs expanding as they rise, so each billboard will legitimately have it's own size) but be aware the extra overhead this brings and try to avoid it if you can. 
 
