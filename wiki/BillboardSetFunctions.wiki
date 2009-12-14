@@ -1,27 +1,104 @@
-#summary Enter description here
+#summary A collection of billboards (faces which are always facing the given direction) with the same (default) dimensions, material and which are fairly close proximity to each other.
 
+=== Overview ===
+Billboards are rectangles made up of 2 tris which are always facing the given direction. They are typically used for special effects like particles. This class collects together a set of billboards with the same (default) dimensions, material and relative locality in order to process them more efficiently. The entire set of billboards will be culled as a whole (by default, although this can be changed if you want a large set of billboards which are spread out and you want them culled individually), individual Billboards have locations which are relative to the set (which itself derives it's position from the !SceneNode it is attached to), they will be rendered as a single rendering operation, and some calculations will be sped up by the fact that they use the same dimensions so some workings can be reused. 
+<BR>
+<BR>
+=== !CreateBillboardSet(real pool_size) ===
+----
+Creates a new billboard set.
 
-=== !CreateBillboardSet(real size) ===
+This function creates a new billboard set which is registered with the current !SceneManager. The !SceneManager will destroy this object when it shuts down or when the !ClearScene function is called, so the caller does not have to worry about destroying this instance (in fact, it definitely should not do this). 
+====Parameters====
+   * _pool_size_ - The initial size of the pool of billboards.
+<BR>
+<BR>
+=== !DestroyBillboardSet(real billboard_set_id) ===
 ----
-=== !DestroyBillboardSet(real bb_set_id) ===
+Removes a billboard set from the !SceneManager and destroys it.
+
+Must only be done if the billboard set is not attached to a !SceneNode. It may be safer to wait to clear the whole scene. If you are unsure, use !ClearScene. 
+====Parameters====
+   * _billboard_set_id_ - The ID of the billboard set.
+<BR>
+<BR>
+=== !SetBillboardSetPoolSize(real billboard_set_id, real pool_size) ===
 ----
-=== !SetBillboardSetPoolSize(real bb_set_id, real size) ===
+Adjusts the size of the pool of billboards available in a set.
+
+This function adjusts the preallocated size of the pool. If you try to reduce the size of the pool, the set has the option of ignoring you if too many billboards are already in use. Bear in mind that calling this function will incur significant construction / destruction calls so should be avoided in time-critical code.
+====Parameters====
+   * _billboard_set_id_ - The ID of the billboard set.
+   * _pool_size_ - The new size of the pool of billboards.
+<BR>
+<BR>
+=== !GetBillboardSetPoolSize(real billboard_set_id) ===
 ----
-=== !GetBillboardSetPoolSize(real bb_set_id) ===
+Returns the current size of the billboard pool.
+====Parameters====
+   * _billboard_set_id_ - The ID of the billboard set.
+<BR>
+<BR>
+=== !SetBillboardSetDefaultDimensions(real billboard_set_id, real width, real height) ===
 ----
-=== !SetBillboardSetDefaultDimensions(real bb_set_id, real width, real height) ===
+Sets the default dimensions of the billboards in a set.
+
+All billboards in a set are created with these default dimensions. The set will render most efficiently if all the billboards in the set are the default size. It is possible to alter the size of individual billboards at the expense of extra calculation. See the !SetBillboardDimensions function for more info.
+====Parameters====
+   * _billboard_set_id_ - The ID of the billboard set.
+   * _width_ - The new default width of the billboards.
+   * _height_ - The new default  height of the billboards.
+<BR>
+<BR>
+=== !GetBillboardSetDefaultWidth(real billboard_set_id) ===
 ----
-=== !GetBillboardSetDefaultWidth(real bb_set_id) ===
+Returns the default width for all billboards in a set.
+====Parameters====
+   * _billboard_id_ - The ID of the billboard.
+<BR>
+<BR>
+=== !GetBillboardSetDefaultHeight(real billboard_set_id) ===
 ----
-=== !GetBillboardSetDefaultHeight(real bb_set_id) ===
+Returns the default height for all billboards in a set.
+====Parameters====
+   * _billboard_id_ - The ID of the billboard.
+<BR>
+<BR>
+=== !SetBillboardSetMaterial(real billboard_set_id, string material_name) ===
 ----
-=== !SetBillboardSetMaterial(real bb_set_id, string mat_name) ===
+Sets the name of the material to be used for a billboard set.
+====Parameters====
+   * _billboard_id_ - The ID of the billboard.
+   * _material_name_ - The name of the material.
+<BR>
+<BR>
+=== !EnableBillboardSetPointRendering(real billboard_set_id, real enable) ===
 ----
-=== !EnableBillboardSetPointRendering(real bb_set_id, real enable) ===
+Enable or disable whether a billboard set will use point rendering rather than manually generated quads.
+
+By default a billboard set is rendered by generating geometry for a textured quad in memory, taking into account the size and orientation settings, and uploading it to the video card. The alternative is to use hardware point rendering, which means that only one position needs to be sent per billboard rather than 4 and the hardware sorts out how this is rendered based on the render state. 
+
+Using point rendering is faster than generating quads manually, but is more restrictive. The following restrictions apply:
+   * Only the BBT_POINT type is supported
+   * Size and appearance of each billboard is controlled by the material (!SetPassPointSize, !SetPassPointSizeAttenuation, !EnablePassPointSprites)
+   * Per-billboard size is not supported (stems from the above)
+   * Per-billboard rotation is not supported, this can only be controlled through texture unit rotation
+   * Only BBO_CENTER origin is supported
+   * Per-billboard texture coordinates are not supported
+
+You will almost certainly want to enable in your material pass both point attenuation and point sprites if you use this option.
+====Parameters====
+   * _billboard_id_ - The ID of the billboard.
+   * _enable_ - Whether to enable or disable point rendering.
+<BR>
+<BR> 
+=== !CreateBillboardSetBillboard(real billboard_set_id, real x, real z, real y) ===
 ----
-=== !AttachBillboardSetToSceneNode(real bb_set_id, real scene_node_id) ===
+=== !RemoveBillboardSetBillboard(real billboard_set_id, real bb_id) ===
 ----
-=== !DetachBillboardSetFromSceneNode(real bb_set_id, real scene_node_id) ===
+=== !AttachBillboardSetToSceneNode(real billboard_set_id, real scene_node_id) ===
 ----
-=== !SetBillboardSetQueryFlags(real bb_set_id, real flags) ===
+=== !DetachBillboardSetFromSceneNode(real billboard_set_id, real scene_node_id) ===
+----
+=== !SetBillboardSetQueryFlags(real billboard_set_id, real flags) ===
 ----
