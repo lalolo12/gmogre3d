@@ -29,7 +29,7 @@ Destroys a camara.
 ----
 Sets a camera's position to look from, the position to look at, and the up vector.
 ====Parameters====
-   * __camera_id__ - The ID of the camera.
+   * _camera_id__ - The ID of the camera.
    * _xfrom_, _yfrom_, _zfrom_ - The coordinates to place the camera at.
    * _xto_, _yto_, _zto_ - The up vector.
 <BR>
