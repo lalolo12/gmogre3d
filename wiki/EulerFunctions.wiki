@@ -3,9 +3,9 @@
 
 === !SetEulerDirection(real x, real y, real z) ===
 ----
-Returns the calculated orientation from two subtracted vectors (z, y, z).
+Returns the calculated orientation from two subtracted vectors (z, y, z).  Useful to find the orientation required to look forward given a previous and current position of an object.
 ==== Paramterers ====
-   * _x_, _y_, _z_ - The resulting vector from a subtraction of two vectors.
+   * _x_, _y_, _z_ - The direction vector.
 <BR>
 <BR>
 === !GetYaw() ===
