@@ -257,7 +257,7 @@ Retrieves the current rotation around the Z-axis.
    * _scene_node_id_ - The ID of the !SceneNode.
 <BR>
 <BR>
-=== !PitchSetSceneNode(real scene_node_id, real degrees, real relative_type) ===
+=== !PitchSceneNode(real scene_node_id, real degrees, real relative_type) ===
 ----
 Rotate the node around the Y-axis.
 ====Parameters====
