@@ -161,7 +161,7 @@ Detaches an billboard set from the specified !SceneNode.
 ----
 Sets the query flags for this object.
 
-When performing a scene query, this entity will be included or excluded according to flags on the entity and flags on the query. This is a bitwise value, so only when a bit on these flags is set, will it be included in a query asking for that flag. The meaning of the bits is application-specific.
+When performing a scene query, this entity will be included or excluded according to flags on the billboard set and flags on the query. This is a bitwise value, so only when a bit on these flags is set, will it be included in a query asking for that flag. The meaning of the bits is application-specific.
 ====Parameters====
    * _billboard_set_id_ - The ID of the billboard set.
    * _flags_ - The application specific flags.
