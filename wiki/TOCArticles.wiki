@@ -15,7 +15,6 @@
   * Function List
     * [AnimationFunctions Animation]
     * [AnimationNodeTrackFunctions Animation Node Track]
-    * [AnimationStateBlendMaskFunctions Animation State Blend Mask]
     * [AnimationStateFunctions Animation State]
     * [BillboardChainFunctions Billboard Chain]
     * [BillboardFunctions Billboard]
