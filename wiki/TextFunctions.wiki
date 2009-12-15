@@ -1,6 +1,7 @@
 #summary A 2D text object that is draw on the screen after the 3D scene is rendered.
 
-This is a set of help functions to easily draw text on the screen.  Internally it uses Overlays and !OverlayContainers.  If you need more fine control over the text drawn then use Overlays.
+=== Overview ===
+This is a set of helper functions to easily draw text on the screen.  Internally it uses Overlays, !OverlayElements, and !OverlayContainers.  If you need finer control over how the text drawn then use Overlays.
 <BR>
 <BR>
 <BR>
