@@ -3,38 +3,166 @@
 
 === !CreateBillboardChain() ===
 ----
-=== !DestroyBillboardChain(real bb_chain_id) ===
+Create a billboard chain, an object which you can use to render a linked chain of billboards.
+<BR>
+<BR>
+<BR>
+=== !DestroyBillboardChain(real billboard_chain_id) ===
 ----
-=== !SetBillboardChainMaxChainElements(real bb_chain_id, real max) ===
+Removes a billboard chain from the current !SceneManager and destroys it.
+====Parameters====
+   * _billboard_chain_id_ - The ID of the billboard chain.
+<BR>
+<BR>
+=== !SetBillboardChainMaxChainElements(real billboard_chain_id, real max_elements) ===
 ----
-=== !SetBillboardChainNumberOfChains(real bb_chain_id, real num) ===
+Set the maximum number of chain elements per chain.
+====Parameters====
+   * _billboard_chain_id_ - The ID of the billboard chain.
+   * _max_elements_ - The maximum number of chain elements.
+<BR>
+<BR>
+=== !SetBillboardChainNumberOfChains(real billboard_chain_id, real min_elements) ===
 ----
-=== !EnableBillboardChainTextureCoords(real bb_chain_id, real enable) ===
+Set the minimum number of chain elements per chain.
+====Parameters====
+   * _billboard_chain_id_ - The ID of the billboard chain.
+   * _min_elements_ - The minimum number of chain elements.
+<BR>
+<BR>
+=== !EnableBillboardChainTextureCoords(real billboard_chain_id, real enable) ===
 ----
-=== !SetBillboardChainTextureCoordDirection(real bb_chain_id, real type) ===
-----
-=== !SetBillboardChainOtherTextureCoordRange(real bb_chain_id, real start, real end) ===
-----
-=== !EnableBillboardChainVertexColours(real bb_chain_id, real enable) ===
-----
-=== !EnableBillboardChainDynamic(real bb_chain_id, real enable) ===
-----
-=== !AddBillboardChainChainElement(real bb_chain_id, real index, real x, real z, real y, real width, real tex_coord, real color, real alpha) ===
-----
-=== !RemoveBillboardChainChainElement(real bb_chain_id, real index) ===
-----
-=== !UpdateBillboardChainChainElement(real bb_chain_id, real index, real elementindex, real x, real z, real y, real width, real tex_coord, real color, real alpha) ===
-----
-=== !ClearBillboardChainChain(real bb_chain_id, real index) ===
-----
-=== !ClearBillboardChainAllChains(real bb_chain_id) ===
-----
-=== !SetBillboardChainMaterial(real bb_chain_id, string mat_name) ===
-----
-=== !AttachBillboardChainToSceneNode(real bb_chain_id, real scene_node_id) ===
-----
-=== !DetachBillboardChainFromSceneNode(real bb_chain_id, real scene_node_id) ===
-----
-=== !SetBillboardChainQueryFlags(real bb_chain_id, real flags) ===
-----
+Enables or disables whether texture coordinate information should be included in the final buffers generated.
 
+You must use either texture coordinates or vertex color since the vertices have no normals and without one of these there is no source of color for the vertices. 
+====Parameters====
+   * _billboard_chain_id_ - The ID of the billboard chain.
+   * _enable_ - Whether to enable or disable texture coords.
+<BR>
+<BR>
+=== !SetBillboardChainTextureCoordDirection(real billboard_chain_id, real type) ===
+----
+Sets the direction in which texture coords specified on each element are deemed to run along the length of the chain.
+
+The default is TCD_U.
+====Parameters====
+   * _billboard_chain_id_ - The ID of the billboard chain.
+   * _type_ - The type of direction to use for texture coords.  Can be:
+      * TCD_U
+      * TCD_V
+<BR>
+<BR>
+=== !SetBillboardChainOtherTextureCoordRange(real billboard_chain_id, real start, real end) ===
+----
+Set the range of the texture coordinates generated across the width of the chain elements.
+====Parameters====
+   * _billboard_chain_id_ - The ID of the billboard chain.
+   * _start_ - The start coordinate, default 0.0.
+   * _end_ - The end coordinate, default 1.0.
+<BR>
+<BR>
+=== !EnableBillboardChainVertexColors(real billboard_chain_id, real enable) ===
+----
+Enables or disables whether vertex color information should be included in the final buffers generated.
+
+You must use either texture coordinates or vertex color since the vertices have no normals and without one of these there is no source of color for the vertices. 
+====Parameters====
+   * _billboard_chain_id_ - The ID of the billboard chain.
+   * _enable_ - Whether to enable or disable vertex color.
+<BR>
+<BR>
+=== !EnableBillboardChainDynamic(real billboard_chain_id, real enable) ===
+----
+Sets whether or not the buffers created for this object are suitable for dynamic alteration.  
+====Parameters====
+   * _billboard_chain_id_ - The ID of the billboard chain.
+   * _enable_ - Whether to enable or disable dynamic alteration.
+<BR>
+<BR>
+=== !AddBillboardChainChainElement(real billboard_chain_id, real index, real x, real y, real z, real width, real tex_coord, real color, real alpha) ===
+----
+Creates and adds an element to the 'head' of a chain.
+
+If this causes the number of elements to exceed the maximum elements per chain, the last element in the chain (the 'tail') will be removed to allow the additional element to be added.
+====Parameters====
+   * _billboard_chain_id_ - The ID of the billboard chain.
+   * _index_ - The index of the chain.
+   * _x_, _y_, _z_ - The position of the element.
+   * _width_ - The width of the element.
+   * _tex_coord_ - The texture coord of the element.
+   * _color_ - The color of the element.
+   * _alpha_ - The alpha transparency of the element.
+<BR>
+<BR>
+=== !RemoveBillboardChainChainElement(real billboard_chain_id, real index) ===
+----
+Remove an element from the 'tail' of a chain. 
+====Parameters====
+   * _billboard_chain_id_ - The ID of the billboard chain.
+   * _index_ - The index of the chain.
+<BR>
+<BR>
+=== !UpdateBillboardChainChainElement(real billboard_chain_id, real index, real elementindex, real x, real y, real z, real width, real tex_coord, real color, real alpha) ===
+----
+Update the details of an existing chain element.
+====Parameters====
+   * _billboard_chain_id_ - The ID of the billboard chain.
+   * _index_ - The index of the chain.
+   * _x_, _y_, _z_ - The new position of the element.
+   * _width_ - The new width of the element.
+   * _tex_coord_ - The new texture coord of the element.
+   * _color_ - The new color of the element.
+   * _alpha_ - The new alpha transparency of the element.
+<BR>
+<BR>
+=== !ClearBillboardChainChain(real billboard_chain_id, real index) ===
+Remove all elements of a given chain (but leave the chain intact).
+====Parameters====
+   * _billboard_chain_id_ - The ID of the billboard chain.
+   * _index_ - The index of the chain.
+<BR>
+<BR>
+----
+=== !ClearBillboardChainAllChains(real billboard_chain_id) ===
+----
+Remove all elements from all chains (but leave the chains themselves intact). 
+====Parameters====
+   * _billboard_chain_id_ - The ID of the billboard chain.
+<BR>
+<BR>
+----
+=== !SetBillboardChainMaterial(real billboard_chain_id, string material_name) ===
+----
+Set the material name to use for rendering. 
+====Parameters====
+   * _billboard_chain_id_ - The ID of the billboard chain.
+   * _material_name_ - The name of the material.
+<BR>
+<BR>
+----
+=== !AttachBillboardChainToSceneNode(real billboard_chain_id, real scene_node_id) ===
+----
+Attaches an billboard chain to the specified !SceneNode.
+====Parameters====
+   * _billboard_chain_id_ - The ID of the billboard chain.
+   * _scene_node_id_ - The ID of the !SceneNode.
+<BR>
+<BR>
+=== !DetachBillboardChainFromSceneNode(real billboard_chain_id, real scene_node_id) ===
+----
+Detaches an billboard chain from the specified !SceneNode.
+====Parameters====
+   * _billboard_chain_id_ - The ID of the billboard chain.
+   * _scene_node_id_ - The ID of the !SceneNode.
+<BR>
+<BR>
+=== !SetBillboardChainQueryFlags(real billboard_chain_id, real flags) ===
+----
+Sets the query flags for this object.
+
+When performing a scene query, this entity will be included or excluded according to flags on the billboard chain and flags on the query. This is a bitwise value, so only when a bit on these flags is set, will it be included in a query asking for that flag. The meaning of the bits is application-specific.
+====Parameters====
+   * _billboard_chain_id_ - The ID of the billboard chain.
+   * _flags_ - The application specific flags.
+<BR>
+<BR>
