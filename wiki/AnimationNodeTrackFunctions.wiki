@@ -1,7 +1,32 @@
-#summary Enter description here
-
-
+#summary Specialised AnimationTrack for dealing with node transforms.
+<BR>
+<BR>
 === !CreateAnimationNodeTrackNodeKeyFrame(real anim_node_id, real time) ===
 ----
-=== !RemoveAnimationNodeKeyFrame(real anim_node_id, real anim_node_key_frame_id) ===
+Creates a new KeyFrame and adds it to an animation at the given time index.
+
+It is better to create KeyFrames in time order. Creating them out of order can result in expensive reordering processing. Note that a KeyFrame at time index 0.0 is always created for you, so you don't need to create this one, just access it using !GetAnimationNodeKeyFrame(0); 
+====Parameters====
+   * _anim_node_id_ - The ID of the animation node.
+   * _time_ - The time from which this KeyFrame will apply.
+<BR>
+<BR>
+=== !CreateAnimationNodeTrackKeyFrame(real anim_node_id, real time) ===
 ----
+Creates a new KeyFrame and adds it to an animation at the given time index.
+
+It is better to create KeyFrames in time order. Creating them out of order can result in expensive reordering processing. Note that a KeyFrame at time index 0.0 is always created for you, so you don't need to create this one, just access it using !GetAnimationNodeKeyFrame(0); 
+====Parameters====
+   * _anim_node_id_ - The ID of the animation node.
+   * _time_ - The time from which this KeyFrame will apply.
+<BR>
+<BR>
+=== !RemoveAnimationNodeTrackKeyFrame(real anim_node_id, real index) ===
+----
+----
+Removes a !KeyFrame by it's index. 
+====Parameters====
+   * _anim_node_id_ - The ID of the animation node.
+   * _index_ - The index to remove.
+<BR>
+<BR>
