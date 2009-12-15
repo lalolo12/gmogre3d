@@ -12,7 +12,7 @@ Returns the calculated orientation from two subtracted vectors (z, y, z).
 ----
 Returns the yaw component of an orientation.
 
-GM cannot return more than one value from a function, so any GMOgre3D function which needs to return a vector will instead store the result in temporary variables.  These can be retrieved using the GetYaw, GetPitch, and GetRoll functions.
+GM cannot return more than one value from a function, so any GMOgre3D function which needs to return a vector will instead store the result in temporary variables.  These can be retrieved using the !GetYaw, !GetPitch, and !GetRoll functions.
 
 Note these values are temporary and will be replaced the next time an orientation needs to be retrieved.
 <BR>
@@ -21,7 +21,7 @@ Note these values are temporary and will be replaced the next time an orientatio
 ----
 Returns the pitch component of an orientation.
 
-GM cannot return more than one value from a function, so any GMOgre3D function which needs to return a vector will instead store the result in temporary variables.  These can be retrieved using the GetYaw, GetPitch, and GetRoll functions.
+GM cannot return more than one value from a function, so any GMOgre3D function which needs to return a vector will instead store the result in temporary variables.  These can be retrieved using the !GetYaw, !GetPitch, and !GetRoll functions.
 
 Note these values are temporary and will be replaced the next time an orientation needs to be retrieved.
 <BR>
@@ -30,7 +30,7 @@ Note these values are temporary and will be replaced the next time an orientatio
 ----
 Returns the roll component of an orientation.
 
-GM cannot return more than one value from a function, so any GMOgre3D function which needs to return a vector will instead store the result in temporary variables.  These can be retrieved using the GetYaw, GetPitch, and GetRoll functions.
+GM cannot return more than one value from a function, so any GMOgre3D function which needs to return a vector will instead store the result in temporary variables.  These can be retrieved using the !GetYaw, !GetPitch, and !GetRoll functions.
 
 Note these values are temporary and will be replaced the next time an orientation needs to be retrieved.
 <BR>
