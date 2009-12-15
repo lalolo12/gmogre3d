@@ -74,7 +74,6 @@ Sets the alignment of a text object.
       * global.ALIGN_LEFT - Text text is left aligned on the previously specified position.
       * global.ALIGN_RIGHT - The text is right aligned on the previously specified position.pixels.
       * global.ALIGN_CENTER - The text is centered on the previously specified position.
-ALIGN_LEFT, ALIGN_RIGHT, ALIGN_CENTER
 <BR>
 <BR>
 === !GetTextWidth(real text_id) ===
