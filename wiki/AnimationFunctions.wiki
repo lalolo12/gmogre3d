@@ -31,8 +31,7 @@ Creates a new !AnimationTrack automatically associated with a Node or Bone. This
    * _node_id_ - The ID of the !SceneNode or Bone.
 <BR>
 <BR>
-
-=== !DestroyAnimationNodeTrack(real anim_id, real handle) ===
+=== !DestroyAnimationNodeTrackByHandle(real anim_id, real handle) ===
 ----
 Destroys the node track with the given handle. 
 ====Parameters====
