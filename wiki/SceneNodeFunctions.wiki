@@ -11,6 +11,7 @@ Gets the scene node at the root of the scene hierarchy.
 The entire scene is held as a hierarchy of nodes, which allows things like relative transforms, general changes in rendering state etc. There is only ever one root node of the hierarchy, and this function returns a pointer to it. 
 <BR>
 <BR>
+<BR>
 === !CreateSceneNode() ===
 ----
 Creates an instance of a scene node and returns the ID.
@@ -18,6 +19,7 @@ Creates an instance of a scene node and returns the ID.
 Note that this does not add the scene node to the scene hierarchy. This function is for convenience, since it allows an instance to be created for which the !SceneManager is responsible for allocating and releasing memory, which is convenient in complex scenes. 
 
 To include the returned scene node in the scene, use the !AddChildSceneNode function to specify a parent. 
+<BR>
 <BR>
 <BR>
 === !CreateRootChildSceneNode(real x, real y, real z, real yaw, real pitch, real roll) ===
@@ -183,7 +185,7 @@ Orientations, unlike other transforms, are not always inherited by child nodes. 
    * _scene_node_id_ - The ID of the scene node.
    * _yaw_ - Rotates the scene node anti-clockwise around it's local z axis.
    * _pitch_ - Pitches the scene node up/down anti-clockwise around it's local y axis.
-   * _roll_ - Rolls the scene node anti-clockwise, around its local x axis. 
+   * _roll_ - Rolls the scene node anti-clockwise, around it's local x axis. 
 <BR>
 <BR>
 === !GetSceneNodeOrientation(real scene_node_id) ===
