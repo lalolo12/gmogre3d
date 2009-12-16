@@ -1,0 +1,10 @@
+#summary Lists various external resources for use with GMOgre3D.
+
+= Introduction =
+Below are links to various external resources.  These were all made for the OGRE 3D engine and will be fully compatible with GMOgre3D.
+
+= Documentation =
+Add your content here.  Format your content with:
+  * [http://www.ogre3d.org/docs/api/html/ OGRE API Reference] - This is for OGRE itself but can be used as a handy reference for GMOgre.  A lot of the documentation for GMOgre was taken directly from this.
+  * [http://www.ogre3d.org/docs/manual/ OGRE Manual] - This is for OGRE itself but is a good introduction to how OGRE, and thus GMOgre, works.
+  * [http://www.ogre3d.org/forums OGRE Forums] - This forum is for OGRE and not GMOgre, but it's quite active and a great place to ask general OGRE questions.
