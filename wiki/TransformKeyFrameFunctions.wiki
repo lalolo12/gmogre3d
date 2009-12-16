@@ -1,9 +1,32 @@
-#summary Enter description here
+#summary Specialised !KeyFrame which stores a full transform.
 
 
-=== !SetTransformKeyFrameTranslate(real key_frame_id, real x, real z, real y) ===
+=== !SetTransformKeyFrameTranslate(real key_frame_id, real x, real y, real z) ===
 ----
-=== !SetTransformKeyFrameScale(real key_frame_id, real x, real z, real y) ===
+Sets the translation associated with this keyframe.
+
+The translation factor affects how much the keyframe translates (moves) it's animable object at it's time index. 
+====Parameters====
+   * _key_frame_id_ - The ID of the keyframe.
+   * _x_, _y_, _z_ - The delta amount to translate.
+<BR>
+<BR>
+=== !SetTransformKeyFrameScale(real key_frame_id, real x, real y, real z) ===
 ----
-=== !SetTransformKeyFrameRotation(real key_frame_id, real w, real x, real z, real y) ===
+Sets the scaling factor applied by this keyframe to the animable object at it's time index.
+
+====Parameters====
+   * _key_frame_id_ - The ID of the keyframe.
+   * _x_, _y_, _z_ - The amount to scale by (beware of supplying zero values for any component of this vector, it will scale the object to zero dimensions).
+<BR>
+<BR>
+=== !SetTransformKeyFrameRotation(real key_frame_id, real yaw, real pitch, real roll) ===
 ----
+Sets the rotation applied by this keyframe.
+====Parameters====
+   * _key_frame_id_ - The ID of the keyframe.
+   * _yaw_ - Rotation around the local z axis.
+   * _pitch_ - Rotation around the local y axis.
+   * _roll_ - Rotation around the local x axis. 
+<BR>
+<BR>
