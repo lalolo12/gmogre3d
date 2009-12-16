@@ -104,40 +104,183 @@ Calling this helps to avoid memory reallocation when you define indices. Also ve
    * _size_ - The estimated number of indices.
 <BR>
 <BR>
-=== !BeginUpdateManualObjectSection(real manual_obj_id, string mat_name, real type) ===
+=== !BeginUpdateManualObjectSection(real manual_obj_id, real index) ===
 ----
+Start the definition of an update to a part of the object.
+
+Using this function, you can update an existing section of the object efficiently. You do not have the option of changing the operation type obviously, since it must match the one that was used before. 
+
+If your sections are changing size, particularly growing, use !EstimateManualObjectVertexCount and !EstimateManualObjectIndexCount to pre-size the buffers a little larger than the initial needs to avoid buffer reconstruction. 
+====Parameters====
+   * _manual_obj_id_ - The ID of the manual object.
+   * _index_ - The index of the section you want to update. The first call to begin() would have created section 0, the second section 1, etc.
+<BR>
+<BR>
 === !BeginManualObjectSection(real manual_obj_id, string mat_name, real type) ===
 ----
-=== !ManualObjectPosition(real manual_obj_id, real x, real z, real y) ===
+Start defining a part of the object.
+
+Each time you call this method, you start a new section of the object with its own material and potentially its own type of rendering operation (triangles, points or lines for example). 
+====Parameters====
+   * _manual_obj_id_ - The ID of the manual object.
+   * _mat_name_ - The name of the material to render this part of the object with.
+   * _type_ - The type of operation to use to render. Can be:
+      * OT_POINT_LIST
+      * OT_LINE_LIST
+      * OT_LINE_STRIP
+      * OT_TRIANGLE_LIST
+      * OT_TRIANGLE_STRIP
+      * OT_TRIANGLE_FAN
+<BR>
+<BR>
+=== !ManualObjectPosition(real manual_obj_id, real x, real y, real z) ===
 ----
-=== !ManualObjectNormal(real manual_obj_id, real x, real z, real y) ===
+Add a vertex position, starting a new vertex at the same time.
+
+Remarks:
+    A vertex position is slightly special among the other vertex data methods like !ManualObjectNormal() and !ManualObjectTextureCoordX(), since calling it indicates the start of a new vertex. All other vertex data methods you call after this are assumed to be adding more information (like normals or texture coordinates) to the last vertex started with position(). 
+====Parameters====
+   * _manual_obj_id_ - The ID of the manual object.
+   * _x_, _y_, _z_ - The vertex position.
+<BR>
+<BR>
+=== !ManualObjectNormal(real manual_obj_id, real x, real y, real z) ===
 ----
-=== !ManualObjectTriangle(real manual_obj_id, real i1, real i2, real i3) ===
-----
-=== !ManualObjectQuad(real manual_obj_id, real i1, real i2, real i3, real i4) ===
-----
+Add a vertex normal to the current vertex.
+
+Vertex normals are most often used for dynamic lighting, and their components should be normalized. 
+====Parameters====
+   * _manual_obj_id_ - The ID of the manual object.
+   * _x_, _y_, _z_ - The vertex normal.
+<BR>
+<BR>
 === !ManualObjectTextureCoord1(real manual_obj_id, real u) ===
 ----
+Add a texture coordinate to the current vertex.
+
+You can call this method multiple times between position() calls to add multiple texture coordinates to a vertex. Each one can have between 1 and 3 dimensions, depending on your needs, although 2 is most common. There are several versions of this function for the variations in number of dimensions. 
+====Parameters====
+   * _manual_obj_id_ - The ID of the manual object.
+   * _u_ - The texture coord.
+<BR>
+<BR>
 === !ManualObjectTextureCoord2(real manual_obj_id, real u, real v) ===
 ----
+Add a texture coordinate to the current vertex.
+
+You can call this method multiple times between position() calls to add multiple texture coordinates to a vertex. Each one can have between 1 and 3 dimensions, depending on your needs, although 2 is most common. There are several versions of this function for the variations in number of dimensions. 
+====Parameters====
+   * _manual_obj_id_ - The ID of the manual object.
+   * _u_, _v_ - The texture coord.
+<BR>
+<BR>
 === !ManualObjectTextureCoord3(real manual_obj_id, real u, real v, real w) ===
 ----
+Add a texture coordinate to the current vertex.
+
+You can call this method multiple times between position() calls to add multiple texture coordinates to a vertex. Each one can have between 1 and 3 dimensions, depending on your needs, although 2 is most common. There are several versions of this function for the variations in number of dimensions. 
+====Parameters====
+   * _manual_obj_id_ - The ID of the manual object.
+   * _u_, _v_, _w_ - The texture coord.
+<BR>
+<BR>
 === !ManualObjectTextureCoord4(real manual_obj_id, real x, real z, real y, real w) ===
 ----
+Add a texture coordinate to the current vertex.
+
+You can call this method multiple times between position() calls to add multiple texture coordinates to a vertex. Each one can have between 1 and 3 dimensions, depending on your needs, although 2 is most common. There are several versions of this function for the variations in number of dimensions. 
+====Parameters====
+   * _manual_obj_id_ - The ID of the manual object.
+   * _x_, _y_, _z_, _w_ - The texture coord.
+<BR>
+<BR>
 === !AddManualObjectColor(real manual_obj_id, real color, real alpha) ===
 ----
+Add a vertex color to a vertex.
+====Parameters====
+   * _manual_obj_id_ - The ID of the manual object.
+   * _color_ - The color.
+   * _alpha_ - The alpha transparency.
+<BR>
+<BR>
 === !ManualObjectIndex(real manual_obj_id, real index) ===
 ----
+Add a vertex index to construct faces / lines / points via indexing rather than just by a simple list of vertices.
+
+You will have to call this 3 times for each face for a triangle list, or use the alternative 3-parameter version. Other operation types require different numbers of indexes.
+
+32-bit indexes are not supported on all cards and will only be used when required, if an index is > 65535.
+====Parameters====
+   * _manual_obj_id_ - The ID of the manual object.
+   * _index_ - A vertex index from 0 to 4294967295.
+<BR>
+<BR>
+=== !ManualObjectTriangle(real manual_obj_id, real i1, real i2, real i3) ===
+----
+Add a set of 3 vertex indices to construct a triangle; this is a shortcut to calling index() 3 times.
+
+It is only valid for triangle lists.
+
+32-bit indexes are not supported on all cards and will only be used when required, if an index is > 65535.
+====Parameters====
+   * _manual_obj_id_ - The ID of the manual object.
+   * _i1_, _i2_, _i3_ - 3 vertex indices from 0 to 4294967295.
+<BR>
+<BR>
+=== !ManualObjectQuad(real manual_obj_id, real i1, real i2, real i3, real i4) ===
+----
+Add a set of 4 vertex indices to construct a quad (out of 2 triangles); this is a shortcut to calling index() 6 times, or triangle() twice.
+
+It's only valid for triangle list operations.
+
+32-bit indexes are not supported on all cards and will only be used when required, if an index is > 65535. 
+====Parameters====
+   * _manual_obj_id_ - The ID of the manual object.
+   * _i1_, _i2_, _i3_ - 3 vertex indices from 0 to 4294967295 defining a face.
+<BR>
+<BR>
 === !EndManualObjectSection(real manual_obj_id) ===
 ----
-=== !EndUpdateManualObjectSection(real manual_obj_id) ===
-----
+Finish defining the object and compile the final renderable version.
+
+Will return a pointer to the finished section or NULL if the section was discarded (i.e. has zero vertices/indices). 
+====Parameters====
+   * _manual_obj_id_ - The ID of the manual object.
+<BR>
+<BR>
 === !ClearManualObject(real manual_obj_id) ===
 ----
+Completely clear the contents of the object.
+
+Clearing the contents of this object and rebuilding from scratch is not the optimal way to manage dynamic vertex data, since the buffers are recreated. If you want to keep the same structure but update the content within that structure, use !BeginUpdateManualObjectSection() instead of !ClearManualObject() and !BeginManualObjectSection(). However if you do want to modify the structure from time to time you can do so by clearing and re-specifying the data. 
+====Parameters====
+   * _manual_obj_id_ - The ID of the manual object.
+<BR>
+<BR>
 === !SetManualObjectMaterial(real manual_obj_id, real index, string mat_name) ===
 ----
+Alter the material for a subsection of this object after it has been specified.
+
+You specify the material to use on a section of this object during the call to begin(), however if you want to change the material afterwards you can do so by calling this method.
+====Parameters====
+   * _manual_obj_id_ - The ID of the manual object.
+   * _index_ - The index of the subsection to alter.
+   * _mat_name_ - The name of the new material to use.
+<BR>
+<BR>
 === !ConvertManualObjectToMesh(real manual_obj_id, string name, string group) ===
 ----
+Convert this object to a Mesh.
+
+After you've finished building this object, you may convert it to a Mesh if you want in order to be able to create many instances of it in the world (via Entity). This is optional, since this instance can be directly attached to a !SceneNode itself, but of course only one instance of it can exist that way. 
+
+Only objects which use indexed geometry may be converted to a mesh.
+====Parameters====
+   * _manual_obj_id_ - The ID of the manual object.
+   * _name_ - The unique name to give the mesh.
+   * _group_ - The resource group to create the mesh in.
+<BR>
+<BR>
 === !SetManualObjectQueryFlags(real manual_obj_id, real flags) ===
 ----
 Sets the query flags for this object.
