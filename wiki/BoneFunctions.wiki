@@ -39,6 +39,26 @@ Manually controlled bones can be altered by the game at runtime, and their posit
    * _enable_ - Whether to enable or disable manual control.
 <BR>
 <BR>
+=== !EnableBoneInheritScale(real bone_id, real enable) ===
+----
+Tells the bone whether it should inherit scaling factors from it's parent bone.
+
+Scaling factors, unlike other transforms, are not always inherited by child bones. Whether or not scalings affect the size of the child bones depends on the !SetBoneInheritScale option of the child. In some cases you want a scaling factor of a parent bone to apply to a child bone (e.g. where the child bone is a part of the same object, so you want it to be the same relative size based on the parent's size), but not in other cases (e.g. where the child bone is just for positioning another object, you want it to maintain it's own size). The default is to inherit as with other transforms. 
+====Parameters====
+   * _bone_id_ - The ID of the child bone.
+   * _enable_ - Whether to inherit scale.
+<BR>
+<BR>
+=== !EnableBoneInheritOrientation(real bone_id, real enable) ===
+----
+Tells the bone whether it should inherit orientation from it's parent bone.
+
+Orientations, unlike other transforms, are not always inherited by child bones. Whether or not orientations affect the orientation of the child bones depends on the !SetBoneInheritOrientation option of the child. In some cases you want a orientating of a parent bone to apply to a child bone (e.g. where the child bone is a part of the same object, so you want it to be the same relative orientation based on the parent's orientation), but not in other cases (e.g. where the child bone is just for positioning another object, you want it to maintain it's own orientation). The default is to inherit as with other transforms. 
+====Parameters====
+   * _bone_id_ - The ID of the child bone.
+   * _enable_ - Whether to inherit orientation.
+<BR>
+<BR>
 === !SetBoneScale(real bone_id, real x, real y, real z) ===
 ----
 Sets the scaling factor applied to this bone.
