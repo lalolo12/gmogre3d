@@ -13,60 +13,138 @@ To construct some geometry with this object:
    # Call !EndManualObjectSection() to finish entering data.
    # Optionally repeat the begin-end cycle if you want more geometry using different rendering operation types, or different materials After calling end(), the class will organize the data for that section internally and make it ready to render with. You should attach the object to a !SceneNode to make it visible. Other aspects like the relative render order can be controlled using standard functions like !SetManualObjectRenderQueueGroup. 
 
-You can also use !BeginUpdateManualObjectSection() to alter the geometry later on if you wish. If you do this, you should call !EnableManualObjectDynamic(true) before your first call to !BeginManualObjectSection(), and also consider using !EstimateManualObjectVertexCount / EstimateManualObjectIndexCount if your geometry is going to be growing, to avoid buffer recreation during growth. 
+You can also use !BeginUpdateManualObjectSection() to alter the geometry later on if you wish. If you do this, you should call !EnableManualObjectDynamic(true) before your first call to !BeginManualObjectSection(), and also consider using !EstimateManualObjectVertexCount / !EstimateManualObjectIndexCount if your geometry is going to be growing, to avoid buffer recreation during growth. 
 
 Note that like all GMOgre geometry, triangles should be specified in anti-clockwise winding order (whether you're doing it with just vertices, or using indexes too). That is to say that the front of the face is the one where the vertices are listed in anti-clockwise order. 
 <BR>
 <BR>
 === !CreateManualObject() ===
 ----
-=== !DestroyManualObject(real man_obj_id) ===
+Create a manual object, an object which you populate with geometry manually through a GL immediate-mode style interface.
+<BR>
+<BR>
+<BR>
+=== !DestroyManualObject(real manual_obj_id) ===
 ----
-=== !SetManualObjectRenderQueueGroup(real man_obj_id, real type) ===
+Removes a manual object from the current !SceneManager and destroys it.
+====Parameters====
+   * _manual_obj_id_ - The ID of the manual object.
+<BR>
+<BR>
+=== !SetManualObjectRenderQueueGroup(real manual_obj_id, real type) ===
 ----
-=== !EnableManualObjectIdentityProjection(real man_obj_id, real enable) ===
+Sets the render queue group this entity will be rendered through.
+
+Render queues are grouped to allow you to more tightly control the ordering of rendered objects. If you do not call this method, all Entity objects default to the default queue, which is fine for most objects. You may want to alter this if you want this entity to always appear in front of other objects, e.g. for a 3D menu system or such. 
+
+See !RenderQueue for more details.
+====Parameters====
+   * _manual_obj_id_ - The ID of the manual object.
+   * _type_ - The render queue ID.
+<BR>
+<BR>
+=== !EnableManualObjectIdentityProjection(real manual_obj_id, real enable) ===
 ----
-=== !EnableManualObjectIdentityView(real man_obj_id, real enable) ===
+Enables or disables the 'identity' projection.
+
+Usually manual objects will use a projection matrix as determined by the active camera. However, if they want they can cancel this out and use an identity projection, which effectively projects in 2D using a {-1, 1} view space. Useful for overlay rendering. Normally you don't need to change this. The default is false.
+====Parameters====
+   * _manual_obj_id_ - The ID of the manual object.
+   * _enable_ - Whether to enable or disable identity projection.
+<BR>
+<BR>
+=== !EnableManualObjectIdentityView(real manual_obj_id, real enable) ===
 ----
-=== !SetManualObjectQueryFlags(real man_obj_id, real flags) ===
+Sets whether or not to use an 'identity' view.
+
+Usually manual objects will use a view matrix as determined by the active camera. However, if they want they can cancel this out and use an identity matrix, which means all geometry is assumed to be relative to camera space already. Useful for overlay rendering. Normally you don't need to change this. The default is false.
+====Parameters====
+   * _manual_obj_id_ - The ID of the manual object.
+   * _enable_ - Whether to enable or disable identity view.
+<BR>
+<BR>
+=== !SetManualObjectBoundingBox(real manual_obj_id, real mx, real mz, real my, real Mx, real Mz, real My) ===
 ----
-=== !SetManualObjectBoundingBox(real man_obj_id, real mx, real mz, real my, real Mx, real Mz, real My) ===
+Sets the bounding box.
+
+Call this after having finished creating sections to modify the bounding box. E.g. if you're using manual object to create 2D overlays you can call things function to set an infinite bounding box so that the object always stays visible when attached.
+
+To set an infinite bounding box specify -1 for all parameters.
+====Parameters====
+   * _manual_obj_id_ - The ID of the manual object.
+   * _mx_, _mz_, _my_ - The minimum corner.
+   * _Mx_, _Mz_, _My_ - The maximum corner.
+<BR>
+<BR>
+=== !EnableManualObjectDynamic(real manual_obj_id, real enable) ===
 ----
-=== !EnableManualObjectDynamic(real man_obj_id, real enable) ===
+Use before defining geometry to indicate that you intend to update the geometry regularly and want the internal structure to reflect that.
+====Parameters====
+   * _manual_obj_id_ - The ID of the manual object.
+   * _enable_ - Whether to enable or disable dynamic updating.
+<BR>
+<BR>
+=== !EstimateManualObjectVertexCount(real manual_obj_id, real size) ===
 ----
-=== !EstimateManualObjectVertexCount(real man_obj_id, real size) ===
+Estimate the number of vertices ahead of time.
+
+Calling this helps to avoid memory reallocation when you define vertices. Also very handy when using !BeginUpdateManualObject() to manage dynamic data - you can make the vertex buffers a little larger than their initial needs to allow for growth later with this method. 
+====Parameters====
+   * _manual_obj_id_ - The ID of the manual object.
+   * _size_ - The estimated number of vertices.
+<BR>
+<BR>
+=== !EstimateManualObjectIndexCount(real manual_obj_id, real size) ===
 ----
-=== !BeginUpdateManualObjectSection(real man_obj_id, string mat_name, real type) ===
+Estimate the number of indices ahead of time.
+
+Calling this helps to avoid memory reallocation when you define indices. Also very handy when using !BeginUpdateManualObject() to manage dynamic data - you can make the index buffers a little larger than their initial needs to allow for growth later with this method. 
+====Parameters====
+   * _manual_obj_id_ - The ID of the manual object.
+   * _size_ - The estimated number of indices.
+<BR>
+<BR>
+=== !BeginUpdateManualObjectSection(real manual_obj_id, string mat_name, real type) ===
 ----
-=== !BeginManualObjectSection(real man_obj_id, string mat_name, real type) ===
+=== !BeginManualObjectSection(real manual_obj_id, string mat_name, real type) ===
 ----
-=== !ManualObjectPosition(real man_obj_id, real x, real z, real y) ===
+=== !ManualObjectPosition(real manual_obj_id, real x, real z, real y) ===
 ----
-=== !ManualObjectNormal(real man_obj_id, real x, real z, real y) ===
+=== !ManualObjectNormal(real manual_obj_id, real x, real z, real y) ===
 ----
-=== !ManualObjectTriangle(real man_obj_id, real i1, real i2, real i3) ===
+=== !ManualObjectTriangle(real manual_obj_id, real i1, real i2, real i3) ===
 ----
-=== !ManualObjectQuad(real man_obj_id, real i1, real i2, real i3, real i4) ===
+=== !ManualObjectQuad(real manual_obj_id, real i1, real i2, real i3, real i4) ===
 ----
-=== !ManualObjectTextureCoord1(real man_obj_id, real u) ===
+=== !ManualObjectTextureCoord1(real manual_obj_id, real u) ===
 ----
-=== !ManualObjectTextureCoord2(real man_obj_id, real u, real v) ===
+=== !ManualObjectTextureCoord2(real manual_obj_id, real u, real v) ===
 ----
-=== !ManualObjectTextureCoord3(real man_obj_id, real u, real v, real w) ===
+=== !ManualObjectTextureCoord3(real manual_obj_id, real u, real v, real w) ===
 ----
-=== !ManualObjectTextureCoord4(real man_obj_id, real x, real z, real y, real w) ===
+=== !ManualObjectTextureCoord4(real manual_obj_id, real x, real z, real y, real w) ===
 ----
-=== !AddManualObjectColor(real man_obj_id, real color, real alpha) ===
+=== !AddManualObjectColor(real manual_obj_id, real color, real alpha) ===
 ----
-=== !ManualObjectIndex(real man_obj_id, real index) ===
+=== !ManualObjectIndex(real manual_obj_id, real index) ===
 ----
-=== !EndManualObjectSection(real man_obj_id) ===
+=== !EndManualObjectSection(real manual_obj_id) ===
 ----
-=== !EndUpdateManualObjectSection(real man_obj_id) ===
+=== !EndUpdateManualObjectSection(real manual_obj_id) ===
 ----
-=== !ClearManualObject(real man_obj_id) ===
+=== !ClearManualObject(real manual_obj_id) ===
 ----
-=== !SetManualObjectMaterial(real man_obj_id, real index, string mat_name) ===
+=== !SetManualObjectMaterial(real manual_obj_id, real index, string mat_name) ===
 ----
-=== !ConvertManualObjectToMesh(real man_obj_id, string name, string group) ===
+=== !ConvertManualObjectToMesh(real manual_obj_id, string name, string group) ===
 ----
+=== !SetManualObjectQueryFlags(real manual_obj_id, real flags) ===
+----
+Sets the query flags for this object.
+
+When performing a scene query, this entity will be included or excluded according to flags on the entity and flags on the query. This is a bitwise value, so only when a bit on these flags is set, will it be included in a query asking for that flag. The meaning of the bits is application-specific.
+====Parameters====
+   * _manual_obj_id_ - The ID of the manual object.
+   * _flags_ - The application specific flags.
+<BR>
+<BR>
