@@ -1,0 +1,25 @@
+#summary Lists various external resources for use with GMOgre3D.
+
+= Introduction =
+Below are links to various external resources.  These were all made for the OGRE engine but can still be very useful with GMOgre.
+<BR>
+<BR>
+= Documentation =
+Add your content here.  Format your content with:
+  * [http://www.ogre3d.org/docs/api/html/ OGRE API Reference] - This is for OGRE itself but can be used as a handy reference for GMOgre.  A lot of the documentation for GMOgre was taken directly from this.
+  * [http://www.ogre3d.org/docs/manual/ OGRE Manual] - This is for OGRE itself but is a good introduction to how OGRE, and thus GMOgre, works.
+  * [http://www.ogre3d.org/forums OGRE Forums] - This forum is for OGRE and not GMOgre, but it's quite active and a great place to ask general OGRE questions.
+<BR>
+= Modelling Packages =
+   * [http://www.ogre3d.org/phpBB2/viewtopic.php?t=45922 Blender Exporter] - Exporter to take animated meshes from Blender to Ogre XML. Requires the use of the OgreXMLConverter contained in the command line tools download to turn into a runtime binary mesh.
+   * [http://www.edmstudio.com/resources/ogre/houdiniogre-setup.exe Houdini Exporter] - Exporter for SIdeFX’s Houdini.
+   * [http://downloads.sourceforge.net/ogre/ogreMayaExporter_maya6.5_1.2.6.zip Maya v6.5 Exporter] - Exporter for Maya 6.5.
+   * [http://downloads.sourceforge.net/ogre/OgreMayaExporter_maya70_1.6.0.zip?use_mirror= Maya v7.0 Exporter] - Exporter for Maya 7.0.
+   * [http://downloads.sourceforge.net/ogre/OgreMayaExporter_maya80_1.6.0.zip?use_mirror= Maya v8.0 Exporter] - Exporter for Maya 8.0.
+   * [http://downloads.sourceforge.net/ogre/OgreMayaExporter_maya85_1.6.0.zip?use_mirror= Maya v8.5 Exporter] - Exporter for Maya 8.5.
+   * [http://downloads.sourceforge.net/ogre/OgreMayaExporter_maya2008_1.6.0.zip?use_mirror= Maya 2008 Exporter] - Exporter for Maya 2008.
+   * [http://downloads.sourceforge.net/ogre/OgreMilkshapeExporter_v1.4.1.msi?download Milkshape 3D Exporter] - Exporter for Milkshape 3D.
+   * [http://downloads.sourceforge.net/ogre/OgreXSIExporter6_v1.4.6p1.msi Softimage XSI v6 Exporter] - Exporter for Softimage XSI v6
+<BR>
+= Level Editors =
+   * [http://sourceforge.net/projects/ogrescenebuilde/files/ Ogitor] -  WYSWYG editor environment for OGRE
