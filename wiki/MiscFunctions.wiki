@@ -1,15 +1,58 @@
-#summary Enter description here
-
-
+#summary Miscellaneous functions
+<BR>
+<BR>
 === EnableWaitForVSync(real enable) ===
 ----
+Enables or disables monitor vsync.
+
+Must be called before !StartEngine().
+====Parameters====
+   * _enable_ - Whether to enable or disable vsync.
+<BR>
+<BR>
 === EnableDisplayFPS(real enable) ===
 ----
+Enables or disables displaying of FPS information in an overlay.
+
+Useful not only to view framerate, but also triangle and batch count, which can give you a clue in what is taking up the most rendering time.
+
+Note that you must include the OgreCore.zip file in your resources in order to turn on the FPS overlay.
+====Parameters====
+   * _enable_ - Whether to enable or disable FPS.
+<BR>
+<BR>
 === !EnableMouseCursor(real enable) ===
 ----
+Enables or disables showing of mouse cursor.
+====Parameters====
+   * _enable_ - Whether to enable or disable mouse cursor.
+<BR>
+<BR>
 === !SetLoggingLevel(real type) ===
 ----
-=== !LogMessage(string error_msg, real level) ===
+Sets the logging level of GMOgre messages to the GMOgre3D.log file.
+====Parameters====
+   * _type_ - The level of messages to log.  Can be:
+      * global.LL_LOW
+      * global.LL_NORMAL
+      * global.LL_BOREME
+<BR>
+<BR>
+=== !LogMessage(string msg, real level) ===
 ----
+Logs your own message the GMOgre3D.log file.
+====Parameters====
+   * _msg_ - The message to log.
+   * _type_ - The level of message to log.  Can be:
+      * global.LL_LOW
+      * global.LL_NORMAL
+      * global.LL_BOREME
+<BR>
+<BR>
 === !SaveScreenshot(string filename) ===
 ----
+Takes a snapshot of the current screen and saves to the specified filename.
+====Parameters====
+   * _filename_ - The filename to save the screenshot to.
+<BR>
+<BR>
