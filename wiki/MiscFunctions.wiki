@@ -1,4 +1,4 @@
-#summary Miscellaneous functions
+#summary Miscellaneous functions.
 <BR>
 <BR>
 === EnableWaitForVSync(real enable) ===
