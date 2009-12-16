@@ -99,6 +99,14 @@ Retrieves the ID of the sub entity (e.g. a part of the entity).
    * _index_ - The sub entity index.
 <BR>
 <BR>
+=== !GetEntitySubEntityByName(real entity_id, string name) ===
+----
+Retrieves the ID of the sub entity (e.g. a part of the entity).
+====Parameters====
+   * _entity_id_ - The ID of the entity.
+   * _name_ - The sub entity unique name.
+<BR>
+<BR>
 === !SetEntityMaterial(real entity_id, string mat_name) ===
 ----
 Sets the material to use for the whole of this entity.
