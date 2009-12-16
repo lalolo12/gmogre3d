@@ -3,66 +3,66 @@
 
 === !GetRootSceneNode() ===
 ----
-Gets the !SceneNode at the root of the scene hierarchy.
+Gets the scene node at the root of the scene hierarchy.
 
 The entire scene is held as a hierarchy of nodes, which allows things like relative transforms, general changes in rendering state etc. There is only ever one root node of the hierarchy, and this function returns a pointer to it. 
 <BR>
 <BR>
 === !CreateSceneNode() ===
 ----
-Creates an instance of a !SceneNode and returns the ID.
+Creates an instance of a scene node and returns the ID.
 
-Note that this does not add the !SceneNode to the scene hierarchy. This function is for convenience, since it allows an instance to be created for which the !SceneManager is responsible for allocating and releasing memory, which is convenient in complex scenes. 
+Note that this does not add the scene node to the scene hierarchy. This function is for convenience, since it allows an instance to be created for which the !SceneManager is responsible for allocating and releasing memory, which is convenient in complex scenes. 
 
-To include the returned !SceneNode in the scene, use the !AddChildSceneNode function to specify a parent. 
+To include the returned scene node in the scene, use the !AddChildSceneNode function to specify a parent. 
 <BR>
 <BR>
 === !CreateRootChildSceneNode(real x, real y, real z, real yaw, real pitch, real roll) ===
 ----
-Creates a !SceneNode, adds it as a child of the root !SceneNode, and returns the ID.
+Creates a scene node, adds it as a child of the root scene node, and returns the ID.
 ====Parameters====
-   * _x_, _y_, _z_ - The world coordinates of the !SceneNode.
-   * _yaw_ - The yaw of the !SceneNode.
-   * _pitch_ - The pitch of the !SceneNode.
-   * _roll_ - The roll of the !SceneNode.
+   * _x_, _y_, _z_ - The world coordinates of the scene node.
+   * _yaw_ - The yaw of the scene node.
+   * _pitch_ - The pitch of the scene node.
+   * _roll_ - The roll of the scene node.
 <BR>
 <BR>
 === !CreateChildSceneNode(real scene_node_id, real x, real z, real y, real yaw, real pitch, real roll) ===
 ----
-Creates a !SceneNode, adds it as a child of the specified !SceneNode, and returns the ID.
+Creates a scene node, adds it as a child of the specified scene node, and returns the ID.
 ====Parameters====
-   * _scene_node_id_ - The ID of the parent !SceneNode.
-   * _x_, _y_, _z_ - The coordinates of the !SceneNode relative to its parent.
-   * _yaw_ - The yaw of the !SceneNode relative to its parent.
-   * _pitch_ - The pitch of the !SceneNode relative to its parent.
-   * _roll_ - The roll of the !SceneNode relative to its parent.
+   * _scene_node_id_ - The ID of the parent scene node.
+   * _x_, _y_, _z_ - The coordinates of the scene node relative to its parent.
+   * _yaw_ - The yaw of the scene node relative to its parent.
+   * _pitch_ - The pitch of the scene node relative to its parent.
+   * _roll_ - The roll of the scene node relative to its parent.
 <BR>
 <BR>
 === !DestroySceneNode(real scene_node_id) ===
 ----
-Destroys a !SceneNode.
+Destroys a scene node.
 
-This allows you to physically delete an individual !SceneNode if you want to. Note that this is not normally recommended, it's better to allow GMOgre3D to delete the nodes when the scene is cleared. 
+This allows you to physically delete an individual scene node if you want to. Note that this is not normally recommended, it's better to allow GMOgre3D to delete the nodes when the scene is cleared. 
 ====Parameters====
-   * _scene_node_id_ - The ID of the !SceneNode.
+   * _scene_node_id_ - The ID of the scene node.
 <BR>
 <BR>
 === !AddChildSceneNode(real parent_scene_node_id, real scene_node_id) ===
 ----
-Adds a pre-created !SceneNode as a child to the specified !SceneNode.  If it is attached to another node, it must be detached first. 
+Adds a pre-created scene node as a child to the specified scene node.  If it is attached to another node, it must be detached first. 
 ====Parameters====
-   * _parent_scene_node_id_ - The ID of the parent !SceneNode.
-   * _scene_node_id_ - The ID of the child !SceneNode.
+   * _parent_scene_node_id_ - The ID of the parent scene node.
+   * _scene_node_id_ - The ID of the child scene node.
 <BR>
 <BR>
 === !RemoveChildSceneNode(real parent_scene_node_id, real scene_node_id) ===
 ----
-Drops child !SceneNode from the specified parent !SceneNode.
+Drops child scene node from the specified parent scene node.
 
-Does not delete the !SceneNode, just detaches it from this parent, potentially to be reattached elsewhere.
+Does not delete the scene node, just detaches it from this parent, potentially to be reattached elsewhere.
 ====Parameters====
-   * _parent_scene_node_id_ - The ID of the parent !SceneNode.
-   * _scene_node_id_ - The ID of the child !SceneNode.
+   * _parent_scene_node_id_ - The ID of the parent scene node.
+   * _scene_node_id_ - The ID of the child scene node.
 <BR>
 <BR>
 === !EnableSceneNodeInheritScale(real scene_node_id, real enable) ===
@@ -71,7 +71,7 @@ Tells the node whether it should inherit scaling factors from it's parent node.
 
 Scaling factors, unlike other transforms, are not always inherited by child nodes. Whether or not scalings affect the size of the child nodes depends on the !SetSceneNodeInheritScale option of the child. In some cases you want a scaling factor of a parent node to apply to a child node (e.g. where the child node is a part of the same object, so you want it to be the same relative size based on the parent's size), but not in other cases (e.g. where the child node is just for positioning another object, you want it to maintain it's own size). The default is to inherit as with other transforms. 
 ====Parameters====
-   * _scene_node_id_ - The ID of the child !SceneNode.
+   * _scene_node_id_ - The ID of the child scene node.
    * _enable_ - Whether to inherit scale.
 <BR>
 <BR>
@@ -81,124 +81,124 @@ Tells the node whether it should inherit orientation from it's parent node.
 
 Orientations, unlike other transforms, are not always inherited by child nodes. Whether or not orientations affect the orientation of the child nodes depends on the !SetSceneNodeInheritOrientation option of the child. In some cases you want a orientating of a parent node to apply to a child node (e.g. where the child node is a part of the same object, so you want it to be the same relative orientation based on the parent's orientation), but not in other cases (e.g. where the child node is just for positioning another object, you want it to maintain it's own orientation). The default is to inherit as with other transforms. 
 ====Parameters====
-   * _scene_node_id_ - The ID of the child !SceneNode.
+   * _scene_node_id_ - The ID of the child scene node.
    * _enable_ - Whether to inherit orientation.
 <BR>
 <BR>
 === !SetSceneNodeScale(real scene_node_id, real x, real z, real y) ===
 ----
-Sets the scaling factor applied to a !SceneNode.
+Sets the scaling factor applied to a scene node.
 
 Scaling factors, unlike other transforms, are not always inherited by child nodes. Whether or not scalings affect the size of the child nodes depends on the !EnableSceneNodeInheritScale option of the child. In some cases you want a scaling factor of a parent node to apply to a child node (e.g. where the child node is a part of the same object, so you want it to be the same relative size based on the parent's size), but not in other cases (e.g. where the child node is just for positioning another object, you want it to maintain it's own size). The default is to inherit as with other transforms. 
 
 Note that like rotations, scalings are oriented around the node's origin. 
 ====Parameters====
-   * _scene_node_id_ - The ID of the !SceneNode.
-   * _x_, _y_, _z_ - The local coordinates of the !SceneNode.
+   * _scene_node_id_ - The ID of the scene node.
+   * _x_, _y_, _z_ - The local coordinates of the scene node.
 <BR>
 <BR>
 === !GetSceneNodeScale(real scene_node_id) ===
 ----
-Retrieves the scaling factor applied to a !SceneNode.
+Retrieves the scaling factor applied to a scene node.
 
 Since GM cannot return 3 values in a single function call these factors are stored in temporary variables and can be retrieved by calling the GetX, GetY, and GetZ functions.
 ====Parameters====
-   * _scene_node_id_ - The ID of the !SceneNode.
+   * _scene_node_id_ - The ID of the scene node.
 <BR>
 <BR>
 === !SetSceneNodePosition(real scene_node_id, real x, real y, real z) ===
 ----
-Sets a !SceneNode's position, relative to it's parent.
+Sets a scene node's position, relative to it's parent.
 ====Parameters====
-   * _scene_node_id_ - The ID of the !SceneNode.
-   * _x_, _y_, _z_ - The coordinates of the !SceneNode relative to it's parent.
+   * _scene_node_id_ - The ID of the scene node.
+   * _x_, _y_, _z_ - The coordinates of the scene node relative to it's parent.
 <BR>
 <BR>
 === !GetSceneNodePosition(real scene_node_id) ===
 ----
-Retrieves the scaling factor applied to a !SceneNode.
+Retrieves the scaling factor applied to a scene node.
 
 Since GM cannot return 3 values in a single function call these coordinates are stored in temporary variables and can be retrieved by calling the GetX, GetY, and GetZ functions.
 ====Parameters====
-   * _scene_node_id_ - The ID of the !SceneNode.
+   * _scene_node_id_ - The ID of the scene node.
 <BR>
 <BR>
 === !MoveSceneNodeForward(real scene_node_id, real delta) ===
 ----
-Moves a !SceneNode forward by the delta amount. 
+Moves a scene node forward by the delta amount. 
 ====Parameters====
-   * _scene_node_id_ - The ID of the !SceneNode.
-   * _delta_ - The delta amount to move the !SceneNode forward.
+   * _scene_node_id_ - The ID of the scene node.
+   * _delta_ - The delta amount to move the scene node forward.
 <BR>
 <BR>
 === !MoveSceneNodeBackward(real scene_node_id, real delta) ===
 ----
-Moves a !SceneNode backward by the delta amount. 
+Moves a scene node backward by the delta amount. 
 ====Parameters====
-   * _scene_node_id_ - The ID of the !SceneNode.
-   * _delta_ - The delta amount to move the !SceneNode backward.
+   * _scene_node_id_ - The ID of the scene node.
+   * _delta_ - The delta amount to move the scene node backward.
 <BR>
 <BR>
 === !MoveSceneNodeLeft(real scene_node_id, real delta) ===
 ----
-Moves a !SceneNode left by the delta amount. 
+Moves a scene node left by the delta amount. 
 ====Parameters====
-   * _scene_node_id_ - The ID of the !SceneNode.
-   * _delta_ - The delta amount to move the !SceneNode left.
+   * _scene_node_id_ - The ID of the scene node.
+   * _delta_ - The delta amount to move the scene node left.
 <BR>
 <BR>
 === !MoveSceneNodeRight(real scene_node_id, real delta) ===
 ----
-Moves a !SceneNode right by the delta amount. 
+Moves a scene node right by the delta amount. 
 ====Parameters====
-   * _scene_node_id_ - The ID of the !SceneNode.
-   * _delta_ - The delta amount to move the !SceneNode right.
+   * _scene_node_id_ - The ID of the scene node.
+   * _delta_ - The delta amount to move the scene node right.
 <BR>
 <BR>
 === !MoveSceneNodeUp(real scene_node_id, real delta) ===
 ----
-Moves a !SceneNode upward by the delta amount. 
+Moves a scene node upward by the delta amount. 
 ====Parameters====
-   * _scene_node_id_ - The ID of the !SceneNode.
-   * _delta_ - The delta amount to move the !SceneNode upward.
+   * _scene_node_id_ - The ID of the scene node.
+   * _delta_ - The delta amount to move the scene node upward.
 <BR>
 <BR>
 === !MoveSceneNodeDown(real scene_node_id, real delta) ===
 ----
-Moves a !SceneNode downward by the delta amount. 
+Moves a scene node downward by the delta amount. 
 ====Parameters====
-   * _scene_node_id_ - The ID of the !SceneNode.
-   * _delta_ - The delta amount to move the !SceneNode downward.
+   * _scene_node_id_ - The ID of the scene node.
+   * _delta_ - The delta amount to move the scene node downward.
 <BR>
 <BR>
 === !SetSceneNodeOrientation(real scene_node_id, real yaw, real pitch, real roll) ===
 ----
-Sets a !SceneNode's orientation (yaw, pitch, and roll). 
+Sets a scene node's orientation (yaw, pitch, and roll). 
 
 Orientations, unlike other transforms, are not always inherited by child nodes. Whether or not orientations affect the orientation of the child nodes depends on the !EnableSceneNodeInheritOrientation option of the child. In some cases you want a orientating of a parent node to apply to a child node (e.g. where the child node is a part of the same object, so you want it to be the same relative orientation based on the parent's orientation), but not in other cases (e.g. where the child node is just for positioning another object, you want it to maintain it's own orientation). The default is to inherit as with other transforms. 
 ====Parameters====
-   * _scene_node_id_ - The ID of the !SceneNode.
-   * _yaw_ - Rotates the !SceneNode anti-clockwise around it's local z axis.
-   * _pitch_ - Pitches the !SceneNode up/down anti-clockwise around it's local y axis.
-   * _roll_ - Rolls the !SceneNode anti-clockwise, around its local x axis. 
+   * _scene_node_id_ - The ID of the scene node.
+   * _yaw_ - Rotates the scene node anti-clockwise around it's local z axis.
+   * _pitch_ - Pitches the scene node up/down anti-clockwise around it's local y axis.
+   * _roll_ - Rolls the scene node anti-clockwise, around its local x axis. 
 <BR>
 <BR>
 === !GetSceneNodeOrientation(real scene_node_id) ===
 ----
-Retrieves the orientation of a !SceneNode.
+Retrieves the orientation of a scene node.
 
 Since GM cannot return 3 values in a single function call these coordinates are stored in temporary variables and can be retrieved by calling the !GetYaw(), !GetPitch(), and !GetRoll() functions.
 ====Parameters====
-   * _scene_node_id_ - The ID of the !SceneNode.
+   * _scene_node_id_ - The ID of the scene node.
 <BR>
 <BR>
 === !SetSceneNodeDirection(real scene_node_id, real x, real y, real z, real relative_type) ===
 ----
-Sets the !SceneNode's direction vector.
+Sets the scene node's direction vector.
 
 Note that the 'up' vector for the orientation will automatically be recalculated based on the current 'up' vector (i.e. the roll will remain the same). If you need more control, use !SetSceneNodeOrientation.
 ====Parameters====
-   * _scene_node_id_ - The ID of the !SceneNode.
+   * _scene_node_id_ - The ID of the scene node.
    * _x_, _y_, _z_ - The components of the direction vector.
    * _relative_type_ - The space in which this direction vector is expressed.  Can be:
      * global.TS_LOCAL
@@ -208,9 +208,9 @@ Note that the 'up' vector for the orientation will automatically be recalculated
 <BR>
 === !SetSceneNodeLookAt(real scene_node_id, real x, real y, real z, real relative_type) ===
 ----
-Set's the !SceneNode's orientation to look at a point in space.
+Set's the scene node's orientation to look at a point in space.
 ====Parameters====
-   * _scene_node_id_ - The ID of the !SceneNode.
+   * _scene_node_id_ - The ID of the scene node.
    * _x_, _y_, _z_ - The point to look at.
    * _relative_type_ - The space in which the point resides.  Can be:
      * global.TS_LOCAL
@@ -222,8 +222,8 @@ Set's the !SceneNode's orientation to look at a point in space.
 ----
 Rotate the node around the X-axis.
 ====Parameters====
-   * _scene_node_id_ - The ID of the !SceneNode.
-   * _degrees_ - The number of degrees to roll the !SceneNode.
+   * _scene_node_id_ - The ID of the scene node.
+   * _degrees_ - The number of degrees to roll the scene node.
    * _relative_type_ - The space in which the rotation should occur.  Can be:
      * global.TS_LOCAL
      * global.TS_PARENT
@@ -234,7 +234,7 @@ Rotate the node around the X-axis.
 ----
 Retrieves the current rotation around the X-axis.
 ====Parameters====
-   * _scene_node_id_ - The ID of the !SceneNode.
+   * _scene_node_id_ - The ID of the scene node.
 <BR>
 <BR>
 
@@ -242,8 +242,8 @@ Retrieves the current rotation around the X-axis.
 ----
 Rotate the node around the Z-axis.
 ====Parameters====
-   * _scene_node_id_ - The ID of the !SceneNode.
-   * _degrees_ - The number of degrees to yaw the !SceneNode.
+   * _scene_node_id_ - The ID of the scene node.
+   * _degrees_ - The number of degrees to yaw the scene node.
    * _relative_type_ - The space in which the rotation should occur.  Can be:
      * global.TS_LOCAL
      * global.TS_PARENT
@@ -254,15 +254,15 @@ Rotate the node around the Z-axis.
 ----
 Retrieves the current rotation around the Z-axis.
 ====Parameters====
-   * _scene_node_id_ - The ID of the !SceneNode.
+   * _scene_node_id_ - The ID of the scene node.
 <BR>
 <BR>
 === !PitchSceneNode(real scene_node_id, real degrees, real relative_type) ===
 ----
 Rotate the node around the Y-axis.
 ====Parameters====
-   * _scene_node_id_ - The ID of the !SceneNode.
-   * _degrees_ - The number of degrees to pitch the !SceneNode.
+   * _scene_node_id_ - The ID of the scene node.
+   * _degrees_ - The number of degrees to pitch the scene node.
    * _relative_type_ - The space in which the rotation should occur.  Can be:
      * global.TS_LOCAL
      * global.TS_PARENT
@@ -273,16 +273,16 @@ Rotate the node around the Y-axis.
 ----
 Retrieves the current rotation around the Y-axis.
 ====Parameters====
-   * _scene_node_id_ - The ID of the !SceneNode.
+   * _scene_node_id_ - The ID of the scene node.
 <BR>
 <BR>
 === !RotateSceneNode(real scene_node_id, real x, real y, real z, real degrees, real relative_type) ===
 ----
 Rotate the node around an arbitrary axis.
 ====Parameters====
-   * _scene_node_id_ - The ID of the !SceneNode.
+   * _scene_node_id_ - The ID of the scene node.
    * _x_, _y_, _z_ - The axis to rotate around.
-   * _degrees_ - The number of degrees to rotate the !SceneNode.
+   * _degrees_ - The number of degrees to rotate the scene node.
    * _relative_type_ - The space in which the rotation should occur.  Can be:
      * global.TS_LOCAL
      * global.TS_PARENT
@@ -297,23 +297,23 @@ You never need to call this function unless you plan to animate this node. If yo
 
 If you never call this function, the initial state is the identity transform, ie do nothing. 
 ====Parameters====
-   * _scene_node_id_ - The ID of the !SceneNode.
+   * _scene_node_id_ - The ID of the scene node.
 <BR>
 <BR>
 === !ResetSceneNodeOrientation(real scene_node_id) ===
 ----
-Resets a !SceneNodes orientation (local axes as world axes, no rotation).
+Resets a scene nodes orientation (local axes as world axes, no rotation).
 
 Orientations, unlike other transforms, are not always inherited by child nodes. Whether or not orientations affect the orientation of the child nodes depends on the !SetSceneNodeInheritOrientation option of the child. In some cases you want a orientating of a parent node to apply to a child node (e.g. where the child node is a part of the same object, so you want it to be the same relative orientation based on the parent's orientation), but not in other cases (e.g. where the child node is just for positioning another object, you want it to maintain it's own orientation). The default is to inherit as with other transforms. 
 ====Parameters====
-   * _scene_node_id_ - The ID of the !SceneNode.
+   * _scene_node_id_ - The ID of the scene node.
 <BR>
 <BR>
 === !TranslateSceneNode(real scene_node_id, real x, real y, real z, real relative_type) ===
 ----
-Moves a !SceneNode along the Cartesian axes, i.e. along world x,y,z.
+Moves a scene node along the Cartesian axes, i.e. along world x,y,z.
 ====Parameters====
-   * _scene_node_id_ - The ID of the !SceneNode.
+   * _scene_node_id_ - The ID of the scene node.
    * _x_, _y_, _z_ - The translation values.
    * _relative_type_ - The space in which the translation is relative to.  Can be:
      * global.TS_LOCAL
@@ -327,7 +327,7 @@ Makes all objects attached to this node become visible.
 
 This is a shortcut to calling the same function on all objects attached to this node, and optionally to all objects attached to child nodes. 
 ====Parameters====
-   * _scene_node_id_ - The ID of the !SceneNode.
+   * _scene_node_id_ - The ID of the scene node.
 <BR>
 <BR>
 === !HideSceneNode(real scene_node_id) ===
@@ -336,40 +336,47 @@ Makes all objects attached to this node become invisible.
 
 This is a shortcut to calling the same function on all objects attached to this node, and optionally to all objects attached to child nodes.
 ====Parameters====
-   * _scene_node_id_ - The ID of the !SceneNode.
+   * _scene_node_id_ - The ID of the scene node.
 <BR>
 <BR>
 === !ShowSceneNodeBoundingBox(real scene_node_id) ===
 ----
-Makes the bounding box for a !SceneNode visible.
+Makes the bounding box for a scene node visible.
 ====Parameters====
-   * _scene_node_id_ - The ID of the !SceneNode.
+   * _scene_node_id_ - The ID of the scene node.
 <BR>
 <BR>
 === !HideSceneNodeBoundingBox(real scene_node_id) ===
 ----
-Makes the bounding box for a !SceneNode invisible.
+Makes the bounding box for a scene node invisible.
 ====Parameters====
-   * _scene_node_id_ - The ID of the !SceneNode.
+   * _scene_node_id_ - The ID of the scene node.
+<BR>
+<BR>
+=== !GetSceneNodeBoundingBoxSize(real scene_node_id) ===
+----
+Retrieves the size of the bounding box (including child nodes).
+====Parameters====
+   * _scene_node_id_ - The ID of the scene node.
 <BR>
 <BR>
 === AttachSceneNodeToGMInstance(real scene_node_id, real gm_instance_id) ===
 ----
-This attaches a single GM object to a !SceneNode.
+This attaches a single GM object to a scene node.
 
-When attached the !SceneNode will automatically update it's position and orientation each frame using the values stored in the GM object's x/y/z and direction/pitch/roll variables.  Not only does this ensure you do not need to update the !SceneNode manually every frame, but is actually a much faster way to update !SceneNodes than to make multiple DLL calls each frame.
+When attached the scene node will automatically update it's position and orientation each frame using the values stored in the GM object's x/y/z and direction/pitch/roll variables.  Not only does this ensure you do not need to update the scene node manually every frame, but is actually a much faster way to update scene nodes than to make multiple DLL calls each frame.
 
-Note that you absolutely MUST detach the !SceneNode from the GM object before deleting the GM object!
+Note that you absolutely MUST detach the scene node from the GM object before deleting the GM object!
 ====Parameters====
-   * _scene_node_id_ - The ID of the !SceneNode.
+   * _scene_node_id_ - The ID of the scene node.
    * _gm_instance_id_ - The ID of the GM object.
 <BR>
 <BR>
 === DetachSceneNodeFromGMInstance(real scene_node_id, real gm_instance_id) ===
 ----
-This detaches a single GM object from a !SceneNode.
+This detaches a single GM object from a scene node.
 ====Parameters====
-   * _scene_node_id_ - The ID of the !SceneNode.
+   * _scene_node_id_ - The ID of the scene node.
    * _gm_instance_id_ - The ID of the GM object.
 <BR>
 <BR>
