@@ -1,0 +1,19 @@
+#summary One-sentence summary of this page.
+
+= Overview =
+Here you can download a range of supporting tools for GMOgre. The most common type of tool is an exporter for a modelling package, and you can find some directly linked here.
+<BR>
+<BR>
+= Modelling Packages =
+   * [http://www.ogre3d.org/phpBB2/viewtopic.php?t=45922 Blender Exporter] - Exporter to take animated meshes from Blender to Ogre XML. Requires the use of the OgreXMLConverter contained in the command line tools download to turn into a runtime binary mesh.
+   * [http://www.edmstudio.com/resources/ogre/houdiniogre-setup.exe Houdini Exporter] - Exporter for SIdeFX’s Houdini.
+   * [http://downloads.sourceforge.net/ogre/ogreMayaExporter_maya6.5_1.2.6.zip Maya v6.5 Exporter] - Exporter for Maya 6.5.
+   * [http://downloads.sourceforge.net/ogre/OgreMayaExporter_maya70_1.6.0.zip?use_mirror= Maya v7.0 Exporter] - Exporter for Maya 7.0.
+   * [http://downloads.sourceforge.net/ogre/OgreMayaExporter_maya80_1.6.0.zip?use_mirror= Maya v8.0 Exporter] - Exporter for Maya 8.0.
+   * [http://downloads.sourceforge.net/ogre/OgreMayaExporter_maya85_1.6.0.zip?use_mirror= Maya v8.5 Exporter] - Exporter for Maya 8.5.
+   * [http://downloads.sourceforge.net/ogre/OgreMayaExporter_maya2008_1.6.0.zip?use_mirror= Maya 2008 Exporter] - Exporter for Maya 2008.
+   * [http://downloads.sourceforge.net/ogre/OgreMilkshapeExporter_v1.4.1.msi?download Milkshape 3D Exporter] - Exporter for Milkshape 3D.
+   * [http://downloads.sourceforge.net/ogre/OgreXSIExporter6_v1.4.6p1.msi Softimage XSI v6 Exporter] - Exporter for Softimage XSI v6
+
+= Level Editors =
+   * [http://sourceforge.net/projects/ogrescenebuilde/files/ Ogitor] -  WYSWYG editor environment for OGRE
