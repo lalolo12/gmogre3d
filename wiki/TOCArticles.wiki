@@ -35,7 +35,7 @@
     * [ManualObjectFunctions Manual Object]
     * [MaterialFunctions Material]
     * [MiscFunctions Misc]
-    * [OverlayElementFunctions OverlayElement]
+    * [OverlayElementFunctions Overlay Element]
     * [OverlayFunctions Overlay]
     * [PanelOverlayElementFunctions Panel Overlay Element]
     * [ParticleEmitterFunctions Particle Emitter]
