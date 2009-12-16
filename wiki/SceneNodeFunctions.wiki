@@ -289,6 +289,17 @@ Rotate the node around an arbitrary axis.
      * global.TS_WORLD
 <BR>
 <BR>
+=== !SetSceneNodeInitialState(real scene_node_id) ===
+----
+Sets the current transform of this node to be the 'initial state' ie that position / orientation / scale to be used as a basis for delta values used in keyframe animation.
+
+You never need to call this function unless you plan to animate this node. If you do plan to animate it, call this method once you've loaded the node with it's base state, ie the state on which all keyframes are based. 
+
+If you never call this function, the initial state is the identity transform, ie do nothing. 
+====Parameters====
+   * _scene_node_id_ - The ID of the !SceneNode.
+<BR>
+<BR>
 === !ResetSceneNodeOrientation(real scene_node_id) ===
 ----
 Resets a !SceneNodes orientation (local axes as world axes, no rotation).
