@@ -1,6 +1,23 @@
-#summary Enter description here
+#summary Provides a simplified interface to generating manual objects with custom geometry.
 
+=== Overview ===
+These functions give you a simple interface specifically for the purpose of building a 3D object simply and quickly. Note that if you intend to instance your object you will still need to become familiar with the Mesh class. 
 
+These functions draw heavily on the interface for !OpenGL immediate-mode (!glBegin, !glVertex, !glNormal etc), since this is generally well-liked by people. There are a couple of differences in the results though - internally this class still builds hardware buffers which can be re-used, so you can render the resulting object multiple times without re-issuing all the same commands again. Secondly, the rendering is not immediate, it is still queued just like all GMOgre objects. This makes this object more efficient than the equivalent GL immediate-mode commands, so it's feasible to use it for large objects if you really want to. 
+
+To construct some geometry with this object:
+   1. If you know roughly how many vertices (and indices, if you use them) you're going to submit, call !EstimateManualObjectVertexCount and !EstimateManualObjectIndexCount. This is not essential but will make the process more efficient by saving memory reallocations.
+   2. Call !BeginManualObjectSection() to begin entering data
+   3. For each vertex, call !ManualObjectPosition(), !ManualObjectNormal(), !ManualObjectTextureCoordX(), !ManualObjectColor() to define your vertex data. Note that each time you call !ManualObjectPosition() you start a new vertex. Note that the first vertex defines the components of the vertex - you can't add more after that. For example if you didn't call !ManualObjectNormal() in the first vertex, you cannot call it in any others. You ought to call the same combination of methods per vertex.
+   4. If you want to define triangles (or lines/points) by indexing into the vertex list, you can call !ManualObjectIndex() as many times as you need to define them. If you don't do this, the class will assume you want triangles drawn directly as defined by the vertex list, i.e. non-indexed geometry. Note that stencil shadows are only supported on indexed geometry, and that indexed geometry is a little faster; so you should try to use it.
+   5. Call !EndManualObjectSection() to finish entering data.
+   6. Optionally repeat the begin-end cycle if you want more geometry using different rendering operation types, or different materials After calling end(), the class will organize the data for that section internally and make it ready to render with. You should attach the object to a !SceneNode to make it visible. Other aspects like the relative render order can be controlled using standard functions like !SetManualObjectRenderQueueGroup. 
+
+You can also use !BeginUpdateManualObjectSection() to alter the geometry later on if you wish. If you do this, you should call !EnableManualObjectDynamic(true) before your first call to !BeginManualObjectSection(), and also consider using !EstimateManualObjectVertexCount / EstimateManualObjectIndexCount if your geometry is going to be growing, to avoid buffer recreation during growth. 
+
+Note that like all GMOgre geometry, triangles should be specified in anti-clockwise winding order (whether you're doing it with just vertices, or using indexes too). That is to say that the front of the face is the one where the vertices are listed in anti-clockwise order. 
+<BR>
+<BR>
 === !CreateManualObject() ===
 ----
 === !DestroyManualObject(real man_obj_id) ===
@@ -19,29 +36,33 @@
 ----
 === !EstimateManualObjectVertexCount(real man_obj_id, real size) ===
 ----
+=== !BeginUpdateManualObjectSection(real man_obj_id, string mat_name, real type) ===
+----
 === !BeginManualObjectSection(real man_obj_id, string mat_name, real type) ===
 ----
-=== !AddManualObjectPosition(real man_obj_id, real x, real z, real y) ===
+=== !ManualObjectPosition(real man_obj_id, real x, real z, real y) ===
 ----
-=== !AddManualObjectNormal(real man_obj_id, real x, real z, real y) ===
+=== !ManualObjectNormal(real man_obj_id, real x, real z, real y) ===
 ----
-=== !AddManualObjectTriangle(real man_obj_id, real i1, real i2, real i3) ===
+=== !ManualObjectTriangle(real man_obj_id, real i1, real i2, real i3) ===
 ----
-=== !AddManualObjectQuad(real man_obj_id, real i1, real i2, real i3, real i4) ===
+=== !ManualObjectQuad(real man_obj_id, real i1, real i2, real i3, real i4) ===
 ----
-=== !AddManualObjectTextureCoord1(real man_obj_id, real u) ===
+=== !ManualObjectTextureCoord1(real man_obj_id, real u) ===
 ----
-=== !AddManualObjectTextureCoord2(real man_obj_id, real u, real v) ===
+=== !ManualObjectTextureCoord2(real man_obj_id, real u, real v) ===
 ----
-=== !AddManualObjectTextureCoord3(real man_obj_id, real u, real v, real w) ===
+=== !ManualObjectTextureCoord3(real man_obj_id, real u, real v, real w) ===
 ----
-=== !AddManualObjectTextureCoord4(real man_obj_id, real x, real z, real y, real w) ===
+=== !ManualObjectTextureCoord4(real man_obj_id, real x, real z, real y, real w) ===
 ----
 === !AddManualObjectColor(real man_obj_id, real color, real alpha) ===
 ----
-=== !AddManualObjectIndex(real man_obj_id, real index) ===
+=== !ManualObjectIndex(real man_obj_id, real index) ===
 ----
 === !EndManualObjectSection(real man_obj_id) ===
+----
+=== !EndUpdateManualObjectSection(real man_obj_id) ===
 ----
 === !ClearManualObject(real man_obj_id) ===
 ----
