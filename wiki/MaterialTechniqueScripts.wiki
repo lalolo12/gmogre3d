@@ -18,7 +18,6 @@ To help clearly identify what each technique is used for, the technique can be n
 Format: technique name
 
 Techniques have only a small number of attributes of their own:
-
     * scheme
     * lod_index (and also see lod_distances in the parent material)
     * shadow_caster_material
@@ -28,12 +27,11 @@ Techniques have only a small number of attributes of their own:
 <BR>
 = scheme =
 Sets the 'scheme' this Technique belongs to. Material schemes are used to control top-level switching from one set of techniques to another. For example, you might use this to define 'high', 'medium' and 'low' complexity levels on materials to allow a user to pick a performance / quality ratio. Another possibility is that you have a fully HDR-enabled pipeline for top machines, rendering all objects using unclamped shaders, and a simpler pipeline for others; this can be implemented using schemes. The active scheme is typically controlled at a viewport level, and the active one defaults to 'Default'.
-
-Format: scheme _name_<BR>
+{{{
+Format: scheme <name>
 Example: scheme hdr
 Default: scheme Default
-
-<BR>
+}}}
 <BR>
 = lod_index =
 
@@ -47,23 +45,18 @@ Example: lod_index 1
 All techniques must belong to a LOD index, by default they all belong to index 0, ie the highest LOD. Increasing indexes denote lower levels of detail. You can (and often will) assign more than one technique to the same LOD index, what this means is that OGRE will pick the best technique of the ones listed at the same LOD index. For readability, it is advised that you list your techniques in order of LOD, then in order of preference, although the latter is the only prerequisite (OGRE determines which one is 'best' by which one is listed first). You must always have at least one Technique at lod_index 0.
 
 The distance at which a LOD level is applied is determined by the lod_distances attribute of the containing material, See section lod_distances for details.
-
+{{{
 Default: lod_index 0
-<BR>
+}}}
 <BR>
 = lod_distances =
 Note: this attribute must be specified in the outer material section (ie the parent of all the techniques), but it's specified here since it is most relevant to this section.
 
 By setting this attribute, you indicate that you want this material to alter the Technique that it uses based on distance from the camera. You must give it a list of distances, in ascending order, each one indicating the distance at which the material will switch to the next LOD. Implicitly, all materials activate LOD index 0 for distances less than the smallest of these. You must ensure that there is at least one Technique with a lod_index value for each distance in the list (so if you specify 3 distances, you must have techniques for indexes 1, 2 and 3). Note you must always have at least one Technique at lod_index 0.
-
-Format: lod_distances _distance_1_ [[[_distance_2_ ... _distance_n_]]
-
-test:
-
-  Format: lod_distances _distance_1_ [[[_distance_2_ ... _distance_n_]]
-
+{{{
+Format: lod_distances distance_1 [distance_2 ... distance_n]
 Example: lod_distances 300.0 600.5 1200
-
+}}}
 The above example would cause the material to use the best Technique at lod_index 0 up to a distance of 300 world units, the best from lod_index 1 from 300 up to 600, lod_index 2 from 600 to 1200, and lod_index 3 from 1200 upwards.
 
 Techniques also contain one or more passes (and there must be at least one), See section 3.1.2 Passes.
@@ -81,16 +74,16 @@ When using See section 7.2 Texture-based Shadows you can specify an alternate ma
 Although Ogre does a good job of detecting the capabilities of graphics cards and setting the supportability of techniques from that, occasionally card-specific behaviour exists which is not necessarily detectable and you may want to ensure that your materials go down a particular path to either use or avoid that behaviour. This is what these rules are for - you can specify matching rules so that a technique will be considered supportable only on cards from a particular vendor, or which match a device name pattern, or will be considered supported only if they don't fulfil such matches.
 
 The format of the rules are as follows:
-
+{{{
 gpu_vendor_rule _include_|_exclude_ _vendor_name_<BR>
 gpu_device_rule _include_|_exclude_ _device_pattern_ [case_sensitive]<BR>
-
-An 'include' rule means that the technique will only be supported if one of the include rules is matched (if no include rules are provided, anything will pass). An 'exclude' rules means that the technique is considered unsupported if any of the exclude rules are matched. You can provide as many rules as you like, although <vendor_name> and <device_pattern> must obviously be unique. The valid list of <vendor_name> values is currently 'nvidia', 'ati', 'intel', 's3', 'matrox' and '3dlabs'. <device_pattern> can be any string, and you can use wildcards ('*') if you need to match variants. Here's an example:
-
+}}}
+An 'include' rule means that the technique will only be supported if one of the include rules is matched (if no include rules are provided, anything will pass). An 'exclude' rules means that the technique is considered unsupported if any of the exclude rules are matched. You can provide as many rules as you like, although _vendor_name_ and _device_pattern_ must obviously be unique. The valid list of _vendor_name_ values is currently 'nvidia', 'ati', 'intel', 's3', 'matrox' and '3dlabs'. _device_pattern_ can be any string, and you can use wildcards if you need to match variants. Here's an example:
+{{{
 gpu_vendor_rule include nvidia
 gpu_vendor_rule include intel
 gpu_device_rule exclude *950*
-
+}}}
 These rules, if all included in one technique, will mean that the technique will only be considered supported on graphics cards made by NVIDIA and Intel, and so long as the device name doesn't have '950' in it.
 
 Note that these rules can only mark a technique 'unsupported' when it would otherwise be considered 'supported' judging by the hardware capabilities. Even if a technique passes these rules, it is still subject to the usual hardware support tests. 
