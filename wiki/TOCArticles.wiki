@@ -18,6 +18,7 @@
     * [CompositorScripts Compositors]
       * [CompositorTechniqueScripts Techniques]
       * [CompositorTargetPassScripts Target Passes]
+      * [CompositorPassScripts Compositor Passes]
   * How To
     * [HowToDrawText Draw Text]
   * Function List
