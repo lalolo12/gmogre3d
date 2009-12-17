@@ -1,12 +1,12 @@
 #summary Functions for loading & managing textures.
 
-=== !CreateTexture(string name, string group, real type, real width, real height, real num_mips, real pixel_format, real usage) ===
+=== !CreateTexture(string name, string group, real type, real width, real height, real depth, real num_mips, real pixel_format, real usage) ===
 ----
 Create a manual texture with specified width, height and depth (not loaded from a file). 
 ====Parameters====
    * _name_ - The unique name to give the texture.
    * _group_ - The resource group to assign the texture.
-   * _type_ - The type of texture to load/create, defaults to normal 2D textures. Can be:
+   * _type_ - The type of texture to load/create. Can be:
       * global.TEX_TYPE_1D
       * global.TEX_TYPE_2D
       * global.TEX_TYPE_3D
@@ -14,6 +14,7 @@ Create a manual texture with specified width, height and depth (not loaded from 
    * _width_, _height_, _depth_ - The dimensions of the texture
    * _num_mips_ - The number of pre-filtered mipmaps to generate.
    * _pixel_format_ - The internal format you wish to request; the manager reserves the right to create a different format if the one you select is not available in this context. Can be:
+     * global.PF_UNKNOWN
      * global.PF_L8
      * global.PF_L16
      * global.PF_A8
@@ -59,20 +60,57 @@ Create a manual texture with specified width, height and depth (not loaded from 
       * global.TU_RENDERTARGET
       * global.TU_DEFAULT
       You are strongly advised to use global.TU_STATIC + global.TU_WRITE_ONLY wherever possible, if you need to update regularly, consider  global.TU_DYNAMIC + global.TU_WRITE_ONLY.
-  * 
 <BR>
 <BR>
 === !DestroyTexture(string name) ===
 ----
+Destroys a single texture resource.
+====Parameters====
+   * _name_ - The unique name of the texture.
+<BR>
+<BR>
 === !LoadTexture(string name) ===
 ----
+Loads a single texture resource.
+====Parameters====
+   * _name_ - The unique name of the texture.
+<BR>
+<BR>
 === !UnloadTexture(string name) ===
 ----
+Unloads a single texture resource.
+====Parameters====
+   * _name_ - The unique name of the texture.
+<BR>
+<BR>
 === !CreateTextureViewport(string name) ===
 ----
+This function creates a new viewport on the specified texture.  It's used for rendering to textures (RTT).
+====Parameters====
+   * _name_ - The unique name of the texture.
+<BR>
+<BR>
 === !GetTextureWidth(string name) ===
 ----
+Returns the width of the texture. 
+====Parameters====
+   * _name_ - The unique name of the texture.
+<BR>
+<BR>
 === !GetTextureHeight(string name) ===
 ----
+Returns the height of the texture. 
+====Parameters====
+   * _name_ - The unique name of the texture.
+<BR>
+<BR>
 === SetTextureFSAA(string name, real fsaa) ===
 ----
+Set the level of multisample AA to be used if this texture is a rendertarget.
+
+This option will be ignored if TU_RENDERTARGET is not part of the usage options on this texture, or if the hardware does not support it.
+====Parameters====
+   * _name_ - The unique name of the texture.
+   * _fsaa_ - The level of multisample AA.
+<BR>
+<BR>
