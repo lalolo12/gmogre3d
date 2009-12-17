@@ -15,6 +15,9 @@
       * [MaterialTechniqueScripts Techniques]
       * [MaterialPassScripts Passes]
       * [MaterialTextureUnitScripts Texture Units]
+    * [CompositorScripts Compositors]
+      * [CompositorTechniqueScripts Techniques]
+      * [CompositorTargetPassScripts Target Passes]
   * How To
     * [HowToDrawText Draw Text]
   * Function List
