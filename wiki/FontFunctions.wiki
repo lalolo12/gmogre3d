@@ -1,5 +1,5 @@
 #summary Represents a font in the system.
-<BR>
+
 === Overview ===
 This is simply a way of getting a font texture into the GMOgre system and to easily retrieve the texture coordinates required to accurately render them. Fonts can either be loaded from precreated textures, or the texture can be generated using a truetype font. You can either create the texture manually in code, or you can use a .fontdef script to define it (probably more practical since you can reuse the definition more easily).
 <BR>
