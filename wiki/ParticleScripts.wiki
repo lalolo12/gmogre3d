@@ -52,7 +52,7 @@ particle_system Examples/PurpleFountain
     }
 }
 }}}
-Every particle system in the script must be given a name, which is the line before the first opening '{', in the example this is 'Examples/PurpleFountain'. This name must be globally unique. It can include path characters (as in the example) to logically divide up your particle systems, and also to avoid duplicate names, but the engine does not treat the name as hierarchical, just as a string.
+Every particle system in the script must be given a name, which is the line before the first opening '{', in the example this is 'Examples/!PurpleFountain'. This name must be globally unique. It can include path characters (as in the example) to logically divide up your particle systems, and also to avoid duplicate names, but the engine does not treat the name as hierarchical, just as a string.
 
 A system can have top-level attributes set using the scripting commands available, such as 'quota' to set the maximum number of particles allowed in the system. Emitters (which create particles) and affectors (which modify particles) are added as nested definitions within the script. The parameters available in the emitter and affector sections are entirely dependent on the type of emitter / affector.
 <BR>
