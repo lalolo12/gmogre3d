@@ -1,5 +1,5 @@
 #summary Functions for loading & managing textures.
-
+<BR>
 === !CreateTexture(string name, string group, real type, real width, real height, real depth, real num_mips, real pixel_format, real usage) ===
 ----
 Create a manual texture with specified width, height and depth (not loaded from a file). 
