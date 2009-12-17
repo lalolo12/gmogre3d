@@ -1,6 +1,13 @@
-#summary Enter description here
+#summary Allows the rendering of a chain of connected billboards.
 
+=== Overview ===
+A billboard chain operates much like a traditional billboard, i.e. its segments always face the camera; the difference being that instead of a set of disconnected quads, the elements in this class are connected together in a chain which must always stay in a continuous strip. This kind of effect is useful for creating effects such as trails, beams, lightning effects, etc. 
 
+A single instance of this class can actually render multiple separate chain segments in a single render operation, provided they all use the same material. To clarify the terminology: a 'segment' is a separate sub-part of the chain with its own start and end (called the 'head' and the 'tail'. An 'element' is a single position / color / texcoord entry in a segment. You can add items to the head of a chain, and remove them from the tail, very efficiently. Each segment has a max size, and if adding an element to the segment would exceed this size, the tail element is automatically removed and re-used as the new item on the head. 
+
+These functions have no auto-updating features to do things like alter the color of the elements or to automatically add / remove elements over time - you have to do all this yourself. 
+<BR>
+<BR>
 === !CreateBillboardChain() ===
 ----
 Create a billboard chain, an object which you can use to render a linked chain of billboards.
