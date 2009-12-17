@@ -13,6 +13,8 @@
   * [Scripts Scripts]
     * [MaterialScripts Materials]
       * [MaterialTechniqueScripts Techniques]
+      * [MaterialPassesScripts Passes]
+      * [MaterialTextureUnitScripts Texture Units]
   * How To
     * [HowToDrawText Draw Text]
   * Function List
