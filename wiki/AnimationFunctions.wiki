@@ -1,5 +1,5 @@
 #summary An animation sequence.
-
+<BR>
 === Overview ===
 Animation functions defines the interface for a sequence of animation, whether that be animation of a mesh, a path along a spline, or possibly more than one type of animation in one. An animation is made up of many 'tracks', which are the more specific types of animation.
 
