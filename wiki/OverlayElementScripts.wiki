@@ -6,7 +6,7 @@ Although GMOgre's !OverlayElement and !OverlayContainer classes are designed to 
   * !BorderPanel
   * !TextArea 
 
-This section describes how you define their custom attributes in an .overlay script, but you can also change these custom properties in code if you wish. You do this by calling SetOverlayParameter(paramname, value).
+This section describes how you define their custom attributes in an .overlay script, but you can also change these custom properties in code if you wish. You do this by calling !SetOverlayParameter(paramname, value).
 <BR>
 <BR>
 == Panel (container) ==
