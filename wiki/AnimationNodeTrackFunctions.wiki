@@ -1,4 +1,4 @@
-#summary Specialised !AnimationTrack for dealing with node transforms.
+#summary Specialised AnimationTrack for dealing with node transforms.
 <BR>
 === !CreateAnimationNodeTrackNodeKeyFrame(real anim_track_node_id, real time) ===
 ----
