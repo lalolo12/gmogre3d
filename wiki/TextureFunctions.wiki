@@ -17,7 +17,7 @@ Create a manual texture with specified width, height and depth (not loaded from 
      * global.PF_L8
      * global.PF_L16
      * global.PF_A8
-     * global.!PF_A4L4
+     * !global.PF_A4L4
      * global.PF_BYTE_LA
      * global.!PF_R5G6B5
      * global.!PF_B5G6R5
