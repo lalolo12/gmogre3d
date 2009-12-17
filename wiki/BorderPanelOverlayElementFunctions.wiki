@@ -1,4 +1,4 @@
-#summary A specialization of the !PanelOverlayElement to provide a panel with a border.
+#summary A specialization of the PanelOverlayElement to provide a panel with a border.
 
 === Overview ===
 While the standard panel can use a single tiled material, this class allows panels with a tileable backdrop plus a border texture. This is handy for large panels that are too big to use a single large texture with a border, or for multiple different size panels where you want the border a constant width but the center to repeat. 
