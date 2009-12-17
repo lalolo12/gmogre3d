@@ -3,9 +3,6 @@
 GMOgre drives many of its features through scripts in order to make it easier to set up. The scripts are simply plain text files which can be edited in any standard text editor, and modiying them immediately takes effect on your GMOgre-based games. Here are the items that GMOgre lets you script: 
 
   * [MaterialScripts Material Scripts]
-    * [MaterialTechniqueScripts Techniques]
-    * [MaterialPassesScripts Passes]
-    * [MaterialTextureUnitScripts Texture Units]
   * [CompositorScripts Compositor Scripts]
   * [ParticleScripts Particle Scripts]
   * [OverlayScripts Overlay Scripts]
