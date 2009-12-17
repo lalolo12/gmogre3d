@@ -1,6 +1,5 @@
 #summary Represents the state of an animation and the weight of it's influence.
 <BR>
-<BR>
 === !GetAnimationStateByName(string name) ===
 ----
 Returns the ID for the animation state with the specified unique name.
