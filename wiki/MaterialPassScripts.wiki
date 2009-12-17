@@ -331,7 +331,7 @@ If you specify 'true' for the first parameter and you supply the rest of the par
   * _type_
     * _none_ - No fog, equivalent of just using 'fog_override true'
     * _linear_ - Linear fog from the _start_ and _end_ distances
-    * _exp_ - Fog increases exponentially from the camera (fog = 1/e^(distance * density)), * _use <density> param to control it
+    * _exp_ - Fog increases exponentially from the camera (fog = 1/e^(distance * density)), * _use _density_ param to control it
     * _exp2_ - Fog increases at the square of FOG_EXP, i.e. even quicker (fog = 1/e^(distance * density)^2), use _density_ param to control it 
   * _colour_ - Sequence of 3 floating point values from 0 to 1 indicating the red, green and blue intensities 
   * _density_ - The density parameter used in the 'exp' or 'exp2' fog types. Not used in linear mode but param must still be there as a placeholder 
