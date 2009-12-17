@@ -1,6 +1,5 @@
 #summary Miscellaneous functions.
 <BR>
-<BR>
 === EnableWaitForVSync(real enable) ===
 ----
 Enables or disables monitor vsync.
