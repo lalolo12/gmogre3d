@@ -29,7 +29,7 @@ Techniques have only a small number of attributes of their own:
 = scheme =
 Sets the 'scheme' this Technique belongs to. Material schemes are used to control top-level switching from one set of techniques to another. For example, you might use this to define 'high', 'medium' and 'low' complexity levels on materials to allow a user to pick a performance / quality ratio. Another possibility is that you have a fully HDR-enabled pipeline for top machines, rendering all objects using unclamped shaders, and a simpler pipeline for others; this can be implemented using schemes. The active scheme is typically controlled at a viewport level, and the active one defaults to 'Default'.
 
-Format: scheme < name >
+Format: scheme _name_<BR>
 Example: scheme hdr
 Default: scheme Default
 
@@ -39,7 +39,7 @@ Default: scheme Default
 
 Sets the level-of-detail (LOD) index this Technique belongs to.
 
-Format: lod_index <number>
+Format: lod_index _number_<BR>
 NB Valid values are 0 (highest level of detail) to 65535, although this is unlikely. You should not leave gaps in the LOD indexes between Techniques.
 
 Example: lod_index 1
@@ -56,7 +56,11 @@ Note: this attribute must be specified in the outer material section (ie the par
 
 By setting this attribute, you indicate that you want this material to alter the Technique that it uses based on distance from the camera. You must give it a list of distances, in ascending order, each one indicating the distance at which the material will switch to the next LOD. Implicitly, all materials activate LOD index 0 for distances less than the smallest of these. You must ensure that there is at least one Technique with a lod_index value for each distance in the list (so if you specify 3 distances, you must have techniques for indexes 1, 2 and 3). Note you must always have at least one Technique at lod_index 0.
 
-Format: lod_distances <distance_1> [<distance_2> ... <distance_n>]
+Format: lod_distances _distance_1_ [[[_distance_2_ ... _distance_n_]]
+
+test:
+
+  Format: lod_distances _distance_1_ [[[_distance_2_ ... _distance_n_]]
 
 Example: lod_distances 300.0 600.5 1200
 
@@ -78,8 +82,8 @@ Although Ogre does a good job of detecting the capabilities of graphics cards an
 
 The format of the rules are as follows:
 
-gpu_vendor_rule <include|exclude> <vendor_name>
-gpu_device_rule <include|exclude> <device_pattern> [case_sensitive]
+gpu_vendor_rule _include_|_exclude_ _vendor_name_<BR>
+gpu_device_rule _include_|_exclude_ _device_pattern_ [case_sensitive]<BR>
 
 An 'include' rule means that the technique will only be supported if one of the include rules is matched (if no include rules are provided, anything will pass). An 'exclude' rules means that the technique is considered unsupported if any of the exclude rules are matched. You can provide as many rules as you like, although <vendor_name> and <device_pattern> must obviously be unique. The valid list of <vendor_name> values is currently 'nvidia', 'ati', 'intel', 's3', 'matrox' and '3dlabs'. <device_pattern> can be any string, and you can use wildcards ('*') if you need to match variants. Here's an example:
 
