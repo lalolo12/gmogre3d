@@ -1,23 +1,88 @@
-#summary Enter description here
-
-
+#summary Represents one render to a RenderTarget or Viewport in the Composition framework
+<BR>
 === !SetTargetPassInputMode(real pass_id, real mode) ===
 ----
+Set input mode of a target pass. 
+====Parameters====
+   * _pass_id_ - The ID of the target pass.
+   * _mode_ - The target pass mode. Can be:
+      * _global.IM_NONE_ - No input	
+      * _global.IM_PREVIOUS_ - Output of previous Composition in chain
+<BR>
+<BR>
 === !SetTargetPassOutputName(real pass_id, string name) ===
 ----
-=== !EnableTargetPassOnlyInitial(real pass_id, real enabled) ===
+Set output local texture name. 
+====Parameters====
+   * _pass_id_ - The ID of the target pass.
+   * _name_ - The output texture name.
+<BR>
+<BR>
+=== !EnableTargetPassOnlyInitial(real pass_id, real enable) ===
 ----
+Enables or disables whether a target pass is only executed initially. 
+====Parameters====
+   * _pass_id_ - The ID of the target pass.
+   * _enable_ - Whether to only execute target pass initially.
+<BR>
+<BR>
 === !SetTargetPassVisibilityMask(real pass_id, real mask) ===
 ----
+Set the scene visibility mask used by this pass.
+====Parameters====
+   * _pass_id_ - The ID of the target pass.
+   * _enable_ - Whether to only execute target pass initially.
+<BR>
+<BR>
 === SetTargetPassLODBias(real pass_id, real bias) ===
 ----
+Set the scene LOD bias used by a target  pass.
+
+The default is 1.0, everything below that means lower quality, higher means higher quality.
+====Parameters====
+   * _pass_id_ - The ID of the target pass.
+   * _bias_ - The LOD bias level.
+<BR>
+<BR>
 === !SetTargetPassMaterialScheme(real pass_id, string scheme) ===
 ----
-=== !EnableTargetPassShadows(real pass_id, real enabled) ===
+Set the material scheme used by a target pass.
+
+Only applicable to targets that render the scene as one of their passes. 
+====Parameters====
+   * _pass_id_ - The ID of the target pass.
+   * _scheme_ - The material scheme.
+<BR>
+<BR>
+=== !EnableTargetPassShadows(real pass_id, real enable) ===
 ----
+Enables or disables shadows in a target pass.
+
+Only applicable to targets that render the scene as one of their passes. 
+====Parameters====
+   * _pass_id_ - The ID of the target pass.
+   * _enable_ - Whether shadows are enabled or not.
+<BR>
+<BR>
 === !CreateCompositionPass(real pass_id) ===
 ----
+Create a new pass, and returns it's ID.
+====Parameters====
+   * _pass_id_ - The ID of the target pass.
+<BR>
+<BR>
 === !GetCompositionPass(real pass_id, real pass_index) ===
 ----
+Returns the composition pass matching the index given.
+====Parameters====
+   * _pass_id_ - The ID of the target pass.
+   * _pass_index_ - The index for the composition pass to return.
+<BR>
+<BR>
 === !GetNumCompositionPasses(real pass_id) ===
 ----
+Returns the number of composition passes in this target pass.
+====Parameters====
+   * _pass_id_ - The ID of the target pass.
+<BR>
+<BR>
