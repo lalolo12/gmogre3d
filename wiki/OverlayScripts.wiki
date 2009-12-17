@@ -5,7 +5,7 @@ Overlay scripts offer you the ability to define overlays in a script which can b
 <BR>
 <BR>
 = Loading scripts =
-Overlay scripts are loaded at initialization time by the system: by default it looks in all common resource locations (see AddResourceLocation) for files with the '.overlay' extension and parses them.
+Overlay scripts are loaded at initialization time by the system: by default it looks in all common resource locations (see !AddResourceLocation) for files with the '.overlay' extension and parses them.
 <BR>
 <BR>
 = Format =
