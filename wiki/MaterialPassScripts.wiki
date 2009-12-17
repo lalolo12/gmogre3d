@@ -1,4 +1,4 @@
-#summary Introduction to material passes.
+#summary Introduction to material pass scripts.
 
 A pass is a single render of the geometry in question; a single call to the rendering API with a certain set of rendering properties. A technique can have between one and 16 passes, although clearly the more passes you use, the more expensive the technique will be to render.
 
