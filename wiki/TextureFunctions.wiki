@@ -17,19 +17,19 @@ Create a manual texture with specified width, height and depth (not loaded from 
      * global.PF_L8
      * global.PF_L16
      * global.PF_A8
-     * global.PF_!A4L4
-     * global.PF_!BYTE_LA
-     * global.PF_!R5G6B5
-     * global.PF_!B5G6R5
-     * global.PF_!A4R4G4B4
-     * global.PF_!A1R5G5B5
-     * global.PF_!R8G8B8
-     * global.PF_!B8G8R8
-     * global.PF_!A8R8G8B8
-     * global.PF_!A8B8G8R8
-     * global.PF_!B8G8R8A8
-     * global.PF_!A2R10G10B10
-     * global.PF_!A2B10G10R10
+     * global.PF_A4L4
+     * global.PF_BYTE_LA
+     * global.PF_R5G6B5
+     * global.PF_B5G6R5
+     * global.PF_A4R4G4B4
+     * global.PF_A1R5G5B5
+     * global.PF_R8G8B8
+     * global.PF_B8G8R8
+     * global.PF_A8R8G8B8
+     * global.PF_A8B8G8R8
+     * global.PF_B8G8R8A8
+     * global.PF_A2R10G10B10
+     * global.PF_A2B10G10R10
      * global.PF_DXT1
      * global.PF_DXT2
      * global.PF_DXT3
@@ -39,9 +39,9 @@ Create a manual texture with specified width, height and depth (not loaded from 
      * global.PF_FLOAT16_RGBA
      * global.PF_FLOAT32_RGB
      * global.PF_FLOAT32_RGBA
-     * global.PF_!X8R8G8B8
-     * global.PF_!X8B8G8R8
-     * global.PF_!R8G8B8A8
+     * global.PF_X8R8G8B8
+     * global.PF_X8B8G8R8
+     * global.PF_R8G8B8A8
      * global.PF_DEPTH
      * global.PF_SHORT_RGBA
      * global.PF_R3G3B2
