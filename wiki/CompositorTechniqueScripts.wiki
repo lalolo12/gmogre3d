@@ -11,7 +11,6 @@ Techniques can have the following nested elements:
   * _target_
   * _target_output_
 <BR>
-<BR>
 == texture ==
 This declares a render texture for use in subsequent target passes.
 {{{
