@@ -13,7 +13,7 @@ default: 0
 }}}
 <BR>
 == colour ==
-Sets a static colour for all particle emitted. Also see the colour_range_start and colour_range_end attributes for setting a range of colours. The format of the colour parameter is "r g b a", where each component is a value from 0 to 1, and the alpha value is optional (assumes 1 if not specified).
+Sets a static color for all particle emitted. Also see the colour_range_start and colour_range_end attributes for setting a range of colors. The format of the color parameter is "r g b a", where each component is a value from 0 to 1, and the alpha value is optional (assumes 1 if not specified).
 {{{
 format: colour <r> <g> <b> [<a>]
 example: colour 1 0 0 1
@@ -21,7 +21,7 @@ default: 1 1 1 1
 }}}
 <BR>
 == colour_range_start & colour_range_end ==
-As the 'colour' attribute, except these 2 attributes must be specified together, and indicate the range of colours available to emitted particles. The actual colour will be randomly chosen between these 2 values.
+As the 'colour' attribute, except these 2 attributes must be specified together, and indicate the range of colors available to emitted particles. The actual color will be randomly chosen between these 2 values.
 {{{
 format: as colour
 example (generates random colours between red and blue):
@@ -31,7 +31,7 @@ default: both 1 1 1 1
 }}}
 <BR>
 == direction ==
-Sets the direction of the emitter. This is relative to the SceneNode which the particle system is attached to, meaning that as with other movable objects changing the orientation of the node will also move the emitter.
+Sets the direction of the emitter. This is relative to the !SceneNode which the particle system is attached to, meaning that as with other movable objects changing the orientation of the node will also move the emitter.
 {{{
 format: direction <x> <y> <z>
 example: direction 0 1 0
@@ -47,7 +47,7 @@ default: 10
 }}}
 <BR>
 == position ==
-Sets the position of the emitter relative to the SceneNode the particle system is attached to.
+Sets the position of the emitter relative to the !SceneNode the particle system is attached to.
 {{{
 format: position <x> <y> <z>
 example: position 10 0 40
@@ -81,7 +81,7 @@ default: 5
 }}}
 <BR>
 == time_to_live_min & time_to_live_max ==
-As time_to_live, except this sets a range of lifetimes and each particle gets a random value inbetween on emission.
+As time_to_live, except this sets a range of lifetimes and each particle gets a random value in between on emission.
 {{{
 format: as time_to_live
 example:
@@ -119,7 +119,7 @@ default: 0
 }}}
 <BR>
 == repeat_delay_min & repeat_delay_max ==
-As repeat_delay, except this sets a range of repeat delays and each time the emitter is started it gets a random value inbetween.
+As repeat_delay, except this sets a range of repeat delays and each time the emitter is started it gets a random value in between.
 {{{
 format: as repeat_delay
 example:
