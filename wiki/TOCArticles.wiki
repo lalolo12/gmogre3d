@@ -19,6 +19,13 @@
       * [CompositorTechniqueScripts Techniques]
       * [CompositorTargetPassScripts Target Passes]
       * [CompositorPassScripts Compositor Passes]
+    * [ParticleScripts Particles]
+      * [ParticleSystemAttributeScripts Particle System Attributes]
+      * [ParticleEmitterScripts Particle Emitters]
+      * [ParticleEmitterAttributesScripts Particle Emitter Attributes]
+      * [ParticleStandardEmitterScripts Standard Particle Emitters]
+      * [ParticleAffectorScripts Particle Affectors]
+      * [ParticleStandardAffectorScripts Standard Particle Affectors]
   * How To
     * [HowToDrawText Draw Text]
   * Function List
