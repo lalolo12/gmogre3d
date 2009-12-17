@@ -9,8 +9,9 @@ As with material techniques, compositor techniques are evaluated in the order yo
 Techniques can have the following nested elements:
   * _texture_
   * _target_
-  * _target_output _
-
+  * _target_output_
+<BR>
+<BR>
 == texture ==
 This declares a render texture for use in subsequent target passes.
 {{{
