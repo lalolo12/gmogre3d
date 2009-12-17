@@ -3,8 +3,8 @@
 == Standard !OverlayElements ==
 Although GMOgre's !OverlayElement and !OverlayContainer classes are designed to be extended by applications developers, there are a few elements which come as standard with Ogre. These include:
   * Panel
-  * BorderPanel
-  * TextArea 
+  * !BorderPanel
+  * !TextArea 
 
 This section describes how you define their custom attributes in an .overlay script, but you can also change these custom properties in code if you wish. You do this by calling SetOverlayParameter(paramname, value).
 <BR>
