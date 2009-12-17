@@ -1,4 +1,4 @@
-#summary Overview of Compositor scripts
+#summary Introduction to compositor scripts
 
 = Compositor Scripts =
 The compositor framework is a subsection of the GMOgre API that allows you to easily define full screen post-processing effects. Compositor scripts offer you the ability to define compositor effects in a script which can be reused and modified easily, rather than having to use the API to define them. You still need to use code to instantiate a compositor against one of your visible viewports, but this is a much simpler process than actually defining the compositor itself.
