@@ -1,6 +1,5 @@
 #summary Specialised !AnimationTrack for dealing with node transforms.
 <BR>
-<BR>
 === !CreateAnimationNodeTrackNodeKeyFrame(real anim_track_node_id, real time) ===
 ----
 Creates a new !KeyFrame and adds it to an animation at the given time index.
