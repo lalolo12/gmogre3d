@@ -43,7 +43,7 @@
     * [BorderPanelOverlayElementFunctions Border Panel Overlay Element]
     * [CameraFunctions Camera]
     * [CollisionFunctions Collision]
-    * [CompositionPassFunctions Composition]
+    * [CompositionPassFunctions Composition Pass]
     * [CompositionTargetPassFunctions Composition Target Pass]
     * [CompositionTechniqueFunctions Composition Technique]
     * [CompositorFunctions Compositor]
