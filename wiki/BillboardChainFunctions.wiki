@@ -169,8 +169,7 @@ Sets the render queue group this object will be rendered through.
 
 Render queues are grouped to allow you to more tightly control the ordering of rendered objects. If you do not call this method, all objects default to the default queue, which is fine for most objects. You may want to alter this if you want this entity to always appear in front of other objects, e.g. for a 3D menu system or such. 
 ====Parameters====
-   * _billboard_chain_id, real scene_node_id) ===
-----_id_ - The ID of the billboard chain.
+   * _billboard_chain_id_ - The ID of the billboard chain.
    * _type_ - The render queue ID.  Can be:
       * _global.RENDER_QUEUE_BACKGROUND_ - Use this queue for objects which must be rendered first e.g. backgrounds.
       * _global.RENDER_QUEUE_SKIES_EARLY_ - First queue (after backgrounds), used for skyboxes if rendered first.
