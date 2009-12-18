@@ -27,7 +27,7 @@ Creates a cube entity for the current !SceneManager.  A cube entity is created w
 Creates a sphere entity for the current !SceneManager.  A sphere entity is created with a size of 100.  To resize a sphere entity simply attach it to a scene node then use the !ScaleSceneNode function (it, to make it 16 x 16 x 16 set the scale to 0.16).
 <BR>
 <BR>
-=== !CreateFloorEntity(real xwidth, real ywidth, real xsegments, real ysegments, real xrepeat, real yrepeat) ===
+=== !CreateFloorEntity(real xwidth, real ywidth, real xsegments, real ysegments, real utile, real vtile) ===
 ----
 Creates a floor plane entity for the current !SceneManager.  This is a convenience function that creates a properly rotated plane and an entity in a single function.
 ====Parameters====
@@ -35,11 +35,11 @@ Creates a floor plane entity for the current !SceneManager.  This is a convenien
    * _ywidth_ - The size of the plane in the y direction.
    * _xsegments_ - The number of segments to the plane in the x direction.
    * _ysegments_ - The number of segments to the plane in the y direction.
-   * _xrepeat_ - The number of times the texture should be repeated in the x direction.
-   * _yrepeat_ - The number of times the texture should be repeated in the y direction.
+   * _utile_ - The number of times the texture should be repeated in the u direction.
+   * _vtile_ - The number of times the texture should be repeated in the v direction.
 <BR>
 <BR>
-=== !CreateCeilingEntity(real xwidth, real ywidth, real xsegments, real ysegments, real xrepeat, real yrepeat) ===
+=== !CreateCeilingEntity(real xwidth, real ywidth, real xsegments, real ysegments, real utile, real vtile) ===
 ----
 Creates a ceiling plane entity for the current !SceneManager.  This is a convenience function that creates a properly rotated plane and an entity in a single function.
 ====Parameters====
@@ -47,11 +47,11 @@ Creates a ceiling plane entity for the current !SceneManager.  This is a conveni
    * _ywidth_ - The size of the plane in the y direction.
    * _xsegments_ - The number of segments to the plane in the x direction.
    * _ysegments_ - The number of segments to the plane in the y direction.
-   * _xrepeat_ - The number of times the texture should be repeated in the x direction.
-   * _yrepeat_ - The number of times the texture should be repeated in the y direction.
+   * _utile_ - The number of times the texture should be repeated in the u direction.
+   * _vtile_ - The number of times the texture should be repeated in the v direction.
 <BR>
 <BR>
-=== !CreateWallEntity(real xwidth, real ywidth, real xsegments, real ysegments, real xrepeat, real yrepeat) ===
+=== !CreateWallEntity(real xwidth, real ywidth, real xsegments, real ysegments, real utile, real vtile) ===
 ----
 Creates a wall entity for the current !SceneManager.  This is a convenience function that creates a properly rotated plane and an entity in a single function.
 ====Parameters====
@@ -59,11 +59,11 @@ Creates a wall entity for the current !SceneManager.  This is a convenience func
    * _ywidth_ - The size of the plane in the y direction.
    * _xsegments_ - The number of segments to the plane in the x direction.
    * _ysegments_ - The number of segments to the plane in the y direction.
-   * _xrepeat_ - The number of times the texture should be repeated in the x direction.
-   * _yrepeat_ - The number of times the texture should be repeated in the y direction.
+   * _utile_ - The number of times the texture should be repeated in the u direction.
+   * _vtile_ - The number of times the texture should be repeated in the v direction.
 <BR>
 <BR>
-=== !CreatePlaneEntity(real plane_id, real width, real height, real xsegments, real ysegments, real xrepeat, real yrepeat, real upx, real upy, real upz) ===
+=== !CreatePlaneEntity(real plane_id, real width, real height, real xsegments, real ysegments, real utile, real vtile, real upx, real upy, real upz) ===
 ----
 Creates an entity for the given pre-created plane.
 ====Parameters====
@@ -72,8 +72,8 @@ Creates an entity for the given pre-created plane.
    * _ywidth_ - The size of the plane in the y direction.
    * _xsegments_ - The number of segments to the plane in the x direction.
    * _ysegments_ - The number of segments to the plane in the y direction.
-   * _xrepeat_ - The number of times the texture should be repeated in the x direction.
-   * _yrepeat_ - The number of times the texture should be repeated in the y direction.
+   * _utile_ - The number of times the texture should be repeated in the u direction.
+   * _vtile_ - The number of times the texture should be repeated in the v direction.
    * _upx_, _upy_, _upz_ - The 'up' direction of the plane.
 <BR>
 <BR>
