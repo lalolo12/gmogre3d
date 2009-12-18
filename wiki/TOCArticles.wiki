@@ -65,7 +65,6 @@
     * [RayFunctions Ray]
     * [RaySceneQueryFunctions Ray Scene Query]
     * [ResourceGroupFunctions Resource Group]
-    * [ResourceFunctions Resource]
     * [SceneManagerFunctions Scene Manager]
     * [SceneNodeFunctions Scene Node]
     * [SimpleSplineFunctions Simple Spline]
