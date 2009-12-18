@@ -45,7 +45,15 @@ Sets the source of the 'world' geometry, i.e. the large, mainly static geometry 
    * _filename_ - The name of the file that contains the world geometry.
 <BR>
 <BR>
+=== !SetVisibilityMask(real mask) ===
+----
+Sets a mask which is bitwise 'and'ed with objects own visibility masks to determine if the object is visible.
 
+Note that this is combined with any per-viewport visibility mask through an 'and' operation.
+====Parameters====
+   * _mask_ - The visibility mask.
+<BR>
+<BR>
 === !SetShadowTechnique(real type) ===
 ----
 Sets the general shadow technique to be used in this scene. There are multiple ways to generate shadows in a scene, and each has strengths and weaknesses.
@@ -64,6 +72,13 @@ We support 2 kinds of stencil shadows, and 2 kinds of texture-based shadows, and
       * global.SHADOWTYPE_TEXTURE_ADDITIVE
       * global.SHADOWTYPE_TEXTURE_ADDITIVE_INTEGRATED
       * global.SHADOWTYPE_TEXTURE_MODULATIVE_INTEGRATED
+<BR>
+<BR>
+=== !EnableShadowLightClipPlanes(real enable) ===
+----
+Sets whether when using a built-in additive shadow mode, user clip planes should be used to restrict light rendering. 
+====Parameters====
+   * _enable_ - Whether to use light clip planes.
 <BR>
 <BR>
 === !SetShadowFarDistance(real distance) ===
