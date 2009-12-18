@@ -36,8 +36,6 @@ Removes a manual object from the current !SceneManager and destroys it.
 Sets the render queue group this object will be rendered through.
 
 Render queues are grouped to allow you to more tightly control the ordering of rendered objects. If you do not call this method, all objects default to the default queue, which is fine for most objects. You may want to alter this if you want this entity to always appear in front of other objects, e.g. for a 3D menu system or such. 
-
-See !RenderQueue for more details.
 ====Parameters====
    * _manual_obj_id_ - The ID of the manual object.
    * _type_ - The render queue ID.  Can be:
