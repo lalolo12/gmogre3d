@@ -1,15 +1,87 @@
-#summary Enter description here
-
-
+#summary Composition technique.
+<BR>
+<BR>
 === !CreateCompositionTechniqueTextureDefinition(string name, real technique_id, real width, real height, real pixel_format) ===
 ----
+Creates a new local texture definition and returns the ID.
+====Parameters====
+   * _technique_id_ - The ID of the technique.
+   * _name_ - The unique name of the local texture.
+   * _width_, _height_ - The dimensions of the local texture.
+   * _pixel_format_ - The internal texture format you wish to create; the manager reserves the right to create a different format if the one you select is not available in this context. Can be:
+      * global.PF_UNKNOWN
+      * global.PF_L8
+      * global.PF_L16
+      * global.PF_A8
+      * global.PF_A4L4?
+      * global.PF_BYTE_LA
+      * global.PF_R5G6B5?
+      * global.PF_B5G6R5?
+      * global.PF_A4R4G4B4?
+      * global.PF_A1R5G5B5?
+      * global.PF_R8G8B8?
+      * global.PF_B8G8R8?
+      * global.PF_A8R8G8B8?
+      * global.PF_A8B8G8R8?
+      * global.PF_B8G8R8A8?
+      * global.PF_A2R10G10B10?
+      * global.PF_A2B10G10R10?
+      * global.PF_DXT1
+      * global.PF_DXT2
+      * global.PF_DXT3
+      * global.PF_DXT4
+      * global.PF_DXT5
+      * global.PF_FLOAT16_RGB
+      * global.PF_FLOAT16_RGBA
+      * global.PF_FLOAT32_RGB
+      * global.PF_FLOAT32_RGBA
+      * global.PF_X8R8G8B8?
+      * global.PF_X8B8G8R8?
+      * global.PF_R8G8B8A8?
+      * global.PF_DEPTH
+      * global.PF_SHORT_RGBA
+      * global.PF_R3G3B2?
+      * global.PF_FLOAT16_R
+      * global.PF_FLOAT32_R
+      * global.PF_SHORT_GR
+      * global.PF_FLOAT16_GR
+      * global.PF_FLOAT32_GR
+      * global.PF_SHORT_RGB 
+<BR>
+<BR>
 === !GetCompositionTechniqueTextureDefinition(real technique_id, real def_index) ===
 ----
+Returns a local texture definition. 
+====Parameters====
+   * _technique_id_ - The ID of the technique.
+   * _def_index_ - The index of the local texture definition
+<BR>
+<BR>
 === !GetNumCompositionTechniqueTextureDefinitions(real technique_id) ===
 ----
-=== !CreateCompositionTechniqueTargetPassreal technique_id) ===
+Returns the number of local texture definition. 
+====Parameters====
+   * _technique_id_ - The ID of the technique.
+<BR>
+<BR>
+=== !CreateCompositionTechniqueTargetPass(real technique_id) ===
 ----
+Create a new target pass, and returns the ID.
+====Parameters====
+   * _technique_id_ - The ID of the technique.
+<BR>
+<BR>
 === !GetCompositionTechniqueTargetPass(real technique_id, real pass_index) ===
-----
+Returns a target pass.
+====Parameters====
+   * _technique_id_ - The ID of the technique.
+   * _pass_index_ - The index of the texture pass.
+<BR>
+<BR>
 === !GetNumCompositionTechniqueTargetPasses(real technique_id) ===
 ----
+Returns the number of texture passes. 
+====Parameters====
+   * _technique_id_ - The ID of the technique.
+<BR>
+<BR>
