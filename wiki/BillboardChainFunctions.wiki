@@ -129,7 +129,6 @@ Remove all elements of a given chain (but leave the chain intact).
    * _index_ - The index of the chain.
 <BR>
 <BR>
-----
 === !ClearBillboardChainAllChains(real billboard_chain_id) ===
 ----
 Remove all elements from all chains (but leave the chains themselves intact). 
@@ -137,7 +136,6 @@ Remove all elements from all chains (but leave the chains themselves intact).
    * _billboard_chain_id_ - The ID of the billboard chain.
 <BR>
 <BR>
-----
 === !SetBillboardChainMaterial(real billboard_chain_id, string material_name) ===
 ----
 Set the material name to use for rendering. 
@@ -146,7 +144,6 @@ Set the material name to use for rendering.
    * _material_name_ - The name of the material.
 <BR>
 <BR>
-----
 === !AttachBillboardChainToSceneNode(real billboard_chain_id, real scene_node_id) ===
 ----
 Attaches an billboard chain to the specified !SceneNode.
