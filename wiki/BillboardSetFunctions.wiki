@@ -157,6 +157,32 @@ Detaches an billboard set from the specified !SceneNode.
    * _scene_node_id_ - The ID of the !SceneNode.
 <BR>
 <BR>
+=== !SetBillboardSetRenderQueueGroup(real billboard_set_id, real type) ===
+----
+Sets the render queue group this object will be rendered through.
+
+Render queues are grouped to allow you to more tightly control the ordering of rendered objects. If you do not call this method, all objects default to the default queue, which is fine for most objects. You may want to alter this if you want this entity to always appear in front of other objects, e.g. for a 3D menu system or such. 
+====Parameters====
+   * _billboard_set_id_ - The ID of the billboard set.
+   * _type_ - The render queue ID.  Can be:
+      * _global.RENDER_QUEUE_BACKGROUND_ - Use this queue for objects which must be rendered first e.g. backgrounds.
+      * _global.RENDER_QUEUE_SKIES_EARLY_ - First queue (after backgrounds), used for skyboxes if rendered first.
+      * _global.RENDER_QUEUE_1_
+      * _global.RENDER_QUEUE_2_
+      * _global.RENDER_QUEUE_WORLD_GEOMETRY_1_
+      * _global.RENDER_QUEUE_3_ 
+      * _global.RENDER_QUEUE_4_
+      * _global.RENDER_QUEUE_MAIN_ - The default render queue.
+      * _global.RENDER_QUEUE_6_
+      * _global.RENDER_QUEUE_7_
+      * _global.RENDER_QUEUE_WORLD_GEOMETRY_2_
+      * _global.RENDER_QUEUE_8_
+      * _global.RENDER_QUEUE_9_
+      * _global.RENDER_QUEUE_SKIES_LATE_ - Penultimate queue(before overlays), used for skyboxes if rendered last.
+      * _global.RENDER_QUEUE_OVERLAY_ - Use this queue for objects which must be rendered last e.g. overlays.
+      * _global.RENDER_QUEUE_MAX_ - Final possible render queue, don't exceed this.
+<BR>
+<BR>
 === !SetBillboardSetQueryFlags(real billboard_set_id, real flags) ===
 ----
 Sets the query flags for this object.
