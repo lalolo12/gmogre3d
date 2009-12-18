@@ -55,8 +55,8 @@ The default is TCD_U.
 ====Parameters====
    * _billboard_chain_id_ - The ID of the billboard chain.
    * _type_ - The type of direction to use for texture coords.  Can be:
-      * TCD_U
-      * TCD_V
+      * global.TCD_U
+      * global.TCD_V
 <BR>
 <BR>
 === !SetBillboardChainOtherTextureCoordRange(real billboard_chain_id, real start, real end) ===
