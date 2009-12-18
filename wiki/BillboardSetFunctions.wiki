@@ -22,7 +22,7 @@ Must only be done if the billboard set is not attached to a !SceneNode. It may b
    * _billboard_set_id_ - The ID of the billboard set.
 <BR>
 <BR>
-=== !CreateBillboardSetBillboard(real billboard_set_id, real x, real y, real z, real color) ===
+=== !CreateBillboardSetBillboard(real billboard_set_id, real x, real y, real z, real color, real alpha) ===
 ----
 Creates a new billboard and adds it to this set.  Returns the ID if the billboard.
 
@@ -31,6 +31,7 @@ Note that you can create more Billboards than your pool setting specifies.
    * _billboard_set_id_ - The ID of the billboard set.
    * _x_, _y_, _z_ - The position to place the billboard.
    * _color_ - The color of the billboard.
+   * _alpha_ - The alpha transparency of the billboard.
 <BR>
 <BR> 
 === !RemoveBillboardSetBillboard(real billboard_set_id, real billboard_id) ===
