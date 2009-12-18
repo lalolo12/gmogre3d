@@ -24,6 +24,7 @@ Removes a billboard chain from the current !SceneManager and destroys it.
 === !SetBillboardChainMaxChainElements(real billboard_chain_id, real max_elements) ===
 ----
 Set the maximum number of chain elements per chain.
+
 ====Parameters====
    * _billboard_chain_id_ - The ID of the billboard chain.
    * _max_elements_ - The maximum number of chain elements.
