@@ -30,8 +30,8 @@ Note that you can create more Billboards than your pool setting specifies.
 ====Parameters====
    * _billboard_set_id_ - The ID of the billboard set.
    * _x_, _y_, _z_ - The position to place the billboard.
-   * _color_ - The color of the billboard.
-   * _alpha_ - The alpha transparency of the billboard.
+   * _color_ - Optional color of the billboard. Defaults to c_white.
+   * _alpha_ - Optional alpha transparency of the billboard. Defaults to 1.0.
 <BR>
 <BR> 
 === !RemoveBillboardSetBillboard(real billboard_set_id, real billboard_id) ===
