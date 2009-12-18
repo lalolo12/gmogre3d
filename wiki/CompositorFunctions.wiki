@@ -1,25 +1,85 @@
-#summary Enter description here
+#summary Represents a Compositor object.
 
-
-=== !GetCompositorByName(string name) ===
-----
+=== Overview ===
+Compositors provide the means to flexibly "composite" the final rendering result from multiple scene renders and intermediate operations like rendering fullscreen quads. This makes it possible to apply postfilter effects, HDRI postprocessing, and shadow effects to a Viewport. 
+<BR>
+<BR>
 === !CreateCompositor(string name, string group) ===
 ----
+Create a compositor.
+====Parameters====
+   * _name_ - The unique name of the compositor resource.
+   * _group_ - The name of the resource group to attach this compositor to.
+<BR>
+<BR>
 === !DestroyCompositor(string name) ===
 ----
+Destroys a single compositor.
+====Parameters====
+   * _name_ - The unique name of the compositor resource.
+<BR>
+<BR>
 === !LoadCompositor(string name) ===
 ----
+Loads a single compositor.
+====Parameters====
+   * _name_ - The unique name of the compositor resource.
+<BR>
+<BR>
 === !UnloadCompositor(string name) ===
 ----
+Unloads a single compositor.
+====Parameters====
+   * _name_ - The unique name of the compositor resource.
+<BR>
+<BR>
 === !AddCompositorToViewport(string name, real viewport_id) ===
 ----
+Add a compositor to a viewport.
+
+It is added to end of the chain, after the other compositors.
+====Parameters====
+   * _name_ - The unique name of the compositor resource.
+   * _viewport_id_ - The ID of the viewport.
+<BR>
+<BR>
 === !RemoveCompositorFromViewport(string name, real viewport_id) ===
 ----
+Removes a compositor from a viewport.
+====Parameters====
+   * _name_ - The unique name of the compositor resource.
+   * _viewport_id_ - The ID of the viewport.
+<BR>
+<BR>
 === !EnableCompositorInViewport(string name, real viewport_id, real enable) ===
 ----
+Enables or disables the a compositor in a viewport.
+
+Disabling a compositor stops it from rendering but does not free any resources. This can be more efficient than using !DestroyCompositor and !AddCompositorToViewport in cases the filter is switched on and off a lot.
+====Parameters====
+   * _name_ - The unique name of the compositor resource.
+   * _viewport_id_ - The ID of the viewport.
+   * _enable_ - Whether to enable or disable the compositor.
+<BR>
+<BR>
 === !CreateCompositorTechnique(string name) ===
 ----
+Create a new composition technique, and return it's ID.
+====Parameters====
+   * _name_ - The unique name of the compositor resource.
+<BR>
+<BR>
 === !GetCompositorTechnique(string name, real technique_index) ===
 ----
+Returns a composition technique, based on the index given.
+====Parameters====
+   * _name_ - The unique name of the compositor resource.
+   * _technique_index_ - The index for the technique.
+<BR>
+<BR>
 === !GetNumCompositorTechniques(string name) ===
 ----
+Returns the number of composition techniques for a compositor.
+====Parameters====
+   * _name_ - The unique name of the compositor resource.
+<BR>
