@@ -114,3 +114,14 @@ This function doesn't do something on all elements, just those that support it.
    * _overlay_element_id_ - The ID of the overlay element to add as a child.
 <BR>
 <BR>
+=== !SetOverlayElementParameter(real overlay_element_id, string name, string value) ===
+----
+Generic parameter setting method.
+
+Call this function with the name of a parameter and a string version of the value to set. The implementor will convert the string to a native type internally. 
+====Parameters====
+   * _overlay_element_id_ - The ID of the overlay element.
+   * _name_ - The name of the parameter to set.
+   * _value_ - The value of the parameter.
+<BR>
+<BR>
