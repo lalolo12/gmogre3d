@@ -10,7 +10,7 @@ Creates a new billboard set.
 
 This function creates a new billboard set which is registered with the current !SceneManager. The !SceneManager will destroy this object when it shuts down or when the !ClearScene function is called, so the caller does not have to worry about destroying this instance (in fact, it definitely should not do this). 
 ====Parameters====
-   * _pool_size_ - The initial size of the pool of billboards.
+   * _pool_size_ - Optional initial size of the pool of billboards.  Defaults to 20 if not passed.
 <BR>
 <BR>
 === !DestroyBillboardSet(real billboard_set_id) ===
