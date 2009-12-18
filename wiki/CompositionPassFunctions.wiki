@@ -1,6 +1,9 @@
-#summary Enter description here
+#summary Object representing one pass or operation in a composition sequence.
 
-
+=== Overview ===
+This provides a method to conveniently interleave !RenderSystem commands between Render Queues. 
+<BR>
+<BR>
 === !SetCompositionPassType(real pass_id, real type) ===
 ----
 Set the type of composition pass.
