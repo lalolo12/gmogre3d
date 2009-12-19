@@ -1,37 +1,78 @@
-#summary Enter description here
+#summary Class defining particle system based special effects.
 
+=== Overview ===
+Particle systems are special effects generators which are based on a number of moving points to create the impression of things like like sparkles, smoke, blood spurts, dust etc. 
 
+These functions simply manage a single collection of particles in world space with a shared local origin for emission. 
+
+And like all visible objects, the particle system will only be considered for rendering once it has been attached to a !SceneNode. 
+<BR>
+<BR>
 === !CreateParticleSystem(string name) ===
 ----
-=== !SetParticleSystemMaterial(real part_sys_id, string part_sys_name) ===
+Creates a particle system based on a template name.
+
+This function creates a new particle system instance based on the named template (usually defined in scripts) and returns the ID to the caller. It can be destroyed using the !DestroyParticleSystem function. 
+
+Each system created from a template takes the template's settings at the time of creation, but is completely separate from the template from there on. 
+
+Creating a particle system does not make it a part of the scene. As with other visible objects, a particle system is not rendered until it is attached to a SceneNode. 
+
+This is probably the more useful particle system creation method since it does not require manual setup of the system. Note that the initial quota is based on the template but may be changed later.
+====Parameters====
+   * _name_ - The name of the template to base the new instance on.
+<BR>
+<BR>
+=== !CreateEmptyParticleSystem(real quota, string group) ===
 ----
-=== !SetParticleSystemQuota(real part_sys_id, real quota) ===
+Create an empty particle system.
+
+This function creates a new, blank particle system instance and returns the ID. It can be destroyed using the !DestroyParticleSystem function. 
+
+The instance created from this function won't actually do anything because on creation a particle system has no emitters. The caller should manipulate the instance through it's ParticleSystem function to actually create a real particle effect. 
+
+Creating a particle system does not make it a part of the scene. As with other visible objects, a particle system is not rendered until it is attached to a SceneNode.
+====Parameters====
+   * _quota_ - The maximum number of particles to allow in this system.
+   * _group_ - The resource group which will be used to load dependent resources 
+<BR>
+<BR>
+=== !DestroyParticleSystem(real particle_system_id) ===
 ----
-=== !EnableParticleSystemIndividualCulling(real part_sys_id, real enable) ===
+Destroys a particle system and removes it from the !SceneManager. 
+====Parameters====
+   * _particle_system_id_ - The ID of the particle system.
+<BR>
+<BR>
+=== !SetParticleSystemMaterial(real particle_system_id, string part_sys_name) ===
 ----
-=== !EnableParticleSystemSorting(real part_sys_id, real enable) ===
+=== !SetParticleSystemQuota(real particle_system_id, real quota) ===
 ----
-=== !EnableParticleSystemParticlesInLocalSpace(real part_sys_id, real enable) ===
+=== !EnableParticleSystemIndividualCulling(real particle_system_id, real enable) ===
 ----
-=== !SetParticleSystemNonVisibleTimeout(real part_sys_id, real timeout) ===
+=== !EnableParticleSystemSorting(real particle_system_id, real enable) ===
 ----
-=== !FastForwardParticleSystem(real part_sys_id, real time, real interval) ===
+=== !EnableParticleSystemParticlesInLocalSpace(real particle_system_id, real enable) ===
 ----
-=== !SetParticleSystemSpeedFactor(real part_sys_id, real speed) ===
+=== !SetParticleSystemNonVisibleTimeout(real particle_system_id, real timeout) ===
 ----
-=== !SetParticleSystemIterationInterval(real part_sys_id, real interval) ===
+=== !FastForwardParticleSystem(real particle_system_id, real time, real interval) ===
 ----
-=== !SetParticleSystemDimensions(real part_sys_id, real width, real height) ===
+=== !SetParticleSystemSpeedFactor(real particle_system_id, real speed) ===
 ----
-=== !GetParticleSystemDefaultWidth(real part_sys_id) ===
+=== !SetParticleSystemIterationInterval(real particle_system_id, real interval) ===
 ----
-=== !GetParticleSystemDefaultHeight(real part_sys_id) ===
+=== !SetParticleSystemDimensions(real particle_system_id, real width, real height) ===
 ----
-=== !AttachParticleSystemToSceneNode(real part_sys_id, real scene_node_id) ===
+=== !GetParticleSystemDefaultWidth(real particle_system_id) ===
 ----
-=== !DetachParticleSystemFromSceneNode(real part_sys_id, real scene_node_id) ===
+=== !GetParticleSystemDefaultHeight(real particle_system_id) ===
 ----
-=== !SetParticleSystemRenderQueueGroup(real part_sys_id, real type) ===
+=== !AttachParticleSystemToSceneNode(real particle_system_id, real scene_node_id) ===
+----
+=== !DetachParticleSystemFromSceneNode(real particle_system_id, real scene_node_id) ===
+----
+=== !SetParticleSystemRenderQueueGroup(real particle_system_id, real type) ===
 ----
 Sets the render queue group this object will be rendered through.
 
@@ -57,15 +98,15 @@ Render queues are grouped to allow you to more tightly control the ordering of r
       * _global.RENDER_QUEUE_MAX_ - Final possible render queue, don't exceed this.
 <BR>
 <BR>
-=== !SetParticleSystemQueryFlags(real part_sys_id, real flags) ===
+=== !SetParticleSystemQueryFlags(real particle_system_id, real flags) ===
 ----
-=== !AddParticleSystemEmitter(real part_sys_id, string name) ===
+=== !AddParticleSystemEmitter(real particle_system_id, string name) ===
 ----
-=== !GetNumParticleSystemEmitters(real part_sys_id) ===
+=== !GetNumParticleSystemEmitters(real particle_system_id) ===
 ----
-=== !GetParticleSystemEmitter(real part_sys_id, real index) ===
+=== !GetParticleSystemEmitter(real particle_system_id, real index) ===
 ----
-=== !RemoveParticleSystemEmitter(real part_sys_id, real index) ===
+=== !RemoveParticleSystemEmitter(real particle_system_id, real index) ===
 ----
-=== !RemoveAllParticleSystemEmitters(real part_sys_id) ===
+=== !RemoveAllParticleSystemEmitters(real particle_system_id) ===
 ----
