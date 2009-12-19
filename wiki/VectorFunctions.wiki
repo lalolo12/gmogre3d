@@ -66,6 +66,7 @@ This is a convenience function that will take the results from a previous vector
 The normalized result can be retrieved using the GetX, GetY, and GetZ functions.
 <BR>
 <BR>
+<BR>
 === !GetVectorLength(real x, real z, real y) ===
 ----
 Returns the length (magnitude) of a vector.
