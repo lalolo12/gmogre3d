@@ -26,6 +26,7 @@ Makes a sub entity visible.
 === !HideSubEntity(real sub_entity_id) ===
 ----
 Makes a sub entity hidden.
+====Parameters====
    * _sub_entity_id_ - The ID of the sub entity.
 <BR>
 <BR>
