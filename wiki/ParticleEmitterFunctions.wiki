@@ -1,45 +1,184 @@
-#summary Enter description here
+#summary Functions defining the interface for all types of particle emitters.
 
+=== Overview ===
+Particle emitters are the sources of particles in a particle system. This class defines the !ParticleEmitter interface, and provides a basic implementation for tasks which most emitters will do. Particle emitters can be grouped into types, e.g. 'point' emitters, 'box' emitters etc; each type will create particles with a different starting point, direction and velocity (although within the types you can configure the ranges of these parameters). 
+<BR>
+<BR>
+=== !SetParticleEmitterPosition(real particle_emitter_id, real x, real y, real z) ===
+----
+Sets the position of an emitter relative to the particle system center. 
+====Parameters====
+   * _particle_emitter_id_ - The ID for the particle emitter.
+   * _x_, _y_, _z_ - The position of the emitter.
+<BR>
+<BR>
+=== !SetParticleEmitterDirection(real particle_emitter_id, real xdir, real ydir, real zdir) ===
+----
+Sets the direction of an emitter.
 
-=== !SetParticleEmitterPosition(real part_emit_id, real xfrom, real zfrom, real yfrom) ===
+Most emitters will have a base direction in which they emit particles (those which emit in all directions will ignore this parameter). They may not emit exactly along this vector for every particle, many will introduce a random scatter around this vector using the angle property. 
+====Parameters====
+   * _particle_emitter_id_ - The ID for the particle emitter.
+   * _xdir_, _ydir_, _zdir_ - The base direction for the particles emitted.
+<BR>
+<BR>
+=== !SetParticleEmitterAngle(real particle_emitter_id, real degrees) ===
 ----
-=== !SetParticleEmitterDirection(real part_emit_id, real xto, real zto, real yto) ===
+Sets the maximum angle away from the emitter direction which particle will be emitted.
+
+While the direction property defines the general direction of emission for particles, this property defines how far the emission angle can deviate away from this base direction. This allows you to create a scatter effect - if set to 0, all particles will be emitted exactly along the emitters direction vector, whereas if you set it to 180 degrees or more, particles will be emitted in a sphere, i.e. in all directions.
+====Parameters====
+   * _particle_emitter_id_ - The ID for the particle emitter.
+   * _degrees_ - Maximum angle which initial particle direction can deviate from the emitter base direction vector.
+<BR>
+<BR>
+=== !SetParticleEmitterVelocity(real particle_emitter_id, real speed) ===
 ----
-=== !SetParticleEmitterAngle(real part_emit_id, real degrees) ===
+Sets the initial velocity of particles emitted.
+
+This function sets a constant speed for emitted particles. See the alternate version of this method which takes 2 parameters if you want a variable speed. 
+====Parameters====
+   * _particle_emitter_id_ - The ID for the particle emitter.
+   * _speed_ - The initial speed in world units per second which every particle emitted starts with.
+<BR>
+<BR>
+=== !SetParticleEmitterVelocityRange(real part_emit_id, real min_speed, max_speed) ===
 ----
-=== !SetParticleEmitterVelocity(real part_emit_id, real speed) ===
+Sets the initial velocity range of particles emitted.
+
+This function sets the range of starting speeds for emitted particles. The alternate version of this method, !SetParticleEmitterVelocity, takes 1 parameter for a constant speed. This emitter will randomly choose a speed between the minimum and maximum for each particle. 
+====Parameters====
+   * _particle_emitter_id_ - The ID for the particle emitter.
+   * _min_speed_ - The minimum speed in world units per second for the initial particle speed on emission.
+   * _max_speed_ - The maximum speed in world units per second for the initial particle speed on emission.
+<BR>
+<BR>
+=== !SetParticleEmitterEmissionRate(real particle_emitter_id, real particles_per_second) ===
 ----
-=== !SetParticleEmitterMinVelocity(real part_emit_id, real speed) ===
+Sets the emission rate for an emitter.
+
+This function tells the emitter how many particles per second should be emitted. The emitter types do not have to emit these in a continuous burst - this is a relative parameter and the emitter may choose to emit all of the second's worth of particles every half-second for example. This is controlled by the emitter's !GetParticleEmissionCount function. 
+
+Also, if the ParticleSystem's particle quota is exceeded, not all the particles requested may be actually emitted.
+====Parameters====
+   * _particle_emitter_id_ - The ID for the particle emitter.
+   * _particles_per_second_ - The number of particles to be emitted every second.
+<BR>
+<BR>
+=== !SetParticleEmitterTimeToLive(real particle_emitter_id, real ttl) ===
 ----
-=== !SetParticleEmitterMaxVelocity(real part_emit_id, real speed) ===
+Sets the lifetime of all particles emitted.
+
+The emitter initializes particles with a time-to-live (TTL), the number of seconds a particle will exist before being destroyed. This method sets a constant TTL for all particles emitted. Note that affectors are able to modify the TTL of particles later. 
+
+Also see the alternate version of this method which takes a min and max TTL in order to have the TTL vary per particle. 
+====Parameters====
+   * _particle_emitter_id_ - The ID for the particle emitter.
+   * _ttl_ - The number of seconds each particle will live for.
+<BR>
+<BR>
+=== !SetParticleEmitterTimeToLiveRange(real particle_emitter_id, real min_ttl, real max_ttl) ===
 ----
-=== !SetParticleEmitterEmissionRate(real part_emit_id, real rate) ===
+Sets the range of lifetime for particles emitted.
+
+The emitter initializes particles with a time-to-live (TTL), the number of seconds a particle will exist before being destroyed. This method sets a range for the TTL for all particles emitted; the ttl may be randomized between these 2 extremes or will vary some other way depending on the emitter. Note that affectors are able to modify the TTL of particles later. 
+
+Also see the alternate function, !SetParticleEmitterTimeToLive, which takes a single TTL in order to set a constant TTL for all particles. 
+====Parameters====
+   * _particle_emitter_id_ - The ID for the particle emitter.
+   * _min_ttl_ - The minimum number of seconds each particle will live for.
+   * _max_ttl_ - The maximum number of seconds each particle will live for.
+<BR>
+<BR>
+=== !SetParticleEmitterColor(real particle_emitter_id, real color) ===
 ----
-=== !SetParticleEmitterTimeToLive(real part_emit_id, real ttl) ===
+Sets the initial color of particles emitted.
+
+Particles have an initial color on emission which the emitter sets. This function sets this color. See the alternate version of this method which takes 2 colors in order to establish a range of colors to be assigned to particles. 
+====Parameters====
+   * _particle_emitter_id_ - The ID for the particle emitter.
+   * _color_ - The color which all particles will be given on emission. 
+<BR>
+=== !SetParticleEmitterColorRange(real particle_emitter_id, real start_color, end_color) ===
 ----
-=== !SetParticleEmitterMinTimeToLive(real part_emit_id, real ttl) ===
+Sets the range of colors for emitted particles.
+
+Particles have an initial color on emission which the emitter sets. This method sets the range of this color. See the alternate version of this method which takes a single color in order to set a constant color for all particles. Emitters may choose to randomly assign a color in this range, or may use some other method to vary the color. 
+====Parameters====
+   * _particle_emitter_id_ - The ID for the particle emitter.
+   * _start_color_ - The start of the color range.
+   * _end_color_ - The end of the color range.
+<BR>
+=== !SetParticleEmitterStartTime(real particle_emitter_id, real start_time) ===
 ----
-=== !SetParticleEmitterMaxTimeToLive(real part_emit_id, real ttl) ===
+Sets the 'start time' of an emitter.
+
+By default an emitter starts straight away as soon as a !ParticleSystem is first created, or also just after it is re-enabled. This parameter allows you to set a time delay so that the emitter does not 'kick in' until later.
+====Parameters====
+   * _particle_emitter_id_ - The ID for the particle emitter.
+   * _start_time_ - The time in seconds from the creation or enabling of the emitter.
+<BR>
+=== !SetParticleEmitterDuration(real particle_emitter_id, real duration) ===
 ----
-=== !SetParticleEmitterColor(real part_emit_id, real color) ===
+Sets the duration of the emitter.
+
+By default emitters run indefinitely (unless you manually disable them). By setting this parameter, you can make an emitter turn off on it's own after a set number of seconds. It will then remain disabled until either !EnableParticleEmitter(true) is called, or if the 'repeat_after' parameter has been set it will also repeat after a number of seconds. 
+
+Also see the alternative version of this method which allows you to set a min and max duration for a random variable duration. 
+====Parameters====
+   * _particle_emitter_id_ - The ID for the particle emitter.
+   * _duration_ - The duration in seconds.
+<BR>
+=== !SetParticleEmitterDurationRange(real particle_emitter_id, real min_duration, real max_duration) ===
 ----
-=== !SetParticleEmitterColorRangeStart(real part_emit_id, real color) ===
+Sets the range of random duration for this emitter.
+
+By default emitters run indefinitely (unless you manually disable them). By setting this parameter, you can make an emitter turn off on it's own after a random number of seconds. It will then remain disabled until either !EnableParticleEmitter(true) is called, or if the 'repeat_after' parameter has been set it will also repeat after a number of seconds. 
+
+Also see the alternative version of this method which allows you to set a constant duration.
+====Parameters====
+   * _particle_emitter_id_ - The ID for the particle emitter.
+   * _min_duration_ - The minimum duration in seconds.
+   * _max_duration_ - The maximum duration in seconds.
+<BR> 
+=== !SetParticleEmitterRepeatDelay(real particle_emitter_id, real delay) ===
 ----
-=== !SetParticleEmitterColorRangeEnd(real part_emit_id, real color) ===
+Sets the time between repeats of an emitter.
+
+By default emitters run indefinitely (unless you manually disable them). However, if you manually disable the emitter (by calling !EnableParticleEmitter(false)), or it's duration runs out, it will cease to emit 
+
+Also see the alternative version of this method which allows you to set a min and max duration for a random variable duration.
+====Parameters====
+   * _particle_emitter_id_ - The ID for the particle emitter.
+   * _delay_ - The duration in seconds.
+<BR> 
+=== !SetParticleEmitterRepeatDelayRange(real particle_emitter_id, real min_delay, real max_delay) ===
 ----
-=== !SetParticleEmitterStartTime(real part_emit_id, real start_time) ===
+Sets the range of random duration for an emitter.
+
+By default emitters run indefinitely (unless you manually disable them). By setting this parameter, you can make an emitter turn off on it's own after a random number of seconds. It will then remain disabled until either !EnableParticleEmitter(true) is called, or if the 'repeat_after' parameter has been set it will also repeat after a number of seconds. 
+
+Also see the alternative version of this method which allows you to set a constant duration.
+====Parameters====
+   * _particle_emitter_id_ - The ID for the particle emitter.
+   * _min_delay_ - The minimum duration in seconds.
+   * _max_delay_ - The maximum duration in seconds.
+<BR> 
+<BR> 
+=== !SetParticleEmitterDimensions(real particle_emitter_id, real width, real height) ===
 ----
-=== !SetParticleEmitterDuration(real part_emit_id, real duration) ===
+Sets the width and height for a particle.
+
+Note that it is most efficient for every particle in a !ParticleSystem to have the same dimensions. If you choose to alter the dimensions of an individual particle the set will be less efficient. Do not call this method unless you really need to have different particle dimensions within the same set. Otherwise just call the !SetParticleSystemDefaultDimensions method instead. 
+====Parameters====
+   * _particle_emitter_id_ - The ID for the particle emitter.
+   * _width_, _height_ - The dimensions of the particle.
+<BR> 
+<BR> 
+=== !EnableParticleEmitter(real particle_emitter_id, real enable) ===
 ----
-=== !SetParticleEmitterMinDuration(real part_emit_id, real duration) ===
-----
-=== !SetParticleEmitterMaxDuration(real part_emit_id, real duration) ===
-----
-=== !SetParticleEmitterRepeatDelay(real part_emit_id, real delay) ===
-----
-=== !SetParticleEmitterMinRepeatDelay(real part_emit_id, real delay) ===
-----
-=== !SetParticleEmitterMaxRepeatDelay(real part_emit_id, real delay) ===
-----
-=== !SetParticleEmitterDimensions(real part_emit_id, real width, real height) ===
-----
+Enables or disables a particle emitter.
+====Parameters====
+   * _particle_emitter_id_ - The ID for the particle emitter.
+   * _enable_ - Whether to enable or disable the particle emitter.
+<BR>
