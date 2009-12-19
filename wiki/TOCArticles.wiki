@@ -55,6 +55,7 @@
     * [ManualObjectFunctions Manual Object]
     * [MaterialFunctions Material]
     * [MiscFunctions Misc]
+    * [MouseFunctions Mouse]
     * [OverlayElementFunctions Overlay Element]
     * [OverlayFunctions Overlay]
     * [PanelOverlayElementFunctions Panel Overlay Element]
