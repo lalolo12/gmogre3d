@@ -1,0 +1,31 @@
+#summary Utility class which defines the sub-parts of an Entity.
+
+=== Overview ===
+Just as meshes are split into submeshes, an Entity is made up of potentially multiple !SubMeshes. These are mainly here to provide the link between the Material which the !SubEntity uses (which may be the default Material for the !SubMesh or may have been changed for this object) and the !SubMesh data.
+
+The !SubEntity also allows the application some flexibility in the material properties for this section of a particular instance of this Mesh, e.g. tinting the windows on a car model. 
+
+!SubEntity instances are never created manually. They are created at the same time as their parent Entity by the CreateEntity function.
+<BR>
+<BR>
+=== !SetSubEntityMaterial(real sub_entity_id, string mat_name) ===
+----
+Sets the material to use for a sub entity. 
+====Parameters====
+   * _sub_entity_id_ - The ID of the sub entity.
+<BR>
+<BR>
+
+=== !ShowSubEntity(real sub_entity_id) ===
+----
+Makes a sub entity visible.
+====Parameters====
+   * _sub_entity_id_ - The ID of the sub entity.
+<BR>
+<BR>
+=== !HideSubEntity(real sub_entity_id) ===
+----
+Makes a sub entity hidden.
+   * _sub_entity_id_ - The ID of the sub entity.
+<BR>
+<BR>
