@@ -72,6 +72,7 @@
     * [SkyXFunctions SkyX]
     * [SpriteFunctions Sprite]
     * [StaticGeometryFunctions Static Geometry]
+    * [SubEntityFunctions Sub Entity]
     * [TechniqueFunctions Technique]
     * [TextFunctions Text]
     * [TextOverlayElementFunctions Text Overlay Element]
