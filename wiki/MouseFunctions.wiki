@@ -35,7 +35,7 @@ A mouse pitch of 0 means the camera is looking straight ahead, parallel to the g
    * _degrees_ - The number of degrees the camera cam be pitched up or down.
 <BR>
 <BR>
-=== !GetMouseXPos(real val) ===
+=== GetMouseXPos(real val) ===
 ----
 Returns the x position of the mouse on the screen.
 
@@ -44,7 +44,7 @@ Mouse look should be disabled for this to work properly.
    * _val_ - The x position of the mouse on the screen.
 <BR>
 <BR>
-=== !GetMouseYPos(real val) ===
+=== GetMouseYPos(real val) ===
 ----
 Returns the y position of the mouse on the screen.
 
