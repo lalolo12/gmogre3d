@@ -151,8 +151,7 @@ Each time you call this method, you start a new section of the object with its o
 ----
 Add a vertex position, starting a new vertex at the same time.
 
-Remarks:
-    A vertex position is slightly special among the other vertex data methods like !ManualObjectNormal() and !ManualObjectTextureCoordX(), since calling it indicates the start of a new vertex. All other vertex data methods you call after this are assumed to be adding more information (like normals or texture coordinates) to the last vertex started with position(). 
+A vertex position is slightly special among the other vertex data methods like !ManualObjectNormal() and !ManualObjectTextureCoordX(), since calling it indicates the start of a new vertex. All other vertex data methods you call after this are assumed to be adding more information (like normals or texture coordinates) to the last vertex started with position(). 
 ====Parameters====
    * _manual_obj_id_ - The ID of the manual object.
    * _x_, _y_, _z_ - The vertex position.
