@@ -5,7 +5,7 @@ Just as meshes are split into submeshes, an Entity is made up of potentially mul
 
 The !SubEntity also allows the application some flexibility in the material properties for this section of a particular instance of this Mesh, e.g. tinting the windows on a car model. 
 
-!SubEntity instances are never created manually. They are created at the same time as their parent Entity by the CreateEntity function.
+!SubEntity instances are never created manually. They are created at the same time as their parent Entity by the !CreateEntity function.
 <BR>
 <BR>
 === !SetSubEntityMaterial(real sub_entity_id, string mat_name) ===
