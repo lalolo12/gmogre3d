@@ -20,6 +20,7 @@ Lights can either be in a fixed position and independent of the scene graph, or 
 <BR>
 === !DestroyLight(real light_id) ===
 ----
+Destroys a light.
 ====Parameters====
    * _light_id_ - The ID of the light.
 <BR>
