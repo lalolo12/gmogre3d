@@ -20,13 +20,6 @@ Note that you must include the !OgreCore.zip file in your resources in order to 
    * _enable_ - Whether to enable or disable FPS.
 <BR>
 <BR>
-=== !EnableMouseCursor(real enable) ===
-----
-Enables or disables showing of mouse cursor.
-====Parameters====
-   * _enable_ - Whether to enable or disable mouse cursor.
-<BR>
-<BR>
 === !SetLoggingLevel(real type) ===
 ----
 Sets the logging level of GMOgre messages to the GMOgre3D.log file.
