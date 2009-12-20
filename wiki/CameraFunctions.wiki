@@ -44,6 +44,16 @@ Sets a camera's type of projection to use (orthographic or perspective).  Defaul
       * global.PT_PERSPECTIVE
 <BR>
 <BR>
+=== SetCameraAspect(real camera_id, real aspect) ===
+----
+Sets the aspect ratio for the frustum viewport.
+
+The ratio between the x and y dimensions of the rectangular area visible through the frustum is known as aspect ratio: aspect = width / height. 
+====Parameters====
+   * _camera_id_ - The ID of the camera.
+   * _aspect_ - The aspect ratio in degrees.
+<BR>
+<BR>
 === SetCameraFOV(real camera_id, real angle) ===
 ----
 Sets a camera's Field Of View (FOV). Typical values are between 45 and 60. 
