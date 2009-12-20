@@ -88,23 +88,6 @@ Returns the current position of a camera.
    * _camera_id_ - The ID of the camera.
 <BR>
 <BR>
-
-=== !SetCameraDirection(real camera_id, real x, real y, real z) ===
-----
-Sets a camera's direction vector.
-====Parameters====
-   * _camera_id_ - The ID of the camera.
-   * _x_, _y_, _z_ - The up vector.
-<BR>
-<BR>
-=== !SetCameraLookAt(real camera_id, real x, real y, real z) ===
-----
-Points a camera at the specificied location in world space.
-====Parameters====
-   * _camera_id_ - The ID of the camera.
-   * _x_, _y_, _z_ - The position to look at.
-<BR>
-<BR>
 === !MoveCameraForward(real camera_id, real delta) ===
 ----
 Moves a camera forward by the delta amount.
@@ -151,6 +134,22 @@ Moves a camera downward by the delta amount.
 ====Parameters====
    * _camera_id_ - The ID of the camera.
    * _delta_ - The delta amount to move the camera downward.
+<BR>
+<BR>
+=== !SetCameraDirection(real camera_id, real x, real y, real z) ===
+----
+Sets a camera's direction vector.
+====Parameters====
+   * _camera_id_ - The ID of the camera.
+   * _x_, _y_, _z_ - The up vector.
+<BR>
+<BR>
+=== !SetCameraLookAt(real camera_id, real x, real y, real z) ===
+----
+Points a camera at the specificied location in world space.
+====Parameters====
+   * _camera_id_ - The ID of the camera.
+   * _x_, _y_, _z_ - The position to look at.
 <BR>
 <BR>
 === !SetCameraOrientation(real camera_id, real yaw, real pitch, real roll) ===
