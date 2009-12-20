@@ -44,7 +44,7 @@ Sets a camera's type of projection to use (orthographic or perspective).  Defaul
       * global.PT_PERSPECTIVE
 <BR>
 <BR>
-=== SetCameraAspect(real camera_id, real aspect) ===
+=== !SetCameraAspect(real camera_id, real aspect) ===
 ----
 Sets the aspect ratio for the frustum viewport.
 
