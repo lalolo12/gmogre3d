@@ -17,11 +17,11 @@ Creates a new local texture definition and returns the ID.
       * global.PF_BYTE_LA
       * global.PF_R5G6B5
       * global.PF_B5G6R5
-      * global.PF_A4R4G4B4?
-      * global.PF_A1R5G5B5?
-      * global.PF_R8G8B8?
-      * global.PF_B8G8R8?
-      * global.PF_A8R8G8B8?
+      * global.PF_A4R4G4B4
+      * global.PF_A1R5G5B5
+      * global.PF_R8G8B8
+      * global.PF_B8G8R8
+      * global.PF_A8R8G8B8
       * global.PF_A8B8G8R8
       * global.PF_B8G8R8A8
       * global.PF_A2R10G10B10
