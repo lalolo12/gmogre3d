@@ -12,10 +12,10 @@ Note that a Camera can be attached to a !SceneNode, using the method !AttachCame
 ----
 Create a camera for the current !SceneManager.
 ====Parameters====
-   * _aspect_ - The aspect ratio.  This is normally window width / window height.
-   * _znear_ - The position of the near clipping plane in world coordinates.
-   * _zfar_ - The position of the far clipping plane in world coordinates.
-   * _fov_ - The Field Of View (FOV) of the camera. Typical values are between 45 and 60 degrees.
+   * _aspect_ - Optional aspect ratio.  Defaults to window_get_width() / window_get_height() if not passed.
+   * _znear_ - Optional position of the near clipping plane in world coordinates.  Defaults to 5 if not passed.
+   * _zfar_ - Optional position of the far clipping plane in world coordinates.  Defaults to 0 (infinite view distance) if not passed.
+   * _fov_ - Optional Field Of View (FOV) of the camera. Typical values are between 45 and 60 degrees.  Defaults to 45 if not passed.
 <BR>
 <BR>
 === !DestroyCamera(real camera_id) ===
