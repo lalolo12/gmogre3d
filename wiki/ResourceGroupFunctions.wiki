@@ -8,10 +8,10 @@ Adds a resource location to for a given resource group.
 Resource locations are places which are searched to load resource files. When you choose to load a file, or to search for valid files to load, the resource locations are used.  The type and name parameters can be left blank if the resource group is a file system directory and you don't use resource group names.
 ====Parameters====
    * _path_ - The relative path to a directory or zip archive.
-   * _type_ - The location type for the resource group.  Can be:
-      * LOC_FILSYSTEM
-      * LOC_ZIP
-   * _name_ - The name of the resource group.
+   * _type_ - Option location type for the resource group. If not specified, FILE_SYSTEM is used. Can be:
+      * global.LOC_FILSYSTEM
+      * global.LOC_ZIP
+   * _name_ - Optional name of the resource group.
 <BR>
 <BR>
 === !RemoveResourceLocation(string path, string name) ===
@@ -19,7 +19,7 @@ Resource locations are places which are searched to load resource files. When yo
 Removes a resource location from the search path. 
 ====Parameters====
    * _path_ - The relative path to a directory or zip archive.
-   * _name_ - The name of the resource group.
+   * _name_ - Optional name of the resource group.
 <BR>
 <BR>
 === !InitializeAllResourceGroups() ===
