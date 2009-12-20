@@ -34,6 +34,35 @@ Sets a camera's position to look from, the position to look at, and the up vecto
    * _xto_, _yto_, _zto_ - The up vector.
 <BR>
 <BR>
+=== SetCameraFOV(real camera_id, real angle) ===
+----
+Sets a camera's Field Of View (FOV). Typical values are between 45 and 60. 
+====Parameters====
+   * _camera_id_ - The ID of the camera.
+   * _fov_ - The FOV in degrees.
+<BR>
+<BR>
+=== !SetCameraProjectionType(real camera_id, real type) ===
+----
+Sets a camera's type of projection to use (orthographic or perspective).  Default is perspective.
+====Parameters====
+   * _camera_id_ - The ID of the camera.
+   * _type_ - The projection type.  Can be:
+      * global.PT_ORTHOGRAPHIC
+      * global.PT_PERSPECTIVE
+<BR>
+<BR>
+=== !SetCameraRenderType(real camera_id, real type) ===
+----
+Sets a camera's level of rendering detail. Every camera is set to render at full detail by default, that is with full texturing, lighting etc. This method lets you change that behavior, allowing you to make the camera just render a wire-frame view, for example. 
+====Parameters====
+   * _camera_id_ - The ID of the camera.
+   * _type_ - The render type.  Can be:
+      * global.PM_POINTS
+      * global.PM_WIREFRAME
+      * global.PM_SOLID
+<BR>
+<BR>
 === !SetCameraPosition(real camera_id, real x, real y, real z) ===
 ----
 Sets a camera's position.
@@ -42,12 +71,28 @@ Sets a camera's position.
    * _x_, _y_, _z_ - The coordinates to place the camera at.
 <BR>
 <BR>
+=== !GetCameraPosition(real camera_id) ===
+----
+Returns the current position of a camera.
+====Parameters====
+   * _camera_id_ - The ID of the camera.
+<BR>
+<BR>
+
 === !SetCameraDirection(real camera_id, real x, real y, real z) ===
 ----
 Sets a camera's direction vector.
 ====Parameters====
    * _camera_id_ - The ID of the camera.
    * _x_, _y_, _z_ - The up vector.
+<BR>
+<BR>
+=== !SetCameraLookAt(real camera_id, real x, real y, real z) ===
+----
+Points a camera at the specificied location in world space.
+====Parameters====
+   * _camera_id_ - The ID of the camera.
+   * _x_, _y_, _z_ - The position to look at.
 <BR>
 <BR>
 === !MoveCameraForward(real camera_id, real delta) ===
@@ -96,21 +141,6 @@ Moves a camera downward by the delta amount.
 ====Parameters====
    * _camera_id_ - The ID of the camera.
    * _delta_ - The delta amount to move the camera downward.
-<BR>
-<BR>
-=== !GetCameraPosition(real camera_id) ===
-----
-Returns the current position of a camera.
-====Parameters====
-   * _camera_id_ - The ID of the camera.
-<BR>
-<BR>
-=== !SetCameraLookAt(real camera_id, real x, real y, real z) ===
-----
-Points a camera at the specificied location in world space.
-====Parameters====
-   * _camera_id_ - The ID of the camera.
-   * _x_, _y_, _z_ - The position to look at.
 <BR>
 <BR>
 === !SetCameraOrientation(real camera_id, real yaw, real pitch, real roll) ===
@@ -173,35 +203,6 @@ Rotates a camera anti-clockwise around it's local z axis.
 Returns a camera's current yaw in degrees.
 ====Parameters====
    * _camera_id_ - The ID of the camera.
-<BR>
-<BR>
-=== SetCameraFOV(real camera_id, real angle) ===
-----
-Sets a camera's Field Of View (FOV). Typical values are between 45 and 60. 
-====Parameters====
-   * _camera_id_ - The ID of the camera.
-   * _fov_ - The FOV in degrees.
-<BR>
-<BR>
-=== !SetCameraProjectionType(real camera_id, real type) ===
-----
-Sets a camera's type of projection to use (orthographic or perspective).  Default is perspective.
-====Parameters====
-   * _camera_id_ - The ID of the camera.
-   * _type_ - The projection type.  Can be:
-      * global.PT_ORTHOGRAPHIC
-      * global.PT_PERSPECTIVE
-<BR>
-<BR>
-=== !SetCameraRenderType(real camera_id, real type) ===
-----
-Sets a camera's level of rendering detail. Every camera is set to render at full detail by default, that is with full texturing, lighting etc. This method lets you change that behavior, allowing you to make the camera just render a wire-frame view, for example. 
-====Parameters====
-   * _camera_id_ - The ID of the camera.
-   * _type_ - The render type.  Can be:
-      * global.PM_POINTS
-      * global.PM_WIREFRAME
-      * global.PM_SOLID
 <BR>
 <BR>
 === SetCameraLODBias(real camera_id, real factor) ===
