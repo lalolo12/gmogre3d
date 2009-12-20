@@ -160,9 +160,9 @@ You can create sky planes yourself using the standard mesh and entity methods, b
 ====Parameters====
    * _enable_ - True to enable the plane, false to disable it.
    * _material_name_ - The name of the material the plane will use.
-   * _scale_ - The scaling applied to the sky plane - higher values mean a bigger sky plane.
-   * _tiling_ - How many times to tile the texture across the sky. Applies to all texture layers.
-   * _distance_ - Optional distance in world coordinates from the camera to the plane. The default is normally OK.
+   * _scale_ - Optional scaling applied to the sky plane - higher values mean a bigger sky plane. The default is 1000 if not passed.
+   * _tiling_ - Optional number of times to tile the texture across the sky. Applies to all texture layers. The default is 10 if not passed.
+   * _distance_ - Optional distance in world coordinates from the camera to the plane. The default is 5000 if not passed.
    * _drawlast_ - Optional drawing order. If false, the dome is drawn before all other geometry in the scene, without updating the depth buffer. This is the safest rendering method since all other objects will always appear in front of the sky. However this is not the most efficient way if most of the sky is often occluded by other objects. If this is the case, you can set this parameter to true meaning it draws after all other geometry which can be an optimization - however you must ensure that the distance value is large enough that no objects will 'poke through' the sky when it is rendered. The default is false if not passed.
    * _bow_ - Optional bowing of the plane.  If zero, the plane will be completely flat. If above zero, the plane will be curved, allowing the sky to appear below camera level. Curved sky planes are similar to skydomes, but are more compatible with fog. The default is 0 if not passed.
    * _xsegments_, _ysegments_ - Optional number of segments the plane will have. This is most important when you are bowing the plane, but may also be useful if you need tessellation on the plane to perform per-vertex effects. The default is 1 if not passed.
