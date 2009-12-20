@@ -34,7 +34,7 @@ The instance created from this function won't actually do anything because on cr
 Creating a particle system does not make it a part of the scene. As with other visible objects, a particle system is not rendered until it is attached to a !SceneNode.
 ====Parameters====
    * _quota_ - The maximum number of particles to allow in this system.
-   * _group_ - The resource group which will be used to load dependent resources 
+   * _group_ - Optional resource group which will be used to load dependent resources.
 <BR>
 <BR>
 === !DestroyParticleSystem(real particle_system_id) ===
