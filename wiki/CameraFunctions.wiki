@@ -34,14 +34,6 @@ Sets a camera's position to look from, the position to look at, and the up vecto
    * _xto_, _yto_, _zto_ - The up vector.
 <BR>
 <BR>
-=== SetCameraFOV(real camera_id, real angle) ===
-----
-Sets a camera's Field Of View (FOV). Typical values are between 45 and 60. 
-====Parameters====
-   * _camera_id_ - The ID of the camera.
-   * _fov_ - The FOV in degrees.
-<BR>
-<BR>
 === !SetCameraProjectionType(real camera_id, real type) ===
 ----
 Sets a camera's type of projection to use (orthographic or perspective).  Default is perspective.
@@ -50,6 +42,14 @@ Sets a camera's type of projection to use (orthographic or perspective).  Defaul
    * _type_ - The projection type.  Can be:
       * global.PT_ORTHOGRAPHIC
       * global.PT_PERSPECTIVE
+<BR>
+<BR>
+=== SetCameraFOV(real camera_id, real angle) ===
+----
+Sets a camera's Field Of View (FOV). Typical values are between 45 and 60. 
+====Parameters====
+   * _camera_id_ - The ID of the camera.
+   * _fov_ - The FOV in degrees.
 <BR>
 <BR>
 === !SetCameraRenderType(real camera_id, real type) ===
