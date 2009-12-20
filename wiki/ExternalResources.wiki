@@ -21,5 +21,6 @@ Add your content here.  Format your content with:
    * [http://downloads.sourceforge.net/ogre/OgreMilkshapeExporter_v1.4.1.msi?download Milkshape 3D Exporter] - Exporter for Milkshape 3D.
    * [http://downloads.sourceforge.net/ogre/OgreXSIExporter6_v1.4.6p1.msi Softimage XSI v6 Exporter] - Exporter for Softimage XSI v6
 <BR>
-= Level Editors =
-   * [http://sourceforge.net/projects/ogrescenebuilde/files/ Ogitor] -  WYSWYG editor environment for OGRE
+= Editors =
+   * [http://sourceforge.net/projects/ogrescenebuilde/files/ Ogitor] -  WYSWYG world editor environment for OGRE
+   * [http://update.multiverse.net/downloads/third_party/ParticleAccelerator1.0.zip] - WYSWYG particle editor for OGRE
