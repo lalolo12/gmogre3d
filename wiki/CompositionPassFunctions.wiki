@@ -10,10 +10,10 @@ Set the type of composition pass.
 ====Parameters====
    * _pass_id_ - The ID of the composition pass.
    * _type_ - The type of composition pass.  Can be:
-      * _global.PT_CLEAR_ - Clear target to one color
-      * _global.PT_STENCIL_ - Set stencil operation
-      * _global.PT_RENDERSCENE_ - Render the scene or part of it
-      * _global.PT_RENDERQUAD_ - Render a full screen quad
+      * _global.PT_CLEAR_ - Clear target to one color.
+      * _global.PT_STENCIL_ - Set stencil operation.
+      * _global.PT_RENDERSCENE_ - Render the scene or part of it.
+      * _global.PT_RENDERQUAD_ - Render a full screen quad.
 <BR>
 <BR>
 === !SetCompositionPassIdentifier(real pass_id, real id) ===
