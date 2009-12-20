@@ -132,8 +132,8 @@ The material you use for the skybox can either contain layers which are single t
 ====Parameters====
    * _enable_ - True to enable the skybox, false to disable it.
    * _material_name_ - The name of the material the box will use.
-   * _distance_ - Distance in world coordinates from the camera to each plane of the box. The default is normally OK.
-   * _drawlast_ - If false, the box is drawn before all other geometry in the scene, without updating the depth buffer. This is the safest rendering method since all other objects will always appear in front of the sky. However this is not the most efficient way if most of the sky is often occluded by other objects. If this is the case, you can set this parameter to true meaning it draws after all other geometry which can be an optimization - however you must ensure that the distance value is large enough that no objects will 'poke through' the sky box when it is rendered. 
+   * _distance_ - Optional distance in world coordinates from the camera to each plane of the box. The default is 5000 if not passed.
+   * _drawlast_ - Optional drawing order. If false, the box is drawn before all other geometry in the scene, without updating the depth buffer. This is the safest rendering method since all other objects will always appear in front of the sky. However this is not the most efficient way if most of the sky is often occluded by other objects. If this is the case, you can set this parameter to true meaning it draws after all other geometry which can be an optimization - however you must ensure that the distance value is large enough that no objects will 'poke through' the sky box when it is rendered. The default is false if not passed.
 <BR>
 <BR>
 
@@ -145,10 +145,10 @@ Sky domes work well with 2D repeating textures like clouds. You can change the a
 ====Parameters====
    * _enable_ - True to enable the skydome, false to disable it.
    * _material_name_ - The name of the material the dome will use.
-   * _curvature_ - The curvature of the dome. Good values are between 2 and 65. Higher values are more curved leading to a smoother effect, lower values are less curved meaning more distortion at the horizons but a better distance effect.
-   * _tiling_ - How many times to tile the texture(s) across the dome.
-   * _distance_ - Distance in world coordinates from the camera to each plane of the box the dome is rendered on. The default is normally OK.
-   * _drawlast_ - If false, the dome is drawn before all other geometry in the scene, without updating the depth buffer. This is the safest rendering method since all other objects will always appear in front of the sky. However this is not the most efficient way if most of the sky is often occluded by other objects. If this is the case, you can set this parameter to true meaning it draws after all other geometry which can be an optimization - however you must ensure that the distance value is large enough that no objects will 'poke through' the sky when it is rendered. 
+   * _curvature_ - Optional curvature of the dome. Good values are between 2 and 65. Higher values are more curved leading to a smoother effect, lower values are less curved meaning more distortion at the horizons but a better distance effect. The default is 10 if not passed.
+   * _tiling_ - Optional number of times to tile the texture(s) across the dome. The default is 8 if not passed.
+   * _distance_ - Optional distance in world coordinates from the camera to each plane of the box the dome is rendered on. The default is 4000 if not passed.
+   * _drawlast_ - Optional drawing order. If false, the dome is drawn before all other geometry in the scene, without updating the depth buffer. This is the safest rendering method since all other objects will always appear in front of the sky. However this is not the most efficient way if most of the sky is often occluded by other objects. If this is the case, you can set this parameter to true meaning it draws after all other geometry which can be an optimization - however you must ensure that the distance value is large enough that no objects will 'poke through' the sky when it is rendered.  The default is false if not passed.
 <BR>
 <BR>
 
@@ -162,10 +162,10 @@ You can create sky planes yourself using the standard mesh and entity methods, b
    * _material_name_ - The name of the material the plane will use.
    * _scale_ - The scaling applied to the sky plane - higher values mean a bigger sky plane.
    * _tiling_ - How many times to tile the texture across the sky. Applies to all texture layers.
-   * _distance_ - Distance in world coordinates from the camera to the plane. The default is normally OK.
-   * _drawlast_ - If false, the dome is drawn before all other geometry in the scene, without updating the depth buffer. This is the safest rendering method since all other objects will always appear in front of the sky. However this is not the most efficient way if most of the sky is often occluded by other objects. If this is the case, you can set this parameter to true meaning it draws after all other geometry which can be an optimization - however you must ensure that the distance value is large enough that no objects will 'poke through' the sky when it is rendered.
-   * _bow_ - If zero, the plane will be completely flat (like previous versions. If above zero, the plane will be curved, allowing the sky to appear below camera level. Curved sky planes are simular to skydomes, but are more compatible with fog.
-   * _xsegments_, _ysegments_ - Determines the number of segments the plane will have to it. This is most important when you are bowing the plane, but may also be useful if you need tessellation on the plane to perform per-vertex effects. 
+   * _distance_ - Optional distance in world coordinates from the camera to the plane. The default is normally OK.
+   * _drawlast_ - Optional drawing order. If false, the dome is drawn before all other geometry in the scene, without updating the depth buffer. This is the safest rendering method since all other objects will always appear in front of the sky. However this is not the most efficient way if most of the sky is often occluded by other objects. If this is the case, you can set this parameter to true meaning it draws after all other geometry which can be an optimization - however you must ensure that the distance value is large enough that no objects will 'poke through' the sky when it is rendered. The default is false if not passed.
+   * _bow_ - Optional bowing of the plane.  If zero, the plane will be completely flat. If above zero, the plane will be curved, allowing the sky to appear below camera level. Curved sky planes are similar to skydomes, but are more compatible with fog. The default is 0 if not passed.
+   * _xsegments_, _ysegments_ - Optional number of segments the plane will have. This is most important when you are bowing the plane, but may also be useful if you need tessellation on the plane to perform per-vertex effects. The default is 1 if not passed.
 <BR>
 <BR>
 === !SetAmbientLight(real color) ===
