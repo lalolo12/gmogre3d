@@ -54,7 +54,7 @@ Creates a new local texture definition and returns the ID.
 Returns a local texture definition. 
 ====Parameters====
    * _technique_id_ - The ID of the technique.
-   * _def_index_ - The index of the local texture definition
+   * _def_index_ - The index of the local texture definition.
 <BR>
 <BR>
 === !GetNumCompositionTechniqueTextureDefinitions(real technique_id) ===
