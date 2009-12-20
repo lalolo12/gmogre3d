@@ -84,6 +84,8 @@ Sets a camera's position.
 === !GetCameraPosition(real camera_id) ===
 ----
 Returns the current position of a camera.
+
+Since GM cannot return 3 values in a single function call these coordinates are stored in temporary variables and can be retrieved by calling the GetX(), GetY(), and GetZ() functions.
 ====Parameters====
    * _camera_id_ - The ID of the camera.
 <BR>
@@ -165,6 +167,8 @@ Sets a camera's orientation (yaw, pitch, and roll).
 === !GetCameraOrientation(real camera_id) ===
 ----
 Returns a camera's current orientation (yaw, pitch, roll).
+
+Since GM cannot return 3 values in a single function call these coordinates are stored in temporary variables and can be retrieved by calling the GetYaw(), GetPitch(), and GetRoll() functions.
 ====Parameters====
    * _camera_id_ - The ID of the camera.
 <BR>
