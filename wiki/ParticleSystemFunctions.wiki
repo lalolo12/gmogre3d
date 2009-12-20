@@ -16,7 +16,7 @@ This function creates a new particle system instance based on the named template
 
 Each system created from a template takes the template's settings at the time of creation, but is completely separate from the template from there on. 
 
-Creating a particle system does not make it a part of the scene. As with other visible objects, a particle system is not rendered until it is attached to a SceneNode. 
+Creating a particle system does not make it a part of the scene. As with other visible objects, a particle system is not rendered until it is attached to a !SceneNode. 
 
 This is probably the more useful particle system creation method since it does not require manual setup of the system. Note that the initial quota is based on the template but may be changed later.
 ====Parameters====
@@ -29,9 +29,9 @@ Create an empty particle system.
 
 This function creates a new, blank particle system instance and returns the ID. It can be destroyed using the !DestroyParticleSystem function. 
 
-The instance created from this function won't actually do anything because on creation a particle system has no emitters. The caller should manipulate the instance through it's ParticleSystem function to actually create a real particle effect. 
+The instance created from this function won't actually do anything because on creation a particle system has no emitters. The caller should manipulate the instance through it's !ParticleSystem function to actually create a real particle effect. 
 
-Creating a particle system does not make it a part of the scene. As with other visible objects, a particle system is not rendered until it is attached to a SceneNode.
+Creating a particle system does not make it a part of the scene. As with other visible objects, a particle system is not rendered until it is attached to a !SceneNode.
 ====Parameters====
    * _quota_ - The maximum number of particles to allow in this system.
    * _group_ - The resource group which will be used to load dependent resources 
@@ -44,34 +44,191 @@ Destroys a particle system and removes it from the !SceneManager.
    * _particle_system_id_ - The ID of the particle system.
 <BR>
 <BR>
-=== !SetParticleSystemMaterial(real particle_system_id, string part_sys_name) ===
+=== !SetParticleSystemMaterial(real particle_system_id, string mat_name) ===
 ----
+Sets the name of the material to be used for a particle system.
+====Parameters====
+   * _particle_system_id_ - The ID of the particle system.
+   * _mat_name_ - The new name of the material to use for this particle system.
+<BR>
+<BR>
 === !SetParticleSystemQuota(real particle_system_id, real quota) ===
 ----
+Sets the maximum number of particles a system is allowed to have active at once.
+
+Particle systems all have a particle quota, i.e. a maximum number of particles they are allowed to have active at a time. This allows the application to set a keep particle systems under control should they be affected by complex parameters which alter their emission rates etc. If a particle system reaches it's particle quota, none of the emitters will be able to emit any more particles. As existing particles die, the spare capacity will be allocated equally across all emitters to be as consistent to the original particle system style as possible. 
+====Parameters====
+   * _particle_system_id_ - The ID of the particle system.
+   * _quota_ - The maximum number of particles the system is allowed to have.
+<BR>
+<BR>
 === !EnableParticleSystemIndividualCulling(real particle_system_id, real enable) ===
 ----
+Enables or disables whether culling tests particles individually as well as in a group.
+
+Particle sets are always culled as a whole group, based on a bounding box which encloses all particles in the set. For fairly localized sets, this is enough. However, you can optionally tell the set to also cull individual particles in the set, i.e. to test each individual particle before rendering. The default is not to do this. 
+
+This is useful when you have a large, fairly distributed set of particles, like maybe trees on a landscape. You probably still want to group them into more than one set (maybe one set per section of landscape), which will be culled coarsely, but you also want to cull the particles individually because they are spread out. Whilst you could have lots of single-tree sets which are culled separately, this would be inefficient to render because each tree would be issued as it's own rendering operation. 
+
+By calling this method with a parameter of true, you can have large particle sets which are spaced out and so get the benefit of batch rendering and coarse culling, but also have fine-grained culling so unnecessary rendering is avoided. 
+====Parameters====
+   * _particle_system_id_ - The ID of the particle system.
+   * _enable_ - If true, each particle is tested before being sent to the pipeline as well as the whole set having to pass the coarse group bounding test.
+<BR>
+<BR>
 === !EnableParticleSystemSorting(real particle_system_id, real enable) ===
 ----
-=== !EnableParticleSystemParticlesInLocalSpace(real particle_system_id, real enable) ===
+Enables or disables whether to sort particles according to the camera.
+
+Enabling sorting alters the order particles are sent to the renderer. When enabled, particles are sent to the renderer in order of furthest distance from the camera.
+====Parameters====
+   * _particle_system_id_ - The ID of the particle system.
+   * _enable_ - Whether to enable sorted according to the camera.
+<BR>
+<BR>
+=== !EnableParticleSystemKeepParticlesInLocalSpace(real particle_system_id, real enable) ===
 ----
+Sets whether particles (and any affector effects) remain relative to the node the particle system is attached to.
+
+By default particles are in world space once emitted, so they are not affected by movement in the parent node of the particle system. This makes the most sense when dealing with completely independent particles, but if you want to constrain them to follow local motion too, you can set this to true. 
+====Parameters====
+   * _particle_system_id_ - The ID of the particle system.
+   * _enable_ - Whether to keep particles in local space.
+<BR>
+<BR>
 === !SetParticleSystemNonVisibleTimeout(real particle_system_id, real timeout) ===
 ----
+Sets when the particle system should stop updating after it hasn't been visible for a while.
+
+By default, visible particle systems update all the time, even when not in view. This means that they are guaranteed to be consistent when they do enter view. However, this comes at a cost, updating particle systems can be expensive, especially if they are perpetual. 
+
+This option lets you set a 'timeout' on the particle system, so that if it isn't visible for this amount of time, it will stop updating until it is next visible. 
+====Parameters====
+   * _particle_system_id_ - The ID of the particle system.
+   * _timeout_ - The time after which the particle system will be disabled if it is no longer visible. 0 to disable the timeout and always update.
+<BR>
+<BR>
 === !FastForwardParticleSystem(real particle_system_id, real time, real interval) ===
 ----
+Fast-forwards this system by the required number of seconds.
+
+This function allows you to fast-forward a system so that it effectively looks like it has already been running for the time you specify. This is useful to avoid the 'startup sequence' of a system, when you want the system to be fully populated right from the start.
+====Parameters====
+   * _particle_system_id_ - The ID of the particle system.
+   * _time_ - The number of seconds to fast-forward by.
+   * _interval_ - The sampling interval used to generate particles, apply affectors etc. The lower this is the more realistic the fast-forward, but it takes more iterations to do it.
+<BR>
+<BR>
 === !SetParticleSystemSpeedFactor(real particle_system_id, real speed) ===
 ----
+Sets a 'speed factor' on this particle system, which means it scales the elapsed real time which has passed by this factor before passing it to the emitters, affectors, and the particle life calculation.
+
+An interesting side effect - if you want to create a completely manual particle system where you control the emission and life of particles yourself, you can set the speed factor to 0.0f, thus disabling normal particle emission, alteration, and death.
+====Parameters====
+   * _particle_system_id_ - The ID of the particle system.
+   * _speed_ - The speed factor.
+<BR>
+<BR>
 === !SetParticleSystemIterationInterval(real particle_system_id, real interval) ===
 ----
-=== !SetParticleSystemDimensions(real particle_system_id, real width, real height) ===
+Sets a 'iteration interval' on this particle system.
+
+The default Particle system update interval, based on elapsed frame time, will cause different behavior between low frame-rate and high frame-rate. By using this option, you can make the particle system update at a fixed interval, keeping the behavior the same no matter what frame-rate is. 
+
+When iteration interval is set to zero, it means the update occurs based on an elapsed frame time, otherwise each iteration will take place at the given interval, repeating until it has used up all the elapsed frame time.
+====Parameters====
+   * _particle_system_id_ - The ID of the particle system.
+   * _interval_ - The iteration interval, default to zero.
+<BR>
+<BR>
+=== !SetParticleSystemDefaultDimensions(real particle_system_id, real width, real height) ===
 ----
+Sets the default dimensions of the particles in a set.
+
+All particles in a set are created with these default dimensions. The set will render most efficiently if all the particles in the set are the default size. It is possible to alter the size of individual particles at the expense of extra calculation. See the Particle class for more info.
+====Parameters====
+   * _particle_system_id_ - The ID of the particle system.
+   * _width_, _height_ - The default particle dimensions.
+<BR>
+<BR>
 === !GetParticleSystemDefaultWidth(real particle_system_id) ===
 ----
+Returns the default width of the particles in a set.
+====Parameters====
+   * _particle_system_id_ - The ID of the particle system.
+<BR>
+<BR>
 === !GetParticleSystemDefaultHeight(real particle_system_id) ===
 ----
+Returns the default height of the particles in a set.
+====Parameters====
+   * _particle_system_id_ - The ID of the particle system.
+<BR>
+<BR>
+=== !AddParticleSystemEmitter(real particle_system_id, real type) ===
+----
+Adds an emitter to a particle system.
+====Parameters====
+   * _particle_system_id_ - The ID of the particle system.
+   * _type_ - The type of particle emitter.  Can be:
+      * global.PE_BOX
+      * global.PE_CYLINDER
+      * global.PE_ELLIPSOID
+      * global.PE_HOLLOW_ELLIPSOID
+      * global.PE_POINT
+      * global.PE_RING
+<BR>
+<BR>
+=== !GetNumParticleSystemEmitters(real particle_system_id) ===
+----
+Returns the number of emitters for a particle system. 
+====Parameters====
+   * _particle_system_id_ - The ID of the particle system.
+<BR>
+<BR>
+=== !GetParticleSystemEmitter(real particle_system_id, real index) ===
+----
+Retrieves an emitter by it's index (zero-based).
+
+Used to retrieve a pointer to an emitter for a particle system to procedurally change emission parameters etc. You should check how many emitters are registered against this system before calling this method with an arbitrary index using !GetNumParticleSystemEmitters.
+====Parameters====
+   * _particle_system_id_ - The ID of the particle system.
+   * _index_ - The emitter index.
+<BR>
+<BR>
+=== !RemoveParticleSystemEmitter(real particle_system_id, real index) ===
+----
+Removes an emitter from the system.
+
+Drops the emitter with the index specified from this system. You should check how many emitters are registered against this system before calling this method with an arbitrary index using !GetNumParticleSystemEmitters.
+====Parameters====
+   * _particle_system_id_ - The ID of the particle system.
+   * _index_ - The emitter index.
+<BR>
+<BR>
+=== !RemoveAllParticleSystemEmitters(real particle_system_id) ===
+----
+Removes all the emitters from this system. 
+====Parameters====
+   * _particle_system_id_ - The ID of the particle system.
+<BR>
+<BR>
 === !AttachParticleSystemToSceneNode(real particle_system_id, real scene_node_id) ===
 ----
+Attaches an particle system to the specified !SceneNode.
+====Parameters====
+   * _particle_system_id_ - The ID of the particle system.
+   * _scene_node_id_ - The ID of the !SceneNode.
+<BR>
+<BR>
 === !DetachParticleSystemFromSceneNode(real particle_system_id, real scene_node_id) ===
 ----
+Detaches an particle system from the specified !SceneNode.
+====Parameters====
+   * _particle_system_id_ - The ID of the particle system.
+   * _scene_node_id_ - The ID of the !SceneNode.
+<BR>
+<BR>
 === !SetParticleSystemRenderQueueGroup(real particle_system_id, real type) ===
 ----
 Sets the render queue group this object will be rendered through.
@@ -100,13 +257,10 @@ Render queues are grouped to allow you to more tightly control the ordering of r
 <BR>
 === !SetParticleSystemQueryFlags(real particle_system_id, real flags) ===
 ----
-=== !AddParticleSystemEmitter(real particle_system_id, string name) ===
-----
-=== !GetNumParticleSystemEmitters(real particle_system_id) ===
-----
-=== !GetParticleSystemEmitter(real particle_system_id, real index) ===
-----
-=== !RemoveParticleSystemEmitter(real particle_system_id, real index) ===
-----
-=== !RemoveAllParticleSystemEmitters(real particle_system_id) ===
-----
+Sets the query flags for this object.
+
+When performing a scene query, this entity will be included or excluded according to flags on the particle system and flags on the query. This is a bitwise value, so only when a bit on these flags is set, will it be included in a query asking for that flag. The meaning of the bits is application-specific.
+====Parameters====
+   * _particle_system_id_ - The ID of the particle system.
+   * _flags_ - The application specific flags.
+<BR>
