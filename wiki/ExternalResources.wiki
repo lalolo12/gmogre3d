@@ -23,4 +23,4 @@ Add your content here.  Format your content with:
 <BR>
 = Editors =
    * [http://sourceforge.net/projects/ogrescenebuilde/files/ Ogitor] -  WYSWYG world editor environment for OGRE
-   * [http://update.multiverse.net/downloads/third_party/ParticleAccelerator1.0.zip] - WYSWYG particle editor for OGRE
+   * [http://update.multiverse.net/downloads/third_party/ParticleAccelerator1.0.zip Particle Accelerator] - WYSWYG particle editor for OGRE
