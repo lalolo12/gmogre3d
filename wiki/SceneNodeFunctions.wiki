@@ -80,16 +80,6 @@ Scaling factors, unlike other transforms, are not always inherited by child node
    * _enable_ - Whether to inherit scale.
 <BR>
 <BR>
-=== !EnableSceneNodeInheritOrientation(real scene_node_id, real enable) ===
-----
-Tells the node whether it should inherit orientation from it's parent node.
-
-Orientations, unlike other transforms, are not always inherited by child nodes. Whether or not orientations affect the orientation of the child nodes depends on the !SetSceneNodeInheritOrientation option of the child. In some cases you want a orientating of a parent node to apply to a child node (e.g. where the child node is a part of the same object, so you want it to be the same relative orientation based on the parent's orientation), but not in other cases (e.g. where the child node is just for positioning another object, you want it to maintain it's own orientation). The default is to inherit as with other transforms. 
-====Parameters====
-   * _scene_node_id_ - The ID of the child scene node.
-   * _enable_ - Whether to inherit orientation.
-<BR>
-<BR>
 === !SetSceneNodeScale(real scene_node_id, real x, real z, real y) ===
 ----
 Sets the scaling factor applied to a scene node.
@@ -176,25 +166,16 @@ Moves a scene node downward by the delta amount.
    * _delta_ - The delta amount to move the scene node downward.
 <BR>
 <BR>
-=== !SetSceneNodeOrientation(real scene_node_id, real yaw, real pitch, real roll) ===
+=== !TranslateSceneNode(real scene_node_id, real x, real y, real z, real relative_type) ===
 ----
-Sets a scene node's orientation (yaw, pitch, and roll). 
-
-Orientations, unlike other transforms, are not always inherited by child nodes. Whether or not orientations affect the orientation of the child nodes depends on the !EnableSceneNodeInheritOrientation option of the child. In some cases you want a orientating of a parent node to apply to a child node (e.g. where the child node is a part of the same object, so you want it to be the same relative orientation based on the parent's orientation), but not in other cases (e.g. where the child node is just for positioning another object, you want it to maintain it's own orientation). The default is to inherit as with other transforms. 
+Moves a scene node along the Cartesian axes, i.e. along world x,y,z.
 ====Parameters====
    * _scene_node_id_ - The ID of the scene node.
-   * _yaw_ - Rotates the scene node anti-clockwise around it's local z axis.
-   * _pitch_ - Pitches the scene node up/down anti-clockwise around it's local y axis.
-   * _roll_ - Rolls the scene node anti-clockwise, around it's local x axis. 
-<BR>
-<BR>
-=== !GetSceneNodeOrientation(real scene_node_id) ===
-----
-Retrieves the orientation of a scene node.
-
-Since GM cannot return 3 values in a single function call these coordinates are stored in temporary variables and can be retrieved by calling the !GetYaw(), !GetPitch(), and !GetRoll() functions.
-====Parameters====
-   * _scene_node_id_ - The ID of the scene node.
+   * _x_, _y_, _z_ - The translation values.
+   * _relative_type_ - The space in which the translation is relative to.  Can be:
+     * global.TS_LOCAL
+     * global.TS_PARENT
+     * global.TS_WORLD
 <BR>
 <BR>
 === !SetSceneNodeDirection(real scene_node_id, real x, real y, real z, real relative_type) ===
@@ -223,26 +204,37 @@ Set's the scene node's orientation to look at a point in space.
      * global.TS_WORLD
 <BR>
 <BR>
-=== !RollSceneNode(real scene_node_id, real degrees, real relative_type) ===
+=== !EnableSceneNodeInheritOrientation(real scene_node_id, real enable) ===
 ----
-Rotate the node around the X-axis.
-====Parameters====
-   * _scene_node_id_ - The ID of the scene node.
-   * _degrees_ - The number of degrees to roll the scene node.
-   * _relative_type_ - The space in which the rotation should occur.  Can be:
-     * global.TS_LOCAL
-     * global.TS_PARENT
-     * global.TS_WORLD
-<BR>
-<BR>
-=== !GetSceneNodeRoll(real scene_node_id) ===
-----
-Retrieves the current rotation around the X-axis.
-====Parameters====
-   * _scene_node_id_ - The ID of the scene node.
-<BR>
-<BR>
+Tells the node whether it should inherit orientation from it's parent node.
 
+Orientations, unlike other transforms, are not always inherited by child nodes. Whether or not orientations affect the orientation of the child nodes depends on the !SetSceneNodeInheritOrientation option of the child. In some cases you want a orientating of a parent node to apply to a child node (e.g. where the child node is a part of the same object, so you want it to be the same relative orientation based on the parent's orientation), but not in other cases (e.g. where the child node is just for positioning another object, you want it to maintain it's own orientation). The default is to inherit as with other transforms. 
+====Parameters====
+   * _scene_node_id_ - The ID of the child scene node.
+   * _enable_ - Whether to inherit orientation.
+<BR>
+<BR>
+=== !SetSceneNodeOrientation(real scene_node_id, real yaw, real pitch, real roll) ===
+----
+Sets a scene node's orientation (yaw, pitch, and roll). 
+
+Orientations, unlike other transforms, are not always inherited by child nodes. Whether or not orientations affect the orientation of the child nodes depends on the !EnableSceneNodeInheritOrientation option of the child. In some cases you want a orientating of a parent node to apply to a child node (e.g. where the child node is a part of the same object, so you want it to be the same relative orientation based on the parent's orientation), but not in other cases (e.g. where the child node is just for positioning another object, you want it to maintain it's own orientation). The default is to inherit as with other transforms. 
+====Parameters====
+   * _scene_node_id_ - The ID of the scene node.
+   * _yaw_ - Rotates the scene node anti-clockwise around it's local z axis.
+   * _pitch_ - Pitches the scene node up/down anti-clockwise around it's local y axis.
+   * _roll_ - Rolls the scene node anti-clockwise, around it's local x axis. 
+<BR>
+<BR>
+=== !GetSceneNodeOrientation(real scene_node_id) ===
+----
+Retrieves the orientation of a scene node.
+
+Since GM cannot return 3 values in a single function call these coordinates are stored in temporary variables and can be retrieved by calling the !GetYaw(), !GetPitch(), and !GetRoll() functions.
+====Parameters====
+   * _scene_node_id_ - The ID of the scene node.
+<BR>
+<BR>
 === !YawSceneNode(real scene_node_id, real degrees, real relative_type) ===
 ----
 Rotate the node around the Z-axis.
@@ -281,6 +273,25 @@ Retrieves the current rotation around the Y-axis.
    * _scene_node_id_ - The ID of the scene node.
 <BR>
 <BR>
+=== !RollSceneNode(real scene_node_id, real degrees, real relative_type) ===
+----
+Rotate the node around the X-axis.
+====Parameters====
+   * _scene_node_id_ - The ID of the scene node.
+   * _degrees_ - The number of degrees to roll the scene node.
+   * _relative_type_ - The space in which the rotation should occur.  Can be:
+     * global.TS_LOCAL
+     * global.TS_PARENT
+     * global.TS_WORLD
+<BR>
+<BR>
+=== !GetSceneNodeRoll(real scene_node_id) ===
+----
+Retrieves the current rotation around the X-axis.
+====Parameters====
+   * _scene_node_id_ - The ID of the scene node.
+<BR>
+<BR>
 === !RotateSceneNode(real scene_node_id, real x, real y, real z, real degrees, real relative_type) ===
 ----
 Rotate the node around an arbitrary axis.
@@ -294,17 +305,6 @@ Rotate the node around an arbitrary axis.
      * global.TS_WORLD
 <BR>
 <BR>
-=== !SetSceneNodeInitialState(real scene_node_id) ===
-----
-Sets the current transform of this node to be the 'initial state' ie that position / orientation / scale to be used as a basis for delta values used in keyframe animation.
-
-You never need to call this function unless you plan to animate this node. If you do plan to animate it, call this method once you've loaded the node with it's base state, ie the state on which all keyframes are based. 
-
-If you never call this function, the initial state is the identity transform, ie do nothing. 
-====Parameters====
-   * _scene_node_id_ - The ID of the scene node.
-<BR>
-<BR>
 === !ResetSceneNodeOrientation(real scene_node_id) ===
 ----
 Resets a scene nodes orientation (local axes as world axes, no rotation).
@@ -314,16 +314,15 @@ Orientations, unlike other transforms, are not always inherited by child nodes. 
    * _scene_node_id_ - The ID of the scene node.
 <BR>
 <BR>
-=== !TranslateSceneNode(real scene_node_id, real x, real y, real z, real relative_type) ===
+=== !SetSceneNodeInitialState(real scene_node_id) ===
 ----
-Moves a scene node along the Cartesian axes, i.e. along world x,y,z.
+Sets the current transform of this node to be the 'initial state' ie that position / orientation / scale to be used as a basis for delta values used in keyframe animation.
+
+You never need to call this function unless you plan to animate this node. If you do plan to animate it, call this method once you've loaded the node with it's base state, ie the state on which all keyframes are based. 
+
+If you never call this function, the initial state is the identity transform, ie do nothing. 
 ====Parameters====
    * _scene_node_id_ - The ID of the scene node.
-   * _x_, _y_, _z_ - The translation values.
-   * _relative_type_ - The space in which the translation is relative to.  Can be:
-     * global.TS_LOCAL
-     * global.TS_PARENT
-     * global.TS_WORLD
 <BR>
 <BR>
 === !ShowSceneNode(real scene_node_id) ===
