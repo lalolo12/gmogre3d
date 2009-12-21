@@ -186,7 +186,7 @@ Note that the 'up' vector for the orientation will automatically be recalculated
 ====Parameters====
    * _scene_node_id_ - The ID of the scene node.
    * _x_, _y_, _z_ - The components of the direction vector.
-   * _relative_type_ - The space in which this direction vector is expressed.  Can be:
+   * _relative_type_ - Optional space in which this direction vector is expressed. The default if not passed is TS_LOCAL. Can be:
      * global.TS_LOCAL
      * global.TS_PARENT
      * global.TS_WORLD 
@@ -198,7 +198,7 @@ Set's the scene node's orientation to look at a point in space.
 ====Parameters====
    * _scene_node_id_ - The ID of the scene node.
    * _x_, _y_, _z_ - The point to look at.
-   * _relative_type_ - The space in which the point resides.  Can be:
+   * _relative_type_ - Optional space in which the point resides. The default if not passed is TS_LOCAL. Can be:
      * global.TS_LOCAL
      * global.TS_PARENT
      * global.TS_WORLD
@@ -241,7 +241,7 @@ Rotate the node around the Z-axis.
 ====Parameters====
    * _scene_node_id_ - The ID of the scene node.
    * _degrees_ - The number of degrees to yaw the scene node.
-   * _relative_type_ - The space in which the rotation should occur.  Can be:
+   * _relative_type_ - Optional space in which the rotation should occur. The default if not passed is TS_LOCAL. Can be:
      * global.TS_LOCAL
      * global.TS_PARENT
      * global.TS_WORLD
@@ -260,7 +260,7 @@ Rotate the node around the Y-axis.
 ====Parameters====
    * _scene_node_id_ - The ID of the scene node.
    * _degrees_ - The number of degrees to pitch the scene node.
-   * _relative_type_ - The space in which the rotation should occur.  Can be:
+   * _relative_type_ - Optional space in which the rotation should occur. The default if not passed is TS_LOCAL. Can be:
      * global.TS_LOCAL
      * global.TS_PARENT
      * global.TS_WORLD
@@ -279,7 +279,7 @@ Rotate the node around the X-axis.
 ====Parameters====
    * _scene_node_id_ - The ID of the scene node.
    * _degrees_ - The number of degrees to roll the scene node.
-   * _relative_type_ - The space in which the rotation should occur.  Can be:
+   * _relative_type_ - Optional space in which the rotation should occur. The default if not passed is TS_LOCAL. Can be:
      * global.TS_LOCAL
      * global.TS_PARENT
      * global.TS_WORLD
@@ -299,7 +299,7 @@ Rotate the node around an arbitrary axis.
    * _scene_node_id_ - The ID of the scene node.
    * _x_, _y_, _z_ - The axis to rotate around.
    * _degrees_ - The number of degrees to rotate the scene node.
-   * _relative_type_ - The space in which the rotation should occur.  Can be:
+   * _relative_type_ - Optional space in which the rotation should occur. The default if not passed is TS_LOCAL. Can be:
      * global.TS_LOCAL
      * global.TS_PARENT
      * global.TS_WORLD
