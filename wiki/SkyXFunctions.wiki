@@ -1,27 +1,112 @@
-#summary Enter description here
+#summary Atmosphere manager
 
-
+=== Overview ===
+SkyX is a atmosphere manager with the following features:
+  * Sun, Moon and star field
+  * Layer clouds
+  * Full volumetric cloud system
+  * Ground atmospheric light absorbsion pass
+  * HDR and LDR support
+  * Shader Model 2.0 capable(HLSL for the moment)
+<BR>
+<BR>
 === CreateSkyX(real camera_id) ===
 ----
+Create a SkyX object.
+====Parameters====
+   * _camera_id_ - The ID of the camera the SkyX object will be using for display.
+<BR>
+<BR>
 === DestroySkyX(real skyx_id) ===
 ----
+Destroy a SkyX object.
+====Parameters====
+   * _skyx_id_ - The ID of the SkyX object.
+<BR>
+<BR>
 === EnableSkyXStarfield(real skyx_id, real enable) ===
 ----
+Enables or disables the displaying of a star field at night.
+====Parameters====
+   * _skyx_id_ - The ID of the SkyX object.
+<BR>
+<BR>
 === SetSkyXLightingMode(real skyx_id, real type) ===
 ----
+Sets the type of lightning to use.
+====Parameters====
+   * _skyx_id_ - The ID of the SkyX object.
+   * _type_ - The type of lighting to use.  Can be:
+      * _global.LM_LDR_ - Low dynamic range
+      * _global.LM_HDR_ - High dynamic range
+<BR>
+<BR>
 === SetSkyXTime(real skyx_id, real time_seconds) ===
 ----
+Sets the current time of day for a SkyX object.
+
+The time of day is used to position the sun in the sky, perform sunset/sunrise transformations, and to display the star field.
+====Parameters====
+   * _skyx_id_ - The ID of the SkyX object.
+   * _time_seconds_ - The time of day in seconds
+<BR>
+<BR>
 === UpdateSkyXTime(real skyx_id, real time_seconds) ===
 ----
+Adds the specified amount of time to the current time of day for a SkyX object.
+
+The time of day is used to position the sun in the sky, perform sunset/sunrise transformations, and to display the star field.
+====Parameters====
+   * _skyx_id_ - The ID of the SkyX object.
+   * _time_seconds_ - The amount of time, in seconds, to add.
+<BR>
+<BR>
 === SetSkyXSunriseHour(real skyx_id, real time_hour) ===
 ----
+Sets the time of day sunrises will occur.
+
+By default sunsets occur at 7:30.
+====Parameters====
+   * _skyx_id_ - The ID of the SkyX object.
+   * _time_hour_ - The hour for the sun to rise.
+<BR>
+<BR>
 === SetSkyXSunsetHour(real skyx_id, real time_hour) ===
 ----
-=== !AddCloudLayer(real skyx_id, real height, real scale real wind_dirx, real wind_diry, real time_mult, real distance_attenuation, real detail_attenuation, real normal_mult, real height_vol, real vol_displacement) ===
+Sets the time of day sunsets will occur.
+
+By default sunsets occur at 20:30.
+====Parameters====
+   * _skyx_id_ - The ID of the SkyX object.
+   * _time_hour_ - The hour for the sun to set.
+<BR>
+<BR>
+=== !AddSkyXCloudLayer(real skyx_id, real height, real scale, real wind_dirx, real wind_diry, real time_mult, real distance_attenuation, real detail_attenuation, real normal_mult, real height_vol, real vol_displacement) ===
 ----
-=== !RemoveCloudLayer(ty_real, ty_real) ===
+Adds a cloud layer to a SkyX object and returns the layer ID.
+====Parameters====
+   * _skyx_id_ - The ID of the SkyX object.
+   * _height_ - Optional cloud layer height. Defaults to 100 if not passed.
+   * _scale_ - Optional cloud layer scale. Defaults to 0.001 if not passed.
+   * _wind_dirx_ - Optional wind direction. Defaults to 1 if not passed.
+   * _wind_diry_ - Optional wind direction. Defaults to 1 if not passed.
+   * _time_mult_ - Optional time multiplier. Defaults to 0.125 if not passed.
+   * _distance_attenuation_ - Optional distance attenuation. Defaults to 0.05 if not passed.
+   * _detail_attenuation_ - Optional detail attenuation. Defaults to 1 if not passed.
+   * _normal_mult_ - Optional normal multiplier. Defaults to 2 if not passed.
+   * _height_vol_ - Optional height volume (for volumetric effects on the GPU). Defaults to 0.25 if not passed.
+   * _vol_displacement_ - Optional volume displacement (for volumetric effects on the GPU). Defaults to 0.01 if not passed.
+<BR>
+<BR>
+=== !RemoveSkyXCloudLayer(real skyx_id, real cloud_layer_id) ===
 ----
-=== !AddVolumetricClouds(real skyx_id) ===
+Removes a cloud layer from a SkyX object.
+====Parameters====
+   * _skyx_id_ - The ID of the SkyX object.
+   * _cloud_layer_id_ - The ID of the cloud layer.
+<BR>
+<BR>
+=== !AddSkyXVolumetricClouds(real skyx_id) ===
 ----
-=== !RemoveVolumetricClouds(real skyx_id) ===
+=== !RemoveSkyXVolumetricClouds(real skyx_id) ===
 ----
