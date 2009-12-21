@@ -48,7 +48,7 @@ Sets the current time of day for a SkyX object.
 The time of day is used to position the sun in the sky, perform sunset/sunrise transformations, and to display the star field.
 ====Parameters====
    * _skyx_id_ - The ID of the SkyX object.
-   * _time_seconds_ - The time of day in seconds
+   * _time_seconds_ - The time of day in seconds.
 <BR>
 <BR>
 === UpdateSkyXTime(real skyx_id, real time_seconds) ===
@@ -81,7 +81,7 @@ By default sunsets occur at 20:30.
    * _time_hour_ - The hour for the sun to set.
 <BR>
 <BR>
-=== !AddSkyXCloudLayer(real skyx_id, real height, real scale, real wind_dirx, real wind_diry, real time_mult, real distance_attenuation, real detail_attenuation, real normal_mult, real height_vol, real vol_displacement) ===
+=== AddSkyXCloudLayer(real skyx_id, real height, real scale, real wind_dirx, real wind_diry, real time_mult, real distance_attenuation, real detail_attenuation, real normal_mult, real height_vol, real vol_displacement) ===
 ----
 Adds a cloud layer to a SkyX object and returns the layer ID.
 ====Parameters====
@@ -98,7 +98,7 @@ Adds a cloud layer to a SkyX object and returns the layer ID.
    * _vol_displacement_ - Optional volume displacement (for volumetric effects on the GPU). Defaults to 0.01 if not passed.
 <BR>
 <BR>
-=== !RemoveSkyXCloudLayer(real skyx_id, real cloud_layer_id) ===
+=== RemoveSkyXCloudLayer(real skyx_id, real cloud_layer_id) ===
 ----
 Removes a cloud layer from a SkyX object.
 ====Parameters====
@@ -106,7 +106,7 @@ Removes a cloud layer from a SkyX object.
    * _cloud_layer_id_ - The ID of the cloud layer.
 <BR>
 <BR>
-=== !AddSkyXVolumetricClouds(real skyx_id) ===
+=== AddSkyXVolumetricClouds(real skyx_id) ===
 ----
-=== !RemoveSkyXVolumetricClouds(real skyx_id) ===
+=== RemoveSkyXVolumetricClouds(real skyx_id) ===
 ----
