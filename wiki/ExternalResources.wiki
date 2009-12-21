@@ -22,5 +22,5 @@ Add your content here.  Format your content with:
    * [http://downloads.sourceforge.net/ogre/OgreXSIExporter6_v1.4.6p1.msi Softimage XSI v6 Exporter] - Exporter for Softimage XSI v6
 <BR>
 = Editors =
-   * [http://sourceforge.net/projects/ogrescenebuilde/files/ Ogitor] -  WYSWYG world editor environment for OGRE
-   * [http://update.multiverse.net/downloads/third_party/ParticleAccelerator1.0.zip Particle Accelerator] - WYSWYG particle editor for OGRE
+   * [http://sourceforge.net/projects/ogrescenebuilde/files/ Ogitor] -  WYSIWYG world editor environment for OGRE
+   * [http://update.multiverse.net/downloads/third_party/ParticleAccelerator1.0.zip Particle Accelerator] - WYSIWYG particle editor for OGRE
