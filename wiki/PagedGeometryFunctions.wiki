@@ -17,27 +17,27 @@ The paged geometry works by loading only the geometry that is visible (or will s
 Always remember to call each !PagedGeometry's UpdatePagedGeometry() function every frame; otherwise the geometry you're trying to display will not appear correctly.
 <BR>
 <BR>
-=== CreatePagedGeometry(double cam_id, double page_size) ===
+=== !CreatePagedGeometry(double cam_id, double page_size) ===
 Creates a paged geometry object and passed back the ID.
 ====Parameters====
    * _camera_id_ - The ID of the camera that will be used for LOD calculations.
    * _page_size_ - The size of a single "page" of geometry. If your pages are too big, you may experience "hiccuping" during the game as these regions are loaded. However, regions that are too small may result in lower frame rates (depending on what detail levels you are using).  Also, using larger pages uses slightly less memory, although you should generally give performance precedence.
 <BR>
 <BR>
-=== DestroyPagedGeometry(real page_geometry_id) ===
+=== !DestroyPagedGeometry(real page_geometry_id) ===
 Destroys a paged geometry object.
 ====Parameters====
    * _paged_geometry_id_ - The ID of the paged geometry object.
 <BR>
 <BR>
-=== SetPagedGeometryCamera(real page_geometry_id, real camera_id) ===
+=== !SetPagedGeometryCamera(real page_geometry_id, real camera_id) ===
 Sets the camera to use when calculating LOD.
 ====Parameters====
    * _paged_geometry_id_ - The ID of the paged geometry object.
    * _camera_id_ - The ID of the camera object.
 <BR>
 <BR>
-=== SetPagedGeometryPageSize(real page_geometry_id, real size) ===
+=== !SetPagedGeometryPageSize(real page_geometry_id, real size) ===
 Sets the page size. 
 
 This sets the size of a single "page" of geometry. If your pages are too big, you may experience "hiccuping" during the game as these regions are loaded. However, regions that are too small may result in lower frame rates (depending on what detail levels you are using).
@@ -113,5 +113,18 @@ Sets the vertical tree sway magnitude.
    * _magnitude_ - The wind factor magnitude.
 <BR>
 <BR>
-=== SetPagedGeometryPageLoader(real page_geometry_id, real page_loader_id) ===
-=== UpdatePagedGeometry(real page_geometry_id) ===
+=== !SetPagedGeometryPageLoader(real page_geometry_id, real page_loader_id) ===
+Assigns a !PageLoader object for a !PagedGeometry. 
+
+When the page manager decides it should cache a certain region of geometry, it calls on your !TreeLoader2D, !TreeLoader3D, or !GrassLoader to do the job.
+====Parameters====
+   * _paged_geometry_id_ - The ID of the paged geometry object.
+   * _page_loader_id_ - The ID of the !TreeLoader2D, !TreeLoader3D, or !GrassLoader object.  
+<BR>
+<BR>
+=== !UpdatePagedGeometry(real page_geometry_id) ===
+Updates a !PagedGeometry object. 
+
+This function must be called each frame in order for the !PagedGeometry object to calculate LODs and perform paging. If this function is not called every frame, none of the geometry managed by this !PagedGeometry instance will appear (or if it does, it will appear incorrectly).
+<BR>
+<BR>
