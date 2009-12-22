@@ -89,7 +89,7 @@ Adds a !GrassPage LOD to the !PagedGeometry object.
 
 On it's own, a plain !PagedGeometry object can't display anything. It needs you to add detail levels to it with this function. This way, you can easily customize the behavior of the !PagedGeometry.
 
-!WindBatchPage is almost identical to BatchPage, except it includes additional
+!WindBatchPage is almost identical to !BatchPage, except it includes additional
 code to support a hardware accelerated wind animation technique (through a vertex shader).
 ====Parameters====
    * _paged_geometry_id_ - The ID of the paged geometry object.
