@@ -1,10 +1,92 @@
 #summary A PageLoader-derived object you can use with PagedGeometry to easily place trees on your terrain.
 
 === Introduction ===
-Using a TreeLoader is simple - simply create an instance, attach it to your !PagedGeometry object with SetPagedGeometryPageLoader(), and add your trees.
+Using a TreeLoader is simple - simply create an instance, attach it to your !PagedGeometry object with !SetPagedGeometryPageLoader(), and add your trees.
 
 To add trees, just call AddTreeLoader3DTree(), supplying the appropriate parameters. You may notice that TreeLoader3D restricts trees to uniform scale and yaw rotation. This is done to conserve memory; TreeLoader3D packs trees into memory as efficiently as possible, taking only 10 bytes per tree. This means 1 million trees takes 9.53 MB of RAM (additionally, adding 1 million trees takes less than a second).
 
 Note that using TreeLoader2D uses 40% less memory than TreeLoader3D.
 <BR>
+<BR>
+=== CreateTreeLoader3D(double page_geometry_id, double left, double top, double right, double bottom) ===
+----
+Creates a new TreeLoader3D object and returns the ID.
+====Parameters====
+   * _page_geometry_id_ - The ID of the !PagedGeometry object.
+   * _left_, _top_, _right_, _bottom - The rectangular boundary in which all trees will be placed.
+<BR>
+<BR>
+=== AddTreeLoader3DTree(double tree_loader_id, double entity_id, double x, double y, double z, double yaw, double scale) ===
+----
+Adds an entity to the scene with the specified location, rotation, and scale.  
+
+While TreeLoader3D allows you to provide full 3-dimensional x/y/z coordinates, you are restricted to only yaw rotation, and only uniform scale.
+
+By default, scale values may not exceed 2.0. If you need to use higher scale values than 2.0, use SetTreeLoader3DMaxScale() to reconfigure the maximum.
+====Parameters====
+   * _tree_loader_id_ - The ID of the TreeLoader3D object.
+   * _entity_id_ - The entity to be added to the scene.  
+   * _x_, _y_, _z_ - The desired position of the tree.
+   * _yaw_ - The desired rotation around the vertical axis in degrees. 
+   * _scale_ - The desired scale of the entity.
+<BR>
+<BR>
+=== RemoveTreeLoader3DTrees(double tree_loader_id, double x, double y, double z, double radius) ===
+----
+Deletes trees within a certain radius of the given coordinates. 
+====Parameters====
+   * _tree_loader_id_ - The ID of the TreeLoader3D object.
+   * _x_, _y_, _z_ - The coordinate of the tree(s) to delete.
+   * _radius_ - The radius from the given coordinate where trees will be deleted . 
+   * _type_ - Optional type of tree(s) to delete.  By default this is set to 0 to delete all tree types. 
+<BR>
+<BR>
+=== SetTreeLoader3DMinScale(double tree_loader_id, double scale) ===
+----
+Sets the minimum tree scale value. 
+
+When calling AddTreeLoader3DTree() to add trees, the scale values you are allowed to use are restricted in the range of 0.0 - 2.0 by default. With this function, you can adjust the minimum scale you are allowed to use for trees. The closer this minimum value is to the maximum tree scale, the more precision there will be when storing trees with AddTreeLoader3DTree().
+
+Be sure to call this before adding any trees - otherwise adjusting this value will cause the size of the currently added trees to change.
+====Parameters====
+   * _tree_loader_id_ - The ID of the TreeLoader3D object.
+   * _scale_ - The desired scale.
+<BR>
+<BR>
+=== SetTreeLoader3DMaxScale(double tree_loader_id, double scale) ===
+----
+Sets the maximum tree scale value. 
+
+When calling AddTreeLoader3DTree() to add trees, the scale values you are allowed to use are restricted to 2.0 maximum by default. With this function, you can adjust the maximum scale you are allowed to use for trees. However, keep in mind that the higher the maximum scale is, the less precision there will be in storing the tree scales (since scale values are actually packed into a single byte).
+
+Be sure to call this before adding any trees - otherwise adjusting this value will cause the size of the currently added trees to change. 
+====Parameters====
+   * _tree_loader_id_ - The ID of the TreeLoader3D object.
+   * _scale_ - The desired scale.
+<BR>
+<BR>
+=== SetTreeLoader3DColorMap(double tree_loader_id, char *map_file) ===
+----
+Gets a pointer to the color map being used. 
+
+You can use this function to access the internal color map object used by the TreeLoader3D. Through this object you can directly manipulate the pixels of the color map, among other things.
+
+Note that although you can edit the color map in real-time through this class, the changes won't be uploaded to your video card until you call !ReloadPagedGeometry(). If you don't, the colors of the trees you see will remain unchanged. 
+====Parameters====
+   * _tree_loader_id_ - The ID of the TreeLoader3D object.
+   * _scale_ - The desired scale.
+<BR>
+<BR>
+=== SetTreeLoader3DColorMapFilter(double tree_loader_id, double type) ===
+----
+Sets the filtering mode used for the color map. 
+
+This function can be used to set the filtering mode used for your tree color map. By default, no filtering is used (MAPFILTER_NONE). If you enable bilinear filtering by using MAPFILTER_BILINEAR, the resulting tree coloration may appear more smooth (less pixelated), depending on the resolution of your color map.
+
+MAPFILTER_BILINEAR is slightly slower than MAPFILTER_NONE, so don't use it unless you notice considerable pixelation.
+====Parameters====
+   * _tree_loader_id_ - The ID of the TreeLoader3D object.
+   * _type_ - The map filter type.  Can be:
+      * global.MAPFILTER_NONE
+      * global.MAPFILTER_BILINEAR
 <BR>
