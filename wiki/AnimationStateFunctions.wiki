@@ -97,7 +97,7 @@ Sets the time position for an animation.
 <BR>
 === !GetAnimationStateTimePosition(real animation_state_id) ===
 ----
-Gets the time position for an animation. 
+Returns the time position for an animation. 
 ====Parameters====
    * _animation_state_id_ - The ID of the animation state.
 <BR>
