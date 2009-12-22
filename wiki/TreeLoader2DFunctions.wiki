@@ -70,7 +70,7 @@ Gets a pointer to the color map being used.
 
 You can use this function to access the internal color map object used by the TreeLoader2D. Through this object you can directly manipulate the pixels of the color map, among other things.
 
-Note that although you can edit the color map in real-time through this class, the changes won't be uploaded to your video card until you call ReloadPagedGeometry(). If you don't, the colors of the trees you see will remain unchanged. 
+Note that although you can edit the color map in real-time through this class, the changes won't be uploaded to your video card until you call !ReloadPagedGeometry(). If you don't, the colors of the trees you see will remain unchanged. 
 ====Parameters====
    * _tree_loader_id_ - The ID of the TreeLoader2D object.
    * _scale_ - The desired scale.
