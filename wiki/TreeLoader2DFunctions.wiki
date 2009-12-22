@@ -64,7 +64,7 @@ Be sure to call this before adding any trees - otherwise adjusting this value wi
    * _scale_ - The desired scale.
 <BR>
 <BR>
-=== SetTreeLoader2DColorMap(double tree_loader_id, char *map_file) ===
+=== SetTreeLoader2DColorMap(double tree_loader_id, string map_file) ===
 ----
 Gets a pointer to the color map being used. 
 
