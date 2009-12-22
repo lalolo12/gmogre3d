@@ -10,11 +10,11 @@ Creates a viewport.
 
 A viewport is the rectangle into which rendering output is sent. The parameters are only required if you wish to add more than one viewport. 
 ====Parameters====
-   * _zorder_ - The relative order of the viewport with others (allows overlapping viewports i.e. picture-in-picture). Higher ZOrders are on top of lower ones. The actual number is irrelevant, only the relative ZOrder matters (you can leave gaps in the numbering).
-   * _left_ - The position of the left of the viewport, in pixels.
-   * _top_ - The position of the top of the viewport, in pixels.
-   * _width_ - The width of the viewport, in pixels.
-   * _height_ - The height of the viewport, in pixels.
+   * _zorder_ - Optional relative order of the viewport with others (allows overlapping viewports i.e. picture-in-picture). Higher ZOrders are on top of lower ones. The actual number is irrelevant, only the relative ZOrder matters (you can leave gaps in the numbering). Defaults to 0 if not passed.
+   * _left_ - Optional position of the left of the viewport, in pixels. Defaults to 0 if not passed.
+   * _top_ - Optional position of the top of the viewport, in pixels. Defaults to 0 if not passed.
+   * _width_ - Optional width of the viewport, in pixels. Defaults to window_get_width() if not passed.
+   * _height_ - Optional height of the viewport, in pixels. Defaults to window_get_height() if not passed.
 <BR>
 <BR>
 === !DestroyViewport(real viewport_id) ===
