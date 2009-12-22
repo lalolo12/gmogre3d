@@ -13,7 +13,7 @@ Note that using TreeLoader2D uses 40% less memory than TreeLoader3D.
 Creates a new TreeLoader3D object and returns the ID.
 ====Parameters====
    * _page_geometry_id_ - The ID of the !PagedGeometry object.
-   * _left_, _top_, _right_, _bottom - The rectangular boundary in which all trees will be placed.
+   * _left_, _top_, _right_, _bottom_ - The rectangular boundary in which all trees will be placed.
 <BR>
 <BR>
 === AddTreeLoader3DTree(double tree_loader_id, double entity_id, double x, double y, double z, double yaw, double scale) ===
