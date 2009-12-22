@@ -1,0 +1,21 @@
+#summary A PageLoader-derived object you can use with PagedGeometry to easily place trees on your terrain.
+
+= Introduction =
+!TreeLoader2D provides you with an easy way to add trees to your scene. Using !TreeLoader2D is simple - simply create an instance, attach it to your !PagedGeometry object with !SetPagedGeometryPageLoader(), and add your trees.
+
+To add trees, just call AddTreeLoader2DTree(), supplying the appropriate parameters. You may notice that TreeLoader2D restricts trees to uniform scale, yaw rotation, and a position value with no vertical component. This is done to conserve memory; TreeLoader2D packs trees into memory as efficiently as possible, taking only 6 bytes per tree. This means 1 million trees only takes 5.72 MB of RAM (additionally, adding 1 million trees takes less than a second).
+<BR>
+<BR>
+=== CreateTreeLoader2D(double page_geometry_id, double left, double top, double right, double bottom) ===
+Creates a new TreeLoader2D object and returns the ID.
+====Parameters====
+   * _page_geometry_id_ - The ID of the !PagedGeometry object.
+   * _left_, _top_, _right_, _bottom - The rectangular boundary in which all trees will be placed.
+<BR>
+<BR>
+=== AddTreeLoader2DTree(double tree_loader_id, double entity_id, double x, double z, double yaw, double scale) ===
+=== RemoveTreeLoader2DTrees(double tree_loader_id, double x, double z, double y, double radius) ===
+=== SetTreeLoader2DMinScale(double tree_loader_id, double scale) ===
+=== SetTreeLoader2DMaxScale(double tree_loader_id, double scale) ===
+=== SetTreeLoader2DColorMap(double tree_loader_id, char *map_file) ===
+=== SetTreeLoader2DColorMapFilter(double tree_loader_id, double type) ===
