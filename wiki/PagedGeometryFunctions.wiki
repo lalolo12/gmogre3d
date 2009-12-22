@@ -128,3 +128,13 @@ Updates a !PagedGeometry object.
 This function must be called each frame in order for the !PagedGeometry object to calculate LODs and perform paging. If this function is not called every frame, none of the geometry managed by this !PagedGeometry instance will appear (or if it does, it will appear incorrectly).
 <BR>
 <BR>
+<BR>
+=== !ReloadGeometry() ===
+----
+Reloads all visible geometry. 
+
+If your !PageLoader changes it's output during runtime, you normally won't see the changes immediately (and in many cases, you will never see the changes). This function provides a way to reload the geometry to force the changes to take effect immediately.
+
+This function will cause ALL visible geometry to be reloaded during the next update. This can take up to several seconds, depending on the complexity of the current scene, so use this function only when absolutely necessary. 
+<BR>
+<BR>
