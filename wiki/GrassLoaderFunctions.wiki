@@ -22,9 +22,9 @@ Destroys a !GrassLoader object.
    * _grass_loader_id_ - The ID of the !GrassLoader object.
 <BR>
 <BR>
-=== !AddGrassLoaderLayer(real grass_loader_id, string mat_name) ===
+=== !CreateGrassLoaderLayer(real grass_loader_id, string mat_name) ===
 ----
-Adds a grass layer to the scene. 
+Creates a grass layer, adds it to the scene, and returns the grass layer ID.
 
 Since all grass is potentially infinite, it is not added like normal entities which have a specific position. Instead you add a grass "layer" to the scene. A grass layer is a "carpet" of a single type of grass that gets applied everywhere in your world. If you want multiple types of grass with different appearances, you'll have to add a multiple grass layers for each style.
 
@@ -34,7 +34,7 @@ Of course, a grass layer is not completely uniform. The !GrassLayer class contai
    * _mat_name_ - The initial grass material to use. 
 <BR>
 <BR>
-=== !RemoveGrassLoaderLayer(real grass_loader_id, real grass_layer_id) ===
+=== !DestroyGrassLoaderLayer(real grass_loader_id, real grass_layer_id) ===
 ----
 Removes and deletes a grass layer from the scene. 
 ====Parameters====
