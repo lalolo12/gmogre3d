@@ -57,6 +57,51 @@ Returns whether an animation state is set to loop or not.
    * _animation_state_id_ - The ID of the animation state.
 <BR>
 <BR>
+=== !SetAnimationStateWeight(real animation_state_id, real weight) ===
+----
+Sets the weight (influence) of an animation. 
+====Parameters====
+   * _animation_state_id_ - The ID of the animation state.
+   * _weight_ - The weight of the animation.
+<BR>
+<BR>
+=== !GetAnimationStateWeight(real animation_state_id) ===
+----
+Returns the weight (influence) of an animation. 
+====Parameters====
+   * _animation_state_id_ - The ID of the animation state.
+<BR>
+<BR>
+=== !SetAnimationStateLength(real animation_state_id, real length) ===
+----
+Sets the total length of an animation (may be shorter than whole animation). 
+====Parameters====
+   * _animation_state_id_ - The ID of the animation state.
+   * _length_ - The length of the animation.
+<BR>
+<BR>
+=== !GetAnimationStateLength(real animation_state_id) ===
+----
+Returns the total length of an animation (may be shorter than whole animation). 
+====Parameters====
+   * _animation_state_id_ - The ID of the animation state.
+<BR>
+<BR>
+=== !SetAnimationStateTimePosition(real animation_state_id, real pos) ===
+----
+Sets the time position for an animation. 
+====Parameters====
+   * _animation_state_id_ - The ID of the animation state.
+   * _pos_ - The time position of the animation.
+<BR>
+<BR>
+=== !GetAnimationStateTimePosition(real animation_state_id) ===
+----
+Gets the time position for an animation. 
+====Parameters====
+   * _animation_state_id_ - The ID of the animation state.
+<BR>
+<BR>
 === !AddAnimationStateTime(real animation_state_id, real time) ===
 ----
 Modifies an animation state's time position, adjusting for animation length.
@@ -65,13 +110,6 @@ This method loops at the edges if animation looping is enabled.
 ====Parameters====
    * _animation_state_id_ - The ID of the animation state.
    * _time_ - Delta time to add to the animation state.
-<BR>
-<BR>
-=== !GetAnimationStateLength(real animation_state_id) ===
-----
-Returns the total length of this animation (may be shorter than whole animation). 
-====Parameters====
-   * _animation_state_id_ - The ID of the animation state.
 <BR>
 <BR>
 === !CreateAnimationStateBlendMask(real animation_state_id, real blend_mask_size, real initial_weight) ===
