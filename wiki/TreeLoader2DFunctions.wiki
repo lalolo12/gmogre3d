@@ -1,7 +1,7 @@
 #summary A PageLoader-derived object you can use with PagedGeometry to easily place trees on your terrain.
 
 = Introduction =
-!TreeLoader2D provides you with an easy way to add trees to your scene. Using !TreeLoader2D is simple - simply create an instance, attach it to your !PagedGeometry object with !SetPagedGeometryPageLoader(), and add your trees.
+TreeLoader2D provides you with an easy way to add trees to your scene. Using TreeLoader2D is simple - simply create an instance, attach it to your !PagedGeometry object with !SetPagedGeometryPageLoader(), and add your trees.
 
 To add trees, just call AddTreeLoader2DTree(), supplying the appropriate parameters. You may notice that TreeLoader2D restricts trees to uniform scale, yaw rotation, and a position value with no vertical component. This is done to conserve memory; TreeLoader2D packs trees into memory as efficiently as possible, taking only 6 bytes per tree. This means 1 million trees only takes 5.72 MB of RAM (additionally, adding 1 million trees takes less than a second).
 <BR>
