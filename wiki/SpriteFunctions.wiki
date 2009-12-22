@@ -31,7 +31,7 @@ Sets the sprite material.
 ----
 Sets the metrics type used for the 2D coordinates to display a text object.
 ====Parameters====
-    * _sprite_id_ - The ID of the text.
+    * _sprite_id_ - The ID of the sprite.
     * _type_ - The type of metrics to use. Can be:
         * _global.GMM_RELATIVE_ - Positions and sizes are parametrics from 0.0 to 1.0.
         * _global.GMM_PIXELS_ - Positions and sizes are in absolute pixels.
@@ -42,7 +42,7 @@ Sets the metrics type used for the 2D coordinates to display a text object.
 ----
 Sets the dimensions for a sprite.
 ====Parameters====
-    * text_id - The ID of the text.
+    * _sprite_id_ - The ID of the sprite.
     * _width_, _height_ - The dimensions of the sprite.
 <BR>
 <BR>
@@ -50,7 +50,7 @@ Sets the dimensions for a sprite.
 ----
 Sets the 2D coordinates for a sprite.
 ====Parameters====
-    * text_id - The ID of the text.
+    * _sprite_id_ - The ID of the sprite.
     * _x_, _y_ - The 2D coordinates.
 <BR>
 <BR>
@@ -58,7 +58,7 @@ Sets the 2D coordinates for a sprite.
 ----
 Scales a sprite.
 ====Parameters====
-    * text_id - The ID of the text.
+    * _sprite_id_ - The ID of the sprite.
     * _x_, _y_ - The scaling factor. 
 <BR>
 <BR>
@@ -66,6 +66,6 @@ Scales a sprite.
 ----
 Rotates a sprite.
 ====Parameters====
-    * text_id - The ID of the text.
+    * _sprite_id_ - The ID of the sprite.
     * _degrees_ - The degrees to rotate the sprite.
 <BR>
