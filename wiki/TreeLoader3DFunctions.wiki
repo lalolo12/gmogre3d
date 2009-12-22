@@ -1,13 +1,10 @@
-#summary One-sentence summary of this page.
+#summary A PageLoader-derived object you can use with PagedGeometry to easily place trees on your terrain.
 
-= Introduction =
+=== Introduction ===
+Using a TreeLoader is simple - simply create an instance, attach it to your !PagedGeometry object with SetPagedGeometryPageLoader(), and add your trees.
 
-Add your content here.
+To add trees, just call AddTreeLoader3DTree(), supplying the appropriate parameters. You may notice that TreeLoader3D restricts trees to uniform scale and yaw rotation. This is done to conserve memory; TreeLoader3D packs trees into memory as efficiently as possible, taking only 10 bytes per tree. This means 1 million trees takes 9.53 MB of RAM (additionally, adding 1 million trees takes less than a second).
 
-
-= Details =
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+Note that using TreeLoader2D uses 40% less memory than TreeLoader3D.
+<BR>
+<BR>
