@@ -1,4 +1,4 @@
-#summary Specialised !KeyFrame which stores a full transform.
+#summary Specialized KeyFrame which stores a full transform.
 
 
 === !SetTransformKeyFrameTranslate(real key_frame_id, real x, real y, real z) ===
@@ -14,7 +14,6 @@ The translation factor affects how much the keyframe translates (moves) it's ani
 === !SetTransformKeyFrameScale(real key_frame_id, real x, real y, real z) ===
 ----
 Sets the scaling factor applied by this keyframe to the animable object at it's time index.
-
 ====Parameters====
    * _key_frame_id_ - The ID of the keyframe.
    * _x_, _y_, _z_ - The amount to scale by (beware of supplying zero values for any component of this vector, it will scale the object to zero dimensions).
