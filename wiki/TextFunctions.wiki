@@ -11,7 +11,7 @@ Create a text object used to display 2D text.
 ====Parameters====
    * _font_name_ - The unique font resource name for this text.
    * _txt_ - The text to display.
-   * _x_, _y_, _z_ - The 2D position to start drawing the text.
+   * _x_, _y_ - The 2D position to start drawing the text.
    * _color_ - The color of the text.
    * _alpha_ - The alpha transparency of the text.
 <BR>
