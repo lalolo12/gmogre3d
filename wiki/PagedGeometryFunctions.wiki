@@ -116,10 +116,10 @@ Sets the vertical tree sway magnitude.
 === !SetPagedGeometryPageLoader(real page_geometry_id, real page_loader_id) ===
 Assigns a !PageLoader object for a !PagedGeometry. 
 
-When the page manager decides it should cache a certain region of geometry, it calls on your !TreeLoader2D, !TreeLoader3D, or !GrassLoader to do the job.
+When the page manager decides it should cache a certain region of geometry, it calls on your TreeLoader2D, TreeLoader3D, or !GrassLoader to do the job.
 ====Parameters====
    * _paged_geometry_id_ - The ID of the paged geometry object.
-   * _page_loader_id_ - The ID of the !TreeLoader2D, !TreeLoader3D, or !GrassLoader object.  
+   * _page_loader_id_ - The ID of the TreeLoader2D, TreeLoader3D, or !GrassLoader object.  
 <BR>
 <BR>
 === !UpdatePagedGeometry(real page_geometry_id) ===
