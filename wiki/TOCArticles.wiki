@@ -63,6 +63,7 @@
       * [OverlayElementFunctions Overlay Element]
       * [PanelOverlayElementFunctions Panel Overlay Element]
       * [TextOverlayElementFunctions Text Overlay Element]
+    * [PagedGeometryFunctions Paged Geometry]
     * [ParticleSystemFunctions Particle System]
       * [ParticleEmitterFunctions Particle Emitter]
     * [PlaneFunctions Plane]
