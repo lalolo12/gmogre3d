@@ -1,0 +1,117 @@
+#summary PagedGeometry provides highly optimized methods for rendering massive amounts of small meshes covering a possibly infinite area.
+
+=== Overview ===
+!PagedGeometry provides highly optimized methods for rendering massive amounts
+of small meshes covering a possibly infinite area. This is especially well suited for dense forests and outdoor scenes, with millions of trees, bushes, grass, rocks, etc.
+
+Paged geometry gives you many advantages over plain entities, the main one being speed:
+With proper usage of detail levels, outdoor scenes managed by !PagedGeometry can
+be >100x faster than plain entities. Another advantage is that the geometry is paged; in
+other words, only entities which are immediately needed (to be displayed) are loaded.
+This allows you to expand the boundaries of your virtual world almost infinitely
+(only limited by floating point precision), providing the player with a more realistically
+scaled game area.
+
+The paged geometry works by loading only the geometry that is visible (or will soon be visible), to save memory. The !PagedGeometry object can display entities using many different methods (static geometry, impostors, etc.) What method is used depends on the entities distance from the camera, and how you configured these methods (see AddPagedGeometryXXXLOD() for more info about this).
+
+Always remember to call each !PagedGeometry's UpdatePagedGeometry() function every frame; otherwise the geometry you're trying to display will not appear correctly.
+<BR>
+<BR>
+=== CreatePagedGeometry(double cam_id, double page_size) ===
+Creates a paged geometry object and passed back the ID.
+====Parameters====
+   * _camera_id_ - The ID of the camera that will be used for LOD calculations.
+   * _page_size_ - The size of a single "page" of geometry. If your pages are too big, you may experience "hiccuping" during the game as these regions are loaded. However, regions that are too small may result in lower frame rates (depending on what detail levels you are using).  Also, using larger pages uses slightly less memory, although you should generally give performance precedence.
+<BR>
+<BR>
+=== DestroyPagedGeometry(real page_geometry_id) ===
+Destroys a paged geometry object.
+====Parameters====
+   * _paged_geometry_id_ - The ID of the paged geometry object.
+<BR>
+<BR>
+=== SetPagedGeometryCamera(real page_geometry_id, real camera_id) ===
+Sets the camera to use when calculating LOD.
+====Parameters====
+   * _paged_geometry_id_ - The ID of the paged geometry object.
+   * _camera_id_ - The ID of the camera object.
+<BR>
+<BR>
+=== SetPagedGeometryPageSize(real page_geometry_id, real size) ===
+Sets the page size. 
+
+This sets the size of a single "page" of geometry. If your pages are too big, you may experience "hiccuping" during the game as these regions are loaded. However, regions that are too small may result in lower frame rates (depending on what detail levels you are using).
+
+Also, using larger pages uses slightly less memory, although you should generally give performance precedence over memory usage. 
+====Parameters====
+   * _paged_geometry_id_ - The ID of the paged geometry object.
+   * _page_size_ - The size of a single "page" of geometry.
+<BR>
+<BR>
+=== AddPagedGeometryBatchPageLOD(real page_geometry_id, real max_range, real transition_length) ===
+Adds a !BatchPage LOD to the !PagedGeometry object. 
+
+On it's own, a plain !PagedGeometry object can't display anything. It needs you to add detail levels to it with this function. This way, you can easily customize the behavior of the !PagedGeometry.
+
+!BatchPage renders entities as !StaticGeometry.
+====Parameters====
+   * _paged_geometry_id_ - The ID of the paged geometry object.
+   * _max_range_ - The maximum distance this detail level will be used at.  
+   * _transition_length_ - Optional desired length of fade transitions. Defaults to 0 if not passed.
+<BR>
+<BR>
+=== AddPagedGeometryImpostorPageLOD(real page_geometry_id, real max_range, real transition_length) ===
+Adds a !ImpostorPage LOD to the !PagedGeometry object. 
+
+On it's own, a plain !PagedGeometry object can't display anything. It needs you to add detail levels to it with this function. This way, you can easily customize the behavior of the !PagedGeometry.
+
+!ImpostorPage renders entities as impostors (billboard images that look just like the real entity). 
+====Parameters====
+   * _paged_geometry_id_ - The ID of the paged geometry object.
+   * _max_range_ - The maximum distance this detail level will be used at.  
+   * _transition_length_ - Optional desired length of fade transitions. Defaults to 0 if not passed.
+<BR>
+<BR>
+=== AddPagedGeometryGrassPageLOD(real page_geometry_id, real max_range, real transition_length) ===
+Adds a !GrassPage LOD to the !PagedGeometry object. 
+
+On it's own, a plain !PagedGeometry object can't display anything. It needs you to add detail levels to it with this function. This way, you can easily customize the behavior of the !PagedGeometry.
+
+!GrassPage is a custom page type designed specifically for use with !GrassLoader object.
+====Parameters====
+   * _paged_geometry_id_ - The ID of the paged geometry object.
+   * _max_range_ - The maximum distance this detail level will be used at.  
+   * _transition_length_ - Optional desired length of fade transitions. Defaults to 0 if not passed.
+<BR>
+<BR>
+=== AddPagedGeometryWindBatchPageLOD(real page_geometry_id, real max_range, real transition_length) ===
+Adds a !GrassPage LOD to the !PagedGeometry object. 
+
+On it's own, a plain !PagedGeometry object can't display anything. It needs you to add detail levels to it with this function. This way, you can easily customize the behavior of the !PagedGeometry.
+
+!WindBatchPage is almost identical to BatchPage, except it includes additional
+code to support a hardware accelerated wind animation technique (through a vertex shader).
+====Parameters====
+   * _paged_geometry_id_ - The ID of the paged geometry object.
+   * _max_range_ - The maximum distance this detail level will be used at.  
+   * _transition_length_ - Optional desired length of fade transitions. Defaults to 0 if not passed.
+<BR>
+<BR>
+=== SetPagedGeometryWindFactorX(real page_geometry_id, real entity_id, real magnitude) ===
+Sets the horizontal tree sway magnitude on the specified entity.
+====Parameters====
+   * _paged_geometry_id_ - The ID of the paged geometry object.
+   * _entity_id_ - The ID of the entity to set the wind factor on.  
+   * _magnitude_ - The wind factor magnitude.
+<BR>
+<BR>
+=== SetPagedGeometryWindFactorZ(real page_geometry_id, real entity_id, real magnitude) ===
+Sets the vertical tree sway magnitude.
+====Parameters====
+   * _paged_geometry_id_ - The ID of the paged geometry object.
+   * _entity_id_ - The ID of the entity to set the wind factor on.  
+   * _magnitude_ - The wind factor magnitude.
+<BR>
+<BR>
+=== SetPagedGeometryPageLoader(real page_geometry_id, real page_loader_id) ===
+=== UpdatePagedGeometry(real page_geometry_id) ===
