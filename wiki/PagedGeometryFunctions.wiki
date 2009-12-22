@@ -123,6 +123,7 @@ When the page manager decides it should cache a certain region of geometry, it c
 <BR>
 <BR>
 === !UpdatePagedGeometry(real page_geometry_id) ===
+----
 Updates a !PagedGeometry object. 
 
 This function must be called each frame in order for the !PagedGeometry object to calculate LODs and perform paging. If this function is not called every frame, none of the geometry managed by this !PagedGeometry instance will appear (or if it does, it will appear incorrectly).
