@@ -29,6 +29,7 @@ Destroys a viewport.
 Destroys all viewports.
 <BR>
 <BR>
+<BR>
 === !SetViewportCamera(real viewport_id, real camera_id) ===
 ----
 Sets the mandatory viewport camera.
