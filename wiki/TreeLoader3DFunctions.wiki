@@ -16,6 +16,13 @@ Creates a new TreeLoader3D object and returns the ID.
    * _left_, _top_, _right_, _bottom_ - The rectangular boundary in which all trees will be placed.
 <BR>
 <BR>
+=== DestroyTreeLoader3D(double tree_loader_id) ===
+----
+Destroys a TreeLoader3D object.
+====Parameters====
+   * _tree_loader_id_ - The ID of the TreeLoader3D object.
+<BR>
+<BR>
 === AddTreeLoader3DTree(double tree_loader_id, double entity_id, double x, double y, double z, double yaw, double scale) ===
 ----
 Adds an entity to the scene with the specified location, rotation, and scale.  
