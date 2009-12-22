@@ -15,7 +15,7 @@ Creates a new !GrassLoader object and returns the ID.
    * _page_geometry_id_ - The ID of the !PagedGeometry object.
 <BR>
 <BR>
-=== DestroyGrassLoader(double grass_loader_id) ===
+=== !DestroyGrassLoader(double grass_loader_id) ===
 ----
 Destroys a !GrassLoader object.
 ====Parameters====
