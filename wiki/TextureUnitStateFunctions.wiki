@@ -97,7 +97,7 @@ This can be called multiple times for different values of _transform_type_, but 
 <BR>
 === !SetTextureUnitStateContentType(real texture_unit_id, real type) ===
 ----
-Set the type of content this TextureUnitState references.
+Set the type of content this !TextureUnitState references.
 
 The default is to reference a standard named texture, but this unit can also reference automated content like a shadow texture. 
 ====Parameters====
