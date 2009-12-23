@@ -1,24 +1,135 @@
-#summary Enter description here
+#summary Defines a single pass of a Technique (of a Material), i.e. a single rendering call.
 
+=== Overview ===
+Rendering can be repeated with many passes for more complex effects. Each pass is either a fixed-function pass (meaning it does not use a vertex or fragment program) or a programmable pass (meaning it does use either a vertex and fragment program, or both). 
 
+Programmable passes are complex to define, because they require custom programs and you have to set all constant inputs to the programs (like the position of lights, any base material colors you wish to use etc), but they do give you much total flexibility over the algorithms used to render your pass, and you can create some effects which are impossible with a fixed-function pass. On the other hand, you can define a fixed-function pass in very little time, and you can use a range of fixed-function effects like environment mapping very easily, plus your pass will be more likely to be compatible with older hardware. There are pros and cons to both, just remember that if you use a programmable pass to create some great effects, allow more time for definition and testing. 
+<BR>
+<BR>
 === !SetPassAmbientColor(real pass_id, real color) ===
 ----
+Sets the ambient color reflectance properties of this pass.
+
+The base color of a pass is determined by how much red, green and blue light is reflects (provided texture layer #0 has a blend mode other than LBO_REPLACE). This property determines how much ambient light (directionless global light) is reflected. The default is full white, meaning objects are completely globally illuminated. Reduce this if you want to see diffuse or specular light effects, or change the blend of colors to make the object have a base color other than white. 
+
+This setting has no effect if dynamic lighting is disabled (see !EnablePassLighting()), or if this is a programmable pass.
+====Parameters====
+   * _pass_id_ - The ID of the pass.
+   * _color_ - The ambient color.
+<BR>
+<BR>
 === !SetPassDiffuseColor(real pass_id, real color, real alpha) ===
 ----
+Sets the diffuse color reflectance properties of this pass.
+
+The base color of a pass is determined by how much red, green and blue light is reflects (provided texture layer #0 has a blend mode other than LBO_REPLACE). This property determines how much diffuse light (light from instances of the Light class in the scene) is reflected. The default is full white, meaning objects reflect the maximum white light they can from Light objects.
+
+This setting has no effect if dynamic lighting is disabled (see !EnablePassLighting()), or if this is a programmable pass. 
+====Parameters====
+   * _pass_id_ - The ID of the pass.
+   * _color_ - The diffuse color.
+   * _alpha_ - The alpha transparency.
+<BR>
+<BR>
 === !SetPassSpecularColor(real pass_id, real color, real alpha) ===
 ----
+Sets the specular color reflectance properties of this pass.
+
+The base color of a pass is determined by how much red, green and blue light is reflects (provided texture layer #0 has a blend mode other than LBO_REPLACE). This property determines how much specular light (highlights from instances of the Light class in the scene) is reflected. The default is to reflect no specular light. 
+
+The size of the specular highlights is determined by the separate 'shininess' property. 
+
+This setting has no effect if dynamic lighting is disabled (see !EnablePassLighting()), or if this is a programmable pass.
+====Parameters====
+   * _pass_id_ - The ID of the pass.
+   * _color_ - The specular color.
+   * _alpha_ - The alpha transparency.
+<BR>
+<BR>
 === !SetPassSelfIllumination(real pass_id, real color) ===
 ----
+Sets the amount of self-illumination an object has.
+
+If an object is self-illuminating, it does not need external sources to light it, ambient or otherwise. It's like the object has it's own personal ambient light. This property is rarely useful since you can already specify per-pass ambient light, but is here for completeness. 
+
+This setting has no effect if dynamic lighting is disabled (see !EnablePassLighting()), or if this is a programmable pass.
+====Parameters====
+   * _pass_id_ - The ID of the pass.
+   * _color_ - The self illumination color.
+<BR>
+<BR>
 === !SetPassShininess(real pass_id, real shininess) ===
 ----
+Sets the shininess of the pass, affecting the size of specular highlights.
+
+This setting has no effect if dynamic lighting is disabled (see !EnablePassLighting()), or if this is a programmable pass.
+====Parameters====
+   * _pass_id_ - The ID of the pass.
+   * _shininess_ - The shininess level.
+<BR>
+<BR>
+=== !SetPassDepthFunction(real pass_id, real enable) ===
+----
+Sets the function used to compare depth values when depth checking is on.
+
+If depth checking is enabled (see !EnablePassDepthCheck()) a comparison occurs between the depth value of the pixel to be written and the current contents of the buffer. This comparison is normally CMPF_LESS_EQUAL, i.e. the pixel is written if it is closer (or at the same distance) than the current contents. If you wish you can change this comparison using this method. 
+====Parameters====
+   * _pass_id_ - The ID of the pass.
+   * _func_ - The type of depth comparison function to use. Can be:
+      o global.CMPF_ALWAYS_FAIL
+      o global.CMPF_ALWAYS_PASS
+      o global.CMPF_LESS
+      o global.CMPF_LESS_EQUAL
+      o global.CMPF_EQUAL
+      o global.CMPF_NOT_EQUAL
+      o global.CMPF_GREATER_EQUAL
+      o global.CMPF_GREATER
+<BR>
+<BR>
 === !EnablePassDepthWrite(real pass_id, real enable) ===
 ----
+Enables or disables rendering with depth-buffer writing for a pass.
+
+If depth-buffer writing is on, whenever a pixel is written to the frame buffer the depth buffer is updated with the depth value of that new pixel, thus affecting future rendering operations if future pixels are behind this one. 
+
+If depth writing is off, pixels are written without updating the depth buffer Depth writing should normally be on but can be turned off when rendering static backgrounds or when rendering a collection of transparent objects at the end of a scene so that they overlap each other correctly. 
+====Parameters====
+   * _pass_id_ - The ID of the pass.
+   * _enable_ - Whether to enable or disable depth writing.
+<BR>
+<BR>
 === !EnablePassDepthCheck(real pass_id, real enable) ===
 ----
+Sets whether or not this pass renders with depth-buffer checking on or not.
+
+If depth-buffer checking is on, whenever a pixel is about to be written to the frame buffer the depth buffer is checked to see if the pixel is in front of all other pixels written at that point. If not, the pixel is not written. 
+
+If depth checking is off, pixels are written no matter what has been rendered before. Also see SetPassDepthFunction for more advanced depth check configuration. 
+====Parameters====
+    * pass_id - The ID of the composition pass.
+   * _enable_ - Whether to enable or disable depth checking.
+<BR>
+<BR>
 === !EnablePassLighting(real pass_id, real enable) ===
 ----
+Sets whether or not dynamic lighting is enabled.
+
+If true, dynamic lighting is performed on geometry with normals supplied, geometry without normals will not be displayed.  If false, no lighting is applied and all geometry will be full brightness.
+====Parameters====
+   * _pass_id - The ID of the pass.
+   * _enable_ - Whether to enable or disable lighting.
+<BR>
+<BR>
 === !EnablePassPointSizeAttenuation(real pass_id, real enable, real constant, real linear, real quadratic) ===
 ----
+=== !EnablePassPointSprites(real pass_id, real enable) ===
+----
+Enable or disable whether or not rendering points using OT_POINT_LIST will render point sprites (textured quads) or plain points (dots).
+====Parameters====
+   * _pass_id - The ID of the pass.
+   * _enable_ - Whether to enable or point sprites.
+<BR>
+<BR>
 === !SetPassPointSize(real pass_id, real size) ===
 ----
 === !SetPassSceneBlendingType(real pass_id, real type) ===
