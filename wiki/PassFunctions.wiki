@@ -122,6 +122,19 @@ If true, dynamic lighting is performed on geometry with normals supplied, geomet
 <BR>
 === !EnablePassPointSizeAttenuation(real pass_id, real enable, real constant, real linear, real quadratic) ===
 ----
+Enables or disables point size attenuation (how points are attenuated with distance).
+
+When performing point rendering or point sprite rendering, point size can be attenuated with distance. The equation for doing this is attenuation = 1 / (constant + linear x dist + quadratic x d^2). 
+
+For example, to disable distance attenuation (constant screen size) you would set constant to 1, and linear and quadratic to 0. A standard perspective attenuation would be 0, 1, 0 respectively. 
+
+The resulting size is clamped to the minimum and maximum point size.
+====Parameters====
+   * _pass_id - The ID of the pass.
+   * _enable_ - Whether to enable or disable point size attenuation.
+   * _constant_, _linear_, _quadratic_ - Parameters to the attenuation function defined above.
+<BR>
+<BR>
 === !EnablePassPointSprites(real pass_id, real enable) ===
 ----
 Enable or disable whether or not rendering points using OT_POINT_LIST will render point sprites (textured quads) or plain points (dots).
@@ -130,13 +143,63 @@ Enable or disable whether or not rendering points using OT_POINT_LIST will rende
    * _enable_ - Whether to enable or point sprites.
 <BR>
 <BR>
+=== !SetPassMinPointSize(real pass_id, real size) ===
+----
+Set the minimum point size, when point attenuation is in use.
+====Parameters====
+   * _pass_id - The ID of the pass.
+   * _size_ - The minimum point size.
+<BR>
+<BR>
+=== !SetPassMaxPointSize(real pass_id, real size) ===
+----
+Set the maximumpoint size, when point attenuation is in use.
+====Parameters====
+   * _pass_id - The ID of the pass.
+   * _size_ - The maximum point size.
+<BR>
+<BR>
 === !SetPassPointSize(real pass_id, real size) ===
 ----
+Sets the point size of a pass.
+
+This setting allows you to change the size of points when rendering a point list, or a list of point sprites. The interpretation of this command depends on the !SetPassPointSizeAttenuation option - if it is off (the default), the point size is in screen pixels, if it is on, it expressed as normalized screen coordinates (1.0 is the height of the screen) when the point is at the origin. 
+
+Note that some drivers have an upper limit on the size of points they support.  This can even vary between APIs on the same card! Don't rely on point sizes that cause the point sprites to get very large on screen, since they may get clamped on some cards. Upper sizes can range from 64 to 256 pixels. 
+====Parameters====
+   * _pass_id - The ID of the pass.
+   * _size_ - The point size.
+<BR>
+<BR>
 === !SetPassSceneBlendingType(real pass_id, real type) ===
 ----
+        SBT_TRANSPARENT_ALPHA - Make the object transparent based on the final alpha values in the texture
+        SBT_TRANSPARENT_COLOR -  Make the object transparent based on the color values in the texture (brighter = more opaque)
+        SBT_ADD - Add the texture values to the existing scene content
+	SBT_MODULATE - Multiply the 2 colors together
+        SBT_REPLACE - The default blend mode where source replaces destination
+
 === !CreatePassTextureUnitState(real pass_id) ===
 ----
+Creates a new !TextureUnitState object, adds it into the Pass, and returns the ID.
+
+This unit is is added on top of all previous units. 
+====Parameters====
+   * _pass_id - The ID of the pass.
+<BR>
+<BR>
 === !GetPassTextureUnitState(real pass_id, real tex_unit_index) ===
 ----
+This unit is is added on top of all previous units. 
+====Parameters====
+   * _pass_id - The ID of the pass.
+   * _tex_unit_index_ - The index of the !TextureUnitState object to retrieve.
+<BR>
+<BR>
 === !GetNumPassTextureUnitStates(real pass_id) ===
 ----
+Returns the number of unit states in a pass.
+====Parameters====
+   * _pass_id - The ID of the pass.
+<BR>
+<BR>
