@@ -41,5 +41,5 @@ Sets the alignment of a text object.
    * _text_overlay_elem_id_ - The ID of the text overlay element.
    * _type_ - The type of alignment to use. Can be:
       * _global.ALIGN_LEFT_ - The text is left aligned on the previously specified position.
-      * _global.ALIGN_RIGHT_ - The text is right aligned on the previously specified position.pixels.
+      * _global.ALIGN_RIGHT_ - The text is right aligned on the previously specified position.
       * _global.ALIGN_CENTER_ - The text is centered on the previously specified position. 
