@@ -82,6 +82,8 @@ Sets the position of the bone relative to it's parent.
 === !GetBonePosition(real bone_id) ===
 ----
 Gets the position of the bone relative to it's parent.
+
+Since GM cannot return 3 values in a single function call these coordinates are stored in temporary variables and can be retrieved by calling the GetX, GetY, and GetZ functions.
 ====Parameters====
    * _bone_id_ - The ID of the bone.
 <BR>
