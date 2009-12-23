@@ -1,6 +1,9 @@
-#summary Enter description here
+#summary Represents an approach to rendering a particular Material.
 
-
+=== Overview ===
+GMOgre will attempt to use the best technique supported by the active hardware, unless you specifically request a lower detail technique (say for distant rendering). 
+<BR>
+<BR>
 === !SetTechniqueAmbientColor(real technique_id, real color) ===
 ----
 === !SetTechniqueDiffuseColor(real technique_id, real color, real alpha) ===
