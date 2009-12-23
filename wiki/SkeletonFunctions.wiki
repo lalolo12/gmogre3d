@@ -40,7 +40,7 @@ Creates a new Animation object for animating this skeleton.
    * _length_ - The length of the animation in seconds.
 <BR>
 <BR>
-=== !GetSkeletonNumAnimation(real skeleton_id) ===
+=== !GetSkeletonNumAnimations(real skeleton_id) ===
 ----
 Returns the number of animations in this skeleton.
 ====Parameters====
