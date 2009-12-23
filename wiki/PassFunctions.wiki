@@ -106,7 +106,7 @@ If depth-buffer checking is on, whenever a pixel is about to be written to the f
 
 If depth checking is off, pixels are written no matter what has been rendered before. Also see SetPassDepthFunction for more advanced depth check configuration. 
 ====Parameters====
-    * pass_id - The ID of the composition pass.
+   * _pass_id_ - The ID of the composition pass.
    * _enable_ - Whether to enable or disable depth checking.
 <BR>
 <BR>
@@ -116,7 +116,7 @@ Sets whether or not dynamic lighting is enabled.
 
 If true, dynamic lighting is performed on geometry with normals supplied, geometry without normals will not be displayed.  If false, no lighting is applied and all geometry will be full brightness.
 ====Parameters====
-   * _pass_id - The ID of the pass.
+   * _pass_id_ - The ID of the pass.
    * _enable_ - Whether to enable or disable lighting.
 <BR>
 <BR>
@@ -130,7 +130,7 @@ For example, to disable distance attenuation (constant screen size) you would se
 
 The resulting size is clamped to the minimum and maximum point size.
 ====Parameters====
-   * _pass_id - The ID of the pass.
+   * _pass_id_ - The ID of the pass.
    * _enable_ - Whether to enable or disable point size attenuation.
    * _constant_, _linear_, _quadratic_ - Parameters to the attenuation function defined above.
 <BR>
@@ -139,7 +139,7 @@ The resulting size is clamped to the minimum and maximum point size.
 ----
 Enable or disable whether or not rendering points using OT_POINT_LIST will render point sprites (textured quads) or plain points (dots).
 ====Parameters====
-   * _pass_id - The ID of the pass.
+   * _pass_id_ - The ID of the pass.
    * _enable_ - Whether to enable or point sprites.
 <BR>
 <BR>
