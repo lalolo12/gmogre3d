@@ -33,11 +33,19 @@ Returns the number of bones in a skeleton.
 <BR>
 === !CreateSkeletonAnimation(real skeleton_id, string anim_name, real length) ===
 ----
-Creates a new Animation object for animating this skeleton.
+Creates a new Animation object for animating a skeleton.
 ====Parameters====
    * _skeleton_id_ - The ID of the skeleton.
-   * _anim_name_ - The name of this animation.
+   * _anim_name_ - The name of the animation.
    * _length_ - The length of the animation in seconds.
+<BR>
+<BR>
+=== !RemoveSkeletonAnimation(real skeleton_id, string anim_name) ===
+----
+Removes an Animation object from a skeleton.
+====Parameters====
+   * _skeleton_id_ - The ID of the skeleton.
+   * _anim_name_ - The name of the animation.
 <BR>
 <BR>
 === !GetSkeletonNumAnimations(real skeleton_id) ===
