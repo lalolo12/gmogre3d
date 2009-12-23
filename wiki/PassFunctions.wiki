@@ -76,14 +76,14 @@ If depth checking is enabled (see !EnablePassDepthCheck()) a comparison occurs b
 ====Parameters====
    * _pass_id_ - The ID of the pass.
    * _func_ - The type of depth comparison function to use. Can be:
-      o global.CMPF_ALWAYS_FAIL
-      o global.CMPF_ALWAYS_PASS
-      o global.CMPF_LESS
-      o global.CMPF_LESS_EQUAL
-      o global.CMPF_EQUAL
-      o global.CMPF_NOT_EQUAL
-      o global.CMPF_GREATER_EQUAL
-      o global.CMPF_GREATER
+      * global.CMPF_ALWAYS_FAIL
+      * global.CMPF_ALWAYS_PASS
+      * global.CMPF_LESS
+      * global.CMPF_LESS_EQUAL
+      * global.CMPF_EQUAL
+      * global.CMPF_NOT_EQUAL
+      * global.CMPF_GREATER_EQUAL
+      * global.CMPF_GREATER
 <BR>
 <BR>
 === !EnablePassDepthWrite(real pass_id, real enable) ===
