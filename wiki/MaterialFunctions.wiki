@@ -108,6 +108,7 @@ If you need more precision, retrieve the Technique and Pass instances and set th
 <BR>
 <BR>
 === !EnableMaterialLighting(string name, real enable) ===
+----
 Sets whether or not dynamic lighting is enabled for every Pass.
 
 For simplicity, this method allows you to set these properties for every current Technique, and for every current Pass within those Techniques. If you need more precision, retrieve the Technique and Pass instances and set the property there. 
