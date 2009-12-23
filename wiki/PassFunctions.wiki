@@ -104,9 +104,9 @@ Sets whether or not this pass renders with depth-buffer checking on or not.
 
 If depth-buffer checking is on, whenever a pixel is about to be written to the frame buffer the depth buffer is checked to see if the pixel is in front of all other pixels written at that point. If not, the pixel is not written. 
 
-If depth checking is off, pixels are written no matter what has been rendered before. Also see SetPassDepthFunction for more advanced depth check configuration. 
+If depth checking is off, pixels are written no matter what has been rendered before. Also see !SetPassDepthFunction for more advanced depth check configuration. 
 ====Parameters====
-   * _pass_id_ - The ID of the composition pass.
+   * _pass_id_ - The ID of the pass.
    * _enable_ - Whether to enable or disable depth checking.
 <BR>
 <BR>
