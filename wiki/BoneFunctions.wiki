@@ -123,26 +123,6 @@ Since GM cannot return 3 values in a single function call these coordinates are 
    * _bone_id_ - The ID of the bone.
 <BR>
 <BR>
-=== !RollBone(real bone_id, real degrees, real relative_type) ===
-----
-Rotate the bone around the X-axis.
-====Parameters====
-   * _bone_id_ - The ID of the bone.
-   * _degrees_ - The number of degrees to roll the bone.
-   * _relative_type_ - The space in which the rotation should occur.  Can be:
-     * global.TS_LOCAL
-     * global.TS_PARENT
-     * global.TS_WORLD
-<BR>
-<BR>
-=== !GetBoneRoll(real bone_id) ===
-----
-Retrieves the current rotation around the X-axis.
-====Parameters====
-   * _bone_id_ - The ID of the bone.
-<BR>
-<BR>
-
 === !YawBone(real bone_id, real degrees, real relative_type) ===
 ----
 Rotate the bone around the Z-axis.
@@ -177,6 +157,25 @@ Rotate the bone around the Y-axis.
 === !GetBonePitch(real bone_id) ===
 ----
 Retrieves the current rotation around the Y-axis.
+====Parameters====
+   * _bone_id_ - The ID of the bone.
+<BR>
+<BR>
+=== !RollBone(real bone_id, real degrees, real relative_type) ===
+----
+Rotate the bone around the X-axis.
+====Parameters====
+   * _bone_id_ - The ID of the bone.
+   * _degrees_ - The number of degrees to roll the bone.
+   * _relative_type_ - The space in which the rotation should occur.  Can be:
+     * global.TS_LOCAL
+     * global.TS_PARENT
+     * global.TS_WORLD
+<BR>
+<BR>
+=== !GetBoneRoll(real bone_id) ===
+----
+Retrieves the current rotation around the X-axis.
 ====Parameters====
    * _bone_id_ - The ID of the bone.
 <BR>
