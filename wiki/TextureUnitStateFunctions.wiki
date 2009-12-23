@@ -1,25 +1,73 @@
-#summary Enter description here
+#summary Represents the state of a single texture unit during a Pass of a Technique, of a Material.
 
+Texture units are pipelines for retrieving texture data for rendering onto your objects in the world. Using them is common to both the fixed-function and the programmable (vertex and fragment program) pipeline, but some of the settings will only have an effect in the fixed-function pipeline (for example, setting a texture rotation will have no effect if you use the programmable pipeline, because this is overridden by the fragment program). The effect of each setting as regards the 2 pipelines is commented in each setting. 
 
-=== !SetTextureUnitStateTextureName(real tex_unit_id, string tex_name) ===
+When I use the term 'fixed-function pipeline' I mean traditional rendering where you do not use vertex or fragment programs (shaders). Programmable pipeline means that for this pass you are using vertex or fragment programs. 
+<BR>
+<BR>
+=== !SetTextureUnitStateTextureName(real texture_unit_id, string tex_name) ===
 ----
-=== !SetTextureUnitStateCubicTextureNames(real tex_unit_id, string tex_name1, string tex_name2, string tex_name3, string tex_name4, string tex_name5, string tex_name6) ===
+Sets this texture layer to use a single texture, given the name of the texture to use on this layer.
+
+Applies to both fixed-function and programmable pipeline. 
+====Parameters====
+   * _texture_unit_id_ - The ID of the texture unit state object.
+   * _tex_name_ - The name of the texture.
+<BR>
+<BR>
+=== !SetTextureUnitStateCubicTextureNames(real texture_unit_id, string tex_name1, string tex_name2, string tex_name3, string tex_name4, string tex_name5, string tex_name6, real for_uvw) ===
 ----
-=== !SetTextureUnitStateTextureCoordSet(real tex_unit_id, real set) ===
+Sets a texture layer to use a combination of 6 texture maps, each one relating to a face of a cube.
+
+Cubic textures are made up of 6 separate texture images. Each one of these is an orthoganal view of the world with a FOV of 90 degrees and an aspect ratio of 1:1. You can generate these from 3D Studio by rendering a scene to a reflection map of a transparent cube and saving the output files. 
+
+Cubic maps can be used either for skyboxes (complete wrap-around skies, like space) or as environment maps to simulate reflections. The system deals with these 2 scenarios in different ways:
+   # For cubic environment maps, the 6 textures are combined into a single 'cubic' texture map which is then addressed using 3D texture coordinates. This is required because you don't know what face of the box you're going to need to address when you render an object, and typically you need to reflect more than one face on the one object, so all 6 textures are needed to be 'active' at once. Cubic environment maps are enabled by calling this method with the _for_uvw_ parameter set to true, and then calling EnableTextureUnitStateEnvironmentMap(id, true). Note that not all cards support cubic environment mapping.
+   # For skyboxes, the 6 textures are kept separate and used independently for each face of the skybox. This is done because not all cards support 3D cubic maps and skyboxes do not need to use 3D texture coordinates so it is simpler to render each face of the box with 2D coordinates, changing texture between faces. Skyboxes are created by calling !SetSkyBox. 
+
+Applies to both fixed-function and programmable pipeline. 
+====Parameters====
+   * _texture_unit_id_ - The ID of the texture unit state object.
+   * _tex_name1_ ... _tex_name6_ - The 6 texture names.
+   * _for_uvw_ - Optional parameter.  Set to true if you want a single 3D texture addressable with 3D texture coordinates rather than 6 separate textures. Useful for cubic environment mapping.  Defaults to false if not passed.
+<BR>
+<BR>
+=== !SetTextureUnitStateTextureCoordSet(real texture_unit_id, real set) ===
 ----
-=== !SetTextureUnitStateScrollAnimation(real tex_unit_id, real uspeed, real vspeed) ===
+Sets the index of the set of texture co-ords this layer uses.
+
+Default is 0 for all layers. Only change this if you have provided multiple texture co-ords per vertex.
+
+Applies to both fixed-function and programmable pipeline. 
+====Parameters====
+   * _texture_unit_id_ - The ID of the texture unit state object.
+   * _set_ - Index to use.
+<BR>
+<BR>
+=== !SetTextureUnitStateScrollAnimation(real texture_unit_id, real uspeed, real vspeed) ===
 ----
-=== !SetTextureUnitStateRotateAnimation(real tex_unit_id, real speed) ===
+Sets up an animated scroll for the texture layer.
+
+Useful for creating constant scrolling effects on a texture layer (for varying scrolls, see SetTextureUnitStateTransformAnimation). 
+
+This option has no effect in the programmable pipeline. 
+====Parameters====
+   * _texture_unit_id_ - The ID of the texture unit state object.
+   * _uspeed_ - The number of horizontal loops per second (+ve=moving right, -ve = moving left).
+   * _vspeed_ - The number of vertical loops per second (+ve=moving up, -ve= moving down).
+<BR>
+<BR>
+=== !SetTextureUnitStateRotateAnimation(real texture_unit_id, real speed) ===
 ----
-=== !SetTextureUnitStateContentType(real tex_unit_id, real type) ===
+=== !SetTextureUnitStateContentType(real texture_unit_id, real type) ===
 ----
-=== !SetTextureUnitStateColorOperation(real tex_unit_id, real type) ===
+=== !SetTextureUnitStateColorOperation(real texture_unit_id, real type) ===
 ----
-=== !EnableTextureUnitStateEnvironmentMap(real tex_unit_id, real enable, real type) ===
+=== !EnableTextureUnitStateEnvironmentMap(real texture_unit_id, real enable, real type) ===
 ----
-=== !SetTextureUnitStateTextureAddressingMode(real tex_unit_id, real type) ===
+=== !SetTextureUnitStateTextureAddressingMode(real texture_unit_id, real type) ===
 ----
-=== !SetTextureUnitStateTextureBorderColor(real tex_unit_id, real color) ===
+=== !SetTextureUnitStateTextureBorderColor(real texture_unit_id, real color) ===
 ----
-=== !SetTextureUnitStateTextureFiltering(real tex_unit_id, real type) ===
+=== !SetTextureUnitStateTextureFiltering(real texture_unit_id, real type) ===
 ----
