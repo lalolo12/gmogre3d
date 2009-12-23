@@ -11,7 +11,7 @@ Must be called before !StartEngine().
 <BR>
 === SetFSAA(real type, real level) ===
 ----
-Sets fullscreen anti-aliasing level and quality.
+Sets fullscreen anti-aliasing type and quality level.
 
 Must be called before !StartEngine().
 ====Parameters====
