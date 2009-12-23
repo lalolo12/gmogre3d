@@ -140,9 +140,9 @@ Note that base blending does not work well with alpha-rejected textures.
 ====Parameters====
    * _grass_layer_id_ - The ID of the grass layer.
    * _type_ - The technique type to use.  Can be:
-      * _global.GRASSTECH_QUAD_ - Grass constructed of randomly placed and rotated quads
-      * _global.GRASSTECH_CROSSQUADS_ - Grass constructed of two quads forming a "X" cross shape
-      * _global.GRASSTECH_SPRITE_ - Grass constructed of camera-facing billboard quads
+      * _global.GRASSTECH_QUAD_ - Grass constructed of randomly placed and rotated quads.
+      * _global.GRASSTECH_CROSSQUADS_ - Grass constructed of two quads forming a "X" cross shape.
+      * _global.GRASSTECH_SPRITE_ - Grass constructed of camera-facing billboard quads.
    * _blend_base_ - Whether or not grass base blending is enabled.
 <BR>
 <BR>
