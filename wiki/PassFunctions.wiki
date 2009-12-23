@@ -147,7 +147,7 @@ Enable or disable whether or not rendering points using OT_POINT_LIST will rende
 ----
 Set the minimum point size, when point attenuation is in use.
 ====Parameters====
-   * _pass_id - The ID of the pass.
+   * _pass_id_ - The ID of the pass.
    * _size_ - The minimum point size.
 <BR>
 <BR>
@@ -155,7 +155,7 @@ Set the minimum point size, when point attenuation is in use.
 ----
 Set the maximumpoint size, when point attenuation is in use.
 ====Parameters====
-   * _pass_id - The ID of the pass.
+   * _pass_id_ - The ID of the pass.
    * _size_ - The maximum point size.
 <BR>
 <BR>
@@ -167,32 +167,43 @@ This setting allows you to change the size of points when rendering a point list
 
 Note that some drivers have an upper limit on the size of points they support.  This can even vary between APIs on the same card! Don't rely on point sizes that cause the point sprites to get very large on screen, since they may get clamped on some cards. Upper sizes can range from 64 to 256 pixels. 
 ====Parameters====
-   * _pass_id - The ID of the pass.
+   * _pass_id_ - The ID of the pass.
    * _size_ - The point size.
 <BR>
 <BR>
 === !SetPassSceneBlendingType(real pass_id, real type) ===
 ----
-        SBT_TRANSPARENT_ALPHA - Make the object transparent based on the final alpha values in the texture
-        SBT_TRANSPARENT_COLOR -  Make the object transparent based on the color values in the texture (brighter = more opaque)
-        SBT_ADD - Add the texture values to the existing scene content
-	SBT_MODULATE - Multiply the 2 colors together
-        SBT_REPLACE - The default blend mode where source replaces destination
+Sets the kind of blending this pass has with the existing contents of the scene.
 
+Whereas the texture blending operations seen in the !TextureUnitState class are concerned with blending between texture layers, this blending is about combining the output of the Pass as a whole with the existing contents of the rendering target. This blending therefore allows object transparency and other special effects. If all passes in a technique have a scene blend, then the whole technique is considered to be transparent. 
+
+This function allows you to select one of a number of predefined blending types. If you require more control than this, use the alternative version of this method which allows you to specify source and destination blend factors. 
+
+This method is applicable for both the fixed-function and programmable pipelines. 
+====Parameters====
+   * _pass_id_ - The ID of the pass.
+   * _type_ - The scene blending type. Can be:
+      * _SBT_TRANSPARENT_ALPHA_ - Make the object transparent based on the final alpha values in the texture.
+      * _SBT_TRANSPARENT_COLOR_ -  Make the object transparent based on the color values in the texture (brighter = more opaque).
+      * _SBT_ADD_ - Add the texture values to the existing scene content.
+      * _SBT_MODULATE_ - Multiply the 2 colors together.
+      * _SBT_REPLACE_ - The default blend mode where source replaces destination.
+<BR>
+<BR>
 === !CreatePassTextureUnitState(real pass_id) ===
 ----
 Creates a new !TextureUnitState object, adds it into the Pass, and returns the ID.
 
 This unit is is added on top of all previous units. 
 ====Parameters====
-   * _pass_id - The ID of the pass.
+   * _pass_id_ - The ID of the pass.
 <BR>
 <BR>
 === !GetPassTextureUnitState(real pass_id, real tex_unit_index) ===
 ----
 This unit is is added on top of all previous units. 
 ====Parameters====
-   * _pass_id - The ID of the pass.
+   * _pass_id_ - The ID of the pass.
    * _tex_unit_index_ - The index of the !TextureUnitState object to retrieve.
 <BR>
 <BR>
@@ -200,6 +211,6 @@ This unit is is added on top of all previous units.
 ----
 Returns the number of unit states in a pass.
 ====Parameters====
-   * _pass_id - The ID of the pass.
+   * _pass_id_ - The ID of the pass.
 <BR>
 <BR>
