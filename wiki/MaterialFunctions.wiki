@@ -107,6 +107,15 @@ If you need more precision, retrieve the Technique and Pass instances and set th
    * _shininess_ - The amount of shininess.
 <BR>
 <BR>
+=== !EnableMaterialLighting(string name, real enable) ===
+Sets whether or not dynamic lighting is enabled for every Pass.
+
+For simplicity, this method allows you to set these properties for every current Technique, and for every current Pass within those Techniques. If you need more precision, retrieve the Technique and Pass instances and set the property there. 
+====Parameters====
+   * _name_ - The unique name of the resource.
+   * _enable_ - Whether to enable or disable material lighting.
+<BR>
+<BR>
 === !SetMaterialReceiveShadows(string name, real enable) ===
 ----
 Enables or disables whether objects using this material will receive shadows.
