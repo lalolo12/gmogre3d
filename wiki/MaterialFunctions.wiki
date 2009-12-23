@@ -13,7 +13,7 @@ Each technique can be made up of multiple passes. A fixed-function pass may comb
 Creates a new blank material resource, but does not immediately load it. 
 ====Parameters====
    * _name_ - The unique name of the resource.
-   * _group_ - The name of the resource group to attach this new resource to.
+   * _group_ - Optional name of the resource group to attach this new resource to.
 <BR>
 <BR>
 === !DestroyMaterial(string name) ===
