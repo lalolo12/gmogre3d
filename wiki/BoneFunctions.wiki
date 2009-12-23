@@ -143,7 +143,7 @@ Retrieves the current rotation around the X-axis.
 <BR>
 <BR>
 
-=== !YawSceneBone(real bone_id, real degrees, real relative_type) ===
+=== !YawBone(real bone_id, real degrees, real relative_type) ===
 ----
 Rotate the bone around the Z-axis.
 ====Parameters====
