@@ -24,6 +24,7 @@ This is useful to retrieve overlays created from script.
 Creates a new overlay.
 <BR>
 <BR>
+<BR>
 === !DestroyOverlay(real overlay_id) ===
 ----
 Destroys an overlay. 
