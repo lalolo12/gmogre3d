@@ -22,7 +22,7 @@ CreateSceneManager(global.ST_GENERIC);
 
 SetAmbientLight(c_white);
 
-view_id = CreateViewport(0, 0, 0, room_width, room_height);
+view_id = CreateViewport(0, 0, 0, window_get_width(), window_get_height());
 }}}
 Next add the following the the obj_engine's Step event:
 {{{
@@ -30,7 +30,7 @@ RenderFrame();
 }}}
 Now create an object called obj_camera and add it to your room. Add the Create event with this code:
 {{{
-cam_id = CreateCamera(room_width / room_height, 5, 0, 45);
+cam_id = CreateCamera(window_get_width() / window_get_height(), 5, 0, 45);
 SetViewportCamera(obj_engine.view_id, cam_id);
 
 SetCameraPosition(cam_id, 0, 500, 10);
@@ -98,7 +98,7 @@ for (i = 0; i < 3; i += 1)
 }}}
 Finally, we want to set the camera to a good viewing point to see this from. We will move the camera to get a better position.  Modify the obj_camera's Create event to look like this:
 {{{
-cam_id = CreateCamera(room_width / room_height, 5, 0, 45);
+cam_id = CreateCamera(window_get_width() / window_get_height(), 5, 0, 45);
 SetViewportCamera(obj_engine.view_id, cam_id);
 
 // Set the camera to look at our handiwork
