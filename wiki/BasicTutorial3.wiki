@@ -20,7 +20,7 @@ CreateSceneManager(global.ST_EXTERIOR_CLOSE);
 
 SetAmbientLight(c_white);
 
-view_id = CreateViewport(0, 0, 0, room_width, room_height);
+view_id = CreateViewport(0, 0, 0, window_get_width(), window_get_height());
 }}}
 Notice how we specified ST_EXTERIOR_CLOSE for the !SceneManager type.  This is because we will be adding an outdoor terrain later, so we ensure our !SceneManager is ready for that. Next add the following the the obj_engine's Step event:
 {{{
@@ -29,7 +29,7 @@ RenderFrame();
 
 Next create an object called obj_camera and add it to your room.  Add the Create event with this code:
 {{{
-cam_id = CreateCamera(room_width / room_height, 5, 0, 45);
+cam_id = CreateCamera(window_get_width() / window_get_height(), 5, 0, 45);
 SetViewportCamera(obj_engine.view_id, cam_id);
 
 SetCameraPosition(cam_id, 0, 500, 10);
