@@ -24,7 +24,7 @@ scenemgr_id = CreateSceneManager(global.ST_GENERIC);
 
 // Set current scene manager to this one
 SetCurrentSceneManager(scenemgr_id);
-cam_id = CreateCamera(room_width / room_height, 5, 0, 45);
+cam_id = CreateCamera(window_get_width() / window_get_height(), 5, 0, 45);
 EnableSkyDome(true, "Examples/CloudySky", 5, 8);
 SetAmbientLight(c_white);
 }}}
@@ -34,7 +34,7 @@ scenemgr_id = CreateSceneManager(global.ST_GENERIC);
 
 // Set current scene manager to this one
 SetCurrentSceneManager(scenemgr_id);
-cam_id = CreateCamera(room_width / room_height, 5, 0, 45);
+cam_id = CreateCamera(window_get_width() / window_get_height(), 5, 0, 45);
 EnableSkyBox(true, "Examples/SpaceSkyBox", 5000);
 SetAmbientLight(c_white);
 }}}
@@ -106,7 +106,7 @@ view_id = CreateViewport();
 SetViewportCamera(view_id, scenemgr_id.cam_id);
 
 SetViewportBackgroundColor(view_id,  c_black);
-SetCameraAspect(scenemgr_id.cam_id, room_width / room_height);
+SetCameraAspect(scenemgr_id.cam_id, window_get_width() / window_get_height());
 }}}
 This function is important.  We first destroy all previously created Viewports, if any.  We then recreate our primary Viewport, add an existing camera to it, and then set the background color.  Notice the new !SetCameraAspect() function.  Normally you set the camera aspect ratio when creating the camera, but our camera aspect ratio needs to be changed depending on whether we are running in dual or single viewport mode (remember the aspect ratio is generally the width of the viewport / height of the viewport).
 
@@ -118,16 +118,16 @@ scenemgr_id = obj_scene_controller.primary_scenemgr_id;
         
 DestroyAllViewports();
     
-view_id = CreateViewport(0, 0, 0, room_width/2, room_height);
+view_id = CreateViewport(0, 0, 0, window_get_width()/2, window_get_height());
 SetViewportCamera(view_id, scenemgr_id.cam_id);
-SetCameraAspect(scenemgr_id.cam_id, (room_width/2) / room_height);
+SetCameraAspect(scenemgr_id.cam_id, window_get_width()/2, window_get_height());
 SetViewportBackgroundColor(view_id, c_black);
 
 scenemgr_id = obj_scene_controller.secondary_scenemgr_id;
 
-view_id = CreateViewport(1, room_width/2, 0, room_width/2, room_height);
+view_id = CreateViewport(1, window_get_width()/2, 0, window_get_width()/2, window_get_height());
 SetViewportCamera(view_id, scenemgr_id.cam_id);
-SetCameraAspect(scenemgr_id.cam_id, (room_width/2) / room_height);
+SetCameraAspect(scenemgr_id.cam_id, window_get_width()/2 / window_get_height());
 SetViewportBackgroundColor(view_id, c_black);
 }}}
 This function is very similar to our previous one, except it creates TWO Viewports, and sizes them to each take up half the screen.  This is why we must change our camera aspect rations, because our viewport dimensions change depending on whether we are in dual or single viewport mode.
