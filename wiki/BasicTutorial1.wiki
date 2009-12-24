@@ -61,11 +61,11 @@ CreateSceneManager(global.ST_GENERIC);
 === Setting Up The Viewport And Camera ===
 Now that GMOgre3D has been setup and started, we need a way to view the game world.  This means we need to create our viewport and camera.  GMOgre3D viewports are similar to GM's viewports so they don't really need an introduction.  To create you you need to specify the zorder, left, top, width, and height parameters.  The code below will create a single viewport to fill the entire GM window:
 {{{
-view_id = CreateViewport(0, 0, 0, room_width, room_height);
+view_id = CreateViewport(0, 0, 0, window_get_width(), window_get_height());
 }}}
 Next you need to add a camera to each of your viewports.  We will explain more in depth how to create and manipulate cameras in the next tutorial.  Create a new object obj_camera and add it to your room.  In the Create event add the following code:
 {{{
-camera_id = CreateCamera(room_width / room_height, 5, 10000, 45);
+camera_id = CreateCamera(window_get_width() / window_get_height(), 5, 10000, 45);
 SetViewportCamera(view_id, camera_id);
 SetCameraPosition(camera_id, 0, 200, 40);
 }}}
