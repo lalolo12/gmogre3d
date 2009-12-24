@@ -1,24 +1,5 @@
 #summary Miscellaneous functions.
 <BR>
-=== EnableWaitForVSync(real enable) ===
-----
-Enables or disables monitor vsync.
-
-Must be called before !StartEngine().
-====Parameters====
-   * _enable_ - Whether to enable or disable vsync.
-<BR>
-<BR>
-=== SetFSAA(real type, real level) ===
-----
-Sets fullscreen anti-aliasing type and quality level.
-
-Must be called before !StartEngine().
-====Parameters====
-   * _type_ - FSAA type.  Can be 0, 1, 2, 4, or 6.
-   * _level_ - FSAA quality level.  Can be: 0, 1, or 2.
-<BR>
-<BR>
 === EnableDisplayFPS(real enable) ===
 ----
 Enables or disables displaying of FPS information in an overlay.
