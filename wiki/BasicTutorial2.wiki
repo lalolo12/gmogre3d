@@ -15,7 +15,7 @@ InitializeAllResourceGroups();
 
 CreateSceneManager(global.ST_GENERIC);
 
-view_id = CreateViewport(0, 0, 0, room_width, room_height);
+view_id = CreateViewport(0, 0, 0, window_get_width(), window_get_height());
 }}}
 Next add the following the the obj_engine's Step event:
 {{{
@@ -34,7 +34,7 @@ One thing about GMOgre3D Cameras that is different from what you may expect is t
 ==== Creating a Camera ====
 Create a new object called obj_camera and add it to your room.  In the obj_camera's Create event add the following code:
 {{{
-cam_id = CreateCamera(room_width / room_height, 5, 0, 45);
+cam_id = CreateCamera(window_get_width() / window_get_height(), 5, 0, 45);
 SetViewportCamera(obj_engine.view_id, cam_id);
 }}}
 When creating a camera you must specify the aspect ratio, the near clip distance, the far clip distance, and finally the FOV. The clipping distance of a Camera specifies how close or far something can be before you no longer see it. Setting the near clipping distance makes it easier to see through Entities on the screen when you are very close to them. The alternative is being so close to an object that it fills the screen and you can't see anything but a tiny portion of it. You can also set the far clipping distance as well. This will stop the engine from rendering anything farther away than the given value. This is primarily used to increase the framerate if you are rendering large amounts of things on the screen for very long distances (though you should not use a far clip distance with Stencil Shadows, which we will be using in this tutorial, so we set the far clip value to 0 for an infinite view distance).
