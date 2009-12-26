@@ -22,6 +22,16 @@ The result can be retrieved using the GetX, GetY, and GetZ functions.
    * _x2_, _y2_, _z2_ - The vector being subtracted.
 <BR>
 <BR>
+=== !MultiplyVector(real x1, real z1, real y1, real x2, real z2, real y2) ===
+----
+Multiplies two vectors.
+
+The result can be retrieved using the GetX, GetY, and GetZ functions.
+====Parameters====
+   * _x1_, _y1_, _z1_ - The first vector.
+   * _x2_, _y2_, _z2_ - The second vector.
+<BR>
+<BR>
 === !CalcVectorCrossProduct(real x1, real z1, real y1, real x2, real z2, real y2) ===
 ----
 Calculates the cross-product of 2 vectors, i.e. the vector that lies perpendicular to them both.
