@@ -27,6 +27,12 @@ Shuts down the GMOgre3D engine.  After calling this GM is again able to draw to 
 <br>
 <br>
 <br>
+=== GetOgre3DVersion() ===
+----
+Returns the version number of the GMOgre3D engine.
+<br>
+<br>
+<br>
 === EnableWaitForVSync(real enable) ===
 ----
 Enables or disables monitor vsync.
