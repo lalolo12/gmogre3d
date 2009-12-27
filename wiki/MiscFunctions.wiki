@@ -27,9 +27,9 @@ Logs your own message the GMOgre3D.log file.
 ====Parameters====
    * _msg_ - The message to log.
    * _type_ - The level of message to log.  Can be:
-      * global.LL_LOW
-      * global.LL_NORMAL
-      * global.LL_BOREME
+      * global.LML_TRIVIAL
+      * global.LML_NORMAL
+      * global.LML_CRITICAL
 <BR>
 <BR>
 === !SaveScreenshot(string filename) ===
