@@ -47,6 +47,14 @@ Sets the color for a movable text object.
    * _color_ - The color of the text.
 <BR>
 <BR>
+=== !ShowMovableTextOnTop(real text_id, real show) ===
+----
+Sets whether to show movable text on top or not.
+====Parameters====
+    * _text_id_ - The ID of the movable text.
+    * _show_ - Whether to show text on top or not.
+<BR>
+<BR>
 === !SetMovableTextAlignment(real text_id, real type) ===
 ----
 Sets the alignment of a movable text object.
