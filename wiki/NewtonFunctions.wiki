@@ -1,0 +1,22 @@
+#summary Helper functions for integration of GMOgre3D and GMNewton
+
+=== Overview ===
+These functions exist to help integrate GMNewton with GMOgre3D.
+<BR>
+<BR>
+===!AttachNewtonBodyToSceneNode(real newton_body_id, real scene_node_id)===
+Attaches a Newton body to a !SceneNode.  When attached you should never call any !SceneNode functions to orient or position your !SceneNode.  Instead, call the appropriate GMNewton functions to move and orient the body, and the !SceneNode will be transformed accordingly.
+
+Also, if you have your !SceneNode attached to a GM object, you can simply modify the GM object's orientation and position variables and both the !SceneNode and Newton body will be transformed accordingly.
+====Parameters====
+   * _newton_body_id_ - The ID of the Newton body object.
+   * _scene_node_id_ - The ID of the !SceneNode object.
+<BR>
+<BR>
+===!DetachNewtonBodyFromSceneNode(real newton_body_id, real scene_node_id)===
+Detaches a Newton body from a !SceneNode.
+====Parameters====
+   * _newton_body_id_ - The ID of the Newton body object.
+   * _scene_node_id_ - The ID of the !SceneNode object.
+<BR>
+<BR>
