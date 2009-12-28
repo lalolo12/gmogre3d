@@ -1,0 +1,99 @@
+#summary A movable text object that is attached to a scene node and displayed in the 3D world.
+
+=== Overview ===
+A movable text object is attached to a !SceneNode and therefore follows its movement and get smaller when further away and larger when closer.  The text acts like a billboard object, and always faces the camera.
+<BR>
+<BR>
+<BR>
+=== !CreateMovableText(string font_name, string txt, real x, real y, real color, real alpha) ===
+----
+Create a movable text object used to display 2D text.
+====Parameters====
+   * _font_name_ - The unique font resource name for this text.
+   * _txt_ - The text to display.
+   * _x_, _y_ - The 2D position to start drawing the text.
+   * _color_ - The color of the text.
+   * _alpha_ - The alpha transparency of the text.
+<BR>
+<BR>
+=== !DestroyMovableText(real text_id) ===
+----
+Destroys a movable text object.
+====Parameters====
+   * _text_id_ - The ID of the text.
+<BR>
+<BR>
+=== !SetMovableTextFont(real text_id, string font_name) ===
+----
+Sets the font resource for a movable text object.
+====Parameters====
+   * _text_id_ - The ID of the text.
+   * _font_name_ - The unique font resource name for this text.
+<BR>
+<BR>
+=== !SetMovableTextCaption(real text_id, string txt) ===
+----
+Sets the caption for a movable text object.
+====Parameters====
+   * _text_id_ - The ID of the text.
+   * _txt_ - The text to display.
+<BR>
+<BR>
+=== !SetMovableTextColor(real text_id, real color, real alpha) ===
+----
+Sets the color for a movable text object.
+====Parameters====
+   * _text_id_ - The ID of the text.
+   * _color_ - The color of the text.
+<BR>
+<BR>
+=== !SetMovableTextAlignment(real text_id, real type) ===
+----
+Sets the alignment of a movable text object.
+====Parameters====
+    * _text_id_ - The ID of the text.
+    * _horiz_align_ - The type of horizontal alignment to use. Can be:
+          * _global.MT_H_LEFT_ - The text is left aligned.
+          * _global.MT_H_CENTER_ - The text is centered.
+    * _vert_align_ - The type of vertical alignment to use. Can be:
+          * _global.MT_V_BELOW_ - The text is vertically aligned below.
+          * _global.MT_V_ABOVE_ - The text is vertically aligned above.
+          * _global.MT_V_CENTER_ - The text is vertically aligned centered.
+<BR>
+<BR>
+=== !AttachMovableTextToSceneNode(real text_id, real scene_node_id) ===
+----
+Attaches an movable text object to the specified !SceneNode.
+====Parameters====
+   * _text_id_ - The ID of the movable text object.
+   * _scene_node_id_ - The ID of the !SceneNode.
+<BR>
+<BR>
+=== !SetMovableTextGlobalTranslation(real text_id, real x, real y, real z) ===
+----
+Sets the global offset position when attached to a scene node.
+
+By default movable text is centered on the scene node.
+====Parameters====
+    * _text_id - The ID of the text.
+    * _x_, _y_, _z_ - The offset position.
+<BR>
+<BR>
+=== !SetMovableTextLocalTranslation(real text_id, real x, real y, real z) ===
+----
+Sets the local offset position when attached to a scene node.
+
+By default movable text is centered on the scene node.
+====Parameters====
+    * _text_id - The ID of the text.
+    * _x_, _y_, _z_ - The offset position.
+<BR>
+<BR>
+=== !DetachMovableTextFromSceneNode(real text_id, real scene_node_id) ===
+----
+Detaches an movable text object from the specified !SceneNode.
+====Parameters====
+   * _text_id_ - The ID of the movable text object.
+   * _scene_node_id_ - The ID of the !SceneNode.
+<BR>
+<BR>
