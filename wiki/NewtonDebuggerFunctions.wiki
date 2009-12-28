@@ -1,0 +1,44 @@
+#summary Visually debug newton physics and collision detection
+
+=== Overview ===
+NewtonDebugger is a extremely handy tool, which allows you to visually see all Newton bodies in the world.  When enabled it will display a wireframe outline over all Newton bodies created, allowing you to see exactly where collision should occur.  It can also help you verify if an entities location and it's collision body are synchronized.
+
+Lastly, it will also display text information over every Newton body showing it's mass, position, orientation, and velocity.
+<BR>
+<BR>
+===!CreateNewtonDebugger(real world_id)===
+Creates a new Newton debugger object, and returns it's ID.
+====Parameters====
+   * _world_id_ - The ID of the Newton world object.
+<BR>
+<BR>
+===!DestroyNewtonDebugger(real newton_debugger_id)===
+Destroys a Newton debugger object.
+====Parameters====
+   * _newton_debugger_id_ - The ID of the Newton debugger object.
+<BR>
+<BR>
+===!ShowNewtonDebugger(real newton_debugger_id)===
+Shows the Newton debug information on screen.
+
+Note that this can slow down rendering quite a bit.
+====Parameters====
+   * _newton_debugger_id_ - The ID of the Newton debugger object.
+<BR>
+<BR>
+===!HideNewtonDebugger(real newton_debugger_id)===
+Hides the Newton debug information.
+====Parameters====
+   * _newton_debugger_id_ - The ID of the Newton debugger object.
+<BR>
+<BR>
+===!SetNewtonDebuggerFont(real newton_debugger_id, string font_name, real font_size)===
+Sets the font used by the Newton debugger to the specified font resource with the specified size.
+
+Note they by default the font used is BlueHighway which is included in the OgreCore.zip file.  If you do not include this file in your game then you MUST call this function to specify a valid font resource.
+====Parameters====
+   * _newton_debugger_id_ - The ID of the Newton debugger object.
+   * _font_name_ - The name of the font resource.
+   * _font_size_ - The size to draw the font.
+<BR>
+<BR>
