@@ -60,6 +60,7 @@
       * [TextureUnitStateFunctions Texture Unit State]
     * [MiscFunctions Misc]
     * [MouseFunctions Mouse]
+    * [MovableTextFunctions Movable Text]
     * [NewtonDebuggerFunctions Newton]
     * [OverlayFunctions Overlay]
       * [BorderPanelOverlayElementFunctions Border Panel Overlay Element]
