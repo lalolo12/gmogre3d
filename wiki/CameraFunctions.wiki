@@ -146,6 +146,15 @@ Sets a camera's direction vector.
    * _x_, _y_, _z_ - The up vector.
 <BR>
 <BR>
+=== !GetCameraDirection(real camera_id) ===
+----
+Returns a camera's direction vector.
+
+Since GM cannot return 3 values in a single function call these coordinates are stored in temporary variables and can be retrieved by calling the GetX(), GetY(), and GetZ() functions.
+====Parameters====
+   * _camera_id_ - The ID of the camera.
+<BR>
+<BR>
 === !SetCameraLookAt(real camera_id, real x, real y, real z) ===
 ----
 Points a camera at the specificied location in world space.
