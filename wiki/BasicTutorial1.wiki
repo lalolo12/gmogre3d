@@ -112,7 +112,7 @@ Now that you understand how the coordinate systems work, we can go back to our c
 {{{
 ent2_id = CreateEntity("Robot.mesh" );
 node2_id = CreateRootChildSceneNode(50, 0, 0);
-AttachEntityToSceneNode(ent2_id);
+AttachEntityToSceneNode(ent2_id, node2_id);
 }}}
 This should look familiar. We have done the exact same thing as before, with two exceptions. First of all, we have named the Entity and !SceneNode something slightly different. The second thing we have done is specified that the starting position will be 50 units in the x direction away from the root !SceneNode (remember that all !SceneNode positions are relative to their parents). Compile and run the demo. Now there are two Robots side-by-side.
 
