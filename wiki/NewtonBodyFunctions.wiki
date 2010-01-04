@@ -86,7 +86,7 @@ Enable or disable high speed collision checks.
 
 Continuous collision is an advanced feature that prevents fast moving bodies from "tunneling" (missing collision) with other bodies.  Because there is penalty of about 40% to 80% depending of the shape complexity of the collision geometry, this feature is set off by default. It is the job of the application to determine what bodies need this feature on. Good guidelines are: very small objects, and bodies that move at very high speed. 
         
-Note that continuous collision can also be set on a per-material basis via the MaterialPair object.
+Note that continuous collision can also be set on a per-material basis via the !MaterialPair object.
 ====Parameters====
    * _newton_body_id_ - The ID of the Newton body.
    * _enable_ - Whether to enable or disable continuous collision.
