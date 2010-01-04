@@ -179,3 +179,36 @@ Finishes a tree collision.
    * _optimize_ - When optimization is enabled it will attempt to combine polygons when possible.
 <BR>
 <BR>
+=== !CalculateNewtonConvexCollisionInertia(real newton_collision_id) ===
+----
+calculates and returns the moment of inertia for a convex collision object.
+
+A convex collision object is any collision objects except the Tree Collision object.
+
+It should be noted that the generated inertia values should be multiplied by the object mass before calling SetNewtonBodyMassMatrix.
+
+Since GM cannot return 3 values in a single function call these factors are stored in temporary variables and can be retrieved by calling the GetX, GetY, and GetZ functions. 
+====Parameters====
+   * _newton_collision_id_ - The ID of the Newton collision.
+<BR>
+<BR>
+=== !CalculateNewtonConvexCollisionCenterOfMass(real newton_collision_id) ===
+----
+calculates and returns the center of mass for a convex collision object.
+
+A convex collision object is any collision objects except the Tree Collision object.
+
+Since GM cannot return 3 values in a single function call these factors are stored in temporary variables and can be retrieved by calling the GetX, GetY, and GetZ functions. 
+====Parameters====
+   * _newton_collision_id_ - The ID of the Newton collision.
+<BR>
+<BR>
+=== !CalculateNewtonConvexCollisionVolume(real newton_collision_id) ===
+----
+Calculates and returns the volume of the convex collision shape.
+
+This function is especialy useful for buoyancy calculations.
+====Parameters====
+   * _newton_collision_id_ - The ID of the Newton collision.
+<BR>
+<BR>
