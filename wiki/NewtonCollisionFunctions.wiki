@@ -131,7 +131,7 @@ calculates the moment of inertia for a convex collision object.
 
 A convex collision object is any collision objects except the Tree Collision object.
 
-It should be noted that the generated inertia values should be multiplied by the object mass before calling SetNewtonBodyMassMatrix.
+It should be noted that the generated inertia values should be multiplied by the object mass before calling !SetNewtonBodyMassMatrix.
 ====Parameters====
    * _newton_collision_id_ - The ID of the Newton collision.
 <BR>
