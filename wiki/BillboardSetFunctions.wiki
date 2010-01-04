@@ -78,15 +78,15 @@ The default setting is BBO_CENTER.
 ====Parameters====
    * _billboard_set_id_ - The ID of the billboard set.
    * _type_ - The type of origin to use.  Can be:
-      * global.BBO_TOP_LEFT
-      * global.BBO_TOP_CENTER
-      * global.BBO_TOP_RIGHT
-      * global.BBO_CENTER_LEFT
-      * global.BBO_CENTER
-      * global.BBO_CENTER_RIGHT
-      * global.BBO_BOTTOM_LEFT
-      * global.BBO_BOTTOM_CENTER
-      * global.BBO_BOTTOM_RIGHT
+      * BBO_TOP_LEFT
+      * BBO_TOP_CENTER
+      * BBO_TOP_RIGHT
+      * BBO_CENTER_LEFT
+      * BBO_CENTER
+      * BBO_CENTER_RIGHT
+      * BBO_BOTTOM_LEFT
+      * BBO_BOTTOM_CENTER
+      * BBO_BOTTOM_RIGHT
 <BR>
 <BR>
 === !SetBillboardSetDefaultDimensions(real billboard_set_id, real width, real height) ===

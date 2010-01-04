@@ -9,7 +9,7 @@ Compositors provide the means to flexibly "composite" the final rendering result
 Create a compositor.
 ====Parameters====
    * _name_ - The unique name of the compositor resource.
-   * _group_ - The optional name of the resource group to attach this compositor to.  Defaults to global.DEFAULT_RESOURCE_GROUP.
+   * _group_ - The optional name of the resource group to attach this compositor to.  Defaults to DEFAULT_RESOURCE_GROUP.
 <BR>
 <BR>
 === !DestroyCompositor(string name) ===

@@ -9,11 +9,11 @@ A 'scene' i.e. a collection of objects and potentially world geometry. A !SceneM
 Create a !SceneManager instance based on scene type support.
 ====Parameters====
    * _type_ - Contains one or more type of scenes.  Can be:
-      * global.ST_GENERIC
-      * global.ST_EXTERIOR_CLOSE
-      * global.ST_EXTERIOR_FAR
-      * global.ST_EXTERIOR_REAL_FAR
-      * global.ST_INTERIOR
+      * ST_GENERIC
+      * ST_EXTERIOR_CLOSE
+      * ST_EXTERIOR_FAR
+      * ST_EXTERIOR_REAL_FAR
+      * ST_INTERIOR
 <BR>
 <BR>
 === !DestroySceneManager(real scene_mgr_id) ===
@@ -65,13 +65,13 @@ Texture-based approaches are good for handling transparency (they can, for examp
 We support 2 kinds of stencil shadows, and 2 kinds of texture-based shadows, and one simple decal approach. The 2 stencil approaches differ in the amount of multipass work that is required - the modulative approach simply 'darkens' areas in shadow after the main render, which is the least expensive, whilst the additive approach has to perform a render per light and adds the cumulative effect, whcih is more expensive but more accurate. The texture based shadows both work in roughly the same way, the only difference is that the shadowmap approach is slightly more accurate, but requires a more recent graphics card. Note that because mixing many shadow techniques can cause problems, only one technique is supported at once. Also, you should call this method at the start of the scene setup. 
 ====Parameters====
    * _type_ - The type of shadow technique to use.  Can be:
-      * global.SHADOWTYPE_NONE
-      * global.SHADOWTYPE_STENCIL_MODULATIVE
-      * global.SHADOWTYPE_STENCIL_ADDITIVE
-      * global.SHADOWTYPE_TEXTURE_MODULATIVE
-      * global.SHADOWTYPE_TEXTURE_ADDITIVE
-      * global.SHADOWTYPE_TEXTURE_ADDITIVE_INTEGRATED
-      * global.SHADOWTYPE_TEXTURE_MODULATIVE_INTEGRATED
+      * SHADOWTYPE_NONE
+      * SHADOWTYPE_STENCIL_MODULATIVE
+      * SHADOWTYPE_STENCIL_ADDITIVE
+      * SHADOWTYPE_TEXTURE_MODULATIVE
+      * SHADOWTYPE_TEXTURE_ADDITIVE
+      * SHADOWTYPE_TEXTURE_ADDITIVE_INTEGRATED
+      * SHADOWTYPE_TEXTURE_MODULATIVE_INTEGRATED
 <BR>
 <BR>
 === !EnableShadowLightClipPlanes(real enable) ===

@@ -40,8 +40,8 @@ Sets a camera's type of projection to use (orthographic or perspective).  Defaul
 ====Parameters====
    * _camera_id_ - The ID of the camera.
    * _type_ - The projection type.  Can be:
-      * global.PT_ORTHOGRAPHIC
-      * global.PT_PERSPECTIVE
+      * PT_ORTHOGRAPHIC
+      * PT_PERSPECTIVE
 <BR>
 <BR>
 === !SetCameraAspect(real camera_id, real aspect) ===
@@ -68,9 +68,9 @@ Sets a camera's level of rendering detail. Every camera is set to render at full
 ====Parameters====
    * _camera_id_ - The ID of the camera.
    * _type_ - The render type.  Can be:
-      * global.PM_POINTS
-      * global.PM_WIREFRAME
-      * global.PM_SOLID
+      * PM_POINTS
+      * PM_WIREFRAME
+      * PM_SOLID
 <BR>
 <BR>
 === !SetCameraPosition(real camera_id, real x, real y, real z) ===

@@ -42,21 +42,21 @@ In your new project create an object obj_engine and add it to your room.  In the
 The code below shows how this is done:
 {{{
 InitializeOgre3D();
-StartOgre3DEngine(global.RENDER_DX9);
+StartOgre3DEngine(RENDER_DX9);
 }}}
 Once GMOgre3D has been initalized and started, you need to tell GMOgre3D where your external resources are and then initialize them.  External resources can be entire directories or a single zip archive.  For our purposes, we'll add the following resources:
 {{{
-AddResourceLocation("./media/packs/OgreCore.zip", global.LOC_ZIP);
-AddResourceLocation("./media/materials/programs", global.LOC_FILESYSTEM);
-AddResourceLocation("./media/materials/scripts", global.LOC_FILESYSTEM);
-AddResourceLocation("./media/materials/textures", global.LOC_FILESYSTEM);
-AddResourceLocation("./media/models", global.LOC_FILESYSTEM);
+AddResourceLocation("./media/packs/OgreCore.zip", LOC_ZIP);
+AddResourceLocation("./media/materials/programs", LOC_FILESYSTEM);
+AddResourceLocation("./media/materials/scripts", LOC_FILESYSTEM);
+AddResourceLocation("./media/materials/textures", LOC_FILESYSTEM);
+AddResourceLocation("./media/models", LOC_FILESYSTEM);
 InitializeAllResourceGroups();
 }}}
 === Create Your Scene ===
 Now that you have everything setup to show your 3D world, you need to create your scene manager. For this tutorial we'll use the generic scene manager, as shown below:
 {{{
-CreateSceneManager(global.ST_GENERIC);
+CreateSceneManager(ST_GENERIC);
 }}}
 === Setting Up The Viewport And Camera ===
 Now that GMOgre3D has been setup and started, we need a way to view the game world.  This means we need to create our viewport and camera.  GMOgre3D viewports are similar to GM's viewports so they don't really need an introduction.  To create you you need to specify the zorder, left, top, width, and height parameters.  The code below will create a single viewport to fill the entire GM window:

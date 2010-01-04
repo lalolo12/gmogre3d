@@ -6,13 +6,13 @@ In this short tutorial we will be covering how to swap between multiple !SceneMa
 To start, create a new object called obj_engine and add it to your room. Add the following code in the Create event:
 {{{
 InitializeOgre3D();
-StartOgre3DEngine(global.RENDER_DX9);
+StartOgre3DEngine(RENDER_DX9);
 
-AddResourceLocation("./media/packs/OgreCore.zip", global.LOC_ZIP);
-AddResourceLocation("./media/packs/SkyBox.zip", global.LOC_ZIP);
-AddResourceLocation("./media/materials/programs", global.LOC_FILESYSTEM);
-AddResourceLocation("./media/materials/scripts", global.LOC_FILESYSTEM);
-AddResourceLocation("./media/materials/textures", global.LOC_FILESYSTEM);
+AddResourceLocation("./media/packs/OgreCore.zip", LOC_ZIP);
+AddResourceLocation("./media/packs/SkyBox.zip", LOC_ZIP);
+AddResourceLocation("./media/materials/programs", LOC_FILESYSTEM);
+AddResourceLocation("./media/materials/scripts", LOC_FILESYSTEM);
+AddResourceLocation("./media/materials/textures", LOC_FILESYSTEM);
 
 InitializeAllResourceGroups();
 }}}
@@ -20,7 +20,7 @@ InitializeAllResourceGroups();
 === Creating the !SceneManagers ===
 We have previously covered how to create your !SceneManager, so I will not go into detail about this function. The only thing we have changed is that we are creating two of them. To do this we will create two different !SceneManager GM objects.  First, create an object called obj_scenemgr1 but do not add it to your room.  This will be added automatically later.  Add the Create event and add the following code: 
 {{{
-scenemgr_id = CreateSceneManager(global.ST_GENERIC);
+scenemgr_id = CreateSceneManager(ST_GENERIC);
 
 // Set current scene manager to this one
 SetCurrentSceneManager(scenemgr_id);
@@ -30,7 +30,7 @@ SetAmbientLight(c_white);
 }}}
 Next create another object called obj_scenemgr, but again do not add to your room.  Add the Create event and add the following code:
 {{{
-scenemgr_id = CreateSceneManager(global.ST_GENERIC);
+scenemgr_id = CreateSceneManager(ST_GENERIC);
 
 // Set current scene manager to this one
 SetCurrentSceneManager(scenemgr_id);

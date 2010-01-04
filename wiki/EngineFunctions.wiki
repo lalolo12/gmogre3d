@@ -17,8 +17,8 @@ Returns true if the GMOgre3D engine has been initialized.
 Starts the GMOgre3D engine.  After calling this all drawing of the GM window is taken over by the GMOgre3D DLL.
 ====Parameters====
   * render_engine - The type of renderer to use. Possible values are:
-    * global.RENDER_DX9
-    * global.RENDER_GL
+    * RENDER_DX9
+    * RENDER_GL
 <br>
 <br>
 === StopOgre3DEngine() ===

@@ -93,6 +93,6 @@ MAPFILTER_BILINEAR is slightly slower than MAPFILTER_NONE, so don't use it unles
 ====Parameters====
    * _tree_loader_id_ - The ID of the TreeLoader2D object.
    * _type_ - The map filter type.  Can be:
-      * global.MAPFILTER_NONE
-      * global.MAPFILTER_BILINEAR
+      * MAPFILTER_NONE
+      * MAPFILTER_BILINEAR
 <BR>

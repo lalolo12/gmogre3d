@@ -66,14 +66,14 @@ This property actually exists on the Pass class. For simplicity, this method all
 ====Parameters====
    * _technique_id_ - The ID of the technique.
    * _func_ - The type of depth comparison function to use. Can be:
-      * global.CMPF_ALWAYS_FAIL
-      * global.CMPF_ALWAYS_PASS
-      * global.CMPF_LESS
-      * global.CMPF_LESS_EQUAL
-      * global.CMPF_EQUAL
-      * global.CMPF_NOT_EQUAL
-      * global.CMPF_GREATER_EQUAL
-      * global.CMPF_GREATER
+      * CMPF_ALWAYS_FAIL
+      * CMPF_ALWAYS_PASS
+      * CMPF_LESS
+      * CMPF_LESS_EQUAL
+      * CMPF_EQUAL
+      * CMPF_NOT_EQUAL
+      * CMPF_GREATER_EQUAL
+      * CMPF_GREATER
 <BR>
 <BR>
 === !EnableTechniqueDepthWrite(real technique_id, real enable) ===

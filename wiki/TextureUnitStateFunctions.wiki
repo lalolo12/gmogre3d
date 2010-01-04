@@ -77,11 +77,11 @@ This can be called multiple times for different values of _transform_type_, but 
 ====Parameters====
    * _texture_unit_id_ - The ID of the texture unit state object.
    * _transform_type_ - The type of transform (translate (scroll), scale (stretch) or rotate (spin)).  Can be:
-      * global.TT_TRANSLATE_U
-      * global.TT_TRANSLATE_V 	
-      * global.TT_SCALE_U	
-      * global.TT_SCALE_V	
-      * global.TT_ROTATE 
+      * TT_TRANSLATE_U
+      * TT_TRANSLATE_V 	
+      * TT_SCALE_U	
+      * TT_SCALE_V	
+      * TT_ROTATE 
    * _wave_type_ - The shape of the wave.  Can be:
       * _global.WFT_SINE_ - Standard sine wave which smoothly changes from low to high and back again.
       * _global.WTF_TRIANGLE_ - An angular wave with a constant increase/decrease speed with pointed peaks.

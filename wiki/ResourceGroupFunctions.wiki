@@ -9,8 +9,8 @@ Resource locations are places which are searched to load resource files. When yo
 ====Parameters====
    * _path_ - The relative path to a directory or zip archive.
    * _type_ - Option location type for the resource group. If not specified, FILE_SYSTEM is used. Can be:
-      * global.LOC_FILSYSTEM
-      * global.LOC_ZIP
+      * LOC_FILSYSTEM
+      * LOC_ZIP
    * _name_ - Optional name of the resource group.
 <BR>
 <BR>

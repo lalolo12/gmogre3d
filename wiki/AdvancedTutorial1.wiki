@@ -7,18 +7,18 @@ In this tutorial we will be covering how to take an Entity, animate it, and have
 To start, create a new object called obj_engine and add it to your room. Add the following code in the Create event:
 {{{
 InitializeOgre3D();
-StartOgre3DEngine(global.RENDER_DX9);
+StartOgre3DEngine(RENDER_DX9);
 
-AddResourceLocation("./media/packs/OgreCore.zip", global.LOC_ZIP);
-AddResourceLocation("./media/packs/SkyBox.zip", global.LOC_ZIP);
-AddResourceLocation("./media/materials/programs", global.LOC_FILESYSTEM);
-AddResourceLocation("./media/materials/scripts", global.LOC_FILESYSTEM);
-AddResourceLocation("./media/materials/textures", global.LOC_FILESYSTEM);
-AddResourceLocation("./media/terrain", global.LOC_FILESYSTEM);
-AddResourceLocation("./media/models", global.LOC_FILESYSTEM);
+AddResourceLocation("./media/packs/OgreCore.zip", LOC_ZIP);
+AddResourceLocation("./media/packs/SkyBox.zip", LOC_ZIP);
+AddResourceLocation("./media/materials/programs", LOC_FILESYSTEM);
+AddResourceLocation("./media/materials/scripts", LOC_FILESYSTEM);
+AddResourceLocation("./media/materials/textures", LOC_FILESYSTEM);
+AddResourceLocation("./media/terrain", LOC_FILESYSTEM);
+AddResourceLocation("./media/models", LOC_FILESYSTEM);
 InitializeAllResourceGroups();
 
-CreateSceneManager(global.ST_GENERIC);
+CreateSceneManager(ST_GENERIC);
 
 SetAmbientLight(c_white);
 

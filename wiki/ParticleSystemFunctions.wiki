@@ -171,12 +171,12 @@ Adds an emitter to a particle system.
 ====Parameters====
    * _particle_system_id_ - The ID of the particle system.
    * _type_ - The type of particle emitter.  Can be:
-      * global.PE_BOX
-      * global.PE_CYLINDER
-      * global.PE_ELLIPSOID
-      * global.PE_HOLLOW_ELLIPSOID
-      * global.PE_POINT
-      * global.PE_RING
+      * PE_BOX
+      * PE_CYLINDER
+      * PE_ELLIPSOID
+      * PE_HOLLOW_ELLIPSOID
+      * PE_POINT
+      * PE_RING
 <BR>
 <BR>
 === !GetNumParticleSystemEmitters(real particle_system_id) ===

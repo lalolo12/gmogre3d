@@ -4,16 +4,16 @@ In the previous tutorial we showed you how to create and view a basic GMOgre3D g
 
 {{{
 InitializeOgre3D();
-StartOgre3DEngine(global.RENDER_DX9);
+StartOgre3DEngine(RENDER_DX9);
 
-AddResourceLocation("./media/packs/OgreCore.zip", global.LOC_ZIP);
-AddResourceLocation("./media/materials/programs", global.LOC_FILESYSTEM);
-AddResourceLocation("./media/materials/scripts", global.LOC_FILESYSTEM);
-AddResourceLocation("./media/materials/textures", global.LOC_FILESYSTEM);
-AddResourceLocation("./media/models", global.LOC_FILESYSTEM);
+AddResourceLocation("./media/packs/OgreCore.zip", LOC_ZIP);
+AddResourceLocation("./media/materials/programs", LOC_FILESYSTEM);
+AddResourceLocation("./media/materials/scripts", LOC_FILESYSTEM);
+AddResourceLocation("./media/materials/textures", LOC_FILESYSTEM);
+AddResourceLocation("./media/models", LOC_FILESYSTEM);
 InitializeAllResourceGroups();
 
-CreateSceneManager(global.ST_GENERIC);
+CreateSceneManager(ST_GENERIC);
 
 view_id = CreateViewport(0, 0, 0, window_get_width(), window_get_height());
 }}}
@@ -94,7 +94,7 @@ Using shadows in Ogre is relatively simple. The !SetShadowTechnique function is 
 We will now set the ambient light to complete darkness, and set the shadow type. Create a new object called obj_environment and add it to your room.  Then add the following code to the Create event:
 {{{
 SetAmbientLight(c_black);
-SetShadowTechnique(global.SHADOWTYPE_STENCIL_ADDITIVE);
+SetShadowTechnique(SHADOWTYPE_STENCIL_ADDITIVE);
 }}}
 Now the !SceneManager uses additive stencil shadows. Let's create a new object called obj_ninja and add the following code to its Create event
 {{{
@@ -132,7 +132,7 @@ To create a Light in GMOgre3D we call the !CreateLight function, very much like 
 So, let's start with a basic point Light. The first thing we will do is create a new object called obj_point_light and add it to your room.  Then you'll need to add the Create event, where you will add the following code to create the light, set its type, and set its position:
 {{{
 light_id = CreateLight();
-SetLightType(light_id, global.LT_POINT);
+SetLightType(light_id, LT_POINT);
 SetLightPosition(light_id, 0, 250, 150);
 }}}
 Now that we have created the light, we can set its diffuse and specular color. Let's make it red:
@@ -145,7 +145,7 @@ Now run the game. Success! We can now see the Ninja and he casts a shadow. Be su
 Next, let's try out directional light. Notice how the front of the ninja is pitch black? Let's add a small amount of yellow directional light that is shining towards the front of his body. To do this create a new object called obj_directional_light and add it to your room.  Inside the Create event we will create the light and set the color just like we did for obj_point_light:
 {{{
 light_id = CreateLight();
-SetLightType(light_id, global.LT_DIRECTIONAL);
+SetLightType(light_id, LT_DIRECTIONAL);
 SetLightDiffuseColor(light_id, make_color_rgb(64, 64, 0));
 SetLightSpecularColor(light_id, make_color_rgb(64, 64, 0));
 }}}
@@ -156,7 +156,7 @@ SetLightDirection(light_id, 0, 1, -1);
 Run the game. We now have two shadows on the screen, though since the directional light is so faint, the shadow is also faint. The last type of light we are going to play with is the spotlight. Create another object called obj_spot_light and add it to your room.  Add the Create event, then add the following code to that event to create a blue spotlight:
 {{{
 light_id = CreateLight();
-SetLightType(light_id, global.LT_SPOTLIGHT);
+SetLightType(light_id, LT_SPOTLIGHT);
 SetLightDiffuseColor(light_id, c_blue);
 SetLightSpecularColor(light_id, c_blue);
 }}}

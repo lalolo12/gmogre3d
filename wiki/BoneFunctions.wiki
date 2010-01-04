@@ -97,9 +97,9 @@ This function moves the bone by the supplied vector along the world Cartesian ax
    * _bone_id_ - The ID of the bone.
    * _x_, _y_, _z_ - The delta amounts to move the bone.
    * _relative_type_ - The space in which the translation is relative to. Can be:
-    * global.TS_LOCAL
-    * global.TS_PARENT
-    * global.TS_WORLD 
+    * TS_LOCAL
+    * TS_PARENT
+    * TS_WORLD 
 <BR>
 <BR>
 === !SetBoneOrientation(real bone_id, real yaw, real pitch, real roll) ===
@@ -130,9 +130,9 @@ Rotate the bone around the Z-axis.
    * _bone_id_ - The ID of the bone.
    * _degrees_ - The number of degrees to yaw the bone.
    * _relative_type_ - The space in which the rotation should occur.  Can be:
-     * global.TS_LOCAL
-     * global.TS_PARENT
-     * global.TS_WORLD
+     * TS_LOCAL
+     * TS_PARENT
+     * TS_WORLD
 <BR>
 <BR>
 === !GetBoneYaw(real bone_id) ===
@@ -149,9 +149,9 @@ Rotate the bone around the Y-axis.
    * _bone_id_ - The ID of the bone.
    * _degrees_ - The number of degrees to pitch the bone.
    * _relative_type_ - The space in which the rotation should occur.  Can be:
-     * global.TS_LOCAL
-     * global.TS_PARENT
-     * global.TS_WORLD
+     * TS_LOCAL
+     * TS_PARENT
+     * TS_WORLD
 <BR>
 <BR>
 === !GetBonePitch(real bone_id) ===
@@ -168,9 +168,9 @@ Rotate the bone around the X-axis.
    * _bone_id_ - The ID of the bone.
    * _degrees_ - The number of degrees to roll the bone.
    * _relative_type_ - The space in which the rotation should occur.  Can be:
-     * global.TS_LOCAL
-     * global.TS_PARENT
-     * global.TS_WORLD
+     * TS_LOCAL
+     * TS_PARENT
+     * TS_WORLD
 <BR>
 <BR>
 === !GetBoneRoll(real bone_id) ===
@@ -188,9 +188,9 @@ Rotate the bone around an arbitrary axis.
    * _x_, _y_, _z_ - The axis to rotate around.
    * _degrees_ - The number of degrees to rotate the bone.
    * _relative_type_ - The space in which the rotation should occur.  Can be:
-     * global.TS_LOCAL
-     * global.TS_PARENT
-     * global.TS_WORLD
+     * TS_LOCAL
+     * TS_PARENT
+     * TS_WORLD
 <BR>
 <BR>
 === !SetBoneInitialState(real bone_id) ===

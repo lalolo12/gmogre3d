@@ -173,9 +173,9 @@ Moves a scene node along the Cartesian axes, i.e. along world x,y,z.
    * _scene_node_id_ - The ID of the scene node.
    * _x_, _y_, _z_ - The translation values.
    * _relative_type_ - The space in which the translation is relative to.  Can be:
-     * global.TS_LOCAL
-     * global.TS_PARENT
-     * global.TS_WORLD
+     * TS_LOCAL
+     * TS_PARENT
+     * TS_WORLD
 <BR>
 <BR>
 === !SetSceneNodeDirection(real scene_node_id, real x, real y, real z, real relative_type) ===
@@ -187,9 +187,9 @@ Note that the 'up' vector for the orientation will automatically be recalculated
    * _scene_node_id_ - The ID of the scene node.
    * _x_, _y_, _z_ - The components of the direction vector.
    * _relative_type_ - Optional space in which this direction vector is expressed. The default if not passed is TS_LOCAL. Can be:
-     * global.TS_LOCAL
-     * global.TS_PARENT
-     * global.TS_WORLD 
+     * TS_LOCAL
+     * TS_PARENT
+     * TS_WORLD 
 <BR>
 <BR>
 === !SetSceneNodeLookAt(real scene_node_id, real x, real y, real z, real relative_type) ===
@@ -199,9 +199,9 @@ Set's the scene node's orientation to look at a point in space.
    * _scene_node_id_ - The ID of the scene node.
    * _x_, _y_, _z_ - The point to look at.
    * _relative_type_ - Optional space in which the point resides. The default if not passed is TS_LOCAL. Can be:
-     * global.TS_LOCAL
-     * global.TS_PARENT
-     * global.TS_WORLD
+     * TS_LOCAL
+     * TS_PARENT
+     * TS_WORLD
 <BR>
 <BR>
 === !EnableSceneNodeInheritOrientation(real scene_node_id, real enable) ===
@@ -242,9 +242,9 @@ Rotate the node around the Z-axis.
    * _scene_node_id_ - The ID of the scene node.
    * _degrees_ - The number of degrees to yaw the scene node.
    * _relative_type_ - Optional space in which the rotation should occur. The default if not passed is TS_LOCAL. Can be:
-     * global.TS_LOCAL
-     * global.TS_PARENT
-     * global.TS_WORLD
+     * TS_LOCAL
+     * TS_PARENT
+     * TS_WORLD
 <BR>
 <BR>
 === !GetSceneNodeYaw(real scene_node_id) ===
@@ -261,9 +261,9 @@ Rotate the node around the Y-axis.
    * _scene_node_id_ - The ID of the scene node.
    * _degrees_ - The number of degrees to pitch the scene node.
    * _relative_type_ - Optional space in which the rotation should occur. The default if not passed is TS_LOCAL. Can be:
-     * global.TS_LOCAL
-     * global.TS_PARENT
-     * global.TS_WORLD
+     * TS_LOCAL
+     * TS_PARENT
+     * TS_WORLD
 <BR>
 <BR>
 === !GetSceneNodePitch(real scene_node_id) ===
@@ -280,9 +280,9 @@ Rotate the node around the X-axis.
    * _scene_node_id_ - The ID of the scene node.
    * _degrees_ - The number of degrees to roll the scene node.
    * _relative_type_ - Optional space in which the rotation should occur. The default if not passed is TS_LOCAL. Can be:
-     * global.TS_LOCAL
-     * global.TS_PARENT
-     * global.TS_WORLD
+     * TS_LOCAL
+     * TS_PARENT
+     * TS_WORLD
 <BR>
 <BR>
 === !GetSceneNodeRoll(real scene_node_id) ===
@@ -300,9 +300,9 @@ Rotate the node around an arbitrary axis.
    * _x_, _y_, _z_ - The axis to rotate around.
    * _degrees_ - The number of degrees to rotate the scene node.
    * _relative_type_ - Optional space in which the rotation should occur. The default if not passed is TS_LOCAL. Can be:
-     * global.TS_LOCAL
-     * global.TS_PARENT
-     * global.TS_WORLD
+     * TS_LOCAL
+     * TS_PARENT
+     * TS_WORLD
 <BR>
 <BR>
 === !ResetSceneNodeOrientation(real scene_node_id) ===

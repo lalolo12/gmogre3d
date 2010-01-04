@@ -16,9 +16,9 @@ Note that you must include the !OgreCore.zip file in your resources in order to 
 Sets the logging level of GMOgre messages to the GMOgre3D.log file.
 ====Parameters====
    * _type_ - The level of messages to log.  Can be:
-      * global.LL_LOW
-      * global.LL_NORMAL
-      * global.LL_BOREME
+      * LL_LOW
+      * LL_NORMAL
+      * LL_BOREME
 <BR>
 <BR>
 === !LogMessage(string msg, real level) ===
@@ -27,9 +27,9 @@ Logs your own message the GMOgre3D.log file.
 ====Parameters====
    * _msg_ - The message to log.
    * _type_ - The level of message to log.  Can be:
-      * global.LML_TRIVIAL
-      * global.LML_NORMAL
-      * global.LML_CRITICAL
+      * LML_TRIVIAL
+      * LML_NORMAL
+      * LML_CRITICAL
 <BR>
 <BR>
 === !SaveScreenshot(string filename) ===

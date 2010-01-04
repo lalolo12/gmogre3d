@@ -45,9 +45,9 @@ Sets the metrics type used for the 2D coordinates to display a text object.
 ====Parameters====
    * _text_id_ - The ID of the text.
    * _type_ - The type of metrics to use.  Can be:
-      * global.GMM_RELATIVE - Positions and sizes are parametrics from 0.0 to 1.0.
-      * global.GMM_PIXELS - Positions and sizes are in absolute pixels.
-      * global.GMM_RELATIVE_ASPECT_ADJUSTED - Positions and sizes are in virtual pixels.
+      * GMM_RELATIVE - Positions and sizes are parametrics from 0.0 to 1.0.
+      * GMM_PIXELS - Positions and sizes are in absolute pixels.
+      * GMM_RELATIVE_ASPECT_ADJUSTED - Positions and sizes are in virtual pixels.
 <BR>
 <BR>
 === !SetTextPosition(real text_id, real x, real y) ===
@@ -72,9 +72,9 @@ Sets the alignment of a text object.
 ====Parameters====
    * _text_id_ - The ID of the text.
    * _type_ - The type of alignment to use.  Can be:
-      * global.ALIGN_LEFT - The text is left aligned on the previously specified position.
-      * global.ALIGN_RIGHT - The text is right aligned on the previously specified position.
-      * global.ALIGN_CENTER - The text is centered on the previously specified position.
+      * ALIGN_LEFT - The text is left aligned on the previously specified position.
+      * ALIGN_RIGHT - The text is right aligned on the previously specified position.
+      * ALIGN_CENTER - The text is centered on the previously specified position.
 <BR>
 <BR>
 === !GetTextWidth(real text_id) ===

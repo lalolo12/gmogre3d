@@ -5,7 +5,7 @@ The first step in drawing text is to setup your font resource.  This is first do
 
 If you look in the media\packs\ subfolder of the example GM projects that come with GMOgre you will see a !OgreCore.zip file.  This archive contains a True Type font called 'bluebold' which we will use in this how-to.  In order to use this font you must include it in your resources.  Add this line before your !InitializeAllResourceGroups() function call:
 {{{
-   AddResourceLocation("./media/packs/OgreCore.zip", global.LOC_ZIP, "Bootstrap");
+   AddResourceLocation("./media/packs/OgreCore.zip", LOC_ZIP, "Bootstrap");
 }}}
 
 = Load A Font =

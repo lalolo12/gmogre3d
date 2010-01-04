@@ -5,18 +5,18 @@ In this tutorial we will be exploring how to manipulate terrain, sky, and fog in
 To start, create a new object called obj_engine and add it to your room.  Add the following code in the Create event:
 {{{
 InitializeOgre3D();
-StartOgre3DEngine(global.RENDER_DX9);
+StartOgre3DEngine(RENDER_DX9);
 
-AddResourceLocation("./media/packs/OgreCore.zip", global.LOC_ZIP);
-AddResourceLocation("./media/packs/SkyBox.zip", global.LOC_ZIP);
-AddResourceLocation("./media/materials/programs", global.LOC_FILESYSTEM);
-AddResourceLocation("./media/materials/scripts", global.LOC_FILESYSTEM);
-AddResourceLocation("./media/materials/textures", global.LOC_FILESYSTEM);
-AddResourceLocation("./media/terrain", global.LOC_FILESYSTEM);
-AddResourceLocation("./media/models", global.LOC_FILESYSTEM);
+AddResourceLocation("./media/packs/OgreCore.zip", LOC_ZIP);
+AddResourceLocation("./media/packs/SkyBox.zip", LOC_ZIP);
+AddResourceLocation("./media/materials/programs", LOC_FILESYSTEM);
+AddResourceLocation("./media/materials/scripts", LOC_FILESYSTEM);
+AddResourceLocation("./media/materials/textures", LOC_FILESYSTEM);
+AddResourceLocation("./media/terrain", LOC_FILESYSTEM);
+AddResourceLocation("./media/models", LOC_FILESYSTEM);
 InitializeAllResourceGroups();
 
-CreateSceneManager(global.ST_EXTERIOR_CLOSE);
+CreateSceneManager(ST_EXTERIOR_CLOSE);
 
 SetAmbientLight(c_white);
 
@@ -37,7 +37,7 @@ SetCameraLookAt(cam_id, 0, 0, 0);
 
 EnableMouseLook(cam_id, true);
 
-render_type = global.PM_SOLID;
+render_type = PM_SOLID;
 }}}
 Next add the Step event to the obj_camera object and adding the following line:
 {{{
@@ -61,10 +61,10 @@ MoveCameraBackward(cam_id, 1.4)
 }}}
 In the Keyboard R event add:
 {{{
-if (render_type == global.PM_SOLID)
-   render_type = global.PM_WIREFRAME;
+if (render_type == PM_SOLID)
+   render_type = PM_WIREFRAME;
 else
-   render_type = global.PM_SOLID;
+   render_type = PM_SOLID;
 
 SetCameraRenderType(render_type);
 }}}
@@ -159,24 +159,24 @@ SetViewportBackgroundColor(obj_engine.view_id, make_color_rgb(200, 200, 200));
 }}}
 Now that we have set the background color, we can create the fog. Remember, this code must appear before the !SetWorldGeometry call:
 {{{
-SetFog(global.FOG_LINEAR, make_color_rgb(200, 200, 200), 0.0, 50, 500);
+SetFog(FOG_LINEAR, make_color_rgb(200, 200, 200), 0.0, 50, 500);
 }}}
 The first parameter to the !SetFog function is the type of fog (in this case, linear). The second parameter to !SetFog is the color of the fog we are using (in this case a very very light grey). The third parameter is not used in linear fog. The fourth and fifth parameters specify the range where the fog gets thicker. In this case we have set the fog starting point to be 50 and the stopping point to be 500. This means that from 0 to 50 units in front of the camera, there is no fog. From 50 to 500 units away from the Camera, the fog gets thicker in a linear fashion. At 500 units away from the Camera, you can no longer see anything other than fog. Run the game.
 
 Another type of fog that we can use is exponential fog. Instead of setting starting and stopping bounds for fog, we instead set a density for the fog (the fourth and fifth parameters are unused). Replace the previous call to !SetFog with this:
 {{{
-SetFog(global.FOG_EXP, make_color_rgb(200, 200, 200), 0.005);
+SetFog(FOG_EXP, make_color_rgb(200, 200, 200), 0.005);
 }}}
 Run the game. If you are using the DirectX Renderer you may find it completely fogged out; calling !SetFog after !SetWorldGeometry fixes this. The OpenGL Renderer behaves as documented. This creates a different look to the fog that is generated. There is also another exponential fog function which is more severe than the first one (i.e. fog gets much thicker each unit you move away from the Camera compared to the first fog function). Note that there is more fog-per-density when using FOG_EXP2. Replace the previous call to setFog with this:
 {{{
-SetFog(global.FOG_EXP2, make_color_rgb(200, 200, 200), 0.003);
+SetFog(FOG_EXP2, make_color_rgb(200, 200, 200), 0.003);
 }}}
 Run the game again. Fog is mostly interchangeable between the three functions that GMOgre3D provides. You should experiment with all three fog functions and see which looks best in your game.
 
 === Fog and Sky ===
 You can run into some interesting problems when trying to use fog with a !SkyBox and !SkyDome. Since !SkyDomes and !SkyBoxes are just cubes, using them with fog is problematic since fog works in a spherical manner. Clear out all !SkyDome code from the Create event. If we cleverly choose our !SkyDome and fog parameters, we can see the problem directly:
 {{{
-SetFog(global.FOG_LINEAR, make_color_rgb(200, 200, 200), 0.0, 50, 515);
+SetFog(FOG_LINEAR, make_color_rgb(200, 200, 200), 0.0, 50, 515);
 SetViewportBackgroundColor(obj_engine.view_id, make_color_rgb(200, 200, 200));
 SetWorldGeometry("terrain.cfg");
 EnableSkyDome(true, "Examples/CloudySky", 5, 8, 500);
@@ -185,7 +185,7 @@ Run the game. If you move the camera around, you will see different portions of 
 
 This is certainly not what we want. Another option is to use a !SkyPlane instead. Replace the code above with this:
 {{{
-SetFog(global.FOG_LINEAR, make_color_rgb(200, 200, 200), 0.0, 0, 330);
+SetFog(FOG_LINEAR, make_color_rgb(200, 200, 200), 0.0, 0, 330);
 SetViewportBackgroundColor(obj_engine.view_id, make_color_rgb(200, 200, 200));
 SetWorldGeometry("terrain.cfg");
 EnableSkyPlane(true, "Examples/CloudySky", 500, 20, 100, true, 0.5, 150, 150);
@@ -198,7 +198,7 @@ There is a way to make fog not affect the sky entirely, but it requires modifyin
 You may not want to use sky at all when you set fog, because if the fog is thick enough you cannot see the sky anyway. The trick with fog that we described above allows us to perform a nifty graphic hack that can be useful in some cases. Instead of setting the fog to a bright color, lets set it to be very dark and see what happens (note we have set the !SkyPlane to be only 10 units away from the camera, which is before the fog sets in):
 {{{
 SetViewportBackgroundColor(obj_engine.view_id, make_color_rgb(32, 32, 32));
-SetFog(global.FOG_LINEAR, color_rgb(32, 32, 32), 0.0, 10, 150);
+SetFog(FOG_LINEAR, color_rgb(32, 32, 32), 0.0, 10, 150);
 SetWorldGeometry("terrain.cfg");
 EnableSkyPlane(true, "Examples/SpaceSkyPlane", 100, 45, 10, true, 0.5, 150, 150);
 }}}
