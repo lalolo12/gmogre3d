@@ -7,11 +7,11 @@ A Newton Rigid Body is the basic object in the physics world. it represents a so
 
 === !CreateNewtonBody(real newton_world_id, real newton_collision_id, real type) ===
 ----
-creates a Newton Rigid Body in a Newton World, based on a specific collision shape.
+Creates a Newton Rigid Body in a Newton World, based on a specific collision shape.
 ====Parameters====
    * _newton_world_id_ - The ID of the physics world.
    * _newton_collision_id_ - The ID of the collision shape.
-   * _type_ - Optional application specific ID to identify the type of body. Can be useful in identifiying bodies in a material collisions.
+   * _type_ - Optional application specific ID to identify the type of body. Can be useful in identifying bodies in a material collisions.
 <BR>
 <BR>
 === !DestroyNewtonBody(real newton_body_id) ===
@@ -92,81 +92,106 @@ Note that continuous collision can also be set on a per-material basis via the M
    * _enable_ - Whether to enable or disable continuous collision.
 <BR>
 <BR>
-=== !SetNewtonBodyForce(real newton_body_id, real x, real y, real z) ===
-----
-====Parameters====
-   * _newton_body_id_ - The ID of the Newton body.
-<BR>
-<BR>
 === !SetNewtonBodyMassMatrix(real newton_body_id, real mass, real x, real y, real z) ===
 ----
+Sets the mass and inertia for a body.
+
+Set the mass of the Rigid Body.  Inertia is also set here.  Inertia represents a body's "resistance" to rotation around the 3 primary axis.  GMOgre3D has a few utility functions that can help you calculate these values based on several primitive shapes.
 ====Parameters====
    * _newton_body_id_ - The ID of the Newton body.
+   * _mass_ - The body mass.
+   * _x_, _y_, _z_ - The vector representing body moment of inertia.
 <BR>
 <BR>
-=== !SetNewtonBodyMaterialGroupID(real newton_body_id, real material_id) ===
+=== !SetNewtonBodyMaterial(real newton_body_id, real newton_material_id) ===
 ----
+Set the material for the body
+
+Materials are an extremely powerful way to control body behavior. First create a new Material object, and then pass the ID to apply that material to the body. 
 ====Parameters====
    * _newton_body_id_ - The ID of the Newton body.
+   * _newton_material_id_ - The ID of the Newton Material.
 <BR>
 <BR>
 === !SetNewtonBodyOmega(real newton_body_id, real x, real y, real z) ===
 ----
+Sets an arbitrary omega for a body.
+
+Setting velocity/omega directly for a body in real-time is not recommended for proper physics behavior.  This function is intended to be used to setup a body initially.
 ====Parameters====
    * _newton_body_id_ - The ID of the Newton body.
-<BR>
-<BR>
-=== !SetNewtonBodyTorque(real newton_body_id, real x, real y, real z) ===
-----
-====Parameters====
-   * _newton_body_id_ - The ID of the Newton body.
+   * _x_, _y_, _z_ - The vector representing the desired omega (rotational velocity).
 <BR>
 <BR>
 === !SetNewtonBodyVelocity(real newton_body_id, real x, real y, real z) ===
 ----
+Sets an arbitrary velocity for a body.
+
+Setting velocity/omega directly for a body in real-time is not recommended for proper physics behavior.  This function is intended to be used to setup a body initially.
 ====Parameters====
    * _newton_body_id_ - The ID of the Newton body.
+   * _x_, _y_, _z_ - The vector representing the desired velocity.
 <BR>
 <BR>
 === !GetNewtonBodyType(real newton_body_id) ===
 ----
+Returns the body type.
+
+Body type is an application specific ID used to identify the type of body. Can be useful in identifying bodies in a material collisions.
 ====Parameters====
    * _newton_body_id_ - The ID of the Newton body.
 <BR>
 <BR>
 === !FreezeNewtonBody(real newton_body_id) ===
 ----
+Freezes the Rigid Body.
+
+This function "freezes" the Rigid Body, removing it from the active simulation list.  It will "unfreeze" if another body comes in contact with it, or you "unfreeze" it.
 ====Parameters====
    * _newton_body_id_ - The ID of the Newton body.
 <BR>
 <BR>
 === !UnfreezeNewtonBody(real newton_body_id) ===
 ----
+Unfreezes the Rigid Body.
 ====Parameters====
    * _newton_body_id_ - The ID of the Newton body.
 <BR>
 <BR>
 === !SetNewtonBodyUserData(real newton_body_id, real data) ===
 ----
+Associates a value with a body.
+
+User data can be used by a game to store an application specific value to associate with a body.  This value can then be retrieved later.  Useful of you would like to attach a GM instance to a body type, and on collision retrieve the GM instance using the GetNewtonBodyUserData function.
 ====Parameters====
    * _newton_body_id_ - The ID of the Newton body.
+   * _data_ - Application specific value to associate with this body.
 <BR>
 <BR>
 === !GetNewtonBodyUserData(real newton_body_id) ===
 ----
+Returns a previously associated value with a body.
+
+User data can be used by a game to store an application specific value to associate with a body.  This value can then be retrieved later.  Useful of you would like to attach a GM instance to a body type, and on collision retrieve the GM instance using the GetNewtonBodyUserData function.
 ====Parameters====
    * _newton_body_id_ - The ID of the Newton body.
 <BR>
 <BR>
 === !AttachNewtonBodyToSceneNode(real newton_body_id, real scene_node_id) ===
 ----
+Attach a body to a !SceneNode.
+
+This is an easy way to connect a Rigid Body with an !SceneNode.  After calling this, the !SceneNode will have its position and orientation automatically updated to that of the Rigid Body each time you call !UpdateNewtonWorld(), and the body has moved during the update.
 ====Parameters====
    * _newton_body_id_ - The ID of the Newton body.
+   * _scene_node_id_ - The ID of the !SceneNode.
 <BR>
 <BR>
 === !DetachNewtonBodyFromSceneNode(real newton_body_id, real scene_node_id) ===
 ----
+Detaches a body from a !SceneNode.
 ====Parameters====
    * _newton_body_id_ - The ID of the Newton body.
+   * _scene_node_id_ - The ID of the !SceneNode.
 <BR>
 <BR>
