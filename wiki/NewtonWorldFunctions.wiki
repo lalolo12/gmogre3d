@@ -1,0 +1,144 @@
+#summary Represents a physics world.
+
+=== Overview ===
+These functions represent a !NewtonWorld, which is the basic space in which physics elements can exist.  It can have various Rigid Bodies, connected by joints, and other constraints.
+<BR>
+<BR>
+=== !CreateNewtonWorld() ===
+----
+Creates a physics world.
+
+A physics world holds all of your Rigid Bodies, Collision data, etc. Although you can theoretically have more than 1 world in an application, most situations only require a single world. 
+<BR>
+<BR>
+<BR>
+=== !DestroyNewtonWorld(real newton_world_id) ===
+----
+Destroys a physics world, and all bodies / joints inside of it.
+====Parameters===
+   * _newton_world_id_ - The ID of the Newton world.
+<BR>
+<BR>
+=== !EnableNewtonWorldDebugger(real newton_world_id, real enable) ===
+----
+Enables or disables the Newton debugger.
+
+The Newton debugger is a extremely handy tool, which allows you to visually see all Newton bodies in the world. When enabled it will display a wireframe outline around all Newton bodies, allowing you to visually see where collision should occur.
+
+It will also display text information over every Newton body showing it's mass, position, orientation, and velocity.
+====Parameters===
+   * _newton_world_id_ - The ID of the Newton world.
+<BR>
+<BR>
+=== !SetNewtonWorldDebuggerFont(real newton_world_id, string font_name, real font_size) ===
+----
+Sets the font used by the Newton debugger to the specified font resource with the specified size.
+
+Note they by default the font used is !BlueHighway which is included in the !OgreCore.zip file. If you do not include this file in your game then you MUST call this function to specify a valid font resource.
+====Parameters===
+   * _newton_world_id_ - The ID of the Newton world.
+   * _font_name_ - The name of the font resource.
+   * _font_size_ - The size to draw the font. 
+<BR>
+<BR>
+=== !DestroyAllNewtonWorldBodies(real newton_world_id) ===
+----
+Destroys all Rigid Bodies and Joints in the world.
+====Parameters===
+   * _newton_world_id_ - The ID of the Newton world.
+<BR>
+<BR>
+=== !SetNewtonWorldSolverModel(real newton_world_id, real type) ===
+----
+Set the physics solver model
+
+Setting the solver model allows sacrificing accuracy and realism for speed, good for games, etc.
+====Parameters===
+   * _newton_world_id_ - The ID of the Newton world.
+   * _type_ - The type of solver model to use. Can be:
+      * _global.SM_EXACT_ - The most accurate simulation.
+      * _global.SM_FASTEST_ - Still accurate, but faster.  This is the default mode.
+      * _global.SM_MEDIUM_ - More accurate, stronger joints, but still liner.
+      * _global.SM_SLOW_ - Even more accurate, stronger joints, but still linear.
+      * _global.SM_RIDICULUS_ - You better use the quadric solver.
+<BR>
+<BR>
+=== !SetNewtonWorldFrictionModel(real newton_world_id, real type) ===
+----
+Set the physics friction model.
+
+Setting the friction model allows sacrificing accuracy and realism for speed, good for games, etc.
+====Parameters===
+   * _newton_world_id_ - The ID of the Newton world.
+   * _type_ - The type of friction model to use. Can be:
+      * _global.FM_EXACT_ - Exact friction model.  This is the default mode.
+      * _global.FM_ADAPTIVE_ - Adaptive friction mode.  This is faster but less accurate.
+<BR>
+<BR>
+=== !SetNewtonWorldPlatformArchitecture(real newton_world_id, real type) ===
+----
+Sets a specific architecture to use for physics calculations.
+
+Setting to a specific architecture can allow for deterministic physics calculations on systems with different CPU's, which is particularly useful for multiplayer systems where deterministic physics are absolutely vital.
+====Parameters===
+   * _newton_world_id_ - The ID of the Newton world.
+   * _type_ - The type of platform architecture to use. Can be:
+      * _0_ - Force the hardware lower common denominator for the running platform. This is the slowest mode.
+      * _1_ - Will try to use common floating point enhancement like special instruction sets on the specific architecture. This mode may lead to results that differ from mode 0 and 2 as the accumulation round off errors maybe different.
+      * _2_ - The engine will try to use the best possible hardware setting found in the current platform architecture. This is the default configuration. This mode made lead to results that differ from mode 0 and 1 as the accumulation round off errors maybe different.
+<BR>
+<BR>
+=== !SetNewtonWorldThreadCount(real newton_world_id, real threads) ===
+----
+Set the number of threads for the physics simulation to use.
+====Parameters===
+   * _newton_world_id_ - The ID of the Newton world.
+   * _threads_ - The number of threads to use.
+<BR>
+<BR>
+=== !InvalidateNewtonWorldCache(real newton_world_id) ===
+----
+Invalidate internal cache.
+
+This function completely resets the cache that Newton uses to improve simulation performance.  This is useful for situations where you have reset the simulation to a previous point in time, or reset all bodies, and do not want the state of the world from the previous frame affecting the next frame.
+====Parameters===
+   * _newton_world_id_ - The ID of the Newton world.
+<BR>
+<BR>
+=== !SetNewtonWorldSize(real newton_world_id, real minx, real miny, real minz, real maxx, real maxy, real maxz) ===
+----
+Sets the newton world size.
+
+Setting the world size is very important for a efficient simulation.  Although basic collisions will work outside the world limits, other things like raycasting will not work outside the world limits.
+====Parameters===
+   * _newton_world_id_ - The ID of the Newton world.
+   * _minx_, _miny_, _minz_ - The minimum point of the world bounding box.
+   * _maxx_, _maxy_, _maxz_ - The maximum point of the world bounding box.
+<BR>
+<BR>
+=== !GetNewtonWorldDefaultMaterial(real newton_world_id) ===
+----
+Returns the ID of the default Newton Material object.
+
+When you create a Newton world, a default material is created, which is by default applied to all new rigid bodies.
+====Parameters===
+   * _newton_world_id_ - The ID of the Newton world.
+<BR>
+<BR>
+=== !SetNewtonWorldGravity(real newton_world_id, real x, real y, real z) ===
+----
+====Parameters===
+   * _newton_world_id_ - The ID of the Newton world.
+   * _x_, _y_, _z_ - The gravity to apply to all bodies in your Newton world.  Default is -9.8 on the z axis (normal earth gravity).
+<BR>
+<BR>
+=== !UpdateNewtonWorld(real newton_world_id, real seconds) ===
+----
+Update the world by the specified number of seconds.
+
+Note this function is clamped to values representing between 60fps and 600fps.  If you pass a smaller value, it is internally clamped to 60fps.  Likewise a value higher than 600fps is treated as 600fps.
+====Parameters===
+   * _newton_world_id_ - The ID of the Newton world.
+   * _seconds_ - The number of elapsed seconds.
+<BR>
+<BR>
