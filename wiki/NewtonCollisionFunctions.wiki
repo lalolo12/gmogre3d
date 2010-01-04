@@ -1,7 +1,9 @@
 #summary Represents a Newton collision, which is the Newton structure for collision geometry.
 
 === Overview ===
-Collision primitives are reference counted objects. The application should call !DestroyNewtonCollision in order to release references to the object. Neglecting to release references to collision primitives is a common cause of memory leaks. Collision primitives can be reused with more than one body. This will reduce the amount of memory used be the engine, as well as speed up some calculations. 
+The Newton collision primitives describe the shape of the objects. It doesn't describe its mass or weight distribution, just an overall shape good for collision detection. The mass and inertia is given by a Newton Rigid Body object. So you can, for example, have a body with a mass and inertia torque like a box and (collision) shape like cylinder (or a "vehicle", or...), even if it may be pointless...
+
+Newton collision primitives are reference counted objects. The application should call !DestroyNewtonCollision in order to release references to the object. Neglecting to release references to collision primitives is a common cause of memory leaks. Collision primitives can be reused with more than one body. This will reduce the amount of memory used be the engine, as well as speed up some calculations. 
 <BR>
 <BR>
 === !CreateNewtonBoxCollision(real newton_world_id, real x, real y, real z, real id) ===
