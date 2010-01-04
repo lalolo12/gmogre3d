@@ -185,7 +185,7 @@ calculates and returns the moment of inertia for a convex collision object.
 
 A convex collision object is any collision objects except the Tree Collision object.
 
-It should be noted that the generated inertia values should be multiplied by the object mass before calling SetNewtonBodyMassMatrix.
+It should be noted that the generated inertia values should be multiplied by the object mass before calling !SetNewtonBodyMassMatrix.
 
 Since GM cannot return 3 values in a single function call these factors are stored in temporary variables and can be retrieved by calling the GetX, GetY, and GetZ functions. 
 ====Parameters====
