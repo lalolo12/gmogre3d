@@ -125,6 +125,35 @@ Saves a collision object to file.
    * _filename_ - Name of the collision file to save to.
 <BR>
 <BR>
+=== !CalculateNewtonConvexCollisionInertia(real newton_collision_id) ===
+----
+calculates the moment of inertia for a convex collision object.
+
+A convex collision object is any collision objects except the Tree Collision object.
+
+It should be noted that the generated inertia values should be multiplied by the object mass before calling SetNewtonBodyMassMatrix.
+====Parameters====
+   * _newton_collision_id_ - The ID of the Newton collision.
+<BR>
+<BR>
+=== !CalculateNewtonConvexCollisionCenterOfMass(real newton_collision_id) ===
+----
+calculates the center of mass for a convex collision object.
+
+A convex collision object is any collision objects except the Tree Collision object.
+====Parameters====
+   * _newton_collision_id_ - The ID of the Newton collision.
+<BR>
+<BR>
+=== !CalculateNewtonConvexCollisionVolume(real newton_collision_id) ===
+----
+Calculates the volume of the convex collision shape.
+
+This function is especially useful for buoyancy calculations.
+====Parameters====
+   * _newton_collision_id_ - The ID of the Newton collision.
+<BR>
+<BR>
 === !StartNewtonTreeCollision(real newton_collision_id, real id) ===
 ----
 Starts a tree collision creation.
