@@ -1,0 +1,172 @@
+#summary Represents a Newton Rigid Body.
+
+=== Overview ===
+A Newton Rigid Body is the basic object in the physics world. it represents a solid (rigid) body, which can interact with other bodies in the scene. Bodies can have mass, size, and shape. Basically everything you want to be affected by physics calculations needs a Body. 
+<BR>
+<BR>
+
+=== !CreateNewtonBody(real newton_world_id, real newton_collision_id, real type) ===
+----
+creates a Newton Rigid Body in a Newton World, based on a specific collision shape.
+====Parameters====
+   * _newton_world_id_ - The ID of the physics world.
+   * _newton_collision_id_ - The ID of the collision shape.
+   * _type_ - Optional application specific ID to identify the type of body. Can be useful in identifiying bodies in a material collisions.
+<BR>
+<BR>
+=== !DestroyNewtonBody(real newton_body_id) ===
+----
+Destroys a Newton Rigid Body.
+====Parameters====
+   * _newton_body_id_ - The ID of the Newton body.
+<BR>
+<BR>
+=== !SetNewtonBodyPosition(real newton_body_id, real x, real y, real z) ===
+----
+Sets the position of a Newton body.
+
+Generally in a physics engine you shouldn't directly set the location of a Body, because this defies physics laws.  This command exists to set up bodies initially.
+====Parameters====
+   * _newton_body_id_ - The ID of the Newton body.
+   * _x_, _y_, _z_ - The position of the body.
+<BR>
+<BR>
+=== !SetNewtonBodyOrientation(real newton_body_id, real yaw, real pitch, real roll) ===
+----
+Sets the orientation of a Newton body.
+
+Generally in a physics engine you shouldn't directly set the orientation of a Body, because this defies physics laws.  This command exists to set up bodies initially.
+====Parameters====
+   * _newton_body_id_ - The ID of the Newton body.
+   * _yaw_, _pitch_, _roll_ - The orientation of the body.
+<BR>
+<BR>
+=== !AddNewtonBodyImpulse(real newton_body_id, real deltax, real deltay, real deltaz, real posx, real posy, real posz) ===
+----
+Adds an impulse (relative change in velocity) to a body.  values are in world coordinates.
+====Parameters====
+   * _newton_body_id_ - The ID of the Newton body.
+   * _deltax_, _deltay_, _deltaz_ - The desired change in velocity the point. 
+   * _posx_, _posy_, _posz_ - The center point of the impulse in global space.
+<BR>
+<BR>
+=== !SetNewtonBodyAngularDamping(real newton_body_id, real damp_coefx, real damp_coefy, real damp_coefz) ===
+----
+Set the angular damping for the body.
+
+The dampening viscous friction torque is added to the external torque applied to the body every frame before going to the solver-integrator. This torque is proportional to the square of the magnitude of the angular velocity to the body in the opposite direction of the angular velocity of the body. A game can set the dampening to zero to take control of the external forces and torque applied to the body, should it desire to have absolute control of the forces over that body. However, it is recomended that the dampening coefficient be set to a non-zero value for the majority of background bodies. This saves the application from needing to control these forces and also prevents the integrator from adding very large velocities to a body.
+====Parameters====
+   * _newton_body_id_ - The ID of the Newton body.
+   * _damp_coefx_, _damp_coefy_, _damp_coefz_ - The angular damping coefficients and is clamped to values between 0.0 and 1.0. The default is 0.1. 
+<BR>
+<BR>
+=== !SetNewtonBodyLinearDamping(real newton_body_id, real damp_coef) ===
+----
+Set the linear damping for the body.
+
+The dampening viscous friction force is added to the external force applied to the body every frame before going to the solver-integrator. This force is proportional to the square of the magnitude of the velocity to the body in the opposite direction of the velocity of the body. A game can set dampening to zero to take control of the external forces and torque applied to the body, should it desire to have absolute control of the forces over that body. However, it is recommended that the dampening coefficient is set to a non-zero value for the majority of background bodies. This saves the application from having to control these forces and also prevents the integrator from adding very large velocities to a body.
+====Parameters====
+   * _newton_body_id_ - The ID of the Newton body.
+   * _damp_coef_ - The linear damping coefficient and is clamped to a value between 0.0 and 1.0. The default is 0.1. 
+<BR>
+<BR>
+=== !SetNewtonBodyCenterOfMass(real newton_body_id, real x, real y, real z) ===
+----
+Set the body's center of mass
+
+Set a new center of mass for the body that is different than the current, without offsetting the body. You can use this to adjust the center of mass of a body at runtime.
+====Parameters====
+   * _newton_body_id_ - The ID of the Newton body.
+   * _x_, _y_, _z_ - The center of mass.
+<BR>
+<BR>
+=== !EnableNewtonBodyContinuousCollisionChecks(real newton_body_id, real enable) ===
+----
+Enable or disable high speed collision checks.
+
+Continuous collision is an advanced feature that prevents fast moving bodies from "tunneling" (missing collision) with other bodies.  Because there is penalty of about 40% to 80% depending of the shape complexity of the collision geometry, this feature is set off by default. It is the job of the application to determine what bodies need this feature on. Good guidelines are: very small objects, and bodies that move at very high speed. 
+        
+Note that continuous collision can also be set on a per-material basis via the MaterialPair object.
+====Parameters====
+   * _newton_body_id_ - The ID of the Newton body.
+   * _enable_ - Whether to enable or disable continuous collision.
+<BR>
+<BR>
+=== !SetNewtonBodyForce(real newton_body_id, real x, real y, real z) ===
+----
+====Parameters====
+   * _newton_body_id_ - The ID of the Newton body.
+<BR>
+<BR>
+=== !SetNewtonBodyMassMatrix(real newton_body_id, real mass, real x, real y, real z) ===
+----
+====Parameters====
+   * _newton_body_id_ - The ID of the Newton body.
+<BR>
+<BR>
+=== !SetNewtonBodyMaterialGroupID(real newton_body_id, real material_id) ===
+----
+====Parameters====
+   * _newton_body_id_ - The ID of the Newton body.
+<BR>
+<BR>
+=== !SetNewtonBodyOmega(real newton_body_id, real x, real y, real z) ===
+----
+====Parameters====
+   * _newton_body_id_ - The ID of the Newton body.
+<BR>
+<BR>
+=== !SetNewtonBodyTorque(real newton_body_id, real x, real y, real z) ===
+----
+====Parameters====
+   * _newton_body_id_ - The ID of the Newton body.
+<BR>
+<BR>
+=== !SetNewtonBodyVelocity(real newton_body_id, real x, real y, real z) ===
+----
+====Parameters====
+   * _newton_body_id_ - The ID of the Newton body.
+<BR>
+<BR>
+=== !GetNewtonBodyType(real newton_body_id) ===
+----
+====Parameters====
+   * _newton_body_id_ - The ID of the Newton body.
+<BR>
+<BR>
+=== !FreezeNewtonBody(real newton_body_id) ===
+----
+====Parameters====
+   * _newton_body_id_ - The ID of the Newton body.
+<BR>
+<BR>
+=== !UnfreezeNewtonBody(real newton_body_id) ===
+----
+====Parameters====
+   * _newton_body_id_ - The ID of the Newton body.
+<BR>
+<BR>
+=== !SetNewtonBodyUserData(real newton_body_id, real data) ===
+----
+====Parameters====
+   * _newton_body_id_ - The ID of the Newton body.
+<BR>
+<BR>
+=== !GetNewtonBodyUserData(real newton_body_id) ===
+----
+====Parameters====
+   * _newton_body_id_ - The ID of the Newton body.
+<BR>
+<BR>
+=== !AttachNewtonBodyToSceneNode(real newton_body_id, real scene_node_id) ===
+----
+====Parameters====
+   * _newton_body_id_ - The ID of the Newton body.
+<BR>
+<BR>
+=== !DetachNewtonBodyFromSceneNode(real newton_body_id, real scene_node_id) ===
+----
+====Parameters====
+   * _newton_body_id_ - The ID of the Newton body.
+<BR>
+<BR>
