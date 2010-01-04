@@ -1,0 +1,152 @@
+#summary Represents a Newton collision, which is the Newton structure for collision geometry.
+
+=== Overview ===
+Collision primitives are reference counted objects. The application should call !DestroyNewtonCollision in order to release references to the object. Neglecting to release references to collision primitives is a common cause of memory leaks. Collision primitives can be reused with more than one body. This will reduce the amount of memory used be the engine, as well as speed up some calculations. 
+<BR>
+<BR>
+=== !CreateNewtonBoxCollision(real newton_world_id, real x, real y, real z, real id) ===
+----
+Creates a box collision object.
+====Parameters====
+   * _newton_world_id_ - The ID of the Newton world.
+   * _x_, _y_, _z_ - The size vector specifying the width, height, and depth.
+   * _id_ - Optional application specific ID of the collision object.
+<BR>
+<BR>
+=== !CreateNewtonCapsuleCollision(real newton_world_id, real radius, real height, real id) ===
+----
+Creates a capsule collision object.
+====Parameters====
+   * _newton_world_id_ - The ID of the Newton world.
+   * _id_ - Optional application specific ID of the collision object.
+<BR>
+<BR>
+=== !CreateNewtonChamferCylinderCollision(real newton_world_id, real radius, real height, real id) ===
+----
+Creates a filled-donut shape collision object.
+====Parameters====
+   * _newton_world_id_ - The ID of the Newton world.
+   * _radius_ - Radius of the chamfer cylinder (Y and Z axis).
+   * _height_ - Height of the chamfer cylinder (X axis).
+   * _id_ - Optional application specific ID of the collision object.
+<BR>
+<BR>
+=== !CreateNewtonCylinderCollision(real newton_world_id, real radius, real height, real id) ===
+----
+Creates a cylinder collision object.
+====Parameters====
+   * _newton_world_id_ - The ID of the Newton world.
+   * _radius_ - Radius of the cylinder (Y and Z axis).
+   * _height_ - Height of the cylinder (X axis).
+   * _id_ - Optional application specific ID of the collision object.
+<BR>
+<BR>
+=== !CreateNewtonConeCollision(real newton_world_id, real radius, real height, real id) ===
+----
+Creates a cone collision object.
+====Parameters====
+   * _newton_world_id_ - The ID of the Newton world.
+   * _radius_ - Radius of the cone (Y and Z axis).
+   * _height_ - Height of the cone (X axis).
+   * _id_ - Optional application specific ID of the collision object.
+<BR>
+<BR>
+=== !CreateNewtonConvexHullCollisionFromEntity(real newton_world_id, real entity_id, real id) ===
+----
+Creates a convex hull collision object that "wraps" around an entity.
+====Parameters====
+   * _newton_world_id_ - The ID of the Newton world.
+   * _entity_id_ - The ID of the entity to wrap the tree collision around.
+   * _id_ - Optional application specific ID of the collision object.
+<BR>
+<BR>
+=== !CreateNewtonEllipsoidCollision(real newton_world_id, real x, real y, real z, real id) ===
+----
+Creates a ellipsoid collision object.
+====Parameters====
+   * _newton_world_id_ - The ID of the Newton world.
+   * _x_, _y_, _z_ - The size vector specifying the radius for all 3 axes.
+   * _id_ - Optional application specific ID of the collision object.
+<BR>
+<BR>
+=== !CreateNewtonPyramidCollision(real newton_world_id, real x, real y, real z, real id) ===
+----
+Creates a pyramid collision object.
+====Parameters====
+   * _newton_world_id_ - The ID of the Newton world.
+   * _x_, _y_, _z_ - The size vector.
+   * _id_ - Optional application specific ID of the collision object.
+<BR>
+<BR>
+=== !CreateNewtonTreeCollision(real newton_world_id) ===
+----
+Creates a blank tree collision object to be filled out later.
+
+Tree collision objects have a requirement that their mass must = 0 (aka are have infinite mass). They are useful for static geometry.
+====Parameters====
+   * _newton_world_id_ - The ID of the Newton world.
+<BR>
+<BR>
+=== !CreateNewtonTreeCollisionFromEntity(real newton_world_id, real entity_id, real optimize, real id, real face_winding) ===
+----
+Creates a tree collision object that "wraps" around an entity.
+
+Tree collision objects have a requirement that their mass must = 0 (aka are have infinite mass). They are useful for static geometry.
+====Parameters====
+   * _newton_world_id_ - The ID of the Newton world.
+   * _entity_id_ - The ID of the entity to wrap the tree collision around.
+   * _optimize_ - When optimization is enabled it will attempt to combine polygons when possible.
+   * _id_ - Optional application specific ID of the collision object.
+   * _face_winding_ - Optional parameter to specify how you want to face wind. Can be:
+      * _FW_DEFAULT_ - Default face winding.
+      * _FW_REVERSE_ - Reverses face winding.
+<BR>
+<BR>
+=== !CreateNewtonCollisionFromFile(real newton_world_id, string filename) ===
+----
+creates a collision object from a previously saved collision file. This is useful when you need to use the Tree Collision or Convex Hull collision objects and do not want to dynamically create them due to speed concerns.
+====Parameters====
+   * _newton_world_id_ - The ID of the Newton world.
+   * _filename_ - Name of the collision file to load from.
+<BR>
+<BR>
+=== !DestroyNewtonCollision(real newton_collision_id) ===
+----
+Destroys a collision object.
+====Parameters====
+   * _newton_collision_id_ - The ID of the Newton collision.
+<BR>
+<BR>
+=== !ExportNewtonCollisionToFile(real newton_collision_id, string filename) ===
+----
+Saves a collision object to file.
+====Parameters====
+   * _newton_collision_id_ - The ID of the Newton collision.
+   * _filename_ - Name of the collision file to save to.
+<BR>
+<BR>
+=== !StartNewtonTreeCollision(real newton_collision_id, real id) ===
+----
+Starts a tree collision creation.
+====Parameters====
+   * _newton_collision_id_ - The ID of the Newton collision.
+   * _id_ - Optional application specific ID of the object.
+<BR>
+<BR>
+=== !AddNewtonTreeCollisionPoly(real newton_collision_id, real x, real y, real z, real id) ===
+----
+Add a single poly to a tree collision.
+====Parameters====
+   * _newton_collision_id_ - The ID of the Newton collision.
+   * _x_, _y_, _z_ - Vector representing the global position of the polygon.
+   * _id_ - Optional application specific ID of the polygon.
+<BR>
+<BR>
+=== !FinishNewtonTreeCollision(real newton_collision_id, real optimize) ===
+----
+Finishes a tree collision.
+====Parameters====
+   * _newton_collision_id_ - The ID of the Newton collision.
+   * _optimize_ - When optimization is enabled it will attempt to combine polygons when possible.
+<BR>
+<BR>
