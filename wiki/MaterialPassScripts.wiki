@@ -102,10 +102,10 @@ Format1: scene_blend <add|modulate|alpha_blend|colour_blend>
 Example: scene_blend add
 }}}
 This is the simpler form, where the most commonly used blending modes are enumerated using a single parameter. Valid _blend_type_ parameters are:
-  * add - The color of the rendering output is added to the scene. Good for exposions, flares, lights, ghosts etc. Equivalent to 'scene_blend one one'. 
-  * modulate - The color of the rendering output is multiplied with the scene contents. Generally colors and darkens the scene, good for smoked glass, semi-transparent objects etc. Equivalent to 'scene_blend dest_colour zero'. 
-  * colour_blend - Color the scene based on the brightness of the input colors, but don't darken. Equivalent to 'scene_blend src_colour one_minus_src_colour' 
-  * alpha_blend - The alpha value of the rendering output is used as a mask. Equivalent to 'scene_blend src_alpha one_minus_src_alpha' 
+  * _add_ - The color of the rendering output is added to the scene. Good for exposions, flares, lights, ghosts etc. Equivalent to 'scene_blend one one'. 
+  * _modulate_ - The color of the rendering output is multiplied with the scene contents. Generally colors and darkens the scene, good for smoked glass, semi-transparent objects etc. Equivalent to 'scene_blend dest_colour zero'. 
+  * _colour_blend_ - Color the scene based on the brightness of the input colors, but don't darken. Equivalent to 'scene_blend src_colour one_minus_src_colour' 
+  * _alpha_blend_ - The alpha value of the rendering output is used as a mask. Equivalent to 'scene_blend src_alpha one_minus_src_alpha' 
 {{{
 Format2: scene_blend <src_factor> <dest_factor>
 Example: scene_blend one one_minus_dest_alpha
