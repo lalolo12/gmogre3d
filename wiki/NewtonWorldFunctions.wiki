@@ -127,9 +127,12 @@ When you create a Newton world, a default material is created, which is by defau
 <BR>
 === !SetNewtonWorldGravity(real newton_world_id, real x, real y, real z) ===
 ----
+Sets the gravity for the axes specified.
+
+Earth gravity is 9.81 m/s2, so to setup normal earth gravity you'd set the z axes to -9.81.
 ====Parameters===
    * _newton_world_id_ - The ID of the Newton world.
-   * _x_, _y_, _z_ - The gravity to apply to all bodies in your Newton world.  Default is -9.8 on the z axis (normal earth gravity).
+   * _x_, _y_, _z_ - The gravity to apply to all bodies in your Newton world.  Default is -9.81 on the z axis (normal earth gravity).
 <BR>
 <BR>
 === !UpdateNewtonWorld(real newton_world_id, real seconds) ===
