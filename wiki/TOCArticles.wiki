@@ -68,6 +68,7 @@
       * [NewtonMaterialFunctions Newton Material]
       * [NewtonMaterialPairFunctions Newton Material Pair]
       * [NewtonContactFunctions Newton Contact]
+      * [NewtonPlayerControllerFunctions Newton Player Controller]
     * [OverlayFunctions Overlay]
       * [BorderPanelOverlayElementFunctions Border Panel Overlay Element]
       * [OverlayElementFunctions Overlay Element]
