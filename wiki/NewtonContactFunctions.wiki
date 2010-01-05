@@ -149,3 +149,10 @@ Manually sets the acceleration along the current contact collision normal.
    * _accel_ - The desired contact acceleration.
 <BR>
 <BR>
+=== !RemoveNewtonContact(real newton_contact_id) ===
+----
+Removes a contact point from the contact joint. This removal means that the contact won't be processed further by Newton. 
+====Parameters====
+   * _newton_contact_id_ - The ID of the Newton contact object.
+<BR>
+<BR>
