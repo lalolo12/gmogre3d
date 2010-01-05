@@ -13,7 +13,7 @@ Returns the ID of the next Newton contact object in a collision, if any.
    * _newton_contact_id_ - The ID of the Newton contact object.
 <BR>
 <BR>
-=== !GetNewtonContactBodyCollisionID(real newton_contact_id, real body_id) ===
+=== GetNewtonContactBodyCollisionID(real newton_contact_id, real body_id) ===
 ----
 Returns the collision ID of a body currently colliding.
 ====Parameters====
