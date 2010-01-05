@@ -105,12 +105,19 @@ Set the mass of the Rigid Body.  Inertia is also set here.  Inertia represents a
 <BR>
 === !SetNewtonBodyMaterial(real newton_body_id, real newton_material_id) ===
 ----
-Set the material for the body
+Set the material for a body.
 
 Materials are an extremely powerful way to control body behavior. First create a new Material object, and then pass the ID to apply that material to the body. 
 ====Parameters====
    * _newton_body_id_ - The ID of the Newton body.
    * _newton_material_id_ - The ID of the Newton Material.
+<BR>
+<BR>
+=== !GetNewtonBodyMaterial(real newton_body_id) ===
+----
+Returns the material associated with a body.
+====Parameters====
+   * _newton_body_id_ - The ID of the Newton body.
 <BR>
 <BR>
 === !SetNewtonBodyOmega(real newton_body_id, real x, real y, real z) ===
