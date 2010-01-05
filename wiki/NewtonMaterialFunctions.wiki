@@ -26,7 +26,7 @@ Destroys a Newton material.
    * _newton_material_id_ - The ID of the Newton material.
 <BR>
 <BR>
-=== !GetNewtonMaterialID(real newton_material_id) ===
+=== GetNewtonMaterialID(real newton_material_id) ===
 ----
 Returns a Newton-assigned ID associated with the internal node.
 ====Parameters====
