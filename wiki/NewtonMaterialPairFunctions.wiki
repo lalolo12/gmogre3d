@@ -1,0 +1,85 @@
+#summary Represents Newton MaterialPair objects.
+
+=== Overview ===
+Newton !MaterialPair objects allow you to specify how two Materials will react when they collide. Not only can you assign properties for the softness, elasticity, and friction, but you can also specify a GM script callback to be executed whenever two Newton bodies with the two materials collide. You do so using the !SetNewtonMaterialPairContactCallback function, which you can pass any GM script name.
+
+When called, you can expect the first parameter to be the Newton Contact object that defines the collision.  This is automatically created by GMOgre3D and is only good for the duration of that function call.  Also, the two Newton bodies that are colliding are passed as the second and third arguments.
+<BR>
+<BR>
+=== !CreateNewtonMaterialPair(real newton_world_id, real newton_material1_id, real newton_material2_id) ===
+----
+Creates a new Newton material pair.
+====Parameters====
+   * _newton_world_id_ - The ID of the Newton world.
+   * _newton_material1_id_ - The ID of the first Newton material.
+   * _newton_material2_id_ - The ID of the second Newton material.
+<BR>
+<BR>
+=== !DestroyNewtonMaterialPair(real material_pair_id) ===
+----
+Destroys a Newton material pair.
+====Parameters====
+   * _newton_material_pair_id_ - The ID of the Newton material pair.
+<BR>
+<BR>
+=== !SetNewtonMaterialPairDefaultSoftness(real newton_material_pair_id, real softness) ===
+----
+Sets the default softness for a material pair.
+====Parameters====
+   * _newton_material_pair_id_ - The ID of the Newton material pair.
+   * _softness_ - The softness. Must be positive.
+<BR>
+<BR>
+=== !SetNewtonMaterialPairDefaultElasticity(real newton_material_pair_id, real elasticity) ===
+----
+Sets the default elasticity for a material pair.
+====Parameters====
+   * _newton_material_pair_id_ - The ID of the Newton material pair.
+   * _elasticity_ - The elasticity. Must be positive.
+<BR>
+<BR>
+=== !EnableNewtonMaterialPairDefaultCollidable(real newton_material_pair_id, real enable) ===
+----
+Enables or disables whether these two materials can collide or not.
+====Parameters====
+   * _newton_material_pair_id_ - The ID of the Newton material pair.
+   * _enable_ - Whether the two materials can collide or not.
+<BR>
+<BR>
+=== !EnableNewtonMaterialPairContinuousCollision(real newton_material_pair_id, real enable) ===
+----
+Enables or disables continuos collision detection for a material pair.
+
+Continuous collision is an advanced system used to prevent "tunelling", or objects passing through one an other when traveling at high velocities. There is a performance hit involved, so this sould only be used when it is deemed necessary.
+====Parameters====
+   * _newton_material_pair_id_ - The ID of the Newton material pair.
+   * _enable_ - Whether continuous collision is enabled or not.
+<BR>
+<BR>
+=== !SetNewtonMaterialPairDefaultSurfaceThickness(real newton_material_pair_id, real thickness) ===
+----
+Sets the default thickness for a material pair.
+====Parameters====
+   * _newton_material_pair_id_ - The ID of the Newton material pair.
+   * _thickness_ - The thickness.
+<BR>
+<BR>
+=== !SetNewtonMaterialPairDefaultFriction(real newton_material_pair_id, real static_friction, real kinetic_friction) ===
+----
+Set the default coefficients of friction for a material pair.
+====Parameters====
+   * _newton_material_pair_id_ - The ID of the Newton material pair.
+   * _static_friction_ - The static friction coefficent. The default is 0.9.
+   * _kinetic_friction_ - The kinetic friction coefficent. The default is 0.5.
+<BR>
+<BR>
+=== !SetNewtonMaterialPairContactCallback(real newton_material_pair_id, real func) ===
+----
+Sets a GM script callback function to be called whenever the two materials in the material pair collide.
+
+When this GM script function is called the first parameter will be the ID to the Newton Contact object that defines the collision.  The second and third parameters will be the two Newton bodies that are involved in the collision.
+====Parameters====
+   * _newton_material_pair_id_ - The ID of the Newton material pair.
+   * _func_ - The GM script function name.
+<BR>
+<BR>
