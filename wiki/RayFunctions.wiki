@@ -1,7 +1,7 @@
 #summary Enter description here
 
 
-=== !CreateRay() ===
+=== !CreateRay(real originx, real originy, real originz, real dirx, real diry, real dirz) ===
 ----
 === !DestroyRay(real ray_id) ===
 ----
