@@ -50,7 +50,7 @@ Enables or disables whether these two materials can collide or not.
 ----
 Enables or disables continuos collision detection for a material pair.
 
-Continuous collision is an advanced system used to prevent "tunelling", or objects passing through one an other when traveling at high velocities. There is a performance hit involved, so this sould only be used when it is deemed necessary.
+Continuous collision is an advanced system used to prevent "tunelling", or objects passing through one an other when traveling at high velocities. There is a performance hit involved, so this should only be used when it is deemed necessary.
 ====Parameters====
    * _newton_material_pair_id_ - The ID of the Newton material pair.
    * _enable_ - Whether continuous collision is enabled or not.
