@@ -11,7 +11,7 @@ Creates a new Newton player controller object and returns the ID.
    * _newton_body_id_ - The ID of the Newton body.
    * _max_stair_height_factor_ - The maximum height factor of an object the player controller can walk over, normally used for max stair height. The default is 0.4.
    * _max_slope_ - The maximum number of degrees the player controller can move up a slope. The default is 30.
-   * _kinematic_cushion_ - Optional kinematic cushion. The minimum value is 1.0f/64.0f.
+   * _kinematic_cushion_ - Optional kinematic cushion. The default, and minimum value, is 1.0f/64.0f.
 <BR>
 <BR>
 === !DestroyNewtonPlayerController(real newton_player_controller_id) ===
