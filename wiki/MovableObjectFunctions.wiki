@@ -1,6 +1,25 @@
-#summary One-sentence summary of this page.
+#summary Represents a movable object in a scene.
 
 === Overview ===
+Movable objects cannot be created manually.  Instead you can create the object that are derived from a movable object.  This would be !BillboardChain, !BillboardSet, !Entity, !Light, !ParticleSystem, !RibbonTrail, and Terrain.
+
+Because the above types are derived from !MovableObject you can call the following functions passing a derived objects ID.
+<BR>
+<BR>
+=== !GetMovableObjectType(real movable_object_id) ===
+----
+Returns the type of object this is.  Can be:
+   * MO_TYPE_BILLBOARD_CHAIN
+   * MO_TYPE_BILLBOARD_SET
+   * MO_TYPE_ENTITY
+   * MO_TYPE_LIGHT
+   * MO_TYPE_PARTICLE_SYSTEM
+   * MO_TYPE_RIBBON_TRAIL
+   * MO_TYPE_DEFAULT_SCENE_MANAGER
+   * MO_TYPE_OCTREE_SCENE_MANAGER
+   * MO_TYPE_TERRAIN_SCENE_MANAGER
+====Parameters====
+   * _movable_object_id_ - The ID of the movable object.
 <BR>
 <BR>
 === !DetachMovableObjectFromParentSceneNode(real movable_object_id) ===
