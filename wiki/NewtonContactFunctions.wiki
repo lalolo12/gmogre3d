@@ -68,7 +68,7 @@ set softness of the current contact
 Set the elasticity of the current contect.
 ====Parameters====
    * _newton_contact_id_ - The ID of the Newton contact object.
-   * _softness_ - The elasticity of the contact. Must be positive.
+   * _elasticity_ - The elasticity of the contact. Must be positive.
 <BR>
 <BR>
 === !EnableNewtonContactFriction(real newton_contact_id, real enable, real index) ===
