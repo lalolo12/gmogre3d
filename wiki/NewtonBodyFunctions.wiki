@@ -80,6 +80,18 @@ Set a new center of mass for the body that is different than the current, withou
    * _x_, _y_, _z_ - The center of mass.
 <BR>
 <BR>
+=== !EnableNewtonBodyAutoSleep(real newton_body_id, real enable) ===
+----
+Enable or disable whether the body should "sleep" when equilibrium is reached.
+
+When asleep Newton calculations are not performed on that body, thus saving CPU cycles.  Once a force interacts with this body it will "wake up" and start moving again until equilibrium is again reached.
+
+User-controlled bodies should disable sleeping, because frozen body callbacks are not called.
+====Parameters====
+   * _newton_body_id_ - The ID of the Newton body.
+   * _enable_ - Whether to enable or disable auto sleep.
+<BR>
+<BR>
 === !EnableNewtonBodyContinuousCollisionChecks(real newton_body_id, real enable) ===
 ----
 Enable or disable high speed collision checks.
