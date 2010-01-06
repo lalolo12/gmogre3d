@@ -135,7 +135,7 @@ Rotate the tangent direction of the contacts until the primary direction is alig
 <BR>
 === !SetNewtonContactNormalDirection(real newton_contact_id, real x, real y, real z) ===
 ----
-Manually sest the normal for the current contact collision.
+Manually sets the normal for the current contact collision.
 ====Parameters====
    * _newton_contact_id_ - The ID of the Newton contact object.
    * _x_, _y_, _z_ - The normal vector.
