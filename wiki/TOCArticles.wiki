@@ -33,7 +33,6 @@
   * How To
     * [HowToDrawText Draw Text]
   * Function List
-    * [EngineFunctions Engine]
     * Entities, Objects, & Primitives
       * [BillboardFunctions Billboard]
         * [BillboardChainFunctions Billboard Chain]
@@ -66,9 +65,6 @@
     * Math
       * [EulerFunctions Euler]
       * [VectorFunctions Vector]
-    * [MiscFunctions Misc]
-    * [MouseFunctions Mouse]
-    * [ResourceGroupFunctions Resources]
     * Scene, Terrain, & Environment
       * [CameraFunctions Camera]
       * [PagedGeometryFunctions Paged Geometry]
@@ -105,4 +101,8 @@
         * [PanelOverlayElementFunctions Panel Overlay Element]
         * [TextOverlayElementFunctions Text Overlay Element]
       * [TextFunctions Text]
+    * [EngineFunctions Engine]
+    * [MiscFunctions Misc]
+    * [MouseFunctions Mouse]
+    * [ResourceGroupFunctions Resources]
   * [ExternalResources External Resources]
