@@ -60,6 +60,7 @@
       * [TextureUnitStateFunctions Texture Unit State]
     * [MiscFunctions Misc]
     * [MouseFunctions Mouse]
+    * [MovableObjectFunctions Movable Object]
     * [MovableTextFunctions Movable Text]
     * Newton Physics
       * [NewtonWorldFunctions Newton World]
