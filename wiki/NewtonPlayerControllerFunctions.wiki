@@ -21,14 +21,14 @@ Destroys a Newton player controller object.
    * _newton_player_controller_id_ - The ID of the Newton player controller.
 <BR>
 <BR>
-=== !SetNewtonPlayerControllerVelocity(real newton_player_controller_id, real forward_speed, real side_speed, real heading) ===
+=== !SetNewtonPlayerControllerVelocity(real newton_player_controller_id, real forward_speed, real side_speed, real direction) ===
 ----
 Sets the velocity of a Newton player controller object.
 ====Parameters====
    * _newton_player_controller_id_ - The ID of the Newton player controller.
-   * _forward_speed_ - The speed to travel foward in.
+   * _forward_speed_ - The speed to travel forward in.
    * _side_speed_ - The speed to travel sideways in. A positive value moves the player to the right.
-   * _heading_ - The absolute space heading.
+   * _direction_ - The direction (yaw) the player is facing, in degrees.
 <BR>
 <BR>
 === !GetNewtonPlayerControllerForwardVelocity(real newton_player_controller_id) ===
@@ -45,9 +45,9 @@ Returns the sideways velocity of a Newton player controller object.
    * _newton_player_controller_id_ - The ID of the Newton player controller.
 <BR>
 <BR>
-=== !GetNewtonPlayerControllerHeading(real newton_player_controller_id) ===
+=== !GetNewtonPlayerControllerDirection(real newton_player_controller_id) ===
 ----
-Returns the heading of a Newton player controller object.
+Returns the direction (yaw) of a Newton player controller object.
 ====Parameters====
    * _newton_player_controller_id_ - The ID of the Newton player controller.
 <BR>
