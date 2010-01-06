@@ -16,7 +16,7 @@ Note this checks the actual mesh of an object, and not the bounding box nor the 
    * _mask_ - Optional mask used to determine if an object can be hit by the ray.  Defaults to hitting all objects.
 <BR>
 <BR>
-=== GetTerrainHeight(real x, real z) ===
+=== !GetTerrainHeight(real x, real z) ===
 ----
 Returns the height (z axis) of the terrain at the specified point on the x/y axis.
 ====Parameters====
