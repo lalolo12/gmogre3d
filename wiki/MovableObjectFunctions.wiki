@@ -9,15 +9,15 @@ Because the above types are derived from !MovableObject you can call the followi
 === !GetMovableObjectType(real movable_object_id) ===
 ----
 Returns the type of object this is.  Can be:
-   * MO_TYPE_BILLBOARD_CHAIN
-   * MO_TYPE_BILLBOARD_SET
-   * MO_TYPE_ENTITY
-   * MO_TYPE_LIGHT
-   * MO_TYPE_PARTICLE_SYSTEM
-   * MO_TYPE_RIBBON_TRAIL
-   * MO_TYPE_DEFAULT_SCENE_MANAGER
-   * MO_TYPE_OCTREE_SCENE_MANAGER
-   * MO_TYPE_TERRAIN_SCENE_MANAGER
+   * MOT_BILLBOARD_CHAIN
+   * MOT_BILLBOARD_SET
+   * MOT_ENTITY
+   * MOT_LIGHT
+   * MOT_PARTICLE_SYSTEM
+   * MOT_RIBBON_TRAIL
+   * MOT_DEFAULT_SCENE_MANAGER
+   * MOT_OCTREE_SCENE_MANAGER
+   * MOT_TERRAIN_SCENE_MANAGER
 ====Parameters====
    * _movable_object_id_ - The ID of the movable object.
 <BR>
