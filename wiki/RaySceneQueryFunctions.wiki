@@ -76,7 +76,7 @@ If no !MovableObject was hit the value will be 0.
    * _ray_scene_query_id_ - The ID of the ray scene query.
 <BR>
 <BR>
-=== GetRaySceneQueryResultWorldFragmentIntersectPoint(real ray_scene_query_id, real index) ===
+=== !GetRaySceneQueryResultWorldFragmentIntersectPoint(real ray_scene_query_id, real index) ===
 ----
 Returns the point the ray hit a world fragment for the result indicated.
 
