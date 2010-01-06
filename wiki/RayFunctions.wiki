@@ -16,11 +16,12 @@ Destroys a ray object
    * _ray_id_ - The ID of the ray.
 <BR>
 <BR>
-=== !SetRayFromViewportCamera(real ray_id, real cam_id, real x, real y) ===
+=== !SetRayFromViewportCamera(real ray_id, real camera_id, real x, real y) ===
 ----
 Sets a world space ray as cast from the camera through a viewport position.
 ====Parameters====
    * _ray_id_ - The ID of the ray.
+   * _camera_id_ - The ID of the camera.
    * _x_, _y_ - The x and y position at which the ray should intersect the viewport, in normalised screen coordinates.
 <BR>
 <BR>
