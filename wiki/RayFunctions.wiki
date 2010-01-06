@@ -1,13 +1,42 @@
-#summary Enter description here
-
-
+#summary Representation of a ray in space, i.e. a line with an origin and direction.
+<BR>
+<BR>
 === !CreateRay(real originx, real originy, real originz, real dirx, real diry, real dirz) ===
+Create a ray and returns the ID.
 ----
+====Parameters====
+   * _originx_, _originy_, _originz_ - Optional point of origin for the ray.
+   * _dirx_, _diry_, _dirz_ - Optional direction of the ray.
+<BR>
+<BR>
 === !DestroyRay(real ray_id) ===
 ----
+Destroys a ray object
+====Parameters====
+   * _ray_id_ - The ID of the ray.
+<BR>
+<BR>
 === !SetRayFromViewportCamera(real ray_id, real cam_id, real x, real y) ===
 ----
-=== !SetRayDirection(real ray_id, real x, real z, real y) ===
+Sets a world space ray as cast from the camera through a viewport position.
+====Parameters====
+   * _ray_id_ - The ID of the ray.
+   * _x_, _y_ - The x and y position at which the ray should intersect the viewport, in normalised screen coordinates.
+<BR>
+<BR>
+=== !SetRayDirection(real ray_id, real x, real y, real z) ===
 ----
-=== !SetRayOrigin(real ray_id, real x, real z, real y) ===
+Sets the direction of the ray. 
+====Parameters====
+   * _ray_id_ - The ID of the ray.
+   * _x_, _y_, _z_ - The direction of the ray.
+<BR>
+<BR>
+=== !SetRayOrigin(real ray_id, real x, real y, real z) ===
 ----
+Sets the origin of a ray. 
+====Parameters====
+   * _ray_id_ - The ID of the ray.
+   * _x_, _y_, _z_ - The origin of the ray.
+<BR>
+<BR>
