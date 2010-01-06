@@ -1,9 +1,40 @@
-#summary Enter description here
+#summary Basic collision detection functions.
+<BR>
+<BR>
+=== !CollidesWithObject(real fromx, real fromy, real fromz, real tox, real toy, real toz, real collision_radius, real min_height, real mask) ===
+----
+Returns whether or not a ray cast from the specified point to the specified point hits an object.
 
+This function allows you to set a 'mask' to limit the results of this query to certain types of result. The actual meaning of this value is up to the application; basically objects will only be "hit" if a bitwise AND operation between this mask value and the object's query flags value is non-zero. The game will have to decide what each of the bits means. 
 
-=== !CollidesWithObject(real fromx, real fromz, real fromy, real tox, real toz, real toy, real collision_radius, real ray_height, real mask) ===
+Note this checks the actual mesh of an object, and not the bounding box nor the Newton collision mesh.
+====Parameters====
+   * _fromx_, _fromy_, _fromz_ - The point to cast the ray from.
+   * _tox_, _toy_, _toz_ - The point to cast the ray to.
+   * _collision_radius_ - The radius of a sphere to use when detecting if the ray hit an object.  Ensures the ray does not go through a small hole in an object.
+   * _min_height_ - Optional min height a collision can occur at.  Ensures that small objects, like rocks, can be ignored. Default is 0 height.
+   * _mask_ - Optional mask used to determine if an object can be hit by the ray.  Defaults to hitting all objects.
+<BR>
+<BR>
+=== GetTerrainHeight(real x, real z) ===
 ----
-=== GetZCollisionDistance(real scene_node_id, real check_terrain, real space_width, real mask) ===
+Returns the height (z axis) of the terrain at the specified point on the x/y axis.
+====Parameters====
+   * _x_, _y_ - The point to cast the ray downward from.
+<BR>
+<BR>
+=== !DistanceToCollisionWithObject(real fromx, real fromz, real fromy, real tox, real toz, real toy, real collision_radius, real min_height, real mask) ===
 ----
-=== !DistanceToCollisionWithObject(real fromx, real fromz, real fromy, real tox, real toz, real toy, real collision_radius, real ray_height, real mask) ===
-----
+Returns the distance before a ray cast from the specified point to the specified point hits an object.
+
+This function allows you to set a 'mask' to limit the results of this query to certain types of result. The actual meaning of this value is up to the application; basically objects will only be "hit" if a bitwise AND operation between this mask value and the object's query flags value is non-zero. The game will have to decide what each of the bits means. 
+
+Note this checks the actual mesh of an object, and not the bounding box nor the Newton collision mesh.
+====Parameters====
+   * _fromx_, _fromy_, _fromz_ - The point to cast the ray from.
+   * _tox_, _toy_, _toz_ - The point to cast the ray to.
+   * _collision_radius_ - The radius of a sphere to use when detecting if the ray hit an object.  Ensures the ray does not go through a small hole in an object.
+   * _min_height_ - Optional min height a collision can occur at.  Ensures that small objects, like rocks, can be ignored. Default is 0 height.
+   * _mask_ - Optional mask used to determine if an object can be hit by the ray.  Defaults to hitting all objects.
+<BR>
+<BR>
