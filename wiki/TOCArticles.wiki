@@ -85,7 +85,8 @@
         * [AnimationNodeTrackFunctions Animation Node Track]
         * [AnimationStateFunctions Animation State]
         * [TransformKeyFrameFunctions Transform Key Frame]
-    * Textures & Materials
+    * Resources, Textures & Materials
+      * [ResourceGroupFunctions Resources]
       * [TextureFunctions Texture]
       * [MaterialFunctions Material]
         * [PassFunctions Pass]
@@ -104,5 +105,4 @@
     * [EngineFunctions Engine]
     * [MiscFunctions Misc]
     * [MouseFunctions Mouse]
-    * [ResourceGroupFunctions Resources]
   * [ExternalResources External Resources]
