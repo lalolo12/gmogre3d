@@ -191,7 +191,7 @@ Returns the !SceneNode ID to which an entity is attached.
    * _entity_id_ - The ID of the entity.
 <BR>
 <BR>
-=== !SetEntityRenderQueueGroup(real billboard_set_id, real type) ===
+=== !SetEntityRenderQueueGroup(real entity_id, real type) ===
 ----
 Sets the render queue group this object will be rendered through.
 
