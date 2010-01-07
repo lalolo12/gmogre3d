@@ -111,7 +111,7 @@ Sets a scene node's position, relative to it's parent.
 <BR>
 === !GetSceneNodePosition(real scene_node_id) ===
 ----
-Retrieves the scaling factor applied to a scene node.
+Retrieves the position of a scene node.
 
 Since GM cannot return 3 values in a single function call these coordinates are stored in temporary variables and can be retrieved by calling the GetX, GetY, and GetZ functions.
 ====Parameters====
