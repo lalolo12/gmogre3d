@@ -109,7 +109,7 @@ ent_id = CreateFloorEntity(1500, 1500, 20, 20, 5, 5);
 node_id = CreateRootChildSceneNode();
 AttachEntityToSceneNode(ent_id, node_id);
 }}}
-Neat huh? There are two more things we need to do with our ground before we are finished with it. The first is to tell the !SceneManager that we don't want it to cast shadows since it is what's being used for shadows to project on. The second thing is we need to put a texture on it. Our robot and ninja meshes already have material scripts defined for them. When we manually created our ground mesh, we did not specify what texture to use on it. We will use the "Examples/!Rockwall" material script that GMOgre3D includes with its examples:
+Neat huh? There are two more things we need to do with our ground before we are finished with it. The first is to tell the !SceneManager that we don't want it to cast shadows since it is what's being used for shadows to project on. The second thing is we need to put a texture on it. Our robot and ninja meshes already have material scripts defined for them. When we manually created our ground mesh, we did not specify what texture to use on it. We will use the "Examples/Rockwall" material script that GMOgre3D includes with its examples:
 {{{
 SetEntityMaterial(ent_id, "Examples/Rockwall");
 EnableEntityCastShadows(ent_id, false);
