@@ -148,7 +148,7 @@ var posx, posy, posz;
 elapsed_time = (current_time - last_time) / 1000;
 total_time += elapsed_time;
 
-// Don't need to do anything if n0 perceivable time has passed
+// Don't need to do anything if no perceivable time has passed
 if (elapsed_time == 0.0)
    exit;
 
