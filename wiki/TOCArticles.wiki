@@ -32,6 +32,7 @@
     * [FontScripts Fonts]
   * How To
     * [HowToDrawText Draw Text]
+    * [HowToCreateMaterialShader Create a Material Shader]
   * Function List
     * Entities, Objects, & Primitives
       * [BillboardFunctions Billboard]
