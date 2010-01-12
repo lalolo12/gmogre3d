@@ -202,6 +202,19 @@ Adds the net force to a global point on a body.
    * _posx_, _posy_, _posz_ - The vector representing the point of force.
 <BR>
 <BR>
+
+=== !SetNewtonBodyGravity(real newton_body_id, real x, real y, real z) ===
+----
+Sets the gravity for the axes specified for a single Newton body.
+
+Normally you just need to call !SetNewtonWorldGravity to setup gravity for all bodies in your world, but you can use this function to override gravity for specific bodies.
+
+Earth gravity is 9.81 m/s2, so to setup normal earth gravity you'd set the z axes to -9.81.
+====Parameters====
+   * _newton_body_id_ - The ID of the Newton body.
+   * _x, _y_, _z_ - The gravity to apply to this specific Newton body. Default is the gravity set in the Newton World. 
+<BR>
+<BR>
 === !GetNewtonBodyType(real newton_body_id) ===
 ----
 Returns the body type.
