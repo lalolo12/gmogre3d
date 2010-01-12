@@ -135,6 +135,16 @@ Earth gravity is 9.81 m/s2, so to setup normal earth gravity you'd set the z axe
    * _x_, _y_, _z_ - The gravity to apply to all bodies in your Newton world.  Default is -9.81 on the z axis (normal earth gravity).
 <BR>
 <BR>
+=== !SetNewtonWorldLeaveWorldCallback(real newton_world_id, real func) ===
+----
+Specifies a GM script function to be called every time a Newton body leaves the world space.
+
+Useful, for example, to remove objects from the game once they are no longer in the world.
+====Parameters====
+   * _newton_world_id_ - The ID of the Newton world.
+   * _func_ - The GM script function to call.
+<BR>
+<BR>
 === !UpdateNewtonWorld(real newton_world_id, real seconds) ===
 ----
 Update the world by the specified number of seconds.
