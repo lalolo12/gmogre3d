@@ -202,11 +202,6 @@ Adds the net force to a global point on a body.
    * _posx_, _posy_, _posz_ - The vector representing the point of force.
 <BR>
 <BR>
-GMFN double AddNewtonBodyGlobalForce(double newton_body_ptr, double x, double z, double y, double posx, double posz, double posy)
-
-GMFN double AddNewtonBodyLocalForce(double newton_body_ptr, double x, double z, double y, double posx, double posz, double posy)
-
-
 === !GetNewtonBodyType(real newton_body_id) ===
 ----
 Returns the body type.
