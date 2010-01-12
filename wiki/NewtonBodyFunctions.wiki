@@ -152,6 +152,61 @@ Setting velocity/omega directly for a body in real-time is not recommended for p
    * _x_, _y_, _z_ - The vector representing the desired velocity.
 <BR>
 <BR>
+=== !SetNewtonBodyForce(real newton_body_id, real x, real y, real z) ===
+----
+Sets the net force for a body.
+====Parameters====
+   * _newton_body_id_ - The ID of the Newton body.
+   * _x_, _y_, _z_ - The vector representing the desired force.
+<BR>
+<BR>
+=== !SetNewtonBodyTorque(real newton_body_id, real x, real y, real z) ===
+----
+Sets the net torque for a body.
+====Parameters====
+   * _newton_body_id_ - The ID of the Newton body.
+   * _x_, _y_, _z_ - The vector representing the desired torque.
+<BR>
+<BR>
+=== !AddNewtonBodyForce(real newton_body_id, real x, real y, real z) ===
+----
+Adds the net force for a body.
+====Parameters====
+   * _newton_body_id_ - The ID of the Newton body.
+   * _x_, _y_, _z_ - The vector representing the desired force.
+<BR>
+<BR>
+=== !AddNewtonBodyTorque(real newton_body_id, real x, real y, real z) ===
+----
+Adds the net torque for a body.
+====Parameters====
+   * _newton_body_id_ - The ID of the Newton body.
+   * _x_, _y_, _z_ - The vector representing the desired torque.
+<BR>
+<BR>
+=== !AddNewtonBodyLocalForce(real newton_body_id, real x, real y, real z, double posx, double posy, double posz) ===
+----
+Adds the net force to a local point on a body.
+====Parameters====
+   * _newton_body_id_ - The ID of the Newton body.
+   * _x_, _y_, _z_ - The vector representing the desired force.
+   * _posx_, _posy_, _posz_ - The vector representing the point of force.
+<BR>
+<BR>
+=== !AddNewtonBodyGlobalForce(real newton_body_id, real x, real y, real z, double posx, double posy, double posz) ===
+----
+Adds the net force to a global point on a body.
+====Parameters====
+   * _newton_body_id_ - The ID of the Newton body.
+   * _x_, _y_, _z_ - The vector representing the desired force.
+   * _posx_, _posy_, _posz_ - The vector representing the point of force.
+<BR>
+<BR>
+GMFN double AddNewtonBodyGlobalForce(double newton_body_ptr, double x, double z, double y, double posx, double posz, double posy)
+
+GMFN double AddNewtonBodyLocalForce(double newton_body_ptr, double x, double z, double y, double posx, double posz, double posy)
+
+
 === !GetNewtonBodyType(real newton_body_id) ===
 ----
 Returns the body type.
