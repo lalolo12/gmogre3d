@@ -54,7 +54,6 @@
         * [NewtonBodyFunctions Newton Body]
         * [NewtonMaterialFunctions Newton Material]
         * [NewtonMaterialPairFunctions Newton Material Pair]
-        * [NewtonContactFunctions Newton Contact]
         * [NewtonPlayerControllerFunctions Newton Player Controller]
     * Rendering & Particles
       * [CompositorFunctions Compositor]
