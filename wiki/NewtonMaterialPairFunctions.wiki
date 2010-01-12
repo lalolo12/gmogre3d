@@ -77,9 +77,9 @@ Set the default coefficients of friction for a material pair.
 ----
 Sets a GM script callback function to be called whenever the two materials in the material pair collide.
 
-When this GM script function is called the first parameter will be the ID to the Newton Contact object that defines the collision.  The second and third parameters will be the two Newton bodies that are involved in the collision.
+When this GM script function is called the first and second parameters will be the two Newton bodies that are involved in the collision.  The third parameters will be the collision speed, and the forth through sixth parameters will be the collision point.
 ====Parameters====
    * _newton_material_pair_id_ - The ID of the Newton material pair.
-   * _func_ - The GM script function name.
+   * _func_ - The GM script function to call.
 <BR>
 <BR>
