@@ -31,6 +31,15 @@ Generally in a physics engine you shouldn't directly set the location of a Body,
    * _x_, _y_, _z_ - The position of the body.
 <BR>
 <BR>
+=== !GetNewtonBodyPosition(real newton_body_id) ===
+----
+Retrieves the position of a Newton body.
+
+Since GM cannot return 3 values in a single function call these coordinates are stored in temporary variables and can be retrieved by calling the GetX(), GetY(), and GetZ() functions. 
+====Parameters====
+   * _newton_body_id_ - The ID of the Newton body. 
+<BR>
+<BR>
 === !SetNewtonBodyOrientation(real newton_body_id, real yaw, real pitch, real roll) ===
 ----
 Sets the orientation of a Newton body.
@@ -39,6 +48,16 @@ Generally in a physics engine you shouldn't directly set the orientation of a Bo
 ====Parameters====
    * _newton_body_id_ - The ID of the Newton body.
    * _yaw_, _pitch_, _roll_ - The orientation of the body.
+<BR>
+<BR>
+=== !GetNewtonBodyOrientation(real newton_body_id) ===
+----
+Retrieves the orientation of a Newton body.
+
+Since GM cannot return 3 values in a single function call these coordinates are stored in temporary
+variables and can be retrieved by calling the !GetYaw(), !GetPitch(), and !GetRoll() functions.
+====Parameters====
+    * newton_body_id - The ID of the Newton body.
 <BR>
 <BR>
 === !AddNewtonBodyImpulse(real newton_body_id, real deltax, real deltay, real deltaz, real posx, real posy, real posz) ===
