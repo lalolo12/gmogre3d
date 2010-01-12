@@ -3,7 +3,7 @@
 === Overview ===
 Newton !MaterialPair objects allow you to specify how two Materials will react when they collide. Not only can you assign properties for the softness, elasticity, and friction, but you can also specify a GM script callback to be executed whenever two Newton bodies with the two materials collide. You do so using the !SetNewtonMaterialPairContactCallback function, which you can pass any GM script name.
 
-When called, you can expect the first parameter to be the Newton Contact object that defines the collision.  This is automatically created by GMOgre3D and is only good for the duration of that function call.  Also, the two Newton bodies that are colliding are passed as the second and third arguments.
+When called, you can expect the first and second parameters will be the two Newton bodies that are involved in the collision.  The third parameters will be the collision speed, and the forth through sixth parameters will be the collision point in world space.
 <BR>
 <BR>
 === !CreateNewtonMaterialPair(real newton_world_id, real newton_material1_id, real newton_material2_id) ===
