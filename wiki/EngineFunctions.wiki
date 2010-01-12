@@ -37,7 +37,7 @@ Returns the version number of the GMOgre3D engine.
 ----
 Enables or disables monitor vsync.
 
-Must be called before !StartEngine().
+Must be called before !StartOgre3DEngine().
 ====Parameters====
    * _enable_ - Whether to enable or disable vsync.
 <BR>
@@ -46,7 +46,7 @@ Must be called before !StartEngine().
 ----
 Sets fullscreen anti-aliasing type and quality level.
 
-Must be called before !StartEngine().
+Must be called before !StartOgre3DEngine().
 ====Parameters====
    * _type_ - FSAA type.  Can be 0, 1, 2, 4, or 6.
    * _level_ - FSAA quality level.  Can be: 0, 1, or 2.
