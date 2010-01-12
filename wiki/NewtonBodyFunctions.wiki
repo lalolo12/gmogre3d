@@ -60,15 +60,6 @@ variables and can be retrieved by calling the !GetYaw(), !GetPitch(), and !GetRo
     * newton_body_id - The ID of the Newton body.
 <BR>
 <BR>
-=== !AddNewtonBodyImpulse(real newton_body_id, real deltax, real deltay, real deltaz, real posx, real posy, real posz) ===
-----
-Adds an impulse (relative change in velocity) to a body.  values are in world coordinates.
-====Parameters====
-   * _newton_body_id_ - The ID of the Newton body.
-   * _deltax_, _deltay_, _deltaz_ - The desired change in velocity the point. 
-   * _posx_, _posy_, _posz_ - The center point of the impulse in global space.
-<BR>
-<BR>
 === !SetNewtonBodyAngularDamping(real newton_body_id, real damp_coefx, real damp_coefy, real damp_coefz) ===
 ----
 Set the angular damping for the body.
@@ -149,6 +140,17 @@ Materials are an extremely powerful way to control body behavior. First create a
 Returns the material associated with a body.
 ====Parameters====
    * _newton_body_id_ - The ID of the Newton body.
+<BR>
+<BR>
+=== !AddNewtonBodyImpulse(real newton_body_id, real deltax, real deltay, real deltaz, real posx, real posy, real posz) ===
+----
+Adds an impulse (relative change in velocity) to a body.
+
+Values are in world coordinates.
+====Parameters====
+   * _newton_body_id_ - The ID of the Newton body.
+   * _deltax_, _deltay_, _deltaz_ - The desired change in velocity the point. 
+   * _posx_, _posy_, _posz_ - The center point of the impulse in global space.
 <BR>
 <BR>
 === !SetNewtonBodyOmega(real newton_body_id, real x, real y, real z) ===
