@@ -19,7 +19,7 @@ Format: technique name
 
 Techniques have only a small number of attributes of their own:
     * [#scheme scheme]
-    * [#lod_index lod_index] (and also see lod_distances in the parent material)
+    * [#lod_index lod_index] (and also see [#lod_distances lod_distances] in the parent material)
     * [#shadow_caster_material shadow_caster_material]
     * [#shadow_receiver_material shadow_receiver_material]
     * [#gpu_vendor_rule_and_gpu_device_rule gpu_vendor_rule]
