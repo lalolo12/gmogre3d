@@ -12,13 +12,13 @@ There are four types of pass:
 <BR>
 = Available Pass Attributes =
 Here are the attributes you can use in a 'pass' section of a .compositor script:
-  * _material_
-  * _input_
-  * _identifier_
-  * _first_render_queue_
-  * _last_render_queue_
-  * _clear_
-  * _stencil_
+  * [#material material]
+  * [#input input]
+  * [#identifier identifier]
+  * [#first_render_queue first_render_queue]
+  * [#last_render_queue last_render_queue]
+  * [#clear clear]
+  * [#stencil stencil]
 <BR>
 == material ==
 For passes of type 'render_quad', sets the material used to render the quad. You will want to use shaders in this material to perform fullscreen effects, and use the input attribute to map other texture targets into the texture bindings needed by this material.
