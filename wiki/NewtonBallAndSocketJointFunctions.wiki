@@ -1,7 +1,7 @@
 #summary Newton Ball and Socket joint functions.
 <BR>
 <BR>
-=== !CreateNewtonBallAndSocketJoint(double newton_child_body_id, double newton_parent_body_id, double x, double y, double z) ===
+=== !CreateNewtonBallAndSocketJoint(real newton_child_body_id, real newton_parent_body_id, real x, real y, real z) ===
 Creates a Newton ball and socket joint and returns the ID.
 
 By default joint disables collision with the linked bodies.
@@ -11,7 +11,7 @@ By default joint disables collision with the linked bodies.
    * _x_, _y_, _z_ - The origin of the ball and socket in world space.
 <BR>
 <BR>
-=== !DestroyNewtonBallAndSocketJoint(double newton_joint_id) ===
+=== !DestroyNewtonBallAndSocketJoint(real newton_joint_id) ===
 Destroys a Newton ball and socket joint.
 ====Parameters====
    * _newton_joint_id_ - The ID of the Newton joint.
