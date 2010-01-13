@@ -1,0 +1,82 @@
+#summary Represents geometry.
+<BR>
+<BR>
+=== !LoadMesh(string filename, string group, real vertex_buffer_usage, real index_buffer_usage, real disable_vertex_buffer_shadow, double disable_index_buffer_shadow) ===
+Loads a mesh from a file, making it immediately available for use.
+====Paramerers====
+   * _filename_ - The name of the .mesh file.
+   * _group_ - Optional name of the resource group to assign the mesh to. Defaults to DEFAULT_RESOURCE_GROUP_NAME.
+   * _vertex_buffer_usage_ - Optional usage flags with which the vertex buffer(s) will be created. Default is HBU_STATIC_WRITE_ONLY. Can be:
+      * _HBU_STATIC_ - Static buffer which the application rarely modifies once created. Modifying the contents of this buffer will involve a performance hit.
+      * _HBU_DYNAMIC_ - Indicates the application would like to modify this buffer with the CPU fairly often. Buffers created with this flag will typically end up in AGP memory rather than video memory.
+      * _HBU_WRITE_ONLY_ - Indicates the application will never read the contents of the buffer back, it will only ever write data. Locking a buffer with this flag will ALWAYS return a pointer to new, blank memory rather than the memory associated with the contents of the buffer; this avoids DMA stalls because you can write to a new memory area while the previous one is being used.
+      * _HBU_DISCARDABLE_ - Indicates that the application will be refilling the contents of the buffer regularly (not just updating, but generating the contents from scratch), and therefore does not mind if the contents of the buffer are lost somehow and need to be recreated. This allows and additional level of optimisation on the buffer. This option only really makes sense when combined with HBU_DYNAMIC_WRITE_ONLY.
+      * _HBU_STATIC_WRITE_ONLY_ - Combination of HBU_STATIC and HBU_WRITE_ONLY.
+      * _HBU_DYNAMIC_WRITE_ONLY_ - Combination of HBU_DYNAMIC and HBU_WRITE_ONLY. If you use this, strongly consider using HBU_DYNAMIC_WRITE_ONLY_DISCARDABLE instead if you update the entire contents of the buffer very regularly.
+      * _HBU_DYNAMIC_WRITE_ONLY_DISCARDABLE_ - Combination of HBU_DYNAMIC, HBU_WRITE_ONLY and HBU_DISCARDABLE
+   * _index_buffer_usage_ - Optional usage flags with which the index buffer(s) created for this mesh will be created with. Default is HBU_STATIC_WRITE_ONLY. Can be:
+      * _HBU_STATIC_ - Static buffer which the application rarely modifies once created. Modifying the contents of this buffer will involve a performance hit.
+      * _HBU_DYNAMIC_ - Indicates the application would like to modify this buffer with the CPU fairly often. Buffers created with this flag will typically end up in AGP memory rather than video memory.
+      * _HBU_WRITE_ONLY_ - Indicates the application will never read the contents of the buffer back, it will only ever write data. Locking a buffer with this flag will ALWAYS return a pointer to new, blank memory rather than the memory associated with the contents of the buffer; this avoids DMA stalls because you can write to a new memory area while the previous one is being used.
+      * _HBU_DISCARDABLE_ - Indicates that the application will be refilling the contents of the buffer regularly (not just updating, but generating the contents from scratch), and therefore does not mind if the contents of the buffer are lost somehow and need to be recreated. This allows and additional level of optimisation on the buffer. This option only really makes sense when combined with HBU_DYNAMIC_WRITE_ONLY.
+      * _HBU_STATIC_WRITE_ONLY_ - Combination of HBU_STATIC and HBU_WRITE_ONLY.
+      * _HBU_DYNAMIC_WRITE_ONLY_ - Combination of HBU_DYNAMIC and HBU_WRITE_ONLY. If you use this, strongly consider using HBU_DYNAMIC_WRITE_ONLY_DISCARDABLE instead if you update the entire contents of the buffer very regularly.
+      * _HBU_DYNAMIC_WRITE_ONLY_DISCARDABLE_ - Combination of HBU_DYNAMIC, HBU_WRITE_ONLY and HBU_DISCARDABLE
+   * _disable_vertex_buffer_shadow_ - Optionally disable whether to shadow the vertex buffers with system memory copies for faster read access. Default is false.
+   * _disable_index_buffer_shadow_ - Optionally disable whether to shadow the index buffers with system memory copies for faster read access. Default is false.
+<BR>
+<BR>
+=== !SuggestMeshTangentVectorSourceCoordSet(string filename, real target_semantic) ===
+Ask the mesh to suggest a source texture coordinate set to a future !BuildMeshTangentVectors call, should you wish to use texture coordinates to store the tangents.
+====Paramerers====
+   * _filename_ - The name of the .mesh file.
+   * _target_semantic_ - The semantic you intend to use to store the tangents if they are not already present; most likely options are VES_TEXTURE_COORDINATES or VES_TANGENT; you should use texture coordinates if you want compatibility with older, pre-SM2 graphics cards, and the tangent binding otherwise. Can be:
+      * _VES_POSITION_ - Position, 3 reals per vertex
+      * _VES_BLEND_WEIGHTS_ - Blending weights
+      * _VES_BLEND_INDICES_ - Blending indices
+      * _VES_NORMAL_ - Normal, 3 reals per vertex
+      * _VES_DIFFUSE_ - Diffuse colors
+      * _VES_SPECULAR_ - Specular colors
+      * _VES_TEXTURE_COORDINATES_ - Texture coordinates
+      * _VES_BINORMAL_ - Binormal (Y axis if normal is Z)
+      * _VES_TANGENT_ - Tangent (X axis if normal is Z)
+<BR>
+<BR>
+=== !SuggestMeshTangentVectorIndex(string filename, real target_semantic) ===
+Ask the mesh to suggest a destination element index to a future !BuildMeshTangentVectors call, should you wish to use texture coordinates to store the tangents.
+====Paramerers====
+   * _filename_ - The name of the .mesh file.
+   * _target_semantic_ - The semantic you intend to use to store the tangents if they are not already present; most likely options are VES_TEXTURE_COORDINATES or VES_TANGENT; you should use texture coordinates if you want compatibility with older, pre-SM2 graphics cards, and the tangent binding otherwise. Can be:
+      * _VES_POSITION_ - Position, 3 reals per vertex
+      * _VES_BLEND_WEIGHTS_ - Blending weights
+      * _VES_BLEND_INDICES_ - Blending indices
+      * _VES_NORMAL_ - Normal, 3 reals per vertex
+      * _VES_DIFFUSE_ - Diffuse colors
+      * _VES_SPECULAR_ - Specular colors
+      * _VES_TEXTURE_COORDINATES_ - Texture coordinates
+      * _VES_BINORMAL_ - Binormal (Y axis if normal is Z)
+      * _VES_TANGENT_ - Tangent (X axis if normal is Z)
+<BR>
+<BR>
+=== !BuildMeshTangentVectors(string filename, real target_semantic, real source_coord_set, real index) ===
+Builds a set of tangent vectors for a given mesh into a 3D texture coordinate buffer.
+
+Tangent vectors are vectors representing the local 'X' axis for a given vertex based on the orientation of the 2D texture on the geometry. They are built from a combination of existing normals, and from the 2D texture coordinates already baked into the model. They can be used for a number of things, but most of all they are useful for vertex and fragment programs, when you wish to arrive at a common space for doing per-pixel calculations. 
+
+The prerequisites for calling this method include that the vertex data used by every SubMesh has both vertex normals and 2D texture coordinates. 
+====Paramerers====
+   * _filename_ - The name of the .mesh file.
+   * _target_semantic_ - The semantic you intend to use to store the tangents if they are not already present; most likely options are VES_TEXTURE_COORDINATES or VES_TANGENT; you should use texture coordinates if you want compatibility with older, pre-SM2 graphics cards, and the tangent binding otherwise. Can be:
+      * _VES_POSITION_ - Position, 3 reals per vertex
+      * _VES_BLEND_WEIGHTS_ - Blending weights
+      * _VES_BLEND_INDICES_ - Blending indices
+      * _VES_NORMAL_ - Normal, 3 reals per vertex
+      * _VES_DIFFUSE_ - Diffuse colors
+      * _VES_SPECULAR_ - Specular colors
+      * _VES_TEXTURE_COORDINATES_ - Texture coordinates
+      * _VES_BINORMAL_ - Binormal (Y axis if normal is Z)
+      * _VES_TANGENT_ - Tangent (X axis if normal is Z)
+   * _source_coord_set_ - The texture coordinate index which should be used as the source of 2D texture coordinates, with which to calculate the tangents.
+   * _index_ - The element index, ie the texture coordinate set which should be used to store the 3D coordinates representing a tangent vector per vertex, if target semantic is VES_TEXTURE_COORDINATES. If this already exists, it will be overwritten. 
+<BR>
+<BR>
