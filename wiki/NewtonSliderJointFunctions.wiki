@@ -1,0 +1,37 @@
+#summary Newton Slider joint functions.
+<BR>
+<BR>
+=== !CreateNewtonSliderJoint(real newton_child_body_id, real newton_parent_body_id, real posx, real posy, real dirz, real dirx, real piny, real dirz) ===
+Creates a Newton slider joint and returns the ID.
+
+By default joint disables collision with the linked bodies.
+====Parameters====
+   * _newton_child_body_id_ - The child Newton body. This cannot have an infinite mass.
+   * _newton_parent_body_id_ - The parent Newton body. This cannot have an infinite mass.
+   * _posx_, _posy_, _posz_ - The origin of the slider in world space.
+   * _pinx_, _piny_, _pinz_ - The direction of the slider pin in world space.
+<BR>
+<BR>
+=== !DestroySliderJoint(real newton_joint_id) ===
+Destroys a Newton slider joint.
+====Parameters====
+   * _newton_joint_id_ - The ID of the Newton joint.
+<BR>
+<BR>
+
+=== !EnableNewtonSliderJointLimits(real newton_joint_id, real enable) ===
+Enables or disables limiting angles of the slider joint.
+====Parameters====
+   * _newton_joint_id_ - The ID of the Newton joint.
+   * _enable_ - Whether to enable or disable joint limits.
+<BR>
+<BR>
+
+=== !SetNewtonSliderJointLimits(real newton_joint_id, real min_stop_distance, real max_stop_distance) ===
+Sets minimum and maximum slider stop limits.
+====Parameters====
+   * _newton_joint_id_ - The ID of the Newton joint.
+   * _min_stop_distance_ - The minimum stop distance the slider joint can move.
+   * _max_stop_distance_ - The maximum stop distance the slider joint can move.
+<BR>
+<BR>
