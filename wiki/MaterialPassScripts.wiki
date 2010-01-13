@@ -7,40 +7,40 @@ To help clearly identify what each pass is used for, the pass can be named but i
 Passes have a set of global attributes (described below), zero or more nested texture_unit entries (See section 3.1.3 Texture Units), and optionally a reference to a vertex and / or a fragment program (See section 3.1.9 Using Vertex/Geometry/Fragment Programs in a Pass).
 
 Here are the attributes you can use in a 'pass' section of a .material script:
-    * ambient
-    * diffuse
-    * specular
-    * emissive
-    * scene_blend
-    * separate_scene_blend
-    * depth_check
-    * depth_write
-    * depth_func
-    * depth_bias
-    * iteration_depth_bias
-    * alpha_rejection
-    * alpha_to_coverage
-    * light_scissor
-    * light_clip_planes
-    * illumination_stage
-    * transparent_sorting
-    * normalise_normals
-    * cull_hardware
-    * cull_software
-    * lighting
-    * shading
-    * polygon_mode
-    * polygon_mode_overrideable
-    * fog_override
-    * colour_write
-    * max_lights
-    * start_light
-    * iteration
-    * point_size
-    * point_sprites
-    * point_size_attenuation
-    * point_size_min
-    * point_size_max 
+    * [#ambient ambient]
+    * [#ambient ambient]
+    * [#specular specular]
+    * [#emissive emissive]
+    * [#scene_blend scene_blend]
+    * [#separate_scene_blend separate_scene_blend]
+    * [#depth_check depth_check]
+    * [#depth_write depth_write]
+    * [#depth_func depth_func]
+    * [#depth_bias depth_bias]
+    * [#iteration_depth_bias iteration_depth_bias]
+    * [#alpha_rejection alpha_rejection]
+    * [#alpha_to_coverage alpha_to_coverage]
+    * [#light_scissor light_scissor]
+    * [#light_clip_planes light_clip_planes]
+    * [#illumination_stage illumination_stage]
+    * [#transparent_sorting transparent_sorting]
+    * [#normalise_normals normalise_normals]
+    * [#cull_hardware cull_hardware]
+    * [#cull_software cull_software]
+    * [#lighting lighting]
+    * [#shading shading]
+    * [#polygon_mode polygon_mode]
+    * [#polygon_mode_overrideable polygon_mode_overrideable]
+    * [#fog_override fog_override]
+    * [#colour_write colour_write]
+    * [#max_lights max_lights]
+    * [#start_light start_light]
+    * [#iteration iteration]
+    * [#point_size point_size]
+    * [#point_sprites point_sprites]
+    * [#point_size_attenuation point_size_attenuation]
+    * [#point_size_min point_size_min]
+    * [#point_size_max point_size_max]
 
 = Attribute Descriptions =
 == ambient ==
