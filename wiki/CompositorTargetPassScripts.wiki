@@ -15,6 +15,7 @@ The contents of both are identical, the only real difference is that you can onl
     * [WikiSyntax#input]
     * [input]
     * [#input]
+    * [#input input]
     * [WikiSyntax#input input]
 
     * _only_initial_
