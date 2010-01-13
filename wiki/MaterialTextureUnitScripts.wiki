@@ -28,8 +28,6 @@ Here are the attributes you can use in a 'texture_unit' section of a .material s
     * [#transform transform]
     * [#binding_type binding_type]
     * [#content_type content_type]
-
-You can also use a nested 'texture_source' section in order to use a special add-in as a source of texture data, See section 6. External Texture Sources for details.
 <BR>
 <BR>
 = Attribute Descriptions =
