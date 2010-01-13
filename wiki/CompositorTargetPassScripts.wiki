@@ -17,7 +17,7 @@ The contents of both are identical, the only real difference is that you can onl
     * [#lod_bias lod_bias]
     * [#material_scheme material_scheme]
     * [#shadows shadows]
-    * [#pass pass]
+    * [CompositorPassScripts pass]
 <BR>
 = Attribute Descriptions =
 == input ==
