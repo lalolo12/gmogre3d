@@ -11,8 +11,8 @@ Techniques can have the following nested elements:
   * [#texture_ref texture_ref]
   * [#scheme scheme]
   * [#compositor_logic compositor_logic]
-  * [#target target]
-  * [#target_output target_output]
+  * [CompositorTargetPassScripts target]
+  * [CompositorTargetPassScripts target_output]
 <BR>
 == texture ==
 This declares a render texture for use in subsequent target passes.
