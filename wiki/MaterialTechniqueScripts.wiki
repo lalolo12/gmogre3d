@@ -18,12 +18,12 @@ To help clearly identify what each technique is used for, the technique can be n
 Format: technique name
 
 Techniques have only a small number of attributes of their own:
-    * scheme
-    * lod_index (and also see lod_distances in the parent material)
-    * shadow_caster_material
-    * shadow_receiver_material
-    * gpu_vendor_rule
-    * gpu_device_rule 
+    * [#scheme scheme]
+    * [#lod_index lod_index] (and also see lod_distances in the parent material)
+    * [#shadow_caster_material shadow_caster_material]
+    * [#shadow_receiver_material shadow_receiver_material]
+    * [#gpu_vendor_rule gpu_vendor_rule]
+    * [#gpu_device_rule gpu_device_rule]
 <BR>
 = scheme =
 Sets the 'scheme' this Technique belongs to. Material schemes are used to control top-level switching from one set of techniques to another. For example, you might use this to define 'high', 'medium' and 'low' complexity levels on materials to allow a user to pick a performance / quality ratio. Another possibility is that you have a fully HDR-enabled pipeline for top machines, rendering all objects using unclamped shaders, and a simpler pipeline for others; this can be implemented using schemes. The active scheme is typically controlled at a viewport level, and the active one defaults to 'Default'.
