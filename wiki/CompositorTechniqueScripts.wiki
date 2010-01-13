@@ -8,6 +8,9 @@ As with material techniques, compositor techniques are evaluated in the order yo
 
 Techniques can have the following nested elements:
   * [#texture texture]
+  * [#texture_ref texture_ref]
+  * [#scheme scheme]
+  * [#compositor_logic compositor_logic]
   * [#target target]
   * [#target_output target_output]
 <BR>
@@ -25,4 +28,38 @@ Here is a description of the parameters:
 Example: texture rt0 512 512 PF_R8G8B8A8
 Example: texture rt1 target_width target_height PF_FLOAT32_RGB
 }}}
-You can in fact repeat this element if you wish. If you do so, that means that this render texture becomes a Multiple Render Target (MRT), when the GPU writes to multiple textures at once. It is imperative that if you use MRT that the shaders that render to it render to ALL the targets. Not doing so can cause undefined results. It is also important to note that although you can use different pixel formats for each target in a MRT, each one should have the same total bit depth since most cards do not support independent bit depths. If you try to use this feature on cards that do not support the number of MRTs you've asked for, the technique will be skipped (so you ought to write a fallback technique). 
+You can in fact repeat this element if you wish. If you do so, that means that this render texture becomes a Multiple Render Target (MRT), when the GPU writes to multiple textures at once. It is imperative that if you use MRT that the shaders that render to it render to ALL the targets. Not doing so can cause undefined results. It is also important to note that although you can use different pixel formats for each target in a MRT, each one should have the same total bit depth since most cards do not support independent bit depths. If you try to use this feature on cards that do not support the number of MRTs you've asked for, the technique will be skipped (so you ought to write a fallback technique).
+{{{
+Example : texture mrt_output target_width target_height PF_FLOAT16_RGBA PF_FLOAT16_RGBA chain_scope
+}}}
+
+== texture_ref ==
+This declares a reference of a texture from another compositor to be used in this compositor.
+{{{
+Format: texture_ref <Local Name> <Reference Compositor> <Reference Texture Name>
+}}}
+Here is a description of the parameters:
+====Local Name====
+A name to give the referenced texture, which must be unique within this compositor. This name is used to reference the texture in target passes, when the texture is rendered to, and in passes, when the texture is used as input to a material rendering a fullscreen quad. 
+====Reference Compositor====
+The name of the compositor that we are referencing a texture from 
+====Reference Texture Name====
+The name of the texture in the compositor that we are referencing 
+
+Make sure that the texture being referenced is scoped accordingly (either chain or global scope) and placed accordingly during chain creation (if referencing a chain-scoped texture, the compositor must be present in the chain and placed before the compositor referencing it).
+{{{
+Example : texture_ref GBuffer GBufferCompositor mrt_output
+}}}
+
+==scheme==
+This gives a compositor technique a scheme name, allowing you to manually switch between different techniques for this compositor when instantiated on a viewport by calling CompositorInstance::setScheme.
+{{{
+Format: material_scheme <Name>
+}}}
+
+==compositor_logic==
+This connects between a compositor and code that it requires in order to function correctly. When an instance of this compositor will be created, the compositor logic will be notified and will have the chance to prepare the compositor's operation (for example, adding a listener).
+{{{
+Format: compositor_logic <Name>
+}}}
+Registration of compositor logics is done by name through CompositorManager::registerCompositorLogic. 
