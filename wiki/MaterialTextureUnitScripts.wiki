@@ -4,30 +4,30 @@ Here are the attributes you can use in a 'texture_unit' section of a .material s
 <BR>
 <BR>
 = Available Texture Layer Attributes =
-    * texture_alias
-    * texture
-    * anim_texture
-    * cubic_texture
-    * tex_coord_set
-    * tex_address_mode
-    * tex_border_colour
-    * filtering
-    * max_anisotropy
-    * mipmap_bias
-    * colour_op
-    * colour_op_ex
-    * colour_op_multipass_fallback
-    * alpha_op_ex
-    * env_map
-    * scroll
-    * scroll_anim
-    * rotate
-    * rotate_anim
-    * scale
-    * wave_xform
-    * transform
-    * binding_type
-    * content_type 
+    * [#texture_alias texture_alias]
+    * [#texture texture]
+    * [#anim_texture anim_texture]
+    * [#cubic_texture cubic_texture]
+    * [#tex_coord_set tex_coord_set]
+    * [#tex_address_mode tex_address_mode]
+    * [#tex_border_colour tex_border_colour]
+    * [#filtering filtering]
+    * [#max_anisotropy max_anisotropy]
+    * [#mipmap_bias mipmap_bias]
+    * [#colour_op colour_op]
+    * [#colour_op_ex colour_op_ex]
+    * [#colour_op_multipass_fallback colour_op_multipass_fallback]
+    * [#alpha_op_ex alpha_op_ex]
+    * [#env_map env_map]
+    * [#scroll scroll]
+    * [#scroll_anim scroll_anim]
+    * [#rotate rotate]
+    * [#rotate_anim rotate_anim]
+    * [#scale scale]
+    * [#wave_xform wave_xform]
+    * [#transform transform]
+    * [#binding_type binding_type]
+    * [#content_type content_type]
 
 You can also use a nested 'texture_source' section in order to use a special add-in as a source of texture data, See section 6. External Texture Sources for details.
 <BR>
