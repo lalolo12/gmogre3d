@@ -17,7 +17,7 @@ Here are the attributes you can use in a 'pass' section of a .compositor script:
   * [#identifier identifier]
   * [#first_render_queue first_render_queue]
   * [#last_render_queue last_render_queue]
-  * [#clear clear]
+  * [#Clear_Section clear]
   * [#Stencil_Section stencil]
 <BR>
 == material ==
