@@ -11,7 +11,12 @@ Format: target <Name> { }
 Format: target_output { }
 }}}
 The contents of both are identical, the only real difference is that you can only have a single target_output entry, whilst you can have many target entries. Here are the attributes you can use in a 'target' or 'target_output' section of a .compositor script:
-    * _input_
+    * input
+    * [WikiSyntax#input]
+    * [input]
+    * [#input]
+    * [WikiSyntax#input input]
+
     * _only_initial_
     * _visibility_mask_
     * _lod_bias_
