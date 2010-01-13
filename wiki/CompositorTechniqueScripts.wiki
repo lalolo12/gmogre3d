@@ -7,9 +7,9 @@ A compositor technique is much like a material technique in that it describes on
 As with material techniques, compositor techniques are evaluated in the order you define them in the script, so techniques declared first are preferred over those declared later. Format: technique { }
 
 Techniques can have the following nested elements:
-  * _texture_
-  * _target_
-  * _target_output_
+  * [#texture texture]
+  * [#target target]
+  * [#target_output target_output]
 <BR>
 == texture ==
 This declares a render texture for use in subsequent target passes.
