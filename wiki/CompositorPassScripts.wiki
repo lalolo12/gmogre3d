@@ -18,7 +18,7 @@ Here are the attributes you can use in a 'pass' section of a .compositor script:
   * [#first_render_queue first_render_queue]
   * [#last_render_queue last_render_queue]
   * [#clear clear]
-  * [#stencil_section stencil]
+  * [#Stencil_Section stencil]
 <BR>
 == material ==
 For passes of type 'render_quad', sets the material used to render the quad. You will want to use shaders in this material to perform fullscreen effects, and use the input attribute to map other texture targets into the texture bindings needed by this material.
