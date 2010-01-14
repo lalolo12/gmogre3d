@@ -32,6 +32,18 @@ The result can be retrieved using the GetX, GetY, and GetZ functions.
    * _x2_, _y2_, _z2_ - The second vector.
 <BR>
 <BR>
+=== !RotateVector(real x, real y, real z, real yaw, real pitch, real roll) ===
+----
+Rotates a vector.
+
+This function will rotate the specified vector by the specified yaw, pitch, and roll.
+
+The result can be retrieved using the GetX, GetY, and GetZ functions. 
+====Parameters====
+   * _x_, _y_, _z_ - The vector
+   * _yaw_, _pitch_, _roll_ - The amount to rotate the vector, in degrees.
+<BR>
+<BR>
 === !CalcVectorCrossProduct(real x1, real z1, real y1, real x2, real z2, real y2) ===
 ----
 Calculates the cross-product of 2 vectors, i.e. the vector that lies perpendicular to them both.
