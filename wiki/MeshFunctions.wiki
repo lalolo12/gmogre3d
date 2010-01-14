@@ -58,12 +58,12 @@ Ask the mesh to suggest a destination element index to a future !BuildMeshTangen
       * _VES_TANGENT_ - Tangent (X axis if normal is Z)
 <BR>
 <BR>
-=== !BuildMeshTangentVectors(string filename, real target_semantic, real source_coord_set, real index) ===
+=== !BuildMeshTangentVectors(string filename, real target_semantic, real source_coord_set, real index, real split_mirrored, real split_rotated) ===
 Builds a set of tangent vectors for a given mesh into a 3D texture coordinate buffer.
 
 Tangent vectors are vectors representing the local 'X' axis for a given vertex based on the orientation of the 2D texture on the geometry. They are built from a combination of existing normals, and from the 2D texture coordinates already baked into the model. They can be used for a number of things, but most of all they are useful for vertex and fragment programs, when you wish to arrive at a common space for doing per-pixel calculations. 
 
-The prerequisites for calling this method include that the vertex data used by every SubMesh has both vertex normals and 2D texture coordinates. 
+The prerequisites for calling this method include that the vertex data used by every !SubMesh has both vertex normals and 2D texture coordinates. 
 ====Paramerers====
    * _filename_ - The name of the .mesh file.
    * _target_semantic_ - The semantic you intend to use to store the tangents if they are not already present; most likely options are VES_TEXTURE_COORDINATES or VES_TANGENT; you should use texture coordinates if you want compatibility with older, pre-SM2 graphics cards, and the tangent binding otherwise. Can be:
@@ -78,5 +78,7 @@ The prerequisites for calling this method include that the vertex data used by e
       * _VES_TANGENT_ - Tangent (X axis if normal is Z)
    * _source_coord_set_ - The texture coordinate index which should be used as the source of 2D texture coordinates, with which to calculate the tangents.
    * _index_ - The element index, ie the texture coordinate set which should be used to store the 3D coordinates representing a tangent vector per vertex, if target semantic is VES_TEXTURE_COORDINATES. If this already exists, it will be overwritten. 
+   * _split_mirrored_ - Optionally split vertices when a mirrored tangent space transition is detected (matrix parity differs). Default is false.
+   * _split_rotated_ - Optionally split vertices when a rotated tangent space is detected. Default is false.
 <BR>
 <BR>
