@@ -291,7 +291,7 @@ Only objects which use indexed geometry may be converted to a mesh.
 ====Parameters====
    * _manual_obj_id_ - The ID of the manual object.
    * _name_ - The unique name to give the mesh.
-   * _group_ - The resource group to create the mesh in.
+   * _group_ - Optional resource group to create the mesh in. Defaults to DEFAULT_RESOURCE_GROUP.
 <BR>
 <BR>
 === !SetManualObjectQueryFlags(real manual_obj_id, real flags) ===
