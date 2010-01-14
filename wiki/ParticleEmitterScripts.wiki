@@ -9,20 +9,20 @@ It is also possible to 'emit emitters' - that is, have new emitters spawned base
 == Particle Emitter Universal Attributes ==
   * [ParticleEmitterAttributesScripts#angle angle]
   * [ParticleEmitterAttributesScripts#colour colour]
-  * colour_range_start
-  * colour_range_end
-  * direction
-  * emission_rate
-  * position
-  * velocity
-  * velocity_min
-  * velocity_max
-  * time_to_live
-  * time_to_live_min
-  * time_to_live_max
-  * duration
-  * duration_min
-  * duration_max
-  * repeat_delay
-  * repeat_delay_min
-  * repeat_delay_max 
+  * [ParticleEmitterAttributesScripts#colour_range_start colour_range_start]
+  * [ParticleEmitterAttributesScripts#colour_range_end colour_range_end]
+  * [ParticleEmitterAttributesScripts#direction direction]
+  * [ParticleEmitterAttributesScripts#emission_rate emission_rate]
+  * [ParticleEmitterAttributesScripts#position position]
+  * [ParticleEmitterAttributesScripts#velocity velocity]
+  * [ParticleEmitterAttributesScripts#velocity_min velocity_min]
+  * [ParticleEmitterAttributesScripts#velocity_max velocity_max]
+  * [ParticleEmitterAttributesScripts#time_to_live time_to_live]
+  * [ParticleEmitterAttributesScripts#time_to_live_min time_to_live_min]
+  * [ParticleEmitterAttributesScripts#time_to_live_max time_to_live_max]
+  * [ParticleEmitterAttributesScripts#duration duration]
+  * [ParticleEmitterAttributesScripts#duration_min duration_min]
+  * [ParticleEmitterAttributesScripts#duration_max duration_max]
+  * [ParticleEmitterAttributesScripts#repeat_delay repeat_delay]
+  * [ParticleEmitterAttributesScripts#repeat_delay_min repeat_delay_min]
+  * [ParticleEmitterAttributesScripts#repeat_delay_max repeat_delay_max]
