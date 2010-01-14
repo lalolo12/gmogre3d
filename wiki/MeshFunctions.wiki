@@ -86,6 +86,6 @@ The prerequisites for calling this method include that the vertex data used by e
 ----
 Exports a mesh to a file.
 ====Parameters====
-    * mesh_name - The name of the mesh resource.
-    * filename - The name of the .mesh file.
+    * _mesh_name_ - The name of the mesh resource.
+    * _filename_ - The name of the .mesh file.
 <BR>
