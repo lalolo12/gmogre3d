@@ -12,52 +12,35 @@ Returns true if the GMOgre3D engine has been initialized.
 <br>
 <br>
 <br>
-=== StartOgre3DEngine(render_engine) ===
+=== StartOgre3DEngine(real render_engine, real fsaa_type, real fsaa_level, real enable_vsync) ===
 ----
 Starts the GMOgre3D engine.  After calling this all drawing of the GM window is taken over by the GMOgre3D DLL.
+
+Note the following FSAA combinations are valid:
+    * FSAA type 0, FSAA quality level 0
+    * FSAA type 1, FSAA quality level 0
+    * FSAA type 1, FSAA quality level 1
+    * FSAA type 1, FSAA quality level 2
+    * FSAA type 2, FSAA quality level 0
+    * FSAA type 4, FSAA quality level 0
+    * FSAA type 6, FSAA quality level 0 
 ====Parameters====
-  * render_engine - The type of renderer to use. Possible values are:
+  * _render_engine_ - The type of renderer to use. Possible values are:
     * RENDER_DX9
     * RENDER_GL
-<br>
-<br>
+  * _fsaa_type_ - Optional FSAA type. Can be 0, 1, 2, 4, or 6. Default is 0.
+  * _fsaa_level_ - Optional FSAA quality level. Can be: 0, 1, or 2. Default is 0.
+  * _enable_vsync_ - Optionally enable or disable vsync. Default is disabled.
+<BR>
+<BR>
 === StopOgre3DEngine() ===
 ----
 Shuts down the GMOgre3D engine.  After calling this GM is again able to draw to the GM window.
-<br>
-<br>
-<br>
+<BR>
+<BR>
+<BR>
 === GetOgre3DVersion() ===
 ----
 Returns the version number of the GMOgre3D engine.
-<br>
-<br>
-<br>
-=== EnableWaitForVSync(real enable) ===
-----
-Enables or disables monitor vsync.
-
-Must be called before StartOgre3DEngine().
-====Parameters====
-   * _enable_ - Whether to enable or disable vsync.
-<BR>
-<BR>
-=== SetFSAA(real type, real level) ===
-----
-Sets fullscreen anti-aliasing type and quality level.
-
-The following combinations are valid:
-  * FSAA type 0, FSAA quality level 0
-  * FSAA type 1, FSAA quality level 0
-  * FSAA type 1, FSAA quality level 1
-  * FSAA type 1, FSAA quality level 2
-  * FSAA type 2, FSAA quality level 0
-  * FSAA type 4, FSAA quality level 0
-  * FSAA type 6, FSAA quality level 0
-
-Must be called before StartOgre3DEngine().
-====Parameters====
-   * _type_ - FSAA type.  Can be 0, 1, 2, 4, or 6.
-   * _level_ - FSAA quality level.  Can be: 0, 1, or 2.
 <BR>
 <BR>
