@@ -76,6 +76,7 @@ EnableEntityCastShadows(floor_id, false);
 node_id = CreateRootChildSceneNode();
 AttachEntityToSceneNode(floor_id, node_id);
 }}}
+<BR>
 = Creating the Mesh =
 The first thing we need to do is create the grass mesh we will be rendering. The general idea is to create three square quads which overlap each other. Each quad will have a grass texture on it, so that when you look at it from any direction other than straight down it will look somewhat like 3D grass. The easiest way to overlap these quads will be to create one, then create another at a 60 degree rotation, and then a third at yet another 60 degrees.
 
@@ -101,7 +102,7 @@ The first thing we will do is define some basic variables. Create a !CreateGrass
    yaw = 60;
    pitch = 0;
    roll = 0;
-}}
+}}}
 
 Now that we have set up our variables, we need will create and define the !ManualObject. Our RenderOperation will be set to be a triangle list, meaning after we define our vertices we must define a list of triangles which create the faces of our quads:
 {{{
