@@ -271,6 +271,14 @@ Finally, you can use your new bump mapping material like so:
    SetEntityMaterial(ent_id, "Examples/BumpMapping/MultiLight");
 }}}
 <BR>
+==Creating Your Own Normal Maps==
+For Photoshop users you will need a plug-in for Photoshop made by Nvidia: 'NVIDIA Normal Map Filter' (Go [http://www.nvidia.com/ here] and search for: "Normal Map Filter", you'll find in first results).
+
+GIMP version available [http://nifelheim.dyndns.org/~cocidius/normalmap/ here]
+
+Load your bump map in photoshop and go to filter/nvidia tool and normal map. Play around with the scale parameter for stronger effects. 
+<BR>
+<BR>
 ==Limitations of Normal Maps==
 Normal maps may be the bee's knees but don't get carried away. Along with everything there are some downsides: 
    * They do incur a performance hit larger than an ordinary texture.
