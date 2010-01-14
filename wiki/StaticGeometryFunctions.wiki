@@ -74,8 +74,8 @@ Note this must be called before !BuildStaticGeometry.
    * _static_geometry_id_ - The ID of the static geometry object.
    * _entity_id_ - The ID of the entity.
    * _posx_, _posy_, _posz_ - The world position at which to add the Entity.
-   * _yaw_, _pitch_, _roll_ - The world orientation at which to add the Entity.
-   * _scalex_, _scaley_, _scalez_ - The scale at which to add the Entity. 
+   * _yaw_, _pitch_, _roll_ - Optional world orientation at which to add the Entity. Defaults to 0, 0, 0.
+   * _scalex_, _scaley_, _scalez_ - Optional scale at which to add the Entity. Defaults to 1, 1, 1.
 <BR>
 <BR>
 === !AddStaticGeometrySceneNode(real static_geometry_id, real scene_node_id) ===
