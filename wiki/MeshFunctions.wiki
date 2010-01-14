@@ -3,7 +3,7 @@
 <BR>
 === !LoadMesh(string filename, string group, real vertex_buffer_usage, real index_buffer_usage, real disable_vertex_buffer_shadow, double disable_index_buffer_shadow) ===
 Loads a mesh from a file, making it immediately available for use.
-====Paramerers====
+====Parameters====
    * _filename_ - The name of the .mesh file.
    * _group_ - Optional name of the resource group to assign the mesh to. Defaults to DEFAULT_RESOURCE_GROUP.
    * _vertex_buffer_usage_ - Optional usage flags with which the vertex buffer(s) will be created. Default is HBU_STATIC_WRITE_ONLY. Can be:
@@ -28,7 +28,7 @@ Loads a mesh from a file, making it immediately available for use.
 <BR>
 === !SuggestMeshTangentVectorSourceCoordSet(string filename, real target_semantic) ===
 Ask the mesh to suggest a source texture coordinate set to a future !BuildMeshTangentVectors call, should you wish to use texture coordinates to store the tangents.
-====Paramerers====
+====Parameters====
    * _filename_ - The name of the .mesh file.
    * _target_semantic_ - The semantic you intend to use to store the tangents if they are not already present; most likely options are VES_TEXTURE_COORDINATES or VES_TANGENT; you should use texture coordinates if you want compatibility with older, pre-SM2 graphics cards, and the tangent binding otherwise. Can be:
       * _VES_POSITION_ - Position, 3 reals per vertex
@@ -44,7 +44,7 @@ Ask the mesh to suggest a source texture coordinate set to a future !BuildMeshTa
 <BR>
 === !SuggestMeshTangentVectorIndex(string filename, real target_semantic) ===
 Ask the mesh to suggest a destination element index to a future !BuildMeshTangentVectors call, should you wish to use texture coordinates to store the tangents.
-====Paramerers====
+====Parameters====
    * _filename_ - The name of the .mesh file.
    * _target_semantic_ - The semantic you intend to use to store the tangents if they are not already present; most likely options are VES_TEXTURE_COORDINATES or VES_TANGENT; you should use texture coordinates if you want compatibility with older, pre-SM2 graphics cards, and the tangent binding otherwise. Can be:
       * _VES_POSITION_ - Position, 3 reals per vertex
@@ -64,7 +64,7 @@ Builds a set of tangent vectors for a given mesh into a 3D texture coordinate bu
 Tangent vectors are vectors representing the local 'X' axis for a given vertex based on the orientation of the 2D texture on the geometry. They are built from a combination of existing normals, and from the 2D texture coordinates already baked into the model. They can be used for a number of things, but most of all they are useful for vertex and fragment programs, when you wish to arrive at a common space for doing per-pixel calculations. 
 
 The prerequisites for calling this method include that the vertex data used by every !SubMesh has both vertex normals and 2D texture coordinates. 
-====Paramerers====
+====Parameters====
    * _filename_ - The name of the .mesh file.
    * _target_semantic_ - The semantic you intend to use to store the tangents if they are not already present; most likely options are VES_TEXTURE_COORDINATES or VES_TANGENT; you should use texture coordinates if you want compatibility with older, pre-SM2 graphics cards, and the tangent binding otherwise. Can be:
       * _VES_POSITION_ - Position, 3 reals per vertex
@@ -81,4 +81,11 @@ The prerequisites for calling this method include that the vertex data used by e
    * _split_mirrored_ - Optionally split vertices when a mirrored tangent space transition is detected (matrix parity differs). Default is false.
    * _split_rotated_ - Optionally split vertices when a rotated tangent space is detected. Default is false.
 <BR>
+<BR>
+=== !ExportMeshToFile(string mesh_name, string filename) ===
+----
+Exports a mesh to a file.
+====Parameters====
+    * mesh_name - The name of the mesh resource.
+    * filename - The name of the .mesh file.
 <BR>
