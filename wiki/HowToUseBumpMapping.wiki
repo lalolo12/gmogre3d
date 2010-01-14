@@ -1,5 +1,6 @@
 #summary Describes how to use bump mapping
-
+<BR>
+<BR>
 == Description ==
 Bump mapping is a technique used for faking the lighting of bumps and dents. It is used to add details without using more polygons. GMOgre3D fully supports all of your normal/bump mapping needs. Normal mapping and bump mapping are almost identical, therefore I will be referring to the two techniques collectively as: normal mapping. 
 <BR>
