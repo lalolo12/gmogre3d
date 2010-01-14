@@ -3,12 +3,12 @@
 = Particle Emitters =
 Particle emitters are classified by 'type' e.g. 'Point' emitters emit from a single point whilst 'Box' emitters emit randomly from an area. New emitters can be added to Ogre by creating plugins. You add an emitter to a system by nesting another section within it, headed with the keyword 'emitter' followed by the name of the type of emitter (case sensitive). Ogre currently supports 'Point', 'Box', 'Cylinder', 'Ellipsoid', 'HollowEllipsoid' and 'Ring' emitters.
 
-It is also possible to 'emit emitters' - that is, have new emitters spawned based on the position of particles. See section Emitting Emitters.
+It is also possible to 'emit emitters' - that is, have new emitters spawned based on the position of particles.
 <BR>
 <BR>
 == Particle Emitter Universal Attributes ==
-  * angle
-  * colour
+  * [ParticleEmitterAttributesScripts#angle angle]
+  * [ParticleEmitterAttributesScripts#colour colour]
   * colour_range_start
   * colour_range_end
   * direction
