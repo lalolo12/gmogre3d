@@ -2,12 +2,12 @@
 
 == Standard Particle Emitters ==
 Ogre comes preconfigured with a few particle emitters. New ones can be added by creating plugins: see the Plugin_ParticleFX project as an example of how you would do this (this is where these emitters are implemented).
-  * Point Emitter
-  * Box Emitter
-  * Cylinder Emitter
-  * Ellipsoid Emitter
-  * Hollow Ellipsoid Emitter
-  * Ring Emitter 
+  * [#Point_Emitter Point Emitter]
+  * [#Box_Emitter Box Emitter]
+  * [#Cylinder_Emitter Cylinder Emitter]
+  * [#Ellipsoid_Emitter Ellipsoid Emitter]
+  * [#Hollow_Ellipsoid_Emitter Hollow Ellipsoid Emitter]
+  * [#Ring_Emitter Ring Emitter]
 <BR>
 == Point Emitter  ==
 This emitter emits particles from a single point, which is it's position. This emitter has no additional attributes over an above the standard emitter attributes.
