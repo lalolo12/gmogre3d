@@ -2,15 +2,15 @@
 
 = Standard Particle Affectors =
 Ogre comes preconfigured with a few particle affectors. New ones can be added by creating plugins: see the Plugin_ParticleFX project as an example of how you would do this (this is where these affectors are implemented).
-  * Linear Force Affector
-  * !ColourFader Affector
-  * !ColourFader2 Affector
-  * Scaler Affector
-  * Rotator Affector
-  * !ColourInterpolator Affector
-  * !ColourImage Affector
-  * !DeflectorPlane Affector
-  * !DirectionRandomiser Affector 
+  * [#Linear_Force_Affector Linear Force Affector]
+  * [#ColourFader_AffectorColourFader Affector]
+  * [#ColourFader2_AffectorColourFader2 Affector]
+  * [#Scaler_Affector Scaler Affector]
+  * [#Rotator_Affector Rotator Affector]
+  * [#ColourInterpolator_AffectorColourInterpolator Affector]
+  * [#ColourImage_Affector ColourImage Affector]
+  * [#DeflectorPlane_Affector DeflectorPlane Affector]
+  * [#DirectionRandomiser_Affector DirectionRandomiser Affector ]
 <BR>
 == Linear Force Affector ==
 This affector applies a force vector to all particles to modify their trajectory. Can be used for gravity, wind, or any other linear force. It's extra attributes are:
