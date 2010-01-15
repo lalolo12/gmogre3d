@@ -7,7 +7,7 @@ Ogre comes preconfigured with a few particle affectors. New ones can be added by
   * [#ColourFader2_AffectorColourFader2 Affector]
   * [#Scaler_Affector Scaler Affector]
   * [#Rotator_Affector Rotator Affector]
-  * [#ColourInterpolator_AffectorColourInterpolator Affector]
+  * [#ColourInterpolator_Affector ColourInterpolator Affector]
   * [#ColourImage_Affector ColourImage Affector]
   * [#DeflectorPlane_Affector DeflectorPlane Affector]
   * [#DirectionRandomiser_Affector DirectionRandomiser Affector ]
