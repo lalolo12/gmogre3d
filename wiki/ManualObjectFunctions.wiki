@@ -281,6 +281,22 @@ You specify the material to use on a section of this object during the call to b
    * _mat_name_ - The name of the new material to use.
 <BR>
 <BR>
+=== !AttachManualObjectToSceneNode(real manual_obj_id, real scene_node_id) ===
+----
+Attaches a manual object to the specified !SceneNode.
+====Parameters====
+   * _manual_obj_id_ - The ID of the manual object.
+   * _scene_node_id_ - The ID of the !SceneNode.
+<BR>
+<BR>
+=== !DetachManualObjectFromSceneNode(real manual_obj_id, real scene_node_id) ===
+----
+Detaches a manual object from the specified !SceneNode.
+====Parameters====
+   * _manual_obj_id_ - The ID of the manual object.
+   * _scene_node_id_ - The ID of the !SceneNode.
+<BR>
+<BR>
 === !ConvertManualObjectToMesh(real manual_obj_id, string name, string group) ===
 ----
 Convert this object to a Mesh.
