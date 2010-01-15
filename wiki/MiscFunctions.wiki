@@ -39,3 +39,50 @@ Takes a snapshot of the current screen and saves to the specified filename.
    * _filename_ - The filename to save the screenshot to.
 <BR>
 <BR>
+=== !DoesRendererSupport(real capability) ===
+Queries the renderer on whether it supports a particular capability.
+====Parameters====
+   * _capability_ - The capability to query. Can be:
+      * _RSC_AUTOMIPMAP_ - Supports generating mipmaps in hardware.
+      * _RSC_BLENDING_ - Supports blending.
+      * _RSC_ANISOTROPY_ - Supports anisotropic texture filtering.
+      * _RSC_DOT3 _ - Supports fixed-function DOT3 texture blend.
+      * _RSC_CUBEMAPPING_ - Supports cube mapping.
+      * _RSC_HWSTENCIL_ - Supports hardware stencil buffer.
+      * _RSC_VBO_ - Supports hardware vertex and index buffers.
+      * _RSC_VERTEX_PROGRAM_ - Supports vertex programs (vertex shaders).
+      * _RSC_FRAGMENT_PROGRAM_ - Supports fragment programs (pixel shaders).
+      * _RSC_SCISSOR_TEST_ - Supports performing a scissor test to exclude areas of the screen.
+      * _RSC_TWO_SIDED_STENCIL_ - Supports separate stencil updates for both front and back faces.
+      * _RSC_STENCIL_WRAP_ - Supports wrapping the stencil value at the range extremeties.
+      * _RSC_HWOCCLUSION_ - Supports hardware occlusion queries.
+      * _RSC_USER_CLIP_PLANES_ - Supports user clipping planes.
+      * _RSC_VERTEX_FORMAT_UBYTE4_ - Supports the VET_UBYTE4 vertex element type.
+      * _RSC_INFINITE_FAR_PLANE_ - Supports infinite far plane projection.
+      * _RSC_HWRENDER_TO_TEXTURE_ - Supports hardware render-to-texture (bigger than framebuffer).
+      * _RSC_TEXTURE_FLOAT_ - Supports float textures and render targets.
+      * _RSC_NON_POWER_OF_2_TEXTURES_ - Supports non-power of two textures.
+      * _RSC_TEXTURE_3D_ - Supports 3d (volume) textures.
+      * _RSC_POINT_SPRITES_ - Supports basic point sprite rendering.
+      * _RSC_POINT_EXTENDED_PARAMETERS_ - Supports extra point parameters (minsize, maxsize, attenuation).
+      * _RSC_VERTEX_TEXTURE_FETCH_ - Supports vertex texture fetch.
+      * _RSC_MIPMAP_LOD_BIAS_ - Supports mipmap LOD biasing.
+      * _RSC_GEOMETRY_PROGRAM_ - Supports hardware geometry programs.
+      * _RSC_HWRENDER_TO_VERTEX_BUFFER_ - Supports rendering to vertex buffers.
+      * _RSC_TEXTURE_COMPRESSION_ - Supports compressed textures.
+      * _RSC_TEXTURE_COMPRESSION_DXT_ - Supports compressed textures in the DXT/ST3C formats.
+      * _RSC_TEXTURE_COMPRESSION_VTC_ - Supports compressed textures in the VTC format.
+      * _RSC_TEXTURE_COMPRESSION_PVRTC_ - Supports compressed textures in the PVRTC format.
+      * _RSC_FIXED_FUNCTION_ - Supports fixed-function pipeline.
+      * _RSC_MRT_DIFFERENT_BIT_DEPTHS_ - Supports MRTs with different bit depths.
+      * _RSC_ALPHA_TO_COVERAGE_ - Supports Alpha to Coverage (A2C).
+      * _RSC_ADVANCED_BLEND_OPERATIONS_ - Supports Blending operations other than +.
+      * _RSC_PERSTAGECONSTANT_ - Is DirectX feature "per stage constants" supported.
+      * _RSC_GL1_5_NOVBO_ - Supports openGL GLEW version 1.5.
+      * _RSC_FBO_ - Support for Frame Buffer Objects (FBOs).
+      * _RSC_FBO_ARB_ - Support for Frame Buffer Objects ARB implementation (regular FBO is higher precedence).
+      * _RSC_FBO_ATI_ - Support for Frame Buffer Objects ATI implementation (ARB FBO is higher precedence).
+      * _RSC_PBUFFER_ - Support for PBuffer.
+      * _RSC_GL1_5_NOHWOCCLUSION_ - Support for GL 1.5 but without HW occlusion workaround.
+      * _RSC_POINT_EXTENDED_PARAMETERS_ARB_ - Support for point parameters ARB implementation.
+      * _RSC_POINT_EXTENDED_PARAMETERS_EXT_ - Support for point parameters EXT implementation. 
