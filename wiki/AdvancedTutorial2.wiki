@@ -1,4 +1,4 @@
-#summary Static Geometry
+#summary Static Geometry and Manual Objects
 
 = Introduction =
 There will be a lot of situations when you need to add objects to your scene, but you won't need to move them at all. For example, unless you are adding some kind of physics into the mix, a rock or a tree will rarely ever need to move. For these situations, GMOgre3D provides the !StaticGeometry functions, which allows you to build batches of objects to render in a big bunch. This is generally faster than doing it manually with !SceneNodes. In this tutorial we will cover basic uses of !StaticGeometry in your game. We will also cover a few things you can do with !ManualObject.
@@ -77,7 +77,7 @@ node_id = CreateRootChildSceneNode();
 AttachEntityToSceneNode(floor_id, node_id);
 }}}
 <BR>
-= Creating the Mesh =
+= Creating a Manual Object =
 The first thing we need to do is create the grass mesh we will be rendering. The general idea is to create three square quads which overlap each other. Each quad will have a grass texture on it, so that when you look at it from any direction other than straight down it will look somewhat like 3D grass. The easiest way to overlap these quads will be to create one, then create another at a 60 degree rotation, and then a third at yet another 60 degrees.
 
 We will be using !ManualObject to generate our object, will require us to build an index buffer too, specifying the triangles as we build it.
