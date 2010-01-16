@@ -14,3 +14,5 @@ Welcome to the tutorial section of GMOgre3D.  Below are both basic and advanced 
 
 = Advanced Tutorials =
 [AdvancedTutorial1 Advanced Tutorial 1] - Animation, Walking Between Points, and Eulers
+
+[AdvancedTutorial2 Advanced Tutorial 2] - Static Geometry and Manual Objects
