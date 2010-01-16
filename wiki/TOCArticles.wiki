@@ -10,6 +10,7 @@
     * [BasicTutorial3 Basic Tutorial 3]
     * [BasicTutorial4 Basic Tutorial 4]
     * [AdvancedTutorial1 Advanced Tutorial 1]
+    * [AdvancedTutorial2 Advanced Tutorial 2]
   * [Scripts Scripts]
     * [MaterialScripts Materials]
       * [MaterialTechniqueScripts Techniques]
@@ -31,8 +32,9 @@
       * [OverlayElementScripts Overlay Elements]
     * [FontScripts Fonts]
   * How To
-    * [HowToDrawText Draw Text]
-    * [HowToCreateMaterialShader Create a Material Shader]
+    * [HowToDrawText How To Draw Text]
+    * [HowToCreateMaterialShader How To Create a Material Shader]
+    * [HowToUseBumpMapping How To Use Bump Mapping]
   * Function List
     * Entities, Objects, & Primitives
       * [BillboardFunctions Billboard]
@@ -55,6 +57,9 @@
         * [NewtonMaterialFunctions Newton Material]
         * [NewtonMaterialPairFunctions Newton Material Pair]
         * [NewtonPlayerControllerFunctions Newton Player Controller]
+        * [NewtonSliderJointFunctions Newton Slider Joint]
+        * [NewtonHingeJointFunctions Newton Hinge Joint]
+        * [NewtonBallAndSocketJointFunctions Newton Ball And Socket Joint]
     * Rendering & Particles
       * [CompositorFunctions Compositor]
         * [CompositionPassFunctions Composition Pass]
