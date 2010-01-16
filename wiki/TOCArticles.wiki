@@ -57,9 +57,9 @@
         * [NewtonMaterialFunctions Newton Material]
         * [NewtonMaterialPairFunctions Newton Material Pair]
         * [NewtonPlayerControllerFunctions Newton Player Controller]
-        * [NewtonSliderJointFunctions Newton Slider Joint]
-        * [NewtonHingeJointFunctions Newton Hinge Joint]
         * [NewtonBallAndSocketJointFunctions Newton Ball And Socket Joint]
+        * [NewtonHingeJointFunctions Newton Hinge Joint]
+        * [NewtonSliderJointFunctions Newton Slider Joint]
     * Rendering & Particles
       * [CompositorFunctions Compositor]
         * [CompositionPassFunctions Composition Pass]
