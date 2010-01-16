@@ -32,7 +32,7 @@ Creates a scene node, adds it as a child of the root scene node, and returns the
    * _roll_ - The roll of the scene node.
 <BR>
 <BR>
-=== !CreateChildSceneNode(real scene_node_id, real x, real z, real y, real yaw, real pitch, real roll) ===
+=== !CreateChildSceneNode(real scene_node_id, real x, real y, real z, real yaw, real pitch, real roll) ===
 ----
 Creates a scene node, adds it as a child of the specified scene node, and returns the ID.
 ====Parameters====
@@ -80,7 +80,7 @@ Scaling factors, unlike other transforms, are not always inherited by child node
    * _enable_ - Whether to inherit scale.
 <BR>
 <BR>
-=== !SetSceneNodeScale(real scene_node_id, real x, real z, real y) ===
+=== !SetSceneNodeScale(real scene_node_id, real x, real y, real z) ===
 ----
 Sets the scaling factor applied to a scene node.
 
