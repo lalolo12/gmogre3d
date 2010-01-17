@@ -57,7 +57,7 @@ Note that this is combined with any per-viewport visibility mask through an 'and
 === !SetShadowTechnique(real type) ===
 ----
 Sets the general shadow technique to be used in this scene. There are multiple ways to generate shadows in a scene, and each has strengths and weaknesses.
-<br>
+
 Stencil-based approaches can be used to draw very long, extreme shadows without loss of precision and the 'additive' version can correctly show the shadowing of complex effects like bump mapping because they physically exclude the light from those areas. However, the edges are very sharp and stencils cannot handle transparency, and they involve a fair amount of CPU work in order to calculate the shadow volumes, especially when animated objects are involved.
 
 Texture-based approaches are good for handling transparency (they can, for example, correctly shadow a mesh which uses alpha to represent holes), and they require little CPU overhead, and can happily shadow geometry which is deformed by a vertex program, unlike stencil shadows. However, they have a fixed precision which can introduce 'jaggies' at long range and have fillrate issues of their own.
@@ -65,13 +65,13 @@ Texture-based approaches are good for handling transparency (they can, for examp
 We support 2 kinds of stencil shadows, and 2 kinds of texture-based shadows, and one simple decal approach. The 2 stencil approaches differ in the amount of multipass work that is required - the modulative approach simply 'darkens' areas in shadow after the main render, which is the least expensive, whilst the additive approach has to perform a render per light and adds the cumulative effect, whcih is more expensive but more accurate. The texture based shadows both work in roughly the same way, the only difference is that the shadowmap approach is slightly more accurate, but requires a more recent graphics card. Note that because mixing many shadow techniques can cause problems, only one technique is supported at once. Also, you should call this method at the start of the scene setup. 
 ====Parameters====
    * _type_ - The type of shadow technique to use.  Can be:
-      * SHADOWTYPE_NONE
-      * SHADOWTYPE_STENCIL_MODULATIVE
-      * SHADOWTYPE_STENCIL_ADDITIVE
-      * SHADOWTYPE_TEXTURE_MODULATIVE
-      * SHADOWTYPE_TEXTURE_ADDITIVE
-      * SHADOWTYPE_TEXTURE_ADDITIVE_INTEGRATED
-      * SHADOWTYPE_TEXTURE_MODULATIVE_INTEGRATED
+      * _SHADOWTYPE_NONE_ - No shadows.
+      * _SHADOWTYPE_STENCIL_MODULATIVE_ - Stencil shadow technique which renders all shadow volumes as a modulation after all the non-transparent areas have been rendered. This technique is considerably less fillrate intensive than the additive stencil shadow approach when there are multiple lights, but is not an accurate model.
+      * _SHADOWTYPE_STENCIL_ADDITIVE_ - Stencil shadow technique which renders each light as a separate additive pass to the scene. This technique can be very fillrate intensive because it requires at least 2 passes of the entire scene, more if there are multiple lights. However, it is a more accurate model than the modulative stencil approach and this is especially apparent when using colored lights or bump mapping.
+      * _SHADOWTYPE_TEXTURE_MODULATIVE_ - Texture-based shadow technique which involves a monochrome render-to-texture of the shadow caster and a projection of that texture onto the shadow receivers as a modulative pass.
+      * _SHADOWTYPE_TEXTURE_ADDITIVE_ - Texture-based shadow technique which involves a render-to-texture of the shadow caster and a projection of that texture onto the shadow receivers, built up per light as additive passes. This technique can be very fillrate intensive because it requires numLights + 2 passes of the entire scene. However, it is a more accurate model than the modulative approach and this is especially apparent when using colored lights or bump mapping.
+      * _SHADOWTYPE_TEXTURE_ADDITIVE_INTEGRATED_ - Texture-based shadow technique which involves a render-to-texture of the shadow caster and a projection of that texture on to the shadow receivers, with the usage of those shadow textures completely controlled by the materials of the receivers. This technique is easily the most flexible of all techniques because the material author is in complete control over how the shadows are combined with regular rendering. It can perform shadows as accurately as SHADOWTYPE_TEXTURE_ADDITIVE but more efficiently because it requires less passes. However it also requires more expertise to use, and in almost all cases, shader capable hardware to really use to the full. The 'additive' part of this mode means that the color of the rendered shadow texture is by default plain black. It does not mean it does the adding on your receivers automatically though, how you use that result is up to you.
+      * _SHADOWTYPE_TEXTURE_MODULATIVE_INTEGRATED_ - Texture-based shadow technique which involves a render-to-texture of the shadow caster and a projection of that texture on to the shadow receivers, with the usage of those shadow textures completely controlled by the materials of the receivers. This technique is easily the most flexible of all techniques because the material author is in complete control over how the shadows are combined with regular rendering. It can perform shadows as accurately as SHADOWTYPE_TEXTURE_ADDITIVE but more efficiently because it requires less passes. However it also requires more expertise to use, and in almost all cases, shader capable hardware to really use to the full. The 'modulative' part of this mode means that the color of the rendered shadow texture is by default the 'shadow color'. It does not mean it modulates on your receivers automatically though, how you use that result is up to you.
 <BR>
 <BR>
 === !EnableShadowLightClipPlanes(real enable) ===
