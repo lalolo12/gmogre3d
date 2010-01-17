@@ -97,7 +97,7 @@ Set the color used to modulate areas in shadow. This is only applicable for shad
    * _color_ - The shadow color.
 <BR>
 <BR>
-=== !EnableShadowUseInfiniteFarPlane(real enable) ===
+=== !EnableShadowInfiniteFarPlane(real enable) ===
 ----
 Enables or disables whether we should use an inifinite camera far plane when rendering stencil shadows. Stencil shadow coherency is very reliant on the shadow volume not being clipped by the far plane. If this clipping happens, you get a kind of 'negative' shadow effect. The best way to achieve coherency is to move the far plane of the camera out to infinity, thus preventing the far plane from clipping the shadow volumes. When combined with vertex program extrusion of the volume to infinity, which GMOgre3D does when available, this results in very robust shadow volumes. For this reason, when you enable stencil shadows, GMOgre3D automatically changes your camera settings to project to infinity if the card supports it. You can disable this behavior if you like by calling this method; although you can never enable infinite projection if the card does not support it. 
 
