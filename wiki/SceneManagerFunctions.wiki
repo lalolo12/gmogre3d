@@ -90,7 +90,6 @@ Shadow techniques can be expensive, therefore it is a good idea to limit them to
    * _distance_ - The maximum distance for shadows to be visible.
 <BR>
 <BR>
-
 === !SetShadowColor(real color) ===
 ----
 Set the color used to modulate areas in shadow. This is only applicable for shadow techniques which involve darkening the area in shadow, as opposed to masking out the light. This color provided is used as a modulative value to darken the areas.
@@ -105,6 +104,93 @@ Enables or disables whether we should use an inifinite camera far plane when ren
 If you disable infinite projection, or it is not available, you need to be far more careful with your light attenuation / directional light extrusion distances to avoid clipping artifacts at the far plane. 
 ====Parameters====
    * _enable_ - Whether to enable or disable infinite camera far plane.
+<BR>
+<BR>
+=== !SetShadowDirectionalLightExtrusionDistance(real distance) ===
+----
+Sets the distance a shadow volume is extruded for a directional light.
+
+Although directional lights are essentially infinite, there are many reasons to limit the shadow extrusion distance to a finite number, not least of which is compatibility with older cards (which do not support infinite positions), and shadow caster elimination. 
+
+The default value is 10,000 world units. This does not apply to point lights or spotlights, since they extrude up to their attenuation range. 
+====Parameters====
+   * _distance_ - The distance.
+<BR>
+<BR>
+=== !SetShadowTextureCountPerLightType(real light_type, real count) ===
+----
+Set the number of shadow textures a light type uses.
+
+The default for all light types is 1. This means that each light uses only 1 shadow texture. Call this if you need more than 1 shadow texture per light. 
+
+This feature only works with the SHADOWTYPE_TEXTURE_ADDITIVE_INTEGRATED or SHADOWTYPE_TEXTURE_MODULATIVE_INTEGRATED shadow techniques. Also remember to increase the total number of shadow textures you request appropriately (e.g. via !SetShadowTextureSettings).
+====Parameters====
+   * _light_type_ - The type of light. Can be:
+      * _LT_POINT_ - Point light sources give off light equally in all directions, so require only position not direction.
+      * _LT_DIRECTIONAL_ - Directional lights simulate parallel light beams from a distant source, hence have direction but no position.
+      * _LT_SPOTLIGHT_ - Spotlights simulate a cone of light from a source so require position and direction, plus extra values for falloff.
+   * _count_ - The number of shadow textures. 
+<BR>
+<BR>
+=== !SetShadowTextureSettings(real size, real count, real pixel_format) ===
+----
+Sets the size and count of textures used in texture-based shadows.
+
+The larger the shadow texture, the better the detail on texture based shadows, but obviously this takes more memory. The default size is 512. Sizes must be a power of 2. 
+
+The default number of textures assigned to deal with texture based shadows is 1; however this means you can only have one light casting shadows at the same time. You can increase this number in order to make this more flexible, but be aware of the texture memory it will use.
+====Parameters====
+   * _size_ - The size of the textures.  Must be a power of 2.
+   * _count_ - The count of the textures.
+   * _pixel_format_ - The internal format you wish to request; the manager reserves the right to create a different format if the one you select is not available in this context. Can be:
+     * PF_UNKNOWN
+     * PF_L8
+     * PF_L16
+     * PF_A8
+     * PF_A4L4
+     * PF_BYTE_LA
+     * PF_R5G6B5
+     * PF_B5G6R5
+     * PF_A4R4G4B4
+     * PF_A1R5G5B5
+     * PF_R8G8B8
+     * PF_B8G8R8
+     * PF_A8R8G8B8
+     * PF_A8B8G8R8
+     * PF_B8G8R8A8
+     * PF_A2R10G10B10
+     * PF_A2B10G10R10
+     * PF_DXT1
+     * PF_DXT2
+     * PF_DXT3
+     * PF_DXT4
+     * PF_DXT5
+     * PF_FLOAT16_RGB
+     * PF_FLOAT16_RGBA
+     * PF_FLOAT32_RGB
+     * PF_FLOAT32_RGBA
+     * PF_X8R8G8B8
+     * PF_X8B8G8R8
+     * PF_R8G8B8A8
+     * PF_DEPTH
+     * PF_SHORT_RGBA
+     * PF_R3G3B2
+     * PF_FLOAT16_R
+     * PF_FLOAT32_R
+     * PF_SHORT_GR
+     * PF_FLOAT16_GR
+     * PF_FLOAT32_GR
+     * PF_SHORT_RGB
+<BR>
+<BR>
+=== !SetShadowTextureFade(real fade_start, real fade_end) ===
+----
+Sets the proportional distance at which texture shadows begin to fade in and finish fading out.
+
+To hide the edges where texture shadows end (in directional lights) Ogre will fade out the shadow in the distance. This value is a proportional distance of the entire shadow visibility distance at which the shadow begins to fade out or is completely invisible. 
+====Parameters====
+   * _fade_start_ - The distance at which the texture shadow begins to fade in. Default is 0.7.
+   * _fade_end_ - The distance at which the texture shadow finishes fading out. Default is 0.9.
 <BR>
 <BR>
 === !SetFog(real type, real color, real density, real start, real end) ===
