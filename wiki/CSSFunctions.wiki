@@ -1,0 +1,61 @@
+#summary Camera Control System functions
+
+
+      // Chase Camera Mode
+GMFN double SetChaseCameraModeRelativePosition(double camera_mode_ptr, double relative_posx, double relative_posz, double relative_posy)
+GMFN double SetChaseCameraModeTightness(double camera_mode_ptr, double tightness)
+GMFN double EnableChaseCameraModeFixedYawAxis(double camera_mode_ptr, double enable, double axisx, double axisz, double axisy)
+GMFN double EnableChaseCameraModeCollisions(double camera_mode_ptr, double enable)
+
+	// Chase Free Yaw Axis Camera Mode
+GMFN double SetChaseFreeYawAxisCameraModeRelativePosition(double camera_mode_ptr, double relative_posx, double relative_posz, double relative_posy, double offset_yaw, double offset_pitch, double offset_roll)
+GMFN double SetChaseFreeYawAxisCameraModeTightness(double camera_mode_ptr, double tightness)
+GMFN double EnableChaseFreeYawAxisCameraModeCollisions(double camera_mode_ptr, double enable)
+
+	// Orbital Camera Mode
+GMFN double SetOrbitalCameraModeRotationFactor(double camera_mode_ptr, double degrees_per_second)
+GMFN double SetOrbitalCameraModeZoomFactor(double camera_mode_ptr, double units_per_second)
+GMFN double SetOrbitalCameraModeZoom(double camera_mode_ptr, double zoom)
+GMFN double ZoomOrbitalCameraMode(double camera_mode_ptr, double percentage)
+GMFN double SetOrbitalCameraModeYaw(double camera_mode_ptr, double degrees)
+GMFN double YawOrbitalCameraMode(double camera_mode_ptr, double percentage)
+GMFN double SetOrbitalCameraModePitch(double camera_mode_ptr, double degrees)
+GMFN double PitchOrbitalCameraMode(double camera_mode_ptr, double percentage)
+GMFN double SetOrbitalCameraModeRelativePosition(double camera_mode_ptr, double relative_posx, double relative_posz, double relative_posy, double offset_yaw, double offset_pitch, double offset_roll)
+GMFN double SetOrbitalCameraModeTightness(double camera_mode_ptr, double tightness)
+GMFN double EnableOrbitalCameraModeCollisions(double camera_mode_ptr, double enable)
+
+	// First Person Camera Mode
+GMFN double ShowFirstPersonCameraModeCharacter(double camera_mode_ptr)
+GMFN double HideFirstPersonCameraModeCharacter(double camera_mode_ptr)
+
+	// Fixed Direction Camera Mode
+GMFN double SetFixedDirectionCameraModeTightness(double camera_mode_ptr, double tightness)
+GMFN double SetFixedDirectionCameraModeDirection(double camera_mode_ptr, double x, double z, double y)
+GMFN double SetFixedDirectionCameraModeDistance(double camera_mode_ptr, double distance)
+
+	// Plane Binded Camera Mode
+GMFN double SetPlaneBindedCameraModeTightness(double camera_mode_ptr, double tightness)
+
+	// Fixed Camera Mode
+GMFN double SetFixedCameraModePosition(double camera_mode_ptr, double x, double z, double y)
+GMFN double SetFixedCameraModeOrientation(double camera_mode_ptr, double yaw, double pitch, double roll)
+
+	// Fixed Tracking Camera Mode
+GMFN double SetFixedTrackingCameraModePosition(double camera_mode_ptr, double x, double z, double y)
+GMFN double SetFixedTrackingCameraModeOrientation(double camera_mode_ptr, double yaw, double pitch, double roll)
+
+	// Closest To Target Camera Mode
+GMFN double AddClosestToTargetCameraModePosition(double camera_mode_ptr, double x, double z, double y)
+
+	// Free Camera Mode
+GMFN double SetFreeCameraModeMoveFactor(double camera_mode_ptr, double units_per_sec)
+GMFN double SetFreeCameraModeRotationFactor(double camera_mode_ptr, double units_per_sec)
+GMFN double YawFreeCameraMode(double camera_mode_ptr, double delta)
+GMFN double PitchFreeCameraMode(double camera_mode_ptr, double delta)
+GMFN double MoveFreeCameraModeLeft(double camera_mode_ptr, double percentage)
+GMFN double MoveFreeCameraModeRight(double camera_mode_ptr, double percentage)
+GMFN double MoveFreeCameraModeForward(double camera_mode_ptr, double percentage)
+GMFN double MoveFreeCameraModeBackward(double camera_mode_ptr, double percentage)
+GMFN double MoveFreeCameraModeUp(double camera_mode_ptr, double percentage)
+GMFN double MoveFreeCameraModeDown(double camera_mode_ptr, double percentage)
