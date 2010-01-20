@@ -118,6 +118,15 @@ Since GM cannot return 3 values in a single function call these coordinates are 
    * _scene_node_id_ - The ID of the scene node.
 <BR>
 <BR>
+=== !GetSceneNodeDerivedPosition(real scene_node_id) ===
+----
+Retrieves the derived position of a scene node in world space. Useful with child scene nodes.
+
+Since GM cannot return 3 values in a single function call these coordinates are stored in temporary variables and can be retrieved by calling the GetX, GetY, and GetZ functions.
+====Parameters====
+   * _scene_node_id_ - The ID of the scene node.
+<BR>
+<BR>
 === !MoveSceneNodeForward(real scene_node_id, real delta) ===
 ----
 Moves a scene node forward by the delta amount. 
