@@ -198,7 +198,7 @@ There is a way to make fog not affect the sky entirely, but it requires modifyin
 You may not want to use sky at all when you set fog, because if the fog is thick enough you cannot see the sky anyway. The trick with fog that we described above allows us to perform a nifty graphic hack that can be useful in some cases. Instead of setting the fog to a bright color, lets set it to be very dark and see what happens (note we have set the !SkyPlane to be only 10 units away from the camera, which is before the fog sets in):
 {{{
 SetViewportBackgroundColor(obj_engine.view_id, make_color_rgb(32, 32, 32));
-SetFog(FOG_LINEAR, color_rgb(32, 32, 32), 0.0, 10, 150);
+SetFog(FOG_LINEAR, make_color_rgb(32, 32, 32), 0.0, 10, 150);
 SetWorldGeometry("terrain.cfg");
 EnableSkyPlane(true, "Examples/SpaceSkyPlane", 100, 45, 10, true, 0.5, 150, 150);
 }}}
