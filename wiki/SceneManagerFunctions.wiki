@@ -280,6 +280,7 @@ has passed since the last GMOgre3D frame was drawn.
 Renders a single frame.  This should be called every frame.
 <BR>
 <BR>
+<BR>
 === !SetEndFrameCallback(real func) ===
 ----
 Sets a GM script callback function to be called just after a GMOgre3D frame is drawn.
