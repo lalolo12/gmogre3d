@@ -263,8 +263,30 @@ By default the ambient light in the scene is c_black, i.e. no ambient light. Thi
    * _color_ - The color to use for ambient lighting.
 <BR>
 <BR>
+=== !SetStartFrameCallback(real func) ===
+----
+Sets a GM script callback function to be called just before a GMOgre3D frame will be drawn.
+
+This is useful for when you need certain GMOgre3D objects to be updated in a particular order.
+
+When this GM script function is called the first, and only, parameter is the amount of time that
+has passed since the last GMOgre3D frame was drawn.
+====Parameters====
+    * _func_ - The GM script function to call. 
+<BR>
+<BR>
 === !RenderFrame() ===
 ----
 Renders a single frame.  This should be called every frame.
+<BR>
+<BR>
+=== !SetEndFrameCallback(real func) ===
+----
+Sets a GM script callback function to be called just after a GMOgre3D frame is drawn.
+
+When this GM script function is called the first, and only, parameter is the amount of time that
+has passed since the last GMOgre3D frame was drawn.
+====Parameters====
+    * _func_ - The GM script function to call. 
 <BR>
 <BR>
