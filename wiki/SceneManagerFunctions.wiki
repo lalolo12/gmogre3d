@@ -267,10 +267,9 @@ By default the ambient light in the scene is c_black, i.e. no ambient light. Thi
 ----
 Sets a GM script callback function to be called just before a GMOgre3D frame will be drawn.
 
-This is useful for when you need certain GMOgre3D objects to be updated in a particular order.
+This should be used for GMOgre3D objects that require an update function to be called each frame. It also ensures certain GMOgre3D objects are updated in a particular order.
 
-When this GM script function is called the first, and only, parameter is the amount of time that
-has passed since the last GMOgre3D frame was drawn.
+When this GM script function is called the first, and only, parameter is the amount of time, in seconds, that has passed since the last GMOgre3D frame was drawn.
 ====Parameters====
     * _func_ - The GM script function to call. 
 <BR>
@@ -285,8 +284,7 @@ Renders a single frame.  This should be called every frame.
 ----
 Sets a GM script callback function to be called just after a GMOgre3D frame is drawn.
 
-When this GM script function is called the first, and only, parameter is the amount of time that
-has passed since the last GMOgre3D frame was drawn.
+When this GM script function is called the first, and only, parameter is the amount of time that, in seconds, that has passed since the last GMOgre3D frame was drawn.
 ====Parameters====
     * _func_ - The GM script function to call. 
 <BR>
