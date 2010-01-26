@@ -80,7 +80,7 @@ The function !EnableCameraControlSystemFixedYawAxis should be used in combinatio
    * _enable_ - Whether or not to auto focus on scene target.
 <BR>
 <BR>
-=== !EnableCameraControlSystemFixedYawAxis(real ccs_id, real enable, real x, real y, real z) ===
+=== !EnableCameraControlSystemFixedYawAxis(real ccs_id, real enable, real axisx, real axisy, real axisz) ===
 ----
 Enables or disables fixed yaw axis.
 
@@ -88,40 +88,71 @@ When enabled, uses the specified axis to define the rotation used when auto trac
 ====Parameters====
    * _ccs_id_ - The ID of the camera control system object.
    * _enable_ - Whether or not to enable fixed yaw axis.
-   * _x_, _y_, _z_ - Optional axis to use for rotations. By default 0,0,1 is passed, meaning the Z axis is used to define the yaw rotation.
+   * _axisx_, _axisy_, _axisz_ - Optional axis to use for rotations. By default 0,0,1 is passed, meaning the Z axis is used to define the yaw rotation.
 <BR>
 <BR>
 === !CreateCameraControlSystemFixedCameraMode(real ccs_id, real axisx, real axisy, real axisz) ===
+Creates a fixed camera and returns the ID.
+
+A fixed cameras position and orientation never change.
 ====Parameters====
    * _ccs_id_ - The ID of the camera control system object.
+   * _axisx_, _axisy_, _axisz_ - Optional axis to use for auto track rotations.  By default 0,0,1 is passed, meaning the Z axis is used to define the yaw rotation.
 <BR>
 <BR>
 === !CreateCameraControlSystemChaseCameraMode(real ccs_id, real relative_posx, real relative_posy, real relative_posz, real axisx, real axisy, real axisz) ===
 ----
+Creates a fixed camera and returns the ID.
+
+A chase camera follows the target. The second parameter is the relative position
+     * to the target. The orientation of the camera is fixed by a yaw axis (UNIT_Y by default). 
+An attached camera is attached attached to a target !SceneNode as a child.
 ====Parameters====
    * _ccs_id_ - The ID of the camera control system object.
+   * _relative_posx_, _relative_posy_, _relative_posz_ - Optional relative position to the target. Default is 0,0,0.
+   * _axisx_, _axisy_, _axisz_ - Optional axis used for orientation.  By default 0,0,1 is passed, meaning the Z axis is used to define the yaw rotation.
 <BR>
 <BR>
 === !CreateCameraControlSystemAttachedCameraMode(real ccs_id, real relative_posx, real relative_posy, real relative_posz, real yaw, real pitch, real roll) ===
 ----
+Creates a fixed camera and returns the ID.
+
+An attached camera is attached attached to a target !SceneNode as a child.
 ====Parameters====
    * _ccs_id_ - The ID of the camera control system object.
+   * _relative_posx_, _relative_posy_, _relative_posz_ - Optional relative position to the target !SceneNode. Default is 0,0,0.
+   * _yaw_, _pitch_, _roll_ - Optional relative rotation of the camera to the target !SceneNode. Default is 0,0,0.
 <BR>
 <BR>
 === !CreateCameraControlSystemPlaneBindedCameraMode(real ccs_id, real plane_id, real axisx, real axisy, real axisz) ===
 ----
+Creates a fixed camera and returns the ID.
+
+A plan binded camera is constrained to the limits of a plane. The camera always points to the target, perpendicularly to the plane.
 ====Parameters====
    * _ccs_id_ - The ID of the camera control system object.
+   * _plane_id_ - The ID of the plane to constrain the camera by.
+   * _axisx_, _axisy_, _axisz_ - Optional axis used for orientation.  By default 0,0,1 is passed, meaning the Z axis is used to define the yaw rotation.
 <BR>
 <BR>
 === !CreateCameraControlSystemThroughTargetCameraMode(real ccs_id, real margin, real inverse, real focus_posx, real focus_posy, real focus_posz, real axisx, real axisy, real axisz) ===
 ----
+Creates a fixed camera and returns the ID.
+
+A through target camera points to a given position (the "focus") throuh the target. The camera orientation is fixed by a yaw axis.
 ====Parameters====
    * _ccs_id_ - The ID of the camera control system object.
+   * _margin_ - The margin.
+   * _inverse_ - Optionally inverse. Default is false.
+   * _focus_posx_, _focus_posy_, _focus_posz_ - Optional focus position. Default is 0,0,0.
+   * _axisx_, _axisy_, _axisz_ - Optional axis used for orientation.  By default 0,0,1 is passed, meaning the Z axis is used to define the yaw rotation.
 <BR>
 <BR>
 === !CreateCameraControlSystemFixedDirectionCameraMode(real ccs_id, real dirx, real diry, real dirz, real distance, real axisx, real axisz, real axisy) ===
 ----
+Creates a fixed camera and returns the ID.
+
+A fixed direction camera is controlled by the user. In this mode the target is always seen from the same point of view.
 ====Parameters====
    * _ccs_id_ - The ID of the camera control system object.
 <BR>
