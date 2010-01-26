@@ -3,7 +3,7 @@
 === Overview ===
 GMOgre3D provides a powerful camera system, supporting both perspective projection and orthographic projection, different styles of rendering, field of view, etc. but its control (or animation) relies completely on the programmer.
 
-The Camera Control System is a set of functions that allows a programmer to easily create and manipulate common pre-made camera modes.
+The Camera Control System is a set of functions that allows a programmer to easily create and manipulate commonly used camera modes.
 <BR>
 <BR>
 === !CreateCameraControlSystem(real camera_id) ===
