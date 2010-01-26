@@ -1,115 +1,142 @@
+#summary A set of functions for pre-made camera modes.
 
-=== !CreateCameraControlSystem(double cam_ptr) ===
+=== Overview ===
+GMOgre3D provides a powerful camera system, supporting both perspective projection and orthographic projection, different styles of rendering, field of view, etc. but its control (or animation) relies completely on the programmer.
+
+The Camera Control System is a set of functions that allows a programmer to easily create and manipulate common pre-made camera modes.
+<BR>
+<BR>
+=== !CreateCameraControlSystem(real camera_id) ===
+Creates the camera control system object and returns the ID.
+====Parameters====
+   * _camera_id_ - Optional GMOgre3D camera to use internally with the camera control system object. By default a camera is created internally.
+<BR>
+<BR>
+=== !DestroyCameraControlSystem(real ccs_id) ===
+Destroys a camera control system object.
 ====Parameters====
    * _ccs_id_ - The ID of the camera control system object.
 <BR>
 <BR>
-=== !DestroyCameraControlSystem(double ccs_ptr) ===
+=== !GetCameraControlSystemCurrentCamera(real ccs_id) ===
+Returns the camera control systems current camera object being used.
+
+Note a camera control system can have many cameras added to it, but only one camera can be used at a time.
 ====Parameters====
    * _ccs_id_ - The ID of the camera control system object.
 <BR>
 <BR>
-=== !RegisterCameraControlSystemCameraMode(double ccs_ptr, double camera_mode_ptr) ===
+=== !SetCameraControlSystemCurrentCamera(real ccs_id, real ccs_camera_id) ===
+Sets the camera control systems current camera object to use.
+
+Note a camera control system can have many cameras added to it, but only one camera can be used at a time.
 ====Parameters====
    * _ccs_id_ - The ID of the camera control system object.
 <BR>
 <BR>
-=== !GetCameraControlSystemCurrentCameraMode(double ccs_ptr) ===
+=== !UpdateCameraControlSystem(real ccs_id, real time_passed) ===
+Updates a camera control system with the amount of time passed (in seconds) since the last update call.
+
+Note that this should be called every frame.
 ====Parameters====
    * _ccs_id_ - The ID of the camera control system object.
 <BR>
 <BR>
-=== !SetCameraControlSystemCurrentCameraMode(double ccs_ptr, double camera_mode_ptr) ===
+=== !SetCameraControlSystemCameraTargetSceneNode(real ccs_id, real node_id) ===
+Set the focus of camera in the scene on a !SceneNode.
+
+Note this does not mean that the camera will always look to the target !SceneNode. It depends on the type of camera currently in use.
 ====Parameters====
    * _ccs_id_ - The ID of the camera control system object.
 <BR>
 <BR>
-=== !UpdateCameraControlSystem(double ccs_ptr, double time_passed) ===
+=== !GetCameraControlSystemCameraPosition(real ccs_id) ===
+Returns the world position of the camera.
 ====Parameters====
    * _ccs_id_ - The ID of the camera control system object.
 <BR>
 <BR>
-=== !SetCameraControlSystemCameraTargetSceneNode(double ccs_ptr, double node_ptr) ===
+=== !GetCameraControlSystemCameraOrientation(real ccs_id) ===
+Returns the world orientation of the camera.
 ====Parameters====
    * _ccs_id_ - The ID of the camera control system object.
 <BR>
 <BR>
-=== !GetCameraControlSystemCameraPosition(double ccs_ptr) ===
+=== !EnableCameraControlSystemAutoTrackTarget(real ccs_id, real enable) ===
+Enables or disables whether the camera will always points to the scene focus or not.
+
+The function !EnableCameraControlSystemFixedYawAxis should be used in combination with this one.
+====Parameters====
+   * _ccs_id_ - The ID of the camera control system object.
+   * _enable_ - Whether or not to auto focus on scene target.
+<BR>
+<BR>
+=== !EnableCameraControlSystemFixedYawAxis(real ccs_id, real enable, real x, real z, real y) ===
+Enables or disables fixed yaw axis.
+
+When enabled, uses the specified axis to define the rotation used when auto tracking.
+====Parameters====
+   * _ccs_id_ - The ID of the camera control system object.
+   * _enable_ - Whether or not to enable fixed yaw axis.
+   * _x_, _y_, _z_ - Optional axis to use for rotations. By default 0,0,1 is passed, meaning the Z axis is used to define the yaw rotation.
+<BR>
+<BR>
+=== !CreateCameraControlSystemFixedCameraMode(real ccs_id, real axisx, real axisz, real axisy) ===
 ====Parameters====
    * _ccs_id_ - The ID of the camera control system object.
 <BR>
 <BR>
-=== !GetCameraControlSystemCameraOrientation(double ccs_ptr) ===
+=== !CreateCameraControlSystemChaseCameraMode(real ccs_id, real relative_posx, real relative_posz, real relative_posy, real axisx, real axisz, real axisy) ===
 ====Parameters====
    * _ccs_id_ - The ID of the camera control system object.
 <BR>
 <BR>
-=== !EnableCameraControlSystemAutoTrackTarget(double ccs_ptr, double enable) ===
+=== !CreateCameraControlSystemAttachedCameraMode(real ccs_id, real relative_posx, real relative_posz, real relative_posy, real yaw, real pitch, real roll) ===
 ====Parameters====
    * _ccs_id_ - The ID of the camera control system object.
 <BR>
 <BR>
-=== !EnableCameraControlSystemFixedYawAxis(double ccs_ptr, double enable, double x, double z, double y) ===
+=== !CreateCameraControlSystemPlaneBindedCameraMode(real ccs_id, real plane_id, real axisx, real axisz, real axisy) ===
 ====Parameters====
    * _ccs_id_ - The ID of the camera control system object.
 <BR>
 <BR>
-=== !CreateCameraControlSystemFixedCameraMode(double ccs_ptr, double axisx, double axisz, double axisy) ===
+=== !CreateCameraControlSystemThroughTargetCameraMode(real ccs_id, real margin, real inverse, real focus_posx, real focus_posz, real focus_posy, real axisx, real axisz, real axisy) ===
 ====Parameters====
    * _ccs_id_ - The ID of the camera control system object.
 <BR>
 <BR>
-=== !CreateCameraControlSystemChaseCameraMode(double ccs_ptr, double relative_posx, double relative_posz, double relative_posy, double axisx, double axisz, double axisy) ===
+=== !CreateCameraControlSystemFixedDirectionCameraMode(real ccs_id, real dirx, real dirz, real diry, real distance, real axisx, real axisz, real axisy) ===
 ====Parameters====
    * _ccs_id_ - The ID of the camera control system object.
 <BR>
 <BR>
-=== !CreateCameraControlSystemAttachedCameraMode(double ccs_ptr, double relative_posx, double relative_posz, double relative_posy, double yaw, double pitch, double roll) ===
+=== !CreateCameraControlSystemFirstPersonCameraMode(real ccs_id, real relative_posx, real relative_posz, real relative_posy, real yaw, real pitch, real roll) ===
 ====Parameters====
    * _ccs_id_ - The ID of the camera control system object.
 <BR>
 <BR>
-=== !CreateCameraControlSystemPlaneBindedCameraMode(double ccs_ptr, double plane_ptr, double axisx, double axisz, double axisy) ===
+=== !CreateCameraControlSystemChaseFreeYawAxisCameraMode(real ccs_id, real relative_posx, real relative_posz, real relative_posy, real yaw, real pitch, real roll) ===
 ====Parameters====
    * _ccs_id_ - The ID of the camera control system object.
 <BR>
 <BR>
-=== !CreateCameraControlSystemThroughTargetCameraMode(double ccs_ptr, double margin, double inverse, double focus_posx, double focus_posz, double focus_posy, double axisx, double axisz, double axisy) ===
+=== !CreateCameraControlSystemOrbitalCameraMode(real ccs_id, real zoom, real horiz_rotation, real vert_rotation) ===
 ====Parameters====
    * _ccs_id_ - The ID of the camera control system object.
 <BR>
 <BR>
-=== !CreateCameraControlSystemFixedDirectionCameraMode(double ccs_ptr, double dirx, double dirz, double diry, double distance, double axisx, double axisz, double axisy) ===
+=== !CreateCameraControlSystemFixedTrackingCameraMode(real ccs_id, real axisx, real axisz, real axisy) ===
 ====Parameters====
    * _ccs_id_ - The ID of the camera control system object.
 <BR>
 <BR>
-=== !CreateCameraControlSystemFirstPersonCameraMode(double ccs_ptr, double relative_posx, double relative_posz, double relative_posy, double yaw, double pitch, double roll) ===
+=== !CreateCameraControlSystemClosestToTargetCameraMode(real ccs_id, real time_interval, real axisx, real axisz, real axisy) ===
 ====Parameters====
    * _ccs_id_ - The ID of the camera control system object.
 <BR>
 <BR>
-=== !CreateCameraControlSystemChaseFreeYawAxisCameraMode(double ccs_ptr, double relative_posx, double relative_posz, double relative_posy, double yaw, double pitch, double roll) ===
-====Parameters====
-   * _ccs_id_ - The ID of the camera control system object.
-<BR>
-<BR>
-=== !CreateCameraControlSystemOrbitalCameraMode(double ccs_ptr, double zoom, double horiz_rotation, double vert_rotation) ===
-====Parameters====
-   * _ccs_id_ - The ID of the camera control system object.
-<BR>
-<BR>
-=== !CreateCameraControlSystemFixedTrackingCameraMode(double ccs_ptr, double axisx, double axisz, double axisy) ===
-====Parameters====
-   * _ccs_id_ - The ID of the camera control system object.
-<BR>
-<BR>
-=== !CreateCameraControlSystemClosestToTargetCameraMode(double ccs_ptr, double time_interval, double axisx, double axisz, double axisy) ===
-====Parameters====
-   * _ccs_id_ - The ID of the camera control system object.
-<BR>
-<BR>
-=== !CreateCameraControlSystemFreeCameraMode(double ccs_ptr) ===
+=== !CreateCameraControlSystemFreeCameraMode(real ccs_id) ===
 ====Parameters====
    * _ccs_id_ - The ID of the camera control system object.
 <BR>
