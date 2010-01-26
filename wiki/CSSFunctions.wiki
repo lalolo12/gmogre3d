@@ -132,7 +132,7 @@ When enabled, uses the specified axis to define the rotation used when auto trac
    * _ccs_id_ - The ID of the camera control system object.
 <BR>
 <BR>
-=== !CreateCameraControlSystemChaseFreeYawAxisCameraMode(real ccs_id, real relative_posx, real relative_posz, real relative_posy, real yaw, real pitch, real roll) ===
+=== !CreateCameraControlSystemChaseFreeYawAxisCameraMode(real ccs_id, real relative_posx, real relative_posy, real relative_posz, real yaw, real pitch, real roll) ===
 ----
 ====Parameters====
    * _ccs_id_ - The ID of the camera control system object.
