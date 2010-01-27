@@ -1,6 +1,18 @@
 #summary Basic collision detection functions.
 <BR>
 <BR>
+=== !FindEntityFromCameraPosition(real camera_id, real x, real y, real mask) ===
+----
+Returns the first entity found when raytracing from the specified 2D camera position out into the
+world.
+
+This function is useful to select items on screen with your mouse.
+====Parameters====
+    * _camera_id_ - The ID of the camera raycast from.
+    * _x_, _y_ - The 2D point on the camera you want to raycast from.
+    * _mask_ - Optional mask used to determine what objects can be hit by the ray. Defaults to hitting all objects. 
+<BR>
+<BR>
 === !CollidesWithObject(real fromx, real fromy, real fromz, real tox, real toy, real toz, real collision_radius, real min_height, real mask) ===
 ----
 Returns whether or not a ray cast from the specified point to the specified point hits an object.
