@@ -127,7 +127,7 @@ An attached camera is attached attached to a target !SceneNode as a child.
 ----
 Creates a fixed camera and returns the ID.
 
-A plan binded camera is constrained to the limits of a plane. The camera always points to the target, perpendicularly to the plane.
+A plane binded camera is constrained to the limits of a plane. The camera always points to the target, perpendicularly to the plane.
 ====Parameters====
    * _ccs_id_ - The ID of the camera control system object.
    * _plane_id_ - The ID of the plane to constrain the camera by.
