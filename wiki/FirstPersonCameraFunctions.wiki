@@ -1,0 +1,19 @@
+#summary A set of functions for CameraControlSystem first person camera.
+
+=== Overview ===
+A first person camera is an attached camera with the possibility of hide or show the focus of the scene. 
+<BR>
+<BR>
+<BR>
+=== !ShowFirstPersonCameraCharacter(double camera_mode_ptr) ===
+----
+====Parameters====
+   * _camera_id_ - The ID of the camera control system camera object.
+<BR>
+<BR>
+=== !HideFirstPersonCameraCharacter(double camera_mode_ptr) ===
+----
+====Parameters====
+   * _camera_id_ - The ID of the camera control system camera object.
+<BR>
+<BR>
