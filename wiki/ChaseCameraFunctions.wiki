@@ -5,7 +5,7 @@ A chase camera follows the target.
 <BR>
 <BR>
 <BR>
-=== !SetChaseCameraRelativePosition(double camera_mode_ptr, double relative_posx, double relative_posy, double 
+=== !SetChaseCameraRelativePosition(double camera_id, double relative_posx, double relative_posy, double 
 
 relative_posz) ===
 ----
@@ -15,7 +15,7 @@ Sets the position relative to that of the target !SceneNode.
    * _relative_posx_, _relative_posy_, _relative_posz_ - The position relative to the target !SceneNode.
 <BR>
 <BR>
-=== !SetChaseCameraTightness(double camera_mode_ptr, double tightness) ===
+=== !SetChaseCameraTightness(double camera_id, double tightness) ===
 ----
 Sets the tightness of the camera.
 ====Parameters====
@@ -23,13 +23,16 @@ Sets the tightness of the camera.
    * _tightness_ - The camera tightness.
 <BR>
 <BR>
-=== !EnableChaseCameraFixedYawAxis(double camera_mode_ptr, double enable, double axisx, double axisy, double axisz) ===
+=== !EnableChaseCameraFixedYawAxis(double camera_id, double enable, double axisx, double axisy, double axisz) ===
 ----
+Enables or disables fixed yaw axis. 
 ====Parameters====
    * _camera_id_ - The ID of the camera control system camera object.
+   * _enable_ - Enables or disables fixed yaw axis.
+   * axisx, axisy, axisz - Optional axis to use for rotations. By default 0,0,1 is passed, meaning the Z axis is used to define the yaw rotation.
 <BR>
 <BR>
-=== !EnableChaseCameraCollisions(double camera_mode_ptr, double enable) ===
+=== !EnableChaseCameraCollisions(double camera_id, double enable) ===
 Enable or disable camera collisions, so the camera does not move inside objects.
 ----
 ====Parameters====
