@@ -1,0 +1,32 @@
+#summary A set of functions for CameraControlSystem chase camera.
+
+=== Overview ===
+A chase camera follows the target.
+<BR>
+<BR>
+<BR>
+=== !SetChaseCameraRelativePosition(double camera_mode_ptr, double relative_posx, double relative_posy, double relative_posz) ===
+----
+====Parameters====
+   * _camera_id_ - The ID of the camera control system camera object.
+<BR>
+<BR>
+=== !SetChaseCameraTightness(double camera_mode_ptr, double tightness) ===
+----
+====Parameters====
+   * _camera_id_ - The ID of the camera control system camera object.
+<BR>
+<BR>
+=== !EnableChaseCameraFixedYawAxis(double camera_mode_ptr, double enable, double axisx, double axisy, double axisz) ===
+----
+====Parameters====
+   * _camera_id_ - The ID of the camera control system camera object.
+<BR>
+<BR>
+=== !EnableChaseCameraCollisions(double camera_mode_ptr, double enable) ===
+
+----
+====Parameters====
+   * _camera_id_ - The ID of the camera control system camera object.
+<BR>
+<BR>
