@@ -235,6 +235,19 @@ Orientations, unlike other transforms, are not always inherited by child nodes. 
    * _roll_ - Rolls the scene node anti-clockwise, around it's local x axis. 
 <BR>
 <BR>
+=== !SetSceneNodeDerivedOrientation(real scene_node_id, real yaw, real pitch, real roll) ===
+----
+Sets a scene node's world orientation (yaw, pitch, and roll). 
+
+Child scene nodes orientation is relative to their parent's orientation. Calling this function allows
+one to set the orientation based on world and not parent's orientation.
+====Parameters====
+   * _scene_node_id_ - The ID of the scene node.
+   * _yaw_ - Rotates the scene node anti-clockwise around it's local z axis.
+   * _pitch_ - Pitches the scene node up/down anti-clockwise around it's local y axis.
+   * _roll_ - Rolls the scene node anti-clockwise, around it's local x axis. 
+<BR>
+<BR>
 === !GetSceneNodeOrientation(real scene_node_id) ===
 ----
 Retrieves the orientation of a scene node.
