@@ -90,7 +90,6 @@ Sets the tightness of the camera.
 === !EnableOrbitalCameraCollisions(real camera_id, real enable) ===
 ----
 Enable or disable camera collisions, so the camera does not move inside objects.
-----
 ====Parameters====
    * _camera_id_ - The ID of the camera control system camera object.
    * _enable_ - Whether to enable or disable camera collisions.
