@@ -1,0 +1,25 @@
+#summary A set of functions for CameraControlSystem fixed direction camera.
+
+=== Overview ===
+A fixed direction camera moves so the target is always seen from the same point of view. 
+<BR>
+<BR>
+<BR>
+=== !SetFixedDirectionCameraTightness(double camera_mode_ptr, double tightness) ===
+----
+====Parameters====
+   * _camera_id_ - The ID of the camera control system camera object.
+<BR>
+<BR>
+=== !SetFixedDirectionCameraDirection(double camera_mode_ptr, double x, double y, double z) ===
+----
+====Parameters====
+   * _camera_id_ - The ID of the camera control system camera object.
+<BR>
+<BR>
+=== !SetFixedDirectionCameraDistance(double camera_mode_ptr, double distance) ===
+----
+====Parameters====
+   * _camera_id_ - The ID of the camera control system camera object.
+<BR>
+<BR>
