@@ -7,7 +7,7 @@ fixed by a yaw axis.
 <BR>
 <BR>
 <BR>
-=== !SetFixedTrackingCameraPosition(double camera_mode_ptr, double x, double y, double z) ===
+=== !SetFixedTrackingCameraPosition(double camera_id, double x, double y, double z) ===
 ----
 Sets the position of the camera.
 ====Parameters====
@@ -15,7 +15,7 @@ Sets the position of the camera.
    * _x_, _y_, _z_ - The position of the camera.
 <BR>
 <BR>
-=== !SetFixedTrackingCameraOrientation(double camera_mode_ptr, double yaw, double pitch, double roll) ===
+=== !SetFixedTrackingCameraOrientation(double camera_id, double yaw, double pitch, double roll) ===
 ----
 Sets the orientation of the camera.
 ====Parameters====
