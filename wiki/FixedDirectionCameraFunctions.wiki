@@ -5,7 +5,7 @@ A fixed direction camera moves so the target is always seen from the same point 
 <BR>
 <BR>
 <BR>
-=== !SetFixedDirectionCameraTightness(double camera_mode_ptr, double tightness) ===
+=== !SetFixedDirectionCameraTightness(double camera_id, double tightness) ===
 ----
 Sets the tightness of the camera.
 ====Parameters====
@@ -13,7 +13,7 @@ Sets the tightness of the camera.
    * _tightness_ - The camera tightness.
 <BR>
 <BR>
-=== !SetFixedDirectionCameraDirection(double camera_mode_ptr, double dirx, double diry, double dirz) ===
+=== !SetFixedDirectionCameraDirection(double camera_id, double dirx, double diry, double dirz) ===
 ----
 Sets the direction the camera faces.
 ====Parameters====
@@ -21,7 +21,7 @@ Sets the direction the camera faces.
    * _dirx_, _diry_, _dirz_ - The direction the camera should face.
 <BR>
 <BR>
-=== !SetFixedDirectionCameraDistance(double camera_mode_ptr, double distance) ===
+=== !SetFixedDirectionCameraDistance(double camera_id, double distance) ===
 ----
 Sets the camera distance.
 ====Parameters====
