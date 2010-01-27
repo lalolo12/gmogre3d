@@ -104,8 +104,7 @@ A fixed cameras position and orientation never change.
 ----
 Creates a fixed camera and returns the ID.
 
-A chase camera follows the target. The second parameter is the relative position
-     * to the target. The orientation of the camera is fixed by a yaw axis (UNIT_Y by default). 
+A chase camera follows the target. The second parameter is the relative position to the target. The orientation of the camera is fixed by a yaw axis (UNIT_Y by default). 
 An attached camera is attached attached to a target !SceneNode as a child.
 ====Parameters====
    * _ccs_id_ - The ID of the camera control system object.
