@@ -7,7 +7,7 @@ to the plane.
 <BR>
 <BR>
 <BR>
-=== !SetPlaneBindedCameraTightness(double camera_id, double tightness) ===
+=== !SetPlaneBindedCameraTightness(real camera_id, real tightness) ===
 ----
 Sets the tightness of the camera.
 ====Parameters====
