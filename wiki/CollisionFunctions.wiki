@@ -1,12 +1,13 @@
 #summary Basic collision detection functions.
 <BR>
 <BR>
-=== !FindEntityFromCameraPosition(real camera_id, real x, real y, real mask) ===
+=== !GetEntityFromCameraPosition(real camera_id, real x, real y, real mask) ===
 ----
-Returns the ID of the first entity found when ray-tracing from the specified 2D camera position out into the
-world.
+Returns both the ID of the first entity found when ray-tracing from the specified 2D camera position out into the world, as well as the world coordinates where the ray hit the entity.
 
 This function is useful to select items on screen with your mouse.
+
+Since GM cannot return 4 values in a single function call the entity ID is returned, while the world coordinates are stored in temporary variables and can be retrieved by calling the GetX, GetY, and GetZ functions. 
 ====Parameters====
     * _camera_id_ - The ID of the camera raycast from.
     * _x_, _y_ - The 2D point on the camera you want to raycast from.
