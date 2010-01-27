@@ -1,0 +1,73 @@
+#summary A set of functions for CameraControlSystem orbital camera.
+
+=== Overview ===
+An orbital camera is an attached camera where the user can modify the camera position. If the scene focus is seen as the center of a sphere, the camera rotates around it.
+<BR>
+<BR>
+<BR>
+=== !SetOrbitalCameraRotationFactor(double camera_mode_ptr, double degrees_per_second) ===
+----
+====Parameters====
+   * _camera_id_ - The ID of the camera control system camera object.
+<BR>
+<BR>
+=== !SetOrbitalCameraZoomFactor(double camera_mode_ptr, double units_per_second) ===
+----
+====Parameters====
+   * _camera_id_ - The ID of the camera control system camera object.
+<BR>
+<BR>
+=== !SetOrbitalCameraZoom(double camera_mode_ptr, double zoom) ===
+----
+====Parameters====
+   * _camera_id_ - The ID of the camera control system camera object.
+<BR>
+<BR>
+=== !ZoomOrbitalCamera(double camera_mode_ptr, double percentage) ===
+----
+====Parameters====
+   * _camera_id_ - The ID of the camera control system camera object.
+<BR>
+<BR>
+=== !SetOrbitalCameraYaw(double camera_mode_ptr, double degrees) ===
+----
+====Parameters====
+   * _camera_id_ - The ID of the camera control system camera object.
+<BR>
+<BR>
+=== !YawOrbitalCamera(double camera_mode_ptr, double percentage) ===
+----
+====Parameters====
+   * _camera_id_ - The ID of the camera control system camera object.
+<BR>
+<BR>
+=== !SetOrbitalCameraPitch(double camera_mode_ptr, double degrees) ===
+----
+====Parameters====
+   * _camera_id_ - The ID of the camera control system camera object.
+<BR>
+<BR>
+=== !PitchOrbitalCamera(double camera_mode_ptr, double percentage) ===
+----
+====Parameters====
+   * _camera_id_ - The ID of the camera control system camera object.
+<BR>
+<BR>
+=== !SetOrbitalCameraRelativePosition(double camera_mode_ptr, double relative_posx, double relative_posy, double relative_posz, double offset_yaw, double offset_pitch, double offset_roll) ===
+----
+====Parameters====
+   * _camera_id_ - The ID of the camera control system camera object.
+<BR>
+<BR>
+=== !SetOrbitalCameraTightness(double camera_mode_ptr, double tightness) ===
+----
+====Parameters====
+   * _camera_id_ - The ID of the camera control system camera object.
+<BR>
+<BR>
+=== !EnableOrbitalCameraCollisions(double camera_mode_ptr, double enable) ===
+----
+====Parameters====
+   * _camera_id_ - The ID of the camera control system camera object.
+<BR>
+<BR>
