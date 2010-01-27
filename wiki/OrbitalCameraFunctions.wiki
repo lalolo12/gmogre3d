@@ -1,73 +1,100 @@
 #summary A set of functions for CameraControlSystem orbital camera.
 
 === Overview ===
-An orbital camera is an attached camera where the user can modify the camera position. If the scene focus is seen as the center of a sphere, the camera rotates around it.
+An orbital camera is an attached camera where the user can modify the camera position. If the scene focus is seen as 
+
+the center of a sphere, the camera rotates around it.
 <BR>
 <BR>
 <BR>
 === !SetOrbitalCameraRotationFactor(double camera_mode_ptr, double degrees_per_second) ===
 ----
+Sets the amount of degrees the camera is able to rotate per second.
 ====Parameters====
    * _camera_id_ - The ID of the camera control system camera object.
+   * _degrees_per_second_ - The number of degrees the camera can rotate per second.
 <BR>
 <BR>
 === !SetOrbitalCameraZoomFactor(double camera_mode_ptr, double units_per_second) ===
 ----
+Sets the amount of world unites the camera is able to zoom per second.
 ====Parameters====
    * _camera_id_ - The ID of the camera control system camera object.
+   * _degrees_per_second_ - The number of units the camera can zoom per second.
 <BR>
 <BR>
 === !SetOrbitalCameraZoom(double camera_mode_ptr, double zoom) ===
 ----
+Sets the amount of zoom.
 ====Parameters====
    * _camera_id_ - The ID of the camera control system camera object.
+   * _zoom_ - The amount of zoom.
 <BR>
 <BR>
 === !ZoomOrbitalCamera(double camera_mode_ptr, double percentage) ===
 ----
+Zooms the camera by the specified percentage.
 ====Parameters====
    * _camera_id_ - The ID of the camera control system camera object.
+   * _zoom_ - Optional percentage to zoom. Can be between -1 and 1. Default is 1.
 <BR>
 <BR>
 === !SetOrbitalCameraYaw(double camera_mode_ptr, double degrees) ===
 ----
+Sets the yaw to the specified number of degrees.
 ====Parameters====
    * _camera_id_ - The ID of the camera control system camera object.
+   * _degrees_ - The number of degrees.
 <BR>
 <BR>
 === !YawOrbitalCamera(double camera_mode_ptr, double percentage) ===
 ----
+Yaws the camera by the specified percentage.
 ====Parameters====
    * _camera_id_ - The ID of the camera control system camera object.
+   * _percentage_ - Optional percentage to move the camera. Can be -1 to 1. Default is 1.
 <BR>
 <BR>
 === !SetOrbitalCameraPitch(double camera_mode_ptr, double degrees) ===
 ----
+Sets the pitch to the specified number of degrees.
 ====Parameters====
    * _camera_id_ - The ID of the camera control system camera object.
+   * _degrees_ - The number of degrees.
 <BR>
 <BR>
 === !PitchOrbitalCamera(double camera_mode_ptr, double percentage) ===
 ----
+Pitches the camera by the specified degrees.
 ====Parameters====
    * _camera_id_ - The ID of the camera control system camera object.
+   * _percentage_ - Optional percentage to move the camera. Can be -1 to 1. Default is 1.
 <BR>
 <BR>
-=== !SetOrbitalCameraRelativePosition(double camera_mode_ptr, double relative_posx, double relative_posy, double relative_posz, double offset_yaw, double offset_pitch, double offset_roll) ===
+=== !SetOrbitalCameraRelativePosition(double camera_mode_ptr, double relative_posx, double relative_posy, double 
+
+relative_posz, double offset_yaw, double offset_pitch, double offset_roll) ===
 ----
+Sets the position relative to that of the target !SceneNode.
 ====Parameters====
    * _camera_id_ - The ID of the camera control system camera object.
+   * _relative_posx_, _relative_posy_, _relative_posz_ - The position relative to the target !SceneNode.
 <BR>
 <BR>
 === !SetOrbitalCameraTightness(double camera_mode_ptr, double tightness) ===
 ----
+Sets the tightness of the camera.
 ====Parameters====
    * _camera_id_ - The ID of the camera control system camera object.
+   * _tightness_ - The camera tightness.
 <BR>
 <BR>
 === !EnableOrbitalCameraCollisions(double camera_mode_ptr, double enable) ===
 ----
+Enable or disable camera collisions, so the camera does not move inside objects.
+----
 ====Parameters====
    * _camera_id_ - The ID of the camera control system camera object.
+   * _enable_ - Whether to enable or disable camera collisions.
 <BR>
 <BR>
