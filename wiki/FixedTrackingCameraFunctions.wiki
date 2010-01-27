@@ -1,0 +1,19 @@
+#summary A set of functions for CameraControlSystem fixed tracking camera.
+
+=== Overview ===
+A fixed tracking camera's position is chosen to be the closest to the target of a given list. The camera orientation is fixed by a yaw axis.
+<BR>
+<BR>
+<BR>
+=== !SetFixedTrackingCameraPosition(double camera_mode_ptr, double x, double y, double z) ===
+----
+====Parameters====
+   * _camera_id_ - The ID of the camera control system camera object.
+<BR>
+<BR>
+=== !SetFixedTrackingCameraOrientation(double camera_mode_ptr, double yaw, double pitch, double roll) ===
+----
+====Parameters====
+   * _camera_id_ - The ID of the camera control system camera object.
+<BR>
+<BR>
