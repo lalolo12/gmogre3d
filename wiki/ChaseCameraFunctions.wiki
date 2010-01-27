@@ -5,9 +5,7 @@ A chase camera follows the target.
 <BR>
 <BR>
 <BR>
-=== !SetChaseCameraRelativePosition(double camera_id, double relative_posx, double relative_posy, double 
-
-relative_posz) ===
+=== !SetChaseCameraRelativePosition(double camera_id, double relative_posx, double relative_posy, double relative_posz) ===
 ----
 Sets the position relative to that of the target !SceneNode.
 ====Parameters====
