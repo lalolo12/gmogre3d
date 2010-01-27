@@ -1,0 +1,19 @@
+#summary A set of functions for CameraControlSystem fixed camera.
+
+=== Overview ===
+A fixed cameras position and orientation never change. 
+<BR>
+<BR>
+<BR>
+=== !SetFixedCameraPosition(double camera_mode_ptr, double x, double y, double z) ===
+----
+====Parameters====
+   * _camera_id_ - The ID of the camera control system camera object.
+<BR>
+<BR>
+=== !SetFixedCameraOrientation(double camera_mode_ptr, double yaw, double pitch, double roll) ===
+----
+====Parameters====
+   * _camera_id_ - The ID of the camera control system camera object.
+<BR>
+<BR>
