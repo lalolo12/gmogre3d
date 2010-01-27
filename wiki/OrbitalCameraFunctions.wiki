@@ -7,7 +7,7 @@ the center of a sphere, the camera rotates around it.
 <BR>
 <BR>
 <BR>
-=== !SetOrbitalCameraRotationFactor(double camera_mode_ptr, double degrees_per_second) ===
+=== !SetOrbitalCameraRotationFactor(double camera_id, double degrees_per_second) ===
 ----
 Sets the amount of degrees the camera is able to rotate per second.
 ====Parameters====
@@ -15,7 +15,7 @@ Sets the amount of degrees the camera is able to rotate per second.
    * _degrees_per_second_ - The number of degrees the camera can rotate per second.
 <BR>
 <BR>
-=== !SetOrbitalCameraZoomFactor(double camera_mode_ptr, double units_per_second) ===
+=== !SetOrbitalCameraZoomFactor(double camera_id, double units_per_second) ===
 ----
 Sets the amount of world unites the camera is able to zoom per second.
 ====Parameters====
@@ -23,7 +23,7 @@ Sets the amount of world unites the camera is able to zoom per second.
    * _degrees_per_second_ - The number of units the camera can zoom per second.
 <BR>
 <BR>
-=== !SetOrbitalCameraZoom(double camera_mode_ptr, double zoom) ===
+=== !SetOrbitalCameraZoom(double camera_id, double zoom) ===
 ----
 Sets the amount of zoom.
 ====Parameters====
@@ -31,7 +31,7 @@ Sets the amount of zoom.
    * _zoom_ - The amount of zoom.
 <BR>
 <BR>
-=== !ZoomOrbitalCamera(double camera_mode_ptr, double percentage) ===
+=== !ZoomOrbitalCamera(double camera_id, double percentage) ===
 ----
 Zooms the camera by the specified percentage.
 ====Parameters====
@@ -39,7 +39,7 @@ Zooms the camera by the specified percentage.
    * _zoom_ - Optional percentage to zoom. Can be between -1 and 1. Default is 1.
 <BR>
 <BR>
-=== !SetOrbitalCameraYaw(double camera_mode_ptr, double degrees) ===
+=== !SetOrbitalCameraYaw(double camera_id, double degrees) ===
 ----
 Sets the yaw to the specified number of degrees.
 ====Parameters====
@@ -47,7 +47,7 @@ Sets the yaw to the specified number of degrees.
    * _degrees_ - The number of degrees.
 <BR>
 <BR>
-=== !YawOrbitalCamera(double camera_mode_ptr, double percentage) ===
+=== !YawOrbitalCamera(double camera_id, double percentage) ===
 ----
 Yaws the camera by the specified percentage.
 ====Parameters====
@@ -55,7 +55,7 @@ Yaws the camera by the specified percentage.
    * _percentage_ - Optional percentage to move the camera. Can be -1 to 1. Default is 1.
 <BR>
 <BR>
-=== !SetOrbitalCameraPitch(double camera_mode_ptr, double degrees) ===
+=== !SetOrbitalCameraPitch(double camera_id, double degrees) ===
 ----
 Sets the pitch to the specified number of degrees.
 ====Parameters====
@@ -63,7 +63,7 @@ Sets the pitch to the specified number of degrees.
    * _degrees_ - The number of degrees.
 <BR>
 <BR>
-=== !PitchOrbitalCamera(double camera_mode_ptr, double percentage) ===
+=== !PitchOrbitalCamera(double camera_id, double percentage) ===
 ----
 Pitches the camera by the specified degrees.
 ====Parameters====
@@ -71,7 +71,7 @@ Pitches the camera by the specified degrees.
    * _percentage_ - Optional percentage to move the camera. Can be -1 to 1. Default is 1.
 <BR>
 <BR>
-=== !SetOrbitalCameraRelativePosition(double camera_mode_ptr, double relative_posx, double relative_posy, double 
+=== !SetOrbitalCameraRelativePosition(double camera_id, double relative_posx, double relative_posy, double 
 
 relative_posz, double offset_yaw, double offset_pitch, double offset_roll) ===
 ----
@@ -81,7 +81,7 @@ Sets the position relative to that of the target !SceneNode.
    * _relative_posx_, _relative_posy_, _relative_posz_ - The position relative to the target !SceneNode.
 <BR>
 <BR>
-=== !SetOrbitalCameraTightness(double camera_mode_ptr, double tightness) ===
+=== !SetOrbitalCameraTightness(double camera_id, double tightness) ===
 ----
 Sets the tightness of the camera.
 ====Parameters====
@@ -89,7 +89,7 @@ Sets the tightness of the camera.
    * _tightness_ - The camera tightness.
 <BR>
 <BR>
-=== !EnableOrbitalCameraCollisions(double camera_mode_ptr, double enable) ===
+=== !EnableOrbitalCameraCollisions(double camera_id, double enable) ===
 ----
 Enable or disable camera collisions, so the camera does not move inside objects.
 ----
