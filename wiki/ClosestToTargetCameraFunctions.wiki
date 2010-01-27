@@ -1,0 +1,13 @@
+#summary A set of functions for CameraControlSystem closest to target camera.
+
+=== Overview ===
+A closest to target camera's position is chosen to be the closest to the target of a given list. The camera orientation is fixed by a yaw axis. 
+<BR>
+<BR>
+<BR>
+=== !AddClosestToTargetCameraPosition(double camera_mode_ptr, double x, double y, double z) ===
+----
+====Parameters====
+   * _camera_id_ - The ID of the camera control system camera object.
+<BR>
+<BR>
