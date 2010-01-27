@@ -5,7 +5,7 @@ The free camera is controlled by the user. The camera orientation is fixed by a 
 <BR>
 <BR>
 <BR>
-=== !SetFreeCameraMoveFactor(double camera_mode_ptr, double units_per_sec) ===
+=== !SetFreeCameraMoveFactor(double camera_id, double units_per_sec) ===
 ----
 Sets the amount of world units the camera is able to move per second.
 ====Parameters====
@@ -13,7 +13,7 @@ Sets the amount of world units the camera is able to move per second.
    * _units_per_second_ - The number of units the camera can move per second.
 <BR>
 <BR>
-=== !SetFreeCameraRotationFactor(double camera_mode_ptr, double factor) ===
+=== !SetFreeCameraRotationFactor(double camera_id, double factor) ===
 ----
 Sets the factor amount for camera rotations.
 
@@ -23,21 +23,21 @@ The default rotation factor is 0.13.
    * _factor_ - The rotation factor.
 <BR>
 <BR>
-=== !YawFreeCamera(double camera_mode_ptr, double amount) ===
+=== !YawFreeCamera(double camera_id, double amount) ===
 ----
 Yaws the camera by the specified amount.
 ====Parameters====
    * _camera_id_ - The ID of the camera control system camera object.
 <BR>
 <BR>
-=== !PitchFreeCamera(double camera_mode_ptr, double amount) ===
+=== !PitchFreeCamera(double camera_id, double amount) ===
 ----
 Pitch the camera by the specified amount.
 ====Parameters====
    * _camera_id_ - The ID of the camera control system camera object.
 <BR>
 <BR>
-=== !MoveFreeCameraLeft(double camera_mode_ptr, double percentage) ===
+=== !MoveFreeCameraLeft(double camera_id, double percentage) ===
 ----
 Moves a camera left by the specified percentage. 
 ====Parameters====
@@ -45,7 +45,7 @@ Moves a camera left by the specified percentage.
    * _percentage_ - Optional percentage to move the camera. Default is 1.0.
 <BR>
 <BR>
-=== !MoveFreeCameraRight(double camera_mode_ptr, double percentage) ===
+=== !MoveFreeCameraRight(double camera_id, double percentage) ===
 ----
 Moves a camera right by the specified percentage. 
 ====Parameters====
@@ -53,7 +53,7 @@ Moves a camera right by the specified percentage.
    * _percentage_ - Optional percentage to move the camera. Default is 1.0.
 <BR>
 <BR>
-=== !MoveFreeCameraForward(double camera_mode_ptr, double percentage) ===
+=== !MoveFreeCameraForward(double camera_id, double percentage) ===
 ----
 Moves a camera forward by the specified percentage. 
 ====Parameters====
@@ -61,7 +61,7 @@ Moves a camera forward by the specified percentage.
    * _percentage_ - Optional percentage to move the camera. Default is 1.0.
 <BR>
 <BR>
-=== !MoveFreeCameraBackward(double camera_mode_ptr, double percentage) ===
+=== !MoveFreeCameraBackward(double camera_id, double percentage) ===
 ----
 Moves a camera backward by the specified percentage. 
 ====Parameters====
@@ -69,7 +69,7 @@ Moves a camera backward by the specified percentage.
    * _percentage_ - Optional percentage to move the camera. Default is 1.0.
 <BR>
 <BR>
-=== !MoveFreeCameraUp(double camera_mode_ptr, double percentage) ===
+=== !MoveFreeCameraUp(double camera_id, double percentage) ===
 ----
 Moves a camera up by the specified percentage. 
 ====Parameters====
@@ -77,7 +77,7 @@ Moves a camera up by the specified percentage.
    * _percentage_ - Optional percentage to move the camera. Default is 1.0.
 <BR>
 <BR>
-=== !MoveFreeCameraDown(double camera_mode_ptr, double percentage) ===
+=== !MoveFreeCameraDown(double camera_id, double percentage) ===
 ----
 Moves a camera down by the specified percentage. 
 ====Parameters====
