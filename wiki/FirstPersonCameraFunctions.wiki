@@ -5,14 +5,14 @@ A first person camera is an attached camera with the possibility of hide or show
 <BR>
 <BR>
 <BR>
-=== !ShowFirstPersonCameraCharacter(double camera_id) ===
+=== !ShowFirstPersonCameraCharacter(real camera_id) ===
 ----
 Shows the entity attached to the !SceneNode the camera is attached it, if any.
 ====Parameters====
    * _camera_id_ - The ID of the camera control system camera object.
 <BR>
 <BR>
-=== !HideFirstPersonCameraCharacter(double camera_id) ===
+=== !HideFirstPersonCameraCharacter(real camera_id) ===
 ----
 Hides the entity attached to the !SceneNode the camera is attached it, if any.
 ====Parameters====
