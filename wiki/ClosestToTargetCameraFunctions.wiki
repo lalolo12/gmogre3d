@@ -7,7 +7,7 @@ is fixed by a yaw axis.
 <BR>
 <BR>
 <BR>
-=== !AddClosestToTargetCameraPosition(double camera_id, double x, double y, double z) ===
+=== !AddClosestToTargetCameraPosition(real camera_id, real x, real y, real z) ===
 ----
 Sets the position of the camera.
 ====Parameters====
