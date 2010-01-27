@@ -1,0 +1,67 @@
+#summary A set of functions for CameraControlSystem free camera.
+
+=== Overview ===
+The free camera is controlled by the user. The camera orientation is fixed by a yaw axis.
+<BR>
+<BR>
+<BR>
+=== !SetFreeCameraMoveFactor(double camera_mode_ptr, double units_per_sec) ===
+----
+====Parameters====
+   * _camera_id_ - The ID of the camera control system camera object.
+<BR>
+<BR>
+=== !SetFreeCameraRotationFactor(double camera_mode_ptr, double units_per_sec) ===
+----
+====Parameters====
+   * _camera_id_ - The ID of the camera control system camera object.
+<BR>
+<BR>
+=== !YawFreeCamera(double camera_mode_ptr, double delta) ===
+----
+====Parameters====
+   * _camera_id_ - The ID of the camera control system camera object.
+<BR>
+<BR>
+=== !PitchFreeCamera(double camera_mode_ptr, double delta) ===
+----
+====Parameters====
+   * _camera_id_ - The ID of the camera control system camera object.
+<BR>
+<BR>
+=== !MoveFreeCameraLeft(double camera_mode_ptr, double percentage) ===
+----
+====Parameters====
+   * _camera_id_ - The ID of the camera control system camera object.
+<BR>
+<BR>
+=== !MoveFreeCameraRight(double camera_mode_ptr, double percentage) ===
+----
+====Parameters====
+   * _camera_id_ - The ID of the camera control system camera object.
+<BR>
+<BR>
+=== !MoveFreeCameraForward(double camera_mode_ptr, double percentage) ===
+----
+====Parameters====
+   * _camera_id_ - The ID of the camera control system camera object.
+<BR>
+<BR>
+=== !MoveFreeCameraBackward(double camera_mode_ptr, double percentage) ===
+----
+====Parameters====
+   * _camera_id_ - The ID of the camera control system camera object.
+<BR>
+<BR>
+=== !MoveFreeCameraUp(double camera_mode_ptr, double percentage) ===
+----
+====Parameters====
+   * _camera_id_ - The ID of the camera control system camera object.
+<BR>
+<BR>
+=== !MoveFreeCameraDown(double camera_mode_ptr, double percentage) ===
+----
+====Parameters====
+   * _camera_id_ - The ID of the camera control system camera object.
+<BR>
+<BR>
