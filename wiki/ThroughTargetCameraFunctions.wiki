@@ -5,7 +5,7 @@ The through target camera points to a given position (the "focus") through the t
 <BR>
 <BR>
 <BR>
-=== !SetThroughTargetCameraModeFocusPosition(real camera_id, real x, real y, real z)
+=== !SetThroughTargetCameraModeFocusPosition(real camera_id, real x, real y, real z) ===
 ----
 Sets the position of the camera.
 ====Parameters====
