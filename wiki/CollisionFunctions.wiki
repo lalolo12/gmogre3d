@@ -1,7 +1,7 @@
 #summary Basic collision detection functions.
 <BR>
 <BR>
-=== !GetEntityFromCameraPosition(real camera_id, real x, real y, real mask) ===
+=== !GetEntityFromCameraRay(real camera_id, real x, real y, real mask) ===
 ----
 Returns both the ID of the first entity found when ray-tracing from the specified 2D camera position out into the world, as well as the world coordinates where the ray hit the entity.
 
