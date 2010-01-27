@@ -144,51 +144,71 @@ A through target camera points to a given position (the "focus") throuh the targ
    * _ccs_id_ - The ID of the camera control system object.
    * _margin_ - The margin.
    * _inverse_ - Optionally inverse. Default is false.
-   * _focus_posx_, _focus_posy_, _focus_posz_ - Optional focus position. Default is 0,0,0.
+   * _focus_posx_, _focus_posy_, _focus_posz_ - The focus position. Default is 0,0,0.
    * _axisx_, _axisy_, _axisz_ - Optional axis used for orientation.  By default 0,0,1 is passed, meaning the Z axis is used to define the yaw rotation.
 <BR>
 <BR>
-=== !CreateCameraControlSystemFixedDirectionCameraMode(real ccs_id, real dirx, real diry, real dirz, real distance, real axisx, real axisz, real axisy) ===
+=== !CreateCameraControlSystemFixedDirectionCameraMode(real ccs_id, real dirx, real diry, real dirz, real distance, real axisx, real axisy, real axisz) ===
 ----
 Creates a fixed camera and returns the ID.
 
-A fixed direction camera is controlled by the user. In this mode the target is always seen from the same point of view.
+A fixed direction camera moves so the target is always seen from the same point of view.
 ====Parameters====
    * _ccs_id_ - The ID of the camera control system object.
+   * _dirx_, _diry_, _dirz_ - The cameras direction vector.
+   * _distance_ - The camera distance.
+   * _axisx_, _axisy_, _axisz_ - Optional axis used for orientation.  By default 0,0,1 is passed, meaning the Z axis is used to define the yaw rotation.
 <BR>
 <BR>
 === !CreateCameraControlSystemFirstPersonCameraMode(real ccs_id, real relative_posx, real relative_posy, real relative_posz, real yaw, real pitch, real roll) ===
 ----
+Creates a first person camera and returns the ID.
+
+A first person camera is an attached camera with the possibility of hide or show the focus of the scene.
 ====Parameters====
    * _ccs_id_ - The ID of the camera control system object.
-<BR>
-<BR>
-=== !CreateCameraControlSystemChaseFreeYawAxisCameraMode(real ccs_id, real relative_posx, real relative_posy, real relative_posz, real yaw, real pitch, real roll) ===
-----
-====Parameters====
-   * _ccs_id_ - The ID of the camera control system object.
+   * _posx_, _posy_, _posz_ - The position of the camera.
+   * _yaw_, _pitch_, _roll_ - Optional relative rotation of the camera to the target !SceneNode. Default is 0,0,0.
 <BR>
 <BR>
 === !CreateCameraControlSystemOrbitalCameraMode(real ccs_id, real zoom, real horiz_rotation, real vert_rotation) ===
 ----
+Creates an orbital camera and returns the ID.
+
+An orbital camera is an attached camera where the user can modify the camera position. If the scene focus is seen as the center of a sphere, the camera rotates around it.
 ====Parameters====
    * _ccs_id_ - The ID of the camera control system object.
+   * _zoom_ - Optional amount to zoom the camera in or out. Default is 1.0.
+   * _horiz_rotation_ - Optional degrees to rotate the camera horizontally. Default is 0.
+   * _vert_rotation_ - Optional degrees to rotate the camera vertically. Default is 0.
 <BR>
 <BR>
 === !CreateCameraControlSystemFixedTrackingCameraMode(real ccs_id, real axisx, real axisy, real axisz) ===
 ----
+Creates an fixed tracking camera and returns the ID.
+
+A fixed tracking camera's position is chosen to be the closest to the target of a given list. The camera orientation is fixed by a yaw axis.
 ====Parameters====
    * _ccs_id_ - The ID of the camera control system object.
+   * _axisx_, _axisy_, _axisz_ - Optional axis used for orientation.  By default 0,0,1 is passed, meaning the Z axis is used to define the yaw rotation.
 <BR>
 <BR>
 === !CreateCameraControlSystemClosestToTargetCameraMode(real ccs_id, real time_interval, real axisx, real axisy, real axisz) ===
 ----
+Creates an closest to target camera and returns the ID.
+
+A closest to target camera's position is chosen to be the closest to the target of a given list. The camera orientation is fixed by a yaw axis.
 ====Parameters====
    * _ccs_id_ - The ID of the camera control system object.
+   * _time_interval_ - Optional time interval between updates. Defaults to 1.
+   * _axisx_, _axisy_, _axisz_ - Optional axis used for orientation.  By default 0,0,1 is passed, meaning the Z axis is used to define the yaw rotation.
 <BR>
 <BR>
 === !CreateCameraControlSystemFreeCameraMode(real ccs_id) ===
 ----
+Creates an free camera and returns the ID.
+
+The free camera is controlled by the user. The camera orientation is fixed by a yaw axis.
 ====Parameters====
    * _ccs_id_ - The ID of the camera control system object.
 <BR>
