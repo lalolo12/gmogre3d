@@ -1,10 +1,11 @@
 #summary Enter description here
 <BR>
-=== !SetEulerDirection(real x, real y, real z) ===
+=== !GetRotationTo(real fromx, real fromy, real fromz, real tox, real toy, real toz) ===
 ----
-Returns the calculated orientation from two subtracted vectors (z, y, z).  Useful to find the orientation required to look forward given a previous and current position of an object.
+Returns the calculated world orientation required race the specified 'to point' from the specified 'from point'. Useful to find the orientation required to look forward given a previous and current position of an object.
 ==== Paramterers ====
-   * _x_, _y_, _z_ - The direction vector.
+   * _fromx_, _fromy_, _fromz_ - The from direction vector.
+   * _tox_, _toy_, _toz_ - The to direction vector.
 <BR>
 <BR>
 === !GetYaw() ===
