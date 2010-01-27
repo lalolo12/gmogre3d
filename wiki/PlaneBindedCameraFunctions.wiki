@@ -1,0 +1,13 @@
+#summary A set of functions for CameraControlSystem plane binded camera.
+
+=== Overview ===
+A plane binded camera is constrained to the limits of a plane. The camera always points to the target, perpendicularly to the plane. 
+<BR>
+<BR>
+<BR>
+=== !SetPlaneBindedCameraTightness(double camera_mode_ptr, double tightness) ===
+----
+====Parameters====
+   * _camera_id_ - The ID of the camera control system camera object.
+<BR>
+<BR>
