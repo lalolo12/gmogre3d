@@ -232,7 +232,7 @@ The default implementation of texture shadows uses a fixed-function color textur
    * _enable_ - Whether to attempt self-shadowing with texture shadows.
 <BR>
 <BR>
-EnableShadowCasterRenderBackFaces(real enable)
+=== !EnableShadowCasterRenderBackFaces(real enable) ===
 ----
 Enables or disables whether or not shadow casters should be rendered into shadow textures using their back faces rather than their front faces.
 
