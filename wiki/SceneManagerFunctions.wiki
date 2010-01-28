@@ -193,6 +193,54 @@ To hide the edges where texture shadows end (in directional lights) Ogre will fa
    * _fade_end_ - The distance at which the texture shadow finishes fading out. Default is 0.9.
 <BR>
 <BR>
+=== !SetShadowTextureCasterMaterial(string material) ===
+----
+Sets the default material to use for rendering shadow casters.
+
+By default shadow casters are rendered into the shadow texture using an automatically generated fixed-function pass. This allows basic projective texture shadows, but it's possible to use more advanced shadow techniques by overriding the caster and receiver materials, for example providing vertex and fragment programs to implement shadow maps. 
+
+You can rely on the ambient light in the scene being set to the requested texture shadow color, if that's useful. 
+
+Note that individual objects may also override the vertex program in your default material if their materials include shadow_caster_vertex_program_ref, shadow_receiver_vertex_program_ref shadow_caster_material entries, so if you use both make sure they are compatible.
+
+Only a single pass is allowed in your material, although multiple techniques may be used for hardware fallback.
+====Parameters====
+   * _material_ - Material to use for rendering shadow casters.
+<BR>
+<BR>
+=== !SetShadowTextureReceiverMaterial(string material) ===
+----
+Sets the default material to use for rendering shadow receivers.
+
+By default shadow receivers are rendered as a post-pass using basic modulation. This allows basic projective texture shadows, but it's possible to use more advanced shadow techniques by overriding the caster and receiver materials, for example providing vertex and fragment programs to implement shadow maps. 
+
+You can rely on texture unit 0 containing the shadow texture, and for the unit to be set to use projective texturing from the light (only useful if you're using fixed-function, which is unlikely; otherwise you should rely on the texture_viewproj_matrix auto binding) 
+
+Note that individual objects may also override the vertex program in your default material if their materials include shadow_caster_vertex_program_ref shadow_receiver_vertex_program_ref shadow_receiver_material entries, so if you use both make sure they are compatible.
+
+Only a single pass is allowed in your material, although multiple techniques may be used for hardware fallback. 
+====Parameters====
+   * _material_ - Material to use for rendering shadow receivers.
+<BR>
+<BR>
+=== !EnableShadowTextureSelfShadow(real enable) ===
+----
+Enable or disables whether or not texture shadows should attempt to self-shadow.
+
+The default implementation of texture shadows uses a fixed-function color texture projection approach for maximum compatibility, and as such cannot support self-shadowing. However, if you decide to implement a more complex shadowing technique using the !SetShadowTextureCasterMaterial and !SetShadowTextureReceiverMaterial there is a possibility you may be able to support self-shadowing (e.g by implementing a shader-based shadow map). In this case you might want to enable this option. 
+====Parameters====
+   * _enable_ - Whether to attempt self-shadowing with texture shadows.
+<BR>
+<BR>
+EnableShadowCasterRenderBackFaces(real enable)
+----
+Enables or disables whether or not shadow casters should be rendered into shadow textures using their back faces rather than their front faces.
+
+Rendering back faces rather than front faces into a shadow texture can help minimize depth comparison issues, if you're using depth shadowmapping. You will probably still need some biasing but you won't need as much. For solid objects the result is the same anyway, if you have objects with holes you may want to turn this option off. The default is to enable this option. 
+====Parameters====
+   * _enable_ - Whether or not shadow casters should be rendered into shadow textures using back faces.
+<BR>
+<BR>
 === !SetFog(real type, real color, real density, real start, real end) ===
 ----
 Sets the fogging mode applied to the scene. This method sets up the scene-wide fogging effect. These settings apply to all geometry rendered, UNLESS the material with which it is rendered has it's own fog settings.
