@@ -172,3 +172,25 @@ Returns the number of techniques added to a material.
    * _name_ - The unique name of the resource.
 <BR>
 <BR>
+=== !SetMaterialDefaultTextureFiltering(real type) ===
+----
+Sets the default texture filtering to be used for loaded textures, for when textures are loaded automatically  or when !LoadMaterial is called with the default parameters by the application.
+
+The default value is TFO_BILINEAR. 
+====Parameters====
+   * type - The content type. Can be:
+      * _TFO_NONE_ - Equal to: min=FO_POINT, max=FO_POINT, mip=FO_NONE.
+      * _TFO_BILINEAR_ - Equal to: min=FO_LINEAR, max=FO_LINEAR, mip=FO_POINT.
+      * _TFO_TRILINEAR_ - Equal to: min=FO_LINEAR, max=FO_LINEAR, mip=FO_LINEAR.
+      * _TFO_ANISOTROPIC_ - Equal to: min=FO_ANISOTROPIC, max=FO_ANISOTROPIC, mip=FO_LINEAR.
+<BR>
+<BR>
+=== !SetMaterialDefaultAnisotropy(real level) ===
+----
+Sets the default anisotropy level to be used for loaded textures, for when textures are loaded automatically or when !LoadMaterial is called with the default parameters by the application.
+
+The default value is 1 (no anisotropy). 
+====Parameters====
+   * _level_ - The anisotropy level.
+<BR>
+<BR>
