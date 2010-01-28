@@ -83,12 +83,12 @@ This can be called multiple times for different values of _transform_type_, but 
       * TT_SCALE_V	
       * TT_ROTATE 
    * _wave_type_ - The shape of the wave.  Can be:
-      * _global.WFT_SINE_ - Standard sine wave which smoothly changes from low to high and back again.
-      * _global.WTF_TRIANGLE_ - An angular wave with a constant increase/decrease speed with pointed peaks.
-      * _global.WTF_SQUARE_ - Half of the time is spent at the min, half at the max with instant transition between.
-      * _global.WTF_SAWTOOTH_ - Gradual steady increase from min to max over the period with an instant return to min a the end.
-      * _global.WTF_INVERSE_SAWTOOTH_ - Gradual steady decrease from max to min over the period with an instant return to max a the end.
-      * _global.WTF_PWM_ - Pulse Width Modulation.  Works like WFT_SQUARE, except the high to low transition is controlled by duty cycle.  With a duty cycle of 50% (0.5) will give the same output as WFT_SQUARE.
+      * _WFT_SINE_ - Standard sine wave which smoothly changes from low to high and back again.
+      * _WTF_TRIANGLE_ - An angular wave with a constant increase/decrease speed with pointed peaks.
+      * _WTF_SQUARE_ - Half of the time is spent at the min, half at the max with instant transition between.
+      * _WTF_SAWTOOTH_ - Gradual steady increase from min to max over the period with an instant return to min a the end.
+      * _WTF_INVERSE_SAWTOOTH_ - Gradual steady decrease from max to min over the period with an instant return to max a the end.
+      * _WTF_PWM_ - Pulse Width Modulation.  Works like WFT_SQUARE, except the high to low transition is controlled by duty cycle.  With a duty cycle of 50% (0.5) will give the same output as WFT_SQUARE.
    * _base_ - The base value for the function (range of output = {base, base + amplitude}).
    * _frequency_ - The speed of the wave in cycles per second.
    * _phase_ - The offset of the start of the wave, e.g. 0.5 to start half-way through the wave.
@@ -103,8 +103,8 @@ The default is to reference a standard named texture, but this unit can also ref
 ====Parameters====
    * _texture_unit_id_ - The ID of the texture unit state object.
    * _type_ - The content type. Can be:
-      * _global.CONTENT_NAMED_ - Normal texture identified by name.
-      * _global.CONTENT_SHADOW_ - A shadow texture, automatically bound by engine.
+      * _CONTENT_NAMED_ - Normal texture identified by name.
+      * _CONTENT_SHADOW_ - A shadow texture, automatically bound by engine.
 <BR>
 <BR>
 === !SetTextureUnitStateColorOperation(real texture_unit_id, real type) ===
@@ -119,10 +119,10 @@ This option has no effect in the programmable pipeline.
 ====Parameters====
    * _texture_unit_id_ - The ID of the texture unit state object.
    * _type_ - The content type. Can be:
-      * _global.LBO_REPLACE_ - Replace all color with texture with no adjustment.
-      * _global.LBO_ADD_ - Add color components together.
-      * _global.LBO_MODULATE_ - Multiple color components together.
-      * _global.LBO_ALPHA_BLEND_ - Blend based on texture alpha.
+      * _LBO_REPLACE_ - Replace all color with texture with no adjustment.
+      * _LBO_ADD_ - Add color components together.
+      * _LBO_MODULATE_ - Multiple color components together.
+      * _LBO_ALPHA_BLEND_ - Blend based on texture alpha.
 <BR>
 <BR>
 === !EnableTextureUnitStateEnvironmentMap(real texture_unit_id, real enable, real type) ===
@@ -142,9 +142,9 @@ This option has no effect in the programmable pipeline.
    * _texture_unit_id_ - The ID of the texture unit state object.
    * _enable_ - True to enable, false to disable.
    * _type_ - The environment map type. Can be:
-      * _global.ENV_PLANAR_ - Envmap based on vector from camera to vertex position, good for planar geometry.
-      * _global.ENV_CURVED_ - Envmap based on dot of vector from camera to vertex and vertex normal, good for curves.
-      * _global.ENV_REFLECTION_ - Envmap intended to supply reflection vectors for cube mapping.
+      * _ENV_PLANAR_ - Envmap based on vector from camera to vertex position, good for planar geometry.
+      * _ENV_CURVED_ - Envmap based on dot of vector from camera to vertex and vertex normal, good for curves.
+      * _ENV_REFLECTION_ - Envmap intended to supply reflection vectors for cube mapping.
       * _global.ENV_NORMAL_ - Envmap intended to supply normal vectors for cube mapping.
 <BR>
 <BR>
@@ -184,9 +184,9 @@ This option applies in both the fixed function and the programmable pipeline.
 ====Parameters====
    * _texture_unit_id_ - The ID of the texture unit state object.
    * _type_ - The content type. Can be:
-      * _global.TFO_NONE_ - Equal to: min=FO_POINT, max=FO_POINT, mip=FO_NONE.
-      * _global.TFO_BILINEAR_ - Equal to: min=FO_LINEAR, max=FO_LINEAR, mip=FO_POINT.
-      * _global.TFO_TRILINEAR_ - Equal to: min=FO_LINEAR, max=FO_LINEAR, mip=FO_LINEAR.
-      * _global.TFO_ANISOTROPIC_ - Equal to: min=FO_ANISOTROPIC, max=FO_ANISOTROPIC, mip=FO_LINEAR.
+      * _TFO_NONE_ - Equal to: min=FO_POINT, max=FO_POINT, mip=FO_NONE.
+      * _TFO_BILINEAR_ - Equal to: min=FO_LINEAR, max=FO_LINEAR, mip=FO_POINT.
+      * _TFO_TRILINEAR_ - Equal to: min=FO_LINEAR, max=FO_LINEAR, mip=FO_LINEAR.
+      * _TFO_ANISOTROPIC_ - Equal to: min=FO_ANISOTROPIC, max=FO_ANISOTROPIC, mip=FO_LINEAR.
 <BR>
 <BR>
