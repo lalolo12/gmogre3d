@@ -69,3 +69,17 @@ Rotates a sprite.
     * _sprite_id_ - The ID of the sprite.
     * _degrees_ - The degrees to rotate the sprite.
 <BR>
+<BR>
+=== !ShowSprite(real sprite_id) ===
+----
+Shows a sprite.
+====Parameters====
+    * _sprite_id_ - The ID of the sprite.
+<BR>
+<BR>
+=== !HideSprite(real sprite_id) ===
+----
+Hides a sprite.
+====Parameters====
+    * _sprite_id_ - The ID of the sprite.
+<BR>
