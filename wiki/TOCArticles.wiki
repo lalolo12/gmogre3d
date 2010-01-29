@@ -11,6 +11,10 @@
     * [BasicTutorial4 Basic Tutorial 4]
     * [AdvancedTutorial1 Advanced Tutorial 1]
     * [AdvancedTutorial2 Advanced Tutorial 2]
+  * How To
+    * [HowToDrawText How To Draw Text]
+    * [HowToCreateMaterialShader How To Create a Material Shader]
+    * [HowToUseBumpMapping How To Use Bump Mapping]
   * [Scripts Scripts]
     * [MaterialScripts Materials]
       * [MaterialTechniqueScripts Techniques]
@@ -31,10 +35,6 @@
       * [OverlayElementAttributeScripts Overlay Element Attributes]
       * [OverlayElementScripts Overlay Elements]
     * [FontScripts Fonts]
-  * How To
-    * [HowToDrawText How To Draw Text]
-    * [HowToCreateMaterialShader How To Create a Material Shader]
-    * [HowToUseBumpMapping How To Use Bump Mapping]
   * Function List
     * Entities, Objects, & Primitives
       * [BillboardFunctions Billboard]
