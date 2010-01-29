@@ -1,7 +1,7 @@
 #summary How to select objects
 
 = Grab Mouse Click =
-The first step in selecting an object is to determine when a mouse click occurs. In normal GM you would add a Mouse Left Button event to an object, which is then triggered if the user clicks on that object.  In GMOgre3D you must instead detect any time the user clicked the mouse button and [i]then[/i] determine if any objects were clicked on.
+The first step in selecting an object is to determine when a mouse click occurs. In normal GM you would add a Mouse Left Button event to an object, which is then triggered if the user clicks on that object.  In GMOgre3D you must instead detect any time the user clicked the mouse button and <i>then</i> determine if any objects were clicked on.
 
 To do this add a Global Mouse Left Button event to any object (keep in mind you only need to add this event once, as it is not tied to a particular object).
 
