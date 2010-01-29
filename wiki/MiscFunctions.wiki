@@ -88,7 +88,7 @@ Queries the renderer on whether it supports a particular capability.
       * _RSC_POINT_EXTENDED_PARAMETERS_EXT_ - Support for point parameters EXT implementation. 
 <BR>
 <BR>
-=== !DoesGPUSupportSyntax(string syntax) ===
+=== DoesGPUSupportSyntax(string syntax) ===
 ----
 Queries whether the GPU supports a given syntax code (e.g. "ps_1_3", "fp20", "arbvp1"). 
 ====Parameters====
