@@ -185,21 +185,12 @@ The default value is TFO_BILINEAR.
       * _TFO_ANISOTROPIC_ - Equal to: min=FO_ANISOTROPIC, max=FO_ANISOTROPIC, mip=FO_LINEAR.
 <BR>
 <BR>
-=== !SetMaterialDefaultAnisotropy(real level) ===
+=== !SetMaterialDefaultAnisotropy(real max_level) ===
 ----
 Sets the default anisotropy level to be used for loaded textures, for when textures are loaded automatically or when !LoadMaterial is called with the default parameters by the application.
 
 The default value is 1 (no anisotropy). 
 ====Parameters====
-   * _level_ - The anisotropy level.
-<BR>
-<BR>
-=== !SetTextureUnitStateTextureAnisotropy(real texture_unit_id, real max_level) ===
-----
-Sets the anisotropy level to be used for a texture.
-
-The default value is 1 (no anisotropy). 
-====Parameters====
-   * _texture_unit_id_ - The ID of the texture unit state object.
    * _max_level_ - The maximum anisotropy level. This should be between 2 and the maximum supported by the hardware.
+<BR>
 <BR>
