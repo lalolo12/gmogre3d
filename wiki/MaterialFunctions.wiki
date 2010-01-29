@@ -194,3 +194,11 @@ The default value is 1 (no anisotropy).
    * _level_ - The anisotropy level.
 <BR>
 <BR>
+=== !SetTextureUnitStateTextureAnisotropy(real max_level) ===
+----
+Sets the anisotropy level to be used for a texture.
+
+The default value is 1 (no anisotropy). 
+====Parameters====
+   * _max_level_ - The maximum anisotropy level. This should be between 2 and the maximum supported by the hardware.
+<BR>
