@@ -15,6 +15,7 @@
     * [HowToDrawText How To Draw Text]
     * [HowToCreateMaterialShader How To Create a Material Shader]
     * [HowToUseBumpMapping How To Use Bump Mapping]
+    * [HowToSelectObjects How To Select Objects]
   * [Scripts Scripts]
     * [MaterialScripts Materials]
       * [MaterialTechniqueScripts Techniques]
