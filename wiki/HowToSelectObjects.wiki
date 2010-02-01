@@ -21,4 +21,6 @@ This above code is very simple.  The !GetEntityFromCameraRay() function casts a 
 The last two lines simply display a bounding box around the entity, to visually notify the user that the item has been 'selected'.
 
 = Conclusion =
-As you can see, selecting items on screen is an extremely easy task. Also note that the !GetEntityFromCameraRay() function also returns the position, in world coordinates, of the location where the ray hit an entity.  The position can then be retrieved using the GetX(), GetY(), and GetZ() functions. This can be useful, for example, in a RTS where you want to users to pick points on the ground to move units or construct buildings.
+As you can see, selecting items on screen is an extremely easy task!
+
+Also note that the !GetEntityFromCameraRay() function also returns the position, in world coordinates, of the location where the ray hit an entity.  The position can then be retrieved using the GetX(), GetY(), and GetZ() functions. This can be useful, for example, in a RTS where you want to users to pick points on the ground to move units or construct buildings.
