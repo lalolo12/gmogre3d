@@ -1,4 +1,4 @@
-#summary How to draw text
+#summary Frequently Asked Questions
 
 = Initialization =
 ----
