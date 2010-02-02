@@ -8,6 +8,7 @@ There are many possibilities...
    * Have you set camera clip distances to some sane values?
    * Are you trying to render a black cat on a black background?
    * If you are using multiple scene managers, did you populate the currently active scene graph (!SceneManager) or another?
+   * Do you have some type of lighting for your scene (ambient or otherwise)?
    * Is your obj_engine object calling !RenderFrame() every Step?
    * Is your camera INSIDE a model you've placed in your scene? Try moving your camera backwards on the z plane. 
 <BR>
