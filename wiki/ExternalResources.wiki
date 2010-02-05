@@ -4,10 +4,14 @@
 Below are links to various external resources.  These were all made for the OGRE engine but can still be very useful with GMOgre.
 <BR>
 <BR>
+= Forums =
+  * [http://gmogre3d.prophpbb.com/ Official GMOgre3D Forums] - This is the official GMOgre3D forums. It' s a great place to post questions, suggest new features, and get to know other GMOgre3D users.
+  * [http://www.ogre3d.org/forums/ OGRE Forums] - This is the official OGRE forums. If you ever have OGRE specific questions, this would be the place to visit!
+  * [http://www.ogre3d.org/forums OGRE Forums] - This is the official OGRE forums. This forum is for OGRE and not GMOgre, but it's quite active and a great place to ask general OGRE questions.
+<BR>
 = Documentation =
   * [http://www.ogre3d.org/docs/api/html/ OGRE API Reference] - This is for OGRE itself but can be used as a handy reference for GMOgre.  A lot of the documentation for GMOgre was taken directly from this.
   * [http://www.ogre3d.org/docs/manual/ OGRE Manual] - This is for OGRE itself but is a good introduction to how OGRE, and thus GMOgre, works.
-  * [http://www.ogre3d.org/forums OGRE Forums] - This forum is for OGRE and not GMOgre, but it's quite active and a great place to ask general OGRE questions.
 <BR>
 = Modeling Packages =
    * [http://www.ogre3d.org/wiki/index.php/OGRE_Exporters OGRE Exporters] - GMOgre3D requires all models to be in the OGRE .mesh format. This link gives you a list of OGRE exporters for the most popular 3D modeling programs out there, so you can use your favorite modeling software to export to OGRE .mesh format.
