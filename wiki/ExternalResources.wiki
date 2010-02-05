@@ -6,7 +6,6 @@ Below are links to various external resources.  These were all made for the OGRE
 <BR>
 = Forums =
   * [http://gmogre3d.prophpbb.com/ Official GMOgre3D Forums] - This is the official GMOgre3D forums. It' s a great place to post questions, suggest new features, and get to know other GMOgre3D users.
-  * [http://www.ogre3d.org/forums/ OGRE Forums] - This is the official OGRE forums. If you ever have OGRE specific questions, this would be the place to visit!
   * [http://www.ogre3d.org/forums OGRE Forums] - This is the official OGRE forums. This forum is for OGRE and not GMOgre, but it's quite active and a great place to ask general OGRE questions.
 <BR>
 = Documentation =
