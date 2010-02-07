@@ -1,0 +1,235 @@
+#summary Subclass of BillboardChain which automatically leaves a trail behind one or more Node instances.
+
+An instance of this will watch one or more Node instances, and automatically generate a trail behind them as they move. Because this class can monitor multiple modes, it generates its own geometry in world space and thus, even though it has to be attached to a !SceneNode to be visible, changing the position of the !SceneNode it is attached to makes no difference to the geometry rendered. 
+
+The 'head' element grows smoothly in size until it reaches the required size, then a new element is added. If the segment is full, the tail element shrinks by the same proportion as the head grows before disappearing. 
+
+Elements can be faded out on a time basis, either by altering their colour or altering their alpha. The width can also alter over time. 
+
+'v' texture coordinates are fixed at 0.0 if used, meaning that you can use a 1D texture to 'smear' a color pattern along the ribbon if you wish. The 'u' coordinates are by default (0.0, 1.0), but you can alter this using !SetRibbonTrailOtherTextureCoordRange if you wish. 
+<BR>
+<BR>
+=== !CreateRibbonTrail() ===
+----
+Creates a ribbon trail, an object which you can use to render a linked chain of Billboards which follows one or more Nodes.
+<BR>
+<BR>
+<BR>
+=== !DestroyRibbonTrail(real ribbon_trail_id) ===
+----
+Destroys a ribbon trail.
+====Parameters====
+   * _ribbon_trail_id_ - The ID of the ribbon trail.
+<BR>
+<BR>
+=== !AddRibbonTrailNode(real ribbon_trail_id, real node_id) ===
+----
+Adds a node to be tracked.
+====Parameters====
+   * _ribbon_trail_id_ - The ID of the ribbon trail.
+   * _node_id_ - The ID of the Node to be tracked.
+<BR>
+<BR>
+=== !RemoveRibbonTrailNode(real ribbon_trail_id, real node_id) ===
+----
+Removes tracking on a given node.
+====Parameters====
+   * _ribbon_trail_id_ - The ID of the ribbon trail.
+   * _node_id_ - The ID of the Node to be removed.
+<BR>
+<BR>
+=== !GetRibbonTrailChainIndexForNode(real ribbon_trail_id, real node_id) ===
+----
+Retrieves the chain index for a given Node being tracked. 
+====Parameters====
+   * _ribbon_trail_id_ - The ID of the ribbon trail.
+   * _node_id_ - The ID of the Node.
+<BR>
+<BR>
+=== !SetRibbonTrailTrailLength(real ribbon_trail_id, real length) ===
+----
+Set the length of the trail.
+
+This sets the length of the trail, in world units. It also sets how far apart each segment will be, ie length / max_elements. 
+====Parameters====
+   * _ribbon_trail_id_ - The ID of the ribbon trail.
+   * _length_ - The length of the trail in world units.
+<BR>
+<BR>
+=== !SetRibbonTrailInitialColor(real ribbon_trail_id, real chain_index, real color, real alpha) ===
+----
+Set the starting ribbon colour for a given segment.
+====Parameters====
+   * _ribbon_trail_id_ - The ID of the ribbon trail.
+   * _chain_index_ - The index of the chain.
+   * _color_ - The initial color.
+   * _alpha_ - The initial alpha.
+<BR>
+<BR>
+=== !SetRibbonTrailColorChange(real ribbon_trail_id, real chain_index, real color_per_second, real alpha_per_second) ===
+----
+Enables / disables fading the trail using colour.
+====Parameters====
+   * _ribbon_trail_id_ - The ID of the ribbon trail.
+   * _chain_index_ - The index of the chain.
+   * _color_per_second_ - The amount to subtract from color each second.
+   * _alpha_per_second_ - The amount to subtract from alpha each second.
+<BR>
+<BR>
+=== !SetRibbonTrailInitialWidth(real ribbon_trail_id, real chain_index, real width) ===
+----
+Set the starting ribbon width in world units.
+====Parameters====
+   * _ribbon_trail_id_ - The ID of the ribbon trail.
+   * _chain_index_ - The index of the chain.
+   * _width_ - The initial width of the ribbon.
+<BR>
+<BR>
+=== !SetRibbonTrailWidthChange(real ribbon_trail_id, real chain_index, real width_delta_per_second) ===
+----
+Set the change in ribbon width per second.
+====Parameters====
+   * _ribbon_trail_id_ - The ID of the ribbon trail.
+   * _chain_index_ - The index of the chain.
+   * _width_delta_per_second_ - The amount the width will reduce by per second.
+<BR>
+<BR>
+=== !GetRibbonTrailMaxChainElements(real ribbon_trail_id) ===
+----
+Returns the maximum number of chain elements per chain.
+====Parameters====
+   * _ribbon_trail_id_ - The ID of the ribbon trail.
+<BR>
+<BR>
+=== !EnableRibbonTrailUseTextureCoords(real ribbon_trail_id, real enable) ===
+----
+Enables or disables whether texture coordinate information should be included in the final buffers generated.
+
+You must use either texture coordinates or vertex colour since the vertices have no normals and without one of these there is no source of colour for the vertices.
+====Parameters====
+   * _ribbon_trail_id_ - The ID of the ribbon trail.
+   * _enable_ - Whether to enable or disable use of texture coords.
+<BR>
+<BR>
+=== !SetRibbonTrailTextureCoordDirection(real ribbon_trail_id, real type) ===
+----
+Sets the direction in which texture coords specified on each element are deemed to run along the length of the chain.
+
+The default is TCD_U.
+====Parameters====
+   * _ribbon_trail_id_ - The ID of the ribbon trail.
+   * _type_ - The type of direction to use for texture coords. Can be:
+      * TCD_U
+      * TCD_V
+<BR>
+<BR>
+=== !SetRibbonTrailOtherTextureCoordRange(real ribbon_trail_id, real start, real end) ===
+----
+Set the range of the texture coordinates generated across the width of the chain elements.
+====Parameters====
+   * _ribbon_trail_id_ - The ID of the ribbon trail.
+   * _start_ - The start coordinate, default 0.0.
+   * _end_ - The end coordinate, default 1.0. 
+<BR>
+<BR>
+=== !EnableRibbonTrailUseVertexColors(real ribbon_trail_id, real enable) ===
+----
+Enables or disables whether vertex color information should be included in the final buffers generated.
+
+You must use either texture coordinates or vertex color since the vertices have no normals and without one of these there is no source of color for the vertices.
+====Parameters====
+   * _ribbon_trail_id_ - The ID of the ribbon trail.
+   * _enable_ - Whether to enable or disable vertex color.
+<BR>
+<BR>
+=== !EnableRibbonTrailDynamic(real ribbon_trail_id, real enable) ===
+----
+Sets whether or not the buffers created for this object are suitable for dynamic alteration.
+====Parameters====
+   * _ribbon_trail_id_ - The ID of the ribbon trail.
+   * _enable_ - Whether to enable or disable dynamic alteration.
+<BR>
+<BR>
+=== !AddRibbonTrailChainElement(real ribbon_trail_id, real chain_index, real x, real z, real y, real width, real tex_coord, real clr, real alpha) ===
+----
+Creates and adds an element to the 'head' of a chain.
+
+If this causes the number of elements to exceed the maximum elements per chain, the last element in the chain (the 'tail') will be removed to allow the additional element to be added.
+====Parameters====
+   * _ribbon_trail_id_ - The ID of the ribbon trail.
+   * _index_ - The index of the chain.
+   * _x_, _y_, _z_ - The position of the element.
+   * _width_ - The width of the element.
+   * _tex_coord_ - The texture coord of the element.
+   * _color_ - The color of the element.
+   * _alpha_ - The alpha transparency of the element.
+<BR>
+<BR>
+=== !RemoveRibbonTrailChainElement(real ribbon_trail_id, real chain_index) ===
+----
+Remove an element from the 'tail' of a chain.
+====Parameters====
+   * _ribbon_trail_id_ - The ID of the ribbon trail.
+   * _index_ - The index of the chain.
+<BR>
+<BR>
+=== !UpdateRibbonTrailChainElement(real ribbon_trail_id, real chain_index, real element_index, real x, real z, real y, real width, real tex_coord, real color, real alpha) ===
+----
+Update the details of an existing chain element.
+====Parameters====
+   * _ribbon_trail_id_ - The ID of the ribbon trail.
+   * _index_ - The index of the chain.
+   * _x_, _y_, _z_ - The position of the element.
+   * _width_ - The width of the element.
+   * _tex_coord_ - The texture coord of the element.
+   * _color_ - The color of the element.
+   * _alpha_ - The alpha transparency of the element.
+<BR>
+<BR>
+=== !GetRibbonTrailNumChainElements(real ribbon_trail_id, real chain_index) ===
+----
+Returns the number of chain elements.
+====Parameters====
+   * _ribbon_trail_id_ - The ID of the ribbon trail.
+   * _index_ - The index of the chain.
+<BR>
+<BR>
+=== !SetRibbonTrailMaxChainElements(real ribbon_trail_id, real max_elements) ===
+----
+Set the maximum number of chain elements per chain.
+====Parameters====
+   * _ribbon_trail_id_ - The ID of the ribbon trail.
+   * _max_elements_ - The max chain elements.
+<BR>
+<BR>
+=== !SetRibbonTrailNumberOfChains(real ribbon_trail_id, real num_chains) ===
+----
+Set the number of chain segments (this class can render multiple chains at once using the same material).
+====Parameters====
+   * _ribbon_trail_id_ - The ID of the ribbon trail.
+   * _num_chains_ - The number of chain elements.
+<BR>
+<BR>
+=== !ClearRibbonTrailChain(real ribbon_trail_id, real chain_index) ===
+----
+Remove all elements of a given chain (but leave the chain intact).
+====Parameters====
+   * _ribbon_trail_id_ - The ID of the ribbon trail.
+   * _index_ - The index of the chain.
+<BR>
+<BR>
+=== !ClearRibbonTrailAllChains(real ribbon_trail_id) ===
+----
+Remove all elements from all chains (but leave the chains themselves intact).
+====Parameters====
+   * _ribbon_trail_id_ - The ID of the ribbon trail.
+<BR>
+<BR>
+=== !SetRibbonTrailMaterial(real ribbon_trail_id, string name) ===
+----
+Set the material name to use for rendering.
+====Parameters====
+   * _ribbon_trail_id_ - The ID of the ribbon trail.
+   * _material_name_ - The name of the material. 
+<BR>
+<BR>
