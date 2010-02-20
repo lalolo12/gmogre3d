@@ -66,7 +66,7 @@ view_id = CreateViewport(0, 0, 0, window_get_width(), window_get_height());
 Next you need to add a camera to each of your viewports.  We will explain more in depth how to create and manipulate cameras in the next tutorial.  Create a new object obj_camera and add it to your room.  In the Create event add the following code:
 {{{
 camera_id = CreateCamera(window_get_width() / window_get_height(), 5, 10000, 45);
-SetViewportCamera(view_id, camera_id);
+SetViewportCamera(obj_engine.view_id, camera_id);
 SetCameraPosition(camera_id, 0, 200, 40);
 }}}
 
