@@ -68,6 +68,7 @@ Next you need to add a camera to each of your viewports.  We will explain more i
 camera_id = CreateCamera(window_get_width() / window_get_height(), 5, 10000, 45);
 SetViewportCamera(obj_engine.view_id, camera_id);
 SetCameraPosition(camera_id, 0, 200, 40);
+SetCameraLookAt(camera_id, 0, 0, 0);
 }}}
 
 = Your First GMOgre3D Game =
