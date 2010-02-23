@@ -108,18 +108,17 @@ Injects a key pressed event into the GUI system.
    * _key_ - The GM keycode that was pressed (e.g. keyboard_key, vk_enter, etc).
 <BR>
 <BR>
-=== !InjectGUIKeyReleased(real key) ===
+=== InjectGUIKeyReleased(real key) ===
 ----
 Injects a key released event into the GUI system.
 ====Parameters====
    * _key_ - The GM keycode that was released (e.g. keyboard_key, vk_enter, etc)
 <BR>
 <BR>
-=== !InjectGUIChar(string char) ===
+=== InjectGUIChar(string char) ===
 ----
 Injects a typed character event into the GUI system.
 ====Parameters====
    * _char_ - The printable character to inject.
 <BR>
 <BR>
-
