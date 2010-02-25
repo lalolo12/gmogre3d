@@ -244,42 +244,39 @@ There are different types of events, and the arguments passed to the GM script d
 ====Parameters====
    * _gui_window_id_ - The ID of the GUI window.
    * _event_ - The type of event to trap. Can be:
-      * GUI_WINDOW_EVENT_PARENT_SIZED
-      * GUI_WINDOW_EVENT_SIZED
-      * GUI_WINDOW_EVENT_MOVED
-      * GUI_WINDOW_EVENT_TEXT_CHANGED
-      * GUI_WINDOW_EVENT_FONT_CHANGED
-      * GUI_WINDOW_EVENT_ALPHA_CHANGED
-      * GUI_WINDOW_EVENT_ACTIVATED
-      * GUI_WINDOW_EVENT_DEACTIVATED
-      * GUI_WINDOW_EVENT_SHOWN
-      * GUI_WINDOW_EVENT_HIDDEN 
-      * GUI_WINDOW_EVENT_ENABLED
-      * GUI_WINDOW_EVENT_DISABLED
-      * GUI_WINDOW_EVENT_INPUT_CAPTURE_GAINED
-      * GUI_WINDOW_EVENT_INPUT_CAPTURE_LOST
-      * GUI_WINDOW_EVENT_RENDERING_STARTED
-      * GUI_WINDOW_EVENT_RENDERING_ENDED
-      * GUI_WINDOW_EVENT_CHILD_ADDED
-      * GUI_WINDOW_EVENT_CHILD_REMOVED 
-      * GUI_WINDOW_EVENT_ZORDER_CHANGED
-      * GUI_WINDOW_EVENT_DRAGDROP_ITEM_ENTERS
-      * GUI_WINDOW_EVENT_DRAGDROP_ITEM_LEAVES 
-      * GUI_WINDOW_EVENT_DRAGDROP_ITEM_DROPPED
-      * GUI_WINDOW_EVENT_VERTICAL_ALIGNMENT_CHANGED
-      * GUI_WINDOW_EVENT_HORIZONTAL_ALIGNMENT_CHANGED
-      * GUI_WINDOW_EVENT_MOUSE_ENTERS
-      * GUI_WINDOW_EVENT_MOUSE_LEAVES
-      * GUI_WINDOW_EVENT_MOUSE_MOVE
-      * GUI_WINDOW_EVENT_MOUSE_WHEEL
-      * GUI_WINDOW_EVENT_MOUSE_BUTTONDOWN
-      * GUI_WINDOW_EVENT_MOUSE_BUTTONUP
-      * GUI_WINDOW_EVENT_MOUSE_CLICK
-      * GUI_WINDOW_EVENT_MOUSE_DOUBLECLICK
-      * GUI_WINDOW_EVENT_MOUSE_TRIPLECLICK
-      * GUI_WINDOW_EVENT_KEYDOWN
-      * GUI_WINDOW_EVENT_KEYUP
-      * GUI_WINDOW_EVENT_CHARACTER_KEY
+      * _GUI_WINDOW_EVENT_PARENT_SIZED_ - Parent of the window has been re-sized..
+      * _GUI_WINDOW_EVENT_SIZED_ - Window has re-sized.
+      * _GUI_WINDOW_EVENT_MOVED_ - Window position has changed.
+      * _GUI_WINDOW_EVENT_TEXT_CHANGED_ - Text string for the window has changed.
+      * _GUI_WINDOW_EVENT_FONT_CHANGED_ - Font for the window has been changed.
+      * _GUI_WINDOW_EVENT_ALPHA_CHANGED_ - Alpha blend value for the window has changed.
+      * _GUI_WINDOW_EVENT_ACTIVATED_ - Window has been activated (has input focus).
+      * _GUI_WINDOW_EVENT_DEACTIVATED_ - Window has been deactivated (loses input focus).
+      * _GUI_WINDOW_EVENT_SHOWN_ - Window has been made visible.
+      * _GUI_WINDOW_EVENT_HIDDEN _ - Window has been hidden from view.
+      * _GUI_WINDOW_EVENT_ENABLED_ - Window has been enabled (interaction is possible).
+      * _GUI_WINDOW_EVENT_DISABLED_ - Window has been disabled (interaction is no longer possible).
+      * _GUI_WINDOW_EVENT_INPUT_CAPTURE_GAINED_ - Window has captured all inputs.
+      * _GUI_WINDOW_EVENT_INPUT_CAPTURE_LOST_ - Window has lost it's capture on inputs.
+      * _GUI_WINDOW_EVENT_RENDERING_STARTED_ - Rendering of the window has started.
+      * _GUI_WINDOW_EVENT_RENDERING_ENDED_ - Rendering for the window has finished.
+      * _GUI_WINDOW_EVENT_CHILD_ADDED_ - A child Window has been added.
+      * _GUI_WINDOW_EVENT_CHILD_REMOVED _ - A child Window has been removed.
+      * _GUI_WINDOW_EVENT_ZORDER_CHANGED_ - The z-order of the window has changed.
+      * _GUI_WINDOW_EVENT_VERTICAL_ALIGNMENT_CHANGED_ - The vertical alignment of the window has changed.
+      * _GUI_WINDOW_EVENT_HORIZONTAL_ALIGNMENT_CHANGED_ - The horizontal alignment of the window has changed.
+      * _GUI_WINDOW_EVENT_MOUSE_ENTERS_ - Mouse cursor has entered the window.
+      * _GUI_WINDOW_EVENT_MOUSE_LEAVES_ - Mouse cursor has left the window.
+      * _GUI_WINDOW_EVENT_MOUSE_MOVE_ - Mouse cursor was moved within the area of the window.
+      * _GUI_WINDOW_EVENT_MOUSE_WHEEL_ - Mouse wheel was scrolled within the window.
+      * _GUI_WINDOW_EVENT_MOUSE_BUTTONDOWN_ - A mouse button was pressed down within the window.
+      * _GUI_WINDOW_EVENT_MOUSE_BUTTONUP_ - A mouse button was released within the window.
+      * _GUI_WINDOW_EVENT_MOUSE_CLICK_ - A mouse button was clicked (down then up) within the window.
+      * _GUI_WINDOW_EVENT_MOUSE_DOUBLECLICK_ - A mouse button was double-clicked within the window.
+      * _GUI_WINDOW_EVENT_MOUSE_TRIPLECLICK_ - A mouse button was triple-clicked within the window.
+      * _GUI_WINDOW_EVENT_KEYDOWN_ - A key on the keyboard was pressed.
+      * _GUI_WINDOW_EVENT_KEYUP_ - A key on the keyboard was released.
+      * _GUI_WINDOW_EVENT_CHARACTER_KEY_ - A text character was typed on the keyboard.
    * _func_ - The GM function to callback when the event is triggered.
 <BR>
 <BR>
