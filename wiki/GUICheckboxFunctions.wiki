@@ -23,7 +23,7 @@ There are different types of events, and the arguments passed to the GM script d
 ====Parameters====
    * _gui_check_box_id_ - The ID of the checkbox.
    * _event_ - The type of event to trap. Can be:
-      * GUI_CHECKBOX_EVENT_STATE_CHANGED
+      * _GUI_CHECKBOX_EVENT_STATE_CHANGED_ - The check-state of the checkbox has changed.
    * _func_ The GM script to execute when the event is triggered.
 <BR>
 <BR>
@@ -36,6 +36,7 @@ There are different types of events, and the arguments passed to the GM script d
 Enables or disables whether the GUI combobox is read-only.
 ====Parameters====
    * _gui_combo_box_id_ - The ID of the GUI combobox.
+   * _enable_ - Whether or not the combobox is read-only.
 <BR>
 <BR>
 === AddGUIComboBoxItem(real gui_combo_box_id, string text, real id) ===
@@ -99,7 +100,7 @@ There are different types of events, and the arguments passed to the GM script d
 ====Parameters====
    * _gui_combo_box_id_ - The ID of the GUI combobox.
    * _event_ - The type of event to trap. Can be:
-      * GUI_COMBOBOX_EVENT_SELECTION_ACCEPTED
+      * _GUI_COMBOBOX_EVENT_SELECTION_ACCEPTED_ - The user accepts a selection from the drop-down list.
    * _func_ The GM script to execute when the event is triggered.
 <BR>
 <BR>
@@ -108,46 +109,59 @@ There are different types of events, and the arguments passed to the GM script d
 <BR>
 === SetGUIEditBoxMaxTextLength(real gui_edit_box_id, real max_length) ===
 ----
-Description.
+Sets the maximum length of text in a GUI editbox.
 ====Parameters====
-   * _asdf_ - asdf.
+   * _gui_edit_box_id_ - The ID of the GUI editbox.
+   * _max_length_ - The maximum length of text allowed.
 <BR>
 <BR>
 === EnableGUIEditBoxReadOnly(real gui_edit_box_id, real enable) ===
 ----
-Description.
+Enables or disables whether a GUI editbox is read-only.
 ====Parameters====
-   * _asdf_ - asdf.
+   * _gui_edit_box_id_ - The ID of the GUI editbox.
+   * _enable_ - Whether or not the editbox is read-only.
 <BR>
 <BR>
 === EnableGUIEditBoxTextMasked(real gui_edit_box_id, real enable) ===
 ----
-Description.
+Enables or disables masking of a GUI editbox contents.
 ====Parameters====
-   * _asdf_ - asdf.
+   * _gui_edit_box_id_ - The ID of the GUI editbox.
+   * _enable_ - Whether or not the editbox contents are masked.
 <BR>
 <BR>
 === SetGUIEditBoxTextValidationString(real gui_edit_box_id, string validation) ===
 ----
-Description.
+Sets a validation regular expression string on a GUI editbox.
 ====Parameters====
-   * _asdf_ - asdf.
+   * _gui_edit_box_id_ - The ID of the GUI editbox.
+   * _validation_ - The regular expression validation string.
 <BR>
 <BR>
 === IsGUIEditBoxTextTextValid(real gui_edit_box_id) ===
 ----
-Description.
+Returns whether or not a GUI editbox contains valid text.
 ====Parameters====
-   * _asdf_ - asdf.
+   * _gui_edit_box_id_ - The ID of the GUI editbox.
 <BR>
 <BR>
 === SetGUIEditBoxEventCallback(real gui_window_id, string event_name, real func) ===
 ----
-Description.
+Sets a GM script to be called when the specified GUI event is triggered.
+
+There are different types of events, and the arguments passed to the GM script depends on the event type. All event types pass the GUI checkbox that triggered the event as the first argument. The GUI_EDITBOX_EVENT_TEXT_ACCEPTED event also passes the text contents as the second parameter.
 ====Parameters====
-   * _asdf_ - asdf.
+   * _gui_edit_box_id_ - The ID of the GUI editbox.
+   * _event_ - The type of event to trap. Can be:
+      * _GUI_EDITBOX_EVENT_TEXT_ACCEPTED_ - The user accepted the current text by pressing Return, Enter, or Tab.
+   * _func_ The GM script to execute when the event is triggered.
 <BR>
 <BR>
+
+
+
+
 
 #summary GUI ImageSet functions.
 <BR>
@@ -156,62 +170,62 @@ Description.
 ----
 Description.
 ====Parameters====
-   * _asdf_ - asdf.
+   * _gui_edit_box_id_ - The ID of the GUI editbox.
 <BR>
 <BR>
 === CreateGUIImageSetFromFile(string name, string filename) ===
 ----
 Description.
 ====Parameters====
-   * _asdf_ - asdf.
+   * _gui_edit_box_id_ - The ID of the GUI editbox.
 <BR>
 <BR>
 === DestroyGUIImageSet(real gui_image_set_id) ===
 ----
 Description.
 ====Parameters====
-   * _asdf_ - asdf.
+   * _gui_edit_box_id_ - The ID of the GUI editbox.
 <BR>
 <BR>
 === DefineGUIImageSetImage1(real gui_image_set_id, string name) ===
 ----
 Description.
 ====Parameters====
-   * _asdf_ - asdf.
+   * _gui_edit_box_id_ - The ID of the GUI editbox.
 <BR>
 <BR>
 === DefineGUIImageSetImage2(real gui_image_set_id, real posx, real posy, real width, real height, real offsetx, real offsety) ===
 ----
 Description.
 ====Parameters====
-   * _asdf_ - asdf.
+   * _gui_edit_box_id_ - The ID of the GUI editbox.
 <BR>
 <BR>
 === UndefineGUIImageSetImage(real gui_image_set_id, string name) ===
 ----
 Description.
 ====Parameters====
-   * _asdf_ - asdf.
+   * _gui_edit_box_id_ - The ID of the GUI editbox.
 <BR>
 <BR>
 === GetGUIImageSetImage(real gui_image_set_id, string name) ===
 ----
 Description.
 ====Parameters====
-   * _asdf_ - asdf.
+   * _gui_edit_box_id_ - The ID of the GUI editbox.
 <BR>
 <BR>
 === GetGUIImageSetTexture(real gui_image_set_id) ===
 ----
 Description.
 ====Parameters====
-   * _asdf_ - asdf.
+   * _gui_edit_box_id_ - The ID of the GUI editbox.
 <BR>
 <BR>
 === EnableGUIImageSetAutoScaling(real gui_image_set_id, real enable) ===
 ----
 Description.
 ====Parameters====
-   * _asdf_ - asdf.
+   * _gui_edit_box_id_ - The ID of the GUI editbox.
 <BR>
 <BR>
