@@ -1,62 +1,71 @@
-#summary GUI ImageSet functions.
+#summary Offers functions to define, access, and draw, a set of image components on a single graphical surface or texture.
+<BR>
+=== Overview ===
+Imageset objects are a means by which a single graphical image (file, texture, etc), can be split into a number of 'components' which can later be accessed via name. The components of an imageset can queried for various details, and sent to the renderer object for drawing. 
 <BR>
 <BR>
-Offers functions to define, access, and draw, a set of image components on a single graphical surface or Texture.
-
-Imageset objects are a means by which a single graphical image (file, Texture, etc), can be split into a number of 'components' which can later be accessed via name. The components of an Imageset can queried for various details, and sent to the Renderer object for drawing. 
 === CreateGUIImageSet(string name, real gui_texture_id) ===
 ----
-Description.
+Creates a new GUI imageset and returns its ID.
 ====Parameters====
-   * _gui_image_set_id_ - The ID of the GUI imageset.
+   * _name_ - The name of the GUI imageset.
+   * _gui_texture_id_ - The ID of the GUI texture to use for this imageset.
 <BR>
 <BR>
 === CreateGUIImageSetFromFile(string name, string filename) ===
 ----
-Description.
+Creates a new GUI imageset from file and returns its ID.
 ====Parameters====
-   * _gui_image_set_id_ - The ID of the GUI imageset.
+   * _name_ - The name of the GUI imageset.
+   * _filename_ - The name of file to load.
 <BR>
 <BR>
 === DestroyGUIImageSet(real gui_image_set_id) ===
 ----
-Description.
+Destroys a GUI imageset.
 ====Parameters====
    * _gui_image_set_id_ - The ID of the GUI imageset.
 <BR>
 <BR>
 === DefineGUIImageSetImage(real gui_image_set_id, string name, real posx, real posy, real width, real height, real offsetx, real offsety) ===
 ----
-Description.
+Define a new image in a imageset.
 ====Parameters====
    * _gui_image_set_id_ - The ID of the GUI imageset.
+   * _name_ - The name that will be assigned to the new image, which must be unique within the imageset.
+   * _posx_, _posy_ - The pixel location of the Image on the image file / texture associated with this imageset.
+   * _width_, _height_ - The dimensions of the image, in pixels.
+   * _offsetx_, _offsety_ - Optional offsets, in pixels, that are to be applied to the image when it is drawn.
 <BR>
 <BR>
 === UndefineGUIImageSetImage(real gui_image_set_id, string name) ===
 ----
-Description.
+Undefines an image in a imageset.
 ====Parameters====
    * _gui_image_set_id_ - The ID of the GUI imageset.
+   * _name_ - The name of the image to undefine.
 <BR>
 <BR>
 === GetGUIImageSetImage(real gui_image_set_id, string name) ===
 ----
-Description.
+Returns the ID for the specified image in an imageset.
 ====Parameters====
    * _gui_image_set_id_ - The ID of the GUI imageset.
+   * _name_ - The name of the image to retrieve.
 <BR>
 <BR>
 === GetGUIImageSetTexture(real gui_image_set_id) ===
 ----
-Description.
+Returns the texture ID for the imageset.
 ====Parameters====
    * _gui_image_set_id_ - The ID of the GUI imageset.
 <BR>
 <BR>
 === EnableGUIImageSetAutoScaling(real gui_image_set_id, real enable) ===
 ----
-Description.
+Enables or disables auto scaling for an imageset.
 ====Parameters====
    * _gui_image_set_id_ - The ID of the GUI imageset.
+   * _enable_ - Whether to enable or disable auto-scaling.
 <BR>
 <BR>
