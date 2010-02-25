@@ -1,5 +1,5 @@
 #summary Offers functions to define, access, and draw, a set of image components on a single graphical surface or texture.
-<BR>
+
 === Overview ===
 Imageset objects are a means by which a single graphical image (file, texture, etc), can be split into a number of 'components' which can later be accessed via name. The components of an imageset can queried for various details, and sent to the renderer object for drawing. 
 <BR>
