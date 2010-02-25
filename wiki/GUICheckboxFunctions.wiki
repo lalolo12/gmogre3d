@@ -15,11 +15,14 @@ Returns whether a GUI checkbox is checked.
    * _gui_check_box_id_ - The ID of the checkbox.
 <BR>
 <BR>
-=== SetGUICheckBoxEventCallback(real gui_check_box_id, string event_name, real func) ===
+=== SetGUICheckBoxEventCallback(real gui_check_box_id, string event, real func) ===
 ----
-Checks or unchecks a GUI checkbox.
+Sets a GM script to be called when the specified GUI event is triggered.
+
+There are different types of events, and the arguments passed to the GM script depends on the event type. All event types pass the GUI combobox that triggered the event as the first argument. The GUI_CHECKBOX_EVENT_STATE_CHANGED event also passes whether the combobox was selected or deselected as the second parameter.
 ====Parameters====
    * _gui_check_box_id_ - The ID of the checkbox.
+   * _event_ - The event 
 <BR>
 <BR>
 
