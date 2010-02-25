@@ -1,6 +1,9 @@
 #summary GUI ImageSet functions.
 <BR>
 <BR>
+Offers functions to define, access, and draw, a set of image components on a single graphical surface or Texture.
+
+Imageset objects are a means by which a single graphical image (file, Texture, etc), can be split into a number of 'components' which can later be accessed via name. The components of an Imageset can queried for various details, and sent to the Renderer object for drawing. 
 === CreateGUIImageSet(string name, real gui_texture_id) ===
 ----
 Description.
