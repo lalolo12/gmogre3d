@@ -1,0 +1,34 @@
+// Checkbox
+=== SetGUICheckBoxSelected(real gui_check_box_id, real selected) ===
+=== IsGUICheckBoxSelected(real gui_check_box_id) ===
+=== SetGUICheckBoxEventCallback(real gui_window_id, string event_name, real func) ===
+
+// Combobox
+=== EnableGUIComboBoxReadOnly(real gui_combo_box_id, real enable) ===
+=== AddGUIComboBoxItem(real gui_combo_box_id, string text, real user_data) ===
+=== RemoveGUIComboBoxItem(real gui_combo_box_id, real index) ===
+=== GetGUIComboBoxItemCount(real gui_combo_box_id) ===
+=== ClearGUIComboBoxItems(real gui_combo_box_id) ===
+=== GetGUIComboBoxSelectedIndex(real gui_combo_box_id) ===
+=== GetGUIComboBoxSelectedItemData(real gui_combo_box_id) ===
+=== SelectGUIComboBoxIndex(real gui_combo_box_id, real index) ===
+=== SetGUIComboBoxEventCallback(real gui_window_id, string event_name, real func) ===
+
+// Editbox
+=== SetGUIEditBoxMaxTextLength(real gui_edit_box_id, real max_length) ===
+=== EnableGUIEditBoxReadOnly(real gui_edit_box_id, real enable) ===
+=== EnableGUIEditBoxTextMasked(real gui_edit_box_id, real enable) ===
+=== SetGUIEditBoxTextValidationString(real gui_edit_box_id, string validation) ===
+=== IsGUIEditBoxTextTextValid(real gui_edit_box_id) ===
+=== SetGUIEditBoxEventCallback(real gui_window_id, string event_name, real func) ===
+
+// ImageSet
+=== CreateGUIImageSet(string name, real gui_texture_id) ===
+=== CreateGUIImageSetFromFile(string name, string filename) ===
+=== DestroyGUIImageSet(real gui_image_set_id) ===
+=== DefineGUIImageSetImage1(real gui_image_set_id, string name) ===
+=== DefineGUIImageSetImage2(real gui_image_set_id, real posx, real posy, real width, real height, real offsetx, real offsety) ===
+=== UndefineGUIImageSetImage(real gui_image_set_id, string name) ===
+=== GetGUIImageSetImage(real gui_image_set_id, string name) ===
+=== GetGUIImageSetTexture(real gui_image_set_id) ===
+=== EnableGUIImageSetAutoScaling(real gui_image_set_id, real enable) ===
