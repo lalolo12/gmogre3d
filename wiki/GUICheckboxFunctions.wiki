@@ -1,34 +1,204 @@
-// Checkbox
+#summary GUI CheckBox functions.
+<BR>
+<BR>
 === SetGUICheckBoxSelected(real gui_check_box_id, real selected) ===
+----
+Checks or unchecks a GUI checkbox.
+====Parameters====
+   * _gui_check_box_id_ - The ID of the checkbox.
+<BR>
+<BR>
 === IsGUICheckBoxSelected(real gui_check_box_id) ===
-=== SetGUICheckBoxEventCallback(real gui_window_id, string event_name, real func) ===
+----
+Returns whether a GUI checkbox is checked.
+====Parameters====
+   * _gui_check_box_id_ - The ID of the checkbox.
+<BR>
+<BR>
+=== SetGUICheckBoxEventCallback(real gui_check_box_id, string event_name, real func) ===
+----
+Checks or unchecks a GUI checkbox.
+====Parameters====
+   * _gui_check_box_id_ - The ID of the checkbox.
+<BR>
+<BR>
 
-// Combobox
+#summary GUI ComboBox functions.
+<BR>
+<BR>
 === EnableGUIComboBoxReadOnly(real gui_combo_box_id, real enable) ===
+----
+Description.
+====Parameters====
+   * _asdf_ - asdf.
+<BR>
+<BR>
 === AddGUIComboBoxItem(real gui_combo_box_id, string text, real user_data) ===
+----
+Description.
+====Parameters====
+   * _asdf_ - asdf.
+<BR>
+<BR>
 === RemoveGUIComboBoxItem(real gui_combo_box_id, real index) ===
+----
+Description.
+====Parameters====
+   * _asdf_ - asdf.
+<BR>
+<BR>
 === GetGUIComboBoxItemCount(real gui_combo_box_id) ===
+----
+Description.
+====Parameters====
+   * _asdf_ - asdf.
+<BR>
+<BR>
 === ClearGUIComboBoxItems(real gui_combo_box_id) ===
+----
+Description.
+====Parameters====
+   * _asdf_ - asdf.
+<BR>
+<BR>
 === GetGUIComboBoxSelectedIndex(real gui_combo_box_id) ===
+----
+Description.
+====Parameters====
+   * _asdf_ - asdf.
+<BR>
+<BR>
 === GetGUIComboBoxSelectedItemData(real gui_combo_box_id) ===
+----
+Description.
+====Parameters====
+   * _asdf_ - asdf.
+<BR>
+<BR>
 === SelectGUIComboBoxIndex(real gui_combo_box_id, real index) ===
+----
+Description.
+====Parameters====
+   * _asdf_ - asdf.
+<BR>
+<BR>
 === SetGUIComboBoxEventCallback(real gui_window_id, string event_name, real func) ===
+----
+Description.
+====Parameters====
+   * _asdf_ - asdf.
+<BR>
+<BR>
 
-// Editbox
+#summary GUI EditBox functions.
+<BR>
+<BR>
 === SetGUIEditBoxMaxTextLength(real gui_edit_box_id, real max_length) ===
+----
+Description.
+====Parameters====
+   * _asdf_ - asdf.
+<BR>
+<BR>
 === EnableGUIEditBoxReadOnly(real gui_edit_box_id, real enable) ===
+----
+Description.
+====Parameters====
+   * _asdf_ - asdf.
+<BR>
+<BR>
 === EnableGUIEditBoxTextMasked(real gui_edit_box_id, real enable) ===
+----
+Description.
+====Parameters====
+   * _asdf_ - asdf.
+<BR>
+<BR>
 === SetGUIEditBoxTextValidationString(real gui_edit_box_id, string validation) ===
+----
+Description.
+====Parameters====
+   * _asdf_ - asdf.
+<BR>
+<BR>
 === IsGUIEditBoxTextTextValid(real gui_edit_box_id) ===
+----
+Description.
+====Parameters====
+   * _asdf_ - asdf.
+<BR>
+<BR>
 === SetGUIEditBoxEventCallback(real gui_window_id, string event_name, real func) ===
+----
+Description.
+====Parameters====
+   * _asdf_ - asdf.
+<BR>
+<BR>
 
-// ImageSet
+#summary GUI ImageSet functions.
+<BR>
+<BR>
 === CreateGUIImageSet(string name, real gui_texture_id) ===
+----
+Description.
+====Parameters====
+   * _asdf_ - asdf.
+<BR>
+<BR>
 === CreateGUIImageSetFromFile(string name, string filename) ===
+----
+Description.
+====Parameters====
+   * _asdf_ - asdf.
+<BR>
+<BR>
 === DestroyGUIImageSet(real gui_image_set_id) ===
+----
+Description.
+====Parameters====
+   * _asdf_ - asdf.
+<BR>
+<BR>
 === DefineGUIImageSetImage1(real gui_image_set_id, string name) ===
+----
+Description.
+====Parameters====
+   * _asdf_ - asdf.
+<BR>
+<BR>
 === DefineGUIImageSetImage2(real gui_image_set_id, real posx, real posy, real width, real height, real offsetx, real offsety) ===
+----
+Description.
+====Parameters====
+   * _asdf_ - asdf.
+<BR>
+<BR>
 === UndefineGUIImageSetImage(real gui_image_set_id, string name) ===
+----
+Description.
+====Parameters====
+   * _asdf_ - asdf.
+<BR>
+<BR>
 === GetGUIImageSetImage(real gui_image_set_id, string name) ===
+----
+Description.
+====Parameters====
+   * _asdf_ - asdf.
+<BR>
+<BR>
 === GetGUIImageSetTexture(real gui_image_set_id) ===
+----
+Description.
+====Parameters====
+   * _asdf_ - asdf.
+<BR>
+<BR>
 === EnableGUIImageSetAutoScaling(real gui_image_set_id, real enable) ===
+----
+Description.
+====Parameters====
+   * _asdf_ - asdf.
+<BR>
+<BR>
