@@ -1,0 +1,51 @@
+#summary GUI MenuItem functions.
+<BR>
+<BR>
+=== SetGUIMenuItemPopupMenu(real gui_menu_item_id, real gui_popup_menu_id) ===
+----
+Sets a GUI popupmenu for a GUI menuitm.
+====Parameters====
+   * _gui_menu_item_id_ - The ID of the GUI menuitem.
+<BR>
+<BR>
+=== OpenGUIMenuItemPopupMenu(real gui_menu_item_id) ===
+----
+Opens the GUI popupmenu for a GUI menuitm.
+====Parameters====
+   * _gui_menu_item_id_ - The ID of the GUI menuitem.
+<BR>
+<BR>
+=== CloseGUIMenuItemPopupMenu(real gui_menu_item_id) ===
+----
+Closes the GUI popupmenu for a GUI menuitm.
+====Parameters====
+   * _gui_menu_item_id_ - The ID of the GUI menuitem.
+<BR>
+<BR>
+=== IsGUIMenuItemPopupMenuOpened(real gui_menu_item_id) ===
+----
+Returns whether the GUI popupmenu for a GUI menuitem is open.
+====Parameters====
+   * _gui_menu_item_id_ - The ID of the GUI menuitem.
+<BR>
+<BR>
+=== IsGUIMenuItemHovering(real gui_menu_item_id) ===
+----
+Returns whether the mouse is hovering over a GUI menuitem.
+====Parameters====
+   * _gui_menu_item_id_ - The ID of the GUI menuitem.
+<BR>
+<BR>
+=== SetGUIMenuItemEventCallback(real gui_menu_item_id, string event, real func) ===
+----
+Sets a GM script to be called when the specified GUI event is triggered.
+
+There are different types of events, and the arguments passed to the GM script depends on the event type. All event types pass the GUI menuitem that triggered the event as the first argument.
+====Parameters====
+   * _gui_menu_item_id_ - The ID of the GUI menuitem.
+   * _event_ - The type of event to trap. Can be:
+      * _GUI_MENUITEM_EVENT_CLICKED_ - The menu item was clicked. 
+   * _func_ - The GM script to execute when the event is triggered. 
+The menu item was clicked
+<BR>
+<BR>
