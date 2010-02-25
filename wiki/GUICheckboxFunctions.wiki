@@ -19,10 +19,12 @@ Returns whether a GUI checkbox is checked.
 ----
 Sets a GM script to be called when the specified GUI event is triggered.
 
-There are different types of events, and the arguments passed to the GM script depends on the event type. All event types pass the GUI combobox that triggered the event as the first argument. The GUI_CHECKBOX_EVENT_STATE_CHANGED event also passes whether the combobox was selected or deselected as the second parameter.
+There are different types of events, and the arguments passed to the GM script depends on the event type. All event types pass the GUI checkbox that triggered the event as the first argument. The GUI_CHECKBOX_EVENT_STATE_CHANGED event also passes whether the checkbox was selected or deselected as the second parameter.
 ====Parameters====
    * _gui_check_box_id_ - The ID of the checkbox.
-   * _event_ - The event 
+   * _event_ - The type of event to trap. Can be:
+      * GUI_CHECKBOX_EVENT_STATE_CHANGED
+   * _func_ The GM script to execute when the event is triggered.
 <BR>
 <BR>
 
@@ -31,68 +33,76 @@ There are different types of events, and the arguments passed to the GM script d
 <BR>
 === EnableGUIComboBoxReadOnly(real gui_combo_box_id, real enable) ===
 ----
-Description.
+Enables or disables whether the GUI combobox is read-only.
 ====Parameters====
-   * _asdf_ - asdf.
+   * _gui_combo_box_id_ - The ID of the GUI combobox.
 <BR>
 <BR>
-=== AddGUIComboBoxItem(real gui_combo_box_id, string text, real user_data) ===
+=== AddGUIComboBoxItem(real gui_combo_box_id, string text, real id) ===
 ----
-Description.
+Adds an item to a GUI combobox.
 ====Parameters====
-   * _asdf_ - asdf.
+   * _gui_combo_box_id_ - The ID of the GUI combobox.
+   * _text_ - The text to add.
+   * _id_ - Optional user specified ID to associate with the item.
 <BR>
 <BR>
 === RemoveGUIComboBoxItem(real gui_combo_box_id, real index) ===
 ----
-Description.
+Removes an item from a GUI combobox.
 ====Parameters====
-   * _asdf_ - asdf.
+   * _gui_combo_box_id_ - The ID of the GUI combobox.
+   * _index_ - The index of the item to remove.
 <BR>
 <BR>
 === GetGUIComboBoxItemCount(real gui_combo_box_id) ===
 ----
-Description.
+Returns the number of items in a GUI combobox.
 ====Parameters====
-   * _asdf_ - asdf.
+   * _gui_combo_box_id_ - The ID of the GUI combobox.
 <BR>
 <BR>
 === ClearGUIComboBoxItems(real gui_combo_box_id) ===
 ----
-Description.
+Removes all items from a GUI combobox.
 ====Parameters====
-   * _asdf_ - asdf.
+   * _gui_combo_box_id_ - The ID of the GUI combobox.
 <BR>
 <BR>
 === GetGUIComboBoxSelectedIndex(real gui_combo_box_id) ===
 ----
-Description.
+Returns the index of the selected item in a GUI combobox.
 ====Parameters====
-   * _asdf_ - asdf.
+   * _gui_combo_box_id_ - The ID of the GUI combobox.
 <BR>
 <BR>
-=== GetGUIComboBoxSelectedItemData(real gui_combo_box_id) ===
+=== GetGUIComboBoxSelectedItemID(real gui_combo_box_id) ===
 ----
-Description.
+Returns the ID associated with an item in a GUI combobox GUI combobox.
 ====Parameters====
-   * _asdf_ - asdf.
+   * _gui_combo_box_id_ - The ID of the GUI combobox.
 <BR>
 <BR>
 === SelectGUIComboBoxIndex(real gui_combo_box_id, real index) ===
 ----
-Description.
+Selects the specified item in a GUI combobox.
 ====Parameters====
-   * _asdf_ - asdf.
+   * _gui_combo_box_id_ - The ID of the GUI combobox.
+   * _index_ - The index of the item to select.
 <BR>
 <BR>
-=== SetGUIComboBoxEventCallback(real gui_window_id, string event_name, real func) ===
+=== SetGUIComboBoxEventCallback(real gui_combo_box_id, string event, real func) ===
 ----
-Description.
-====Parameters====
-   * _asdf_ - asdf.
-<BR>
-<BR>
+Sets a GM script to be called when the specified GUI event is triggered.
 
+There are different types of events, and the arguments passed to the GM script depends on the event type. All event types pass the GUI checkbox that triggered the event as the first argument. The GUI_COMBOBOX_EVENT_SELECTION_ACCEPTED event also passes the index of the selected item as the second parameter.
+====Parameters====
+   * _gui_combo_box_id_ - The ID of the GUI combobox.
+   * _event_ - The type of event to trap. Can be:
+      * GUI_COMBOBOX_EVENT_SELECTION_ACCEPTED
+   * _func_ The GM script to execute when the event is triggered.
+<BR>
+<BR>
 #summary GUI EditBox functions.
 <BR>
 <BR>
