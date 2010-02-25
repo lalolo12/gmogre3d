@@ -178,8 +178,7 @@ Here we calculate the position on the spline our robot needs to be based on how 
 All we have left to do is make sure our robot is always facing the direction it is walking in.  Add these lines to the end of the Step event:
 {{{
 // Calculate the direction to face the robot
-SubtractVector(last_posx, last_posy, last_posz, posx, posy, posz);
-SetEulerDirection(GetX(), GetY(), GetZ());
+GetRotationTo(last_posx, last_posy, last_posz, posx, posy, posz);
 SetSceneNodeOrientation(node_id, GetYaw() + 180, GetPitch(), 0);
       
 last_posx = posx;
@@ -188,7 +187,7 @@ last_posz = posz;
 
 last_time = current_time;
 }}}
-The first two lines calculate the orientation needed to have the robot face forward.  This is based on the old position and new position coordinates.  Next we simply orient our robot's !SceneNode to face that direction.  Notice, however, the +180 to the yaw. Remember back in the first tutorial that we said that the starting direction a mesh is facing is a property of the mesh itself?  This is an example of just that. By default our robot mesh faces the negative Y axis when added to our game, yet the !SceneNode it's attached to faces the positive Y axis.  The direction the a mesh faces is saved in the mesh itself, so short of modifying the mesh you must compensate as we have.
+The first two lines calculate the orientation needed to have the robot face forward.  This is based on the old position and new position coordinates.  Next we simply orient our robot's !SceneNode to face that direction.  Notice, however, the +180 to the yaw. Remember back in the first tutorial that we said that the starting direction a mesh is facing is a property of the mesh itself?  This is an example of just that. By default our robot mesh faces the negative Y axis when added to our game, yet the !SceneNode it's attached to faces the positive Y axis.  The starting direction a mesh faces is saved in the mesh itself, so short of modifying the mesh you must compensate as we have.
 
 Another trick to get around this would be to create the robot's !SceneNode then create a child of that !SceneNode and rotate THAT 180 degrees.  We'd then add the robot entity to the child !SceneNode.  After this we can simply ignore the child !SceneNode and apply all of our rotations and transformation to the parent !SceneNode.  The child !SceneNode will automatically follow its parent.
 
