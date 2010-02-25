@@ -33,9 +33,9 @@ Sets the metrics type used for the 2D coordinates to display a text object.
 ====Parameters====
     * _sprite_id_ - The ID of the sprite.
     * _type_ - The type of metrics to use. Can be:
-        * _global.GMM_RELATIVE_ - Positions and sizes are parametrics from 0.0 to 1.0.
-        * _global.GMM_PIXELS_ - Positions and sizes are in absolute pixels.
-        * _global.GMM_RELATIVE_ASPECT_ADJUSTED_ - Positions and sizes are in virtual pixels. 
+        * _GMM_RELATIVE_ - Positions and sizes are parametrics from 0.0 to 1.0.
+        * _GMM_PIXELS_ - Positions and sizes are in absolute pixels.
+        * _GMM_RELATIVE_ASPECT_ADJUSTED_ - Positions and sizes are in virtual pixels. 
 <BR>
 <BR>
 === !SetSpriteDimensions(real sprite_id, real width, real height) ===
