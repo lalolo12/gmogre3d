@@ -98,7 +98,7 @@ Selects or deselects the specified item in a GUI listbox.
 ----
 Sets a GM script to be called when the specified GUI event is triggered.
 
-There are different types of events, and the arguments passed to the GM script depends on the event type. All event types pass the GUI listbox that triggered the event as the first argument. The GUI_LISTBOX_EVENT_SELECTION_CHANGED event also passes the text contents as the second parameter.
+There are different types of events, and the arguments passed to the GM script depends on the event type. All event types pass the GUI listbox that triggered the event as the first argument.
 ====Parameters====
    * _gui_list_box_id_ - The ID of the GUI listbox.
    * _event_ - The type of event to trap. Can be:
