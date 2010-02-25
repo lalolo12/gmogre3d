@@ -1,0 +1,33 @@
+#summary GUI MenuBar functions.
+<BR>
+<BR>
+=== AddGUIMenuBarItem(real gui_menu_bar_id, real gui_menu_item_id) ===
+----
+Adds the specified GUI menuitem to a GUI menubar.
+====Parameters====
+   * _gui_menu_bar_id_ - The ID of the GUI menubar.
+   * _gui_menu_item_id_ - The ID of the GUI menuitem.
+<BR>
+<BR>
+=== RemoveGUIMenuBarItem(real gui_menu_bar_id, real gui_menu_item_id) ===
+----
+Removes the specified GUI menuitem from a GUI menubar.
+====Parameters====
+   * _gui_menu_bar_id_ - The ID of the GUI menubar.
+   * _gui_menu_item_id_ - The ID of the GUI menuitem.
+<BR>
+<BR>
+=== GetGUIMenuBarItemCount(real gui_menu_bar_id) ===
+----
+Returns the number of GUI menuitems in a GUI menubar.
+====Parameters====
+   * _gui_menu_bar_id_ - The ID of the GUI menubar.
+<BR>
+<BR>
+=== ClearGUIMenuBarItems(real gui_menu_bar_id) ===
+----
+Removes all items from a GUI menubar.
+====Parameters====
+   * _gui_menu_bar_id_ - The ID of the GUI menubar.
+<BR>
+<BR>
