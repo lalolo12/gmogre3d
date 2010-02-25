@@ -1,0 +1,285 @@
+#summary GUI window functions.
+
+=== Overview ===
+A GUI window is the base window providing common functionality for all derived window types. That means that all GUI window functions can be used be derived window types.
+<BR>
+<BR>
+=== GetGUIWindowByName(string name) ===
+----
+Returns the ID of the specified GUI window.
+====Parameters====
+   * _name_ - The name of the GUI window.
+<BR>
+<BR>
+=== CreateGUIWindow(string type, string name) ===
+----
+Creates a new GUI window given a type.
+
+The GUI Window type specified can be a derived window.
+====Parameters====
+   * _type_ - The type of GUI window to create.
+   * _name_ - The name of the GUI window.
+<BR>
+<BR>
+=== DestroyGUIWindow(real gui_window_id) ===
+----
+Destroys a GUI window previously created via CreateGUIWindow.
+====Parameters====
+   * _gui_window_id_ - The ID of the GUI window.
+<BR>
+<BR>
+=== GetGUIWindowName(real gui_window_id) ===
+----
+Returns the name of the specified GUI window.
+====Parameters====
+   * _gui_window_id_ - The ID of the GUI window.
+<BR>
+<BR>
+=== SetGUIWindowText(real gui_window_id, string text) ===
+----
+Sets the GUI window text.
+====Parameters====
+   * _gui_window_id_ - The ID of the GUI window.
+   * _text_ - The text to set.
+<BR>
+<BR>
+=== GetGUIWindowText(real gui_window_id) ===
+----
+Returns the GUI window text.
+====Parameters====
+   * _gui_window_id_ - The ID of the GUI window.
+<BR>
+<BR>
+=== SetGUIWindowMetrics(real gui_window_id, real type) ===
+----
+Sets the metrics type used for the coordinates to display the GUI window. 
+
+The default metrics type is GMM_PIXELS.
+====Parameters====
+   * _gui_window_id_ - The ID of the GUI window.
+   * _type_ - The type of metrics to use. Can be:
+      * _GMM_RELATIVE_ - Positions and sizes are parametrics from 0.0 to 1.0.
+      * _GMM_PIXELS_ - Positions and sizes are in absolute pixels. 
+<BR>
+<BR>
+=== SetGUIWindowPosition(real gui_window_id, real x, real y) ===
+----
+Sets the GUI window's position.
+====Parameters====
+   * _gui_window_id_ - The ID of the GUI window.
+   * _x_, _y_ - The position of the GUI window.
+<BR>
+<BR>
+=== GetGUIWindowPosition(real gui_window_id) ===
+----
+Returns the coordinates of the specified GUI window.
+
+Since GM cannot return 2 values in a single function call these coordinates are stored in temporary variables and can be retrieved by calling the GetX and GetY functions.
+====Parameters====
+   * _gui_window_id_ - The ID of the GUI window.
+<BR>
+<BR>
+=== SetGUIWindowSize(real gui_window_id, real width, real height) ===
+----
+Sets the size of the GUI window.
+
+The width/height values depend on the metrics type for the GUI window.  The default metrics type is GMM_PIXELS.
+====Parameters====
+   * _gui_window_id_ - The ID of the GUI window.
+   * _width_, _height_ - The size of the GUI window.
+<BR>
+<BR>
+=== GetGUIWindowSize(real gui_window_id) ===
+----
+Returns the size of the specified GUI window.
+
+Since GM cannot return 2 values in a single function call these coordinates are stored in temporary variables and can be retrieved by calling the GetX and GetY functions.
+====Parameters====
+   * _gui_window_id_ - The ID of the GUI window.
+<BR>
+<BR>
+=== SetGUIWindowProperty(real gui_window_id, string name, string value) ===
+----
+Sets a GUI window property.
+
+If the property name is not valid, nothing happens.
+====Parameters====
+   * _gui_window_id_ - The ID of the GUI window.
+   * _name_ - Tthe name of the property who's value is to be set.
+   * _value_ - A textual representation of the new value for the property.
+<BR>
+<BR>
+=== GetGUIWindowProperty(real gui_window_id, string name) ===
+----
+Retrieves the value of a GUI window property.
+====Parameters====
+   * _gui_window_id_ - The ID of the GUI window.
+   * _name_ - The name of the property to retrieve.
+<BR>
+<BR>
+=== SetGUIWindowTooltipText(real gui_window_id, string text) ===
+----
+Sets the GUI window tooltip text.
+====Parameters====
+   * _gui_window_id_ - The ID of the GUI window.
+   * _text_ - The text for the tooltip.
+<BR>
+<BR>
+=== SetGUIWindowAlpha(real gui_window_id, real alpha) ===
+----
+Sets the transparency level of a GUI window.
+====Parameters====
+   * _gui_window_id_ - The ID of the GUI window.
+   * _alpha_ - The alpha transparency value.
+<BR>
+<BR>
+=== SetGUIWindowID(real gui_window_id, real id) ===
+----
+Sets a GUI window ID.
+
+The ID is not used by GMOgre3D, it solely exists for the for the user to use.
+====Parameters====
+   * _gui_window_id_ - The ID of the GUI window.
+   * _id_ - The ID.
+<BR>
+<BR>
+=== GetGUIWindowID(real gui_window_id) ===
+----
+Retrieves a GUI window ID.
+
+The ID is not used by GMOgre3D, it solely exists for the for the user to use.
+====Parameters====
+   * _gui_window_id_ - The ID of the GUI window.
+<BR>
+<BR>
+=== AddGUIWindowChildWindow(real gui_window_id, real gui_child_window_id) ==
+----
+Adds a GUI window as a child of another GUI window.
+====Parameters====
+   * _gui_window_id_ - The ID of the GUI window.
+   * _child_gui_window_id_ - The ID of the child GUI window.
+<BR>
+<BR>
+=== RemoveGUIWindowChildWindow(real gui_window_id, real gui_child_window_id) ===
+----
+Removes a GUI window from the parent GUI window.e
+====Parameters====
+   * _gui_window_id_ - The ID of the GUI window.
+   * _child_gui_window_id_ - The ID of the child GUI window.
+<BR>
+<BR>
+=== GetGUIWindowChildWindowCount(real gui_window_id) ===
+----
+Returns the number of child GUI windows in a GUI window.
+====Parameters====
+   * _gui_window_id_ - The ID of the GUI window.
+<BR>
+<BR>
+=== GetGUIWindowChildWindowAtIndex(real gui_window_id, real index) ===
+----
+Returns the ID of the child GUI window at the specified index.
+====Parameters====
+   * _gui_window_id_ - The ID of the GUI window.
+   * _index_ - The index of the child window.
+<BR>
+<BR>
+=== SetGUIWindowHorizontalAlignment(real gui_window_id, real alignment) ===
+----
+Sets a GUI window's horizontal alignment.
+====Parameters====
+   * _gui_window_id_ - The ID of the GUI window.
+   * _alignment_ - The horizontal alignment. Can be:
+      * ALIGN_LEFT
+      * ALIGN_RIGHT
+      * ALIGN_CENTER
+<BR>
+<BR>
+=== SetGUIWindowVerticalAlignment(real gui_window_id, real alignment) ===
+----
+Sets a GUI window's vertical alignment.
+====Parameters====
+   * _gui_window_id_ - The ID of the GUI window.
+   * _alignment_ - The vertical alignment. Can be:
+      * ALIGN_BOTTOM
+      * ALIGN_TOP
+      * ALIGN_CENTER
+<BR>
+<BR>
+=== ShowGUIWindow(real gui_window_id) ===
+----
+Shows a GUI window.
+====Parameters====
+   * _gui_window_id_ - The ID of the GUI window.
+<BR>
+<BR>
+=== HideGUIWindow(real gui_window_id) ===
+----
+Hides a GUI window.
+====Parameters====
+   * _gui_window_id_ - The ID of the GUI window.
+<BR>
+<BR>
+=== ActivateGUIWindow(real gui_window_id, real activate) ===
+----
+Activates or deactivates a GUI window.
+
+When a GUI window is activated it receives input focus and is brought to the top of all windows.
+====Parameters====
+   * _gui_window_id_ - The ID of the GUI window.
+<BR>
+<BR>
+=== EnableGUIWindow(real gui_window_id, real enable) ===
+----
+Enables or disables a GUI window.
+====Parameters====
+   * _gui_window_id_ - The ID of the GUI window.
+<BR>
+<BR>
+=== SetGUIWindowEventCallback(real gui_window_id, string event, real func) ===
+----
+Sets a GM script to be called when the specified GUI event is triggered.
+
+There are different types of events, and the arguments passed to the GM script depends on the event type.  All event types pass the GUI window that triggered the event as the first argument. The mouse events pass the event button as the second argument, the button click count as the third argument, the mouse x position as the fourth argument, the mouse y position as the fifth argument, and the wheel change value as the sixth argument.
+
+====Parameters====
+   * _gui_window_id_ - The ID of the GUI window.
+   * _event_ - The type of event to trap. Can be:
+      * GUI_WINDOW_EVENT_PARENT_SIZED
+      * GUI_WINDOW_EVENT_SIZED
+      * GUI_WINDOW_EVENT_MOVED
+      * GUI_WINDOW_EVENT_TEXT_CHANGED
+      * GUI_WINDOW_EVENT_FONT_CHANGED
+      * GUI_WINDOW_EVENT_ALPHA_CHANGED
+      * GUI_WINDOW_EVENT_ACTIVATED
+      * GUI_WINDOW_EVENT_DEACTIVATED
+      * GUI_WINDOW_EVENT_SHOWN
+      * GUI_WINDOW_EVENT_HIDDEN 
+      * GUI_WINDOW_EVENT_ENABLED
+      * GUI_WINDOW_EVENT_DISABLED
+      * GUI_WINDOW_EVENT_INPUT_CAPTURE_GAINED
+      * GUI_WINDOW_EVENT_INPUT_CAPTURE_LOST
+      * GUI_WINDOW_EVENT_RENDERING_STARTED
+      * GUI_WINDOW_EVENT_RENDERING_ENDED
+      * GUI_WINDOW_EVENT_CHILD_ADDED
+      * GUI_WINDOW_EVENT_CHILD_REMOVED 
+      * GUI_WINDOW_EVENT_ZORDER_CHANGED
+      * GUI_WINDOW_EVENT_DRAGDROP_ITEM_ENTERS
+      * GUI_WINDOW_EVENT_DRAGDROP_ITEM_LEAVES 
+      * GUI_WINDOW_EVENT_DRAGDROP_ITEM_DROPPED
+      * GUI_WINDOW_EVENT_VERTICAL_ALIGNMENT_CHANGED
+      * GUI_WINDOW_EVENT_HORIZONTAL_ALIGNMENT_CHANGED
+      * GUI_WINDOW_EVENT_MOUSE_ENTERS
+      * GUI_WINDOW_EVENT_MOUSE_LEAVES
+      * GUI_WINDOW_EVENT_MOUSE_MOVE
+      * GUI_WINDOW_EVENT_MOUSE_WHEEL
+      * GUI_WINDOW_EVENT_MOUSE_BUTTONDOWN
+      * GUI_WINDOW_EVENT_MOUSE_BUTTONUP
+      * GUI_WINDOW_EVENT_MOUSE_CLICK
+      * GUI_WINDOW_EVENT_MOUSE_DOUBLECLICK
+      * GUI_WINDOW_EVENT_MOUSE_TRIPLECLICK
+      * GUI_WINDOW_EVENT_KEYDOWN
+      * GUI_WINDOW_EVENT_KEYUP
+      * GUI_WINDOW_EVENT_CHARACTER_KEY
+   * _func_ - The GM function to callback when the event is triggered.
+<BR>
+<BR>
