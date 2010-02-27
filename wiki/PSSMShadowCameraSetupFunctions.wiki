@@ -71,7 +71,7 @@ Calculate a new splitting scheme.
    * _pssm_shadow_camera_setup_id_ - The ID of the PSSMShadowCameraSetup object.
    * _split_count_ - The number of splits to use.
    * _near_dist_ - The near plane to use for the first split.
-   * _far_dist_ Optional factor to use to reduce the split size. Default is 0.95.
+   * _far_dist_ - Optional factor to use to reduce the split size. Default is 0.95.
 <BR>
 <BR>
 === GetPSSMShadowCameraSetupSplitPoints(real pssm_shadow_camera_setup_id, real split_index) ===
