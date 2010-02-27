@@ -21,7 +21,7 @@ Adds an item to a GUI listbox.
 ----
 Removes an item from a GUI listbox.
 ====Parameters====
-   * _gui_list_box_id - The ID of the GUI listbox.
+   * _gui_list_box_id_ - The ID of the GUI listbox.
    * _index_ - The index of the item to remove.
 <BR>
 <BR>
