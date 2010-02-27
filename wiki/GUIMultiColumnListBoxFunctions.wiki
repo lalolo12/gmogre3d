@@ -1,0 +1,179 @@
+#summary GUI MultiColumn ListBox functions
+<BR>
+<BR>
+=== AddGUIMultiColumnListBoxColumn(real gui_list_box_id, string text, real width) ===
+----
+Adds a column to a GUI multi-column listbox.
+====Parameters====
+   * _gui_list_box_id_ - The ID of the GUI multi-column listbox.
+   * _text_ - The text for the column.
+   * _width_ - The width of the column.
+<BR>
+<BR>
+=== RemoveGUIMultiColumnListBoxColumn(real gui_list_box_id, real index) ===
+----
+Removes a column from a GUI multi-column listbox.
+====Parameters====
+   * _gui_list_box_id_ - The ID of the GUI multi-column listbox.
+   * _index_ - The column index to remove.
+<BR>
+<BR>
+=== AddGUIMultiColumnListBoxRow(real gui_list_box_id, real row_id) ===
+----
+Adds a row to a GUI multi-column listbox.
+====Parameters====
+   * _gui_list_box_id_ - The ID of the GUI multi-column listbox.
+   * _row_id_ - Optional user-specified ID for the row.
+<BR>
+<BR>
+=== RemoveGUIMultiColumnListBoxRow(real gui_list_box_id, real index) ===
+----
+Removes a row from a GUI multi-column listbox.
+====Parameters====
+   * _gui_list_box_id_ - The ID of the GUI multi-column listbox.
+   * _index_ - The row index to remove.
+<BR>
+<BR>
+=== GetGUIMultiColumnListBoxRowID(real gui_list_box_id, real index) ===
+----
+Returns the user-specified ID of the specified row in a GUI multi-column listbox.
+====Parameters====
+   * _gui_list_box_id_ - The ID of the GUI multi-column listbox.
+   * _index_ - The row index.
+<BR>
+<BR>
+=== GetGUIMultiColumnListBoxIndexFromID(real gui_list_box_id, real row_id) ===
+----
+Returns the index of the first row in a GUI multi-column listbox that matches the user-specified ID.
+====Parameters====
+   * _gui_list_box_id_ - The ID of the GUI multi-column listbox.
+   * _row_id_ - The user-specified ID of the row.
+<BR>
+<BR>
+=== SetGUIMultiColumnListBoxRowText(real gui_list_box_id, real row_index, string text, real column_index) ===
+----
+Sets the text of a row/column in a GUI multi-column listbox.
+====Parameters====
+   * _gui_list_box_id_ - The ID of the GUI multi-column listbox.
+   * _row_index_ - The index of the row.
+   * _text_ - The text.
+   * _column_index_ - The index of the column.
+<BR>
+<BR>
+=== GetGUIMultiColumnListBoxRowCount(real gui_list_box_id) ===
+----
+Retrieve the number of rows in a GUI multi-column listbox.
+====Parameters====
+   * _gui_list_box_id_ - The ID of the GUI multi-column listbox.
+<BR>
+<BR>
+=== ClearGUIMultiColumnListBoxRows(real gui_list_box_id) ===
+----
+Remove all rows in a GUI multi-column listbox.
+====Parameters====
+   * _gui_list_box_id_ - The ID of the GUI multi-column listbox.
+<BR>
+<BR>
+=== ClearGUIMultiColumnListBoxSelections(real gui_list_box_id) ===
+----
+Unselect all rows in a GUI multi-column listbox.
+====Parameters====
+   * _gui_list_box_id_ - The ID of the GUI multi-column listbox.
+<BR>
+<BR>
+=== GetGUIMultiColumnListBoxSelectedCount(real gui_list_box_id) ===
+----
+Retrieve the number of rows selected in a GUI multi-column listbox.
+====Parameters====
+   * _gui_list_box_id_ - The ID of the GUI multi-column listbox.
+<BR>
+<BR>
+=== IsGUIMultiColumnListBoxRowSelected(real gui_list_box_id, real index) ===
+----
+Returns true if the specified row in a GUI multi-column listbox is selected.
+====Parameters====
+   * _gui_list_box_id_ - The ID of the GUI multi-column listbox.
+   * _index_ - The index of the row.
+<BR>
+<BR>
+=== GetGUIMultiColumnListBoxFirstSelectedRow(real gui_list_box_id) ===
+----
+Returns the index of the first selected row in a GUI multi-column listbox.
+====Parameters====
+   * _gui_list_box_id_ - The ID of the GUI multi-column listbox.
+<BR>
+<BR>
+=== GetGUIMultiColumnListBoxNextSelectedRow(real gui_list_box_id, real index) ===
+----
+Returns the index of the next selected row in a GUI multi-column listbox.
+====Parameters====
+   * _gui_list_box_id_ - The ID of the GUI multi-column listbox.
+   * _index_ - The index of the row to start checking from.
+<BR>
+<BR>
+=== SelectGUIMultiColumnListBoxRow(real gui_list_box_id, real index, real select) ===
+----
+Select or deselects a row in a GUI multi-column listbox.
+====Parameters====
+   * _gui_list_box_id_ - The ID of the GUI multi-column listbox.
+   * _index_ - The row index to select or deselect.
+   * _select_ - Whether or not to select the row.
+<BR>
+<BR>
+=== EnableGUIMultiColumnListBoxColumnDragging(real gui_list_box_id, real enable) ===
+----
+Enables or disbales column dragging for column reordering in a GUI multi-column listbox.
+====Parameters====
+   * _gui_list_box_id_ - The ID of the GUI multi-column listbox.
+   * _enable_ - Whether to enable or disable column dragging.
+<BR>
+<BR>
+=== EnableGUIMultiColumnListBoxColumnSizing(real gui_list_box_id, real enable) ===
+----
+Enables or disables column resizing in a GUI multi-column listbox.
+====Parameters====
+   * _gui_list_box_id_ - The ID of the GUI multi-column listbox.
+   * _enable_ - Whether to enable or disable user column resizing.
+<BR>
+<BR>
+=== EnableGUIMultiColumnListBoxUserSorting(real gui_list_box_id, real enable) ===
+----
+Enables or disables user column sorting in a GUI multi-column listbox.
+====Parameters====
+   * _gui_list_box_id_ - The ID of the GUI multi-column listbox.
+   * _enable_ - Whether to enable or disable column sorting.
+<BR>
+<BR>
+=== SetGUIMultiColumnListBoxSelectionBrushImage(real gui_list_box_id, string imageset, string image) ===
+----
+Sets the brush image used for showing selected rows in a GUI multi-column listbox.
+
+Note that unlike GUI listbox and combobox, this is required to display selected rows.
+====Parameters====
+   * _gui_list_box_id_ - The ID of the GUI multi-column listbox.
+   * _imageset_ - The name of the imageset to use.
+   * _image_ - The name of the image in an imageset to use.
+<BR>
+<BR>
+=== SetGUIMultiColumnListBoxSelectionMode(real gui_list_box_id, real type) ===
+----
+Sets the selection mode of a GUI multi-column listbox.
+====Parameters====
+   * _gui_list_box_id_ - The ID of the GUI multi-column listbox.
+   * _type_ - The type of selection to use. Can be:
+      * _GUI_MULTICOLUMN_SELECTION_ROWSINGLE_ - A single full rows can be selected.
+      * _GUI_MULTICOLUMN_SELECTION_ROWMULTIPLE_ - Multiple full rows can be selected.
+<BR>
+<BR>
+=== SetGUIMultiColumnListBoxEventCallback(real gui_list_box_id, string event, real func) ===
+----
+Sets a GM script to be called when the specified GUI event is triggered.
+
+There are different types of events, and the arguments passed to the GM script depends on the event type. All event types pass the GUI listbox that triggered the event as the first argument.
+Parameters
+
+    * _gui_list_box_id_ - The ID of the GUI multi-column listbox.
+    * _event_ - The type of event to trap. Can be:
+         * _GUI_MULTICOLUMN_LISTBOX_EVENT_SELECTION_CHANGED_ - There has been a change to the currently selected item(s). 
+    * _func_ - The GM script to execute when the event is triggered.
+<BR>
