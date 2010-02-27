@@ -79,7 +79,7 @@ Returns the index of the first selected item in a GUI listbox.
 <BR>
 === GetGUIListBoxNextSelectedItem(real gui_list_box_id, real index) ===
 ----
-Returns the index of teh next selected item in a GUI listbox after the index given.
+Returns the index of the next selected item in a GUI listbox after the index given.
 ====Parameters====
    * _gui_list_box_id_ - The ID of the GUI listbox.
    * _index_ - The index to start the search from.
