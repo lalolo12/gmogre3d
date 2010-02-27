@@ -64,8 +64,7 @@ There are 2 approaches that can be used to define the focus region, the more agg
    * _enable_ - Whether to enable or disable agressive focus region.
 <BR>
 <BR>
-=== CalculatePSSMShadowCameraSetupSplitPoints(real pssm_shadow_camera_setup_id, real split_count, real near_dist, 
-real far_dist, real lambda) ===
+=== CalculatePSSMShadowCameraSetupSplitPoints(real pssm_shadow_camera_setup_id, real split_count, real near_dist, real far_dist, real lambda) ===
 ----
 Calculate a new splitting scheme. 
 ====Parameters====
