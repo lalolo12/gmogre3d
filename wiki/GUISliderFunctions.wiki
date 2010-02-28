@@ -1,0 +1,45 @@
+#summary GUI Slider functions
+<BR>
+<BR>
+=== SetGUISliderCurrentValue(real gui_slider_id, real value) ===
+----
+Sets the current value of a GUI slider.
+====Parameters====
+   * _gui_slider_id_ - The ID of the GUI slider.
+   * _value_ - The value to set.
+<BR>
+<BR>
+=== GetGUISliderCurrentValue(real gui_slider_id) ===
+----
+Returns the current value of a GUI slider.
+====Parameters====
+   * _gui_slider_id_ - The ID of the GUI slider.
+<BR>
+<BR>
+=== SetGUISliderMaxValue(real gui_slider_id, real value) ===
+----
+Sets the maximum value of a GUI slider.
+====Parameters====
+   * _gui_slider_id_ - The ID of the GUI slider.
+   * _value_ - The max value to set.
+<BR>
+<BR>
+=== SetGUISliderClickStepSize(real gui_slider_id, real step) ===
+----
+Sets the click step size of a GUI slider.
+====Parameters====
+   * _gui_slider_id_ - The ID of the GUI slider.
+   * _step_ - The step size value.
+<BR>
+<BR>
+=== SetGUISliderEventCallback(real gui_slider_id, string name, real func) ===
+----
+Sets a GM script to be called when the specified GUI event is triggered.
+
+There are different types of events, and the arguments passed to the GM script depends on the event type. All event types pass the GUI  that triggered the event as the first argument. When GUI_SLIDER_EVENT_VALUE_CHANGED is triggered the second parameter is the new current value.
+====Parameters====
+    * _gui_slider_id_ - The ID of the GUI radiobutton.
+    * _event_ - The type of event to trap. Can be:
+          * GUI_SLIDER_EVENT_VALUE_CHANGED - fired when the slider value changes. 
+    * _func_ - The GM script to execute when the event is triggered.
+<BR>
