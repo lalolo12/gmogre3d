@@ -35,7 +35,7 @@ returns a GUI radiobutton's group ID.
 ----
 Sets a GM script to be called when the specified GUI event is triggered.
 
-There are different types of events, and the arguments passed to the GM script depends on the event type. All event types pass the GUI radiobutotn that triggered the event as the first argument.
+There are different types of events, and the arguments passed to the GM script depends on the event type. All event types pass the GUI radiobutton that triggered the event as the first argument.
 ====Parameters====
    * _gui_radio_button_id_ - The ID of the GUI radiobutton.
    * _event_ - The type of event to trap. Can be:
