@@ -38,7 +38,7 @@ Sets a GM script to be called when the specified GUI event is triggered.
 
 There are different types of events, and the arguments passed to the GM script depends on the event type. All event types pass the GUI  that triggered the event as the first argument. When GUI_SLIDER_EVENT_VALUE_CHANGED is triggered the second parameter is the new current value.
 ====Parameters====
-    * _gui_slider_id_ - The ID of the GUI radiobutton.
+    * _gui_slider_id_ - The ID of the GUI slider.
     * _event_ - The type of event to trap. Can be:
           * GUI_SLIDER_EVENT_VALUE_CHANGED - fired when the slider value changes. 
     * _func_ - The GM script to execute when the event is triggered.
