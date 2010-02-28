@@ -1,0 +1,44 @@
+#summary GUI RadioButton functions
+<BR>
+<BR>
+=== SetGUIRadioButtonSelected(real gui_radio_button_id, real selected) ===
+----
+Selects or unselects a GUI radiobutton.
+====Parameters====
+   * _gui_radio_button_id_ - The ID of the GUI radiobutton.
+   * _selected_ - Whether to select or unselect the GUI radiobutton.
+<BR>
+<BR>
+=== IsGUIRadioButtonSelected(real gui_radio_button_id) ===
+----
+Returns whether a GUI radiobutton is selected.
+====Parameters====
+   * _gui_radio_button_id_ - The ID of the GUI radiobutton.
+<BR>
+<BR>
+=== SetGUIRadioButtonGroupID(real gui_radio_button_id, real group_id) ===
+----
+Sets a GUI radiobutton's group ID.
+====Parameters====
+   * _gui_radio_button_id_ - The ID of the GUI radiobutton.
+   * _group_id_ - The group ID.
+<BR>
+<BR>
+=== GetGUIRadioButtonSelectedButtonInGroupID(real gui_radio_button_id) ===
+----
+returns a GUI radiobutton's group ID.
+====Parameters====
+   * _gui_radio_button_id_ - The ID of the GUI radiobutton.
+<BR>
+<BR>
+=== SetGUIRadioButtonEventCallback(real gui_radio_button_id, string event_name, real func) ===
+----
+Sets a GM script to be called when the specified GUI event is triggered.
+
+There are different types of events, and the arguments passed to the GM script depends on the event type. All event types pass the GUI radiobutotn that triggered the event as the first argument.
+====Parameters====
+   * _gui_radio_button_id_ - The ID of the GUI radiobutton.
+   * _event_ - The type of event to trap. Can be:
+      * _GUI_RADIOBUTTON_EVENT_SELECT_STATE_CHANGED_ - The selected state of the radiobutton has changed.
+   * _func_ - The GM script to execute when the event is triggered. 
+<BR>
