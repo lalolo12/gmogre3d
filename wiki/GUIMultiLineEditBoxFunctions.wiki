@@ -1,0 +1,34 @@
+#summary GUI MultiLine EditBox functions
+<BR>
+<BR>
+=== SetGUIMultiLineEditBoxMaxTextLength(double gui_edit_box_id, double max_length) ===
+----
+Sets the maximum number of characters in a GUI multiline editbox.
+====Parameters====
+   * _gui_edit_box_id_ - The ID of the GUI multiline editbox.
+   * _max_length_ - The max number of characters.
+<BR>
+<BR>
+=== EnableGUIMultiLineEditBoxReadOnly(double gui_edit_box_id, double enable) ===
+----
+Enable or disable whether a GUI multiline editbox is read-only.
+====Parameters====
+   * _gui_edit_box_id_ - The ID of the GUI multiline editbox.
+   * _enable_ - Whether to enable or disable read-only.
+<BR>
+<BR>
+=== EnableGUIMultiLineEditBoxWordWrapping(double gui_edit_box_id, double enable) ===
+----
+Enable or disable word wrapping in a GUI multiline editbox.
+====Parameters====
+   * _gui_edit_box_id_ - The ID of the GUI multiline editbox.
+   * _enable_ - Whether to enable or disable word wrapping.
+<BR>
+<BR>
+=== ShowGUIMultiLineEditBoxVertScrollbarAlways(double gui_edit_box_id, double show_always) ===
+----
+Shows or hides the vertical scrollbar in a GUI multiline editbox.
+====Parameters====
+   * _gui_edit_box_id_ - The ID of the GUI multiline editbox.
+   * _show_always_ - Whether to show the vertical scrollbar always or not.
+<BR>
