@@ -16,12 +16,14 @@ Destroys a GUI texture.
 <BR>
 <BR>
 === GetGUITextureWidth(real gui_texture_id) ===
+----
 Returns the width of a GUI texture.
 ====Parameters====
    * _gui_texture_id_ - The ID of the GUI texture.
 <BR>
 <BR>
 === GetGUITextureHeight(real gui_texture_id) ===
+----
 Returns the height of a GUI texture.
 ====Parameters====
    * _gui_texture_id_ - The ID of the GUI texture.
