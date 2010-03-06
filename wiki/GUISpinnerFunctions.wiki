@@ -17,6 +17,7 @@ Returns the current value of a GUI spinner.
 <BR>
 <BR>
 === SetGUISpinnerMaxValue(real gui_spinner_id, real value) ===
+----
 Sets the minimum value of a GUI spinner.
 ====Parameters====
    * _gui_spinner_id_ - The ID of the GUI spinner.
@@ -24,6 +25,7 @@ Sets the minimum value of a GUI spinner.
 <BR>
 <BR>
 === SetGUISpinnerMinValue(real gui_spinner_id, real value) ===
+----
 Sets the maximum value of a GUI spinner.
 ====Parameters====
    * _gui_spinner_id_ - The ID of the GUI spinner.
@@ -38,6 +40,7 @@ Sets the step size of a GUI spinner.
 <BR>
 <BR>
 === SetGUISpinnerTextInputMode(real gui_spinner_id, real type) ===
+----
 Sets the input mode for a GUI spinner.
 ====Parameters====
    * _gui_spinner_id_ - The ID of the GUI spinner.
@@ -48,7 +51,7 @@ Sets the input mode for a GUI spinner.
       * GUI_SPINNER_INPUT_OCTAL
 <BR>
 <BR>
-=== SetGUISpinnerEventCallback(real gui_spinner_id, string name, real func) ======
+=== SetGUISpinnerEventCallback(real gui_spinner_id, string name, real func) ===
 ----
 Sets a GM script to be called when the specified GUI event is triggered.
 
