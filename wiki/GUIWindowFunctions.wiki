@@ -205,28 +205,6 @@ Returns the ID of the child GUI window at the specified index.
    * _index_ - The index of the child window.
 <BR>
 <BR>
-=== SetGUIWindowHorizontalAlignment(real gui_window_id, real alignment) ===
-----
-Sets a GUI window's horizontal alignment.
-====Parameters====
-   * _gui_window_id_ - The ID of the GUI window.
-   * _alignment_ - The horizontal alignment. Can be:
-      * ALIGN_LEFT
-      * ALIGN_RIGHT
-      * ALIGN_CENTER
-<BR>
-<BR>
-=== SetGUIWindowVerticalAlignment(real gui_window_id, real alignment) ===
-----
-Sets a GUI window's vertical alignment.
-====Parameters====
-   * _gui_window_id_ - The ID of the GUI window.
-   * _alignment_ - The vertical alignment. Can be:
-      * ALIGN_BOTTOM
-      * ALIGN_TOP
-      * ALIGN_CENTER
-<BR>
-<BR>
 === ShowGUIWindow(real gui_window_id) ===
 ----
 Shows a GUI window.
