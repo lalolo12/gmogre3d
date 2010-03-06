@@ -19,7 +19,7 @@ Removes the specified window as a tab from a GUI tab control.
    * _gui_window_id_ - The ID of the window to remove as a tab.
 <BR>
 <BR>
-=== GetGUITabControlSelectedTab(real gui_tab_control_id, real value) ===
+=== GetGUITabControlSelectedTab(real gui_tab_control_id) ===
 Returns the ID of the GUI tab window that is currently selected in a GUI tab control.
 ====Parameters====
    * _gui_tab_control_id_ - The ID of the GUI tab control.
