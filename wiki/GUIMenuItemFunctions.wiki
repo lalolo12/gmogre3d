@@ -46,6 +46,5 @@ There are different types of events, and the arguments passed to the GM script d
    * _event_ - The type of event to trap. Can be:
       * _GUI_MENUITEM_EVENT_CLICKED_ - The menu item was clicked. 
    * _func_ - The GM script to execute when the event is triggered. 
-The menu item was clicked
 <BR>
 <BR>
