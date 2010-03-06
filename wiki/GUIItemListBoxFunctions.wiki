@@ -1,0 +1,90 @@
+#summary GUI ItemListBox functions.
+<BR>
+<BR>
+=== GetGUIItemListBoxSelectedCount(real gui_list_box_id) ===
+----
+Return the number of selected items in the GUI item listbox.
+====Parameters====
+   * _gui_list_box_id_ - The ID of the GUI item listbox.
+<BR>
+<BR>
+=== AddGUIItemListBoxItem(real gui_list_box_id, real gui_item_id) ===
+----
+Adds an item to a GUI item listbox.
+====Parameters====
+   * _gui_list_box_id_ - The ID of the GUI item listbox.
+   * _gui_item_id_ - The ID of the GUI item index to add.
+<BR>
+<BR>
+=== RemoveGUIItemListBoxItem(real gui_list_box_id, real gui_item_id) ===
+----
+Removes an item from a GUI item listbox.
+====Parameters====
+   * _gui_list_box_id_ - The ID of the GUI item listbox.
+   * _gui_item_id_ - The ID of the GUI item index to remove.
+<BR>
+<BR>
+=== GetGUIItemListBoxItemCount(real gui_list_box_id) ===
+----
+Returns the number of items in a GUI item listbox.
+====Parameters====
+   * _gui_list_box_id_ - The ID of the GUI item listbox.
+<BR>
+<BR>
+=== ClearGUIItemListBoxItems(real gui_list_box_id) ===
+----
+Removes all items from a GUI item listbox.
+====Parameters====
+   * _gui_list_box_id_ - The ID of the GUI item listbox.
+<BR>
+<BR>
+=== ClearGUIItemListBoxSelections(real gui_list_box_id) ===
+----
+Clears all selections from a GUI item listbox.
+====Parameters====
+   * _gui_list_box_id_ - The ID of the GUI item listbox.
+<BR>
+<BR>
+=== IsGUIItemListBoxItemSelected(real gui_list_box_id, real index) ===
+----
+Returns whether or not an item has been selected in a GUI item listbox.
+====Parameters====
+   * _gui_list_box_id_ - The ID of the GUI item listbox.
+   * _index_ - The index of the item.
+<BR>
+<BR>
+=== GetGUIItemListBoxFirstSelectedItem(real gui_list_box_id) ===
+----
+Returns the index of the first selected item in a GUI item listbox.
+====Parameters====
+   * _gui_list_box_id - The ID of the GUI item listbox.
+<BR>
+<BR>
+=== GetGUIItemListBoxNextSelectedItem(real gui_list_box_id, real index) ===
+----
+Returns the index of the next selected item in a GUI item listbox after the index given.
+====Parameters====
+   * _gui_list_box_id_ - The ID of the GUI item listbox.
+   * _index_ - The index to start the search from.
+<BR>
+<BR>
+=== SelectGUIItemListBoxItem(real gui_list_box_id, real index) ===
+----
+Selects the specified item in a GUI item listbox.
+====Parameters====
+   * _gui_list_box_id_ - The ID of the GUI item listbox.
+   * _index_ - The item to select.
+<BR>
+<BR>
+=== SetGUIItemListBoxEventCallback(real gui_list_box_id, string event, real func) ===
+----
+Sets a GM script to be called when the specified GUI event is triggered.
+
+There are different types of events, and the arguments passed to the GM script depends on the event type. All event types pass the GUI item listbox that triggered the event as the first argument.
+====Parameters====
+   * _gui_list_box_id_ - The ID of the GUI item listbox.
+   * _event_ - The type of event to trap. Can be:
+      * _GUI_ITEMLISTBOX_EVENT_SELECTION_CHANGED_ - There has been a change to the currently selected item(s).
+   * _func_ - The GM script to execute when the event is triggered. 
+<BR>
+<BR>
