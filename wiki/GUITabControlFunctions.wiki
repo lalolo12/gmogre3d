@@ -1,0 +1,53 @@
+#summary GUI TabControl functions
+<BR>
+<BR>
+=== AddGUITabControlTab(real gui_tab_control_id, real gui_window_id) ===
+----
+Add a new tab to a GUI tab control.
+
+The new tab will be added with the same text as the window passed in.
+====Parameters====
+   * _gui_tab_control_id_ - The ID of the GUI tab control.
+   * _gui_window_id_ - The ID of the window to add as a tab.
+<BR>
+<BR>
+=== RemoveGUITabControlTab(real gui_tab_control_id, real gui_window_id) ===
+----
+Removes the specified window as a tab from a GUI tab control.
+====Parameters====
+   * _gui_spinner_id_ - The ID of the GUI spinner.
+   * _gui_window_id_ - The ID of the window to remove as a tab.
+<BR>
+<BR>
+=== GetGUITabControlSelectedTab(real gui_spinner_id, real value) ===
+Returns the ID of the GUI tab window that is currently selected in a GUI tab control.
+====Parameters====
+   * _gui_tab_control_id_ - The ID of the GUI tab control.
+<BR>
+<BR>
+=== SetGUITabControlSelectedTab(real gui_tab_control_id, real gui_window_id) ===
+Sets the current tab in a GUI tab control to the GUI tab window passed.
+====Parameters====
+   * _gui_tab_control_id_ - The ID of the GUI tab control.
+   * _gui_window_id_ - The ID of the GUI tab window to select.
+<BR>
+<BR>
+=== SetGUISpinnerStepSize(real gui_spinner_id, real step) ===
+Sets the step size of a GUI spinner.
+====Parameters====
+   * _gui_tab_control_id_ - The ID of the GUI spinner.
+   * _step_ - The step size.
+<BR>
+<BR>
+=== SetGUITabControlEventCallback(real gui_tab_control_id, string name, real func) ======
+----
+Sets a GM script to be called when the specified GUI event is triggered.
+
+There are different types of events, and the arguments passed to the GM script depends on the event type. All event types pass the GUI that triggered the event as the first argument.
+====Parameters====
+    * _gui_tab_control_id_ - The ID of the GUI spinner.
+    * _event_ - The type of event to trap. Can be:
+          * GUI_TABCONTROL_EVENT_SELECTION_CHANGED - Triggered when there is a change to the currently selected tab.
+    * _func_ - The GM script to execute when the event is triggered.
+<BR>
+<BR>
