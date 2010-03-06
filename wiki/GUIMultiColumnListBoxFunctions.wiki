@@ -170,8 +170,7 @@ Sets the selection mode of a GUI multi-column listbox.
 Sets a GM script to be called when the specified GUI event is triggered.
 
 There are different types of events, and the arguments passed to the GM script depends on the event type. All event types pass the GUI listbox that triggered the event as the first argument.
-Parameters
-
+====Parameters====
     * _gui_list_box_id_ - The ID of the GUI multi-column listbox.
     * _event_ - The type of event to trap. Can be:
          * _GUI_MULTICOLUMN_LISTBOX_EVENT_SELECTION_CHANGED_ - There has been a change to the currently selected item(s). 
