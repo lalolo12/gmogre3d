@@ -79,6 +79,28 @@ Since GM cannot return 2 values in a single function call these coordinates are 
    * _gui_window_id_ - The ID of the GUI window.
 <BR>
 <BR>
+=== SetGUIWindowHorizontalAlignment(real gui_window_id, real alignment) ===
+----
+Sets the horizontal alignment of the GUI window.
+====Parameters====
+   * _gui_window_id_ - The ID of the GUI window.
+   * _alignment_ - The horizontal alignment. Can be:
+      * HA_CENTRE
+      * HA_RIGHT
+      * HA_LEFT
+<BR>
+<BR>
+=== SetGUIWindowVerticalAlignment(real gui_window_id, real alignment) ===
+----
+Sets the vertical alignment of the GUI window.
+====Parameters====
+   * _gui_window_id_ - The ID of the GUI window.
+   * _alignment_ - The vertical alignment. Can be:
+      * VA_BOTTOM
+      * VA_CENTRE
+      * VA_TOP
+<BR>
+<BR>
 === SetGUIWindowSize(real gui_window_id, real width, real height) ===
 ----
 Sets the size of the GUI window.
