@@ -233,3 +233,19 @@ Set the material name to use for rendering.
    * _material_name_ - The name of the material. 
 <BR>
 <BR>
+=== !AttachRibbonTrailToSceneNode(real ribbon_trail_id, real scene_node_id) ===
+----
+Attaches an entity to the specified !SceneNode.
+====Parameters====
+   * _ribbon_trail_id_ - The ID of the ribbon trail.
+   * _scene_node_id_ - The ID of the !SceneNode.
+<BR>
+<BR>
+=== !DetachRibbonTrailFromSceneNode(real ribbon_trail_id, real scene_node_id) ===
+----
+Detaches an entity from the specified !SceneNode.
+====Parameters====
+   * _ribbon_trail_id_ - The ID of the ribbon trail.
+   * _scene_node_id_ - The ID of the !SceneNode.
+<BR>
+<BR>
