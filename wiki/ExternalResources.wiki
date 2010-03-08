@@ -17,5 +17,6 @@ Below are links to various external resources.  These were all made for the OGRE
 <BR>
 = Content Creation Tools =
    * [http://www.ogre3d.org/wiki/index.php/OGRE_DCC_Tools Digital Content Creation Tools] - Various tools that, simulating the OGRE environment, help artists test or create new content. These tools are mainly provided by active OGRE community.
+<BR>
 = GUI Layout Editor=
    * [http://www.cegui.org.uk/wiki/index.php/CELayoutEditor_Downloads_0.7.1 CEGUI Layout Editor] - The GUI system that GMOgr3D uses behind the scenes is the [http://www.cegui.org.uk/wiki/index.php/Main_Page Crazy Eddie's GUI System]. The CEGUI Layout Editor is a WYSIWYG editor to create and modify your GUI screens.
