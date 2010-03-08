@@ -16,6 +16,7 @@
     * [HowToCreateMaterialShader How To Create a Material Shader]
     * [HowToUseBumpMapping How To Use Bump Mapping]
     * [HowToSelectObjects How To Select Objects]
+    * [HowToUseTransparentMaterials How To Use Transparent Materials]
   * [Scripts Scripts]
     * [MaterialScripts Materials]
       * [MaterialTechniqueScripts Techniques]
