@@ -1,4 +1,4 @@
-#summary Enter description here
+#summary Euler functions
 <BR>
 === !GetRotationTo(real fromx, real fromy, real fromz, real tox, real toy, real toz) ===
 ----
