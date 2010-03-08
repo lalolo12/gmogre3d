@@ -43,6 +43,7 @@
       * [BillboardFunctions Billboard]
         * [BillboardChainFunctions Billboard Chain]
         * [BillboardSetFunctions Billboard Set]
+        * [RibbonTrailFunctions Ribbon Trail]
       * [EntityFunctions Entity]
         * [SubEntityFunctions Sub Entity]
       * [LightFunctions Light]
@@ -70,6 +71,7 @@
         * [CompositionTechniqueFunctions Composition Technique]
       * [ParticleSystemFunctions Particle System]
         * [ParticleEmitterFunctions Particle Emitter]
+      * [GPUProgramParameterFunctions GPU Program Parameter]
     * Math
       * [EulerFunctions Euler]
       * [VectorFunctions Vector]
@@ -91,6 +93,7 @@
         * [GrassLayerFunctions Grass Layer]
         * [TreeLoader2DFunctions Tree Loader 2D]
         * [TreeLoader3DFunctions Tree Loader 3D]
+      * [PSSMShadowCameraSetupFunctions PSSM Shadow Camera Setup]
       * [SceneManagerFunctions Scene Manager]
       * [SceneNodeFunctions Scene Node]
       * [SkyXFunctions SkyX]
