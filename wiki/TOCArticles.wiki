@@ -75,6 +75,7 @@
     * Math
       * [EulerFunctions Euler]
       * [VectorFunctions Vector]
+      * [MatrixFunctions Matrix]
     * Scene, Terrain, & Environment
       * [CameraFunctions Camera]
       * [CSSFunctions Camera Control System]
