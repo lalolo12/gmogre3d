@@ -136,6 +136,15 @@ Returns whether objects using this material will receive shadows.
    * _name_ - The unique name of the resource.
 <BR>
 <BR>
+=== !EnableMaterialTransparencyCastsShadows(real enabled) ===
+----
+Sets whether objects using this material be classified as opaque to the shadow caster system.
+
+Allows a material to cast a shadow, even if it is transparent. By default, transparent materials neither cast nor receive shadows. Shadows will not be cast on any objects unless the scene is set up to support shadows.
+====Parameters====
+   * _enabled_ - Whether to enable or disable casting of shadows for transparent materials.
+<BR>
+<BR>
 === SetMaterialLODLevels(string name, real lod1, real lod2, real lod3, real lod4, real lod5, real lod6, real lod7, real lod8, real lod9, real lod10, real lod11, real lod12) ===
 ----
 Sets the distance at which level-of-detail (LOD) levels come into effect.
@@ -192,5 +201,16 @@ Sets the default anisotropy level to be used for loaded textures, for when textu
 The default value is 1 (no anisotropy). 
 ====Parameters====
    * _max_level_ - The maximum anisotropy level. This should be between 2 and the maximum supported by the hardware.
+<BR>
+<BR>
+=== !SetDefaultMaterialSchemeNotFoundCallback(real func) ===
+----
+Sets a GM script function to be called whenever a material scheme cannot be found.
+
+The callback script will pass the scheme index as the first argument, the scheme name as the second argument, the material ID as the third parameter, and finally the LOD index as the fourth parameter.
+
+The script must pass back the technique to use. Return 0 to not use a technique.
+====Parameters====
+   * _func_ - The GM script function to call.
 <BR>
 <BR>

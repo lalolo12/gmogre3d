@@ -8,6 +8,16 @@ Billboards have their geometry generated every frame depending on where the came
 Billboards are just the mechanism for rendering a range of effects such as particles. It is other classes which use billboards to create their individual effects, so the methods here are quite generic. 
 <BR>
 <BR>
+=== !SetBillboardRotation(real billboard_id, real degrees) ===
+----
+Sets the rotation of a billboard.
+
+This rotation is relative to the center of the billboard.
+====Parameters====
+    * _billboard_id_ - The ID of the billboard.
+    * _degrees_ - The number of degrees to rotate the billboard.
+<BR>
+<BR>
 === !SetBillboardPosition(real billboard_id, real x, real y, real z) ===
 ----
 Sets the position of a billboard.

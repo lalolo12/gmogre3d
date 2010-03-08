@@ -190,6 +190,48 @@ This method is applicable for both the fixed-function and programmable pipelines
       * _SBT_REPLACE_ - The default blend mode where source replaces destination.
 <BR>
 <BR>
+=== !GetPassVertexProgramParameters(real pass_id) ===
+----
+Returns the vertex program parameters used by a pass.
+====Parameters====
+   * _pass_id_ - The ID of the pass.
+<BR>
+<BR>
+=== !GetPassShadowCasterVertexProgramParameters(real pass_id) ===
+----
+Returns the vertex program parameters used by a pass when rendering shadow casters. 
+====Parameters====
+   * _pass_id_ - The ID of the pass.
+<BR>
+<BR>
+=== !GetPassShadowReceiverVertexProgramParameters(real pass_id) ===
+----
+Returns the vertex program parameters used by a pass when rendering shadow receivers.
+====Parameters====
+   * _pass_id_ - The ID of the pass.
+<BR>
+<BR>
+=== !GetPassShadowReceiverFragmentProgramParameters(real pass_id) ===
+----
+Returns the fragment program parameters used by a pass when rendering shadow receivers.
+====Parameters====
+   * _pass_id_ - The ID of the pass.
+<BR>
+<BR>
+=== !GetPassFragmentProgramParameters(real pass_id) ===
+----
+Returns the fragment program parameters used by a pass.
+====Parameters====
+   * _pass_id_ - The ID of the pass.
+<BR>
+<BR>
+=== !GetPassGeometryProgramParameters(real pass_id) ===
+----
+Returns the geometry program parameters used by a pass.
+====Parameters====
+   * _pass_id_ - The ID of the pass.
+<BR>
+<BR>
 === !CreatePassTextureUnitState(real pass_id) ===
 ----
 Creates a new !TextureUnitState object, adds it into the Pass, and returns the ID.

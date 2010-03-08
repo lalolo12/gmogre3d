@@ -69,6 +69,13 @@ Light attenuation is not applicable to directional lights since they have an inf
    * _quadratic_ - The quadratic factor in the attenuation formula: adds a curvature to the attenuation formula. 
 <BR>
 <BR>
+=== !GetLightAttenuationRange(real light_id) ===
+----
+Returns the absolute upper range of a light.
+====Parameters====
+   * _light_id_ - The ID of the light.
+<BR>
+<BR>
 === !SetLightDiffuseColor(real light_id, real color) ===
 ----
 Sets the color of the diffuse light given off by this source.

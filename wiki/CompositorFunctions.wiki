@@ -62,6 +62,28 @@ Disabling a compositor stops it from rendering but does not free any resources. 
    * _enable_ - Whether to enable or disable the compositor.
 <BR>
 <BR>
+=== !SetCompositorMaterialSetupCallback(string name, real func) ===
+----
+Sets a GM callback script to be executed when a compositor material setup occurs.
+
+The first argument passed when calling the GM callback script is the ID of the pass. The ID is a user-specified identifier set using the SetCompositionPassIdentifier() function. The second parameter is the name of the material.
+====Parameters====
+   * _name_ - The unique name of the compositor resource. 
+   * _func_ - The GM callback function.
+<BR>
+<BR>
+=== !SetCompositorMaterialRenderCallback(string name, real func) ===
+----
+Sets a GM callback script to be executed when a compositor material render occurs.
+
+The first argument passed when calling the GM callback script is the ID of the pass. The ID is a
+user-specified identifier set using the SetCompositionPassIdentifier() function. The second parameter
+is the name of the material.
+====Parameters====
+   * _name_ - The unique name of the compositor resource. 
+   * _func_ - The GM callback function.
+<BR>
+<BR>
 === !CreateCompositorTechnique(string name) ===
 ----
 Create a new composition technique, and return it's ID.

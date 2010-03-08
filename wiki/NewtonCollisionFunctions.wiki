@@ -104,6 +104,20 @@ Tree collision objects have a requirement that their mass must = 0 (aka are have
       * _FW_REVERSE_ - Reverses face winding.
 <BR>
 <BR>
+=== !CreateNewtonTreeCollisionFromTerrain(real newton_world_id, string terrain, real optimize, real id) ===
+----
+Creates a tree collision object that "wraps" around the specified terrain.
+
+Note calling this function to generate a Newton collision from a OGRE heightmap is an extremely long process, taking at least a few minutes to complete, and sometimes much longer. For that reason it is recommended you use this function to generate the your collision then use the !ExportNewtonCollisionToFile() function to save your collision to a file. From then on you can simply load the terrain collision file using the CreateNewtonCollisionFromFile() function.
+
+Tree collision objects have a requirement that their mass must = 0 (aka are have infinite mass). They are useful for static geometry.
+====Parameters====
+   * _newton_world_id_ - The ID of the Newton world.
+   * _terrain_ - The terrain filename to use.
+   * _optimize_ - When optimization is enabled it will attempt to combine polygons when possible.
+   * _id_ - Optional application specific ID of the collision object.
+<BR>
+<BR>
 === !CreateNewtonCollisionFromFile(real newton_world_id, string filename) ===
 ----
 creates a collision object from a previously saved collision file. This is useful when you need to use the Tree Collision or Convex Hull collision objects and do not want to dynamically create them due to speed concerns.

@@ -176,6 +176,30 @@ This applies for both the fixed-function and programmable pipelines.
    * _color_ - The border color.
 <BR>
 <BR>
+=== !SetTextureUnitStateTextureScroll(real texture_unit_id, real uscroll, real vscroll) ===
+----
+Sets the translation offset of the texture, ie scrolls the texture. 
+====Parameters====
+   * _texture_unit_id_ - The ID of the texture unit state object.
+   * _uscroll_, _vscroll_ - The amount the texture should be moved horizontally and vertically.
+<BR>
+<BR>
+=== !SetTextureUnitStateTextureScale(real texture_unit_id, real uscale, real vscale) ===
+----
+Sets the scaling factor applied to texture coordinates.
+====Parameters====
+   * _texture_unit_id_ - The ID of the texture unit state object.
+   * _uscale_, _vscale_ - The amount the texture should be scaled horizontally and vertically.
+<BR>
+<BR>
+=== !SetTextureUnitStateTextureRotate(real texture_unit_id, real degrees) ===
+----
+Sets the anticlockwise rotation factor applied to texture coordinates.
+====Parameters====
+   * _texture_unit_id_ - The ID of the texture unit state object.
+   * _degrees_ - The amount of degrees to rotate the texture.
+<BR>
+<BR>
 === !SetTextureUnitStateTextureFiltering(real texture_unit_id, real type) ===
 ----
 Set the texture filtering for this unit, using the simplified interface.

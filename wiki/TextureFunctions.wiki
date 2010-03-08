@@ -90,6 +90,14 @@ This function creates a new viewport on the specified texture.  It's used for re
    * _name_ - The unique name of the texture.
 <BR>
 <BR>
+=== !GetTextureViewport(string name, real index) ===
+----
+This function retrieves a viewport in the specified texture.
+====Parameters====
+   * _name_ - The unique name of the texture. 
+   * _index_ - The viewport index to retrieve.
+<BR>
+<BR>
 === !GetTextureWidth(string name) ===
 ----
 Returns the width of the texture. 

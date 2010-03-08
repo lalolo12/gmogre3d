@@ -92,6 +92,17 @@ Note that like rotations, scalings are oriented around the node's origin.
    * _x_, _y_, _z_ - The local coordinates of the scene node.
 <BR>
 <BR>
+=== !GetSceneNodeDerivedScale(real scene_node_id) ===
+----
+Retrieves the world scaling factor applied to a scene node.
+
+Child scene nodes scale is relative to their parent's scale. Calling this function allows one to set the scale based on world and not parent's scale.
+
+Since GM cannot return 3 values in a single function call these factors are stored in temporary variables and can be retrieved by calling the GetX, GetY, and GetZ functions.
+====Parameters====
+    * _scene_node_id_ - The ID of the scene node. 
+<BR>
+<BR>
 === !GetSceneNodeScale(real scene_node_id) ===
 ----
 Retrieves the scaling factor applied to a scene node.
@@ -99,6 +110,16 @@ Retrieves the scaling factor applied to a scene node.
 Since GM cannot return 3 values in a single function call these factors are stored in temporary variables and can be retrieved by calling the GetX, GetY, and GetZ functions.
 ====Parameters====
    * _scene_node_id_ - The ID of the scene node.
+<BR>
+<BR>
+=== !SetSceneNodeDerivedPosition(real scene_node_id, real x, real y, real z) ===
+----
+Sets a scene node's position, relative to it's parent.
+
+Child scene node's position is relative to their parent's position. Calling this function allows one to set the position based on world and not parent's position.
+====Parameters====
+   * _scene_node_id_ - The ID of the scene node.
+   * _x_, _y_, _z_ - The world coordinates of the scene node.
 <BR>
 <BR>
 === !SetSceneNodePosition(real scene_node_id, real x, real y, real z) ===
@@ -345,6 +366,19 @@ You never need to call this function unless you plan to animate this node. If yo
 If you never call this function, the initial state is the identity transform, ie do nothing. 
 ====Parameters====
    * _scene_node_id_ - The ID of the scene node.
+<BR>
+<BR>
+=== !EnableSceneNodeAutoTracking(real scene_node_id, real enable, real target_scene_node_id, real x, real y, real z) ===
+----
+Enables or disables automatic tracking of a scene node.
+
+If you enable auto-tracking, this scene node will automatically rotate to look at the target scene node every frame, no matter how it or the
+target scene node moves. This is handy if you want a scene node to be focused on a single object or group of objects. Note that by default a scene node looks at the origin of the target scene node. If you want to tweak this, e.g. if the object which is attached to this target node is quite big and you want to point the scene node at a specific point on it, provide a vector in the 'offset' parameter and the scene node's target point will be adjusted.
+====Parameters====
+   * _scene_node_id_ - The ID of the scene node.
+   * _enabled_ - If true, the Camera will track the SceneNode supplied as the next parameter (cannot be null). If false the camera will cease tracking and will remain in it's current orientation.
+   * _target_scene_node_id_ - If supplied, the scene node to track. Make sure you don't delete this scene node before turning off tracking (e.g. ClearScene will delete it so be careful of this). Can be      left out if the enable param is false.
+   * _x_, _y_, _z_ - If supplied, the scene node targets this point in local space of the target node instead of the origin of the target node. Good for fine tuning the look at point. 
 <BR>
 <BR>
 === !ShowSceneNode(real scene_node_id) ===

@@ -241,6 +241,44 @@ Rendering back faces rather than front faces into a shadow texture can help mini
    * _enable_ - Whether or not shadow casters should be rendered into shadow textures using back faces.
 <BR>
 <BR>
+=== !SetShadowDirLightTextureOffset(real offset) ===
+----
+Sets the proportional distance which a texture shadow which is generated from a directional light will be offset into the camera view to make best use of texture space.
+
+When generating a shadow texture from a directional light, an approximation is used since it is not possible to render the entire scene to one texture. The texture is projected onto an area centred on the camera, and is the shadow far distance * 2 in length (it is square). This wastes a lot of texture space outside the frustum though, so this offset allows you to move the texture in front of the camera more. However, be aware that this can cause a little shadow 'jittering' during rotation, and that if you move it too far then you'll start to get artefacts close to the camera. The value is represented as a proportion of the shadow far distance, and the default is 0.6.
+====Parameters====
+   * _offset_ - The texture offset.
+<BR>
+<BR>
+=== !SetShadowDirLightTextureOffset(real shadow_index) ===
+----
+Get a reference to the shadow texture currently in use at the given index.
+
+If you change shadow settings, this reference may no longer be correct, so be sure not to hold the returned reference over texture shadow configuration changes. 
+====Parameters====
+    * _shadow_index_ - The index of the shadow texture.
+<BR>
+<BR>
+=== !SetShadowTextureCasterPreViewProjCallback(real func) ===
+----
+This event occurs just before the view & projection matrices are set for rendering into a shadow texture.
+
+You can use this event hook to perform some custom processing, such as altering the camera being used for rendering the light's view, including setting custom view & projection matrices if you want to perform an advanced shadow technique. 
+
+When the GM callback script is executed, the light for which shadows are being rendered is passed as argument0, the camera being used to render as argument1, andfor lights that use multipel shadow textures, the iteration number as argument2.
+
+Note that this event will only be fired when texture shadows are in use. 
+====Parameters====
+    * _func_ - The GM function script to call when this event is triggered.
+<BR>
+<BR>
+=== !SetShadowCameraSetup(real pssm_shadow_camera_setup_id) ===
+----
+Set the shadow camera setup to use for all lights which don't have their own shadow camera setup.
+====Parameters====
+   * _pssm_shadow_camera_setup_id_ - The ID of the PSSMShadowCameraSetup object.
+<BR>
+<BR>
 === !SetFog(real type, real color, real density, real start, real end) ===
 ----
 Sets the fogging mode applied to the scene. This method sets up the scene-wide fogging effect. These settings apply to all geometry rendered, UNLESS the material with which it is rendered has it's own fog settings.
@@ -311,6 +349,12 @@ By default the ambient light in the scene is c_black, i.e. no ambient light. Thi
    * _color_ - The color to use for ambient lighting.
 <BR>
 <BR>
+=== !RenderFrame() ===
+----
+Renders a single frame.  This should be called every frame.
+<BR>
+<BR>
+<BR>
 === !SetStartFrameCallback(real func) ===
 ----
 Sets a GM script callback function to be called just before a GMOgre3D frame will be drawn.
@@ -322,10 +366,15 @@ When this GM script function is called the first, and only, parameter is the amo
     * _func_ - The GM script function to call. 
 <BR>
 <BR>
-=== !RenderFrame() ===
+=== !SetFrameQueuedCallback(real func) ===
 ----
-Renders a single frame.  This should be called every frame.
-<BR>
+Sets a GM script callback function to be called after all render targets have had their rendering commands issued, but before render windows have been asked to flip their buffers over.
+
+The usefulness of this event comes from the fact that rendering commands are queued for the GPU to process. These can take a little while to finish, and so while that is happening the CPU can be doing useful things. Once the request to 'flip buffers' happens, the thread requesting it will block until the GPU is ready, which can waste CPU cycles. Therefore, it is often a good idea to use this callback to perform per-frame processing. Of course because the frame's rendering commands have already been issued, any changes you make will only take effect from the next frame, but in most cases that's not noticeable. 
+
+When this GM script function is called the first, and only, parameter is the amount of time, in seconds, that has passed since the last GMOgre3D frame was drawn.
+====Parameters====
+   * _func_ - The GM script function to call. 
 <BR>
 <BR>
 === !SetEndFrameCallback(real func) ===
