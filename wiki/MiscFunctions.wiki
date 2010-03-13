@@ -39,6 +39,21 @@ Takes a snapshot of the current screen and saves to the specified filename.
    * _filename_ - The filename to save the screenshot to.
 <BR>
 <BR>
+=== !SetRotationMode(real mode) ===
+----
+Sets the type of rotation matrix to use.
+
+By default XYZ_ROTATION used.
+====Parameters====
+   * _mode_ - The type of rotation matrix to use. Can be:
+      * XYZ_ROTATION
+      * XZY_ROTATION
+      * ZXY_ROTATION
+      * ZYX_ROTATION
+      * YZX_ROTATION
+      * YXZ_ROTATION
+<BR>
+<BR>
 === !DoesRendererSupport(real capability) ===
 Queries the renderer on whether it supports a particular capability.
 ====Parameters====
