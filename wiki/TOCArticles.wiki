@@ -49,6 +49,7 @@
       * [LightFunctions Light]
       * [ManualObjectFunctions Manual Object]
       * [MovableObjectFunctions Movable Object]
+      * [MeshFunctions Mesh]
       * [PlaneFunctions Plane]
     * Physics & Collisions
       * [CollisionFunctions Basic Collision]
