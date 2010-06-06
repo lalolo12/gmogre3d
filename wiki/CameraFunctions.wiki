@@ -323,3 +323,23 @@ Detaches a camera from a !SceneNode.
    * _scene_node_id_ - The ID of the scene node to detach the camera from.
 <BR>
 <BR>
+=== !AttachCameraToEntityBone(real camera_id, real entity_id, bone_name, offset_x, offset_y, offset_z) ===
+----
+Attaches a camera to a certain bone of the skeleton which the specified entity uses.
+
+As the entity is animated, the attached object will move relative to the bone to which it is attached. 
+====Parameters====
+   * _camera_id_ - The ID of the camera.
+   * _entity_id_ - The ID of the entity to attach the camera to. 
+   * _bone_name_ - The name of the bone (in the skeleton) to attach the camera to.
+   * _offset_x_, _offset_y_, _offset_z_ - Optional position offset, relative to the bone.
+   * _offset_yaw_, _offset_pitch_, _offset_roll_ - Optional orientation offset, relative to the bone.
+<BR>
+<BR>
+=== !DetachCameraFromEntityBone(real camera_id, real entity_id) ===
+----
+Detaches a camera from an entity bone.
+====Parameters====
+   * _camera_id_ - The ID of the camera.
+   * _entity_id_ - The ID of the entity to detach the camera from. 
+<BR>

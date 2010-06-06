@@ -12,7 +12,7 @@ AddResourceLocation("./media/packs/SkyBox.zip", LOC_ZIP);
 AddResourceLocation("./media/materials/programs", LOC_FILESYSTEM);
 AddResourceLocation("./media/materials/scripts", LOC_FILESYSTEM);
 AddResourceLocation("./media/materials/textures", LOC_FILESYSTEM);
-AddResourceLocation("./media/terrains", LOC_FILESYSTEM);
+AddResourceLocation("./media/terrain", LOC_FILESYSTEM);
 AddResourceLocation("./media/models", LOC_FILESYSTEM);
 InitializeAllResourceGroups();
 

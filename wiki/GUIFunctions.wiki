@@ -36,6 +36,16 @@ Set the active GUI sheet (root) window.
    * _gui_sheet_id_ - The ID of the root window.
 <BR>
 <BR>
+=== !CreateGUITrueTypeFont(string name, string filename, real size, real anti_aliased) ===
+----
+Creates a new true type GUI font.
+====Parameters====
+   * _name_ - The name of the new GUI font.
+   * _filename_ - The filename of the true type font.
+   * _size_ - The size of the font.
+   * _anti_aliased_ - Whether to anti-alias the font.
+<BR>
+<BR>
 === CreateGUIFont(string filename) ===
 ----
 Creates a new CEGUI font.

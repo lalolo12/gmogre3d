@@ -207,7 +207,7 @@ You can call this method multiple times between position() calls to add multiple
    * _x_, _y_, _z_, _w_ - The texture coord.
 <BR>
 <BR>
-=== !AddManualObjectColor(real manual_obj_id, real color, real alpha) ===
+=== !ManualObjectColor(real manual_obj_id, real color, real alpha) ===
 ----
 Add a vertex color to a vertex.
 ====Parameters====
@@ -295,6 +295,27 @@ Detaches a manual object from the specified !SceneNode.
 ====Parameters====
    * _manual_obj_id_ - The ID of the manual object.
    * _scene_node_id_ - The ID of the !SceneNode.
+<BR>
+<BR>
+=== !AttachManualObjectToEntityBone(real manual_obj_id, real entity_id, bone_name, offset_x, offset_y, offset_z) ===
+----
+Attaches a manual object to a certain bone of the skeleton which the specified entity uses.
+
+As the entity is animated, the attached object will move relative to the bone to which it is attached. 
+====Parameters====
+   * _manual_obj_id_ - The ID of the manual object.
+   * _entity_id_ - The ID of the entity to attach the manual object to. 
+   * _bone_name_ - The name of the bone (in the skeleton) to attach the manual object to.
+   * _offset_x_, _offset_y_, _offset_z_ - Optional position offset, relative to the bone.
+   * _offset_yaw_, _offset_pitch_, _offset_roll_ - Optional orientation offset, relative to the bone.
+<BR>
+<BR>
+=== !DetachManualObjectFromEntityBone(real light_id, real entity_id) ===
+----
+Detaches a manual object from an entity bone.
+====Parameters====
+   * _manual_obj_id_ - The ID of the manual object.
+   * _entity_id_ - The ID of the entity to detach the manual object from. 
 <BR>
 <BR>
 === !ConvertManualObjectToMesh(real manual_obj_id, string name, string group) ===

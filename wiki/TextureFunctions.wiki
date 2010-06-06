@@ -83,6 +83,22 @@ Unloads a single texture resource.
    * _name_ - The unique name of the texture.
 <BR>
 <BR>
+=== !CopyTexture(string source_name, string dest_name) ===
+----
+Copies the contents from one texture to another.
+====Parameters====
+   * _source_name_ - The unique name of the source texture.
+   * _dest_name_ - The unique name of the destination texture.
+<BR>
+<BR>
+=== !SaveTextureToFile(string name, string filename) ===
+----
+Saves a texture to a file.
+====Parameters====
+   * _name_ - The unique name of the texture.
+   * _filename_ - The filename to save the texture to.
+<BR>
+<BR>
 === !CreateTextureViewport(string name) ===
 ----
 This function creates a new viewport on the specified texture.  It's used for rendering to textures (RTT).
@@ -120,5 +136,22 @@ This option will be ignored if TU_RENDERTARGET is not part of the usage options 
 ====Parameters====
    * _name_ - The unique name of the texture.
    * _fsaa_ - The level of multisample AA.
+<BR>
+<BR>
+=== !WriteTextToTexture(string name, string text, real left, real top, real right, real bottom, string font_name, real color, real alpha, real justify, real wordwrap) ===
+----
+Writes text directly to a texture.
+====Parameters====
+   * _name_ - The unique name of the texture.
+   * _text_ - The text to draw.
+   * _left_, _top_, _right_, _bottom_ - The box for the text to be confined to.
+   * _font_name_ - Font name to use for the text.
+   * _color_ - Color of the text.
+   * _alpha_ - Optional alpha transparency.
+   * _justify_ - Optional text justification. Can be:
+      * ALIGN_LEFT
+      * ALIGN_RIGHT
+      * ALIGN_CENTER
+   * _wordwrap_ - Optionally wordwrap text if needed.
 <BR>
 <BR>

@@ -11,6 +11,15 @@ Note that you must include the !OgreCore.zip file in your resources in order to 
    * _enable_ - Whether to enable or disable FPS.
 <BR>
 <BR>
+=== !EnableRenderWindow(real enable) ===
+----
+Enables or disables rendering window.
+
+Disabling the rendering window is useful if you wish to let GM have temporary access to the render window in order to draw in 2D.
+====Parameters====
+   * _enable_ - Whether to enable or disable the rendering window. 
+<BR>
+<BR>
 === !SetLoggingLevel(real type) ===
 ----
 Sets the logging level of GMOgre messages to the GMOgre3D.log file.

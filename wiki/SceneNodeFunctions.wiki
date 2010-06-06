@@ -278,6 +278,16 @@ Since GM cannot return 3 values in a single function call these coordinates are 
    * _scene_node_id_ - The ID of the scene node.
 <BR>
 <BR>
+=== !GetSceneNodeDerivedOrientation(real scene_node_id) ===
+----
+Retrieves the orientation of a scene node in world space. Useful with child scene nodes.
+
+Since GM cannot return 3 values in a single function call these coordinates are stored in temporary
+variables and can be retrieved by calling the GetYaw(), GetPitch(), and GetRoll() functions.
+====Parameters====
+   * _scene_node_id_ - The ID of the scene node. 
+<BR>
+<BR>
 === !YawSceneNode(real scene_node_id, real degrees, real relative_type) ===
 ----
 Rotate the node around the Z-axis.

@@ -233,6 +233,20 @@ Set the material name to use for rendering.
    * _material_name_ - The name of the material. 
 <BR>
 <BR>
+=== !ShowRibbonTrail(real ribbon_trail_id) ===
+----
+Makes the ribbon trail visible.
+====Parameters====
+   * _ribbon_trail_id_ - The ID of the ribbon trail.
+<BR>
+<BR>
+=== !HideRibbonTrail(real ribbon_trail_id) ===
+----
+Makes the ribbon trail invisible.
+====Parameters====
+   * _ribbon_trail_id_ - The ID of the ribbon trail.
+<BR>
+<BR>
 === !AttachRibbonTrailToSceneNode(real ribbon_trail_id, real scene_node_id) ===
 ----
 Attaches an entity to the specified !SceneNode.
@@ -248,4 +262,24 @@ Detaches an entity from the specified !SceneNode.
    * _ribbon_trail_id_ - The ID of the ribbon trail.
    * _scene_node_id_ - The ID of the !SceneNode.
 <BR>
+<BR>
+=== !AttachRibbonTrailToEntityBone(real ribbon_trail_id, real entity_id, bone_name, offset_x, offset_y, offset_z) ===
+----
+Attaches a ribbon trail to a certain bone of the skeleton which the specified entity uses.
+
+As the entity is animated, the attached object will move relative to the bone to which it is attached. 
+====Parameters====
+   * _ribbon_trail_id_ - The ID of the ribbon trail.
+   * _entity_id_ - The ID of the entity to attach the ribbon trail to. 
+   * _bone_name_ - The name of the bone (in the skeleton) to attach the ribbon trail to.
+   * _offset_x_, _offset_y_, _offset_z_ - Optional position offset, relative to the bone.
+   * _offset_yaw_, _offset_pitch_, _offset_roll_ - Optional orientation offset, relative to the bone.
+<BR>
+<BR>
+=== !DetachRibbonTrailFromEntityBone(real ribbon_trail_id, real entity_id) ===
+----
+Detaches a ribbon trail from an entity bone.
+====Parameters====
+   * _ribbon_trail_id_ - The ID of the ribbon trail.
+   * _entity_id_ - The ID of the entity to detach the ribbon trail from. 
 <BR>

@@ -82,6 +82,36 @@ The prerequisites for calling this method include that the vertex data used by e
    * _split_rotated_ - Optionally split vertices when a rotated tangent space is detected. Default is false.
 <BR>
 <BR>
+=== !GenerateMeshLODLevels(string mesh_name, real reduction_method, real reduction_value, real lod_distance1, real lod_distance2, real lod_distance3, real lod_distance4, real lod_distance5, real lod_distance6, real lod_distance7, real lod_distance8, real lod_distance9, real lod_distance10) ===
+----
+Automatically generates lower level of detail versions of a mesh for use when a simpler version of
+the model is acceptable for rendering.
+
+There are 2 ways that you can create level-of-detail (LOD) versions of a mesh; the first is to call this function, which does fairly extensive calculations to work out how to simplify the mesh whilst having the minimum affect on the model. The alternative is to actually create simpler versions of the mesh yourself in a modelling tool, and having exported them, tell the 'master' mesh to use these alternative meshes for lower detail versions; this is done by calling the !CreateMeshManualLODLevel() function.
+
+As well as creating the lower detail versions of the mesh, this method will also associate them with depth values. As soon as an object is at least as far away from the camera as the depth value associated with it's LOD, it will drop to that level of detail. 
+
+I recommend calling this method before mesh export, not at runtime.
+====Parameters====
+   * _mesh_name_ - The name of the mesh resource.
+   * _reduction_method_ - The way to determine the number of vertices collapsed per LOD. Can be:
+      * _VRQ_CONSTANT_ - A set number of vertices are removed at each reduction.
+      * _VRQ_PROPORTIONAL_ - A proportion of the remaining number of vertices are removed at each reduction. 
+   * _reduction_value_ - Meaning depends on reduction_method, typically either the proportion of remaining vertices to collapse or a fixed number of vertices. 
+   * _lod_distance1_ - _lod_distance10_ - Optional distances from which the generated LODs will apply.
+<BR>
+<BR>
+=== !CreateMeshManualLODLevel(string mesh_name, real lod_distance, string load_mesh_filename) ===
+----
+Adds a new manual level-of-detail entry to this Mesh.
+
+As an alternative to generating lower level of detail versions of a mesh, you can use your own manually modelled meshes as lower level versions. This lets you have complete control over the LOD, and in addition lets you scale down other aspects of the model which cannot be done using the generated method; for example, you could use less detailed materials and / or use less bones in the skeleton if this is an animated mesh. Therefore for complex models you are likely to be better off modelling your LODs yourself and using this method, whilst for models with fairly simple materials and no animation you can just use the !GenerateMeshLODLevels() function. 
+====Parameters====
+   * _mesh_name_ - The name of the mesh resource.
+   * _lod_distance_ - The distance from which this LOD will apply.
+   * _load_mesh_filename_ - The name of the .mesh file to use for the LOD distance.
+<BR>
+<BR>
 === !ExportMeshToFile(string mesh_name, string filename) ===
 ----
 Exports a mesh to a file.

@@ -4,7 +4,7 @@
 Note that since !TextOverlayElement is derived from !OverlayElement all !OverlayElement functions can be used with a !TextOverlayElement object. The functions below, however, are specific to !TextOverlayElements. 
 <BR>
 <BR>
-=== !SetTextOverlayElementTopColor(real text_overlay_elem_id, real color, real alpha) ===
+=== !SetTextOverlayElementTopTextColor(real text_overlay_elem_id, real color, real alpha) ===
 ----
 Sets the color of the top of the letters.
 
@@ -15,7 +15,7 @@ By setting a separate top and bottom color, you can create a text area which has
    * _alpha_ - The alpha transparency of the text.
 <BR>
 <BR>
-=== !SetTextOverlayElementBottomColor(real ta_overlay_elem_id, real color, real alpha) ===
+=== !SetTextOverlayElementBottomTextColor(real ta_overlay_elem_id, real color, real alpha) ===
 ----
 Sets the color of the bottom of the letters.
 

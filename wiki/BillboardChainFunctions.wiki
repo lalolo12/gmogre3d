@@ -160,6 +160,27 @@ Detaches an billboard chain from the specified !SceneNode.
    * _scene_node_id_ - The ID of the !SceneNode.
 <BR>
 <BR>
+=== !AttachBillboardChainToEntityBone(real billboard_chain_id, real entity_id, bone_name, offset_x, offset_y, offset_z) ===
+----
+Attaches a billboard chain to a certain bone of the skeleton which the specified entity uses.
+
+As the entity is animated, the attached object will move relative to the bone to which it is attached. 
+====Parameters====
+   * _billboard_chain_id_ - The ID of the billboard chain.
+   * _entity_id_ - The ID of the entity to attach the billboard chain to. 
+   * _bone_name_ - The name of the bone (in the skeleton) to attach the billboard chain to.
+   * _offset_x_, _offset_y_, _offset_z_ - Optional position offset, relative to the bone.
+   * _offset_yaw_, _offset_pitch_, _offset_roll_ - Optional orientation offset, relative to the bone.
+<BR>
+<BR>
+=== !DetachBillboardChainFromEntityBone(real billboard_chain_id, real entity_id) ===
+----
+Detaches a billboard chain from an entity bone.
+====Parameters====
+   * _billboard_chain_id_ - The ID of the billboard chain.
+   * _entity_id_ - The ID of the entity to detach the billboard chain from. 
+<BR>
+<BR>
 === !SetBillboardChainRenderQueueGroup(real billboard_chain_id, real type) ===
 ----
 Sets the render queue group this object will be rendered through.

@@ -386,3 +386,8 @@ When this GM script function is called the first, and only, parameter is the amo
     * _func_ - The GM script function to call. 
 <BR>
 <BR>
+=== !GetNumberOfEntities() ===
+----
+Returns the total number of entities in the current SceneManager.
+<BR>
+<BR>
