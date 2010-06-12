@@ -91,7 +91,7 @@ When enabled, uses the specified axis to define the rotation used when auto trac
    * _axisx_, _axisy_, _axisz_ - Optional axis to use for rotations. By default 0,0,1 is passed, meaning the Z axis is used to define the yaw rotation.
 <BR>
 <BR>
-=== !CreateCameraControlSystemFixedCameraMode(real ccs_id, real axisx, real axisy, real axisz) ===
+=== !CreateCameraControlSystemFixedCamera(real ccs_id, real axisx, real axisy, real axisz) ===
 Creates a fixed camera and returns the ID.
 
 A fixed cameras position and orientation never change.
@@ -100,7 +100,7 @@ A fixed cameras position and orientation never change.
    * _axisx_, _axisy_, _axisz_ - Optional axis to use for auto track rotations.  By default 0,0,1 is passed, meaning the Z axis is used to define the yaw rotation.
 <BR>
 <BR>
-=== !CreateCameraControlSystemChaseCameraMode(real ccs_id, real relative_posx, real relative_posy, real relative_posz, real axisx, real axisy, real axisz) ===
+=== !CreateCameraControlSystemChaseCamera(real ccs_id, real relative_posx, real relative_posy, real relative_posz, real axisx, real axisy, real axisz) ===
 ----
 Creates a fixed camera and returns the ID.
 
@@ -112,7 +112,7 @@ An attached camera is attached attached to a target !SceneNode as a child.
    * _axisx_, _axisy_, _axisz_ - Optional axis used for orientation.  By default 0,0,1 is passed, meaning the Z axis is used to define the yaw rotation.
 <BR>
 <BR>
-=== !CreateCameraControlSystemAttachedCameraMode(real ccs_id, real relative_posx, real relative_posy, real relative_posz, real yaw, real pitch, real roll) ===
+=== !CreateCameraControlSystemAttachedCamera(real ccs_id, real relative_posx, real relative_posy, real relative_posz, real yaw, real pitch, real roll) ===
 ----
 Creates a fixed camera and returns the ID.
 
@@ -123,7 +123,7 @@ An attached camera is attached attached to a target !SceneNode as a child.
    * _yaw_, _pitch_, _roll_ - Optional relative rotation of the camera to the target !SceneNode. Default is 0,0,0.
 <BR>
 <BR>
-=== !CreateCameraControlSystemPlaneBindedCameraMode(real ccs_id, real plane_id, real axisx, real axisy, real axisz) ===
+=== !CreateCameraControlSystemPlaneBindedCamera(real ccs_id, real plane_id, real axisx, real axisy, real axisz) ===
 ----
 Creates a fixed camera and returns the ID.
 
@@ -134,7 +134,7 @@ A plane binded camera is constrained to the limits of a plane. The camera always
    * _axisx_, _axisy_, _axisz_ - Optional axis used for orientation.  By default 0,0,1 is passed, meaning the Z axis is used to define the yaw rotation.
 <BR>
 <BR>
-=== !CreateCameraControlSystemThroughTargetCameraMode(real ccs_id, real margin, real inverse, real focus_posx, real focus_posy, real focus_posz, real axisx, real axisy, real axisz) ===
+=== !CreateCameraControlSystemThroughTargetCamera(real ccs_id, real margin, real inverse, real focus_posx, real focus_posy, real focus_posz, real axisx, real axisy, real axisz) ===
 ----
 Creates a fixed camera and returns the ID.
 
@@ -147,7 +147,7 @@ A through target camera points to a given position (the "focus") throuh the targ
    * _axisx_, _axisy_, _axisz_ - Optional axis used for orientation.  By default 0,0,1 is passed, meaning the Z axis is used to define the yaw rotation.
 <BR>
 <BR>
-=== !CreateCameraControlSystemFixedDirectionCameraMode(real ccs_id, real dirx, real diry, real dirz, real distance, real axisx, real axisy, real axisz) ===
+=== !CreateCameraControlSystemFixedDirectionCamera(real ccs_id, real dirx, real diry, real dirz, real distance, real axisx, real axisy, real axisz) ===
 ----
 Creates a fixed camera and returns the ID.
 
@@ -159,7 +159,7 @@ A fixed direction camera moves so the target is always seen from the same point 
    * _axisx_, _axisy_, _axisz_ - Optional axis used for orientation.  By default 0,0,1 is passed, meaning the Z axis is used to define the yaw rotation.
 <BR>
 <BR>
-=== !CreateCameraControlSystemFirstPersonCameraMode(real ccs_id, real relative_posx, real relative_posy, real relative_posz, real yaw, real pitch, real roll) ===
+=== !CreateCameraControlSystemFirstPersonCamera(real ccs_id, real relative_posx, real relative_posy, real relative_posz, real yaw, real pitch, real roll) ===
 ----
 Creates a first person camera and returns the ID.
 
@@ -170,7 +170,7 @@ A first person camera is an attached camera with the possibility of hide or show
    * _yaw_, _pitch_, _roll_ - Optional relative rotation of the camera to the target !SceneNode. Default is 0,0,0.
 <BR>
 <BR>
-=== !CreateCameraControlSystemOrbitalCameraMode(real ccs_id, real zoom, real horiz_rotation, real vert_rotation) ===
+=== !CreateCameraControlSystemOrbitalCamera(real ccs_id, real zoom, real horiz_rotation, real vert_rotation) ===
 ----
 Creates an orbital camera and returns the ID.
 
@@ -182,7 +182,7 @@ An orbital camera is an attached camera where the user can modify the camera pos
    * _vert_rotation_ - Optional degrees to rotate the camera vertically. Default is 0.
 <BR>
 <BR>
-=== !CreateCameraControlSystemFixedTrackingCameraMode(real ccs_id, real axisx, real axisy, real axisz) ===
+=== !CreateCameraControlSystemFixedTrackingCamera(real ccs_id, real axisx, real axisy, real axisz) ===
 ----
 Creates an fixed tracking camera and returns the ID.
 
@@ -192,7 +192,7 @@ A fixed tracking camera's position is chosen to be the closest to the target of 
    * _axisx_, _axisy_, _axisz_ - Optional axis used for orientation.  By default 0,0,1 is passed, meaning the Z axis is used to define the yaw rotation.
 <BR>
 <BR>
-=== !CreateCameraControlSystemClosestToTargetCameraMode(real ccs_id, real time_interval, real axisx, real axisy, real axisz) ===
+=== !CreateCameraControlSystemClosestToTargetCamera(real ccs_id, real time_interval, real axisx, real axisy, real axisz) ===
 ----
 Creates an closest to target camera and returns the ID.
 
@@ -203,7 +203,7 @@ A closest to target camera's position is chosen to be the closest to the target 
    * _axisx_, _axisy_, _axisz_ - Optional axis used for orientation.  By default 0,0,1 is passed, meaning the Z axis is used to define the yaw rotation.
 <BR>
 <BR>
-=== !CreateCameraControlSystemFreeCameraMode(real ccs_id) ===
+=== !CreateCameraControlSystemFreeCamera(real ccs_id) ===
 ----
 Creates an free camera and returns the ID.
 
