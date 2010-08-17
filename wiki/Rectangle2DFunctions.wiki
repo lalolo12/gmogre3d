@@ -1,0 +1,75 @@
+#summary A simple 2D rectangle object.
+
+=== Overview ===
+2D rectangles have no depth and therefore is best used with specific render queue and depth settings, like RENDER_QUEUE_BACKGROUND and 'depth_write off' for backdrops, and RENDER_QUEUE_OVERLAY and 'depth_check off' for fullscreen quads.
+<BR>
+<BR>
+=== CreateRectangle2D() ===
+----
+Creates a 2D rectangle.
+<BR>
+<BR>
+<BR>
+=== DestroyRectangle2D(real rect2d_id) ===
+----
+Destroys a 2D rectangle.
+====Parameters====
+   * _rect2d_id_ - The ID of the 2D rectangle.
+<BR>
+<BR>
+=== SetRectangle2DMaterial(real sprite_id, string mat_name) ===
+----
+Sets the material for the 2D rectangle to use.
+====Parameters====
+   * _rect2d_id_ - The ID of the 2D rectangle.
+   * _mat_name_ - The material name.
+<BR>
+<BR>
+=== !ShowRectangle2D(real sprite_id) ===
+----
+Makes the 2D rectangle visible.
+<BR>
+<BR>
+<BR>
+=== HideRectangle2D(real sprite_id) ===
+----
+Makes the 2D rectangle invisible.
+<BR>
+<BR>
+<BR>
+=== SetRectangle2DCorners(real sprite_id, real left, real top, real right, real bottom) ===
+----
+Sets the corners of the 2D rectangle, in screen coordinates.
+====Parameters====
+   * _rect2d_id_ - The ID of the 2D rectangle.
+   * _left_, _top_, _right_, _bottom_ - The screen coordinates for the 2D rectangle.
+<BR>
+<BR>
+=== SetRectangle2DRenderQueueGroup(real sprite_id, real type) ===
+----
+Sets the render queue group this object will be rendered through.
+
+Render queues are grouped to allow you to more tightly control the ordering of rendered objects. If
+you do not call this method, all objects default to the default queue, which is fine for most objects.
+You may want to alter this if you want this entity to always appear in front of other objects, e.g.
+for a 3D menu system or such.
+====Parameters====
+   * _rect2d_id_ - The ID of the 2D rectangle.
+   * _type_ - The render queue ID.  Can be:
+      * _global.RENDER_QUEUE_BACKGROUND_ - Use this queue for objects which must be rendered first e.g. backgrounds.
+      * _global.RENDER_QUEUE_SKIES_EARLY_ - First queue (after backgrounds), used for skyboxes if rendered first.
+      * _global.RENDER_QUEUE_1_
+      * _global.RENDER_QUEUE_2_
+      * _global.RENDER_QUEUE_WORLD_GEOMETRY_1_
+      * _global.RENDER_QUEUE_3_ 
+      * _global.RENDER_QUEUE_4_
+      * _global.RENDER_QUEUE_MAIN_ - The default render queue.
+      * _global.RENDER_QUEUE_6_
+      * _global.RENDER_QUEUE_7_
+      * _global.RENDER_QUEUE_WORLD_GEOMETRY_2_
+      * _global.RENDER_QUEUE_8_
+      * _global.RENDER_QUEUE_9_
+      * _global.RENDER_QUEUE_SKIES_LATE_ - Penultimate queue(before overlays), used for skyboxes if rendered last.
+      * _global.RENDER_QUEUE_OVERLAY_ - Use this queue for objects which must be rendered last e.g. overlays.
+      * _global.RENDER_QUEUE_MAX_ - Final possible render queue, don't exceed this.
+<BR>
