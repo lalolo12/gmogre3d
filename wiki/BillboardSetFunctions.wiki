@@ -1,6 +1,6 @@
 #summary A collection of billboards (faces which are always facing the given direction) with the same (default) dimensions, material and which are fairly close proximity to each other.
 
-=== Overview ===
+asdf === Overview ===
 Billboards are rectangles made up of 2 tris which are always facing the given direction. They are typically used for special effects like particles. This class collects together a set of billboards with the same (default) dimensions, material and relative locality in order to process them more efficiently. The entire set of billboards will be culled as a whole (by default, although this can be changed if you want a large set of billboards which are spread out and you want them culled individually), individual Billboards have locations which are relative to the set (which itself derives it's position from the !SceneNode it is attached to), they will be rendered as a single rendering operation, and some calculations will be sped up by the fact that they use the same dimensions so some workings can be reused. 
 <BR>
 <BR>
