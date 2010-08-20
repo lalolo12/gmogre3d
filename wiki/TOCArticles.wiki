@@ -146,7 +146,7 @@
             * [OverlayElementFunctions Overlay Element]
             * [PanelOverlayElementFunctions Panel Overlay Element]
             * [TextOverlayElementFunctions Text Overlay Element]
-      * [TextFunctions Text]
+         * [TextFunctions Text]
       * [EngineFunctions Engine]
       * [MiscFunctions Misc]
       * [MouseFunctions Mouse]
