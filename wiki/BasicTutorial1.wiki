@@ -212,4 +212,4 @@ RollSceneNode(node3_id, -90);
 
 By this point you should have a very basic grasp of the !SceneManager, !SceneNode, and Entity classes. You do not have to be familiar with all of the functions that I have introduced. Since these are the most basic objects, we will be using them very often. You will get more familiar with them after working through the next few tutorials.
 
-You should also be familiar with setting up a working GMOgre3D environment for your projects. 
+You should also be familiar with setting up a working GMOgre3D environment for your projects.
