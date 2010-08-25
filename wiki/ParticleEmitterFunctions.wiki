@@ -42,7 +42,7 @@ This function sets a constant speed for emitted particles. See the alternate ver
    * _speed_ - The initial speed in world units per second which every particle emitted starts with.
 <BR>
 <BR>
-=== !SetParticleEmitterVelocityRange(real part_emit_id, real min_speed, max_speed) ===
+=== !SetParticleEmitterVelocityRange(real part_emit_id, real min_speed, real max_speed) ===
 ----
 Sets the initial velocity range of particles emitted.
 
@@ -99,7 +99,7 @@ Particles have an initial color on emission which the emitter sets. This functio
    * _particle_emitter_id_ - The ID for the particle emitter.
    * _color_ - The color which all particles will be given on emission. 
 <BR>
-=== !SetParticleEmitterColorRange(real particle_emitter_id, real start_color, end_color) ===
+=== !SetParticleEmitterColorRange(real particle_emitter_id, real start_color, real end_color) ===
 ----
 Sets the range of colors for emitted particles.
 

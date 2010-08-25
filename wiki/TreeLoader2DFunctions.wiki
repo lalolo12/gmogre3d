@@ -1,4 +1,4 @@
-#summary A PageLoader-derived object you can use with PagedGeometry to easily place trees on your terrain.
+e#summary A PageLoader-derived object you can use with PagedGeometry to easily place trees on your terrain.
 
 = Introduction =
 TreeLoader2D provides you with an easy way to add trees to your scene. Using TreeLoader2D is simple - simply create an instance, attach it to your !PagedGeometry object with !SetPagedGeometryPageLoader(), and add your trees.
@@ -6,7 +6,7 @@ TreeLoader2D provides you with an easy way to add trees to your scene. Using Tre
 To add trees, just call AddTreeLoader2DTree(), supplying the appropriate parameters. You may notice that TreeLoader2D restricts trees to uniform scale, yaw rotation, and a position value with no vertical component. This is done to conserve memory; TreeLoader2D packs trees into memory as efficiently as possible, taking only 6 bytes per tree. This means 1 million trees only takes 5.72 MB of RAM (additionally, adding 1 million trees takes less than a second).
 <BR>
 <BR>
-=== CreateTreeLoader2D(double page_geometry_id, double left, double top, double right, double bottom) ===
+=== CreateTreeLoader2D(real page_geometry_id, real left, real top, real right, real bottom) ===
 ----
 Creates a new TreeLoader2D object and returns the ID.
 ====Parameters====
@@ -14,14 +14,14 @@ Creates a new TreeLoader2D object and returns the ID.
    * _left_, _top_, _right_, _bottom_ - The rectangular boundary in which all trees will be placed.
 <BR>
 <BR>
-=== DestroyTreeLoader2D(double tree_loader_id) ===
+=== DestroyTreeLoader2D(real tree_loader_id) ===
 ----
 Destroys a TreeLoader2D object.
 ====Parameters====
    * _tree_loader_id_ - The ID of the TreeLoader2D object.
 <BR>
 <BR>
-=== AddTreeLoader2DTree(double tree_loader_id, double entity_id, double x, double y, double yaw, double scale) ===
+=== AddTreeLoader2DTree(real tree_loader_id, real entity_id, real x, real y, real yaw, real scale) ===
 ----
 Adds an entity to the scene with the specified location, rotation, and scale.  
 
@@ -37,7 +37,7 @@ By default, scale values may not exceed 2.0. If you need to use higher scale val
    * _scale_ - The desired scale of the entity.
 <BR>
 <BR>
-=== RemoveTreeLoader2DTrees(double tree_loader_id, double x, double y, double z, double radius) ===
+=== RemoveTreeLoader2DTrees(real tree_loader_id, real x, real y, real z, real radius) ===
 ----
 Deletes trees within a certain radius of the given coordinates. 
 ====Parameters====
@@ -47,7 +47,7 @@ Deletes trees within a certain radius of the given coordinates.
    * _type_ - Optional type of tree(s) to delete.  By default this is set to 0 to delete all tree types. 
 <BR>
 <BR>
-=== SetTreeLoader2DMinScale(double tree_loader_id, double scale) ===
+=== SetTreeLoader2DMinScale(real tree_loader_id, real scale) ===
 ----
 Sets the minimum tree scale value. 
 
@@ -59,7 +59,7 @@ Be sure to call this before adding any trees - otherwise adjusting this value wi
    * _scale_ - The desired scale.
 <BR>
 <BR>
-=== SetTreeLoader2DMaxScale(double tree_loader_id, double scale) ===
+=== SetTreeLoader2DMaxScale(real tree_loader_id, real scale) ===
 ----
 Sets the maximum tree scale value. 
 
@@ -71,7 +71,7 @@ Be sure to call this before adding any trees - otherwise adjusting this value wi
    * _scale_ - The desired scale.
 <BR>
 <BR>
-=== SetTreeLoader2DColorMap(double tree_loader_id, string map_file) ===
+=== SetTreeLoader2DColorMap(real tree_loader_id, string map_file) ===
 ----
 Gets a pointer to the color map being used. 
 
@@ -83,7 +83,7 @@ Note that although you can edit the color map in real-time through this class, t
    * _scale_ - The desired scale.
 <BR>
 <BR>
-=== SetTreeLoader2DColorMapFilter(double tree_loader_id, double type) ===
+=== SetTreeLoader2DColorMapFilter(real tree_loader_id, real type) ===
 ----
 Sets the filtering mode used for the color map. 
 

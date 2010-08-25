@@ -3,28 +3,28 @@
 GPU program state includes constant parameters used by the program, and bindings to render system state which is propagated into the constants by the engine automatically if requested. 
 <BR>
 <BR>
-=== FindGPUProgramParametersNamedConstant(double gpu_prog_params_id, string name) ===
+=== FindGPUProgramParametersNamedConstant(real gpu_prog_params_id, string name) ===
 ----
 Returns whether a named constant is defined in a GPU program parameters object.
 ====Parameters====
    * _gpu_prog_params_id_ - The ID of the GPU program parameters object.
 <BR>
 <BR>
-=== ClearGPUProgramParametersNamedAutoConstant(double gpu_prog_params_id, string name) ===
+=== ClearGPUProgramParametersNamedAutoConstant(real gpu_prog_params_id, string name) ===
 ----
 Unbind an auto constant in a GPU program parameters object so that the constant is manually controlled again. 
 ====Parameters====
    * _gpu_prog_params_id_ - The ID of the GPU program parameters object.
 <BR>
 <BR>
-=== EnableGPUProgramParametersIgnoreMissingParams(double gpu_prog_params_id, double enable) ===
+=== EnableGPUProgramParametersIgnoreMissingParams(real gpu_prog_params_id, real enable) ===
 ----
 Whether to enable or disable ignoring of missing parameters in a GPU program parameters object.
 ====Parameters====
    * _gpu_prog_params_id_ - The ID of the GPU program parameters object.
 <BR>
 <BR>
-=== SetGPUProgramParametersNamedConstantReal(double gpu_prog_params_id, string name, double count, double val1, double val2, double val3, double val4, double val5, double val6, double val7, double val8) ===
+=== SetGPUProgramParametersNamedConstantReal(real gpu_prog_params_id, string name, real count, real val1, real val2, real val3, real val4, real val5, real val6, real val7, real val8) ===
 ----
 Sets a multiple value constant floating-point parameter in a GPU program parameters object.
 ====Parameters====
@@ -34,7 +34,7 @@ Sets a multiple value constant floating-point parameter in a GPU program paramet
    * _val1_ - _val8_ - The real values to set. Can pass 1 - 8 values.
 <BR>
 <BR>
-=== QueueSetGPUProgramParametersNamedConstantReal(double gpu_prog_params_id, double count, double val1, double val2, double val3, double val4, double val5, double val6, double val7, double val8) ===
+=== QueueSetGPUProgramParametersNamedConstantReal(real gpu_prog_params_id, real count, real val1, real val2, real val3, real val4, real val5, real val6, real val7, real val8) ===
 ----
 Queues values to be used ExecuteSetGPUProgramParametersNamedConstantReal.
 
@@ -45,14 +45,14 @@ This is a function to allow a user to set a named constant with more than the 8 
    * _val1_ - _val8_ - The real values to set. Can pass 1 - 8 values.
 <BR>
 <BR>
-=== ExecuteSetGPUProgramParametersNamedConstantReal(double gpu_prog_params_id, string name) ===
+=== ExecuteSetGPUProgramParametersNamedConstantReal(real gpu_prog_params_id, string name) ===
 ----
 Sets a multiple value constant floating-point parameter in a GPU program parameters object, using the values queued in QueueSetGPUProgramParametersNamedConstantReal.
 ====Parameters====
    * _gpu_prog_params_id_ - The ID of the GPU program parameters object.
 <BR>
 <BR>
-=== SetGPUProgramParametersNamedConstantInt(double gpu_prog_params_id, string name, double count, double val1, double val2, double val3, double val4, double val5, double val6, double val7, double val8) ===
+=== SetGPUProgramParametersNamedConstantInt(real gpu_prog_params_id, string name, real count, real val1, real val2, real val3, real val4, real val5, real val6, real val7, real val8) ===
 ----
 Sets a multiple value constant integer parameter in a GPU program parameters object.
 ====Parameters====

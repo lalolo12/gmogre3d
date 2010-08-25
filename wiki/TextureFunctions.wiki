@@ -128,14 +128,19 @@ Returns the height of the texture.
    * _name_ - The unique name of the texture.
 <BR>
 <BR>
-=== SetTextureFSAA(string name, real fsaa) ===
+=== SetTextureFSAA(string name, real fsaa_type, real fsaa_hint) ===
 ----
 Set the level of multisample AA to be used if this texture is a rendertarget.
 
 This option will be ignored if TU_RENDERTARGET is not part of the usage options on this texture, or if the hardware does not support it.
+
+FSAA type depends on the hardware, but usually can be 0, 2, 4, 8, 16.
 ====Parameters====
    * _name_ - The unique name of the texture.
-   * _fsaa_ - The level of multisample AA.
+   * _fsaa_type_ - The level of multisample AA.  FSAA type depends on the hardware, but usually can be 0, 2, 4, 8, 16. 
+   * _fsaa_hint_ - Optional FSAA hint. Value depends on the hardware, and currently can be:
+      _FSAA_HINT_NONE_ - No hint. This is default.
+      _FSAA_HINT_QUALITY_ - Prefer higher AA quality over speed.
 <BR>
 <BR>
 === !WriteTextToTexture(string name, string text, real left, real top, real right, real bottom, string font_name, real color, real alpha, real justify, real wordwrap) ===

@@ -205,7 +205,7 @@ Adds the net torque for a body.
    * _x_, _y_, _z_ - The vector representing the desired torque.
 <BR>
 <BR>
-=== !AddNewtonBodyLocalForce(real newton_body_id, real x, real y, real z, double posx, double posy, double posz) ===
+=== !AddNewtonBodyLocalForce(real newton_body_id, real x, real y, real z, real posx, real posy, real posz) ===
 ----
 Adds the net force to a local point on a body.
 ====Parameters====
@@ -214,7 +214,7 @@ Adds the net force to a local point on a body.
    * _posx_, _posy_, _posz_ - The vector representing the point of force.
 <BR>
 <BR>
-=== !AddNewtonBodyGlobalForce(real newton_body_id, real x, real y, real z, double posx, double posy, double posz) ===
+=== !AddNewtonBodyGlobalForce(real newton_body_id, real x, real y, real z, real posx, real posy, real posz) ===
 ----
 Adds the net force to a global point on a body.
 ====Parameters====
@@ -263,21 +263,22 @@ Unfreezes the Rigid Body.
 <BR>
 === !SetNewtonBodyUserData(real newton_body_id, real data) ===
 ----
-Associates a value with a body.
+Sets any kind of user value on a body.
 
-User data can be used by a game to store an application specific value to associate with a body.  This value can then be retrieved later.  Useful of you would like to attach a GM instance to a body type, and on collision retrieve the GM instance using the GetNewtonBodyUserData function.
+This function allows you to associate any user value you like with this object. This can be a pointer
+to a GM object for instance.  Use a unique key to distinguish between each of these objects.
 ====Parameters====
    * _newton_body_id_ - The ID of the Newton body.
+   * _key_ - The string key that this data is associate with.
    * _data_ - Application specific value to associate with this body.
 <BR>
 <BR>
 === !GetNewtonBodyUserData(real newton_body_id) ===
 ----
-Returns a previously associated value with a body.
-
-User data can be used by a game to store an application specific value to associate with a body.  This value can then be retrieved later.  Useful of you would like to attach a GM instance to a body type, and on collision retrieve the GM instance using the GetNewtonBodyUserData function.
+Gets the user value on a body.
 ====Parameters====
    * _newton_body_id_ - The ID of the Newton body.
+   * _key_ - The string key that this data is associate with.
 <BR>
 <BR>
 === !AttachNewtonBodyToSceneNode(real newton_body_id, real scene_node_id) ===

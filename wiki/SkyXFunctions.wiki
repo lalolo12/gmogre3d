@@ -37,8 +37,8 @@ Sets the type of lightning to use.
 ====Parameters====
    * _skyx_id_ - The ID of the SkyX object.
    * _type_ - The type of lighting to use.  Can be:
-      * _global.LM_LDR_ - Low dynamic range
-      * _global.LM_HDR_ - High dynamic range
+      * _LM_LDR_ - Low dynamic range
+      * _LM_HDR_ - High dynamic range
 <BR>
 <BR>
 === SetSkyXTime(real skyx_id, real time_seconds) ===
@@ -81,6 +81,14 @@ By default sunsets occur at 20:30.
    * _time_hour_ - The hour for the sun to set.
 <BR>
 <BR>
+=== GetSkyXColorAt(real skyx_id, real dirx, real diry, real dirz) ===
+----
+Returns the atmosphere color at the given direction.
+====Parameters====
+   * _skyx_id_ - The ID of the SkyX object.
+   * _dirx_, _diry_, _dirz_ - The direction. 
+<BR>
+<BR>
 === AddSkyXCloudLayer(real skyx_id, real height, real scale, real wind_dirx, real wind_diry, real time_mult, real distance_attenuation, real detail_attenuation, real normal_mult, real height_vol, real vol_displacement) ===
 ----
 Adds a cloud layer to a SkyX object and returns the layer ID.
@@ -106,7 +114,31 @@ Removes a cloud layer from a SkyX object.
    * _cloud_layer_id_ - The ID of the cloud layer.
 <BR>
 <BR>
-=== AddSkyXVolumetricClouds(real skyx_id) ===
+=== AddSkyXVolumetricClouds(real skyx_id, real heightx, real heighty, real wind_speed) ===
 ----
+Adds a volumetric clouds to a SkyX object.
+====Parameters====
+   * _skyx_id_ - The ID of the SkyX object.
+   * _heightx_ - Optional volumetric cloud layer height, in world coordinates. Defaults to -1 which sets it to autocalculate based on the camera far clip distance.
+   * _heighty_ - Optional volumetric cloud layer height, in world coordinates. Defaults to -1 which sets it to autocalculate based on the camera far clip distance.
+   * _wind_speed_ - Optional wind direction. Defaults to 80 if not passed.
+<BR>
+<BR>
 === RemoveSkyXVolumetricClouds(real skyx_id) ===
 ----
+Removes volumetric clouds from a SkyX object.
+====Parameters====
+   * _skyx_id_ - The ID of the SkyX object.
+   
+<BR>
+<BR>
+=== TransitionSkyXVolumetricClouds(real skyx_id, real humidity, real avg_cloud_size, real num_forced_updates) ===
+----
+Transiations the volumetric cloud parameters, so you'll get a smart and smooth transition from your old setting to your new ones.
+====Parameters====
+   * _skyx_id_ - The ID of the SkyX object.
+   * _humidity_ - The percentage of clouds, in a 0.0 - 1.0 range.
+   * _avg_cloud_size_ - Optional average clouds size. Default is 1.
+   * _num_forced_updates_ - Optional number of times the data simulation are going to be re-calculated for the next frame.  0 means a smooth transition, where a positive number means an instanct change. Default is 0.
+<BR>
+<BR>

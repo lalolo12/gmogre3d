@@ -132,7 +132,7 @@ Detaches a light from the specified !SceneNode.
    * _scene_node_id_ - The ID of the !SceneNode.
 <BR>
 <BR>
-=== !AttachLightToEntityBone(real light_id, real entity_id, bone_name, offset_x, offset_y, offset_z) ===
+=== !AttachLightToEntityBone(real light_id, real entity_id, string bone_name, real offset_x, real offset_y, real offset_z, real offset_yaw, real offset_pitch, real offset_roll) ===
 ----
 Attaches a light to a certain bone of the skeleton which the specified entity uses.
 
@@ -161,22 +161,22 @@ Render queues are grouped to allow you to more tightly control the ordering of r
 ====Parameters====
    * _light_id_ - The ID of the light.
    * _type_ - The render queue ID.  Can be:
-      * _global.RENDER_QUEUE_BACKGROUND_ - Use this queue for objects which must be rendered first e.g. backgrounds.
-      * _global.RENDER_QUEUE_SKIES_EARLY_ - First queue (after backgrounds), used for skyboxes if rendered first.
-      * _global.RENDER_QUEUE_1_
-      * _global.RENDER_QUEUE_2_
-      * _global.RENDER_QUEUE_WORLD_GEOMETRY_1_
-      * _global.RENDER_QUEUE_3_ 
-      * _global.RENDER_QUEUE_4_
-      * _global.RENDER_QUEUE_MAIN_ - The default render queue.
-      * _global.RENDER_QUEUE_6_
-      * _global.RENDER_QUEUE_7_
-      * _global.RENDER_QUEUE_WORLD_GEOMETRY_2_
-      * _global.RENDER_QUEUE_8_
-      * _global.RENDER_QUEUE_9_
-      * _global.RENDER_QUEUE_SKIES_LATE_ - Penultimate queue(before overlays), used for skyboxes if rendered last.
-      * _global.RENDER_QUEUE_OVERLAY_ - Use this queue for objects which must be rendered last e.g. overlays.
-      * _global.RENDER_QUEUE_MAX_ - Final possible render queue, don't exceed this.
+      * _RENDER_QUEUE_BACKGROUND_ - Use this queue for objects which must be rendered first e.g. backgrounds.
+      * _RENDER_QUEUE_SKIES_EARLY_ - First queue (after backgrounds), used for skyboxes if rendered first.
+      * _RENDER_QUEUE_1_
+      * _RENDER_QUEUE_2_
+      * _RENDER_QUEUE_WORLD_GEOMETRY_1_
+      * _RENDER_QUEUE_3_ 
+      * _RENDER_QUEUE_4_
+      * _RENDER_QUEUE_MAIN_ - The default render queue.
+      * _RENDER_QUEUE_6_
+      * _RENDER_QUEUE_7_
+      * _RENDER_QUEUE_WORLD_GEOMETRY_2_
+      * _RENDER_QUEUE_8_
+      * _RENDER_QUEUE_9_
+      * _RENDER_QUEUE_SKIES_LATE_ - Penultimate queue(before overlays), used for skyboxes if rendered last.
+      * _RENDER_QUEUE_OVERLAY_ - Use this queue for objects which must be rendered last e.g. overlays.
+      * _RENDER_QUEUE_MAX_ - Final possible render queue, don't exceed this.
 <BR>
 <BR>
 === !SetLightQueryFlags(real light_id, real flags) ===
@@ -188,4 +188,44 @@ When performing a scene query, this light will be included or excluded according
    * _light_id_ - The ID of the entity.
    * _flags_ - The application specific flags.
 <BR>
+<BR>
+=== !SetLightMask(real light_id, real mask) ===
+----
+Sets the light mask for this object.
+
+When a light is rendered, it checks all objects in a scene to see which can be affected by the
+light. By default all objects can be affected. To only affect certain enties, set the light mask to
+a value where at least one bit matches the light flag of the entities you want affected.
+====Parameters====
+   * _light_id_ - The ID of the light.
+   * _mask_ - The application specific mask.
+<BR>
+<BR>
+=== !SetLightVisibilityFlags(real light_id, real flags) ===
+----
+Sets the visibility flags for this object.
+
+As well as a simple true/false value for visibility (as seen in setVisible), you can also set visiblity flags which when 'and'ed with the SceneManager's visibility mask can also make an object invisible.
+====Parameters====
+   * _light_id_ - The ID of the light.
+   * _flags_ - The visibility flags.
+<BR>
+<BR>
+=== !SetLightUserData(real light_id, string key, real data) ===
+----
+Sets any kind of user value on this object.
+
+This function allows you to associate any user value you like with this object. This can be a pointer to a GM object for instance.  Use a unique key to distinguish between each of these objects.
+====Parameters====
+   * _light_id_ - The ID of the light.
+   * _key_ - The string key that this data is associate with.
+   * _data_ - The data to associate with this object.
+<BR>
+<BR>
+=== !GetLightUserData(real light_id, string key) ===
+----
+Gets the user value on this object.
+====Parameters====
+   * _light_id_ - The ID of the light.
+   * _key_ - The string key of the data to retrieve.
 <BR>

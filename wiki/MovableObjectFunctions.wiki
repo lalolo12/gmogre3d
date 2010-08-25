@@ -44,22 +44,22 @@ Render queues are grouped to allow you to more tightly control the ordering of r
 ====Parameters====
    * _movable_object_id_ - The ID of the movable object.
    * _type_ - The render queue ID.  Can be:
-      * _global.RENDER_QUEUE_BACKGROUND_ - Use this queue for objects which must be rendered first e.g. backgrounds.
-      * _global.RENDER_QUEUE_SKIES_EARLY_ - First queue (after backgrounds), used for skyboxes if rendered first.
-      * _global.RENDER_QUEUE_1_
-      * _global.RENDER_QUEUE_2_
-      * _global.RENDER_QUEUE_WORLD_GEOMETRY_1_
-      * _global.RENDER_QUEUE_3_ 
-      * _global.RENDER_QUEUE_4_
-      * _global.RENDER_QUEUE_MAIN_ - The default render queue.
-      * _global.RENDER_QUEUE_6_
-      * _global.RENDER_QUEUE_7_
-      * _global.RENDER_QUEUE_WORLD_GEOMETRY_2_
-      * _global.RENDER_QUEUE_8_
-      * _global.RENDER_QUEUE_9_
-      * _global.RENDER_QUEUE_SKIES_LATE_ - Penultimate queue(before overlays), used for skyboxes if rendered last.
-      * _global.RENDER_QUEUE_OVERLAY_ - Use this queue for objects which must be rendered last e.g. overlays.
-      * _global.RENDER_QUEUE_MAX_ - Final possible render queue, don't exceed this.
+      * _RENDER_QUEUE_BACKGROUND_ - Use this queue for objects which must be rendered first e.g. backgrounds.
+      * _RENDER_QUEUE_SKIES_EARLY_ - First queue (after backgrounds), used for skyboxes if rendered first.
+      * _RENDER_QUEUE_1_
+      * _RENDER_QUEUE_2_
+      * _RENDER_QUEUE_WORLD_GEOMETRY_1_
+      * _RENDER_QUEUE_3_ 
+      * _RENDER_QUEUE_4_
+      * _RENDER_QUEUE_MAIN_ - The default render queue.
+      * _RENDER_QUEUE_6_
+      * _RENDER_QUEUE_7_
+      * _RENDER_QUEUE_WORLD_GEOMETRY_2_
+      * _RENDER_QUEUE_8_
+      * _RENDER_QUEUE_9_
+      * _RENDER_QUEUE_SKIES_LATE_ - Penultimate queue(before overlays), used for skyboxes if rendered last.
+      * _RENDER_QUEUE_OVERLAY_ - Use this queue for objects which must be rendered last e.g. overlays.
+      * _RENDER_QUEUE_MAX_ - Final possible render queue, don't exceed this.
 <BR>
 <BR>
 === !SetMovableObjectQueryFlags(real movable_object_id, real flags) ===
@@ -71,4 +71,22 @@ When performing a scene query, this movable object will be included or excluded 
    * _movable_object_id_ - The ID of the movable object.
    * _flags_ - The application specific flags.
 <BR>
+<BR>
+=== !SetMovableObjectUserData(real movable_object_id, string key, real data) ===
+----
+Sets any kind of user value on this object.
+
+This function allows you to associate any user value you like with this object. This can be a pointer to a GM object for instance.  Use a unique key to distinguish between each of these objects.
+====Parameters====
+   * _movable_object_id_ - The ID of the movable object.
+   * _key_ - The string key that this data is associate with.
+   * _data_ - The data to associate with this object.
+<BR>
+<BR>
+=== !GetMovableObjectUserData(real movable_object_id, string key) ===
+----
+Gets the user value on this object.
+====Parameters====
+   * _movable_object_id_ - The ID of the movable object.
+   * _key_ - The string key of the data to retrieve.
 <BR>

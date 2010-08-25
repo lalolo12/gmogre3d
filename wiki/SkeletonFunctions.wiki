@@ -93,7 +93,7 @@ Sets the animation blending mode this skeleton will use.
 ====Parameters====
    * _skeleton_id_ - The ID of the skeleton.
    * _type_ - The type of blending mode to use.  Can be:
-      * _global.ANIMBLEND_AVERAGE_ - Animations are applied by calculating a weighted average of all animations
-      * _global.ANIMBLEND_CUMULATIVE_ - Animations are applied by calculating a weighted cumulative total.
+      * _ANIMBLEND_AVERAGE_ - Animations are applied by calculating a weighted average of all animations
+      * _ANIMBLEND_CUMULATIVE_ - Animations are applied by calculating a weighted cumulative total.
 <BR>
 <BR>

@@ -6,8 +6,8 @@ Set input mode of a target pass.
 ====Parameters====
    * _pass_id_ - The ID of the target pass.
    * _mode_ - The target pass mode. Can be:
-      * _global.IM_NONE_ - No input	
-      * _global.IM_PREVIOUS_ - Output of previous Composition in chain
+      * _IM_NONE_ - No input	
+      * _IM_PREVIOUS_ - Output of previous Composition in chain
 <BR>
 <BR>
 === !SetTargetPassOutputName(real pass_id, string name) ===

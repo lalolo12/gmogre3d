@@ -425,9 +425,33 @@ Makes the bounding box for a scene node invisible.
 <BR>
 === !GetSceneNodeBoundingBoxSize(real scene_node_id) ===
 ----
-Retrieves the size of the bounding box (including child nodes).
+Retrieves the size of the axis aligned bounding box.
+
+Since GM cannot return 3 values in a single function call these factors are stored in temporary variables and can be retrieved by calling the GetX, GetY, and GetZ functions.
 ====Parameters====
    * _scene_node_id_ - The ID of the scene node.
+<BR>
+<BR>
+=== !GetSceneNodeBoundingBoxCorner(real scene_node_id, real corner) ===
+----
+Retrieves the coordinates of the specified corner of an axis aligned bounding box.
+
+Note that you can calculate all corners by retrieving just two opposing sides (ie, FAR_LEFT_BUTTON
+and NEAR_RIGHT_TOP).
+
+Since GM cannot return 3 values in a single function call these factors are stored in temporary
+variables and can be retrieved by calling the GetX, GetY, and GetZ functions.
+====Parameters====
+   * _scene_node_id_ - The ID of the scene node. 
+   * _corner_ - The corner coordinates to retrieve. Can be:
+      * _FAR_LEFT_BOTTOM_
+      * _FAR_LEFT_TOP_
+      * _FAR_RIGHT_TOP_
+      * _FAR_RIGHT_BOTTOM_
+      * _NEAR_RIGHT_BOTTOM_
+      * _NEAR_LEFT_BOTTOM_
+      * _NEAR_LEFT_TOP_
+      * _NEAR_RIGHT_TOP_
 <BR>
 <BR>
 === AttachSceneNodeToGMInstance(real scene_node_id, real gm_instance_id) ===

@@ -88,9 +88,9 @@ This "style" setting allows you to choose from various fade techniques. Dependin
 ====Parameters====
    * _grass_layer_id_ - The ID of the grass layer.
    * _type_ - The fade teqchnique type. Can be:
-      * _global.FADETECH_ALPHA_ - Grass that fades into the distance with transparency. Fairly effective in most cases.
-      * _global.FADETECH_GROW_ - Grass that fades in by "growing" up out of the ground. Very effective when grass fades in against the sky, or with alpha-rejected grass.
-      * _global.FADETECH_ALPHAGROW_ - Grass that fades in by slowly becoming opaque while it "grows" up out of the ground. Effective with alpha grass fading in against the sky.  
+      * _FADETECH_ALPHA_ - Grass that fades into the distance with transparency. Fairly effective in most cases.
+      * _FADETECH_GROW_ - Grass that fades in by "growing" up out of the ground. Very effective when grass fades in against the sky, or with alpha-rejected grass.
+      * _FADETECH_ALPHAGROW_ - Grass that fades in by slowly becoming opaque while it "grows" up out of the ground. Effective with alpha grass fading in against the sky.  
 <BR>
 <BR>
 === !SetGrassLayerDensityMap(real grass_layer_id, string map_file) ===
@@ -140,9 +140,9 @@ Note that base blending does not work well with alpha-rejected textures.
 ====Parameters====
    * _grass_layer_id_ - The ID of the grass layer.
    * _type_ - The technique type to use.  Can be:
-      * _global.GRASSTECH_QUAD_ - Grass constructed of randomly placed and rotated quads.
-      * _global.GRASSTECH_CROSSQUADS_ - Grass constructed of two quads forming a "X" cross shape.
-      * _global.GRASSTECH_SPRITE_ - Grass constructed of camera-facing billboard quads.
+      * _GRASSTECH_QUAD_ - Grass constructed of randomly placed and rotated quads.
+      * _GRASSTECH_CROSSQUADS_ - Grass constructed of two quads forming a "X" cross shape.
+      * _GRASSTECH_SPRITE_ - Grass constructed of camera-facing billboard quads.
    * _blend_base_ - Whether or not grass base blending is enabled.
 <BR>
 <BR>

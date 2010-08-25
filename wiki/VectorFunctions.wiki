@@ -12,7 +12,7 @@ Adds two vectors, whose result can be retrieved using the GetX, GetY, and GetZ f
    * _x2_, _y2_, _z2_ - The second vector.
 <BR>
 <BR>
-=== !SubtractVector(real x1, real z1, real y1, real x2, real z2, real y2) ===
+=== !SubtractVector(real x1, real y1, real z1, real x2, real y2, real z2) ===
 ----
 Subtracts two vectors.
 
@@ -22,7 +22,7 @@ The result can be retrieved using the GetX, GetY, and GetZ functions.
    * _x2_, _y2_, _z2_ - The vector being subtracted.
 <BR>
 <BR>
-=== !MultiplyVector(real x1, real z1, real y1, real x2, real z2, real y2) ===
+=== !MultiplyVector(real x1, real y1, real z1, real x2, real y2, real z2) ===
 ----
 Multiplies two vectors.
 
@@ -44,7 +44,7 @@ The result can be retrieved using the GetX, GetY, and GetZ functions.
    * _yaw_, _pitch_, _roll_ - The amount to rotate the vector, in degrees.
 <BR>
 <BR>
-=== !CalcVectorCrossProduct(real x1, real z1, real y1, real x2, real z2, real y2) ===
+=== !CalcVectorCrossProduct(real x1, real y1, real z1, real x2, real y2, real z2) ===
 ----
 Calculates the cross-product of 2 vectors, i.e. the vector that lies perpendicular to them both.
 
@@ -56,7 +56,7 @@ The result can be retrieved using the GetX, GetY, and GetZ functions.
    * _x2_, _y2_, _z2_ - The second vector.
 <BR>
 <BR>
-=== !CalcVectorDotProduct(real x1, real z1, real y1, real x2, real z2, real y2) ===
+=== !CalcVectorDotProduct(real x1, real y1, real z1, real x2, real y2, real z2) ===
 ----
 Calculates the dot (scalar) product of this vector with another.
 
@@ -68,7 +68,7 @@ The result can be retrieved using the GetX, GetY, and GetZ functions.
    * _x2_, _y2_, _z2_ - The second vector.
 <BR>
 <BR>
-=== !NormalizeVector(real x, real z, real y) ===
+=== !NormalizeVector(real x, real y, real z) ===
 ----
 Normalizes the vector.
 
@@ -89,7 +89,7 @@ The normalized result can be retrieved using the GetX, GetY, and GetZ functions.
 <BR>
 <BR>
 <BR>
-=== !GetVectorLength(real x, real z, real y) ===
+=== !GetVectorLength(real x, real y, real z) ===
 ----
 Returns the length (magnitude) of a vector.
 ====Parameters====

@@ -212,3 +212,16 @@ The free camera is controlled by the user. The camera orientation is fixed by a 
    * _ccs_id_ - The ID of the camera control system object.
 <BR>
 <BR>
+CreateCameraControlSystemRTSCamera(real ccs_id, real posx, real posy, real posz, real upx, real upy, real upz, real leftx, real lefty, real leftz, real pitch, real min_zoom, real max_zoom)
+----
+Creates an RTS (Real-time strategy) camera and returns the ID.
+
+A closest to target camera's position is chosen to be the closest to the target of a given list. The camera orientation is fixed by a yaw axis.
+====Parameters====
+   * _ccs_id_ - The ID of the camera control system object.
+   * _posx_, _posy_, _posz_ - Optional starting position of the camera. Default is 0, 0, 0. 
+   * _upx_, _upy_, _upz_ - Optional up axis. Default is 0, -1, 0.
+   * _leftx_, _lefty_, _leftz_ - Optional left axis. Default is -1, 0, 0.
+   * _pitch_ - Optional pitch in degrees. Default is 90.
+   * _min_zoom_, _max_zoom_ - Optional zoom range.  Default is 0, 0.
+ <BR>

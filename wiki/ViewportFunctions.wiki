@@ -86,6 +86,16 @@ This setting enables you to disable shadow rendering for a given viewport. The g
    * _enable_ - Whether to enable or disable shadows.
 <BR>
 <BR>
+=== !SetViewportVisibilityMask(real viewport_id, real mask) ===
+----
+Sets a per-viewport visibility mask.
+
+The visibility mask is a way to exclude objects from rendering for a given viewport. For each object in the frustum, a check is made between this mask and the objects visibility flags.
+====Parameters====
+   * _viewport_id_ - The ID of the viewport.
+   * _mask_ - The mask to set.
+<BR>
+<BR>
 === !AddViewportTargetListener(real viewport_id, real obj, real pre_event, real post_event) ===
 ----
 Adds callback functions for pre and post viewport rendering returning the ID of the listener.

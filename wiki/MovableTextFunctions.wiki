@@ -61,12 +61,12 @@ Sets the alignment of a movable text object.
 ====Parameters====
     * _text_id_ - The ID of the text.
     * _horiz_align_ - The type of horizontal alignment to use. Can be:
-          * _global.MT_H_LEFT_ - The text is left aligned.
-          * _global.MT_H_CENTER_ - The text is centered.
+          * _MT_H_LEFT_ - The text is left aligned.
+          * _MT_H_CENTER_ - The text is centered.
     * _vert_align_ - The type of vertical alignment to use. Can be:
-          * _global.MT_V_BELOW_ - The text is vertically aligned below.
-          * _global.MT_V_ABOVE_ - The text is vertically aligned above.
-          * _global.MT_V_CENTER_ - The text is vertically aligned centered.
+          * _MT_V_BELOW_ - The text is vertically aligned below.
+          * _MT_V_ABOVE_ - The text is vertically aligned above.
+          * _MT_V_CENTER_ - The text is vertically aligned centered.
 <BR>
 <BR>
 === !AttachMovableTextToSceneNode(real text_id, real scene_node_id) ===

@@ -1,7 +1,7 @@
 #summary GUI PushButton functions
 <BR>
 <BR>
-=== SetGUIPushButtonEventCallback(double gui_push_button_id, string event, double func) ===
+=== SetGUIPushButtonEventCallback(real gui_push_button_id, string event, real func) ===
 ----
 Sets a GM script to be called when the specified GUI event is triggered.
 

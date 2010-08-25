@@ -34,12 +34,24 @@ Sets the font resource for a text overlay element.
    * _font_name_ - The unique font resource name for this text.
 <BR>
 <BR>
-=== !SetTextOverlayElementAlignment(real ta_overlay_elem_id, real type) ===
+=== !SetTextOverlayElementHorizontalAlignment(real ta_overlay_elem_id, real type) ===
 ----
-Sets the alignment of a text object.
+Sets the horizontal alignment of a text object.
 ====Parameters====
    * _text_overlay_elem_id_ - The ID of the text overlay element.
    * _type_ - The type of alignment to use. Can be:
-      * _global.ALIGN_LEFT_ - The text is left aligned on the previously specified position.
-      * _global.ALIGN_RIGHT_ - The text is right aligned on the previously specified position.
-      * _global.ALIGN_CENTER_ - The text is centered on the previously specified position. 
+      * _ALIGN_LEFT_ - The text is left aligned on the previously specified position.
+      * _ALIGN_RIGHT_ - The text is right aligned on the previously specified position.
+      * _ALIGN_CENTER_ - The text is centered on the previously specified position. 
+<BR>
+<BR>
+=== !SetTextOverlayElementVerticalAlignment(real ta_overlay_elem_id, real type) ===
+----
+Sets the vertical alignment of a text object.
+====Parameters====
+   * _text_overlay_elem_id_ - The ID of the text overlay element.
+   * _type_ - The type of alignment to use. Can be:
+      * _ALIGN_BOTTOM_ - The text is bottom aligned on the overlay.
+      * _ALIGN_TOP_ - The text is top aligned on the overlay.
+      * _ALIGN_CENTER_ - The text is centered on the overlay. 
+<BR>

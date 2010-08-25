@@ -1,0 +1,81 @@
+#summary A set of functions for CameraControlSystem RTS camera.
+
+=== Overview ===
+A RTS camera is an overhead camera limited to of a plane. It is normally used by real-time strategy games. 
+<BR>
+<BR>
+<BR>
+=== !SetRTSCameraPitch(real camera_id, real pitch) ===
+----
+Sets the pitch of the camera.
+====Parameters====
+   * _camera_id_ - The ID of the camera control system camera object.
+   * _pitch_ - The position of the camera. 
+<BR>
+<BR>
+=== !SetRTSCameraZoom(real camera_id, real zoom)===
+
+----
+Sets the current zoom factor on the camera.
+====Parameters====
+   * _camera_id_ - The ID of the camera control system camera object.
+   * _zoom_ - The amount to set the camera zoom to. The default zoom is 0.
+<BR>
+<BR>
+=== !ZoomRTSCameraIn(real camera_id, real percentage) ===
+----
+Zooms the camera in.
+====Parameters====
+   * _camera_id_ - The ID of the camera control system camera object.
+   * _percentage_ - Optional percent (0.0 to 1.0) to zoom the camera based on the min/max zoom. Default value is 1.0.
+<BR>
+<BR>
+=== !ZoomRTSCameraOut(real camera_id, real percentage) ===
+----
+Zooms the camera out.
+====Parameters====
+   * _camera_id_ - The ID of the camera control system camera object.
+   * _percentage_ - Optional percent (0.0 to 1.0) to zoom the camera based on the min/max zoom. Default value is 1.0. 
+<BR>
+<BR>
+=== !SetRTSCameraMoveFactor(real camera_id, real units_per_second) ===
+----
+Sets the units the camera will be translated per second.
+====Parameters====
+   * _camera_id_ - The ID of the camera control system camera object.
+   * _units_per_second_ - The units per second the camera will move. The default factor is 1.
+<BR>
+<BR>
+=== !MoveRTSCameraLeft(real camera_id, real percentage) ===
+----
+Moves the camera left.
+====Parameters====
+   * _camera_id_ - The ID of the camera control system camera object.
+   * _percentage_ - Optional percent (0.0 to 1.0) to move the camera based on the move factor. Default value is 1.0.
+<BR>
+<BR>
+=== !MoveRTSCameraRight(real camera_id, real percentage) ===
+----
+Moves the camera right.
+Parameters
+   * _camera_id_ - The ID of the camera control system camera object.
+   * _percentage_ - Optional percent (0.0 to 1.0) to move the camera based on the move factor. Default value is 1.0.
+<BR>
+<BR>
+=== !MoveRTSCameraUp(real camera_id, real percentage) ===
+----
+Moves the camera up.
+
+Parameters
+   * _camera_id_ - The ID of the camera control system camera object.
+   * _percentage_ - Optional percent (0.0 to 1.0) to move the camera based on the move factor. Default value is 1.0.
+<BR>
+<BR>
+=== !MoveRTSCameraDown(real camera_id, real percentage) ===
+----
+Moves the camera down.
+====Parameters====
+   * _camera_id_ - The ID of the camera control system camera object.
+   * _percentage_ - Optional percent (0.0 to 1.0) to move the camera based on the move factor. Default value is 1.0.
+<BR>
+<BR>

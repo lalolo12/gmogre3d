@@ -145,14 +145,26 @@ Allows a material to cast a shadow, even if it is transparent. By default, trans
    * _enabled_ - Whether to enable or disable casting of shadows for transparent materials.
 <BR>
 <BR>
-=== SetMaterialLODLevels(string name, real lod1, real lod2, real lod3, real lod4, real lod5, real lod6, real lod7, real lod8, real lod9, real lod10, real lod11, real lod12) ===
+=== SetMaterialLODStrategy(string name, real strategy) ===
 ----
-Sets the distance at which level-of-detail (LOD) levels come into effect.
+Sets the type of LOD strategy to use with a material.
 
-You should only use this if you have assigned LOD indexes to the Technique instances attached to this material. If you have done so, you should call this method to determine the distance at which the lowest levels of detail kick in. The decision about what distance is actually used is a combination of this and the LOD bias applied to both the current Camera and the current Entity.
+By default the distance strategy is used.
 ====Parameters====
    * _name_ - The unique name of the resource.
-   * _lod1_..._lod12_ - Indicates the distances at which to switch to lower details. They are listed in LOD index order, starting at index 1 (ie the first level down from the highest level 0, which automatically applies from a distance of 0).  You only need to pass the number of LODs you wish to use.
+   * _strategy_ - The type of strategy to use. Can be:
+      _LOD_DISTANCE_ - Level of detail strategy based on distance from camera.
+      _LOD_PIXEL_COUNT_ - Level of detail strategy based on pixel count approximation from bounding sphere projection.
+<BR>
+<BR>
+=== SetMaterialLODLevels(string name, real lod1, real lod2, real lod3, real lod4, real lod5, real lod6, real lod7, real lod8, real lod9, real lod10, real lod11, real lod12) ===
+----
+Sets the distance or pixel count at which level-of-detail (LOD) levels come into effect.
+
+You should only use this if you have assigned LOD indexes to the Technique instances attached to this material. If you have done so, you should call this method to determine the distance or pixel count at which the lowest levels of detail kick in. The decision about what distance is actually used is a combination of this and the LOD bias applied to both the current Camera and the current Entity.
+====Parameters====
+   * _name_ - The unique name of the resource.
+   * _lod1_..._lod12_ - Indicates the distances or pixel counts at which to switch to lower details. They are listed in LOD index order, starting at index 1 (ie the first level down from the highest level 0, which automatically applies from a distance of 0).  You only need to pass the number of LODs you wish to use.
 <BR>
 <BR>
 === !CreateMaterialTechnique(string name) ===

@@ -12,25 +12,21 @@ Returns true if the GMOgre3D engine has been initialized.
 <br>
 <br>
 <br>
-=== StartOgre3DEngine(real render_engine, real fsaa_type, real fsaa_level, real enable_vsync) ===
+=== StartOgre3DEngine(real render_engine, real fsaa_type, real fsaa_hint, real enable_vsync) ===
 ----
 Starts the GMOgre3D engine.  After calling this all drawing of the GM window is taken over by the GMOgre3D DLL.
 
-Note the following FSAA combinations are valid:
-    * FSAA type 0, FSAA quality level 0
-    * FSAA type 1, FSAA quality level 0
-    * FSAA type 1, FSAA quality level 1
-    * FSAA type 1, FSAA quality level 2
-    * FSAA type 2, FSAA quality level 0
-    * FSAA type 4, FSAA quality level 0
-    * FSAA type 6, FSAA quality level 0 
+FSAA type depends on the hardware, but usually can be 0, 2, 4, 8, 16.
+
 ====Parameters====
-  * _render_engine_ - The type of renderer to use. Possible values are:
-    * RENDER_DX9
-    * RENDER_GL
-  * _fsaa_type_ - Optional FSAA type. Can be 0, 1, 2, 4, or 6. Default is 0.
-  * _fsaa_level_ - Optional FSAA quality level. Can be: 0, 1, or 2. Default is 0.
-  * _enable_vsync_ - Optionally enable or disable vsync. Default is disabled.
+   * _render_engine_ - The type of renderer to use. Possible values are:
+      * _RENDER_DX9_
+      * _RENDER_GL_
+   * _fsaa_type_ - Optional FSAA type. Typically can be 0, 2, 4, 8, 16. Default is 0.
+   * _fsaa_hint - Optional FSAA hint. Value depends on the hardware, and currently can be:
+      * _FSAA_HINT_NONE_ - No hint. This is default.
+      * _FSAA_HINT_QUALITY_ - Prefer higher AA quality over speed.
+   * _enable_vsync_ - Optionally enable or disable vsync. Default is disabled.
 <BR>
 <BR>
 === StopOgre3DEngine() ===

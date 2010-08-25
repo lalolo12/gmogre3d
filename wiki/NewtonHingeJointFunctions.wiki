@@ -47,7 +47,7 @@ Returns the relative joint angular velocity between the two bodies.
    * _newton_joint_id_ - The ID of the Newton joint.
 <BR>
 <BR>
-=== !GetNewtonHingeJointPinAxis(double newton_joint_ptr) ===
+=== !GetNewtonHingeJointPinAxis(real newton_joint_ptr) ===
 Returns the joint pin in world space.
 
 Since GM cannot return 3 values in a single function call these coordinates are stored in temporary variables and can be retrieved by calling the GetX, GetY, and GetZ functions. 

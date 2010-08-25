@@ -150,7 +150,7 @@ Sets whether or not the buffers created for this object are suitable for dynamic
    * _enable_ - Whether to enable or disable dynamic alteration.
 <BR>
 <BR>
-=== !AddRibbonTrailChainElement(real ribbon_trail_id, real chain_index, real x, real z, real y, real width, real tex_coord, real clr, real alpha) ===
+=== !AddRibbonTrailChainElement(real ribbon_trail_id, real chain_index, real x, real y, real z, real width, real tex_coord, real clr, real alpha) ===
 ----
 Creates and adds an element to the 'head' of a chain.
 
@@ -173,7 +173,7 @@ Remove an element from the 'tail' of a chain.
    * _index_ - The index of the chain.
 <BR>
 <BR>
-=== !UpdateRibbonTrailChainElement(real ribbon_trail_id, real chain_index, real element_index, real x, real z, real y, real width, real tex_coord, real color, real alpha) ===
+=== !UpdateRibbonTrailChainElement(real ribbon_trail_id, real chain_index, real element_index, real x, real y, real z, real width, real tex_coord, real color, real alpha) ===
 ----
 Update the details of an existing chain element.
 ====Parameters====
@@ -249,7 +249,7 @@ Makes the ribbon trail invisible.
 <BR>
 === !AttachRibbonTrailToSceneNode(real ribbon_trail_id, real scene_node_id) ===
 ----
-Attaches an entity to the specified !SceneNode.
+Attaches an ribbon trail to the specified !SceneNode.
 ====Parameters====
    * _ribbon_trail_id_ - The ID of the ribbon trail.
    * _scene_node_id_ - The ID of the !SceneNode.
@@ -257,7 +257,7 @@ Attaches an entity to the specified !SceneNode.
 <BR>
 === !DetachRibbonTrailFromSceneNode(real ribbon_trail_id, real scene_node_id) ===
 ----
-Detaches an entity from the specified !SceneNode.
+Detaches an ribbon trail from the specified !SceneNode.
 ====Parameters====
    * _ribbon_trail_id_ - The ID of the ribbon trail.
    * _scene_node_id_ - The ID of the !SceneNode.

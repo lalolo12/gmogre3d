@@ -145,7 +145,7 @@ This option has no effect in the programmable pipeline.
       * _ENV_PLANAR_ - Envmap based on vector from camera to vertex position, good for planar geometry.
       * _ENV_CURVED_ - Envmap based on dot of vector from camera to vertex and vertex normal, good for curves.
       * _ENV_REFLECTION_ - Envmap intended to supply reflection vectors for cube mapping.
-      * _global.ENV_NORMAL_ - Envmap intended to supply normal vectors for cube mapping.
+      * _ENV_NORMAL_ - Envmap intended to supply normal vectors for cube mapping.
 <BR>
 <BR>
 === !SetTextureUnitStateTextureAddressingMode(real texture_unit_id, real type) ===
@@ -158,10 +158,10 @@ This applies for both the fixed-function and programmable pipelines.
 ====Parameters====
    * _texture_unit_id_ - The ID of the texture unit state object.
    * _type_ - The content type. Can be:
-      * _global.TAM_WRAP_ - Texture wraps at values over 1.0.
-      * _global.TAM_MIRROR_ - Texture mirrors (flips) at joins over 1.0.
-      * _global.TAM_CLAMP_ - Texture clamps at 1.0.
-      * _global.TAM_BORDER_ - Texture coordinates outside the range (0.0 - 1.0) are set to the border color.
+      * _TAM_WRAP_ - Texture wraps at values over 1.0.
+      * _TAM_MIRROR_ - Texture mirrors (flips) at joins over 1.0.
+      * _TAM_CLAMP_ - Texture clamps at 1.0.
+      * _TAM_BORDER_ - Texture coordinates outside the range (0.0 - 1.0) are set to the border color.
 <BR>
 <BR>
 === !SetTextureUnitStateTextureBorderColor(real texture_unit_id, real color) ===

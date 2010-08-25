@@ -14,6 +14,15 @@ Construct a plane through a normal, and a distance to move the plane along the n
    * _depth_ - The distance to move the plane along the normal.
 <BR>
 <BR>
+=== !CreateMovablePlane(real normalx, real normalz, real normaly, real depth) ===
+----
+Construct a movable plane through a normal, and a distance to move the plane along the normal.
+This plane is not here for rendering purposes, it's to allow you to attach planes to the scene in order to have them move and follow nodes on their own, which is useful if you're using the plane for some kind of calculation, e.g. reflection. 
+====Parameters====
+   * _normalx_, _normaly_, _normalz_ - The normal to construct the plane on.
+   * _depth_ - The distance to move the plane along the normal.
+<BR>
+<BR>
 === !DestroyPlane(real plane_id) ===
 ----
 Destroys a plane.

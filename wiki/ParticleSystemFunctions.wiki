@@ -229,7 +229,7 @@ Detaches an particle system from the specified !SceneNode.
    * _scene_node_id_ - The ID of the !SceneNode.
 <BR>
 <BR>
-=== !AttachParticleSystemToEntityBone(real particle_system_id, real entity_id, bone_name, offset_x, offset_y, offset_z) ===
+=== !AttachParticleSystemToEntityBone(real particle_system_id, real entity_id, string bone_name, real offset_x, real offset_y, real offset_z, real offset_yaw, real offset_pitch, real offset_roll) ===
 ----
 Attaches a particle system to a certain bone of the skeleton which the specified entity uses.
 
@@ -258,22 +258,22 @@ Render queues are grouped to allow you to more tightly control the ordering of r
 ====Parameters====
    * _particle_system_id_ - The ID of the particle system.
    * _type_ - The render queue ID.  Can be:
-      * _global.RENDER_QUEUE_BACKGROUND_ - Use this queue for objects which must be rendered first e.g. backgrounds.
-      * _global.RENDER_QUEUE_SKIES_EARLY_ - First queue (after backgrounds), used for skyboxes if rendered first.
-      * _global.RENDER_QUEUE_1_
-      * _global.RENDER_QUEUE_2_
-      * _global.RENDER_QUEUE_WORLD_GEOMETRY_1_
-      * _global.RENDER_QUEUE_3_ 
-      * _global.RENDER_QUEUE_4_
-      * _global.RENDER_QUEUE_MAIN_ - The default render queue.
-      * _global.RENDER_QUEUE_6_
-      * _global.RENDER_QUEUE_7_
-      * _global.RENDER_QUEUE_WORLD_GEOMETRY_2_
-      * _global.RENDER_QUEUE_8_
-      * _global.RENDER_QUEUE_9_
-      * _global.RENDER_QUEUE_SKIES_LATE_ - Penultimate queue(before overlays), used for skyboxes if rendered last.
-      * _global.RENDER_QUEUE_OVERLAY_ - Use this queue for objects which must be rendered last e.g. overlays.
-      * _global.RENDER_QUEUE_MAX_ - Final possible render queue, don't exceed this.
+      * _RENDER_QUEUE_BACKGROUND_ - Use this queue for objects which must be rendered first e.g. backgrounds.
+      * _RENDER_QUEUE_SKIES_EARLY_ - First queue (after backgrounds), used for skyboxes if rendered first.
+      * _RENDER_QUEUE_1_
+      * _RENDER_QUEUE_2_
+      * _RENDER_QUEUE_WORLD_GEOMETRY_1_
+      * _RENDER_QUEUE_3_ 
+      * _RENDER_QUEUE_4_
+      * _RENDER_QUEUE_MAIN_ - The default render queue.
+      * _RENDER_QUEUE_6_
+      * _RENDER_QUEUE_7_
+      * _RENDER_QUEUE_WORLD_GEOMETRY_2_
+      * _RENDER_QUEUE_8_
+      * _RENDER_QUEUE_9_
+      * _RENDER_QUEUE_SKIES_LATE_ - Penultimate queue(before overlays), used for skyboxes if rendered last.
+      * _RENDER_QUEUE_OVERLAY_ - Use this queue for objects which must be rendered last e.g. overlays.
+      * _RENDER_QUEUE_MAX_ - Final possible render queue, don't exceed this.
 <BR>
 <BR>
 === !SetParticleSystemQueryFlags(real particle_system_id, real flags) ===
@@ -284,4 +284,45 @@ When performing a scene query, this entity will be included or excluded accordin
 ====Parameters====
    * _particle_system_id_ - The ID of the particle system.
    * _flags_ - The application specific flags.
+<BR>
+<BR>
+=== !SetParticleSystemLightFlags(real particle_system_id, real flags) ===
+----
+Set a bitwise mask which will filter the lights affecting this object. 
+
+Specifies which lights may or may not affect this object.  This is a bitwise value, so only when a
+bit on these flags match at least one bit in the light mask, will the light affect this object.  The
+meaning of the bits is application-specific.
+====Parameters====
+    * _particle_system_id_ - The ID of the particle system.
+    * _flags_ - The application specific flags.
+<BR>
+<BR>
+=== !SetParticleSystemVisibilityFlags(real particle_system_id, real flags) ===
+----
+Sets the visibility flags for this object.
+
+As well as a simple true/false value for visibility (as seen in setVisible), you can also set visiblity flags which when 'and'ed with the SceneManager's visibility mask can also make an object invisible.
+====Parameters====
+   * _particle_system_id_ - The ID of the particle_system.
+   * _flags_ - The visibility flags.
+<BR>
+<BR>
+=== !SetParticleSystemUserData(real particle_system_id, string key, real data) ===
+----
+Sets any kind of user value on this object.
+
+This function allows you to associate any user value you like with this object. This can be a pointer to a GM object for instance.  Use a unique key to distinguish between each of these objects.
+====Parameters====
+   * _particle_system_id_ - The ID of the particle system.
+   * _key_ - The string key that this data is associate with.
+   * _data_ - The data to associate with this object.
+<BR>
+<BR>
+=== !GetParticleSystemUserData(real particle_system_id, string key) ===
+----
+Gets the user value on this object.
+====Parameters====
+   * _particle_system_id_ - The ID of the particle system.
+   * _key_ - The string key of the data to retrieve.
 <BR>

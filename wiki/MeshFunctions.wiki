@@ -1,7 +1,7 @@
 #summary Represents geometry.
 <BR>
 <BR>
-=== !LoadMesh(string filename, string group, real vertex_buffer_usage, real index_buffer_usage, real disable_vertex_buffer_shadow, double disable_index_buffer_shadow) ===
+=== !LoadMesh(string filename, string group, real vertex_buffer_usage, real index_buffer_usage, real disable_vertex_buffer_shadow, real disable_index_buffer_shadow) ===
 Loads a mesh from a file, making it immediately available for use.
 ====Parameters====
    * _filename_ - The name of the .mesh file.
@@ -82,7 +82,19 @@ The prerequisites for calling this method include that the vertex data used by e
    * _split_rotated_ - Optionally split vertices when a rotated tangent space is detected. Default is false.
 <BR>
 <BR>
-=== !GenerateMeshLODLevels(string mesh_name, real reduction_method, real reduction_value, real lod_distance1, real lod_distance2, real lod_distance3, real lod_distance4, real lod_distance5, real lod_distance6, real lod_distance7, real lod_distance8, real lod_distance9, real lod_distance10) ===
+=== SetMeshLODStrategy(string name, real strategy) ===
+----
+Sets the type of LOD strategy to use with a mesh.
+
+By default the distance strategy is used.
+====Parameters====
+   * _name_ - The unique name of the resource.
+   * _strategy_ - The type of strategy to use. Can be:
+      _LOD_DISTANCE_ - Level of detail strategy based on distance from camera.
+      _LOD_PIXEL_COUNT_ - Level of detail strategy based on pixel count approximation from bounding sphere projection.
+<BR>
+<BR>
+=== !GenerateMeshLODLevels(string mesh_name, real reduction_method, real reduction_value, real lod_value1, real lod_value2, real lod_value3, real lod_value4, real lod_value5, real lod_value6, real lod_value7, real lod_value8, real lod_value9, real lod_value10) ===
 ----
 Automatically generates lower level of detail versions of a mesh for use when a simpler version of
 the model is acceptable for rendering.
@@ -98,7 +110,7 @@ I recommend calling this method before mesh export, not at runtime.
       * _VRQ_CONSTANT_ - A set number of vertices are removed at each reduction.
       * _VRQ_PROPORTIONAL_ - A proportion of the remaining number of vertices are removed at each reduction. 
    * _reduction_value_ - Meaning depends on reduction_method, typically either the proportion of remaining vertices to collapse or a fixed number of vertices. 
-   * _lod_distance1_ - _lod_distance10_ - Optional distances from which the generated LODs will apply.
+   * _lod_value1_ - _lod_value10_ - Optional distances or pixel counts from which the generated LODs will apply.
 <BR>
 <BR>
 === !CreateMeshManualLODLevel(string mesh_name, real lod_distance, string load_mesh_filename) ===

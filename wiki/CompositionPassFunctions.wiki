@@ -10,10 +10,10 @@ Set the type of composition pass.
 ====Parameters====
    * _pass_id_ - The ID of the composition pass.
    * _type_ - The type of composition pass.  Can be:
-      * _global.PT_CLEAR_ - Clear target to one color.
-      * _global.PT_STENCIL_ - Set stencil operation.
-      * _global.PT_RENDERSCENE_ - Render the scene or part of it.
-      * _global.PT_RENDERQUAD_ - Render a full screen quad.
+      * _PT_CLEAR_ - Clear target to one color.
+      * _PT_STENCIL_ - Set stencil operation.
+      * _PT_RENDERSCENE_ - Render the scene or part of it.
+      * _PT_RENDERQUAD_ - Render a full screen quad.
 <BR>
 <BR>
 === !SetCompositionPassIdentifier(real pass_id, real id) ===
@@ -42,22 +42,22 @@ Applies when !PassType is RENDERSCENE.  It can be used to limit a compositor to 
 ====Parameters====
    * _pass_id_ - The ID of the composition pass.
    * _id_ - The render queue ID.  Can be:
-      * _global.RENDER_QUEUE_BACKGROUND_ - Use this queue for objects which must be rendered first e.g. backgrounds.
-      * _global.RENDER_QUEUE_SKIES_EARLY_ - First queue (after backgrounds), used for skyboxes if rendered first.
-      * _global.RENDER_QUEUE_1_
-      * _global.RENDER_QUEUE_2_
-      * _global.RENDER_QUEUE_WORLD_GEOMETRY_1_
-      * _global.RENDER_QUEUE_3_ 
-      * _global.RENDER_QUEUE_4_
-      * _global.RENDER_QUEUE_MAIN_ - The default render queue.
-      * _global.RENDER_QUEUE_6_
-      * _global.RENDER_QUEUE_7_
-      * _global.RENDER_QUEUE_WORLD_GEOMETRY_2_
-      * _global.RENDER_QUEUE_8_
-      * _global.RENDER_QUEUE_9_
-      * _global.RENDER_QUEUE_SKIES_LATE_ - Penultimate queue(before overlays), used for skyboxes if rendered last.
-      * _global.RENDER_QUEUE_OVERLAY_ - Use this queue for objects which must be rendered last e.g. overlays.
-      * _global.RENDER_QUEUE_MAX_ - Final possible render queue, don't exceed this.
+      * _RENDER_QUEUE_BACKGROUND_ - Use this queue for objects which must be rendered first e.g. backgrounds.
+      * _RENDER_QUEUE_SKIES_EARLY_ - First queue (after backgrounds), used for skyboxes if rendered first.
+      * _RENDER_QUEUE_1_
+      * _RENDER_QUEUE_2_
+      * _RENDER_QUEUE_WORLD_GEOMETRY_1_
+      * _RENDER_QUEUE_3_ 
+      * _RENDER_QUEUE_4_
+      * _RENDER_QUEUE_MAIN_ - The default render queue.
+      * _RENDER_QUEUE_6_
+      * _RENDER_QUEUE_7_
+      * _RENDER_QUEUE_WORLD_GEOMETRY_2_
+      * _RENDER_QUEUE_8_
+      * _RENDER_QUEUE_9_
+      * _RENDER_QUEUE_SKIES_LATE_ - Penultimate queue(before overlays), used for skyboxes if rendered last.
+      * _RENDER_QUEUE_OVERLAY_ - Use this queue for objects which must be rendered last e.g. overlays.
+      * _RENDER_QUEUE_MAX_ - Final possible render queue, don't exceed this.
 <BR>
 <BR>
 === !SetCompositionPassLastRenderQueue(real pass_id, real id) ===
@@ -68,22 +68,22 @@ Applies when !PassType is RENDERSCENE.  It can be used to limit a compositor to 
 ====Parameters====
    * _pass_id_ - The ID of the composition pass.
    * _id_ - The render queue ID.  Can be:
-      * _global.RENDER_QUEUE_BACKGROUND_ - Use this queue for objects which must be rendered first e.g. backgrounds.
-      * _global.RENDER_QUEUE_SKIES_EARLY_ - First queue (after backgrounds), used for skyboxes if rendered first.
-      * _global.RENDER_QUEUE_1_
-      * _global.RENDER_QUEUE_2_
-      * _global.RENDER_QUEUE_WORLD_GEOMETRY_1_
-      * _global.RENDER_QUEUE_3_ 
-      * _global.RENDER_QUEUE_4_
-      * _global.RENDER_QUEUE_MAIN_ - The default render queue.
-      * _global.RENDER_QUEUE_6_
-      * _global.RENDER_QUEUE_7_
-      * _global.RENDER_QUEUE_WORLD_GEOMETRY_2_
-      * _global.RENDER_QUEUE_8_
-      * _global.RENDER_QUEUE_9_
-      * _global.RENDER_QUEUE_SKIES_LATE_ - Penultimate queue(before overlays), used for skyboxes if rendered last.
-      * _global.RENDER_QUEUE_OVERLAY_ - Use this queue for objects which must be rendered last e.g. overlays.
-      * _global.RENDER_QUEUE_MAX_ - Final possible render queue, don't exceed this.
+      * _RENDER_QUEUE_BACKGROUND_ - Use this queue for objects which must be rendered first e.g. backgrounds.
+      * _RENDER_QUEUE_SKIES_EARLY_ - First queue (after backgrounds), used for skyboxes if rendered first.
+      * _RENDER_QUEUE_1_
+      * _RENDER_QUEUE_2_
+      * _RENDER_QUEUE_WORLD_GEOMETRY_1_
+      * _RENDER_QUEUE_3_ 
+      * _RENDER_QUEUE_4_
+      * _RENDER_QUEUE_MAIN_ - The default render queue.
+      * _RENDER_QUEUE_6_
+      * _RENDER_QUEUE_7_
+      * _RENDER_QUEUE_WORLD_GEOMETRY_2_
+      * _RENDER_QUEUE_8_
+      * _RENDER_QUEUE_9_
+      * _RENDER_QUEUE_SKIES_LATE_ - Penultimate queue(before overlays), used for skyboxes if rendered last.
+      * _RENDER_QUEUE_OVERLAY_ - Use this queue for objects which must be rendered last e.g. overlays.
+      * _RENDER_QUEUE_MAX_ - Final possible render queue, don't exceed this.
 <BR>
 <BR>
 === !SetCompositionPassClearBuffers(real pass_id, real val) ===
@@ -143,14 +143,14 @@ Applies when !PassType is STENCIL.
 ====Parameters====
    * _pass_id_ - The ID of the composition pass.
    * _func_ - The type of comparison function to use.  Can be:
-      * _global.CMPF_ALWAYS_FAIL_
-      * _global.CMPF_ALWAYS_PASS_
-      * _global.CMPF_LESS_
-      * _global.CMPF_LESS_EQUAL_
-      * _global.CMPF_EQUAL_
-      * _global.CMPF_NOT_EQUAL_
-      * _global.CMPF_GREATER_EQUAL_
-      * _global.CMPF_GREATER_
+      * _CMPF_ALWAYS_FAIL_
+      * _CMPF_ALWAYS_PASS_
+      * _CMPF_LESS_
+      * _CMPF_LESS_EQUAL_
+      * _CMPF_EQUAL_
+      * _CMPF_NOT_EQUAL_
+      * _CMPF_GREATER_EQUAL_
+      * _CMPF_GREATER_
 <BR>
 <BR>
 === !SetCompositionPassStencilRefValue(real pass_id, real val) ===
@@ -181,13 +181,13 @@ Applies when !PassType is STENCIL.
 ====Parameters====
    * _pass_id_ - The ID of the composition pass.
    * _op_ - The stencil fail operation.  Can be:
-      * _global.SOP_KEEP_ - Leave the stencil buffer unchanged.
-      * _global.SOP_ZERO_ - Set the stencil value to zero.
-      * _global.SOP_REPLACE_ - Set the stencil value to the reference value.
-      * _global.SOP_INCREMENT_ - Increase the stencil value by 1, clamping at the maximum value.
-      * _global.SOP_DECREMENT_ - Decrease the stencil value by 1, clamping at 0.
-      * _global.SOP_INCREMENT_WRAP_ - Increase the stencil value by 1, wrapping back to 0 when incrementing the maximum value.
-      * _global.SOP_DECREMENT_WRAP_ - Decrease the stencil value by 1, wrapping when decrementing 0.
+      * _SOP_KEEP_ - Leave the stencil buffer unchanged.
+      * _SOP_ZERO_ - Set the stencil value to zero.
+      * _SOP_REPLACE_ - Set the stencil value to the reference value.
+      * _SOP_INCREMENT_ - Increase the stencil value by 1, clamping at the maximum value.
+      * _SOP_DECREMENT_ - Decrease the stencil value by 1, clamping at 0.
+      * _SOP_INCREMENT_WRAP_ - Increase the stencil value by 1, wrapping back to 0 when incrementing the maximum value.
+      * _SOP_DECREMENT_WRAP_ - Decrease the stencil value by 1, wrapping when decrementing 0.
       * _SOP_INVERT_ - Invert the bits of the stencil buffer.
 <BR>
 <BR>
@@ -199,14 +199,14 @@ Applies when !PassType is STENCIL.
 ====Parameters====
    * _pass_id_ - The ID of the composition pass.
    * _op_ - The stencil fail depth operation.  Can be:
-      * _global.SOP_KEEP_ - Leave the stencil buffer unchanged.
-      * _global.SOP_ZERO_ - Set the stencil value to zero.
-      * _global.SOP_REPLACE_ - Set the stencil value to the reference value.
-      * _global.SOP_INCREMENT_ - Increase the stencil value by 1, clamping at the maximum value.
-      * _global.SOP_DECREMENT_ - Decrease the stencil value by 1, clamping at 0.
-      * _global.SOP_INCREMENT_WRAP_ - Increase the stencil value by 1, wrapping back to 0 when incrementing the maximum value.
-      * _global.SOP_DECREMENT_WRAP_ - Decrease the stencil value by 1, wrapping when decrementing 0.
-      * _global.SOP_INVERT_ - Invert the bits of the stencil buffer.
+      * _SOP_KEEP_ - Leave the stencil buffer unchanged.
+      * _SOP_ZERO_ - Set the stencil value to zero.
+      * _SOP_REPLACE_ - Set the stencil value to the reference value.
+      * _SOP_INCREMENT_ - Increase the stencil value by 1, clamping at the maximum value.
+      * _SOP_DECREMENT_ - Decrease the stencil value by 1, clamping at 0.
+      * _SOP_INCREMENT_WRAP_ - Increase the stencil value by 1, wrapping back to 0 when incrementing the maximum value.
+      * _SOP_DECREMENT_WRAP_ - Decrease the stencil value by 1, wrapping when decrementing 0.
+      * _SOP_INVERT_ - Invert the bits of the stencil buffer.
 <BR>
 <BR>
 === !SetCompositionPassStencilPassOperation(real pass_id, real op) ===
@@ -217,14 +217,14 @@ Applies when !PassType is STENCIL.
 ====Parameters====
    * _pass_id_ - The ID of the composition pass.
    * _op_ - The stencil pass operation.  Can be:
-      * _global.SOP_KEEP_ - Leave the stencil buffer unchanged.
-      * _global.SOP_ZERO_ - Set the stencil value to zero.
-      * _global.SOP_REPLACE_ - Set the stencil value to the reference value.
-      * _global.SOP_INCREMENT_ - Increase the stencil value by 1, clamping at the maximum value.
-      * _global.SOP_DECREMENT_ - Decrease the stencil value by 1, clamping at 0.
-      * _global.SOP_INCREMENT_WRAP_ - Increase the stencil value by 1, wrapping back to 0 when incrementing the maximum value.
-      * _global.SOP_DECREMENT_WRAP_ - Decrease the stencil value by 1, wrapping when decrementing 0.
-      * _global.SOP_INVERT_ - Invert the bits of the stencil buffer.
+      * _SOP_KEEP_ - Leave the stencil buffer unchanged.
+      * _SOP_ZERO_ - Set the stencil value to zero.
+      * _SOP_REPLACE_ - Set the stencil value to the reference value.
+      * _SOP_INCREMENT_ - Increase the stencil value by 1, clamping at the maximum value.
+      * _SOP_DECREMENT_ - Decrease the stencil value by 1, clamping at 0.
+      * _SOP_INCREMENT_WRAP_ - Increase the stencil value by 1, wrapping back to 0 when incrementing the maximum value.
+      * _SOP_DECREMENT_WRAP_ - Decrease the stencil value by 1, wrapping when decrementing 0.
+      * _SOP_INVERT_ - Invert the bits of the stencil buffer.
 <BR>
 <BR>
 === !EnableCompositionPassTwoSidedOperation(real pass_id, real enable) ===
@@ -237,7 +237,7 @@ Applies when !PassType is STENCIL.
    * _enable_ - Whether to enable or disable two sided operation.
 <BR>
 <BR>
-=== !SetCompositionPassInput(real pass_id, real id, string tex_name, mrt_index) ===
+=== !SetCompositionPassInput(real pass_id, real id, string tex_name, real mrt_index) ===
 ----
 Set an input local texture.
 

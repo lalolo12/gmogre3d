@@ -17,7 +17,7 @@ The paged geometry works by loading only the geometry that is visible (or will s
 Always remember to call each !PagedGeometry's UpdatePagedGeometry() function every frame; otherwise the geometry you're trying to display will not appear correctly.
 <BR>
 <BR>
-=== !CreatePagedGeometry(double cam_id, double page_size) ===
+=== !CreatePagedGeometry(real cam_id, real page_size) ===
 Creates a paged geometry object and passed back the ID.
 ====Parameters====
    * _camera_id_ - The ID of the camera that will be used for LOD calculations.

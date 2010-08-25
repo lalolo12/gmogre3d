@@ -1,7 +1,7 @@
 #summary GUI ProgressBar functions
 <BR>
 <BR>
-=== SetGUIProgressBarCurrentProgress(double gui_progress_bar_id, double progress) ===
+=== SetGUIProgressBarCurrentProgress(real gui_progress_bar_id, real progress) ===
 ----
 Sets the current progress of a GUI progressbar.
 ====Parameters====
@@ -9,21 +9,21 @@ Sets the current progress of a GUI progressbar.
    * _progress_ - The current progress value.
 <BR>
 <BR>
-=== GetGUIProgressBarCurrentProgress(double gui_progress_bar_id) ===
+=== GetGUIProgressBarCurrentProgress(real gui_progress_bar_id) ===
 ----
 Returns the current value of a GUI progressbar.
 ====Parameters====
    * _gui_progress_bar_id_ - The ID of the GUI progressbar.
 <BR>
 <BR>
-=== StepGUIProgressBar(double gui_progress_bar_id) ===
+=== StepGUIProgressBar(real gui_progress_bar_id) ===
 ----
 Increase the current value of a GUI progressbar by the default step size.
 ====Parameters====
    * _gui_progress_bar_id_ - The ID of the GUI progressbar.
 <BR>
 <BR>
-=== SetGUIProgressBarStepSize(double gui_progress_bar_id, double step) ===
+=== SetGUIProgressBarStepSize(real gui_progress_bar_id, real step) ===
 ----
 set the size of the 'step' in percentage points (default is 0.01f or 1%) for a GUI progressbar.
 ====Parameters====

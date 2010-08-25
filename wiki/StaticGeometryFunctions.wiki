@@ -110,6 +110,16 @@ Clears any of the entities / nodes added to this geometry and destroys anything 
    * _static_geometry_id_ - The ID of the static geometry object. 
 <BR>
 <BR>
+=== !SetStaticGeometryVisibilityFlags(real static_geometry_id, real flags) ===
+----
+Sets the visibility flags for this object.
+
+As well as a simple true/false value for visibility (as seen in setVisible), you can also set visiblity flags which when 'and'ed with the SceneManager's visibility mask can also make an object invisible.
+====Parameters====
+   * _static_geometry_id_ - The ID of the static geometry.
+   * _flags_ - The visibility flags.
+<BR>
+<BR>
 === !EnableStaticGeometryCastShadows(real static_geometry_id, real enable) ===
 ----
 Enables or disables whether this geometry should cast shadows.

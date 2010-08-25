@@ -43,8 +43,8 @@ Tells the animation how to interpolate between keyframes.  By default, animation
 ====Parameters====
    * _anim_id_ - The ID of the animation.
    * _type_ - The interpolation mode to use.  Can be:
-      * _global.IM_LINEAR_ - Values are interpolated along straight lines.
-      * _global.IM_SPLINE_ - Values are interpolated along a spline, resulting in smoother changes in direction
+      * _IM_LINEAR_ - Values are interpolated along straight lines.
+      * _IM_SPLINE_ - Values are interpolated along a spline, resulting in smoother changes in direction
 <BR>
 <BR>
 

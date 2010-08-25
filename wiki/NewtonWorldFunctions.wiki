@@ -56,11 +56,11 @@ Setting the solver model allows sacrificing accuracy and realism for speed, good
 ====Parameters===
    * _newton_world_id_ - The ID of the Newton world.
    * _type_ - The type of solver model to use. Can be:
-      * _global.SM_EXACT_ - The most accurate simulation.
-      * _global.SM_FASTEST_ - Still accurate, but faster.  This is the default mode.
-      * _global.SM_MEDIUM_ - More accurate, stronger joints, but still liner.
-      * _global.SM_SLOW_ - Even more accurate, stronger joints, but still linear.
-      * _global.SM_RIDICULUS_ - You better use the quadric solver.
+      * _SM_EXACT_ - The most accurate simulation.
+      * _SM_FASTEST_ - Still accurate, but faster.  This is the default mode.
+      * _SM_MEDIUM_ - More accurate, stronger joints, but still liner.
+      * _SM_SLOW_ - Even more accurate, stronger joints, but still linear.
+      * _SM_RIDICULUS_ - You better use the quadric solver.
 <BR>
 <BR>
 === !SetNewtonWorldFrictionModel(real newton_world_id, real type) ===
@@ -71,8 +71,8 @@ Setting the friction model allows sacrificing accuracy and realism for speed, go
 ====Parameters===
    * _newton_world_id_ - The ID of the Newton world.
    * _type_ - The type of friction model to use. Can be:
-      * _global.FM_EXACT_ - Exact friction model.  This is the default mode.
-      * _global.FM_ADAPTIVE_ - Adaptive friction mode.  This is faster but less accurate.
+      * _FM_EXACT_ - Exact friction model.  This is the default mode.
+      * _FM_ADAPTIVE_ - Adaptive friction mode.  This is faster but less accurate.
 <BR>
 <BR>
 === !SetNewtonWorldPlatformArchitecture(real newton_world_id, real type) ===
