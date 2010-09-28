@@ -1,0 +1,48 @@
+#summary Functions for performance gathering.
+<BR>
+=== EnableDisplayFPS(real enable) ===
+----
+Enables or disables displaying of FPS information in an overlay.
+
+Useful not only to view framerate, but also triangle and batch count, which can give you a clue in what is taking up the most rendering time.
+
+Note that you must include the !OgreCore.zip file in your resources in order to turn on the FPS overlay.
+====Parameters====
+   * _enable_ - Whether to enable or disable FPS.
+<BR>
+<BR>
+=== GetAverageFPS() ===
+----
+Returns the average FPS.
+<BR>
+<BR>
+<BR>
+=== GetLastFPS() ===
+----
+Returns the last FPS.
+<BR>
+<BR>
+<BR>
+=== GetBestFPS() ===
+----
+Returns the best FPS.
+<BR>
+<BR>
+<BR>
+=== GetWorstFPS() ===
+----
+Returns the worst FPS.
+<BR>
+<BR>
+<BR>
+=== !GetTriangleCount() ===
+----
+Returns the triangle count.
+<BR>
+<BR>
+<BR>
+=== !GetBatchCount() ===
+----
+Returns the batch count.
+<BR>
+<BR>

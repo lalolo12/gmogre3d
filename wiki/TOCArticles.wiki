@@ -96,6 +96,7 @@
             * [FreeCameraFunctions Free Camera]
             * [FirstPersonCameraFunctions First Person Camera]
             * [RTSCameraFunctions RTS Camera]
+         * [LightmapFunctions Lightmap]
          * [PagedGeometryFunctions Paged Geometry]
             * [GrassLoaderFunctions Grass Loader]
             * [GrassLayerFunctions Grass Layer]
@@ -154,5 +155,8 @@
          * [TextFunctions Text]
       * [EngineFunctions Engine]
       * [MiscFunctions Misc]
+      * Performance & Timers
+         * [PerformanceFunctions Performance]
+         * [TimerFunctions Timers]
       * [MouseFunctions Mouse]
    * [ExternalResources External Resources]

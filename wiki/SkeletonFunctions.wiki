@@ -8,6 +8,21 @@ So how does this animate a mesh? Well every vertex in a mesh is assigned to one 
 Therefore by moving the skeleton using preset animations, we can animate the mesh. The advantage of using skeletal animation is that you store less animation data, especially as vertex counts increase. In addition, you are able to blend multiple animations together (e.g. walking and looking around, running and shooting) and provide smooth transitions between animations without incurring as much of an overhead as would be involved if you did this on the core vertex data. 
 <BR>
 <BR>
+=== !LoadSkeleton(string name, string group) ===
+----
+Loads an external skeleton file.
+====Parameters====
+   * _name_ - The file name of the resource.
+   * _group_ - Optional name of the resource group to attach this new resource to.
+<BR>
+<BR>
+=== !UnloadSkeleton(string name) ===
+----
+Unloads an external skeleton file.
+====Parameters====
+   * _name_ - The file name of the resource.
+<BR>
+<BR>
 === !GetSkeletonBoneByName(real skeleton_id, string name) ===
 ----
 Returns a bone ID by name.

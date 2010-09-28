@@ -4,12 +4,14 @@
 These functions represent a !NewtonWorld, which is the basic space in which physics elements can exist.  It can have various Rigid Bodies, connected by joints, and other constraints.
 <BR>
 <BR>
-=== !CreateNewtonWorld() ===
+=== !CreateNewtonWorld(real desired_fps, real max_updates_per_frame) ===
 ----
 Creates a physics world.
 
 A physics world holds all of your Rigid Bodies, Collision data, etc. Although you can theoretically have more than 1 world in an application, most situations only require a single world. 
-<BR>
+====Parameters===
+   * _desired_fps_ - Optional desired update rate of the simulation. This value is clamped to values representing between 60fps and 600fps. The default is to update 60 times per second.
+   * _max_updates_per_frame_ - Optional maximum number of update per frame the simulation can execute in order to catch up. The default is 2 updates per frame.
 <BR>
 <BR>
 === !DestroyNewtonWorld(real newton_world_id) ===
@@ -150,6 +152,8 @@ Useful, for example, to remove objects from the game once they are no longer in 
 Update the world by the specified number of seconds.
 
 Note this function is clamped to values representing between 60fps and 600fps.  If you pass a smaller value, it is internally clamped to 60fps.  Likewise a value higher than 600fps is treated as 600fps.
+
+Also note that if you passed a desired update fps to the CreateNewtonWorld() function then this function does not need to be called.
 ====Parameters===
    * _newton_world_id_ - The ID of the Newton world.
    * _seconds_ - The number of elapsed seconds.

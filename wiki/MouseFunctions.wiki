@@ -1,7 +1,7 @@
 #summary Various functions to control the mouse.
 <BR>
 <BR>
-=== !EnableMouseLook(real camera_id, real enable) ===
+=== !EnableMouseLook(real camera_id, real enable, real factor) ===
 ----
 Enables or disables the ability to let the user use their mouse to automatically rotate the specified camera in any direction (yaw/pitch).
 
@@ -9,6 +9,7 @@ Enables or disables the ability to let the user use their mouse to automatically
 ====Parameters====
    * _camera_id_ - The ID of the camera to rotate.
    * _enable_ - Whether to enable or disable mouse look.
+   * _factor_ - Optional factor on mouse look speed. Defaults to 1.0.
 <BR>
 <BR>
 === !UpdateMouseLook() ===
@@ -35,22 +36,20 @@ A mouse pitch of 0 means the camera is looking straight ahead, parallel to the g
    * _degrees_ - The number of degrees the camera cam be pitched up or down.
 <BR>
 <BR>
-=== GetMouseXPos(real val) ===
+=== GetMouseXPos() ===
 ----
 Returns the x position of the mouse on the screen.
 
 Mouse look should be disabled for this to work properly.
-====Parameters====
-   * _val_ - The x position of the mouse on the screen.
 <BR>
 <BR>
-=== GetMouseYPos(real val) ===
+<BR>
+=== GetMouseYPos() ===
 ----
 Returns the y position of the mouse on the screen.
 
 Mouse look should be disabled for this to work properly.
-====Parameters====
-   * _val_ - The y position of the mouse on the screen.
+<BR>
 <BR>
 <BR>
 === !SetMousePos(real x, real y) ===

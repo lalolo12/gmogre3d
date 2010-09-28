@@ -15,7 +15,13 @@ Sets the material to use for a sub entity.
    * _sub_entity_id_ - The ID of the sub entity.
 <BR>
 <BR>
-
+=== !GetSubEntityMaterial(real sub_entity_id) ===
+----
+Returns the material a sub entity is using.
+====Parameters====
+   * _sub_entity_id_ - The ID of the sub entity. 
+<BR>
+<BR>
 === !ShowSubEntity(real sub_entity_id) ===
 ----
 Makes a sub entity visible.

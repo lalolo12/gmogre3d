@@ -15,6 +15,13 @@ Applies to both fixed-function and programmable pipeline.
    * _tex_name_ - The name of the texture.
 <BR>
 <BR>
+=== !GetTextureUnitStateTextureName(real texture_unit_id) ===
+----
+Returns this texture layers single texture.
+====Parameters====
+   * _texture_unit_id_ - The ID of the texture unit state object.
+<BR>
+<BR>
 === !SetTextureUnitStateCubicTextureNames(real texture_unit_id, string tex_name1, string tex_name2, string tex_name3, string tex_name4, string tex_name5, string tex_name6, real for_uvw) ===
 ----
 Sets a texture layer to use a combination of 6 texture maps, each one relating to a face of a cube.

@@ -37,6 +37,14 @@ Unloads a material by name.
    * _name_ - The unique name of the resource.
 <BR>
 <BR>
+=== !CopyMaterial(string name, string new_name) ===
+----
+Creates a copy of a material.
+====Parameters====
+   * _name_ - The unique name of the resource. 
+   * _new_name_ - The new unique name of the resource.
+<BR>
+<BR>
 === !SetMaterialAmbientColor(string name, real color) ===
 ----
 Sets the ambient color reflectance properties for every Pass in every Technique.

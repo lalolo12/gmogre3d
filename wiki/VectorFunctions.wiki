@@ -61,8 +61,14 @@ The result can be retrieved using the GetX, GetY, and GetZ functions.
 Calculates the dot (scalar) product of this vector with another.
 
 The dot product can be used to calculate the angle between 2 vectors. If both are unit vectors, the dot product is the cosine of the angle; otherwise the dot product must be divided by the product of the lengths of both vectors to get the cosine of the angle. This result can further be used to calculate the distance of a point from a plane.
-
-The result can be retrieved using the GetX, GetY, and GetZ functions.
+====Parameters====
+   * _x1_, _y1_, _z1_ - The first vector.
+   * _x2_, _y2_, _z2_ - The second vector.
+<BR>
+<BR>
+=== !CalcVectorDistance(real x1, real y1, real z1, real x2, real y2, real z2) ===
+----
+Calculates the distance between two vectors.
 ====Parameters====
    * _x1_, _y1_, _z1_ - The first vector.
    * _x2_, _y2_, _z2_ - The second vector.

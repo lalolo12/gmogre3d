@@ -1,16 +1,5 @@
 #summary Miscellaneous functions.
 <BR>
-=== EnableDisplayFPS(real enable) ===
-----
-Enables or disables displaying of FPS information in an overlay.
-
-Useful not only to view framerate, but also triangle and batch count, which can give you a clue in what is taking up the most rendering time.
-
-Note that you must include the !OgreCore.zip file in your resources in order to turn on the FPS overlay.
-====Parameters====
-   * _enable_ - Whether to enable or disable FPS.
-<BR>
-<BR>
 === !EnableRenderWindow(real enable) ===
 ----
 Enables or disables rendering window.

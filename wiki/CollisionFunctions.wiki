@@ -62,3 +62,18 @@ Note this checks the actual mesh of an object, and not the bounding box nor the 
    * _min_height_ - Optional min height a collision can occur at.  Ensures that small objects, like rocks, can be ignored. Default is 0 height.
    * _mask_ - Optional mask used to determine if an object can be hit by the ray.  Defaults to hitting all objects.
 <BR>
+<BR>
+=== !CastRayFromPoint(real fromx, real fromz, real fromy, real dirx, real dirz, real diry, real mask) ===
+----
+Returns the distance before a ray cast from the specified point in the specified direction hits an object.
+
+This function allows you to set a 'mask' to limit the results of this query to certain types of result. The actual meaning of this value is up to the application; basically objects will only be "hit" if a bitwise AND operation between this mask value and the object's query flags value is non-zero. The game will have to decide what each of the bits means.
+
+Note this checks the actual mesh of an object, and not the bounding box nor the Newton collision mesh. If the ray does not hit a valid object then -1 is returned.
+
+The point that the ray hit can also be retrieved using the GetX()/GetY()/GetZ() functions.
+====Parameters====
+   * _fromx_, _fromy_, _fromz_ - The point to cast the ray from.
+   * _dirx_, _diry_, _dirz_ - The direction to cast the ray in.
+   * _mask_ - Optional mask used to determine if an object can be hit by the ray. Defaults to hitting all objects.
+<BR>

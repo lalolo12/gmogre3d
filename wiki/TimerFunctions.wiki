@@ -1,0 +1,27 @@
+#summary Functions for high resolution timing.
+<BR>
+=== GetElapsedMS() ===
+----
+Returns the amount of time, in milliseconds, that has passed since the game started.
+
+This uses a higher performance timer that results in accuracy to the microsecond.
+<BR>
+<BR>
+<BR>
+=== GetElapsedFrameMS() ===
+----
+Returns the amount of time, in milliseconds, that has elapsed since the last frame was called.
+
+This uses a higher performance timer that results in accuracy to the microsecond.
+<BR>
+<BR>
+<BR>
+=== !CalculateUnitsPerSecond(real units_per_second) ===
+----
+Returns the amount of units for the current frame, based on the amount of time passed and the desired units per second.
+
+This is useful if you want something to update or move the same speed no matter what FPS the system is running at.  Internally it uses a higher performance timer for timing.
+====Parameters====
+   * _units_per_second_ - The number of desired units per second.
+<BR>
+<BR>
